@@ -1,0 +1,204 @@
+---
+description: "Workflow: File Bug (Structured & Enforced)"
+globs: []
+---
+# Workflow: Task > File Bug
+
+<critical>The FIRST engineering step MUST be creating a failing End-to-End (E2E) test.</critical>
+<critical>You MUST capture a screenshot of the BROKEN state before fixing.</critical>
+<critical>You MUST have a valid bug ticket before writing code.</critical>
+<critical>You MUST prove the fix with a screenshot of the FIXED state.</critical>
+<critical>You MUST prove ZERO console errors (using playwright console check).</critical>
+<critical>You MUST verify the bug ticket is discoverable in /docs.</critical>
+
+<workflow>
+
+<step n="1" goal="Capture Context & Initialize">
+  <action>Capture stakeholder notes (loose input acceptable).</action>
+  
+  <action>
+    **Capture screenshot of BROKEN page:**
+    1. Navigate to affected page: `mcp_playwright_browser_navigate`
+    2. Screenshot: `mcp_playwright_browser_take_screenshot`
+    3. Save to: `tests/results/bug-fixes/BUG-YYYYMMDD-<slug>-BROKEN.png`
+  </action>
+
+  <check if="screenshot captured">
+    <critical>STOP. Did you verify the screenshot file exists?</critical>
+    <action>Embed in ticket notes: `![Broken Page](tests/results/bug-fixes/BUG-YYYYMMDD-<slug>-BROKEN.png)`</action>
+  </check>
+
+  <action>
+    **Create Bug Ticket:**
+    - From: `plans/templates/bug.md`
+    - To: `plans/epics/<EPIC>/` (if epic exists) or `plans/tickets/`
+    - Name: `BUG-YYYYMMDD-<slug>.md`
+  </action>
+
+  <action>
+    **Verify Docs Discoverability:**
+    - Ensure YAML frontmatter is correct (`facets.type: plan`, `facets.status: active`).
+    - Search in `/docs` for the bug ID.
+  </action>
+
+  <check if="docs search failed">
+    <action>Fix YAML frontmatter (usually indentation or missing fields).</action>
+    <action>Restart dev server if needed.</action>
+    <action>Re-verify before proceeding.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 1: Capture Context & Initialize**
+    📸 Captured broken state screenshot
+    📝 Created bug ticket with proper YAML frontmatter
+    
+    ➡️ **Beginning Step 2: TDD: Failing E2E Test**
+  </output>
+</step>
+
+<step n="2" goal="TDD: Failing E2E Test">
+  <critical>This is the FIRST engineering step. Do not write fix code yet.</critical>
+  
+  <action>
+    **Create Failing E2E Test:**
+    - Location: `tests/e2e/` (new file or add to existing relevant spec).
+    - Pattern: Use `tests/e2e/helper/` for stability.
+    - Requirement: Test must FAIL on current codebase (red).
+  </action>
+
+  <action>
+    **Add Console Error Check:**
+    - Test must assert: `ZERO` console errors.
+    - Reference: `tests/e2e/backtest.console.e2e.spec.ts`
+  </action>
+
+  <check if="test passed unexpectedly">
+    <critical>The test PASSED but should have FAILED. Do not proceed.</critical>
+    <action>Refine the test case to correctly reproduce the bug conditions.</action>
+    <action>Ensure you are testing the BROKEN state.</action>
+  </check>
+
+  <action>
+    **Document in Ticket:**
+    - Add test case description to `## Tests`.
+    - Link to the new test file.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: TDD: Failing E2E Test**
+    🔴 Created failing test (Red state confirmed)
+    📋 Documented test case in ticket
+    
+    ➡️ **Beginning Step 3: Clarify Requirements (Optional)**
+  </output>
+</step>
+
+<step n="3" goal="Clarify Requirements (Optional)">
+  <action>
+    If requirements are ambiguous:
+    - Add `questions.items` to ticket frontmatter.
+    - Ask user/stakeholder.
+    - Update ACs when answered.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Clarify Requirements (Optional)**
+    ❓ Resolved any ambiguities (if needed)
+    
+    ➡️ **Beginning Step 4: Fix & Implement**
+  </output>
+</step>
+
+<step n="4" goal="Fix & Implement">
+  <action>
+    **Implement Fix:**
+    - Write minimal code to pass the test (Green).
+    - Prototype bias: avoid overengineering.
+  </action>
+  <action>
+    **Log Progress:**
+    - Update `## Dev Agent Record` in ticket.
+    - Update `### File List`.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Fix & Implement**
+    🟢 Implemented minimal fix (test now passes)
+    📝 Logged progress in ticket
+    
+    ➡️ **Beginning Step 5: Final Verification & Evidence**
+  </output>
+</step>
+
+<step n="5" goal="Final Verification & Evidence">
+  <critical>Do not mark done without these artifacts.</critical>
+  
+  <action>
+    **Capture Screenshot of FIXED page:**
+    1. Navigate to fixed page.
+    2. Screenshot: `mcp_playwright_browser_take_screenshot`
+    3. Save to: `tests/results/bug-fixes/BUG-YYYYMMDD-<slug>-FIXED.png`
+  </action>
+
+  <check if="fixed screenshot missing">
+    <action>Go back and capture the screenshot.</action>
+  </check>
+
+  <action>
+    **Verify Zero Console Errors:**
+    - Run the console error test created in Step 2.
+    - Ensure it passes (0 errors).
+  </action>
+
+  <check if="console errors exist">
+    <action>Fix the errors.</action>
+    <action>Re-run verification.</action>
+  </check>
+
+  <action>
+    **Auto-Restart Check:**
+    - If config/env/routes changed, restart dev server and Re-Run tests.
+  </action>
+
+  <output>
+    ✅ **Ending Step 5: Final Verification & Evidence**
+    📸 Captured fixed state screenshot
+    ✅ Verified zero console errors
+    
+    ➡️ **Beginning Step 6: Bug Report Summary & Handoff**
+  </output>
+</step>
+
+<step n="6" goal="Bug Report Summary & Handoff">
+  <action>
+    **Compile Summary:**
+    Provide a final structured summary confirming strict adherence to the workflow.
+  </action>
+
+  <output>
+    ### 🐞 Bug Fix Summary
+    
+    **1. Root Cause Resolution**
+    - **Issue:** [One sentence summary of the root cause]
+    - **Fix:** [One sentence summary of the fix implementation]
+    
+    **2. Test Coverage (TDD)**
+    - [x] Failing Test Created First: `[Path to test file]`
+    - [x] Test Failed Initially (Red state confirmed)
+    - [x] Test Passes Now (Green state confirmed)
+    
+    **3. Visual Evidence**
+    - [x] Broken Screenshot: `[Link]`
+    - [x] Fixed Screenshot: `[Link]`
+    
+    **4. Quality Gates**
+    - [x] Console Errors: Verified ZERO (0)
+    - [x] Docs Discoverability: Verified (`[Bug ID]`)
+    
+    **5. Artifacts**
+    - Ticket: `[Link to Bug Ticket]` //Links should be 
+    - Status: **Review**
+  </output>
+</step>
+
+</workflow>

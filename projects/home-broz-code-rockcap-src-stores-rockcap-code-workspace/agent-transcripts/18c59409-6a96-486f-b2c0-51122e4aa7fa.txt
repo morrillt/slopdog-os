@@ -1,0 +1,199 @@
+user:
+<cursor_commands>
+
+--- Cursor Command: broz/plan ---
+Activate Plan Mode. (Trigger: `broz:plan`)
+
+Do this EXACTLY in order:
+1) Read `plans/context.yaml`
+2) Set `project.current_mode: plan` in `plans/context.yaml` (PLAN is planning only)
+3) Read `.cursor/rules/broz/mode.plan.mdc`
+4) Follow the mode's `<agent-activation>` steps
+5) Display the numbered menu and STOP (wait for user choice)
+
+Hard rule: NEVER modify product code in PLAN.
+
+--- End Command ---
+</cursor_commands>
+<user_query>
+/broz/plan 
+</user_query>
+
+assistant:
+<think>
+The user wants to activate Plan Mode using the `/broz/plan` command. According to the command instructions, I need to:
+
+1. Read `plans/context.yaml`
+2. Set `project.current_mode: plan` in `plans/context.yaml`
+3. Read `.cursor/rules/broz/mode.plan.mdc`
+4. Follow the mode's `<agent-activation>` steps
+5. Display the numbered menu and STOP (wait for user choice)
+
+Let me start by reading the context file and the mode plan rule.
+</think>
+Activating Plan Mode. Reading context and mode rules.
+
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/plans/context.yaml
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/.cursor/rules/broz/mode.plan.mdc
+
+[Tool result] read_file
+
+[Tool result] read_file
+
+assistant:
+<think>
+Now I need to:
+1. Update `plans/context.yaml` to set `project.current_mode: plan`
+2. Summarize the strategic situation (Current Epic status)
+3. Present the menu as a numbered list
+
+Let me first update the context file, then check what epic is currently active to provide a summary.
+</think>
+Updating context to Plan Mode and summarizing the current strategic situation:
+
+[Tool call] search_replace
+  file_path: /home/broz/code/rockcap/plans/context.yaml
+  old_string: project:
+  name: "RockCap Strategy Analysis"
+  current_mode: "task"
+  new_string: project:
+  name: "RockCap Strategy Analysis"
+  current_mode: "plan"
+[Tool call] codebase_search
+  query: What is EPIC-003 about? What is the epic description and status?
+  target_directories: ["plans"]
+
+[Tool result] search_replace
+
+[Tool result] codebase_search
+
+assistant:
+<think>
+Let me search for EPIC-003 files directly.
+</think>
+
+
+[Tool call] glob_file_search
+  glob_pattern: **/EPIC-003*.md
+
+[Tool result] glob_file_search
+
+assistant:
+<think>
+Let me read the PLAN.md file for EPIC-003 to understand the epic status.
+</think>
+
+
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/plans/epics/EPIC-003-bulletproof-backtest/PLAN.md
+
+[Tool result] read_file
+
+assistant:
+<think>
+Good! Now I have the context. Let me provide a summary of the strategic situation and then display the menu. According to the mode.plan.mdc, I need to:
+1. Summarize the strategic situation (Current Epic status)
+2. Present the menu as a numbered list
+
+The current epic is EPIC-003 "Bulletproof backtest epic" and the current ticket is TICKET-009 (docs-rules-system) which is "In Progress". The next ticket is TICKET-002 (strategy-correctness-refactor).
+</think>
+**Plan Mode activated** (Tyrion Lannister persona)
+
+## Strategic situation
+
+**Current Epic:** EPIC-003 — Bulletproof backtest epic
+
+**Goal:** Make strategy comparisons trustworthy and experiment runs repeatable.
+
+**Current status:**
+- **Active ticket:** TICKET-009 (docs-rules-system) — In Progress
+- **Next ticket:** TICKET-002 (strategy-correctness-refactor)
+- **Epic progress:** Ticket 3.1 (Unit tests + fixtures) is complete; remaining work focuses on strategy correctness, experiment runner, and documentation alignment
+
+**Context:** The epic addresses correctness gaps in the strategy system (ORB-R time handling, VWAP performance, stop sequencing) and aims to create a unified experiment runner with rich metrics.
+
+---
+
+## Plan Mode menu
+
+1. New Epic — Create a new epic
+2. Edit Epic — Modify the current epic
+3. Shard Tickets — Break down a ticket into smaller tickets
+4. Add Ticket — Add a new ticket to the current epic
+5. Validate Ticket — Validate ticket structure and ACs
+6. Generate Ticket Context — Generate context for a ticket
+7. Mark Ticket Ready — Mark a ticket as ready for build
+
+Type the number (1–7) to select an action.
+
+user:
+<user_query>
+4
+</user_query>
+
+assistant:
+<think>
+The user selected option 4, which is "Add Ticket". According to the mode.plan.mdc file, this should load the workflow rule `.cursor/rules/broz/workflows/plan/add_ticket.mdc` and run the "Workflow: Plan > Add Ticket".
+
+Let me read that workflow rule to understand what I need to do.
+</think>
+Loading the "Add Ticket" workflow.
+
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/add_ticket.mdc
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/plans/templates/ticket.md
+
+[Tool result] read_file
+
+[Tool result] read_file
+
+assistant:
+<think>
+Now I need to:
+1. Prompt the user for Ticket Title, User Story (Role/Action/Benefit), and key Requirements
+2. Generate the next TICKET ID
+3. Create the ticket file
+4. Update the Epic's PLAN.md
+5. Validate the ticket
+
+Let me first check what tickets already exist in EPIC-003 to determine the next ticket number.
+</think>
+Checking existing tickets in EPIC-003 to determine the next ticket ID:
+
+[Tool call] list_dir
+  target_directory: /home/broz/code/rockcap/plans/epics/EPIC-003-bulletproof-backtest
+[Tool call] list_dir
+  target_directory: /home/broz/code/rockcap/plans/tickets/EPIC-003-bulletproof-backtest
+
+[Tool result] list_dir
+
+[Tool result] list_dir
+
+assistant:
+<think>
+Looking at the tickets, I see:
+- TICKET-001 through TICKET-004 exist
+- TICKET-006, TICKET-007, TICKET-008, TICKET-009 exist
+- TICKET-005 is missing, so the next available would be TICKET-010
+
+But wait, let me check the PLAN.md to see what tickets are listed there and understand the numbering scheme better.
+</think>
+Next ticket ID: TICKET-010 (TICKET-001 through TICKET-009 exist).
+
+Please provide:
+1. Ticket title (short, descriptive)
+2. User story:
+   - Role: Who is this for?
+   - Action: What do they want to do?
+   - Benefit: Why?
+3. Key requirements (what must be delivered)
+
+Example:
+- Title: "Add dark mode toggle"
+- User story: "As a user, I want to toggle dark mode, so that I can reduce eye strain in low-light conditions"
+- Requirements: "Toggle button in settings, persist preference, apply theme immediately"
+
+What ticket would you like to add?

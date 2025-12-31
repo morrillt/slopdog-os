@@ -1,0 +1,67 @@
+---
+description: "Workflow: Add a single ticket to the current Epic"
+globs: []
+---
+# Workflow: Plan > Add Ticket
+
+<critical>TDD is CRUCIAL: The first subtask MUST be building failing tests.</critical>
+<critical>The last task MUST be validating tests pass.</critical>
+<critical>Tickets MUST have high-level test case descriptions.</critical>
+
+<workflow>
+
+<step n="1" goal="Gather Requirements">
+  <action>
+    **Prompt User**:
+    - Ticket Title
+    - User Story (Role/Action/Benefit)
+    - Key Requirements
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Gather Requirements**
+    📝 Collected title, user story, and requirements
+    
+    ➡️ **Beginning Step 2: Draft Ticket**
+  </output>
+</step>
+
+<step n="2" goal="Draft Ticket">
+  <action>
+    **Generate Content**:
+    - ID: `TICKET-XXX` (Next available)
+    - Template: `plans/templates/ticket.md`
+    - Path: `plans/epics/<EPIC>/` or `plans/tickets/`
+  </action>
+
+  <action>
+    **Enforce TDD Planning**:
+    - **First Subtask**: "Create failing test(s) (TDD)"
+    - **Last Subtask**: "Run and validate tests pass"
+    - **Test Section**: Populate E2E/Unit test concepts.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Draft Ticket**
+    📋 Generated ticket from template
+    🔴 Enforced TDD structure (failing tests first)
+    
+    ➡️ **Beginning Step 3: Finalize & Output**
+  </output>
+</step>
+
+<step n="3" goal="Finalize & Output">
+  <action>
+    **Write File**:
+    - Save the markdown file.
+  </action>
+
+  <output>
+    ### Ticket Added
+    - **ID**: [ID]
+    - **Title**: [Title]
+    - **Path**: [Path]
+  </output>
+</step>
+
+</workflow>

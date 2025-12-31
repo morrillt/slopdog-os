@@ -1,0 +1,1085 @@
+### Result
+undefined
+
+### Ran Playwright code
+await page.evaluate('() => {\n  return window.__BACKTEST_TRADES__;\n}');
+
+### New console messages
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​Preloads @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​HTTPAccessErrorFallback @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] ​NotFound @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​RootLayout @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [LOG] [BacktestUI] chart script loaded @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] Waiting @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Event: load @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [LOG] [useBacktest] Loaded 1800 1s candles for 2025-10-17 @ http://localhost:3000/_next/static/chunk...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Generating algo trades for 2025-10-17 with pt 33 sl 7 trg 6 maxRT 1 strategy stra...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [Strategy12.8] STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.8 @ http://localhost:3000/_n...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [Strategy12.8] Inputs: JSHandle@object @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8] 9:35 Transition: @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG] [Strategy12.8]   9:35 candle index: 300 @ http://localhost:3000/_next/static/chunks/node_modul...
+- [LOG] [Strategy12.8]   Original start price (9:30): 24736.25 @ http://localhost:3000/_next/static/ch...
+- [LOG] [Strategy12.8]   New start price (9:35): 24780.25 @ http://localhost:3000/_next/static/chunks/...
+- [LOG] [Strategy12.8] Initial Triggers (before 9:35): @ http://localhost:3000/_next/static/chunks/nod...
+- [LOG] [Strategy12.8]   Long Trigger  = 24736.25 + 6 = 24742.25 @ http://localhost:3000/_next/static/...
+- [LOG] [Strategy12.8]   Short Trigger = 24736.25 - 6 = 24730.25 @ http://localhost:3000/_next/static/...
+- [LOG] [Strategy12.8] ---------------------------------------------------------------------- @ http:/...
+- [LOG] [Strategy12.8] ROUND TRIP #1 (Session #1) - Scanning from candle[0] @ http://localhost:3000/_n...
+- [LOG] [Strategy12.8:Alternate] ROUND TRIP #1: No alternating logic (lastExitNote=null, lastTradeDire...
+- [LOG] [Strategy12.8:Trigger] Candle[0] 2025-10-17T09:30:00-04:00: high=24739 (>=24742.25? false), lo...
+- [LOG] 
+================================================================================ @ http://loc...
+- [LOG] 🔍 FIRST RT TRADE - INTRABAR ANALYSIS FOR CANDLE[0] @ http://localhost:3000/_next/static/chunk...
+- [LOG] ================================================================================ @ http://loca...
+- [LOG] Candle Details: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._....
+- [LOG]   Time: 2025-10-17T09:30:00-04:00 @ http://localhost:3000/_next/static/chunks/node_modules_nex...
+- [LOG]   Open:  24736.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   High:  24739 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._.j...
+- [LOG]   Low:   24721.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Close: 24725.5 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG] 
+Trigger Levels: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG]   Long Trigger:  24742.25 (hit: false) @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG]   Short Trigger: 24730.25 (hit: true) @ http://localhost:3000/_next/static/chunks/node_modules...
+- [LOG] 
+Candle Color: RED (C < O) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [LOG]   Path will be: O→H→L→C @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG] ================================================================================
+ @ http://loc...
+- [LOG] [Strategy12.8:Trigger] Candle[0] SHORT trigger hit and accepted @ http://localhost:3000/_next/...
+- [LOG] [Strategy12.8]   Candle[0] SHORT trigger hit @ http://localhost:3000/_next/static/chunks/node_...
+- [LOG] [Strategy12.8]   Entry: 24729.25 at 2025-10-17T09:30:00-04:00 @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Entry calculation: short trigger (24730.25) + slippage (1) = 24729.25 @ http:...
+- [LOG] 
+================================================================================ @ http://loc...
+- [LOG] 🎯 FIRST RT TRADE - ENTRY JUSTIFICATION (INTRABAR ANALYSIS) @ http://localhost:3000/_next/stat...
+- [LOG] ================================================================================ @ http://loca...
+- [LOG] 
+Trade Direction: SHORT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG] Entry Level (Trigger): 24730.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG] Entry Price (with slippage): 24729.25 @ http://localhost:3000/_next/static/chunks/node_modules...
+- [LOG] 
+Candle at Trigger Index [0]: @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [LOG]   Time:  2025-10-17T09:30:00-04:00 @ http://localhost:3000/_next/static/chunks/node_modules_ne...
+- [LOG]   Open:  24736.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   High:  24739 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._.j...
+- [LOG]   Low:   24721.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Close: 24725.5 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG] 
+Why This Entry Occurred: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [LOG]   1. Candle range [24721.75, 24739] contains entry level 24730.25 @ http://localhost:3000/_nex...
+- [LOG]   2. Low (24721.75) <= 24730.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG]   3. Entry is filled at 24729.25 (trigger + slippage) @ http://localhost:3000/_next/static/chu...
+- [LOG] ================================================================================
+ @ http://loc...
+- [LOG] [Strategy12.8]   TP: 24703.25 (based on currentStartPrice: 24736.25), SL: 24737.25 @ http://lo...
+- [LOG] 
+================================================================================ @ http://loc...
+- [LOG] 🔍 FIRST RT TRADE - INTRABAR EXIT ANALYSIS FOR ENTRY CANDLE[0] @ http://localhost:3000/_next/s...
+- [LOG] ================================================================================ @ http://loca...
+- [LOG] 
+Scanning Entry Candle for Same-Bar Exit: @ http://localhost:3000/_next/static/chunks/node_mod...
+- [LOG]   Time:  2025-10-17T09:30:00-04:00 @ http://localhost:3000/_next/static/chunks/node_modules_ne...
+- [LOG]   Open:  24736.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   High:  24739 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._.j...
+- [LOG]   Low:   24721.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Close: 24725.5 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG] 
+Entry Details: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._....
+- [LOG]   Direction: SHORT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0...
+- [LOG]   Entry Level: 24730.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG]   Entry Price: 24729.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG] 
+Exit Levels: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._.js...
+- [LOG]   TP Price: 24703.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122...
+- [LOG]   SL Price: 24737.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122...
+- [LOG] 
+📊 INTRABAR RESOLUTION RESULT: @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG]   Event: FILL_AND_SURVIVE @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [LOG]   Assumed Path: O→H→H→L→L→C @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [LOG]   Entry Fill: 24729.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a81...
+- [LOG]   Entry Path Index: 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a812...
+- [LOG]   Exit Path Index: undefined @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] 
+🎯 JUSTIFICATION: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0...
+- [LOG]   ✅ Entry occurred at 24729.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [LOG]   ⏭️  No exit on this candle - trade survives to next candle @ http://localhost:3000/_next/sta...
+- [LOG]   📍 Path: O→H→H→L→L→C @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a81...
+- [LOG]   📍 Entry at path segment 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] ================================================================================
+ @ http://loc...
+- [LOG] [Strategy12.8:Exit] Candle[0]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Contin...
+- [LOG] [Strategy12.8:Exit] Candle[1] 2025-10-17T09:30:01-04:00: Checking SHORT exit - low=24724.5 (<=...
+- [LOG] [Strategy12.8:Exit] Candle[1]: No exit conditions met @ http://localhost:3000/_next/static/chu...
+- [LOG] [Strategy12.8:Exit] Candle[2] 2025-10-17T09:30:02-04:00: Checking SHORT exit - low=24727.25 (<...
+- [LOG] [Strategy12.8:Exit] Candle[2]: No exit conditions met @ http://localhost:3000/_next/static/chu...
+- [LOG] [Strategy12.8:Exit] Candle[3] 2025-10-17T09:30:03-04:00: Checking SHORT exit - low=24734 (<=24...
+- [LOG] [Strategy12.8:Exit] Candle[3]: SL Hit. Exit price: 24737.25 @ http://localhost:3000/_next/stat...
+- [LOG] [Strategy12.8]   Exit: SL Hit at candle[3], price=24737.25 @ http://localhost:3000/_next/stati...
+- [LOG] [Strategy12.8]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] [Strategy12.8]   Stored last trade: short exited with SL Hit @ http://localhost:3000/_next/sta...
+- [LOG] [Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=3, triggerCandleIndex=0 @ http...
+- [LOG] [Strategy12.8:Reentry] Checking exit candle[3] for re-eligibility: open=24735.75, high=24746.5...
+- [LOG] [Strategy12.8:Reentry] Zone boundaries: shortTrigger=24730.25, longTrigger=24742.25 @ http://l...
+- [LOG] [Strategy12.8:Reentry] Exit candle zone checks: lowInZone=true, highInZone=false, openInZone=t...
+- [LOG] [Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[3]! Price is in zone. @ http://lo...
+- [LOG] [Strategy12.8]   Re-eligibility found on exit candle[3] - price between triggers @ http://loca...
+- [LOG] [Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for nex...
+- [LOG] [Strategy12.8]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35. @ http://l...
+- [LOG] [Strategy12.8] *** 9:35 RESET TRIGGERED (No trade active) *** @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Start price switched to 24780.25 (at Reset) @ http://localhost:3000/_next/sta...
+- [LOG] [Strategy12.8] ---------------------------------------------------------------------- @ http:/...
+- [LOG] [Strategy12.8] ROUND TRIP #2 (Session #1) - Scanning from candle[300] @ http://localhost:3000/...
+- [LOG] [Strategy12.8:Alternate] ROUND TRIP #2: No alternating logic (lastExitNote=SL Hit, lastTradeDi...
+- [LOG] [Strategy12.8:Trigger] Candle[300] 2025-10-17T09:35:00-04:00: high=24780.75 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[300]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[301] 2025-10-17T09:35:01-04:00: high=24780 (>=24786.25? false), ...
+- [LOG] [Strategy12.8:Trigger] Candle[301]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[302] 2025-10-17T09:35:02-04:00: high=24777.25 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[302]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[303] 2025-10-17T09:35:03-04:00: high=24779 (>=24786.25? false), ...
+- [LOG] [Strategy12.8:Trigger] Candle[303]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[304] 2025-10-17T09:35:04-04:00: high=24778 (>=24786.25? false), ...
+- [LOG] [Strategy12.8:Trigger] Candle[304]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[305] 2025-10-17T09:35:05-04:00: high=24781.25 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[305]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[306] 2025-10-17T09:35:06-04:00: high=24783.25 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[306]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[307] 2025-10-17T09:35:07-04:00: high=24782 (>=24786.25? false), ...
+- [LOG] [Strategy12.8:Trigger] Candle[307]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[308] 2025-10-17T09:35:08-04:00: high=24777.75 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[308]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[309] 2025-10-17T09:35:09-04:00: high=24778.75 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[309]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[310] 2025-10-17T09:35:10-04:00: high=24783.5 (>=24786.25? false)...
+- [LOG] [Strategy12.8:Trigger] Candle[310]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[311] 2025-10-17T09:35:11-04:00: high=24784.25 (>=24786.25? false...
+- [LOG] [Strategy12.8:Trigger] Candle[311]: No trigger hit or blocked by alternating logic @ http://lo...
+- [LOG] [Strategy12.8:Trigger] Candle[312] 2025-10-17T09:35:12-04:00: high=24787.5 (>=24786.25? true),...
+- [LOG] [Strategy12.8:Trigger] Candle[312] LONG trigger hit and accepted @ http://localhost:3000/_next...
+- [LOG] [Strategy12.8]   Candle[312] LONG trigger hit @ http://localhost:3000/_next/static/chunks/node...
+- [LOG] [Strategy12.8]   Entry: 24787.25 at 2025-10-17T09:35:12-04:00 @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Entry calculation: long trigger (24786.25) + slippage (1) = 24787.25 @ http:/...
+- [LOG] [Strategy12.8]   TP: 24813.25 (based on currentStartPrice: 24780.25), SL: 24779.25 @ http://lo...
+- [LOG] [Strategy12.8:Exit] Candle[312]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Cont...
+- [LOG] [Strategy12.8:Exit] Candle[313] 2025-10-17T09:35:13-04:00: Checking LONG exit - high=24788.75 ...
+- [LOG] [Strategy12.8:Exit] Candle[313]: No exit conditions met @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8:Exit] Candle[314] 2025-10-17T09:35:14-04:00: Checking LONG exit - high=24788.25 ...
+- [LOG] [Strategy12.8:Exit] Candle[314]: No exit conditions met @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8:Exit] Candle[315] 2025-10-17T09:35:15-04:00: Checking LONG exit - high=24785 (>=...
+- [LOG] [Strategy12.8:Exit] Candle[315]: No exit conditions met @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8:Exit] Candle[316] 2025-10-17T09:35:16-04:00: Checking LONG exit - high=24783.5 (...
+- [LOG] [Strategy12.8:Exit] Candle[316]: SL Hit. Exit price: 24779.25 @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Exit: SL Hit at candle[316], price=24779.25 @ http://localhost:3000/_next/sta...
+- [LOG] [Strategy12.8]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] [Strategy12.8]   Stored last trade: long exited with SL Hit @ http://localhost:3000/_next/stat...
+- [LOG] [Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=316, triggerCandleIndex=312 @ ...
+- [LOG] [Strategy12.8:Reentry] Checking exit candle[316] for re-eligibility: open=24783.25, high=24783...
+- [LOG] [Strategy12.8:Reentry] Zone boundaries: shortTrigger=24774.25, longTrigger=24786.25 @ http://l...
+- [LOG] [Strategy12.8:Reentry] Exit candle zone checks: lowInZone=true, highInZone=true, openInZone=tr...
+- [LOG] [Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[316]! Price is in zone. @ http://...
+- [LOG] [Strategy12.8]   Re-eligibility found on exit candle[316] - price between triggers @ http://lo...
+- [LOG] [Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for nex...
+- [LOG] [Strategy12.8]   Max round trips (1) reached for current session. Done. @ http://localhost:300...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [Strategy12.8] GENERATION COMPLETE: 4 rows (2 round trips) @ http://localhost:3000/_next/stati...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1800 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1800 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+
+### Page state
+- Page URL: http://localhost:3000/backtest/2025-10-17?pt=33&sl=7&trg=6&strategy=strategy12.8
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- <changed> combobox "Strategy:" [ref=e19]:
+  - option "strategy12.7 - Baseline all the things, stable frontrunner since 12.7"
+  - option "strategy12.8 - Added handling the same 1 sec candle hitting all the lines coverage" [selected]
+  - option "strategy12.8.2 - layered in staggered tps"
+  - option "strategy12.8refactored - Refactored version of strategy12.8 with comprehensive logging"
+- <changed> combobox "PT:" [ref=e22]:
+  - option "1"
+  - option "2"
+  - option "3"
+  - option "4"
+  - option "5"
+  - option "6"
+  - option "7"
+  - option "8"
+  - option "9"
+  - option "10"
+  - option "11"
+  - option "12"
+  - option "13"
+  - option "14"
+  - option "15"
+  - option "16"
+  - option "17"
+  - option "18"
+  - option "19"
+  - option "20"
+  - option "21"
+  - option "22"
+  - option "23"
+  - option "24"
+  - option "25"
+  - option "26"
+  - option "27"
+  - option "28"
+  - option "29"
+  - option "30"
+  - option "31"
+  - option "32"
+  - option "33" [selected]
+  - option "34"
+  - option "35"
+  - option "36"
+  - option "37"
+  - option "38"
+  - option "39"
+  - option "40"
+  - option "41"
+  - option "42"
+  - option "43"
+  - option "44"
+  - option "45"
+  - option "46"
+  - option "47"
+  - option "48"
+  - option "49"
+  - option "50"
+- <changed> combobox "SL:" [ref=e25]:
+  - option "1"
+  - option "2"
+  - option "3"
+  - option "4"
+  - option "5"
+  - option "6"
+  - option "7" [selected]
+  - option "8"
+  - option "9"
+  - option "10"
+  - option "11"
+  - option "12"
+  - option "13"
+  - option "14"
+  - option "15"
+  - option "16"
+  - option "17"
+  - option "18"
+  - option "19"
+  - option "20"
+  - option "21"
+  - option "22"
+  - option "23"
+  - option "24"
+  - option "25"
+  - option "26"
+  - option "27"
+  - option "28"
+  - option "29"
+  - option "30"
+  - option "31"
+  - option "32"
+  - option "33"
+  - option "34"
+  - option "35"
+  - option "36"
+  - option "37"
+  - option "38"
+  - option "39"
+  - option "40"
+  - option "41"
+  - option "42"
+  - option "43"
+  - option "44"
+  - option "45"
+  - option "46"
+  - option "47"
+  - option "48"
+  - option "49"
+  - option "50"
+- <changed> combobox "TRG:" [ref=e28]:
+  - option "1"
+  - option "2"
+  - option "3"
+  - option "4"
+  - option "5"
+  - option "6" [selected]
+  - option "7"
+  - option "8"
+  - option "9"
+  - option "10"
+  - option "11"
+  - option "12"
+  - option "13"
+  - option "14"
+  - option "15"
+  - option "16"
+  - option "17"
+  - option "18"
+  - option "19"
+  - option "20"
+  - option "21"
+  - option "22"
+  - option "23"
+  - option "24"
+  - option "25"
+  - option "26"
+  - option "27"
+  - option "28"
+  - option "29"
+  - option "30"
+  - option "31"
+  - option "32"
+  - option "33"
+  - option "34"
+  - option "35"
+  - option "36"
+  - option "37"
+  - option "38"
+  - option "39"
+  - option "40"
+  - option "41"
+  - option "42"
+  - option "43"
+  - option "44"
+  - option "45"
+  - option "46"
+  - option "47"
+  - option "48"
+  - option "49"
+  - option "50"
+- <changed> combobox "Max Trades:" [ref=e31]:
+  - option "1 RT" [selected]
+  - option "2 RTs"
+  - option "3 RTs"
+  - option "5 RTs"
+  - option "6 RTs"
+- <changed> generic [ref=e36]: "Date: 2025-10-17"
+- <changed> generic [ref=e38]:
+  - generic [ref=e39]:
+    - generic [ref=e40]:
+      - button "◀ Prev" [ref=e41]
+      - button "Next ▶" [ref=e42]
+      - generic [ref=e43]:
+        - ref=e44 [unchanged]
+        - combobox "Current day" [ref=e45]:
+          - option "Select day" [disabled]
+          - option "2023-12-05"
+          - option "2023-12-06"
+          - option "2023-12-07"
+          - option "2023-12-08"
+          - option "2023-12-11"
+          - option "2023-12-12"
+          - option "2023-12-13"
+          - option "2023-12-14"
+          - option "2023-12-15"
+          - option "2023-12-18"
+          - option "2023-12-19"
+          - option "2023-12-20"
+          - option "2023-12-21"
+          - option "2023-12-22"
+          - option "2023-12-26"
+          - option "2023-12-27"
+          - option "2023-12-28"
+          - option "2023-12-29"
+          - option "2024-01-02"
+          - option "2024-01-03"
+          - option "2024-01-04"
+          - option "2024-01-05"
+          - option "2024-01-08"
+          - option "2024-01-09"
+          - option "2024-01-10"
+          - option "2024-01-11"
+          - option "2024-01-12"
+          - option "2024-01-15"
+          - option "2024-01-16"
+          - option "2024-01-17"
+          - option "2024-01-18"
+          - option "2024-01-19"
+          - option "2024-01-22"
+          - option "2024-01-23"
+          - option "2024-01-24"
+          - option "2024-01-25"
+          - option "2024-01-26"
+          - option "2024-01-29"
+          - option "2024-01-30"
+          - option "2024-01-31"
+          - option "2024-02-01"
+          - option "2024-02-02"
+          - option "2024-02-05"
+          - option "2024-02-06"
+          - option "2024-02-07"
+          - option "2024-02-08"
+          - option "2024-02-09"
+          - option "2024-02-12"
+          - option "2024-02-13"
+          - option "2024-02-14"
+          - option "2024-02-15"
+          - option "2024-02-16"
+          - option "2024-02-19"
+          - option "2024-02-20"
+          - option "2024-02-21"
+          - option "2024-02-22"
+          - option "2024-02-23"
+          - option "2024-02-26"
+          - option "2024-02-27"
+          - option "2024-02-28"
+          - option "2024-02-29"
+          - option "2024-03-01"
+          - option "2024-03-04"
+          - option "2024-03-05"
+          - option "2024-03-06"
+          - option "2024-03-07"
+          - option "2024-03-08"
+          - option "2024-03-11"
+          - option "2024-03-12"
+          - option "2024-03-13"
+          - option "2024-03-14"
+          - option "2024-03-15"
+          - option "2024-03-18"
+          - option "2024-03-19"
+          - option "2024-03-20"
+          - option "2024-03-21"
+          - option "2024-03-22"
+          - option "2024-03-25"
+          - option "2024-03-26"
+          - option "2024-03-27"
+          - option "2024-03-28"
+          - option "2024-04-01"
+          - option "2024-04-02"
+          - option "2024-04-03"
+          - option "2024-04-04"
+          - option "2024-04-05"
+          - option "2024-04-08"
+          - option "2024-04-09"
+          - option "2024-04-10"
+          - option "2024-04-11"
+          - option "2024-04-12"
+          - option "2024-04-15"
+          - option "2024-04-16"
+          - option "2024-04-17"
+          - option "2024-04-18"
+          - option "2024-04-19"
+          - option "2024-04-22"
+          - option "2024-04-23"
+          - option "2024-04-24"
+          - option "2024-04-25"
+          - option "2024-04-26"
+          - option "2024-04-29"
+          - option "2024-04-30"
+          - option "2024-05-01"
+          - option "2024-05-02"
+          - option "2024-05-03"
+          - option "2024-05-06"
+          - option "2024-05-07"
+          - option "2024-05-08"
+          - option "2024-05-09"
+          - option "2024-05-10"
+          - option "2024-05-13"
+          - option "2024-05-14"
+          - option "2024-05-15"
+          - option "2024-05-16"
+          - option "2024-05-17"
+          - option "2024-05-20"
+          - option "2024-05-21"
+          - option "2024-05-22"
+          - option "2024-05-23"
+          - option "2024-05-24"
+          - option "2024-05-27"
+          - option "2024-05-28"
+          - option "2024-05-29"
+          - option "2024-05-30"
+          - option "2024-05-31"
+          - option "2024-06-03"
+          - option "2024-06-04"
+          - option "2024-06-05"
+          - option "2024-06-06"
+          - option "2024-06-07"
+          - option "2024-06-10"
+          - option "2024-06-11"
+          - option "2024-06-12"
+          - option "2024-06-13"
+          - option "2024-06-14"
+          - option "2024-06-17"
+          - option "2024-06-18"
+          - option "2024-06-19"
+          - option "2024-06-20"
+          - option "2024-06-21"
+          - option "2024-06-24"
+          - option "2024-06-25"
+          - option "2024-06-26"
+          - option "2024-06-27"
+          - option "2024-06-28"
+          - option "2024-07-01"
+          - option "2024-07-02"
+          - option "2024-07-03"
+          - option "2024-07-04"
+          - option "2024-07-05"
+          - option "2024-07-08"
+          - option "2024-07-09"
+          - option "2024-07-10"
+          - option "2024-07-11"
+          - option "2024-07-12"
+          - option "2024-07-15"
+          - option "2024-07-16"
+          - option "2024-07-17"
+          - option "2024-07-18"
+          - option "2024-07-19"
+          - option "2024-07-22"
+          - option "2024-07-23"
+          - option "2024-07-24"
+          - option "2024-07-25"
+          - option "2024-07-26"
+          - option "2024-07-29"
+          - option "2024-07-30"
+          - option "2024-07-31"
+          - option "2024-08-01"
+          - option "2024-08-02"
+          - option "2024-08-05"
+          - option "2024-08-06"
+          - option "2024-08-07"
+          - option "2024-08-08"
+          - option "2024-08-09"
+          - option "2024-08-12"
+          - option "2024-08-13"
+          - option "2024-08-14"
+          - option "2024-08-15"
+          - option "2024-08-16"
+          - option "2024-08-19"
+          - option "2024-08-20"
+          - option "2024-08-21"
+          - option "2024-08-22"
+          - option "2024-08-23"
+          - option "2024-08-26"
+          - option "2024-08-27"
+          - option "2024-08-28"
+          - option "2024-08-29"
+          - option "2024-08-30"
+          - option "2024-09-02"
+          - option "2024-09-03"
+          - option "2024-09-04"
+          - option "2024-09-05"
+          - option "2024-09-06"
+          - option "2024-09-09"
+          - option "2024-09-10"
+          - option "2024-09-11"
+          - option "2024-09-12"
+          - option "2024-09-13"
+          - option "2024-09-16"
+          - option "2024-09-17"
+          - option "2024-09-18"
+          - option "2024-09-19"
+          - option "2024-09-20"
+          - option "2024-09-23"
+          - option "2024-09-24"
+          - option "2024-09-25"
+          - option "2024-09-26"
+          - option "2024-09-27"
+          - option "2024-09-30"
+          - option "2024-10-01"
+          - option "2024-10-02"
+          - option "2024-10-03"
+          - option "2024-10-04"
+          - option "2024-10-07"
+          - option "2024-10-08"
+          - option "2024-10-09"
+          - option "2024-10-10"
+          - option "2024-10-11"
+          - option "2024-10-14"
+          - option "2024-10-15"
+          - option "2024-10-16"
+          - option "2024-10-17"
+          - option "2024-10-18"
+          - option "2024-10-21"
+          - option "2024-10-22"
+          - option "2024-10-23"
+          - option "2024-10-24"
+          - option "2024-10-25"
+          - option "2024-10-28"
+          - option "2024-10-29"
+          - option "2024-10-30"
+          - option "2024-10-31"
+          - option "2024-11-01"
+          - option "2024-11-04"
+          - option "2024-11-05"
+          - option "2024-11-06"
+          - option "2024-11-07"
+          - option "2024-11-08"
+          - option "2024-11-11"
+          - option "2024-11-12"
+          - option "2024-11-13"
+          - option "2024-11-14"
+          - option "2024-11-15"
+          - option "2024-11-18"
+          - option "2024-11-19"
+          - option "2024-11-20"
+          - option "2024-11-21"
+          - option "2024-11-22"
+          - option "2024-11-25"
+          - option "2024-11-26"
+          - option "2024-11-27"
+          - option "2024-11-28"
+          - option "2024-11-29"
+          - option "2024-12-02"
+          - option "2024-12-03"
+          - option "2024-12-04"
+          - option "2024-12-05"
+          - option "2024-12-06"
+          - option "2024-12-09"
+          - option "2024-12-10"
+          - option "2024-12-11"
+          - option "2024-12-12"
+          - option "2024-12-13"
+          - option "2024-12-16"
+          - option "2024-12-17"
+          - option "2024-12-18"
+          - option "2024-12-19"
+          - option "2024-12-20"
+          - option "2024-12-23"
+          - option "2024-12-24"
+          - option "2024-12-26"
+          - option "2024-12-27"
+          - option "2024-12-30"
+          - option "2024-12-31"
+          - option "2025-01-02"
+          - option "2025-01-03"
+          - option "2025-01-06"
+          - option "2025-01-07"
+          - option "2025-01-08"
+          - option "2025-01-10"
+          - option "2025-01-13"
+          - option "2025-01-14"
+          - option "2025-01-15"
+          - option "2025-01-16"
+          - option "2025-01-17"
+          - option "2025-01-20"
+          - option "2025-01-21"
+          - option "2025-01-22"
+          - option "2025-01-23"
+          - option "2025-01-24"
+          - option "2025-01-27"
+          - option "2025-01-28"
+          - option "2025-01-29"
+          - option "2025-01-30"
+          - option "2025-01-31"
+          - option "2025-02-03"
+          - option "2025-02-04"
+          - option "2025-02-05"
+          - option "2025-02-06"
+          - option "2025-02-07"
+          - option "2025-02-10"
+          - option "2025-02-11"
+          - option "2025-02-12"
+          - option "2025-02-13"
+          - option "2025-02-14"
+          - option "2025-02-17"
+          - option "2025-02-18"
+          - option "2025-02-19"
+          - option "2025-02-20"
+          - option "2025-02-21"
+          - option "2025-02-24"
+          - option "2025-02-25"
+          - option "2025-02-26"
+          - option "2025-02-27"
+          - option "2025-02-28"
+          - option "2025-03-03"
+          - option "2025-03-04"
+          - option "2025-03-05"
+          - option "2025-03-06"
+          - option "2025-03-07"
+          - option "2025-03-10"
+          - option "2025-03-11"
+          - option "2025-03-12"
+          - option "2025-03-13"
+          - option "2025-03-14"
+          - option "2025-03-17"
+          - option "2025-03-18"
+          - option "2025-03-19"
+          - option "2025-03-20"
+          - option "2025-03-21"
+          - option "2025-03-24"
+          - option "2025-03-25"
+          - option "2025-03-26"
+          - option "2025-03-27"
+          - option "2025-03-28"
+          - option "2025-03-31"
+          - option "2025-04-01"
+          - option "2025-04-02"
+          - option "2025-04-03"
+          - option "2025-04-04"
+          - option "2025-04-07"
+          - option "2025-04-08"
+          - option "2025-04-09"
+          - option "2025-04-10"
+          - option "2025-04-11"
+          - option "2025-04-14"
+          - option "2025-04-15"
+          - option "2025-04-16"
+          - option "2025-04-17"
+          - option "2025-04-21"
+          - option "2025-04-22"
+          - option "2025-04-23"
+          - option "2025-04-24"
+          - option "2025-04-25"
+          - option "2025-04-28"
+          - option "2025-04-29"
+          - option "2025-04-30"
+          - option "2025-05-01"
+          - option "2025-05-02"
+          - option "2025-05-05"
+          - option "2025-05-06"
+          - option "2025-05-07"
+          - option "2025-05-08"
+          - option "2025-05-09"
+          - option "2025-05-12"
+          - option "2025-05-13"
+          - option "2025-05-14"
+          - option "2025-05-15"
+          - option "2025-05-16"
+          - option "2025-05-19"
+          - option "2025-05-20"
+          - option "2025-05-21"
+          - option "2025-05-22"
+          - option "2025-05-23"
+          - option "2025-05-26"
+          - option "2025-05-27"
+          - option "2025-05-28"
+          - option "2025-05-29"
+          - option "2025-05-30"
+          - option "2025-06-02"
+          - option "2025-06-03"
+          - option "2025-06-04"
+          - option "2025-06-05"
+          - option "2025-06-06"
+          - option "2025-06-09"
+          - option "2025-06-10"
+          - option "2025-06-11"
+          - option "2025-06-12"
+          - option "2025-06-13"
+          - option "2025-06-16"
+          - option "2025-06-17"
+          - option "2025-06-18"
+          - option "2025-06-19"
+          - option "2025-06-20"
+          - option "2025-06-23"
+          - option "2025-06-24"
+          - option "2025-06-25"
+          - option "2025-06-26"
+          - option "2025-06-27"
+          - option "2025-06-30"
+          - option "2025-07-01"
+          - option "2025-07-02"
+          - option "2025-07-03"
+          - option "2025-07-04"
+          - option "2025-07-07"
+          - option "2025-07-08"
+          - option "2025-07-09"
+          - option "2025-07-10"
+          - option "2025-07-11"
+          - option "2025-07-14"
+          - option "2025-07-15"
+          - option "2025-07-16"
+          - option "2025-07-17"
+          - option "2025-07-18"
+          - option "2025-07-21"
+          - option "2025-07-22"
+          - option "2025-07-23"
+          - option "2025-07-24"
+          - option "2025-07-25"
+          - option "2025-07-28"
+          - option "2025-07-29"
+          - option "2025-07-30"
+          - option "2025-07-31"
+          - option "2025-08-01"
+          - option "2025-08-04"
+          - option "2025-08-05"
+          - option "2025-08-06"
+          - option "2025-08-07"
+          - option "2025-08-08"
+          - option "2025-08-11"
+          - option "2025-08-12"
+          - option "2025-08-13"
+          - option "2025-08-14"
+          - option "2025-08-15"
+          - option "2025-08-18"
+          - option "2025-08-19"
+          - option "2025-08-20"
+          - option "2025-08-21"
+          - option "2025-08-22"
+          - option "2025-08-25"
+          - option "2025-08-26"
+          - option "2025-08-27"
+          - option "2025-08-28"
+          - option "2025-08-29"
+          - option "2025-09-01"
+          - option "2025-09-02"
+          - option "2025-09-03"
+          - option "2025-09-04"
+          - option "2025-09-05"
+          - option "2025-09-08"
+          - option "2025-09-09"
+          - option "2025-09-10"
+          - option "2025-09-11"
+          - option "2025-09-12"
+          - option "2025-09-15"
+          - option "2025-09-16"
+          - option "2025-09-17"
+          - option "2025-09-18"
+          - option "2025-09-19"
+          - option "2025-09-22"
+          - option "2025-09-23"
+          - option "2025-09-24"
+          - option "2025-09-25"
+          - option "2025-09-26"
+          - option "2025-09-29"
+          - option "2025-09-30"
+          - option "2025-10-01"
+          - option "2025-10-02"
+          - option "2025-10-03"
+          - option "2025-10-06"
+          - option "2025-10-07"
+          - option "2025-10-08"
+          - option "2025-10-09"
+          - option "2025-10-10"
+          - option "2025-10-13"
+          - option "2025-10-14"
+          - option "2025-10-15"
+          - option "2025-10-16"
+          - option "2025-10-17" [selected]
+          - option "2025-10-20"
+          - option "2025-10-21"
+          - option "2025-10-22"
+          - option "2025-10-23"
+          - option "2025-10-24"
+          - option "2025-10-27"
+          - option "2025-10-28"
+          - option "2025-10-29"
+          - option "2025-10-30"
+          - option "2025-10-31"
+          - option "2025-11-03"
+          - option "2025-11-04"
+          - option "2025-11-05"
+          - option "2025-11-06"
+          - option "2025-11-07"
+          - option "2025-11-10"
+          - option "2025-11-11"
+          - option "2025-11-12"
+          - option "2025-11-13"
+          - option "2025-11-14"
+          - option "2025-11-17"
+          - option "2025-11-18"
+          - option "2025-11-19"
+          - option "2025-11-20"
+          - option "2025-11-21"
+          - option "2025-11-24"
+          - option "2025-11-25"
+          - option "2025-11-26"
+          - option "2025-11-27"
+          - option "2025-11-28"
+          - option "2025-12-01"
+          - option "2025-12-02"
+          - option "2025-12-03"
+      - ref=e46 [unchanged]
+    - generic [ref=e49]: "Available days: 515"
+  - generic [ref=e50]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - ref=e54 [unchanged]
+        - generic [ref=e55]: "-16.00 pts"
+      - generic [ref=e56]:
+        - generic [ref=e182]: "Per Trade:"
+        - generic [ref=e183]: "-8.00 pts"
+      - generic [ref=e57]:
+        - ref=e58 [unchanged]
+        - generic [ref=e59]: "2"
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - ref=e64 [unchanged]
+        - generic [ref=e65]: "-38.00 pts"
+      - generic [ref=e66]:
+        - generic [ref=e184]: "Per Trade:"
+        - generic [ref=e185]: "-1.23 pts"
+      - generic [ref=e67]:
+        - ref=e68 [unchanged]
+        - generic [ref=e69]: "31"
+      - ref=e71 [unchanged]
+  - generic [ref=e72]:
+    - generic [ref=e73]:
+      - text: Line visibility
+      - generic [ref=e74]:
+        - ref=e75 [unchanged]
+        - ref=e78 [unchanged]
+        - ref=e81 [unchanged]
+        - generic [ref=e84]:
+          - checkbox "TP" [checked] [ref=e85]
+          - ref=e86 [unchanged]
+        - ref=e87 [unchanged]
+        - ref=e90 [unchanged]
+        - ref=e93 [unchanged]
+        - ref=e96 [unchanged]
+        - ref=e99 [unchanged]
+        - ref=e102 [unchanged]
+        - ref=e105 [unchanged]
+        - ref=e108 [unchanged]
+    - generic [ref=e187]: "Data source: static-1s"
+  - region "Price Chart" [ref=e111]:
+    - generic [ref=e112]:
+      - generic [ref=e113]: "Day 2025-10-17 · Series: candles"
+      - ref=e114 [unchanged]
+    - table [ref=e189]:
+      - row [ref=e190]:
+        - cell
+        - cell [ref=e191]
+        - cell [ref=e195]
+      - row [ref=e199]:
+        - cell
+        - cell [ref=e200]
+        - cell [ref=e204]
+    - ref=e117 [unchanged]
+  - region "Algorithmic Trades" [ref=e118]:
+    - generic [ref=e119]:
+      - ref=e120 [unchanged]
+      - generic [ref=e121]: 2 RTs · 4 rows
+    - table [ref=e123]:
+      - ref=e124 [unchanged]
+      - rowgroup [ref=e133]:
+        - row "1 10/17/2025, 09:30:00 ET Open Short 24729.25 1.00 — —" [ref=e207] [cursor=pointer]:
+          - cell "1" [ref=e208]
+          - cell "10/17/2025, 09:30:00 ET" [ref=e209]
+          - cell "Open Short" [ref=e210]
+          - cell "24729.25" [ref=e211]
+          - cell "1.00" [ref=e212]
+          - cell "—" [ref=e213]
+          - cell "—" [ref=e214]
+        - row "1 10/17/2025, 09:30:03 ET Close Short 24737.25 0.00 SL Hit -8.00" [ref=e215] [cursor=pointer]:
+          - cell "1" [ref=e216]
+          - cell "10/17/2025, 09:30:03 ET" [ref=e217]
+          - cell "Close Short" [ref=e218]
+          - cell "24737.25" [ref=e219]
+          - cell "0.00" [ref=e220]
+          - cell "SL Hit" [ref=e221]
+          - cell "-8.00" [ref=e222]
+        - row "2 10/17/2025, 09:35:12 ET Open Long 24787.25 1.00 — —" [ref=e223] [cursor=pointer]:
+          - cell "2" [ref=e224]
+          - cell "10/17/2025, 09:35:12 ET" [ref=e225]
+          - cell "Open Long" [ref=e226]
+          - cell "24787.25" [ref=e227]
+          - cell "1.00" [ref=e228]
+          - cell "—" [ref=e229]
+          - cell "—" [ref=e230]
+        - row "2 10/17/2025, 09:35:16 ET Close Long 24779.25 0.00 SL Hit -8.00" [ref=e231] [cursor=pointer]:
+          - cell "2" [ref=e232]
+          - cell "10/17/2025, 09:35:16 ET" [ref=e233]
+          - cell "Close Long" [ref=e234]
+          - cell "24779.25" [ref=e235]
+          - cell "0.00" [ref=e236]
+          - cell "SL Hit" [ref=e237]
+          - cell "-8.00" [ref=e238]
+      - rowgroup [ref=e239]:
+        - row "Day Total (2 RTs) -16.00" [ref=e240]:
+          - cell "Day Total (2 RTs)" [ref=e241]
+          - cell "-16.00" [ref=e242]
+    - generic [ref=e137]: "Easy Peasy: 2 trades found | Max RT: 1"
+- <changed> generic [ref=e144]: "-16.00 pts"
+- <changed> generic [ref=e145]:
+  - ref=e146 [unchanged]
+  - generic [ref=e147]: "-38.00 pts"
+  - generic [ref=e243]: 31 days sampled • 2025-09-05 – 2025-12-03
+- <changed> generic [ref=e148]:
+  - generic [ref=e149]: Day-by-day performance (9 entries)
+  - generic [ref=e244]:
+    - generic [ref=e245]: Cumulative Total
+    - generic [ref=e247]:
+      - generic [ref=e248]:
+        - generic [ref=e249]: "+38"
+        - generic [ref=e250]: "0"
+        - generic [ref=e251]: "-38"
+      - img [ref=e254]:
+        - 'generic "2025-12-03: -8.00 pts" [ref=e263] [cursor=pointer]'
+        - 'generic "2025-12-02: -8.00 pts" [ref=e264] [cursor=pointer]'
+        - 'generic "2025-12-01: -8.00 pts" [ref=e265] [cursor=pointer]'
+        - 'generic "2025-11-28: -8.00 pts" [ref=e266] [cursor=pointer]'
+        - 'generic "2025-11-27: -8.00 pts" [ref=e267] [cursor=pointer]'
+        - 'generic "2025-11-26: -8.00 pts" [ref=e268] [cursor=pointer]'
+        - 'generic "2025-11-25: -8.00 pts" [ref=e269] [cursor=pointer]'
+        - 'generic "2025-10-17: -24.00 pts" [ref=e270] [cursor=pointer]'
+        - 'generic "2025-09-05: -38.00 pts" [ref=e271] [cursor=pointer]'
+  - generic [ref=e272]:
+    - generic [ref=e273]: Daily P&L
+    - generic [ref=e275]:
+      - generic [ref=e276]:
+        - generic [ref=e277]: "+16"
+        - generic [ref=e278]: "0"
+        - generic [ref=e279]: "-16"
+      - generic [ref=e280]:
+        - 'generic "2025-12-03: -8.00 pts" [ref=e282]'
+        - 'generic "2025-12-02: +0.00 pts" [ref=e283]'
+        - 'generic "2025-12-01: +0.00 pts" [ref=e284]'
+        - 'generic "2025-11-28: +0.00 pts" [ref=e285]'
+        - 'generic "2025-11-27: +0.00 pts" [ref=e286]'
+        - 'generic "2025-11-26: +0.00 pts" [ref=e287]'
+        - 'generic "2025-11-25: +0.00 pts" [ref=e288]'
+        - 'generic "2025-10-17: -16.00 pts" [ref=e289]'
+        - 'generic "2025-09-05: -14.00 pts" [ref=e290]'
+  - generic [ref=e291]: ← Newest | Oldest →
+- <changed> generic [ref=e163]: "Rows: 1800"
+```

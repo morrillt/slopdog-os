@@ -1,0 +1,340 @@
+{
+	"publisher": "vitest",
+	"name": "explorer",
+	"displayName": "Vitest",
+	"version": "1.36.0",
+	"packageManager": "pnpm@10.11.1",
+	"description": "A Vite-native testing framework. It's fast!",
+	"author": "Vitest Team",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vitest-dev/vscode.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vitest-dev/vscode/issues"
+	},
+	"sponsor": {
+		"url": "https://opencollective.com/vitest"
+	},
+	"keywords": [
+		"vitest",
+		"test",
+		"typescript",
+		"javascript"
+	],
+	"categories": [
+		"Testing"
+	],
+	"main": "./dist/extension.js",
+	"icon": "img/icon.png",
+	"pricing": "Free",
+	"engines": {
+		"vscode": "^1.77.0"
+	},
+	"activationEvents": [
+		"workspaceContains:**/*{vite,vitest}*.config*.{ts,js,mjs,cjs,cts,mts}",
+		"workspaceContains:**/*vitest.{workspace,projects}*.{ts,js,mjs,cjs,cts,mts,json}",
+		"workspaceContains:node_modules/.bin/vitest"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "vitest-snapshot",
+				"aliases": [
+					"Vitest Snapshot"
+				],
+				"extensions": [
+					".js.snap",
+					".jsx.snap",
+					".ts.snap",
+					".tsx.snap"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "vitest-snapshot",
+				"scopeName": "source.vitest.snap",
+				"path": "./syntaxes/vitest-snapshot.tmLanguage"
+			}
+		],
+		"commands": [
+			{
+				"title": "Update Snapshot",
+				"command": "vitest.updateSnapshot",
+				"category": "Vitest"
+			},
+			{
+				"title": "Show Output Channel",
+				"command": "vitest.openOutput",
+				"category": "Vitest"
+			},
+			{
+				"title": "Show Shell Terminal",
+				"command": "vitest.showShellTerminal",
+				"category": "Vitest"
+			},
+			{
+				"title": "Reveal in Test Explorer",
+				"command": "vitest.revealInTestExplorer",
+				"category": "Vitest"
+			},
+			{
+				"title": "Open Transformed Module",
+				"command": "vitest.openTransformedModule",
+				"category": "Vitest"
+			}
+		],
+		"menus": {
+			"editor/title/context": [
+				{
+					"command": "vitest.revealInTestExplorer",
+					"when": "vitest.testFiles && resourcePath in vitest.testFiles",
+					"group": "vitest"
+				},
+				{
+					"command": "vitest.openTransformedModule",
+					"when": "vitest.environmentsSupported",
+					"group": "vitest"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "vitest.updateSnapshot",
+					"when": "false"
+				}
+			],
+			"testing/item/context": [
+				{
+					"command": "vitest.updateSnapshot",
+					"when": "controllerId == 'vitest'"
+				}
+			],
+			"testing/item/gutter": [
+				{
+					"command": "vitest.updateSnapshot",
+					"when": "controllerId == 'vitest'"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Vitest",
+			"properties": {
+				"vitest.filesWatcherInclude": {
+					"markdownDescription": "The glob pattern to watch for file changes.",
+					"type": "string",
+					"default": "**/*",
+					"scope": "resource"
+				},
+				"vitest.vitestPackagePath": {
+					"markdownDescription": "The path to the `package.json` file of Vitest executable (it's usually inside `node_modules`) in case the extension cannot find it.",
+					"type": "string",
+					"scope": "resource"
+				},
+				"vitest.nodeExecutable": {
+					"markdownDescription": "The path to the Node.js executable. If not assigned, Vitest just passes down `'node'` to `child_process.spawn`. This is applied only when `vitest.shellType` is `child_process` (the default).",
+					"type": "string",
+					"scope": "window"
+				},
+				"vitest.nodeExecArgs": {
+					"description": "The arguments to pass to the Node.js executable. This is applied only when `vitest.shellType` is `child_process` (the default).",
+					"type": "array",
+					"scope": "resource"
+				},
+				"vitest.workspaceConfig": {
+					"markdownDescription": "The path to the Vitest [workspace configuration file](https://vitest.dev/guide/workspace). The extension supports only a single file per VSCode workspace.",
+					"type": "string",
+					"scope": "window"
+				},
+				"vitest.rootConfig": {
+					"markdownDescription": "The path to the Vitest [root configuration file](https://vitest.dev/config/). The extension supports only a single root file per VSCode workspace. If you have several Vitest configs, consider using a [Vitest workspace](https://vitest.dev/guide/workspace) instead for better performance.",
+					"type": "string",
+					"scope": "window"
+				},
+				"vitest.ignoreWorkspace": {
+					"description": "Ignore workspace files resolution.",
+					"type": "boolean",
+					"default": false,
+					"scope": "window"
+				},
+				"vitest.configSearchPatternInclude": {
+					"markdownDescription": "A VSCode [glob pattern](https://code.visualstudio.com/docs/editor/glob-patterns) to include files from the search for Vitest config files. This pattern affects only regular config files.",
+					"type": "string",
+					"default": "**/*{vite,vitest}*.config*.{ts,js,mjs,cjs,cts,mts}",
+					"scope": "window"
+				},
+				"vitest.configSearchPatternExclude": {
+					"markdownDescription": "A VSCode [glob pattern](https://code.visualstudio.com/docs/editor/glob-patterns) to exclude files from the search for Vitest config files. This pattern affects both workspace and regular config files.",
+					"type": "string",
+					"default": "{**/node_modules/**,**/.*/**,**/*.d.ts}",
+					"scope": "window"
+				},
+				"vitest.debuggerAddress": {
+					"description": "TCP/IP address of process to be debugged. Default: localhost",
+					"type": "string",
+					"scope": "window"
+				},
+				"vitest.debuggerPort": {
+					"description": "Port that the debugger will be attached to. By default uses 9229 or tries to find a free port if it's not available.",
+					"type": "string",
+					"scope": "window"
+				},
+				"vitest.disableWorkspaceWarning": {
+					"markdownDescription": "Disable a warning about too many config files that recommends creating a single `vitest.workspace.js` file.",
+					"type": "boolean",
+					"default": false,
+					"scope": "resource"
+				},
+				"vitest.maximumConfigs": {
+					"description": "The maximum amount of configs that Vitest extension can load. If exceeded, the extension will show a warning suggesting to use a workspace config file.",
+					"type": "number",
+					"default": 5,
+					"scope": "window"
+				},
+				"vitest.debugExclude": {
+					"markdownDescription": "Automatically skip files covered by these glob patterns.",
+					"type": "array",
+					"default": [
+						"<node_internals>/**",
+						"**/node_modules/**"
+					],
+					"scope": "resource"
+				},
+				"vitest.debugOutFiles": {
+					"markdownDescription": "If source maps are enabled, these glob patterns specify the generated JavaScript files.",
+					"type": "array",
+					"scope": "resource"
+				},
+				"vitest.nodeEnv": {
+					"markdownDescription": "The env passed to runner process in addition to `process.env`",
+					"type": [
+						"object",
+						"null"
+					],
+					"default": null,
+					"scope": "window"
+				},
+				"vitest.logLevel": {
+					"description": "The log level of the Vitest extension.",
+					"type": "string",
+					"enum": [
+						"info",
+						"debug",
+						"verbose"
+					],
+					"default": "verbose",
+					"scope": "resource"
+				},
+				"vitest.shellType": {
+					"markdownDescription": "The method the extension uses to spawn a long-running Vitest process. This is particularly useful if you are using a custom shell script to set up the environment. When using the `terminal` shell type, the websocket connection will be established.",
+					"type": "string",
+					"enum": [
+						"terminal",
+						"child_process"
+					],
+					"default": "child_process",
+					"scope": "resource"
+				},
+				"vitest.terminalShellPath": {
+					"markdownDescription": "The path to the shell executable. This is applied only when `vitest.shellType` is `terminal`.",
+					"type": "string",
+					"scope": "resource"
+				},
+				"vitest.terminalShellArgs": {
+					"markdownDescription": "The arguments to pass to the shell executable. This is applied only when `vitest.shellType` is `terminal`.",
+					"type": "array",
+					"scope": "resource"
+				},
+				"vitest.experimentalStaticAstCollect": {
+					"markdownDescription": "Enable static AST analysis for faster test discovery. This feature is experimental and may not work with all projects.",
+					"type": "boolean",
+					"default": true,
+					"scope": "resource"
+				},
+				"vitest.cliArguments": {
+					"markdownDescription": "Additional arguments to pass to the Vitest CLI. Note that some arguments will be ignored: `watch`, `reporter`, `api`, and `ui`. Example: `--mode=staging`.",
+					"type": "string",
+					"scope": "resource"
+				},
+				"vitest.applyDiagnostic": {
+					"description": "Show a squiggly line where the error was thrown. This also enables the error count in the File Tab.",
+					"type": "boolean",
+					"default": true
+				},
+				"vitest.showImportsDuration": {
+					"description": "Show how long it took to import the module during the last test run. If multiple isolated tests imported the module, the times will be aggregated.",
+					"type": "boolean",
+					"default": true
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "pnpm build",
+		"release": "tsx ./scripts/release.mts && git update-ref refs/heads/release refs/heads/main && git push origin release",
+		"build": "tsup --minify --clean",
+		"package": "vsce package --no-dependencies",
+		"dev": "EXTENSION_NODE_ENV=dev tsup --watch --sourcemap",
+		"test": "vscode-test",
+		"test:watch": "vscode-test --watch-files src/**/*.ts --watch-files test/**/*.test.ts",
+		"test-e2e": "vitest --root test/e2e",
+		"ecosystem-ci:build": "pnpm build",
+		"ecosystem-ci:test": "tsx ./scripts/ecosystem-ci.mts",
+		"typecheck": "tsc -b ./ --noEmit",
+		"lint": "eslint --cache .",
+		"lint:fix": "eslint --cache --fix ."
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^4.14.1",
+		"@playwright/test": "^1.42.1",
+		"@types/chai": "^5.2.2",
+		"@types/micromatch": "^4.0.6",
+		"@types/mocha": "^10.0.6",
+		"@types/node": "^24.0.0",
+		"@types/prompts": "^2.4.9",
+		"@types/semver": "^7.3.9",
+		"@types/vscode": "^1.77.0",
+		"@types/which": "^3.0.3",
+		"@types/ws": "^8.5.10",
+		"@vscode/test-cli": "^0.0.6",
+		"@vscode/test-electron": "^2.3.9",
+		"@vscode/vsce": "^3.1.0",
+		"@vue/reactivity": "^3.2.33",
+		"acorn": "^8.12.0",
+		"acorn-walk": "^8.3.3",
+		"birpc": "^2.4.0",
+		"bumpp": "^10.1.1",
+		"chai": "^5.1.0",
+		"changelogithub": "^13.15.0",
+		"eslint": "^9.7.0",
+		"execa": "^8.0.1",
+		"find-up": "^7.0.0",
+		"get-port": "^6.1.2",
+		"istanbul-to-vscode": "^2.1.0",
+		"micromatch": "^4.0.5",
+		"mighty-promise": "^0.0.8",
+		"mocha": "^10.3.0",
+		"pathe": "^1.1.2",
+		"picocolors": "^1.0.0",
+		"prompts": "^2.4.2",
+		"semver": "^7.3.5",
+		"tsup": "^8.0.1",
+		"tsx": "^4.7.1",
+		"typescript": "^5.6.2",
+		"vitest": "catalog:latest",
+		"which": "^4.0.0",
+		"ws": "^8.16.0"
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx,vue,md}": [
+			"eslint --fix"
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1765406627631,
+		"targetPlatform": "universal",
+		"size": 1668798
+	}
+}

@@ -1,0 +1,119 @@
+Dec 29 12:32:13 broz-ThinkPad tailscaled[1957]: logtail: upload succeeded after 1 failures and 58s
+Dec 29 12:32:23 broz-ThinkPad gcr-prompter[3448]: Gcr: 10 second inactivity timeout, quitting
+Dec 29 12:32:53 broz-ThinkPad /usr/libexec/gdm-x-session[2411]: [../i3bar/src/xcb.c:1132] ERROR: PropertyNotify received for unknown window 0200000e
+Dec 29 12:32:53 broz-ThinkPad /usr/libexec/gdm-x-session[2411]: [../i3bar/src/xcb.c:1132] ERROR: PropertyNotify received for unknown window 00800014
+Dec 29 12:32:53 broz-ThinkPad /usr/libexec/gdm-x-session[2411]: [../i3bar/src/xcb.c:1132] ERROR: PropertyNotify received for unknown window 02000017
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_device_get_sysfs_path: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Dec 29 12:33:01 broz-ThinkPad upowerd[10095]: g_udev_client_query_by_sysfs_path: assertion 'sysfs_path != NULL' failed
+Dec 29 12:33:04 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/123304.610814:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Dec 29 12:33:05 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/123305.259365:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -127
+Dec 29 12:33:14 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/123314.075751:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:33:22 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9696:9696:1229/123322.201682:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+Dec 29 12:33:22 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9696:9696:1229/123322.214437:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+Dec 29 12:33:37 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/123337.296139:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+Dec 29 12:33:47 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: Fontconfig error: Cannot load default config file: No such file: (null)
+Dec 29 12:34:01 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9696:9696:1229/123401.396108:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+Dec 29 12:34:28 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/123428.497972:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Dec 29 12:34:39 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/123439.240748:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:34:40 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/123440.328816:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:36:05 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/123605.517376:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Dec 29 12:36:14 broz-ThinkPad systemd[1]: Starting update-notifier-download.service - Download data for packages that failed at package install time...
+Dec 29 12:36:14 broz-ThinkPad systemd[1]: Finished update-notifier-download.service - Download data for packages that failed at package install time.
+Dec 29 12:37:40 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/123740.145462:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:37:40 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/123740.763961:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:39:11 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/123911.520725:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Dec 29 12:39:35 broz-ThinkPad rofi[10852]: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+Dec 29 12:46:14 broz-ThinkPad systemd-tmpfiles[14564]: /usr/lib/tmpfiles.d/legacy.conf:14: Duplicate line for path "/run/lock", ignoring.
+Dec 29 12:46:16 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9680:1229/124616.374976:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Dec 29 12:48:09 broz-ThinkPad gpg-agent[15269]: can't connect to the daemon /usr/lib/gnupg/scdaemon: IPC connect call failed
+Dec 29 12:48:47 broz-ThinkPad fwupd[15285]: 17:48:47.808 FuEngine             failed to add device /sys/devices/platform/soc@0/a4f8800.usb/a400000.usb/xhci-hcd.2.auto/usb2/2-1: failed to setup: failed after 3 retries: failed after 3 retries: failed to read from device: USB error: Input/Output Error [-1]
+Dec 29 12:48:47 broz-ThinkPad fwupd[15285]: 17:48:47.813 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb6/6-1/6-1.3/6-1.3.3/6-1.3.3.4/6-1.3.3.4.4/6-1.3.3.4.4.2/6-1.3.3.4.4.2:1.0/host2/target2:0:0/2:0:0:0/block/sdd: failed to setup: failed to read version: command fail with status 2, senseKey 0x05, asc 0x20, ascq 0x00
+Dec 29 12:48:47 broz-ThinkPad fwupd[15285]: 17:48:47.972 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb6/6-1/6-1.3/6-1.3.3/6-1.3.3.4/6-1.3.3.4.4/6-1.3.3.4.4.4/6-1.3.3.4.4.4:1.0/host3/target3:0:0/3:0:0:0/block/sde: failed to setup: failed to read version: command fail with status 2, senseKey 0x05, asc 0x24, ascq 0x00
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.127 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.1/7-1.1:1.0/host0/target0:0:0/0:0:0:0/block/sdb: failed to subclass open: failed to open /dev/sdb: No medium found
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.135 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.1/7-1.1:1.0/host0/target0:0:0/0:0:0:0/block/sdb: failed to subclass open: failed to open /dev/sdb: No medium found
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.151 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.1/7-1.1:1.0/host0/target0:0:0/0:0:0:0/block/sdb: failed to subclass open: failed to open /dev/sdb: No medium found
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.190 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.1/7-1.1:1.0/host0/target0:0:0/0:0:0:1/block/sdc: failed to subclass open: failed to open /dev/sdc: No medium found
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.197 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.1/7-1.1:1.0/host0/target0:0:0/0:0:0:1/block/sdc: failed to subclass open: failed to open /dev/sdc: No medium found
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.214 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.1/7-1.1:1.0/host0/target0:0:0/0:0:0:1/block/sdc: failed to subclass open: failed to open /dev/sdc: No medium found
+Dec 29 12:48:48 broz-ThinkPad fwupd[15285]: 17:48:48.218 FuEngine             failed to add device /sys/devices/platform/soc@0/a8f8800.usb/a800000.usb/xhci-hcd.4.auto/usb7/7-1/7-1.4/7-1.4:1.0/host1/target1:0:0/1:0:0:0/block/sda: failed to setup: failed to read version: command fail with status 2, senseKey 0x05, asc 0x24, ascq 0x00
+Dec 29 12:48:49 broz-ThinkPad fwupd[15285]: 17:48:49.360 FuEngine             failed to add device /sys/devices/platform/soc@0/ae00000.display-subsystem/ae98000.displayport-controller/drm_dp_aux_dev/drm_dp_aux1: failed to setup: failed to read device firmware header: checksum mismatch in device response header (header specified: 0x0, actual: 0xAB)
+Dec 29 12:48:49 broz-ThinkPad fwupd[15285]: 17:48:49.549 FuEngine             failed to add device /sys/devices/platform/soc@0/ae00000.display-subsystem/ae9a000.displayport-controller/drm_dp_aux_dev/drm_dp_aux3: failed to setup: failed to read device firmware header: failed to write 7 bytes to 90: Input/output error
+Dec 29 12:48:49 broz-ThinkPad fwupd[15285]: 17:48:49.688 FuEngine             failed to add device /sys/devices/platform/soc@0/ae00000.display-subsystem/aea0000.displayport-controller/drm_dp_aux_dev/drm_dp_aux2: failed to setup: failed to read device firmware header: failed to write 7 bytes to 90: Input/output error
+Dec 29 12:50:16 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:16.637Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "6e96f5427320a89a006988dcb4550204dcb275bd"
+Dec 29 12:50:16 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 6e96f5427320a89a006988dcb4550204dcb275bd.
+Dec 29 12:50:17 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:17.298Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "d300431eb72d23eb458eadd1e158b03dd607d510"
+Dec 29 12:50:17 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object d300431eb72d23eb458eadd1e158b03dd607d510.
+Dec 29 12:50:18 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:18.033Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "16764069604154293e54d3bb4711b85560c4c860"
+Dec 29 12:50:18 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 16764069604154293e54d3bb4711b85560c4c860.
+Dec 29 12:50:18 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:18.729Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "75c0515e9a31785d2c860e176c884ca052048f34"
+Dec 29 12:50:18 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 75c0515e9a31785d2c860e176c884ca052048f34.
+Dec 29 12:50:19 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:19.499Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "870fb4d9f1d51f466527e63210e87284d63ac37e"
+Dec 29 12:50:19 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 870fb4d9f1d51f466527e63210e87284d63ac37e.
+Dec 29 12:50:20 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:20.258Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "b8a8e6129bbf7c1d97917ad926e853e72f2c4e75"
+Dec 29 12:50:20 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object b8a8e6129bbf7c1d97917ad926e853e72f2c4e75.
+Dec 29 12:50:21 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:21.000Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "bb114330ff2bc67fe1f81b35af2e2902c4bde819"
+Dec 29 12:50:21 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object bb114330ff2bc67fe1f81b35af2e2902c4bde819.
+Dec 29 12:50:21 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:21.665Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "301e6345ff0aa05b3428b548406e76b5d77b4b8c"
+Dec 29 12:50:21 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 301e6345ff0aa05b3428b548406e76b5d77b4b8c.
+Dec 29 12:50:22 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:22.340Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "a9b800802a2ef87fe27b140bd91e3eb905a65e4f"
+Dec 29 12:50:22 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object a9b800802a2ef87fe27b140bd91e3eb905a65e4f.
+Dec 29 12:50:23 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T17:50:23.042Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "d0f0c1d3466e1482d28486fcf6145be56345bcdc"
+Dec 29 12:50:23 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object d0f0c1d3466e1482d28486fcf6145be56345bcdc.
+Dec 29 12:52:06 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [10871:1229/125206.593203:ERROR:ui/gfx/x/atom_cache.cc:232] Add chromium/from-privileged to kAtomsToCache
+Dec 29 12:53:02 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [10871:1229/125302.725836:ERROR:content/browser/browser_main_loop.cc:278] GLib-GObject: ../../../gobject/gsignal.c:2699: instance '0x1402c15650' has no handler with id '5419'
+Dec 29 12:54:52 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125452.070314:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:54:52 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125452.527277:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:54:54 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125454.678538:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:54:55 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125455.182480:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:54:58 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125458.946925:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:54:59 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125459.506596:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:55:02 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125502.673076:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:55:03 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125503.193097:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:56:27 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: Fontconfig error: Cannot load default config file: No such file: (null)
+Dec 29 12:57:22 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125722.890879:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:57:23 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125723.153203:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:57:23 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125723.698486:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:57:24 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125724.008074:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:58:01 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125801.258128:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:58:01 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125801.794464:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:58:23 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125823.613524:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 12:58:24 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/125824.074784:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 13:00:16 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:16.528Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "6e96f5427320a89a006988dcb4550204dcb275bd"
+Dec 29 13:00:16 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 6e96f5427320a89a006988dcb4550204dcb275bd.
+Dec 29 13:00:17 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:17.120Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "d300431eb72d23eb458eadd1e158b03dd607d510"
+Dec 29 13:00:17 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object d300431eb72d23eb458eadd1e158b03dd607d510.
+Dec 29 13:00:17 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:17.743Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "16764069604154293e54d3bb4711b85560c4c860"
+Dec 29 13:00:17 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 16764069604154293e54d3bb4711b85560c4c860.
+Dec 29 13:00:18 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:18.352Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "75c0515e9a31785d2c860e176c884ca052048f34"
+Dec 29 13:00:18 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 75c0515e9a31785d2c860e176c884ca052048f34.
+Dec 29 13:00:19 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:19.039Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "870fb4d9f1d51f466527e63210e87284d63ac37e"
+Dec 29 13:00:19 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 870fb4d9f1d51f466527e63210e87284d63ac37e.
+Dec 29 13:00:19 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:19.633Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "b8a8e6129bbf7c1d97917ad926e853e72f2c4e75"
+Dec 29 13:00:19 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object b8a8e6129bbf7c1d97917ad926e853e72f2c4e75.
+Dec 29 13:00:20 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:20.258Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "bb114330ff2bc67fe1f81b35af2e2902c4bde819"
+Dec 29 13:00:20 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object bb114330ff2bc67fe1f81b35af2e2902c4bde819.
+Dec 29 13:00:20 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:20.915Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "301e6345ff0aa05b3428b548406e76b5d77b4b8c"
+Dec 29 13:00:20 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object 301e6345ff0aa05b3428b548406e76b5d77b4b8c.
+Dec 29 13:00:21 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:21.545Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "a9b800802a2ef87fe27b140bd91e3eb905a65e4f"
+Dec 29 13:00:21 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object a9b800802a2ef87fe27b140bd91e3eb905a65e4f.
+Dec 29 13:00:22 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: [main 2025-12-29T18:00:22.131Z] [AgentAnalyticsOperationsMainService] Error reading git note: Error: Git command failed: git "notes" "--ref" "refs/notes/ai-tracking" "show" "d0f0c1d3466e1482d28486fcf6145be56345bcdc"
+Dec 29 13:00:22 broz-ThinkPad /usr/libexec/gdm-x-session[10871]: error: no note found for object d0f0c1d3466e1482d28486fcf6145be56345bcdc.
+Dec 29 13:00:44 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9653:1229/130044.413469:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Dec 29 13:00:44 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9653:9653:1229/130044.413488:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Dec 29 13:00:45 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/130045.450693:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 13:00:46 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/130046.138952:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 13:01:39 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: Fontconfig error: Cannot load default config file: No such file: (null)
+Dec 29 13:02:29 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/130229.703443:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 29 13:02:30 broz-ThinkPad /usr/libexec/gdm-x-session[9659]: [9702:9707:1229/130230.210233:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100

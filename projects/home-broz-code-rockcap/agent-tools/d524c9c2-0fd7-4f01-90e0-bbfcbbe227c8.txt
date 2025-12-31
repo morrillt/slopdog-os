@@ -1,0 +1,1442 @@
+### Ran Playwright code
+await page.goto('http://localhost:3000/backtest/2025-07-29?strategy=strategy12.10.1&pt=30&sl=10&trg=8&candleType=1s&cutoffTime=09%3A40');
+
+### New console messages
+- [INFO] Download the React DevTools for a better development experience: https://react.dev/link/react...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Hydrated @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._....
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Root @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] ServerRoot @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] AppRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] RootErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ErrorBoundaryHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] HistoryUpdater @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] HotReload @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] AppDevOverlayErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] DevRootHTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modul...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] HTTPAccessFallbackErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_viewport_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] SegmentViewNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] AuthProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled...
+- [TIMESTAMP] AuthProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled...
+- [TIMESTAMP] AppRouterAnnouncer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_co...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] AuthProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] HTTPAccessFallbackErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentViewNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Script @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] __next_outlet_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] AppRouterAnnouncer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_co...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [useBacktest] Loading 1s candles from: /data/backtest/candles/2022-01-03_to_2025-12-04_1s_json...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [LOG] [BacktestUI] chart script loaded @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Prepared @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​Preloads @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​HTTPAccessErrorFallback @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] ​NotFound @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​RootLayout @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [LOG] [useBacktest] Loaded 1800 1s candles for 2025-07-29 @ http://localhost:3000/_next/static/chunk...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Generating algo trades for 2025-07-29 with pt 30 sl 10 trg 8 maxRT 5 strategy str...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #1 (Session #1) - Scanning from candle[0] @ http://localhost:3000...
+- [LOG] [Strategy12.10.1]   Candle[5] LONG trigger hit @ http://localhost:3000/_next/static/chunks/nod...
+- [LOG] [Strategy12.10.1]   Entry: 23604.25 at 2025-07-29T09:30:05-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23603.25) + slippage (1) = 23604.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23633.25 (based on currentStartPrice: 23595.25), SL: 23593.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:30:05-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 2.75pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:30:06-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 30:06 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 2.75pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:30:06-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 30:06 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23605.25 based on profit of 1.00 at candle[6], pr...
+- [LOG] [Strategy12.10.1]   Net P&L: 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23605.25 based on p...
+- [LOG] [Strategy12.10.1]   Re-eligibility found at candle[7] - price returned between triggers @ http...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[8] (after re-eligibility) @ http://localh...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #2 (Session #2) - Scanning from candle[8] @ http://localhost:3000...
+- [LOG] [Strategy12.10.1]   Candle[10] LONG trigger hit @ http://localhost:3000/_next/static/chunks/no...
+- [LOG] [Strategy12.10.1]   Entry: 23604.25 at 2025-07-29T09:30:10-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23603.25) + slippage (1) = 23604.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23633.25 (based on currentStartPrice: 23595.25), SL: 23593.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:30:10-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 1.25pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:30:13-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 30:13 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23604.75 based on profit of 0.50 at candle[13], p...
+- [LOG] [Strategy12.10.1]   Net P&L: 0.5 @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23604.75 based on p...
+- [LOG] [Strategy12.10.1]   Exit candle has eligible price but is different candle from entry - altern...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[14] (after re-eligibility) @ http://local...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #3 (Session #3) - Scanning from candle[14] @ http://localhost:300...
+- [LOG] [Strategy12.10.1]   Candle[14] LONG trigger hit @ http://localhost:3000/_next/static/chunks/no...
+- [LOG] [Strategy12.10.1]   Entry: 23604.25 at 2025-07-29T09:30:14-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23603.25) + slippage (1) = 23604.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23633.25 (based on currentStartPrice: 23595.25), SL: 23593.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:30:14-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 3.25pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:30:14-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 30:14 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 3.25pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:30:14-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 30:14 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 4.25pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed but SL not updated (current: 23605.25, ...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 4.25pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed but SL not updated (current: 23605.25, ...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:30:16-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 5.00pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed but SL not updated (current: 23605.25, ...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 5.00pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed but SL not updated (current: 23605.25, ...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 5pts crossed (profit: 5.00pts), would lock 2pts. Cur...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:30:16-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 30:16 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:30:17-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 5.00pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed but SL not updated (current: 23606.25, ...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 5.00pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed but SL not updated (current: 23606.25, ...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 5pts crossed (profit: 5.00pts), would lock 2pts. Cur...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 5pts crossed but SL not updated (current: 23606.25, ...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23606.25 based on profit of 2.00 at candle[17], p...
+- [LOG] [Strategy12.10.1]   Net P&L: 2 @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23606.25 based on p...
+- [LOG] [Strategy12.10.1]   Re-eligibility found at candle[154] - price returned between triggers @ ht...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[155] (after re-eligibility) @ http://loca...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #4 (Session #4) - Scanning from candle[155] @ http://localhost:30...
+- [LOG] [Strategy12.10.1]   Candle[155] LONG trigger hit @ http://localhost:3000/_next/static/chunks/n...
+- [LOG] [Strategy12.10.1]   Entry: 23604.25 at 2025-07-29T09:32:35-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23603.25) + slippage (1) = 23604.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23633.25 (based on currentStartPrice: 23595.25), SL: 23593.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:32:35-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 2.25pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:32:36-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 32:36 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 2.25pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:32:36-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 32:36 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23605.25 based on profit of 1.00 at candle[156], ...
+- [LOG] [Strategy12.10.1]   Net P&L: 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23605.25 based on p...
+- [LOG] [Strategy12.10.1]   Re-eligibility found at candle[160] - price returned between triggers @ ht...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[161] (after re-eligibility) @ http://loca...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #5 (Session #5) - Scanning from candle[161] @ http://localhost:30...
+- [LOG] [Strategy12.10.1]   Candle[162] LONG trigger hit @ http://localhost:3000/_next/static/chunks/n...
+- [LOG] [Strategy12.10.1]   Entry: 23604.25 at 2025-07-29T09:32:42-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23603.25) + slippage (1) = 23604.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23633.25 (based on currentStartPrice: 23595.25), SL: 23593.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:32:42-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 4.50pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:32:46-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 32:46 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 2pts crossed (profit: 4.50pts), would lock 1pts. Cur...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:32:46-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 32:46 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23605.25 based on profit of 1.00 at candle[166], ...
+- [LOG] [Strategy12.10.1]   Net P&L: 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23605.25 based on p...
+- [LOG] [Strategy12.10.1]   *** 9:35 TRANSITION during re-eligibility scan *** @ http://localhost:3000...
+- [LOG] [Strategy12.10.1]   Start price switched: 23595.25 -> 23631.25 @ http://localhost:3000/_next/s...
+- [LOG] [Strategy12.10.1]   Triggers recalculated: Long=23639.25, Short=23623.25 @ http://localhost:30...
+- [LOG] [Strategy12.10.1]   Session reset triggered during re-eligibility @ http://localhost:3000/_nex...
+- [LOG] [Strategy12.10.1]   Re-eligibility found at candle[300] - price returned between triggers @ ht...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[301] (after re-eligibility) @ http://loca...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #6 (Session #1) - Scanning from candle[301] @ http://localhost:30...
+- [LOG] [Strategy12.10.1]   Candle[387] LONG trigger hit @ http://localhost:3000/_next/static/chunks/n...
+- [LOG] [Strategy12.10.1]   Entry: 23640.25 at 2025-07-29T09:36:27-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23639.25) + slippage (1) = 23640.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23669.25 (based on currentStartPrice: 23631.25), SL: 23629.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:36:27-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 1.75pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:36:34-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 36:34 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23640.75 based on profit of 0.50 at candle[394], ...
+- [LOG] [Strategy12.10.1]   Net P&L: 0.5 @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23640.75 based on p...
+- [LOG] [Strategy12.10.1]   Exit candle has eligible price but is different candle from entry - altern...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[395] (after re-eligibility) @ http://loca...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #7 (Session #2) - Scanning from candle[395] @ http://localhost:30...
+- [LOG] [Strategy12.10.1]   Candle[395] LONG trigger hit @ http://localhost:3000/_next/static/chunks/n...
+- [LOG] [Strategy12.10.1]   Entry: 23640.25 at 2025-07-29T09:36:35-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23639.25) + slippage (1) = 23640.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23669.25 (based on currentStartPrice: 23631.25), SL: 23629.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:36:35-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 1.75pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:36:35-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 36:35 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 1.75pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed but SL not updated (current: 23640.75, ...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23640.75 based on profit of 0.50 at candle[396], ...
+- [LOG] [Strategy12.10.1]   Net P&L: 0.5 @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23640.75 based on p...
+- [LOG] [Strategy12.10.1]   Re-eligibility found at candle[401] - price returned between triggers @ ht...
+- [LOG] [Strategy12.10.1]   Next scan will start from candle[402] (after re-eligibility) @ http://loca...
+- [LOG] [Strategy12.10.1] ---------------------------------------------------------------------- @ htt...
+- [LOG] [Strategy12.10.1] ROUND TRIP #8 (Session #3) - Scanning from candle[402] @ http://localhost:30...
+- [LOG] [Strategy12.10.1]   Candle[404] LONG trigger hit @ http://localhost:3000/_next/static/chunks/n...
+- [LOG] [Strategy12.10.1]   Entry: 23640.25 at 2025-07-29T09:36:44-04:00 @ http://localhost:3000/_next...
+- [LOG] [Strategy12.10.1]   Entry calculation: long trigger (23639.25) + slippage (1) = 23640.25 @ htt...
+- [LOG] [Strategy12.10.1]   TP: 23669.25 (based on currentStartPrice: 23631.25), SL: 23629.25 @ http:/...
+- [LOG] [Strategy12.10.1]   Stepped SL config loaded: {"1":0.5,"2":1,"5":2,"10":5}, thresholds: [1, 2,...
+- [LOG] [Strategy12.10.1]   Stepped SL check at 2025-07-29T09:36:44-04:00: long trade, unrealized prof...
+- [LOG] [Strategy12.10.1]   Stepped SL: threshold 1pts crossed (profit: 1.25pts), would lock 0.5pts. C...
+- [LOG] [Strategy12.10.1]   *** STEPPED SL UPDATE: long trade at 2025-07-29T09:36:46-04:00, threshold ...
+- [LOG] [Strategy12.10.1] SL adjusted 36:46 @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [LOG] [Strategy12.10.1]   Exit: hit adjusted sl of 23640.75 based on profit of 0.50 at candle[406], ...
+- [LOG] [Strategy12.10.1]   Net P&L: 0.5 @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [LOG] [Strategy12.10.1]   Stored last trade: long exited with hit adjusted sl of 23640.75 based on p...
+- [LOG] [Strategy12.10.1]   Cutoff time 09:40 reached during re-eligibility scan, no more trades allow...
+- [LOG] [Strategy12.10.1]   No re-eligibility found - price never returned between triggers. Done. @ h...
+- [LOG] [Strategy12.10.1] ====================================================================== @ htt...
+- [LOG] [Strategy12.10.1] GENERATION COMPLETE: 16 rows (8 round trips) @ http://localhost:3000/_next/s...
+- [LOG] [Strategy12.10.1] ====================================================================== @ htt...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1800 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1800 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+- [ERROR] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading t...
+
+### Page state
+- Page URL: http://localhost:3000/backtest/2025-07-29?strategy=strategy12.10.1&pt=30&sl=10&trg=8&candleType=1s&cutoffTime=09%3A40
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e7] [cursor=pointer]:
+    - img [ref=e8]
+  - alert [ref=e12]
+  - generic [ref=e13]:
+    - banner [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]: Broz Backtester
+        - navigation [ref=e17]:
+          - link "Backtest Tuner" [ref=e18] [cursor=pointer]:
+            - /url: /backtest
+          - link "Backtest Analysis" [ref=e19] [cursor=pointer]:
+            - /url: /analysis/dec2025-2yearbacktest-algo1.0
+          - link "Downloader" [ref=e20] [cursor=pointer]:
+            - /url: "#"
+          - link "Trader" [ref=e21] [cursor=pointer]:
+            - /url: "#"
+          - link "Docs" [ref=e22] [cursor=pointer]:
+            - /url: /docs
+    - generic [ref=e24]:
+      - banner [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: Backtesting
+          - generic [ref=e28]:
+            - generic [ref=e29]: "Strategy:"
+            - combobox "Strategy:" [ref=e30]:
+              - 'option "Step SL 12.16 - Fixed: Latest 3 bugs from 12.10.1 (SL direction, TP trigger, time interval)" [selected]'
+          - generic [ref=e31]:
+            - generic [ref=e32]: "PT:"
+            - combobox "PT:" [ref=e33]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30" [selected]
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+              - option "100"
+              - option "150"
+              - option "200"
+              - option "500"
+          - generic [ref=e34]:
+            - generic [ref=e35]: "SL:"
+            - combobox "SL:" [ref=e36]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10" [selected]
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e37]:
+            - generic [ref=e38]: "TRG:"
+            - combobox "TRG:" [ref=e39]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8" [selected]
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e40]:
+            - generic [ref=e41]: "Max Trades:"
+            - combobox "Max Trades:" [ref=e42]:
+              - option "1 RT"
+              - option "2 RTs"
+              - option "3 RTs"
+              - option "5 RTs" [selected]
+              - option "6 RTs"
+          - generic [ref=e43]:
+            - generic [ref=e44]: "Cutoff Time:"
+            - combobox "Cutoff Time:" [ref=e45]:
+              - option "09:30"
+              - option "09:35"
+              - option "09:40" [selected]
+              - option "09:45"
+              - option "09:50"
+              - option "09:55"
+              - option "10:00"
+              - option "10:05"
+              - option "10:10"
+              - option "10:15"
+              - option "10:30"
+              - option "11:00"
+              - option "12:00"
+          - generic [ref=e46]:
+            - generic [ref=e47]: "Stepped SL Config (JSON):"
+            - 'textbox "Stepped SL Config (JSON): Format: {\"threshold\": profitToLock} e.g. {\"20\": 2, \"25\": 10}" [ref=e48]':
+              - /placeholder: "{\"20\": 2, \"25\": 10, \"30\": 10, \"40\": 20, \"60\": 30, \"80\": 50}"
+              - text: "{\"1\":0.5,\"2\":1,\"5\":2,\"10\":5}"
+            - generic [ref=e49]: "Format: {\"threshold\": profitToLock} e.g. {\"20\": 2, \"25\": 10}"
+        - generic [ref=e51]: "Date: 2025-07-29"
+      - region "Chart Controls" [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - button "◀ Prev" [ref=e56]
+              - button "Next ▶" [ref=e57]
+              - generic [ref=e58]:
+                - generic [ref=e59]: Current day
+                - combobox "Current day" [ref=e60]:
+                  - option "Select day" [disabled]
+                  - option "2023-12-05"
+                  - option "2023-12-06"
+                  - option "2023-12-07"
+                  - option "2023-12-08"
+                  - option "2023-12-11"
+                  - option "2023-12-12"
+                  - option "2023-12-13"
+                  - option "2023-12-14"
+                  - option "2023-12-15"
+                  - option "2023-12-18"
+                  - option "2023-12-19"
+                  - option "2023-12-20"
+                  - option "2023-12-21"
+                  - option "2023-12-22"
+                  - option "2023-12-26"
+                  - option "2023-12-27"
+                  - option "2023-12-28"
+                  - option "2023-12-29"
+                  - option "2024-01-02"
+                  - option "2024-01-03"
+                  - option "2024-01-04"
+                  - option "2024-01-05"
+                  - option "2024-01-08"
+                  - option "2024-01-09"
+                  - option "2024-01-10"
+                  - option "2024-01-11"
+                  - option "2024-01-12"
+                  - option "2024-01-15"
+                  - option "2024-01-16"
+                  - option "2024-01-17"
+                  - option "2024-01-18"
+                  - option "2024-01-19"
+                  - option "2024-01-22"
+                  - option "2024-01-23"
+                  - option "2024-01-24"
+                  - option "2024-01-25"
+                  - option "2024-01-26"
+                  - option "2024-01-29"
+                  - option "2024-01-30"
+                  - option "2024-01-31"
+                  - option "2024-02-01"
+                  - option "2024-02-02"
+                  - option "2024-02-05"
+                  - option "2024-02-06"
+                  - option "2024-02-07"
+                  - option "2024-02-08"
+                  - option "2024-02-09"
+                  - option "2024-02-12"
+                  - option "2024-02-13"
+                  - option "2024-02-14"
+                  - option "2024-02-15"
+                  - option "2024-02-16"
+                  - option "2024-02-19"
+                  - option "2024-02-20"
+                  - option "2024-02-21"
+                  - option "2024-02-22"
+                  - option "2024-02-23"
+                  - option "2024-02-26"
+                  - option "2024-02-27"
+                  - option "2024-02-28"
+                  - option "2024-02-29"
+                  - option "2024-03-01"
+                  - option "2024-03-04"
+                  - option "2024-03-05"
+                  - option "2024-03-06"
+                  - option "2024-03-07"
+                  - option "2024-03-08"
+                  - option "2024-03-11"
+                  - option "2024-03-12"
+                  - option "2024-03-13"
+                  - option "2024-03-14"
+                  - option "2024-03-15"
+                  - option "2024-03-18"
+                  - option "2024-03-19"
+                  - option "2024-03-20"
+                  - option "2024-03-21"
+                  - option "2024-03-22"
+                  - option "2024-03-25"
+                  - option "2024-03-26"
+                  - option "2024-03-27"
+                  - option "2024-03-28"
+                  - option "2024-04-01"
+                  - option "2024-04-02"
+                  - option "2024-04-03"
+                  - option "2024-04-04"
+                  - option "2024-04-05"
+                  - option "2024-04-08"
+                  - option "2024-04-09"
+                  - option "2024-04-10"
+                  - option "2024-04-11"
+                  - option "2024-04-12"
+                  - option "2024-04-15"
+                  - option "2024-04-16"
+                  - option "2024-04-17"
+                  - option "2024-04-18"
+                  - option "2024-04-19"
+                  - option "2024-04-22"
+                  - option "2024-04-23"
+                  - option "2024-04-24"
+                  - option "2024-04-25"
+                  - option "2024-04-26"
+                  - option "2024-04-29"
+                  - option "2024-04-30"
+                  - option "2024-05-01"
+                  - option "2024-05-02"
+                  - option "2024-05-03"
+                  - option "2024-05-06"
+                  - option "2024-05-07"
+                  - option "2024-05-08"
+                  - option "2024-05-09"
+                  - option "2024-05-10"
+                  - option "2024-05-13"
+                  - option "2024-05-14"
+                  - option "2024-05-15"
+                  - option "2024-05-16"
+                  - option "2024-05-17"
+                  - option "2024-05-20"
+                  - option "2024-05-21"
+                  - option "2024-05-22"
+                  - option "2024-05-23"
+                  - option "2024-05-24"
+                  - option "2024-05-27"
+                  - option "2024-05-28"
+                  - option "2024-05-29"
+                  - option "2024-05-30"
+                  - option "2024-05-31"
+                  - option "2024-06-03"
+                  - option "2024-06-04"
+                  - option "2024-06-05"
+                  - option "2024-06-06"
+                  - option "2024-06-07"
+                  - option "2024-06-10"
+                  - option "2024-06-11"
+                  - option "2024-06-12"
+                  - option "2024-06-13"
+                  - option "2024-06-14"
+                  - option "2024-06-17"
+                  - option "2024-06-18"
+                  - option "2024-06-19"
+                  - option "2024-06-20"
+                  - option "2024-06-21"
+                  - option "2024-06-24"
+                  - option "2024-06-25"
+                  - option "2024-06-26"
+                  - option "2024-06-27"
+                  - option "2024-06-28"
+                  - option "2024-07-01"
+                  - option "2024-07-02"
+                  - option "2024-07-03"
+                  - option "2024-07-04"
+                  - option "2024-07-05"
+                  - option "2024-07-08"
+                  - option "2024-07-09"
+                  - option "2024-07-10"
+                  - option "2024-07-11"
+                  - option "2024-07-12"
+                  - option "2024-07-15"
+                  - option "2024-07-16"
+                  - option "2024-07-17"
+                  - option "2024-07-18"
+                  - option "2024-07-19"
+                  - option "2024-07-22"
+                  - option "2024-07-23"
+                  - option "2024-07-24"
+                  - option "2024-07-25"
+                  - option "2024-07-26"
+                  - option "2024-07-29"
+                  - option "2024-07-30"
+                  - option "2024-07-31"
+                  - option "2024-08-01"
+                  - option "2024-08-02"
+                  - option "2024-08-05"
+                  - option "2024-08-06"
+                  - option "2024-08-07"
+                  - option "2024-08-08"
+                  - option "2024-08-09"
+                  - option "2024-08-12"
+                  - option "2024-08-13"
+                  - option "2024-08-14"
+                  - option "2024-08-15"
+                  - option "2024-08-16"
+                  - option "2024-08-19"
+                  - option "2024-08-20"
+                  - option "2024-08-21"
+                  - option "2024-08-22"
+                  - option "2024-08-23"
+                  - option "2024-08-26"
+                  - option "2024-08-27"
+                  - option "2024-08-28"
+                  - option "2024-08-29"
+                  - option "2024-08-30"
+                  - option "2024-09-02"
+                  - option "2024-09-03"
+                  - option "2024-09-04"
+                  - option "2024-09-05"
+                  - option "2024-09-06"
+                  - option "2024-09-09"
+                  - option "2024-09-10"
+                  - option "2024-09-11"
+                  - option "2024-09-12"
+                  - option "2024-09-13"
+                  - option "2024-09-16"
+                  - option "2024-09-17"
+                  - option "2024-09-18"
+                  - option "2024-09-19"
+                  - option "2024-09-20"
+                  - option "2024-09-23"
+                  - option "2024-09-24"
+                  - option "2024-09-25"
+                  - option "2024-09-26"
+                  - option "2024-09-27"
+                  - option "2024-09-30"
+                  - option "2024-10-01"
+                  - option "2024-10-02"
+                  - option "2024-10-03"
+                  - option "2024-10-04"
+                  - option "2024-10-07"
+                  - option "2024-10-08"
+                  - option "2024-10-09"
+                  - option "2024-10-10"
+                  - option "2024-10-11"
+                  - option "2024-10-14"
+                  - option "2024-10-15"
+                  - option "2024-10-16"
+                  - option "2024-10-17"
+                  - option "2024-10-18"
+                  - option "2024-10-21"
+                  - option "2024-10-22"
+                  - option "2024-10-23"
+                  - option "2024-10-24"
+                  - option "2024-10-25"
+                  - option "2024-10-28"
+                  - option "2024-10-29"
+                  - option "2024-10-30"
+                  - option "2024-10-31"
+                  - option "2024-11-01"
+                  - option "2024-11-04"
+                  - option "2024-11-05"
+                  - option "2024-11-06"
+                  - option "2024-11-07"
+                  - option "2024-11-08"
+                  - option "2024-11-11"
+                  - option "2024-11-12"
+                  - option "2024-11-13"
+                  - option "2024-11-14"
+                  - option "2024-11-15"
+                  - option "2024-11-18"
+                  - option "2024-11-19"
+                  - option "2024-11-20"
+                  - option "2024-11-21"
+                  - option "2024-11-22"
+                  - option "2024-11-25"
+                  - option "2024-11-26"
+                  - option "2024-11-27"
+                  - option "2024-11-28"
+                  - option "2024-11-29"
+                  - option "2024-12-02"
+                  - option "2024-12-03"
+                  - option "2024-12-04"
+                  - option "2024-12-05"
+                  - option "2024-12-06"
+                  - option "2024-12-09"
+                  - option "2024-12-10"
+                  - option "2024-12-11"
+                  - option "2024-12-12"
+                  - option "2024-12-13"
+                  - option "2024-12-16"
+                  - option "2024-12-17"
+                  - option "2024-12-18"
+                  - option "2024-12-19"
+                  - option "2024-12-20"
+                  - option "2024-12-23"
+                  - option "2024-12-24"
+                  - option "2024-12-26"
+                  - option "2024-12-27"
+                  - option "2024-12-30"
+                  - option "2024-12-31"
+                  - option "2025-01-02"
+                  - option "2025-01-03"
+                  - option "2025-01-06"
+                  - option "2025-01-07"
+                  - option "2025-01-08"
+                  - option "2025-01-10"
+                  - option "2025-01-13"
+                  - option "2025-01-14"
+                  - option "2025-01-15"
+                  - option "2025-01-16"
+                  - option "2025-01-17"
+                  - option "2025-01-20"
+                  - option "2025-01-21"
+                  - option "2025-01-22"
+                  - option "2025-01-23"
+                  - option "2025-01-24"
+                  - option "2025-01-27"
+                  - option "2025-01-28"
+                  - option "2025-01-29"
+                  - option "2025-01-30"
+                  - option "2025-01-31"
+                  - option "2025-02-03"
+                  - option "2025-02-04"
+                  - option "2025-02-05"
+                  - option "2025-02-06"
+                  - option "2025-02-07"
+                  - option "2025-02-10"
+                  - option "2025-02-11"
+                  - option "2025-02-12"
+                  - option "2025-02-13"
+                  - option "2025-02-14"
+                  - option "2025-02-17"
+                  - option "2025-02-18"
+                  - option "2025-02-19"
+                  - option "2025-02-20"
+                  - option "2025-02-21"
+                  - option "2025-02-24"
+                  - option "2025-02-25"
+                  - option "2025-02-26"
+                  - option "2025-02-27"
+                  - option "2025-02-28"
+                  - option "2025-03-03"
+                  - option "2025-03-04"
+                  - option "2025-03-05"
+                  - option "2025-03-06"
+                  - option "2025-03-07"
+                  - option "2025-03-10"
+                  - option "2025-03-11"
+                  - option "2025-03-12"
+                  - option "2025-03-13"
+                  - option "2025-03-14"
+                  - option "2025-03-17"
+                  - option "2025-03-18"
+                  - option "2025-03-19"
+                  - option "2025-03-20"
+                  - option "2025-03-21"
+                  - option "2025-03-24"
+                  - option "2025-03-25"
+                  - option "2025-03-26"
+                  - option "2025-03-27"
+                  - option "2025-03-28"
+                  - option "2025-03-31"
+                  - option "2025-04-01"
+                  - option "2025-04-02"
+                  - option "2025-04-03"
+                  - option "2025-04-04"
+                  - option "2025-04-07"
+                  - option "2025-04-08"
+                  - option "2025-04-09"
+                  - option "2025-04-10"
+                  - option "2025-04-11"
+                  - option "2025-04-14"
+                  - option "2025-04-15"
+                  - option "2025-04-16"
+                  - option "2025-04-17"
+                  - option "2025-04-21"
+                  - option "2025-04-22"
+                  - option "2025-04-23"
+                  - option "2025-04-24"
+                  - option "2025-04-25"
+                  - option "2025-04-28"
+                  - option "2025-04-29"
+                  - option "2025-04-30"
+                  - option "2025-05-01"
+                  - option "2025-05-02"
+                  - option "2025-05-05"
+                  - option "2025-05-06"
+                  - option "2025-05-07"
+                  - option "2025-05-08"
+                  - option "2025-05-09"
+                  - option "2025-05-12"
+                  - option "2025-05-13"
+                  - option "2025-05-14"
+                  - option "2025-05-15"
+                  - option "2025-05-16"
+                  - option "2025-05-19"
+                  - option "2025-05-20"
+                  - option "2025-05-21"
+                  - option "2025-05-22"
+                  - option "2025-05-23"
+                  - option "2025-05-26"
+                  - option "2025-05-27"
+                  - option "2025-05-28"
+                  - option "2025-05-29"
+                  - option "2025-05-30"
+                  - option "2025-06-02"
+                  - option "2025-06-03"
+                  - option "2025-06-04"
+                  - option "2025-06-05"
+                  - option "2025-06-06"
+                  - option "2025-06-09"
+                  - option "2025-06-10"
+                  - option "2025-06-11"
+                  - option "2025-06-12"
+                  - option "2025-06-13"
+                  - option "2025-06-16"
+                  - option "2025-06-17"
+                  - option "2025-06-18"
+                  - option "2025-06-19"
+                  - option "2025-06-20"
+                  - option "2025-06-23"
+                  - option "2025-06-24"
+                  - option "2025-06-25"
+                  - option "2025-06-26"
+                  - option "2025-06-27"
+                  - option "2025-06-30"
+                  - option "2025-07-01"
+                  - option "2025-07-02"
+                  - option "2025-07-03"
+                  - option "2025-07-04"
+                  - option "2025-07-07"
+                  - option "2025-07-08"
+                  - option "2025-07-09"
+                  - option "2025-07-10"
+                  - option "2025-07-11"
+                  - option "2025-07-14"
+                  - option "2025-07-15"
+                  - option "2025-07-16"
+                  - option "2025-07-17"
+                  - option "2025-07-18"
+                  - option "2025-07-21"
+                  - option "2025-07-22"
+                  - option "2025-07-23"
+                  - option "2025-07-24"
+                  - option "2025-07-25"
+                  - option "2025-07-28"
+                  - option "2025-07-29" [selected]
+                  - option "2025-07-30"
+                  - option "2025-07-31"
+                  - option "2025-08-01"
+                  - option "2025-08-04"
+                  - option "2025-08-05"
+                  - option "2025-08-06"
+                  - option "2025-08-07"
+                  - option "2025-08-08"
+                  - option "2025-08-11"
+                  - option "2025-08-12"
+                  - option "2025-08-13"
+                  - option "2025-08-14"
+                  - option "2025-08-15"
+                  - option "2025-08-18"
+                  - option "2025-08-19"
+                  - option "2025-08-20"
+                  - option "2025-08-21"
+                  - option "2025-08-22"
+                  - option "2025-08-25"
+                  - option "2025-08-26"
+                  - option "2025-08-27"
+                  - option "2025-08-28"
+                  - option "2025-08-29"
+                  - option "2025-09-01"
+                  - option "2025-09-02"
+                  - option "2025-09-03"
+                  - option "2025-09-04"
+                  - option "2025-09-05"
+                  - option "2025-09-08"
+                  - option "2025-09-09"
+                  - option "2025-09-10"
+                  - option "2025-09-11"
+                  - option "2025-09-12"
+                  - option "2025-09-15"
+                  - option "2025-09-16"
+                  - option "2025-09-17"
+                  - option "2025-09-18"
+                  - option "2025-09-19"
+                  - option "2025-09-22"
+                  - option "2025-09-23"
+                  - option "2025-09-24"
+                  - option "2025-09-25"
+                  - option "2025-09-26"
+                  - option "2025-09-29"
+                  - option "2025-09-30"
+                  - option "2025-10-01"
+                  - option "2025-10-02"
+                  - option "2025-10-03"
+                  - option "2025-10-06"
+                  - option "2025-10-07"
+                  - option "2025-10-08"
+                  - option "2025-10-09"
+                  - option "2025-10-10"
+                  - option "2025-10-13"
+                  - option "2025-10-14"
+                  - option "2025-10-15"
+                  - option "2025-10-16"
+                  - option "2025-10-17"
+                  - option "2025-10-20"
+                  - option "2025-10-21"
+                  - option "2025-10-22"
+                  - option "2025-10-23"
+                  - option "2025-10-24"
+                  - option "2025-10-27"
+                  - option "2025-10-28"
+                  - option "2025-10-29"
+                  - option "2025-10-30"
+                  - option "2025-10-31"
+                  - option "2025-11-03"
+                  - option "2025-11-04"
+                  - option "2025-11-05"
+                  - option "2025-11-06"
+                  - option "2025-11-07"
+                  - option "2025-11-10"
+                  - option "2025-11-11"
+                  - option "2025-11-12"
+                  - option "2025-11-13"
+                  - option "2025-11-14"
+                  - option "2025-11-17"
+                  - option "2025-11-18"
+                  - option "2025-11-19"
+                  - option "2025-11-20"
+                  - option "2025-11-21"
+                  - option "2025-11-24"
+                  - option "2025-11-25"
+                  - option "2025-11-26"
+                  - option "2025-11-27"
+                  - option "2025-11-28"
+                  - option "2025-12-01"
+                  - option "2025-12-02"
+                  - option "2025-12-03"
+              - generic [ref=e61]:
+                - generic [ref=e62]: Candle Type
+                - combobox "Candle Type" [ref=e63]:
+                  - option "1s (Second)" [selected]
+                  - option "1m (Minute)"
+            - generic [ref=e64]: "Available days: 515"
+          - generic [ref=e65]:
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e69]: "Today's Net:"
+                - generic [ref=e70]: +7.00 pts
+              - generic [ref=e71]:
+                - generic [ref=e72]: "Per Trade:"
+                - generic [ref=e73]: +0.88 pts
+              - generic [ref=e74]:
+                - generic [ref=e75]: TRADES
+                - generic [ref=e76]: "8"
+            - generic [ref=e79]:
+              - generic [ref=e80]:
+                - generic [ref=e81]: "Cumulative:"
+                - generic [ref=e82]: +42.00 pts
+              - generic [ref=e83]:
+                - generic [ref=e84]: "Per Trade:"
+                - generic [ref=e85]: +0.49 pts
+              - generic [ref=e86]:
+                - generic [ref=e87]: TRADES
+                - generic [ref=e88]: "86"
+              - button "Reset Cache" [ref=e90]
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - text: Line visibility
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - checkbox "OPEN" [checked] [ref=e95]
+                  - generic [ref=e96]: OPEN
+                - generic [ref=e97]:
+                  - checkbox "Long TRG" [checked] [ref=e98]
+                  - generic [ref=e99]: Long TRG
+                - generic [ref=e100]:
+                  - checkbox "Short TRG" [checked] [ref=e101]
+                  - generic [ref=e102]: Short TRG
+                - generic [ref=e103]:
+                  - checkbox "TP" [checked] [ref=e104]
+                  - generic [ref=e105]: TP
+                - generic [ref=e106]:
+                  - checkbox "SL" [checked] [ref=e107]
+                  - generic [ref=e108]: SL
+                - generic [ref=e109]:
+                  - checkbox "MA20" [ref=e110]
+                  - generic [ref=e111]: MA20
+                - generic [ref=e112]:
+                  - checkbox "MA50" [ref=e113]
+                  - generic [ref=e114]: MA50
+                - generic [ref=e115]:
+                  - checkbox "MA100" [ref=e116]
+                  - generic [ref=e117]: MA100
+                - generic [ref=e118]:
+                  - checkbox "MA200" [ref=e119]
+                  - generic [ref=e120]: MA200
+                - generic [ref=e121]:
+                  - checkbox "Session Avg" [ref=e122]
+                  - generic [ref=e123]: Session Avg
+                - generic [ref=e124]:
+                  - checkbox "Lines 30" [checked] [ref=e125]
+                  - generic [ref=e126]: Lines 30
+                - generic [ref=e127]:
+                  - checkbox "Lines 35" [checked] [ref=e128]
+                  - generic [ref=e129]: Lines 35
+            - generic [ref=e131]: "Data source: static-1s"
+          - region "Price Chart" [ref=e132]:
+            - generic [ref=e133]:
+              - generic [ref=e134]: "Day 2025-07-29 · Series: candles"
+              - generic [ref=e135]:
+                - button "⤢ Fullscreen" [ref=e136]
+                - generic [ref=e137]: "Timezone: ET"
+            - table [ref=e141]:
+              - row [ref=e142]:
+                - cell
+                - cell [ref=e143]
+                - cell [ref=e147]
+              - row [ref=e151]:
+                - cell
+                - cell [ref=e152]
+                - cell [ref=e156]
+            - generic [ref=e159]: Horizontal lines use createPriceLine() to reduce flicker on zoom/pan. Chart preserves entry/direction when toggling series.
+          - region "Algorithmic Trades" [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: Algorithmic Trades
+              - generic [ref=e163]: 8 RTs · 16 rows
+            - table [ref=e165]:
+              - rowgroup [ref=e166]:
+                - row "RT# Timestamp (ET) Type Price Slippage Note Net" [ref=e167]:
+                  - columnheader "RT#" [ref=e168]
+                  - columnheader "Timestamp (ET)" [ref=e169]
+                  - columnheader "Type" [ref=e170]
+                  - columnheader "Price" [ref=e171]
+                  - columnheader "Slippage" [ref=e172]
+                  - columnheader "Note" [ref=e173]
+                  - columnheader "Net" [ref=e174]
+              - rowgroup [ref=e175]:
+                - row "1 07/29/2025, 09:30:05 ET Open Long 23604.25 1.00 — —" [ref=e176] [cursor=pointer]:
+                  - cell "1" [ref=e177]
+                  - cell "07/29/2025, 09:30:05 ET" [ref=e178]
+                  - cell "Open Long" [ref=e179]
+                  - cell "23604.25" [ref=e180]
+                  - cell "1.00" [ref=e181]
+                  - cell "—" [ref=e182]
+                  - cell "—" [ref=e183]
+                - row "1 07/29/2025, 09:30:06 ET Close Long 23605.25 — hit adjusted sl of 23605.25 based on profit of 1.00 1.00" [ref=e184] [cursor=pointer]:
+                  - cell "1" [ref=e185]
+                  - cell "07/29/2025, 09:30:06 ET" [ref=e186]
+                  - cell "Close Long" [ref=e187]
+                  - cell "23605.25" [ref=e188]
+                  - cell "—" [ref=e189]
+                  - cell "hit adjusted sl of 23605.25 based on profit of 1.00" [ref=e190]
+                  - cell "1.00" [ref=e191]
+                - row "2 07/29/2025, 09:30:10 ET Open Long 23604.25 1.00 — —" [ref=e192] [cursor=pointer]:
+                  - cell "2" [ref=e193]
+                  - cell "07/29/2025, 09:30:10 ET" [ref=e194]
+                  - cell "Open Long" [ref=e195]
+                  - cell "23604.25" [ref=e196]
+                  - cell "1.00" [ref=e197]
+                  - cell "—" [ref=e198]
+                  - cell "—" [ref=e199]
+                - row "2 07/29/2025, 09:30:13 ET Close Long 23604.75 — hit adjusted sl of 23604.75 based on profit of 0.50 0.50" [ref=e200] [cursor=pointer]:
+                  - cell "2" [ref=e201]
+                  - cell "07/29/2025, 09:30:13 ET" [ref=e202]
+                  - cell "Close Long" [ref=e203]
+                  - cell "23604.75" [ref=e204]
+                  - cell "—" [ref=e205]
+                  - cell "hit adjusted sl of 23604.75 based on profit of 0.50" [ref=e206]
+                  - cell "0.50" [ref=e207]
+                - row "3 07/29/2025, 09:30:14 ET Open Long 23604.25 1.00 — —" [ref=e208] [cursor=pointer]:
+                  - cell "3" [ref=e209]
+                  - cell "07/29/2025, 09:30:14 ET" [ref=e210]
+                  - cell "Open Long" [ref=e211]
+                  - cell "23604.25" [ref=e212]
+                  - cell "1.00" [ref=e213]
+                  - cell "—" [ref=e214]
+                  - cell "—" [ref=e215]
+                - row "3 07/29/2025, 09:30:17 ET Close Long 23606.25 — hit adjusted sl of 23606.25 based on profit of 2.00 2.00" [ref=e216] [cursor=pointer]:
+                  - cell "3" [ref=e217]
+                  - cell "07/29/2025, 09:30:17 ET" [ref=e218]
+                  - cell "Close Long" [ref=e219]
+                  - cell "23606.25" [ref=e220]
+                  - cell "—" [ref=e221]
+                  - cell "hit adjusted sl of 23606.25 based on profit of 2.00" [ref=e222]
+                  - cell "2.00" [ref=e223]
+                - row "4 07/29/2025, 09:32:35 ET Open Long 23604.25 1.00 — —" [ref=e224] [cursor=pointer]:
+                  - cell "4" [ref=e225]
+                  - cell "07/29/2025, 09:32:35 ET" [ref=e226]
+                  - cell "Open Long" [ref=e227]
+                  - cell "23604.25" [ref=e228]
+                  - cell "1.00" [ref=e229]
+                  - cell "—" [ref=e230]
+                  - cell "—" [ref=e231]
+                - row "4 07/29/2025, 09:32:36 ET Close Long 23605.25 — hit adjusted sl of 23605.25 based on profit of 1.00 1.00" [ref=e232] [cursor=pointer]:
+                  - cell "4" [ref=e233]
+                  - cell "07/29/2025, 09:32:36 ET" [ref=e234]
+                  - cell "Close Long" [ref=e235]
+                  - cell "23605.25" [ref=e236]
+                  - cell "—" [ref=e237]
+                  - cell "hit adjusted sl of 23605.25 based on profit of 1.00" [ref=e238]
+                  - cell "1.00" [ref=e239]
+                - row "5 07/29/2025, 09:32:42 ET Open Long 23604.25 1.00 — —" [ref=e240] [cursor=pointer]:
+                  - cell "5" [ref=e241]
+                  - cell "07/29/2025, 09:32:42 ET" [ref=e242]
+                  - cell "Open Long" [ref=e243]
+                  - cell "23604.25" [ref=e244]
+                  - cell "1.00" [ref=e245]
+                  - cell "—" [ref=e246]
+                  - cell "—" [ref=e247]
+                - row "5 07/29/2025, 09:32:46 ET Close Long 23605.25 — hit adjusted sl of 23605.25 based on profit of 1.00 1.00" [ref=e248] [cursor=pointer]:
+                  - cell "5" [ref=e249]
+                  - cell "07/29/2025, 09:32:46 ET" [ref=e250]
+                  - cell "Close Long" [ref=e251]
+                  - cell "23605.25" [ref=e252]
+                  - cell "—" [ref=e253]
+                  - cell "hit adjusted sl of 23605.25 based on profit of 1.00" [ref=e254]
+                  - cell "1.00" [ref=e255]
+                - row "6 07/29/2025, 09:36:27 ET Open Long 23640.25 1.00 — —" [ref=e256] [cursor=pointer]:
+                  - cell "6" [ref=e257]
+                  - cell "07/29/2025, 09:36:27 ET" [ref=e258]
+                  - cell "Open Long" [ref=e259]
+                  - cell "23640.25" [ref=e260]
+                  - cell "1.00" [ref=e261]
+                  - cell "—" [ref=e262]
+                  - cell "—" [ref=e263]
+                - row "6 07/29/2025, 09:36:34 ET Close Long 23640.75 — hit adjusted sl of 23640.75 based on profit of 0.50 0.50" [ref=e264] [cursor=pointer]:
+                  - cell "6" [ref=e265]
+                  - cell "07/29/2025, 09:36:34 ET" [ref=e266]
+                  - cell "Close Long" [ref=e267]
+                  - cell "23640.75" [ref=e268]
+                  - cell "—" [ref=e269]
+                  - cell "hit adjusted sl of 23640.75 based on profit of 0.50" [ref=e270]
+                  - cell "0.50" [ref=e271]
+                - row "7 07/29/2025, 09:36:35 ET Open Long 23640.25 1.00 — —" [ref=e272] [cursor=pointer]:
+                  - cell "7" [ref=e273]
+                  - cell "07/29/2025, 09:36:35 ET" [ref=e274]
+                  - cell "Open Long" [ref=e275]
+                  - cell "23640.25" [ref=e276]
+                  - cell "1.00" [ref=e277]
+                  - cell "—" [ref=e278]
+                  - cell "—" [ref=e279]
+                - row "7 07/29/2025, 09:36:36 ET Close Long 23640.75 — hit adjusted sl of 23640.75 based on profit of 0.50 0.50" [ref=e280] [cursor=pointer]:
+                  - cell "7" [ref=e281]
+                  - cell "07/29/2025, 09:36:36 ET" [ref=e282]
+                  - cell "Close Long" [ref=e283]
+                  - cell "23640.75" [ref=e284]
+                  - cell "—" [ref=e285]
+                  - cell "hit adjusted sl of 23640.75 based on profit of 0.50" [ref=e286]
+                  - cell "0.50" [ref=e287]
+                - row "8 07/29/2025, 09:36:44 ET Open Long 23640.25 1.00 — —" [ref=e288] [cursor=pointer]:
+                  - cell "8" [ref=e289]
+                  - cell "07/29/2025, 09:36:44 ET" [ref=e290]
+                  - cell "Open Long" [ref=e291]
+                  - cell "23640.25" [ref=e292]
+                  - cell "1.00" [ref=e293]
+                  - cell "—" [ref=e294]
+                  - cell "—" [ref=e295]
+                - row "8 07/29/2025, 09:36:46 ET Close Long 23640.75 — hit adjusted sl of 23640.75 based on profit of 0.50 0.50" [ref=e296] [cursor=pointer]:
+                  - cell "8" [ref=e297]
+                  - cell "07/29/2025, 09:36:46 ET" [ref=e298]
+                  - cell "Close Long" [ref=e299]
+                  - cell "23640.75" [ref=e300]
+                  - cell "—" [ref=e301]
+                  - cell "hit adjusted sl of 23640.75 based on profit of 0.50" [ref=e302]
+                  - cell "0.50" [ref=e303]
+              - rowgroup [ref=e304]:
+                - row "Day Total (8 RTs) 7.00" [ref=e305]:
+                  - cell "Day Total (8 RTs)" [ref=e306]
+                  - cell "7.00" [ref=e307]
+            - generic [ref=e309]: "Easy Peasy: 8 trades found | Max RT: 5"
+        - region "Cumulative Results" [ref=e310]:
+          - heading "Cumulative Results" [level=1] [ref=e311]
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e315]: Today
+                - generic [ref=e316]: +7.00 pts
+              - generic [ref=e317]:
+                - generic [ref=e318]: Cumulative
+                - generic [ref=e319]: +42.00 pts
+                - generic [ref=e320]: 86 days sampled • 2025-07-09 – 2025-12-03
+            - generic [ref=e321]:
+              - generic [ref=e322]: Day-by-day performance (13 entries)
+              - generic [ref=e323]:
+                - generic [ref=e324]: Cumulative Total
+                - generic [ref=e326]:
+                  - generic [ref=e327]:
+                    - generic [ref=e328]: "+55"
+                    - generic [ref=e329]: "0"
+                    - generic [ref=e330]: "-55"
+                  - img [ref=e333]:
+                    - 'generic "2025-12-03: +23.00 pts" [ref=e346] [cursor=pointer]'
+                    - 'generic "2025-12-02: +21.00 pts" [ref=e347] [cursor=pointer]'
+                    - 'generic "2025-12-01: +21.00 pts" [ref=e348] [cursor=pointer]'
+                    - 'generic "2025-11-28: +21.00 pts" [ref=e349] [cursor=pointer]'
+                    - 'generic "2025-11-27: +21.00 pts" [ref=e350] [cursor=pointer]'
+                    - 'generic "2025-11-26: +21.00 pts" [ref=e351] [cursor=pointer]'
+                    - 'generic "2025-11-25: +21.00 pts" [ref=e352] [cursor=pointer]'
+                    - 'generic "2025-11-14: +41.50 pts" [ref=e353] [cursor=pointer]'
+                    - 'generic "2025-11-12: +54.50 pts" [ref=e354] [cursor=pointer]'
+                    - 'generic "2025-10-17: +42.50 pts" [ref=e355] [cursor=pointer]'
+                    - 'generic "2025-09-05: +28.50 pts" [ref=e356] [cursor=pointer]'
+                    - 'generic "2025-07-29: +35.50 pts" [ref=e357] [cursor=pointer]'
+                    - 'generic "2025-07-09: +42.00 pts" [ref=e358] [cursor=pointer]'
+              - generic [ref=e359]:
+                - generic [ref=e360]: Daily P&L
+                - generic [ref=e362]:
+                  - generic [ref=e363]:
+                    - generic [ref=e364]: "+23"
+                    - generic [ref=e365]: "0"
+                    - generic [ref=e366]: "-23"
+                  - generic [ref=e367]:
+                    - 'generic "2025-12-03: +23.00 pts" [ref=e369]'
+                    - 'generic "2025-12-02: -2.00 pts" [ref=e370]'
+                    - 'generic "2025-12-01: +0.00 pts" [ref=e371]'
+                    - 'generic "2025-11-28: +0.00 pts" [ref=e372]'
+                    - 'generic "2025-11-27: +0.00 pts" [ref=e373]'
+                    - 'generic "2025-11-26: +0.00 pts" [ref=e374]'
+                    - 'generic "2025-11-25: +0.00 pts" [ref=e375]'
+                    - 'generic "2025-11-14: +20.50 pts" [ref=e376]'
+                    - 'generic "2025-11-12: +13.00 pts" [ref=e377]'
+                    - 'generic "2025-10-17: -12.00 pts" [ref=e378]'
+                    - 'generic "2025-09-05: -14.00 pts" [ref=e379]'
+                    - 'generic "2025-07-29: +7.00 pts" [ref=e380]'
+                    - 'generic "2025-07-09: +6.50 pts" [ref=e381]'
+              - generic [ref=e382]: ← Newest | Oldest →
+      - region "Trade Data" [ref=e383]:
+        - generic [ref=e384]:
+          - generic [ref=e385]:
+            - heading "Detailed Data" [level=1] [ref=e386]
+            - generic [ref=e387]: "⚠️ Warning: TICK DATA loads excessive amounts of data and will likely crash your browser"
+            - generic [ref=e388]:
+              - generic [ref=e389]: OHLCV — loads the chart at 1sec intervals
+              - generic [ref=e390]: Tick Data — not used but included for funsies
+          - generic [ref=e391]:
+            - generic [ref=e392]:
+              - button "OHLCV" [ref=e393]
+              - button "Tick Data" [ref=e394]
+            - generic [ref=e395]: "Rows: 30"
+        - generic [ref=e396]:
+          - generic [ref=e397]: Debug Console Notes
+          - list [ref=e398]:
+            - listitem [ref=e399]: Console logs track date loads, series swaps, price-line sync, and data counts.
+            - listitem [ref=e400]: Entry/direction state stays unchanged when moving across days or series.
+            - listitem [ref=e401]: Start/trigger lines recompute per day using first trade price; invalid rows are dropped with counts logged.
+    - button "📋 Logs" [ref=e402]
+```

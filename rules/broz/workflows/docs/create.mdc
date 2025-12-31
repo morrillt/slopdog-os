@@ -1,0 +1,122 @@
+---
+description: "Workflow: Create a new documentation file"
+globs: []
+---
+# Workflow: Docs > Create
+
+<critical>Do NOT add H1 title in body (Front-matter `title` is H1).</critical>
+<critical>Use H2 (`##`) for major sections (required for TOC).</critical>
+<critical>New docs must start as `status: draft`.</critical>
+
+<workflow>
+
+<step n="1" goal="Initialize">
+  <action>
+    **Gather Details**:
+    - Doc Type (How-to, Design, API, etc.)
+    - Title
+    - Intended Path (e.g. `docs/strategies/...`)
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Initialize**
+    📝 Gathered doc type, title, and path
+    
+    ➡️ **Beginning Step 2: Create Draft File**
+  </output>
+</step>
+
+<step n="2" goal="Create Draft File">
+  <action>
+    **Create File**:
+    - Location: `docs/...`
+    - Front-matter:
+      ```yaml
+      ---
+      title: "..."
+      updated: "YYYY-MM-DD"
+      facets:
+        type: <type>
+        status: draft
+        repo:
+          path: <path>
+      tags: []
+      ---
+      ```
+  </action>
+
+  <action>
+    **Apply Content**:
+    - Use appropriate template.
+    - Enforce H2 structure for TOC.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Create Draft File**
+    📄 Created draft file with proper front-matter
+    📑 Applied content template with H2 structure
+    
+    ➡️ **Beginning Step 3: Tagging Strategy**
+  </output>
+</step>
+
+<step n="3" goal="Tagging Strategy">
+  <action>
+    **Elicit Tag Intent**:
+    - Audience (`dev`, `stakeholder`)?
+    - Intent (`howto`, `beware`, etc.)?
+    - Domain/Tech topics?
+  </action>
+
+  <action>
+    **Apply Initial Tags**:
+    - Update `tags: []` in front-matter.
+    - Keep it minimal.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Tagging Strategy**
+    🏷️ Elicited tag intent from user
+    📝 Applied initial minimal tag set
+    
+    ➡️ **Beginning Step 4: Validation & Options**
+  </output>
+</step>
+
+<step n="4" goal="Validation & Options">
+  <action>
+    **Validate**:
+    - Check against `docs/docfrontmatterrules.md`.
+  </action>
+
+  <action>
+    **Offer Publish**:
+    - Ask: "Publish now? (Enforce taxonomy + active status)".
+    - If yes -> Trigger `docs/publish`.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Validation & Options**
+    ✅ Validated against docfrontmatterrules
+    💬 Offered publish option
+    
+    ➡️ **Beginning Step 5: Summary**
+  </output>
+</step>
+
+<step n="5" goal="Summary">
+  <action>
+    **Provide Links**:
+    - Viewer URL: `http://localhost:3000/docs/<slug>`
+    - Index URL: `http://localhost:3000/docs`
+  </action>
+
+  <output>
+    ### Doc Created
+    - **File**: [Path]
+    - **Status**: Draft
+    - **Viewer**: [Link]
+  </output>
+</step>
+
+</workflow>

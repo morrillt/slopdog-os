@@ -1,0 +1,1141 @@
+### Ran Playwright code
+await page.goto('http://localhost:3000/docs');
+
+### New console messages
+- [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [INFO] Download the React DevTools for a better development experience: https://react.dev/link/react...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Hydrated @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._....
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Root @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] ServerRoot @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] AppRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] RootErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ErrorBoundaryHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] HistoryUpdater @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] HotReload @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] AppDevOverlayErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] DevRootHTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modul...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] HTTPAccessFallbackErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_viewport_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_metadata_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] SegmentViewNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] HTTPAccessFallbackErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentViewNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] ClientPageRoot @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] DocsPage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] __next_outlet_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] AppRouterAnnouncer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_co...
+- [TIMESTAMP] AppRouterAnnouncer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_co...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] DocsPage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] a @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​Preloads @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​HTTPAccessErrorFallback @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] ​NotFound @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​RootLayout @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+
+### Page state
+- Page URL: http://localhost:3000/docs
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: Broz Backtester
+        - navigation [ref=e6]:
+          - link "Backtest Tuner" [ref=e7] [cursor=pointer]:
+            - /url: /backtest
+          - link "Backtest Analysis" [ref=e8] [cursor=pointer]:
+            - /url: /analysis/dec2025-2yearbacktest-algo1.0
+          - link "Downloader" [ref=e9] [cursor=pointer]:
+            - /url: "#"
+          - link "Trader" [ref=e10] [cursor=pointer]:
+            - /url: "#"
+          - link "Docs" [ref=e11] [cursor=pointer]:
+            - /url: /docs
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - heading "Filters" [level=2] [ref=e14]
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]: Type
+            - combobox [ref=e18]:
+              - option "All Types" [selected]
+              - option "plan"
+              - option "strategy"
+              - option "note"
+              - option "changelog"
+          - generic [ref=e19]:
+            - generic [ref=e20]: Status
+            - combobox [ref=e21]:
+              - option "All Statuses" [selected]
+              - option "draft"
+              - option "active"
+              - option "deprecated"
+        - generic [ref=e22]:
+          - generic [ref=e23]: Tags
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: plan
+              - combobox [ref=e27]:
+                - option "All" [selected]
+                - option "epic"
+                - option "ticket"
+            - generic [ref=e28]:
+              - generic [ref=e29]: domain
+              - combobox [ref=e30]:
+                - option "All" [selected]
+                - option "indicator/atr"
+                - option "indicator/orb"
+                - option "strategy/orb-retest-breakout"
+                - option "strategy/stepped-no-orb"
+                - option "tag/data-candles"
+                - option "tag/entry"
+                - option "tag/exit"
+                - option "tag/stoploss"
+                - option "tag/takeprofit"
+            - generic [ref=e31]:
+              - generic [ref=e32]: doc
+              - combobox [ref=e33]:
+                - option "All" [selected]
+                - option "beware"
+                - option "howto"
+            - generic [ref=e34]:
+              - generic [ref=e35]: tech
+              - combobox [ref=e36]:
+                - option "All" [selected]
+                - option "backend/api"
+                - option "frontend/architecture"
+                - option "frontend/ui"
+                - option "infra"
+                - option "logging"
+                - option "scripts/dl"
+                - option "scripts/util"
+                - option "testing"
+            - generic [ref=e37]:
+              - generic [ref=e38]: ops
+              - combobox [ref=e39]:
+                - option "All" [selected]
+                - option "bug"
+                - option "migration"
+                - option "refactor"
+            - generic [ref=e40]:
+              - generic [ref=e41]: meta
+              - combobox [ref=e42]:
+                - option "All" [selected]
+                - option "index"
+                - option "template"
+        - generic [ref=e43]: Showing 79 of 79 documents
+      - generic [ref=e44]:
+        - 'button "Basic Strategy Trade Notes Trade Notes strategy • draft • Updated: 2025-12-15 domain/strategy/stepped-no-orb domain/tag/stoploss domain/tag/takeprofit domain/tag/entry" [ref=e45]':
+          - generic [ref=e47]:
+            - heading "Basic Strategy Trade Notes" [level=3] [ref=e48]
+            - paragraph [ref=e49]: Trade Notes
+            - generic [ref=e50]:
+              - generic [ref=e51]: strategy
+              - generic [ref=e52]: •
+              - generic [ref=e53]: draft
+              - generic [ref=e54]: •
+              - generic [ref=e55]: "Updated: 2025-12-15"
+            - generic [ref=e56]:
+              - generic [ref=e57]: domain/strategy/stepped-no-orb
+              - generic [ref=e58]: domain/tag/stoploss
+              - generic [ref=e59]: domain/tag/takeprofit
+              - generic [ref=e60]: domain/tag/entry
+        - 'button "ORB Retest Breakout Strategy Guide ORB Retest Breakout Strategy Guide strategy • active • orb-retest-breakout vv1 • Updated: 2025-12-15 domain/strategy/orb-retest-breakout domain/indicator/orb domain/indicator/atr domain/tag/stoploss domain/tag/takeprofit +2 more" [ref=e61]':
+          - generic [ref=e63]:
+            - heading "ORB Retest Breakout Strategy Guide" [level=3] [ref=e64]
+            - paragraph [ref=e65]: ORB Retest Breakout Strategy Guide
+            - generic [ref=e66]:
+              - generic [ref=e67]: strategy
+              - generic [ref=e68]: •
+              - generic [ref=e69]: active
+              - generic [ref=e70]: •
+              - generic [ref=e71]: orb-retest-breakout vv1
+              - generic [ref=e72]: •
+              - generic [ref=e73]: "Updated: 2025-12-15"
+            - generic [ref=e74]:
+              - generic [ref=e75]: domain/strategy/orb-retest-breakout
+              - generic [ref=e76]: domain/indicator/orb
+              - generic [ref=e77]: domain/indicator/atr
+              - generic [ref=e78]: domain/tag/stoploss
+              - generic [ref=e79]: domain/tag/takeprofit
+              - generic [ref=e80]: +2 more
+        - 'button "Rockcap PRD Rockcap PRD plan • active • Updated: 2025-12-15 plan/epic meta/index" [ref=e81]':
+          - generic [ref=e83]:
+            - heading "Rockcap PRD" [level=3] [ref=e84]
+            - paragraph [ref=e85]: Rockcap PRD
+            - generic [ref=e86]:
+              - generic [ref=e87]: plan
+              - generic [ref=e88]: •
+              - generic [ref=e89]: active
+              - generic [ref=e90]: •
+              - generic [ref=e91]: "Updated: 2025-12-15"
+            - generic [ref=e92]:
+              - generic [ref=e93]: plan/epic
+              - generic [ref=e94]: meta/index
+        - 'button "IMPORTANT: ORB strategy naming, gap-aware entries, analyzer output IMPROTANT: ORB strategy naming, gap-aware entries, analyzer output note • active • Updated: 2025-12-15 doc/beware domain/strategy/orb-retest-breakout ops/bug" [ref=e95]':
+          - generic [ref=e97]:
+            - 'heading "IMPORTANT: ORB strategy naming, gap-aware entries, analyzer output" [level=3] [ref=e98]'
+            - paragraph [ref=e99]: "IMPROTANT: ORB strategy naming, gap-aware entries, analyzer output"
+            - generic [ref=e100]:
+              - generic [ref=e101]: note
+              - generic [ref=e102]: •
+              - generic [ref=e103]: active
+              - generic [ref=e104]: •
+              - generic [ref=e105]: "Updated: 2025-12-15"
+            - generic [ref=e106]:
+              - generic [ref=e107]: doc/beware
+              - generic [ref=e108]: domain/strategy/orb-retest-breakout
+              - generic [ref=e109]: ops/bug
+        - 'button "Candles Pipeline (API + UI) Candles Pipeline (API + UI) note • active • Updated: 2025-12-15 tech/backend/api tech/frontend/ui domain/tag/data-candles" [ref=e110]':
+          - generic [ref=e112]:
+            - heading "Candles Pipeline (API + UI)" [level=3] [ref=e113]
+            - paragraph [ref=e114]: Candles Pipeline (API + UI)
+            - generic [ref=e115]:
+              - generic [ref=e116]: note
+              - generic [ref=e117]: •
+              - generic [ref=e118]: active
+              - generic [ref=e119]: •
+              - generic [ref=e120]: "Updated: 2025-12-15"
+            - generic [ref=e121]:
+              - generic [ref=e122]: tech/backend/api
+              - generic [ref=e123]: tech/frontend/ui
+              - generic [ref=e124]: domain/tag/data-candles
+        - 'button "Trades Converter Dual Outputs (Intervals A & B) Trades Converter Dual Outputs (Intervals A & B) note • active • Updated: 2025-12-15 tech/scripts/util domain/tag/data-candles" [ref=e125]':
+          - generic [ref=e127]:
+            - heading "Trades Converter Dual Outputs (Intervals A & B)" [level=3] [ref=e128]
+            - paragraph [ref=e129]: Trades Converter Dual Outputs (Intervals A & B)
+            - generic [ref=e130]:
+              - generic [ref=e131]: note
+              - generic [ref=e132]: •
+              - generic [ref=e133]: active
+              - generic [ref=e134]: •
+              - generic [ref=e135]: "Updated: 2025-12-15"
+            - generic [ref=e136]:
+              - generic [ref=e137]: tech/scripts/util
+              - generic [ref=e138]: domain/tag/data-candles
+        - 'button "Downloader Schemas & Env (AI Dev) Downloader Schemas & Env (AI Dev) note • active • Updated: 2025-12-15 tech/scripts/dl domain/tag/data-candles" [ref=e139]':
+          - generic [ref=e141]:
+            - heading "Downloader Schemas & Env (AI Dev)" [level=3] [ref=e142]
+            - paragraph [ref=e143]: Downloader Schemas & Env (AI Dev)
+            - generic [ref=e144]:
+              - generic [ref=e145]: note
+              - generic [ref=e146]: •
+              - generic [ref=e147]: active
+              - generic [ref=e148]: •
+              - generic [ref=e149]: "Updated: 2025-12-15"
+            - generic [ref=e150]:
+              - generic [ref=e151]: tech/scripts/dl
+              - generic [ref=e152]: domain/tag/data-candles
+        - 'button "Easy Peasy Algorithm - Technical Reference Easy Peasy Algorithm - Technical Reference note • active • Updated: 2025-12-15 tech/frontend/architecture domain/strategy/stepped-no-orb domain/tag/entry domain/tag/exit" [ref=e153]':
+          - generic [ref=e155]:
+            - heading "Easy Peasy Algorithm - Technical Reference" [level=3] [ref=e156]
+            - paragraph [ref=e157]: Easy Peasy Algorithm - Technical Reference
+            - generic [ref=e158]:
+              - generic [ref=e159]: note
+              - generic [ref=e160]: •
+              - generic [ref=e161]: active
+              - generic [ref=e162]: •
+              - generic [ref=e163]: "Updated: 2025-12-15"
+            - generic [ref=e164]:
+              - generic [ref=e165]: tech/frontend/architecture
+              - generic [ref=e166]: domain/strategy/stepped-no-orb
+              - generic [ref=e167]: domain/tag/entry
+              - generic [ref=e168]: domain/tag/exit
+        - 'button "AI Dev Docs Index AI Dev Docs Index note • active • Updated: 2025-12-15 meta/index tech/frontend/architecture" [ref=e169]':
+          - generic [ref=e171]:
+            - heading "AI Dev Docs Index" [level=3] [ref=e172]
+            - paragraph [ref=e173]: AI Dev Docs Index
+            - generic [ref=e174]:
+              - generic [ref=e175]: note
+              - generic [ref=e176]: •
+              - generic [ref=e177]: active
+              - generic [ref=e178]: •
+              - generic [ref=e179]: "Updated: 2025-12-15"
+            - generic [ref=e180]:
+              - generic [ref=e181]: meta/index
+              - generic [ref=e182]: tech/frontend/architecture
+        - 'button "Lightweight Charts “Value is null” Guardrails Lightweight Charts “Value is null” Guardrails note • active • Updated: 2025-12-15" [ref=e183]':
+          - generic [ref=e185]:
+            - heading "Lightweight Charts “Value is null” Guardrails" [level=3] [ref=e186]
+            - paragraph [ref=e187]: Lightweight Charts “Value is null” Guardrails
+            - generic [ref=e188]:
+              - generic [ref=e189]: note
+              - generic [ref=e190]: •
+              - generic [ref=e191]: active
+              - generic [ref=e192]: •
+              - generic [ref=e193]: "Updated: 2025-12-15"
+        - 'button "Logger Implementation Summary Logger Implementation Summary note • active • Updated: 2025-12-15 tech/logging tech/frontend/ui" [ref=e194]':
+          - generic [ref=e196]:
+            - heading "Logger Implementation Summary" [level=3] [ref=e197]
+            - paragraph [ref=e198]: Logger Implementation Summary
+            - generic [ref=e199]:
+              - generic [ref=e200]: note
+              - generic [ref=e201]: •
+              - generic [ref=e202]: active
+              - generic [ref=e203]: •
+              - generic [ref=e204]: "Updated: 2025-12-15"
+            - generic [ref=e205]:
+              - generic [ref=e206]: tech/logging
+              - generic [ref=e207]: tech/frontend/ui
+        - 'button "Logger Usage Guide for AI Agents Logger Usage Guide for AI Agents note • active • Updated: 2025-12-15 tech/logging doc/howto" [ref=e208]':
+          - generic [ref=e210]:
+            - heading "Logger Usage Guide for AI Agents" [level=3] [ref=e211]
+            - paragraph [ref=e212]: Logger Usage Guide for AI Agents
+            - generic [ref=e213]:
+              - generic [ref=e214]: note
+              - generic [ref=e215]: •
+              - generic [ref=e216]: active
+              - generic [ref=e217]: •
+              - generic [ref=e218]: "Updated: 2025-12-15"
+            - generic [ref=e219]:
+              - generic [ref=e220]: tech/logging
+              - generic [ref=e221]: doc/howto
+        - 'button "Rules for AI Dev <FOR TSX FilES> 1. when adding to tsx files make verbose use of html comments for sections and subsections. 2. also include in docs/ai/ui.md an overview of the sections and subsections which should st note • active • Updated: 2025-12-15 meta/index tech/frontend/architecture" [ref=e222]':
+          - generic [ref=e224]:
+            - heading "Rules for AI Dev" [level=3] [ref=e225]
+            - paragraph [ref=e226]: <FOR TSX FilES> 1. when adding to tsx files make verbose use of html comments for sections and subsections. 2. also include in docs/ai/ui.md an overview of the sections and subsections which should st
+            - generic [ref=e227]:
+              - generic [ref=e228]: note
+              - generic [ref=e229]: •
+              - generic [ref=e230]: active
+              - generic [ref=e231]: •
+              - generic [ref=e232]: "Updated: 2025-12-15"
+            - generic [ref=e233]:
+              - generic [ref=e234]: meta/index
+              - generic [ref=e235]: tech/frontend/architecture
+        - 'button "Sharding + ET Timestamps (Converter/Loader/UI) Sharding + ET Timestamps (Converter/Loader/UI) note • active • Updated: 2025-12-15 tech/scripts/util tech/frontend/ui domain/tag/data-candles" [ref=e236]':
+          - generic [ref=e238]:
+            - heading "Sharding + ET Timestamps (Converter/Loader/UI)" [level=3] [ref=e239]
+            - paragraph [ref=e240]: Sharding + ET Timestamps (Converter/Loader/UI)
+            - generic [ref=e241]:
+              - generic [ref=e242]: note
+              - generic [ref=e243]: •
+              - generic [ref=e244]: active
+              - generic [ref=e245]: •
+              - generic [ref=e246]: "Updated: 2025-12-15"
+            - generic [ref=e247]:
+              - generic [ref=e248]: tech/scripts/util
+              - generic [ref=e249]: tech/frontend/ui
+              - generic [ref=e250]: domain/tag/data-candles
+        - 'button "Static Files on Vercel: A Painful Lesson Static Files on Vercel: A Painful Lesson note • active • Updated: 2025-12-15 tech/infra ops/bug doc/beware" [ref=e251]':
+          - generic [ref=e253]:
+            - 'heading "Static Files on Vercel: A Painful Lesson" [level=3] [ref=e254]'
+            - paragraph [ref=e255]: "Static Files on Vercel: A Painful Lesson"
+            - generic [ref=e256]:
+              - generic [ref=e257]: note
+              - generic [ref=e258]: •
+              - generic [ref=e259]: active
+              - generic [ref=e260]: •
+              - generic [ref=e261]: "Updated: 2025-12-15"
+            - generic [ref=e262]:
+              - generic [ref=e263]: tech/infra
+              - generic [ref=e264]: ops/bug
+              - generic [ref=e265]: doc/beware
+        - 'button "Trades → Candles Converter (Dev Notes) Trades → Candles Converter (Dev Notes) note • active • Updated: 2025-12-15 tech/scripts/util domain/tag/data-candles" [ref=e266]':
+          - generic [ref=e268]:
+            - heading "Trades → Candles Converter (Dev Notes)" [level=3] [ref=e269]
+            - paragraph [ref=e270]: Trades → Candles Converter (Dev Notes)
+            - generic [ref=e271]:
+              - generic [ref=e272]: note
+              - generic [ref=e273]: •
+              - generic [ref=e274]: active
+              - generic [ref=e275]: •
+              - generic [ref=e276]: "Updated: 2025-12-15"
+            - generic [ref=e277]:
+              - generic [ref=e278]: tech/scripts/util
+              - generic [ref=e279]: domain/tag/data-candles
+        - 'button "Concept UI: Row-to-Candle Mapping and ET Axis Concept UI: Row-to-Candle Mapping and ET Axis note • active • Updated: 2025-12-15 tech/frontend/ui domain/tag/data-candles" [ref=e280]':
+          - generic [ref=e282]:
+            - 'heading "Concept UI: Row-to-Candle Mapping and ET Axis" [level=3] [ref=e283]'
+            - paragraph [ref=e284]: "Concept UI: Row-to-Candle Mapping and ET Axis"
+            - generic [ref=e285]:
+              - generic [ref=e286]: note
+              - generic [ref=e287]: •
+              - generic [ref=e288]: active
+              - generic [ref=e289]: •
+              - generic [ref=e290]: "Updated: 2025-12-15"
+            - generic [ref=e291]:
+              - generic [ref=e292]: tech/frontend/ui
+              - generic [ref=e293]: domain/tag/data-candles
+        - 'button "ATDD Checklist - Epic 2, Story 2.2: Migrate Backtest UI to Valtio State Management ATDD Checklist - Epic 2, Story 2.2: Migrate Backtest UI to Valtio State Management plan • active • Updated: 2025-12-15 plan/epic tech/testing ops/migration" [ref=e294]':
+          - generic [ref=e296]:
+            - 'heading "ATDD Checklist - Epic 2, Story 2.2: Migrate Backtest UI to Valtio State Management" [level=3] [ref=e297]'
+            - paragraph [ref=e298]: "ATDD Checklist - Epic 2, Story 2.2: Migrate Backtest UI to Valtio State Management"
+            - generic [ref=e299]:
+              - generic [ref=e300]: plan
+              - generic [ref=e301]: •
+              - generic [ref=e302]: active
+              - generic [ref=e303]: •
+              - generic [ref=e304]: "Updated: 2025-12-15"
+            - generic [ref=e305]:
+              - generic [ref=e306]: plan/epic
+              - generic [ref=e307]: tech/testing
+              - generic [ref=e308]: ops/migration
+        - 'button "Mode: Build Mode: Build note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e309]':
+          - generic [ref=e311]:
+            - 'heading "Mode: Build" [level=3] [ref=e312]'
+            - paragraph [ref=e313]: "Mode: Build"
+            - generic [ref=e314]:
+              - generic [ref=e315]: note
+              - generic [ref=e316]: •
+              - generic [ref=e317]: active
+              - generic [ref=e318]: •
+              - generic [ref=e319]: "Updated: 2025-12-15"
+            - generic [ref=e320]:
+              - generic [ref=e321]: meta/index
+              - generic [ref=e322]: ops/refactor
+        - 'button "Mode: Docs Mode: Docs note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e323]':
+          - generic [ref=e325]:
+            - 'heading "Mode: Docs" [level=3] [ref=e326]'
+            - paragraph [ref=e327]: "Mode: Docs"
+            - generic [ref=e328]:
+              - generic [ref=e329]: note
+              - generic [ref=e330]: •
+              - generic [ref=e331]: active
+              - generic [ref=e332]: •
+              - generic [ref=e333]: "Updated: 2025-12-15"
+            - generic [ref=e334]:
+              - generic [ref=e335]: meta/index
+              - generic [ref=e336]: ops/refactor
+        - 'button "Broz OS (BMAD-inspired) — Workflow Index Broz OS (BMAD-inspired) — Workflow Index note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e337]':
+          - generic [ref=e339]:
+            - heading "Broz OS (BMAD-inspired) — Workflow Index" [level=3] [ref=e340]
+            - paragraph [ref=e341]: Broz OS (BMAD-inspired) — Workflow Index
+            - generic [ref=e342]:
+              - generic [ref=e343]: note
+              - generic [ref=e344]: •
+              - generic [ref=e345]: active
+              - generic [ref=e346]: •
+              - generic [ref=e347]: "Updated: 2025-12-15"
+            - generic [ref=e348]:
+              - generic [ref=e349]: meta/index
+              - generic [ref=e350]: ops/refactor
+        - 'button "Mode: Menu Mode: Menu note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e351]':
+          - generic [ref=e353]:
+            - 'heading "Mode: Menu" [level=3] [ref=e354]'
+            - paragraph [ref=e355]: "Mode: Menu"
+            - generic [ref=e356]:
+              - generic [ref=e357]: note
+              - generic [ref=e358]: •
+              - generic [ref=e359]: active
+              - generic [ref=e360]: •
+              - generic [ref=e361]: "Updated: 2025-12-15"
+            - generic [ref=e362]:
+              - generic [ref=e363]: meta/index
+              - generic [ref=e364]: ops/refactor
+        - 'button "Mode: Plan Mode: Plan note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e365]':
+          - generic [ref=e367]:
+            - 'heading "Mode: Plan" [level=3] [ref=e368]'
+            - paragraph [ref=e369]: "Mode: Plan"
+            - generic [ref=e370]:
+              - generic [ref=e371]: note
+              - generic [ref=e372]: •
+              - generic [ref=e373]: active
+              - generic [ref=e374]: •
+              - generic [ref=e375]: "Updated: 2025-12-15"
+            - generic [ref=e376]:
+              - generic [ref=e377]: meta/index
+              - generic [ref=e378]: ops/refactor
+        - 'button "Mode: Research Mode: Research note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e379]':
+          - generic [ref=e381]:
+            - 'heading "Mode: Research" [level=3] [ref=e382]'
+            - paragraph [ref=e383]: "Mode: Research"
+            - generic [ref=e384]:
+              - generic [ref=e385]: note
+              - generic [ref=e386]: •
+              - generic [ref=e387]: active
+              - generic [ref=e388]: •
+              - generic [ref=e389]: "Updated: 2025-12-15"
+            - generic [ref=e390]:
+              - generic [ref=e391]: meta/index
+              - generic [ref=e392]: ops/refactor
+        - 'button "Mode: Task Mode: Task note • active • Updated: 2025-12-15 meta/index ops/refactor" [ref=e393]':
+          - generic [ref=e395]:
+            - 'heading "Mode: Task" [level=3] [ref=e396]'
+            - paragraph [ref=e397]: "Mode: Task"
+            - generic [ref=e398]:
+              - generic [ref=e399]: note
+              - generic [ref=e400]: •
+              - generic [ref=e401]: active
+              - generic [ref=e402]: •
+              - generic [ref=e403]: "Updated: 2025-12-15"
+            - generic [ref=e404]:
+              - generic [ref=e405]: meta/index
+              - generic [ref=e406]: ops/refactor
+        - 'button "MkDocs + Next Integration MkDocs + Next integration note • active • Updated: 2025-12-15 tech/infra doc/howto" [ref=e407]':
+          - generic [ref=e409]:
+            - heading "MkDocs + Next Integration" [level=3] [ref=e410]
+            - paragraph [ref=e411]: MkDocs + Next integration
+            - generic [ref=e412]:
+              - generic [ref=e413]: note
+              - generic [ref=e414]: •
+              - generic [ref=e415]: active
+              - generic [ref=e416]: •
+              - generic [ref=e417]: "Updated: 2025-12-15"
+            - generic [ref=e418]:
+              - generic [ref=e419]: tech/infra
+              - generic [ref=e420]: doc/howto
+        - 'button "Implementation Readiness Assessment Report Implementation Readiness Assessment Report plan • active • Updated: 2025-12-15 plan/epic meta/index" [ref=e421]':
+          - generic [ref=e423]:
+            - heading "Implementation Readiness Assessment Report" [level=3] [ref=e424]
+            - paragraph [ref=e425]: Implementation Readiness Assessment Report
+            - generic [ref=e426]:
+              - generic [ref=e427]: plan
+              - generic [ref=e428]: •
+              - generic [ref=e429]: active
+              - generic [ref=e430]: •
+              - generic [ref=e431]: "Updated: 2025-12-15"
+            - generic [ref=e432]:
+              - generic [ref=e433]: plan/epic
+              - generic [ref=e434]: meta/index
+        - 'button "Untitled note • active • Updated: 2025-12-15" [ref=e435]':
+          - generic [ref=e437]:
+            - heading "Untitled" [level=3] [ref=e438]
+            - generic [ref=e439]:
+              - generic [ref=e440]: note
+              - generic [ref=e441]: •
+              - generic [ref=e442]: active
+              - generic [ref=e443]: •
+              - generic [ref=e444]: "Updated: 2025-12-15"
+        - 'button "Secrets Secrets note • draft • Updated: 2025-12-15 meta/index" [ref=e445]':
+          - generic [ref=e447]:
+            - heading "Secrets" [level=3] [ref=e448]
+            - paragraph [ref=e449]: Secrets
+            - generic [ref=e450]:
+              - generic [ref=e451]: note
+              - generic [ref=e452]: •
+              - generic [ref=e453]: draft
+              - generic [ref=e454]: •
+              - generic [ref=e455]: "Updated: 2025-12-15"
+            - generic [ref=e457]: meta/index
+        - 'button "Story 1.1: Back-engineer env and CLI for downloader Story 1.1: Back-engineer env and CLI for downloader note • active • Updated: 2025-12-15" [ref=e458]':
+          - generic [ref=e460]:
+            - 'heading "Story 1.1: Back-engineer env and CLI for downloader" [level=3] [ref=e461]'
+            - paragraph [ref=e462]: "Story 1.1: Back-engineer env and CLI for downloader"
+            - generic [ref=e463]:
+              - generic [ref=e464]: note
+              - generic [ref=e465]: •
+              - generic [ref=e466]: active
+              - generic [ref=e467]: •
+              - generic [ref=e468]: "Updated: 2025-12-15"
+        - 'button "Story 1.2: Standardize output filenames and data path Story 1.2: Standardize output filenames and data path note • active • Updated: 2025-12-15" [ref=e469]':
+          - generic [ref=e471]:
+            - 'heading "Story 1.2: Standardize output filenames and data path" [level=3] [ref=e472]'
+            - paragraph [ref=e473]: "Story 1.2: Standardize output filenames and data path"
+            - generic [ref=e474]:
+              - generic [ref=e475]: note
+              - generic [ref=e476]: •
+              - generic [ref=e477]: active
+              - generic [ref=e478]: •
+              - generic [ref=e479]: "Updated: 2025-12-15"
+        - 'button "Story 1.3: Sanity script integration Story 1.3: Sanity script integration note • active • Updated: 2025-12-15" [ref=e480]':
+          - generic [ref=e482]:
+            - 'heading "Story 1.3: Sanity script integration" [level=3] [ref=e483]'
+            - paragraph [ref=e484]: "Story 1.3: Sanity script integration"
+            - generic [ref=e485]:
+              - generic [ref=e486]: note
+              - generic [ref=e487]: •
+              - generic [ref=e488]: active
+              - generic [ref=e489]: •
+              - generic [ref=e490]: "Updated: 2025-12-15"
+        - 'button "Story 1.4: Simple 1-minute candle view (full CSV) Story 1.4: Simple 1-minute candle view (full CSV) note • active • Updated: 2025-12-15" [ref=e491]':
+          - generic [ref=e493]:
+            - 'heading "Story 1.4: Simple 1-minute candle view (full CSV)" [level=3] [ref=e494]'
+            - paragraph [ref=e495]: "Story 1.4: Simple 1-minute candle view (full CSV)"
+            - generic [ref=e496]:
+              - generic [ref=e497]: note
+              - generic [ref=e498]: •
+              - generic [ref=e499]: active
+              - generic [ref=e500]: •
+              - generic [ref=e501]: "Updated: 2025-12-15"
+        - 'button "Story 1.5: Convert Databento trades to 100 ms candles (Concept1 view) Story 1.5: Convert Databento trades to 100 ms candles (Concept1 view) note • active • Updated: 2025-12-15" [ref=e502]':
+          - generic [ref=e504]:
+            - 'heading "Story 1.5: Convert Databento trades to 100 ms candles (Concept1 view)" [level=3] [ref=e505]'
+            - paragraph [ref=e506]: "Story 1.5: Convert Databento trades to 100 ms candles (Concept1 view)"
+            - generic [ref=e507]:
+              - generic [ref=e508]: note
+              - generic [ref=e509]: •
+              - generic [ref=e510]: active
+              - generic [ref=e511]: •
+              - generic [ref=e512]: "Updated: 2025-12-15"
+        - 'button "Story 2.1: NQ preset chart UX scaffold (manual backtest) Story 2.1: NQ preset chart UX scaffold (manual backtest) note • active • Updated: 2025-12-15" [ref=e513]':
+          - generic [ref=e515]:
+            - 'heading "Story 2.1: NQ preset chart UX scaffold (manual backtest)" [level=3] [ref=e516]'
+            - paragraph [ref=e517]: "Story 2.1: NQ preset chart UX scaffold (manual backtest)"
+            - generic [ref=e518]:
+              - generic [ref=e519]: note
+              - generic [ref=e520]: •
+              - generic [ref=e521]: active
+              - generic [ref=e522]: •
+              - generic [ref=e523]: "Updated: 2025-12-15"
+        - 'button "Story 2.2: Migrate Backtest UI to Valtio State Management Story 2.2: Migrate Backtest UI to Valtio State Management note • active • Updated: 2025-12-15" [ref=e524]':
+          - generic [ref=e526]:
+            - 'heading "Story 2.2: Migrate Backtest UI to Valtio State Management" [level=3] [ref=e527]'
+            - paragraph [ref=e528]: "Story 2.2: Migrate Backtest UI to Valtio State Management"
+            - generic [ref=e529]:
+              - generic [ref=e530]: note
+              - generic [ref=e531]: •
+              - generic [ref=e532]: active
+              - generic [ref=e533]: •
+              - generic [ref=e534]: "Updated: 2025-12-15"
+        - 'button "Story 2.3: Algorithmic Trades (Easy Peasy Strategy) Story 2.3: Algorithmic Trades (Easy Peasy Strategy) note • active • Updated: 2025-12-15" [ref=e535]':
+          - generic [ref=e537]:
+            - 'heading "Story 2.3: Algorithmic Trades (Easy Peasy Strategy)" [level=3] [ref=e538]'
+            - paragraph [ref=e539]: "Story 2.3: Algorithmic Trades (Easy Peasy Strategy)"
+            - generic [ref=e540]:
+              - generic [ref=e541]: note
+              - generic [ref=e542]: •
+              - generic [ref=e543]: active
+              - generic [ref=e544]: •
+              - generic [ref=e545]: "Updated: 2025-12-15"
+        - 'button "Story 2.4: Strategy Results - Live Data Integration Story 2.4: Strategy Results - Live Data Integration note • active • Updated: 2025-12-15" [ref=e546]':
+          - generic [ref=e548]:
+            - 'heading "Story 2.4: Strategy Results - Live Data Integration" [level=3] [ref=e549]'
+            - paragraph [ref=e550]: "Story 2.4: Strategy Results - Live Data Integration"
+            - generic [ref=e551]:
+              - generic [ref=e552]: note
+              - generic [ref=e553]: •
+              - generic [ref=e554]: active
+              - generic [ref=e555]: •
+              - generic [ref=e556]: "Updated: 2025-12-15"
+        - 'button "Story 2.1: NQ preset chart UX scaffold (manual backtest) Story 2.1: NQ preset chart UX scaffold (manual backtest) note • active • Updated: 2025-12-15" [ref=e557]':
+          - generic [ref=e559]:
+            - 'heading "Story 2.1: NQ preset chart UX scaffold (manual backtest)" [level=3] [ref=e560]'
+            - paragraph [ref=e561]: "Story 2.1: NQ preset chart UX scaffold (manual backtest)"
+            - generic [ref=e562]:
+              - generic [ref=e563]: note
+              - generic [ref=e564]: •
+              - generic [ref=e565]: active
+              - generic [ref=e566]: •
+              - generic [ref=e567]: "Updated: 2025-12-15"
+        - 'button "Story 2.2: Migrate Backtest UI to Valtio State Management Story 2.2: Migrate Backtest UI to Valtio State Management note • active • Updated: 2025-12-15" [ref=e568]':
+          - generic [ref=e570]:
+            - 'heading "Story 2.2: Migrate Backtest UI to Valtio State Management" [level=3] [ref=e571]'
+            - paragraph [ref=e572]: "Story 2.2: Migrate Backtest UI to Valtio State Management"
+            - generic [ref=e573]:
+              - generic [ref=e574]: note
+              - generic [ref=e575]: •
+              - generic [ref=e576]: active
+              - generic [ref=e577]: •
+              - generic [ref=e578]: "Updated: 2025-12-15"
+        - 'button "Story 2.3: Algorithmic Trades (Easy Peasy Strategy) Story 2.3: Algorithmic Trades (Easy Peasy Strategy) note • active • Updated: 2025-12-15" [ref=e579]':
+          - generic [ref=e581]:
+            - 'heading "Story 2.3: Algorithmic Trades (Easy Peasy Strategy)" [level=3] [ref=e582]'
+            - paragraph [ref=e583]: "Story 2.3: Algorithmic Trades (Easy Peasy Strategy)"
+            - generic [ref=e584]:
+              - generic [ref=e585]: note
+              - generic [ref=e586]: •
+              - generic [ref=e587]: active
+              - generic [ref=e588]: •
+              - generic [ref=e589]: "Updated: 2025-12-15"
+        - 'button "Story 2.4: Strategy Results - Live Data Integration Story 2.4: Strategy Results - Live Data Integration note • active • Updated: 2025-12-15" [ref=e590]':
+          - generic [ref=e592]:
+            - 'heading "Story 2.4: Strategy Results - Live Data Integration" [level=3] [ref=e593]'
+            - paragraph [ref=e594]: "Story 2.4: Strategy Results - Live Data Integration"
+            - generic [ref=e595]:
+              - generic [ref=e596]: note
+              - generic [ref=e597]: •
+              - generic [ref=e598]: active
+              - generic [ref=e599]: •
+              - generic [ref=e600]: "Updated: 2025-12-15"
+        - 'button "EPIC-4: Parallel Backtester with SQLite & Realtime Monitoring EPIC-4: Parallel Backtester with SQLite & Realtime Monitoring note • active • Updated: 2025-12-15" [ref=e601]':
+          - generic [ref=e603]:
+            - 'heading "EPIC-4: Parallel Backtester with SQLite & Realtime Monitoring" [level=3] [ref=e604]'
+            - paragraph [ref=e605]: "EPIC-4: Parallel Backtester with SQLite & Realtime Monitoring"
+            - generic [ref=e606]:
+              - generic [ref=e607]: note
+              - generic [ref=e608]: •
+              - generic [ref=e609]: active
+              - generic [ref=e610]: •
+              - generic [ref=e611]: "Updated: 2025-12-15"
+        - 'button "Can override algorithmic suggestions. More table options and data to ux view 1. add different csvs to ochlv 200ms 1s, and simple trades price and timestamp 2. can toggle chart between them note • active • Updated: 2025-12-15" [ref=e612]':
+          - generic [ref=e614]:
+            - heading "Can override algorithmic suggestions." [level=3] [ref=e615]
+            - paragraph [ref=e616]: More table options and data to ux view 1. add different csvs to ochlv 200ms 1s, and simple trades price and timestamp 2. can toggle chart between them
+            - generic [ref=e617]:
+              - generic [ref=e618]: note
+              - generic [ref=e619]: •
+              - generic [ref=e620]: active
+              - generic [ref=e621]: •
+              - generic [ref=e622]: "Updated: 2025-12-15"
+        - 'button "Untitled note • active • Updated: 2025-12-15" [ref=e623]':
+          - generic [ref=e625]:
+            - heading "Untitled" [level=3] [ref=e626]
+            - generic [ref=e627]:
+              - generic [ref=e628]: note
+              - generic [ref=e629]: •
+              - generic [ref=e630]: active
+              - generic [ref=e631]: •
+              - generic [ref=e632]: "Updated: 2025-12-15"
+        - 'button "Epics (Rockcap) Epics (Rockcap) note • active • Updated: 2025-12-15" [ref=e633]':
+          - generic [ref=e635]:
+            - heading "Epics (Rockcap)" [level=3] [ref=e636]
+            - paragraph [ref=e637]: Epics (Rockcap)
+            - generic [ref=e638]:
+              - generic [ref=e639]: note
+              - generic [ref=e640]: •
+              - generic [ref=e641]: active
+              - generic [ref=e642]: •
+              - generic [ref=e643]: "Updated: 2025-12-15"
+        - 'button "Validation Report Validation Report note • active • Updated: 2025-12-15" [ref=e644]':
+          - generic [ref=e646]:
+            - heading "Validation Report" [level=3] [ref=e647]
+            - paragraph [ref=e648]: Validation Report
+            - generic [ref=e649]:
+              - generic [ref=e650]: note
+              - generic [ref=e651]: •
+              - generic [ref=e652]: active
+              - generic [ref=e653]: •
+              - generic [ref=e654]: "Updated: 2025-12-15"
+        - 'button "Migrate Backtest UI to Valtio State Management Migrate Backtest UI to Valtio State Management note • active • Updated: 2025-12-15" [ref=e655]':
+          - generic [ref=e657]:
+            - heading "Migrate Backtest UI to Valtio State Management" [level=3] [ref=e658]
+            - paragraph [ref=e659]: Migrate Backtest UI to Valtio State Management
+            - generic [ref=e660]:
+              - generic [ref=e661]: note
+              - generic [ref=e662]: •
+              - generic [ref=e663]: active
+              - generic [ref=e664]: •
+              - generic [ref=e665]: "Updated: 2025-12-15"
+        - 'button "Code Style Guide Code Style Guide note • active • Updated: 2025-12-15 meta/index tech/frontend/architecture" [ref=e666]':
+          - generic [ref=e668]:
+            - heading "Code Style Guide" [level=3] [ref=e669]
+            - paragraph [ref=e670]: Code Style Guide
+            - generic [ref=e671]:
+              - generic [ref=e672]: note
+              - generic [ref=e673]: •
+              - generic [ref=e674]: active
+              - generic [ref=e675]: •
+              - generic [ref=e676]: "Updated: 2025-12-15"
+            - generic [ref=e677]:
+              - generic [ref=e678]: meta/index
+              - generic [ref=e679]: tech/frontend/architecture
+        - 'button "Design Doc: <Title> Design Doc: <Title> note • active • Updated: 2025-12-15 meta/template tech/frontend/architecture" [ref=e680]':
+          - generic [ref=e682]:
+            - 'heading "Design Doc: <Title>" [level=3] [ref=e683]'
+            - paragraph [ref=e684]: "Design Doc: <Title>"
+            - generic [ref=e685]:
+              - generic [ref=e686]: note
+              - generic [ref=e687]: •
+              - generic [ref=e688]: active
+              - generic [ref=e689]: •
+              - generic [ref=e690]: "Updated: 2025-12-15"
+            - generic [ref=e691]:
+              - generic [ref=e692]: meta/template
+              - generic [ref=e693]: tech/frontend/architecture
+        - 'button "Front Matter Schema Front Matter Schema note • active • Updated: 2025-12-15" [ref=e694]':
+          - generic [ref=e696]:
+            - heading "Front Matter Schema" [level=3] [ref=e697]
+            - paragraph [ref=e698]: Front Matter Schema
+            - generic [ref=e699]:
+              - generic [ref=e700]: note
+              - generic [ref=e701]: •
+              - generic [ref=e702]: active
+              - generic [ref=e703]: •
+              - generic [ref=e704]: "Updated: 2025-12-15"
+        - 'button "How-to: <Title> How-to: <Title> note • active • Updated: 2025-12-15 meta/template doc/howto" [ref=e705]':
+          - generic [ref=e707]:
+            - 'heading "How-to: <Title>" [level=3] [ref=e708]'
+            - paragraph [ref=e709]: "How-to: <Title>"
+            - generic [ref=e710]:
+              - generic [ref=e711]: note
+              - generic [ref=e712]: •
+              - generic [ref=e713]: active
+              - generic [ref=e714]: •
+              - generic [ref=e715]: "Updated: 2025-12-15"
+            - generic [ref=e716]:
+              - generic [ref=e717]: meta/template
+              - generic [ref=e718]: doc/howto
+        - 'button "Algorithmic Trades - Easy Peasy Strategy Algorithmic Trades - Easy Peasy Strategy note • active • Updated: 2025-12-15 doc/howto tech/frontend/ui domain/tag/entry domain/tag/exit" [ref=e719]':
+          - generic [ref=e721]:
+            - heading "Algorithmic Trades - Easy Peasy Strategy" [level=3] [ref=e722]
+            - paragraph [ref=e723]: Algorithmic Trades - Easy Peasy Strategy
+            - generic [ref=e724]:
+              - generic [ref=e725]: note
+              - generic [ref=e726]: •
+              - generic [ref=e727]: active
+              - generic [ref=e728]: •
+              - generic [ref=e729]: "Updated: 2025-12-15"
+            - generic [ref=e730]:
+              - generic [ref=e731]: doc/howto
+              - generic [ref=e732]: tech/frontend/ui
+              - generic [ref=e733]: domain/tag/entry
+              - generic [ref=e734]: domain/tag/exit
+        - 'button "Backtester Guide Backtester Guide note • active • Updated: 2025-12-15 doc/howto tech/frontend/ui domain/tag/data-candles" [ref=e735]':
+          - generic [ref=e737]:
+            - heading "Backtester Guide" [level=3] [ref=e738]
+            - paragraph [ref=e739]: Backtester Guide
+            - generic [ref=e740]:
+              - generic [ref=e741]: note
+              - generic [ref=e742]: •
+              - generic [ref=e743]: active
+              - generic [ref=e744]: •
+              - generic [ref=e745]: "Updated: 2025-12-15"
+            - generic [ref=e746]:
+              - generic [ref=e747]: doc/howto
+              - generic [ref=e748]: tech/frontend/ui
+              - generic [ref=e749]: domain/tag/data-candles
+        - 'button "Candles UI Quick Guide Candles UI Quick Guide note • active • Updated: 2025-12-15 doc/howto tech/frontend/ui domain/tag/data-candles" [ref=e750]':
+          - generic [ref=e752]:
+            - heading "Candles UI Quick Guide" [level=3] [ref=e753]
+            - paragraph [ref=e754]: Candles UI Quick Guide
+            - generic [ref=e755]:
+              - generic [ref=e756]: note
+              - generic [ref=e757]: •
+              - generic [ref=e758]: active
+              - generic [ref=e759]: •
+              - generic [ref=e760]: "Updated: 2025-12-15"
+            - generic [ref=e761]:
+              - generic [ref=e762]: doc/howto
+              - generic [ref=e763]: tech/frontend/ui
+              - generic [ref=e764]: domain/tag/data-candles
+        - 'button "Download OHLCV Data for Date Range Download OHLCV Data for Date Range note • active • Updated: 2025-12-15 doc/howto tech/scripts/dl domain/tag/data-candles" [ref=e765]':
+          - generic [ref=e767]:
+            - heading "Download OHLCV Data for Date Range" [level=3] [ref=e768]
+            - paragraph [ref=e769]: Download OHLCV Data for Date Range
+            - generic [ref=e770]:
+              - generic [ref=e771]: note
+              - generic [ref=e772]: •
+              - generic [ref=e773]: active
+              - generic [ref=e774]: •
+              - generic [ref=e775]: "Updated: 2025-12-15"
+            - generic [ref=e776]:
+              - generic [ref=e777]: doc/howto
+              - generic [ref=e778]: tech/scripts/dl
+              - generic [ref=e779]: domain/tag/data-candles
+        - 'button "Downloader Guide Downloader Guide note • active • Updated: 2025-12-15 doc/howto tech/scripts/dl domain/tag/data-candles" [ref=e780]':
+          - generic [ref=e782]:
+            - heading "Downloader Guide" [level=3] [ref=e783]
+            - paragraph [ref=e784]: Downloader Guide
+            - generic [ref=e785]:
+              - generic [ref=e786]: note
+              - generic [ref=e787]: •
+              - generic [ref=e788]: active
+              - generic [ref=e789]: •
+              - generic [ref=e790]: "Updated: 2025-12-15"
+            - generic [ref=e791]:
+              - generic [ref=e792]: doc/howto
+              - generic [ref=e793]: tech/scripts/dl
+              - generic [ref=e794]: domain/tag/data-candles
+        - 'button "User Docs Index User Docs Index note • active • Updated: 2025-12-15 meta/index doc/howto" [ref=e795]':
+          - generic [ref=e797]:
+            - heading "User Docs Index" [level=3] [ref=e798]
+            - paragraph [ref=e799]: User Docs Index
+            - generic [ref=e800]:
+              - generic [ref=e801]: note
+              - generic [ref=e802]: •
+              - generic [ref=e803]: active
+              - generic [ref=e804]: •
+              - generic [ref=e805]: "Updated: 2025-12-15"
+            - generic [ref=e806]:
+              - generic [ref=e807]: meta/index
+              - generic [ref=e808]: doc/howto
+        - 'button "Viewing Sharded Daily Candles Viewing Sharded Daily Candles note • active • Updated: 2025-12-15 doc/howto tech/frontend/ui domain/tag/data-candles" [ref=e809]':
+          - generic [ref=e811]:
+            - heading "Viewing Sharded Daily Candles" [level=3] [ref=e812]
+            - paragraph [ref=e813]: Viewing Sharded Daily Candles
+            - generic [ref=e814]:
+              - generic [ref=e815]: note
+              - generic [ref=e816]: •
+              - generic [ref=e817]: active
+              - generic [ref=e818]: •
+              - generic [ref=e819]: "Updated: 2025-12-15"
+            - generic [ref=e820]:
+              - generic [ref=e821]: doc/howto
+              - generic [ref=e822]: tech/frontend/ui
+              - generic [ref=e823]: domain/tag/data-candles
+        - 'button "Trades → Candles Converter (100ms default) Trades → Candles Converter (100ms default) note • active • Updated: 2025-12-15 doc/howto tech/scripts/util domain/tag/data-candles" [ref=e824]':
+          - generic [ref=e826]:
+            - heading "Trades → Candles Converter (100ms default)" [level=3] [ref=e827]
+            - paragraph [ref=e828]: Trades → Candles Converter (100ms default)
+            - generic [ref=e829]:
+              - generic [ref=e830]: note
+              - generic [ref=e831]: •
+              - generic [ref=e832]: active
+              - generic [ref=e833]: •
+              - generic [ref=e834]: "Updated: 2025-12-15"
+            - generic [ref=e835]:
+              - generic [ref=e836]: doc/howto
+              - generic [ref=e837]: tech/scripts/util
+              - generic [ref=e838]: domain/tag/data-candles
+        - 'button "Understanding mbp_1 Depth-of-Market Data Understanding `mbp_1` Depth-of-Market Data note • active • Updated: 2025-12-15 doc/howto domain/tag/data-candles" [ref=e839]':
+          - generic [ref=e841]:
+            - heading "Understanding mbp_1 Depth-of-Market Data" [level=3] [ref=e842]
+            - paragraph [ref=e843]: "Understanding `mbp_1` Depth-of-Market Data"
+            - generic [ref=e844]:
+              - generic [ref=e845]: note
+              - generic [ref=e846]: •
+              - generic [ref=e847]: active
+              - generic [ref=e848]: •
+              - generic [ref=e849]: "Updated: 2025-12-15"
+            - generic [ref=e850]:
+              - generic [ref=e851]: doc/howto
+              - generic [ref=e852]: domain/tag/data-candles
+        - 'button "Epic 1 Developer Stories (Downloader) Epic 1 Developer Stories (Downloader) note • active • Updated: 2025-12-15" [ref=e853]':
+          - generic [ref=e855]:
+            - heading "Epic 1 Developer Stories (Downloader)" [level=3] [ref=e856]
+            - paragraph [ref=e857]: Epic 1 Developer Stories (Downloader)
+            - generic [ref=e858]:
+              - generic [ref=e859]: note
+              - generic [ref=e860]: •
+              - generic [ref=e861]: active
+              - generic [ref=e862]: •
+              - generic [ref=e863]: "Updated: 2025-12-15"
+        - 'button "Story 0: Project setup for downloader work Story 0: Project setup for downloader work note • active • Updated: 2025-12-15" [ref=e864]':
+          - generic [ref=e866]:
+            - 'heading "Story 0: Project setup for downloader work" [level=3] [ref=e867]'
+            - paragraph [ref=e868]: "Story 0: Project setup for downloader work"
+            - generic [ref=e869]:
+              - generic [ref=e870]: note
+              - generic [ref=e871]: •
+              - generic [ref=e872]: active
+              - generic [ref=e873]: •
+              - generic [ref=e874]: "Updated: 2025-12-15"
+        - 'button "Story 1: Back-engineer `.env` + CLI from downloader.py Story 1: Back-engineer `.env` + CLI from downloader.py note • active • Updated: 2025-12-15" [ref=e875]':
+          - generic [ref=e877]:
+            - 'heading "Story 1: Back-engineer `.env` + CLI from downloader.py" [level=3] [ref=e878]'
+            - paragraph [ref=e879]: "Story 1: Back-engineer `.env` + CLI from downloader.py"
+            - generic [ref=e880]:
+              - generic [ref=e881]: note
+              - generic [ref=e882]: •
+              - generic [ref=e883]: active
+              - generic [ref=e884]: •
+              - generic [ref=e885]: "Updated: 2025-12-15"
+        - 'button "Story 2: Standardize output filenames and data path Story 2: Standardize output filenames and data path note • active • Updated: 2025-12-15" [ref=e886]':
+          - generic [ref=e888]:
+            - 'heading "Story 2: Standardize output filenames and data path" [level=3] [ref=e889]'
+            - paragraph [ref=e890]: "Story 2: Standardize output filenames and data path"
+            - generic [ref=e891]:
+              - generic [ref=e892]: note
+              - generic [ref=e893]: •
+              - generic [ref=e894]: active
+              - generic [ref=e895]: •
+              - generic [ref=e896]: "Updated: 2025-12-15"
+        - 'button "Story 3: Sanity script integration Story 3: Sanity script integration note • active • Updated: 2025-12-15" [ref=e897]':
+          - generic [ref=e899]:
+            - 'heading "Story 3: Sanity script integration" [level=3] [ref=e900]'
+            - paragraph [ref=e901]: "Story 3: Sanity script integration"
+            - generic [ref=e902]:
+              - generic [ref=e903]: note
+              - generic [ref=e904]: •
+              - generic [ref=e905]: active
+              - generic [ref=e906]: •
+              - generic [ref=e907]: "Updated: 2025-12-15"
+        - 'button "Story 4: Simple 1-minute candle view (full CSV) Story 4: Simple 1-minute candle view (full CSV) note • active • Updated: 2025-12-15" [ref=e908]':
+          - generic [ref=e910]:
+            - 'heading "Story 4: Simple 1-minute candle view (full CSV)" [level=3] [ref=e911]'
+            - paragraph [ref=e912]: "Story 4: Simple 1-minute candle view (full CSV)"
+            - generic [ref=e913]:
+              - generic [ref=e914]: note
+              - generic [ref=e915]: •
+              - generic [ref=e916]: active
+              - generic [ref=e917]: •
+              - generic [ref=e918]: "Updated: 2025-12-15"
+        - 'button "PLAN: Bulletproof backtest epic PLAN: Bulletproof backtest epic note • active • Updated: 2025-12-15" [ref=e919]':
+          - generic [ref=e921]:
+            - 'heading "PLAN: Bulletproof backtest epic" [level=3] [ref=e922]'
+            - paragraph [ref=e923]: "PLAN: Bulletproof backtest epic"
+            - generic [ref=e924]:
+              - generic [ref=e925]: note
+              - generic [ref=e926]: •
+              - generic [ref=e927]: active
+              - generic [ref=e928]: •
+              - generic [ref=e929]: "Updated: 2025-12-15"
+        - 'button "PLAN: Bulletproof backtest epic PLAN: Bulletproof backtest epic note • active • Updated: 2025-12-15" [ref=e930]':
+          - generic [ref=e932]:
+            - 'heading "PLAN: Bulletproof backtest epic" [level=3] [ref=e933]'
+            - paragraph [ref=e934]: "PLAN: Bulletproof backtest epic"
+            - generic [ref=e935]:
+              - generic [ref=e936]: note
+              - generic [ref=e937]: •
+              - generic [ref=e938]: active
+              - generic [ref=e939]: •
+              - generic [ref=e940]: "Updated: 2025-12-15"
+        - 'button "TICKET: TICKET-001 Unit tests + real-data fixtures (first 15 minutes) TICKET: TICKET-001 Unit tests + real-data fixtures (first 15 minutes) Status: Done <!-- Pending | Ready | In Progress | Review | Done --> note • active • Updated: 2025-12-15" [ref=e941]':
+          - generic [ref=e943]:
+            - 'heading "TICKET: TICKET-001 Unit tests + real-data fixtures (first 15 minutes)" [level=3] [ref=e944]'
+            - paragraph [ref=e945]: "TICKET: TICKET-001 Unit tests + real-data fixtures (first 15 minutes) Status: Done <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e946]:
+              - generic [ref=e947]: note
+              - generic [ref=e948]: •
+              - generic [ref=e949]: active
+              - generic [ref=e950]: •
+              - generic [ref=e951]: "Updated: 2025-12-15"
+        - 'button "TICKET: TICKET-002 Strategy + plumbing correctness refactor (make comparisons real) TICKET: TICKET-002 Strategy + plumbing correctness refactor (make comparisons real) Status: In Progress <!-- Pending | Ready | In Progress | Review | Done --> note • active • Updated: 2025-12-15" [ref=e952]':
+          - generic [ref=e954]:
+            - 'heading "TICKET: TICKET-002 Strategy + plumbing correctness refactor (make comparisons real)" [level=3] [ref=e955]'
+            - paragraph [ref=e956]: "TICKET: TICKET-002 Strategy + plumbing correctness refactor (make comparisons real) Status: In Progress <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e957]:
+              - generic [ref=e958]: note
+              - generic [ref=e959]: •
+              - generic [ref=e960]: active
+              - generic [ref=e961]: •
+              - generic [ref=e962]: "Updated: 2025-12-15"
+        - 'button "TICKET: TICKET-003 Experiment Runner (Unified) TICKET: TICKET-003 Experiment Runner (Unified) Status: Pending <!-- Pending | Ready | In Progress | Review | Done --> note • active • Updated: 2025-12-15" [ref=e963]':
+          - generic [ref=e965]:
+            - 'heading "TICKET: TICKET-003 Experiment Runner (Unified)" [level=3] [ref=e966]'
+            - paragraph [ref=e967]: "TICKET: TICKET-003 Experiment Runner (Unified) Status: Pending <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e968]:
+              - generic [ref=e969]: note
+              - generic [ref=e970]: •
+              - generic [ref=e971]: active
+              - generic [ref=e972]: •
+              - generic [ref=e973]: "Updated: 2025-12-15"
+        - 'button "TICKET: TICKET-004 Align Playwright E2E tests with current Backtest UI TICKET: TICKET-004 Align Playwright E2E tests with current Backtest UI Status: In Progress <!-- Pending | Ready | In Progress | Review | Done --> note • active • Updated: 2025-12-15" [ref=e974]':
+          - generic [ref=e976]:
+            - 'heading "TICKET: TICKET-004 Align Playwright E2E tests with current Backtest UI" [level=3] [ref=e977]'
+            - paragraph [ref=e978]: "TICKET: TICKET-004 Align Playwright E2E tests with current Backtest UI Status: In Progress <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e979]:
+              - generic [ref=e980]: note
+              - generic [ref=e981]: •
+              - generic [ref=e982]: active
+              - generic [ref=e983]: •
+              - generic [ref=e984]: "Updated: 2025-12-15"
+        - 'button "TICKET: TICKET-006 Ticket 1.5 — ORB-R tests + refactor + config alignment (single ticket) TICKET: TICKET-006 Ticket 1.5 — ORB-R tests + refactor + config alignment (single ticket) Status: Review <!-- Pending | Ready | In Progress | Review | Done --> note • active • Updated: 2025-12-15" [ref=e985]':
+          - generic [ref=e987]:
+            - 'heading "TICKET: TICKET-006 Ticket 1.5 — ORB-R tests + refactor + config alignment (single ticket)" [level=3] [ref=e988]'
+            - paragraph [ref=e989]: "TICKET: TICKET-006 Ticket 1.5 — ORB-R tests + refactor + config alignment (single ticket) Status: Review <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e990]:
+              - generic [ref=e991]: note
+              - generic [ref=e992]: •
+              - generic [ref=e993]: active
+              - generic [ref=e994]: •
+              - generic [ref=e995]: "Updated: 2025-12-15"
+        - 'button "TICKET: TICKET-007 ORB-R v2 gap-aware entry + analyzer run folders TICKET: TICKET-007 ORB-R v2 gap-aware entry + analyzer run folders Status: Ready <!-- Pending | Ready | In Progress | Review | Done --> note • active • Updated: 2025-12-15" [ref=e996]':
+          - generic [ref=e998]:
+            - 'heading "TICKET: TICKET-007 ORB-R v2 gap-aware entry + analyzer run folders" [level=3] [ref=e999]'
+            - paragraph [ref=e1000]: "TICKET: TICKET-007 ORB-R v2 gap-aware entry + analyzer run folders Status: Ready <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e1001]:
+              - generic [ref=e1002]: note
+              - generic [ref=e1003]: •
+              - generic [ref=e1004]: active
+              - generic [ref=e1005]: •
+              - generic [ref=e1006]: "Updated: 2025-12-15"
+        - 'button "TICKET-008 Docs reorg + front matter tags + repo-wide markdown audit TICKET: TICKET-008 Docs reorg + front matter tags + repo-wide markdown audit Status: In Progress <!-- Pending | Ready | In Progress | Review | Done --> plan • active • Updated: 2025-12-15 plan/ticket ops/refactor meta/index" [ref=e1007]':
+          - generic [ref=e1009]:
+            - heading "TICKET-008 Docs reorg + front matter tags + repo-wide markdown audit" [level=3] [ref=e1010]
+            - paragraph [ref=e1011]: "TICKET: TICKET-008 Docs reorg + front matter tags + repo-wide markdown audit Status: In Progress <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e1012]:
+              - generic [ref=e1013]: plan
+              - generic [ref=e1014]: •
+              - generic [ref=e1015]: active
+              - generic [ref=e1016]: •
+              - generic [ref=e1017]: "Updated: 2025-12-15"
+            - generic [ref=e1018]:
+              - generic [ref=e1019]: plan/ticket
+              - generic [ref=e1020]: ops/refactor
+              - generic [ref=e1021]: meta/index
+        - 'button "TASK: Poke around menus and see if they work TASK: Poke around menus and see if they work Date: 2025-12-13 Status: In Progress note • active • Updated: 2025-12-15" [ref=e1022]':
+          - generic [ref=e1024]:
+            - 'heading "TASK: Poke around menus and see if they work" [level=3] [ref=e1025]'
+            - paragraph [ref=e1026]: "TASK: Poke around menus and see if they work Date: 2025-12-13 Status: In Progress"
+            - generic [ref=e1027]:
+              - generic [ref=e1028]: note
+              - generic [ref=e1029]: •
+              - generic [ref=e1030]: active
+              - generic [ref=e1031]: •
+              - generic [ref=e1032]: "Updated: 2025-12-15"
+        - 'button "TASK: strategy12dot7 TASK: strategy12dot7 Date: 2025-12-15 Status: In Progress note • active • Updated: 2025-12-15" [ref=e1033]':
+          - generic [ref=e1035]:
+            - 'heading "TASK: strategy12dot7" [level=3] [ref=e1036]'
+            - paragraph [ref=e1037]: "TASK: strategy12dot7 Date: 2025-12-15 Status: In Progress"
+            - generic [ref=e1038]:
+              - generic [ref=e1039]: note
+              - generic [ref=e1040]: •
+              - generic [ref=e1041]: active
+              - generic [ref=e1042]: •
+              - generic [ref=e1043]: "Updated: 2025-12-15"
+        - 'button "TICKET: {{ticket_id}} {{ticket_title}} TICKET: {{ticket_id}} {{ticket_title}} Status: Pending <!-- Pending | Ready | In Progress | Review | Done --> plan • pending • Updated: {{date}} plan/ticket" [ref=e1044]':
+          - generic [ref=e1046]:
+            - 'heading "TICKET: {{ticket_id}} {{ticket_title}}" [level=3] [ref=e1047]'
+            - paragraph [ref=e1048]: "TICKET: {{ticket_id}} {{ticket_title}} Status: Pending <!-- Pending | Ready | In Progress | Review | Done -->"
+            - generic [ref=e1049]:
+              - generic [ref=e1050]: plan
+              - generic [ref=e1051]: •
+              - generic [ref=e1052]: pending
+              - generic [ref=e1053]: •
+              - generic [ref=e1054]: "Updated: {{date}}"
+            - generic [ref=e1056]: plan/ticket
+  - button "Open Next.js Dev Tools" [ref=e1062] [cursor=pointer]:
+    - img [ref=e1063]
+  - alert [ref=e1067]
+```

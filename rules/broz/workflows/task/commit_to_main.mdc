@@ -1,0 +1,95 @@
+---
+description: "Workflow: Commit all changes to main"
+globs: []
+---
+# Workflow: Task > Commit All to Main
+
+<critical>You MUST use the correct commit prefix (feat, fix, task, etc.).</critical>
+<critical>You MUST auto-generate the message (do not prompt user).</critical>
+<critical>You MUST NOT push to origin (commit only).</critical>
+
+<workflow>
+
+<step n="1" goal="Check Status">
+  <action>
+    **Run `git status`**:
+    - If clean, exit (nothing to do).
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Check Status**
+    📊 Checked git status (clean or has changes)
+    
+    ➡️ **Beginning Step 2: Stage & Analyze**
+  </output>
+</step>
+
+<step n="2" goal="Stage & Analyze">
+  <action>
+    **Stage All**:
+    - `git add -A`
+  </action>
+
+  <action>
+    **Analyze Changes**:
+    - Identify modified/added/deleted files.
+    - Determine primary type (feat, fix, task, etc.).
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Stage & Analyze**
+    📦 Staged all changes
+    🔍 Analyzed file patterns and determined commit type
+    
+    ➡️ **Beginning Step 3: Generate Message**
+  </output>
+</step>
+
+<step n="3" goal="Generate Message">
+  <action>
+    **Draft Message**:
+    - **Title**: `<prefix>: <concise summary>`
+    - **Body**: Description of why/what.
+    - **Changes**: Bulleted list of files/groups.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Generate Message**
+    ✍️ Drafted commit message with prefix
+    📝 Included description and file list
+    
+    ➡️ **Beginning Step 4: Commit**
+  </output>
+</step>
+
+<step n="4" goal="Commit">
+  <action>
+    **Execute Commit**:
+    - `git commit -m "<message>"`
+  </action>
+
+  <action>
+    **Verify**:
+    - `git status --short`
+    - Ensure tree is clean.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Commit**
+    💾 Executed git commit
+    ✅ Verified working tree is clean
+    
+    ➡️ **Beginning Step 5: Summary**
+  </output>
+</step>
+
+<step n="5" goal="Summary">
+  <output>
+    ### Commit Complete
+    - **Hash**: [Short Hash]
+    - **Message**: [Title]
+    - **Status**: Clean
+  </output>
+</step>
+
+</workflow>

@@ -1,0 +1,14 @@
+[
+  {
+    "role": "user",
+    "text": "<user_query>\n\nrun npm run build and see what it outputs\n \n</user_query>"
+  },
+  {
+    "role": "user",
+    "text": "<user_query>\nrun npm run build and see what it outputs\n</user_query>"
+  },
+  {
+    "role": "user",
+    "text": "<user_query>\nrun npm run build and see what it outputs\n</user_query>"
+  }
+]

@@ -1,0 +1,103 @@
+---
+description: "Workflow: Confirm Bug Fixed (review + no overengineering + tests)"
+globs: []
+---
+# Workflow: Task > Confirm Bug Fixed
+
+<critical>You MUST verify a visible screenshot of the FIXED state exists.</critical>
+<critical>You MUST capture a final VERIFICATION screenshot.</critical>
+<critical>You MUST confirm tests passed (Green).</critical>
+<critical>You MUST verify the fix is KISS (not overengineered).</critical>
+
+<workflow>
+
+<step n="1" goal="Review Artifacts">
+  <action>
+    **Check Ticket State**:
+    - Status must be `Review`.
+    - `## Dev Agent Record` populated.
+  </action>
+
+  <action>
+    **Verify Evidence**:
+    - Check for `tests/results/e2eresults.md` (or similar).
+    - Check for `tests/results/bug-fixes/BUG-...-FIXED.png`.
+  </action>
+
+  <check if="fixed screenshot missing">
+    <critical>STOP. Fix evidence missing.</critical>
+    <action>Return to In Progress.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 1: Review Artifacts**
+    📋 Verified ticket status and dev record
+    📸 Confirmed fixed screenshot exists
+    
+    ➡️ **Beginning Step 2: Verify Fix & Tests**
+  </output>
+</step>
+
+<step n="2" goal="Verify Fix & Tests">
+  <action>
+    **Capture VERIFIED Screenshot**:
+    1. Navigate to page.
+    2. Screenshot: `tests/results/bug-fixes/BUG-...-VERIFIED.png`.
+    3. Embed in `### Test Evidence`.
+  </action>
+
+  <action>
+    **Re-Run Tests (if needed)**:
+    - Ensure CI/Tests are green.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Verify Fix & Tests**
+    📸 Captured verified screenshot
+    ✅ Confirmed tests pass (green)
+    
+    ➡️ **Beginning Step 3: Quality Check (KISS)**
+  </output>
+</step>
+
+<step n="3" goal="Quality Check (KISS)">
+  <action>
+    **Code Review**:
+    - Check `git diff`.
+    - Is it simple?
+    - Any overengineering?
+  </action>
+
+  <check if="overengineered">
+    <action>Flag as **KISS Concern**.</action>
+    <action>Loop to simplify.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 3: Quality Check (KISS)**
+    🔍 Reviewed code diff for simplicity
+    ✅ Confirmed fix is not overengineered
+    
+    ➡️ **Beginning Step 4: Close Out**
+  </output>
+</step>
+
+<step n="4" goal="Close Out">
+  <action>
+    **Update Ticket**:
+    - Status: `Done`.
+    - `review.state`: `approved`.
+    - `facets.status`: `done`.
+  </action>
+
+  <output>
+    ### Bug Verified & Closed
+    - **Ticket**: [Link]
+    - **Status**: Done
+    - **Evidence**:
+      - Fixed: [Link]
+      - Verified: [Link]
+  </output>
+</step>
+
+</workflow>

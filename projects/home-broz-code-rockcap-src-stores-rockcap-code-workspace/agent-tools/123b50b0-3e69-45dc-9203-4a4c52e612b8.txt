@@ -1,0 +1,565 @@
+/**
+ * =============================================================================
+ * STRATEGY 12.7 - Price Calculation Implementation
+ * =============================================================================
+ * 
+ * **This file contains ALL price calculation logic for strategy12.7.**
+ * 
+ * ## Architecture Role
+ * 
+ * This is a **strategy implementation** - it contains the actual price calculation
+ * logic that gets executed when this strategy is selected.
+ * 
+ * **Call Flow:**
+ * ```
+ * UI/CLI → generateAlgoTrades() [backtest.ts]
+ *   ↓
+ * Strategy Registry → getStrategy("strategy12.7") [strategies/index.ts]
+ *   ↓
+ * This file → runStrategy12dot7() [THIS FILE]
+ *   ↓
+ * Returns AlgoTradeRow[] with calculated prices
+ * ```
+ * 
+ * ## What This File Does
+ * 
+ * This file performs ALL price calculations:
+ * - Calculates trigger prices (longTrigger, shortTrigger)
+ * - Scans candles for trigger crossings
+ * - Determines entry prices
+ * - Calculates TP and SL levels
+ * - Scans for exit conditions
+ * - Determines exit prices
+ * - Generates AlgoTradeRow objects
+ * 
+ * ## Strategy Behavior
+ * 
+ * This strategy uses a **variable start price** that changes at 9:35 AM ET:
+ * 
+ * 1. **Before 9:35**: Uses the original start price (9:30 AM open candle price)
+ * 2. **At/After 9:35**: Switches to the 9:35:00 1-second candle's open price as the new start price
+ * 3. **At 9:35**: Resets round-trip trade counter and eligibility.
+ * 4. **Force Close**: If a trade is open at 9:35, it is forced closed.
+ * 
+ * ## Impact on Calculations
+ * 
+ * When the start price shifts at 9:35, all derived values recalculate:
+ * - **Long Trigger** = currentStartPrice + triggerPts
+ * - **Short Trigger** = currentStartPrice - triggerPts  
+ * - **TP Above** = currentStartPrice + profitTargetPts
+ * - **TP Below** = currentStartPrice - profitTargetPts
+ * - **SL Long** = longTrigger - stopLossPts
+ * - **SL Short** = shortTrigger + stopLossPts
+ * 
+ * ## Visual Effect
+ * 
+ * On the chart, all horizontal lines (triggers, TP, SL) will "jump" to new positions
+ * at 9:35, creating a visual stagger effect where:
+ * - Lines from 9:30-9:35 are based on the original start price
+ * - Lines from 9:35+ are based on the 9:35 candle's open price
+ * 
+ * ## Use Cases
+ * 
+ * This strategy is useful for testing how a mid-morning price adjustment affects
+ * trade outcomes, particularly for trades that trigger near the 9:35 transition point.
+ */
+
+import type { Strategy } from "./types";
+import type { AlgoTradeRow, Candle } from "../../backtest";
+
+/**
+ * Find the index of the 9:35:00 candle (first candle at or after 9:35:00).
+ * 
+ * @param candles - Array of candles to search
+ * @returns Index of 9:35:00 candle, or -1 if not found
+ */
+function find935CandleIndex(candles: Candle[]): number {
+  // Target: 9:35:00 AM ET (which is 14:35:00 UTC in standard time, or 13:35:00 UTC in DST)
+  // We'll match any candle with time containing "09:35:00" or "T09:35:00"
+  for (let i = 0; i < candles.length; i++) {
+    const candle = candles[i];
+    const timeStr = candle.time;
+    // Match 9:35:00 in various timezone formats (ET, UTC, etc.)
+    // Look for "09:35:00" or "T09:35:00" in the timestamp
+    if (timeStr.includes("09:35:00") || timeStr.includes("T09:35:00")) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+/**
+ * Strategy execution function - performs all price calculations.
+ * 
+ * **This is where ALL price calculations happen for strategy12.7.**
+ * 
+ * Called by `generateAlgoTrades()` in `backtest.ts` after looking up this strategy
+ * from the registry. This function:
+ * 
+ * 1. Calculates trigger prices (longTrigger, shortTrigger)
+ * 2. Scans candles for trigger crossings
+ * 3. Determines entry prices when triggers are hit
+ * 4. Calculates TP and SL levels
+ * 5. Scans for exit conditions (TP hit, SL hit, or EOD)
+ * 6. Determines exit prices
+ * 7. Generates and returns AlgoTradeRow[] with all trade events
+ * 
+ * @param candles - Array of OHLCV candles for the day
+ * @param startPrice - The day's starting price (9:30 open, may shift at 9:35)
+ * @param triggerPts - Points above/below start to trigger entry
+ * @param profitTargetPts - Points from start to take profit
+ * @param stopLossPts - Points from trigger to stop loss
+ * @param maxRoundTrips - Maximum number of round-trip trades allowed
+ * @param enableLogging - Enable verbose console logging
+ * @param cutoffTime - Time cutoff for trades (HH:MM format, e.g., "09:45")
+ * @returns Array of AlgoTradeRow objects (pairs of Open + Close rows)
+ */
+export function runStrategy12dot7(
+  candles: Candle[],
+  startPrice: number,
+  triggerPts: number,
+  profitTargetPts: number,
+  stopLossPts: number,
+  maxRoundTrips: number = 1,
+  enableLogging: boolean = false,
+  cutoffTime: string = "09:45"
+): AlgoTradeRow[] {
+  
+  const log = enableLogging ? console.log.bind(console, "[AlgoGen]") : () => {};
+  
+  log("=".repeat(70));
+  log("STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.7");
+  log("=".repeat(70));
+  log("Inputs:", { startPrice, triggerPts, profitTargetPts, stopLossPts, maxRoundTrips, cutoffTime, candleCount: candles.length });
+  
+  // Helper function to check if a timestamp is before cutoff time
+  const isBeforeCutoff = (timestamp: string | number): boolean => {
+    if (!timestamp) return true;
+    const timeStr = typeof timestamp === "string" ? timestamp : new Date(timestamp).toISOString();
+    // Extract time portion (HH:MM:SS or HH:MM)
+    const timeMatch = timeStr.match(/(\d{2}):(\d{2})(?::(\d{2}))?/);
+    if (!timeMatch) return true;
+    const [, hour, minute, second] = timeMatch;
+    // Normalize to HH:MM:SS format for comparison
+    const candleTime = `${hour}:${minute}:${second || '00'}`;
+    // Normalize cutoff time to HH:MM:SS format
+    const cutoffMatch = cutoffTime.match(/(\d{2}):(\d{2})(?::(\d{2}))?/);
+    if (!cutoffMatch) return true;
+    const [, cutoffHour, cutoffMinute, cutoffSecond] = cutoffMatch;
+    const cutoffTimeNormalized = `${cutoffHour}:${cutoffMinute}:${cutoffSecond || '00'}`;
+    // Use < to prevent trades at or after cutoff time
+    return candleTime < cutoffTimeNormalized;
+  };
+
+  // Guard: Need at least 1 candle
+  if (!candles.length) {
+    log("ERROR: No candles provided, returning empty array");
+    return [];
+  }
+
+  // Find the 9:35:00 candle index
+  const candle935Index = find935CandleIndex(candles);
+  const priceAt935 = candle935Index >= 0 ? candles[candle935Index].open : null;
+  
+  log("9:35 Transition:");
+  log(`  9:35 candle index: ${candle935Index >= 0 ? candle935Index : "NOT FOUND"}`);
+  log(`  Original start price (9:30): ${startPrice}`);
+  log(`  New start price (9:35): ${priceAt935 ?? "N/A"}`);
+
+  // Current effective start price (starts as original, may switch at 9:35)
+  let currentStartPrice = startPrice;
+  let hasSwitched = false;
+  let hasResetAt935 = false; // Tracks if we've processed the 9:35 reset
+
+  // Helper function to get current triggers based on currentStartPrice
+  const getCurrentTriggers = () => {
+    return {
+      longTrigger: currentStartPrice + triggerPts,
+      shortTrigger: currentStartPrice - triggerPts,
+    };
+  };
+
+  // Initial triggers (before 9:35)
+  let { longTrigger, shortTrigger } = getCurrentTriggers();
+  
+  log("Initial Triggers (before 9:35):");
+  log(`  Long Trigger  = ${currentStartPrice} + ${triggerPts} = ${longTrigger}`);
+  log(`  Short Trigger = ${currentStartPrice} - ${triggerPts} = ${shortTrigger}`);
+
+  const allRows: AlgoTradeRow[] = [];
+  let scanStartIndex = 0;
+  let tradeNumber = 0; // Total trades (for IDs)
+  let sessionTradeCount = 0; // Trades in current session (resets at 9:35)
+  
+  // Track last trade direction and exit reason for alternating logic
+  let lastTradeDirection: "long" | "short" | null = null;
+  let lastExitNote: "PT Hit" | "SL Hit" | "EOD Push" | "Forced 9:35 Close" | null = null;
+
+  // ==========================================================================
+  // MULTI ROUND-TRIP LOOP
+  // ==========================================================================
+  while (scanStartIndex < candles.length) {
+    
+    // 1. Check for 9:35 Reset Logic (Before checking limits)
+    // If we passed 9:35 while waiting for next trade
+    if (!hasResetAt935 && candle935Index >= 0 && scanStartIndex >= candle935Index) {
+        hasResetAt935 = true;
+        sessionTradeCount = 0;
+        lastTradeDirection = null; // Reset eligibility
+        log(`*** 9:35 RESET TRIGGERED (No trade active) ***`);
+        
+        // Ensure start price is updated if not already (should be handled by hasSwitched check inside loop usually, but safe to do here)
+        if (!hasSwitched && priceAt935 != null) {
+            currentStartPrice = priceAt935;
+            hasSwitched = true;
+            const newTriggers = getCurrentTriggers();
+            longTrigger = newTriggers.longTrigger;
+            shortTrigger = newTriggers.shortTrigger;
+            log(`  Start price switched to ${currentStartPrice} (at Reset)`);
+        }
+    }
+
+    // 2. Check Limits
+    if (sessionTradeCount >= maxRoundTrips) {
+        // If we haven't reset yet, try to fast-forward to 9:35
+        if (!hasResetAt935 && candle935Index >= 0 && scanStartIndex < candle935Index) {
+            log(`  Max round trips (${maxRoundTrips}) reached for pre-9:35. Fast-forwarding to 9:35.`);
+            scanStartIndex = candle935Index;
+            continue; // Restart loop, triggering reset logic above
+        }
+        log(`  Max round trips (${maxRoundTrips}) reached for current session. Done.`);
+        break;
+    }
+
+    tradeNumber++;
+    sessionTradeCount++;
+    log("-".repeat(70));
+    log(`ROUND TRIP #${tradeNumber} (Session #${sessionTradeCount}) - Scanning from candle[${scanStartIndex}]`);
+    
+    // Determine if we need to force opposite direction after SL
+    const mustAlternate = lastExitNote === "SL Hit" && lastTradeDirection !== null;
+    const requiredDirection = mustAlternate 
+      ? (lastTradeDirection === "long" ? "short" : "long")
+      : null;
+    
+    if (mustAlternate && requiredDirection) {
+      log(`  *** ALTERNATING LOGIC: Last trade was ${lastTradeDirection} with SL Hit, must trade ${requiredDirection} next ***`);
+    }
+
+    // -------------------------------------------------------------------------
+    // STEP A: Find trigger crossing (with 9:35 start price shift)
+    // -------------------------------------------------------------------------
+    let triggerCandleIndex = -1;
+    let direction: "long" | "short" | null = null;
+
+    for (let i = scanStartIndex; i < candles.length; i++) {
+      const candle = candles[i];
+      
+      // Check cutoff time - no trades after cutoff
+      if (!isBeforeCutoff(candle.time)) {
+        log(`  Candle[${i}] is after cutoff time ${cutoffTime}, stopping trade search`);
+        break;
+      }
+      
+      // Check if we've reached 9:35 and need to switch start price
+      if (!hasSwitched && candle935Index >= 0 && i >= candle935Index && priceAt935 != null) {
+        
+        // NEW: 9:35 Reset Logic during scan
+        if (!hasResetAt935) {
+            hasResetAt935 = true;
+            sessionTradeCount = 1; // Reset to 1 (this attempt is #1 of new session)
+            lastTradeDirection = null; // Reset eligibility
+            log(`*** 9:35 RESET TRIGGERED (During Trigger Scan) ***`);
+        }
+        
+        currentStartPrice = priceAt935;
+        hasSwitched = true;
+        // Recalculate triggers with new start price
+        const newTriggers = getCurrentTriggers();
+        longTrigger = newTriggers.longTrigger;
+        shortTrigger = newTriggers.shortTrigger;
+        log(`  *** 9:35 TRANSITION at candle[${i}] ***`);
+        log(`  Start price switched: ${startPrice} -> ${currentStartPrice}`);
+        log(`  Triggers recalculated:`);
+        log(`    Long Trigger  = ${currentStartPrice} + ${triggerPts} = ${longTrigger}`);
+        log(`    Short Trigger = ${currentStartPrice} - ${triggerPts} = ${shortTrigger}`);
+      }
+      
+      const longHit = candle.high >= longTrigger;
+      const shortHit = candle.low <= shortTrigger;
+      
+      // Apply alternating logic: if we must alternate, only accept the required direction
+      let allowedLongHit = longHit;
+      let allowedShortHit = shortHit;
+      
+      if (mustAlternate && requiredDirection) {
+        if (requiredDirection === "long") {
+          allowedShortHit = false; // Only allow long
+          log(`  Candle[${i}]: Alternating logic - only allowing LONG trigger`);
+        } else {
+          allowedLongHit = false; // Only allow short
+          log(`  Candle[${i}]: Alternating logic - only allowing SHORT trigger`);
+        }
+      }
+
+      if (allowedLongHit || allowedShortHit) {
+        triggerCandleIndex = i;
+        if (allowedLongHit && allowedShortHit) {
+          // Tiebreaker: which trigger is closer to open
+          const distToLong = Math.abs(candle.open - longTrigger);
+          const distToShort = Math.abs(candle.open - shortTrigger);
+          direction = distToLong <= distToShort ? "long" : "short";
+          log(`  Candle[${i}] BOTH triggers hit! Tiebreaker -> ${direction}`);
+        } else {
+          direction = allowedLongHit ? "long" : "short";
+          log(`  Candle[${i}] ${direction.toUpperCase()} trigger hit`);
+        }
+        break;
+      }
+    }
+
+    // No trigger found - done generating trades
+    if (triggerCandleIndex === -1 || !direction) {
+      log(`  No trigger crossed from candle[${scanStartIndex}] onwards. Done.`);
+      break;
+    }
+
+    // -------------------------------------------------------------------------
+    // STEP B: Calculate entry
+    // -------------------------------------------------------------------------
+    const entryPrice = direction === "long" ? longTrigger + 1 : shortTrigger - 1;
+    const entryTimestamp = candles[triggerCandleIndex].time;
+    const entrySlippage = direction === "long" ? 1 : -1;
+
+    log(`  Entry: ${entryPrice} at ${entryTimestamp}`);
+
+    // -------------------------------------------------------------------------
+    // STEP C: Calculate TP and SL (based on CURRENT startPrice, which may have shifted at 9:35)
+    // -------------------------------------------------------------------------
+    // Ensure we've switched if we're past 9:35
+    if (!hasSwitched && candle935Index >= 0 && triggerCandleIndex >= candle935Index && priceAt935 != null) {
+      currentStartPrice = priceAt935;
+      hasSwitched = true;
+      const newTriggers = getCurrentTriggers();
+      longTrigger = newTriggers.longTrigger;
+      shortTrigger = newTriggers.shortTrigger;
+      log(`  *** 9:35 TRANSITION detected during TP/SL calc ***`);
+      log(`  Start price switched: ${startPrice} -> ${currentStartPrice}`);
+    }
+    
+    let tpPrice: number;
+    let slPrice: number;
+
+    if (direction === "long") {
+      tpPrice = currentStartPrice + profitTargetPts;
+      slPrice = longTrigger - stopLossPts;
+    } else {
+      tpPrice = currentStartPrice - profitTargetPts;
+      slPrice = shortTrigger + stopLossPts;
+    }
+
+    log(`  TP: ${tpPrice} (based on currentStartPrice: ${currentStartPrice}), SL: ${slPrice}`);
+
+    // -------------------------------------------------------------------------
+    // STEP D: Scan for exit (TP/SL hit, or EOD Push)
+    // -------------------------------------------------------------------------
+    // INVARIANT: Every Open MUST have a corresponding Close by EOD.
+    // If no TP/SL hit, close at ENTRY PRICE with net=0 (Push).
+    let exitCandleIndex = -1;
+    let exitNote: "PT Hit" | "SL Hit" | "EOD Push" = "EOD Push";
+    let exitPrice = entryPrice; // Default: EOD Push closes at entry price (net=0)
+    let exitTimestamp = candles[candles.length - 1].time;
+    let exitSlippage: number | undefined;
+
+    for (let i = triggerCandleIndex + 1; i < candles.length; i++) {
+      const candle = candles[i];
+      let tpHit = false;
+      let slHit = false;
+
+      // Check for Forced Close at 9:35
+      if (!hasResetAt935 && candle935Index >= 0 && i === candle935Index) {
+          exitCandleIndex = i;
+          exitTimestamp = candle.time;
+          exitPrice = candles[i-1].close; // Close of 9:34
+          exitNote = "Forced 9:35 Close";
+          log(`  *** FORCED CLOSE at 9:35 ***`);
+          
+          hasResetAt935 = true;
+          break;
+      }
+
+      if (direction === "long") {
+        tpHit = candle.high >= tpPrice;
+        slHit = candle.low <= slPrice;
+      } else {
+        tpHit = candle.low <= tpPrice;
+        slHit = candle.high >= slPrice;
+      }
+
+      if (tpHit || slHit) {
+        exitCandleIndex = i;
+        exitTimestamp = candle.time;
+
+        if (tpHit && slHit) {
+          exitNote = "SL Hit"; // Conservative: SL wins
+          exitPrice = direction === "long" ? slPrice - 1 : slPrice + 1;
+        } else if (slHit) {
+          exitNote = "SL Hit";
+          exitPrice = direction === "long" ? slPrice - 1 : slPrice + 1;
+        } else {
+          exitNote = "PT Hit";
+          exitPrice = direction === "long" ? tpPrice - 1 : tpPrice + 1;
+        }
+        log(`  Exit: ${exitNote} at candle[${i}], price=${exitPrice}`);
+        break;
+      }
+    }
+
+    if (exitCandleIndex === -1) {
+      // EOD Push: Close at entry price (flat trade, net=0)
+      log(`  Exit: EOD Push at entry price ${exitPrice} (net=0)`);
+      exitSlippage = 0;
+    } else if (exitNote === "PT Hit") {
+      exitSlippage = direction === "long" ? -1 : 1;
+    } else if (exitNote === "SL Hit") {
+      exitSlippage = direction === "long" ? -1 : 1;
+    } else if (exitNote === "Forced 9:35 Close") {
+      exitSlippage = direction === "long" ? -1 : 1;
+      
+      // RESET SESSION COUNT for next iteration
+      sessionTradeCount = 0; 
+      log(`  Session count reset to 0 after Forced Close`);
+      // Also reset eligibility
+      lastTradeDirection = null; 
+    }
+
+    // -------------------------------------------------------------------------
+    // STEP E: Calculate P&L and build rows
+    // -------------------------------------------------------------------------
+    const net = direction === "long" 
+      ? exitPrice - entryPrice 
+      : entryPrice - exitPrice;
+
+    log(`  Net P&L: ${net}`);
+
+    const openType = direction === "long" ? "Open Long" : "Open Short";
+    const closeType = direction === "long" ? "Close Long" : "Close Short";
+
+    const openRow: AlgoTradeRow = {
+      id: `open-${tradeNumber}`,
+      timestamp: entryTimestamp,
+      type: openType,
+      price: entryPrice,
+      slippage: entrySlippage,
+    };
+
+    const closeRow: AlgoTradeRow = {
+      id: `close-${tradeNumber}`,
+      timestamp: exitTimestamp,
+      type: closeType,
+      price: exitPrice,
+      slippage: exitSlippage,
+      note: exitNote,
+      net: net,
+    };
+
+    allRows.push(openRow, closeRow);
+    
+    // Store last trade info for alternating logic
+    lastTradeDirection = direction;
+    lastExitNote = exitNote;
+    log(`  Stored last trade: ${direction} exited with ${exitNote}`);
+
+    // -------------------------------------------------------------------------
+    // STEP F: Prepare for next round trip (RE-ELIGIBILITY REQUIRED)
+    // -------------------------------------------------------------------------
+    // After a trade exits, price must RETURN BETWEEN the triggers before
+    // being eligible for another trade. This prevents immediate re-entry
+    // when price is still beyond a trigger.
+    //
+    // Re-eligibility zone: shortTrigger < price < longTrigger
+    // 
+    if (exitCandleIndex === -1) {
+      // EOD Push - no more candles to scan
+      log(`  EOD reached, no more trades possible`);
+      break;
+    }
+
+    // Skip re-eligibility if we just did a forced close (reset condition)
+    if (exitNote === "Forced 9:35 Close") {
+      scanStartIndex = exitCandleIndex; // Start next scan AT 9:35
+      log(`  Skipping re-eligibility due to Forced Close. Next scan starts at ${scanStartIndex} (9:35 candle)`);
+      continue; 
+    }
+
+    // Find first candle where price returns between triggers
+    // Note: Triggers may have shifted at 9:35, so we need to use current triggers
+    let reEligibleIndex = -1;
+    for (let i = exitCandleIndex + 1; i < candles.length; i++) {
+      const candle = candles[i];
+      
+      // Check cutoff time - no new entries after cutoff
+      if (!isBeforeCutoff(candle.time)) {
+        log(`  Cutoff time ${cutoffTime} reached during re-eligibility scan, no more trades allowed`);
+        break;
+      }
+      
+      // Check if we need to switch start price during re-eligibility scan
+      if (!hasSwitched && candle935Index >= 0 && i >= candle935Index && priceAt935 != null) {
+        currentStartPrice = priceAt935;
+        hasSwitched = true;
+        const newTriggers = getCurrentTriggers();
+        longTrigger = newTriggers.longTrigger;
+        shortTrigger = newTriggers.shortTrigger;
+        log(`  *** 9:35 TRANSITION during re-eligibility scan ***`);
+        log(`  Start price switched: ${startPrice} -> ${currentStartPrice}`);
+        log(`  Triggers recalculated: Long=${longTrigger}, Short=${shortTrigger}`);
+      }
+      
+      // Price is "between triggers" if the candle's range crosses the zone
+      // i.e., at some point during the candle, price was between triggers
+      // This means: candle.low < longTrigger AND candle.high > shortTrigger
+      // AND the candle actually enters the zone (not just spanning both triggers)
+      const lowInZone = candle.low > shortTrigger && candle.low < longTrigger;
+      const highInZone = candle.high > shortTrigger && candle.high < longTrigger;
+      const openInZone = candle.open > shortTrigger && candle.open < longTrigger;
+      const closeInZone = candle.close > shortTrigger && candle.close < longTrigger;
+      
+      if (lowInZone || highInZone || openInZone || closeInZone) {
+        reEligibleIndex = i;
+        log(`  Re-eligibility found at candle[${i}] - price returned between triggers`);
+        break;
+      }
+    }
+
+    if (reEligibleIndex === -1) {
+      log(`  No re-eligibility found - price never returned between triggers. Done.`);
+      break;
+    }
+
+    // Start next trade scan from the re-eligible candle (NOT same candle as re-eligibility)
+    scanStartIndex = reEligibleIndex + 1;
+    log(`  Next scan will start from candle[${scanStartIndex}] (after re-eligibility)`);
+  }
+
+  log("=".repeat(70));
+  log(`GENERATION COMPLETE: ${allRows.length} rows (${tradeNumber} round trips)`);
+  log("=".repeat(70));
+
+  return allRows;
+}
+
+/**
+ * Strategy object exported for registration in the strategy registry.
+ * 
+ * This object is imported by `backtest/strategies/index.ts` and added to the
+ * strategies array. When `generateAlgoTrades()` is called with `strategyId="strategy12.7"`,
+ * the registry looks up this object and calls `run()` (which executes `runStrategy12dot7()`).
+ */
+export const strategy12dot7: Strategy = {
+  id: "strategy12.7",
+  name: "strategy12.7",
+  description: "Easy Peasy variant that shifts start price from 9:30 open to 9:35 candle open, causing all triggers and targets to recalculate at 9:35 (strategy 12.7)",
+  run: runStrategy12dot7,
+};
+

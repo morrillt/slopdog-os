@@ -1,0 +1,1173 @@
+
+ RUN  v4.0.15 /home/broz/.cursor/worktrees/rockcap__Workspace_/isx
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-clean-fill > Standard long entry, stop safely below L, target above H
+
+======================================================================
+TEST: long-green-clean-fill
+======================================================================
+
+Description: Standard long entry, stop safely below L, target above H
+
+Path Explanation:
+
+        Candle: O=100, L=90, H=110, C=108
+        Path: O(100) → L(90) → H(110) → C(108)
+        
+        Entry(105): Crossed on L→H segment (90→110)
+        Stop(85): Below Low(90), never touched
+        Target(115): Above High(110), never touched
+      
+
+Why This Outcome:
+
+        Entry is hit at 105. Stop and Target are outside candle range. Position opens and survives the bar.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-blocked-by-stop-first-segment > Stop level hit during O->L descent before entry in L->H ascent
+
+======================================================================
+TEST: long-green-blocked-by-stop-first-segment
+======================================================================
+
+Description: Stop level hit during O->L descent before entry in L->H ascent
+
+Path Explanation:
+
+        Candle: O=100, L=90, H=110, C=108
+        Path: O(100) → L(90) → H(110) → C(108)
+        
+        Stop(95): Crossed on O(100) → L(90)
+        Entry(105): Crossed on L(90) → H(110)
+      
+
+Why This Outcome:
+
+        The price hits the Stop level (95) BEFORE hitting the Entry level (105). 
+        This is treated as an invalidation of the setup (or pre-triggered stop). NO_FILL.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-blocked-by-stop-same-segment > Stop level hit before Entry level during L->H ascent
+
+======================================================================
+TEST: long-green-blocked-by-stop-same-segment
+======================================================================
+
+Description: Stop level hit before Entry level during L->H ascent
+
+Path Explanation:
+
+        Candle: O=100, L=90, H=110, C=108
+        Path: O(100) → L(90) → H(110) → C(108)
+        
+        Segment L(90) → H(110):
+        - Crosses 104 (Stop)
+        - Crosses 105 (Entry)
+        
+        Since 90 < 104 < 105, Stop is hit first.
+      
+
+Why This Outcome:
+
+        On the upward move from L to H, price passes through the Stop level (104) 
+        BEFORE reaching the Entry level (105). Setup invalidated. NO_FILL.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-fill-then-stop-same-segment-impossible > Attempt to have Stop > Entry on same upward segment
+
+======================================================================
+TEST: long-green-fill-then-stop-same-segment-impossible
+======================================================================
+
+Description: Attempt to have Stop > Entry on same upward segment
+
+Path Explanation:
+
+        For Long, Stop must be < Entry.
+        On an UPWARD segment (L->H), Price goes Low -> Entry -> Stop(invalid).
+        Since Stop < Entry, we cannot hit Entry then Stop on a purely upward move.
+        This case is logically impossible for Long on L->H unless Stop > Entry (which is malformed).
+        
+        We test "Entry then Target" instead.
+      
+
+Why This Outcome:
+
+        Substituting with FILL_TARGET_SAME_BAR test for same segment.
+        L(90) -> H(110). Entry(100), Target(105).
+        Price passes 100 then 105.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-fill-then-stop-next-segment > Entry on L->H, then Stop hit on H->C descent
+
+======================================================================
+TEST: long-green-fill-then-stop-next-segment
+======================================================================
+
+Description: Entry on L->H, then Stop hit on H->C descent
+
+Path Explanation:
+
+        Candle: O=100, L=90, H=110, C=95
+        (Technically Red since C < O, but path logic for Green/Red depends on C vs O check. 95 < 100, so this is RED candle.)
+        
+        Let's force a Green candle with deep wicks? No, Green implies C > O.
+        If C > O, then C is "high" relative to O.
+        
+        Can we hit Stop on H->C?
+        O(100) -> L(90) -> H(110) -> C(105).
+        Entry: 108 (on L->H).
+        Stop: 106 (on H->C).
+        Is 106 < 108? Yes.
+        Is 106 valid stop? Yes.
+      
+
+Why This Outcome:
+
+        1. O(100)->L(90). No hits.
+        2. L(90)->H(110). Crosses Entry(108). FILL.
+        3. H(110)->C(105). Crosses Stop(106). EXIT.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-fill-then-target-same-segment > Entry and Target both crossed on L->H ascent
+
+======================================================================
+TEST: long-green-fill-then-target-same-segment
+======================================================================
+
+Description: Entry and Target both crossed on L->H ascent
+
+Path Explanation:
+
+        Candle: O=100, L=90, H=110, C=108
+        Segment L(90) -> H(110) crosses Entry(100) then Target(108).
+      
+
+Why This Outcome:
+
+        Price rises from 90 to 110. It hits 100 (Entry) first, then 108 (Target).
+        Filled then Exited with Profit.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-entry-at-open > Entry level equals Open price
+
+======================================================================
+TEST: long-green-entry-at-open
+======================================================================
+
+Description: Entry level equals Open price
+
+Path Explanation:
+
+        Candle: O=100...
+        Entry: 100.
+        Path O(100) -> L(90).
+        Since 100 is start of segment, it is "crossed" (touched).
+        Fill occurs immediately at index 0.
+      
+
+Why This Outcome:
+
+        Immediate fill at open.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-entry-at-low > Entry level equals Low price
+
+======================================================================
+TEST: long-green-entry-at-low
+======================================================================
+
+Description: Entry level equals Low price
+
+Path Explanation:
+
+        Candle: O=100, L=90...
+        Entry: 90.
+        Path O(100) -> L(90).
+        Crossed at L.
+      
+
+Why This Outcome:
+
+        Fill occurs at the Low.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-entry-at-high > Entry level equals High price
+
+======================================================================
+TEST: long-green-entry-at-high
+======================================================================
+
+Description: Entry level equals High price
+
+Path Explanation:
+
+        Candle: ... H=110 ...
+        Entry: 110.
+        Path L(90) -> H(110).
+        Crossed at H.
+      
+
+Why This Outcome:
+
+        Fill occurs at the High.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-entry-too-high > Entry level above High
+
+======================================================================
+TEST: long-green-entry-too-high
+======================================================================
+
+Description: Entry level above High
+
+Path Explanation:
+
+        Candle High = 110. Entry = 115.
+        Path never reaches 115.
+      
+
+Why This Outcome:
+
+        No Fill.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-clean-fill > Long entry on dip (H->L), survive
+
+======================================================================
+TEST: long-red-clean-fill
+======================================================================
+
+Description: Long entry on dip (H->L), survive
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92 (RED)
+        Path: O(100) -> H(110) -> L(90) -> C(92)
+        
+        Entry(95): Crossed on H(110) -> L(90)
+        Stop(85): Below L(90), safe.
+      
+
+Why This Outcome:
+
+        Price goes up to H, then down to L (crossing Entry 95).
+        Stop 85 is not reached.
+        Survives.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-blocked-by-stop > Stop hit before Entry on H->L descent
+
+======================================================================
+TEST: long-red-blocked-by-stop
+======================================================================
+
+Description: Stop hit before Entry on H->L descent
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Path: O -> H -> L -> C
+        
+        Segment H(110) -> L(90):
+        - Entry: 95
+        - Stop: 98 (Tight stop)
+        
+        Descent 110 -> 90 passes 98 before 95.
+      
+
+Why This Outcome:
+
+        Stop level (98) is higher than Entry (95). On descent, higher price is hit first.
+        Stop hit before Entry -> Invalidation -> NO_FILL.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-fill-then-stop-same-segment > Entry then Stop on H->L descent
+
+======================================================================
+TEST: long-red-fill-then-stop-same-segment
+======================================================================
+
+Description: Entry then Stop on H->L descent
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Segment H(110) -> L(90):
+        - Passes 95 (Entry)
+        - Passes 92 (Stop)
+        
+        95 is closer to 110 than 92.
+        Entry fills, then Stop hits.
+      
+
+Why This Outcome:
+
+        Fill at 95. Price continues down to 92. Stopped out.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-fill-then-target-next-segment > Entry on H->L, Target on L->C
+
+======================================================================
+TEST: long-red-fill-then-target-next-segment
+======================================================================
+
+Description: Entry on H->L, Target on L->C
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=98 (Still Red)
+        Path: O->H->L->C
+        
+        Entry(91): Crossed on H(110) -> L(90).
+        Target(97): Crossed on L(90) -> C(98).
+      
+
+Why This Outcome:
+
+        Price drops to 91 (Fill), bottoms at 90, rises to 97 (Target).
+        Filled and Target hit.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-entry-at-high > Entry at H, then drop
+
+======================================================================
+TEST: long-red-entry-at-high
+======================================================================
+
+Description: Entry at H, then drop
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Entry: 110.
+        Path O(100)->H(110). Fill.
+      
+
+Why This Outcome:
+
+        Fills at top.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-entry-initial-rise > Entry on O->H rise
+
+======================================================================
+TEST: long-red-entry-initial-rise
+======================================================================
+
+Description: Entry on O->H rise
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Entry: 105.
+        Path O(100) -> H(110). Crosses 105.
+      
+
+Why This Outcome:
+
+        Fill on initial rise. Then price goes H->L (110->90).
+        If SL is 95, it gets hit on H->L.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-fill-then-target-initial-rise > Entry and Target on initial O->H rise
+
+======================================================================
+TEST: long-red-fill-then-target-initial-rise
+======================================================================
+
+Description: Entry and Target on initial O->H rise
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Entry: 102. Target: 108.
+        Path O(100) -> H(110).
+      
+
+Why This Outcome:
+
+        Hits 102 then 108.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-clean-fill > Short entry on rise (L->H), survive
+
+======================================================================
+TEST: short-green-clean-fill
+======================================================================
+
+Description: Short entry on rise (L->H), survive
+
+Path Explanation:
+
+        Candle: O=100, L=90, H=110, C=108
+        Path: O->L->H->C
+        
+        Entry(105): Crossed on L(90)->H(110).
+        Stop(115): Above H, safe.
+        Target(95): Below Entry, not reached after entry?
+        - L->H (90->110) crosses 105.
+        - H->C (110->108).
+        - 95 not reached after 105.
+      
+
+Why This Outcome:
+
+        Fills at 105. Closes at 108. Survives.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-blocked-by-stop > Stop (lower than entry?) Wait, Short Stop is HIGHER.
+
+======================================================================
+TEST: short-green-blocked-by-stop
+======================================================================
+
+Description: Stop (lower than entry?) Wait, Short Stop is HIGHER.
+
+Path Explanation:
+
+        For Short, Stop > Entry.
+        Example: Entry 100. Stop 110.
+        
+        Blocked by Stop means Stop hit before Entry.
+        Stop(110) hit before Entry(100).
+        Path O->L->H->C.
+        O(105) -> L(90) -> H(115) -> C(112).
+        
+        O(105) -> L(90): Crosses Entry(100). Fill!
+        
+        To be blocked, Stop must be hit first.
+        Stop is High. Entry is Low.
+        Path must go High then Low.
+        Green Path: O->L->H->C (Low then High).
+        
+        Can we hit Stop first?
+        O(112) -> L(110).
+        Stop 111. Entry 100.
+        O(112)->L(110) crosses Stop(111).
+        L(110)->H(120).
+        Entry(100) never reached?
+        Wait, if L is 110, and Entry is 100, we never fill anyway.
+        
+        So for Short (Entry < Stop) on Green Candle (Low then High),
+        it is HARD to hit Stop (High) before Entry (Low) unless:
+        Stop is in O->L segment?
+        O(100) -> L(90).
+        Stop must be between 100 and 90?
+        If Stop is < O?
+        Entry must be < Stop.
+        Entry 80. Stop 95.
+        O(100) -> L(90).
+        Crosses 95(Stop), then 80(Entry)? No, 90 is lowest.
+        Crosses 95. 80 not reached.
+        So NO_FILL (Entry not reached).
+        
+        What if Entry reached later?
+        O->L crosses Stop.
+        L->H crosses Entry? No, L is lowest. H is highest.
+        If Entry is 105 (on L->H). Stop is 95 (on O->L).
+        Stop(95) < Entry(105). INVALID setup for Short (Stop must be > Entry).
+        
+        Conclusion: On Green Candle (O->L->H->C), it is almost impossible to hit Short Stop (>Entry) before Short Entry (usually < Price),
+        BECAUSE Stop is High and Entry is Low.
+        And Green Path goes Low FIRST (O->L), then High (L->H).
+        
+        Exception: If Entry is HIGH (limit sell above market).
+        Entry 105. Stop 110.
+        O(100) -> L(90) -> H(115).
+        L->H crosses 105 then 110.
+        Fill then Stop.
+        
+        Is there a case for Blocked?
+        O(112). Stop 114. Entry 115.
+        O->L(110). No.
+        L->H(120). Crosses 114 then 115.
+        Stop hit before Entry?
+        110 -> 114(Stop) -> 115(Entry).
+        Yes.
+      
+
+Why This Outcome:
+
+        Short Limit Entry at 115. Stop at 114?
+        No, Short Stop must be > Entry. Stop 118.
+        110 -> 115(Entry) -> 118(Stop).
+        Fill then Stop.
+        
+        So "Blocked by Stop" for Short Green is rare/impossible if Stop > Entry and Entry > Low.
+        
+        Let's try "Blocked by Target".
+        Target < Entry.
+        Target(95). Entry(105).
+        O(100) -> L(90). Crosses 95.
+        L(90) -> H(110). Crosses 105.
+        Target hit before Entry.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-fill-then-stop > Entry then Stop on L->H ascent
+
+======================================================================
+TEST: short-green-fill-then-stop
+======================================================================
+
+Description: Entry then Stop on L->H ascent
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=108
+        Entry: 105. Stop: 108.
+        L(90) -> H(110) crosses 105 then 108.
+      
+
+Why This Outcome:
+
+        Filled at 105, stopped at 108.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-fill-then-target-descent > Entry and Target on O->L descent
+
+======================================================================
+TEST: short-green-fill-then-target-descent
+======================================================================
+
+Description: Entry and Target on O->L descent
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=108
+        Entry: 95. Target: 92.
+        O(100) -> L(90).
+      
+
+Why This Outcome:
+
+        Fill at 95. Target at 92.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-entry-at-low > Short Entry at Low
+
+======================================================================
+TEST: short-green-entry-at-low
+======================================================================
+
+Description: Short Entry at Low
+
+Path Explanation:
+
+        O(100) -> L(90). Entry 90.
+        Fill at 90.
+      
+
+Why This Outcome:
+
+        Fill at bottom.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-red-clean-fill > Short entry on O->H rise, survive
+
+======================================================================
+TEST: short-red-clean-fill
+======================================================================
+
+Description: Short entry on O->H rise, survive
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Path: O->H->L->C
+        
+        Entry(105): Crossed O(100)->H(110).
+        Stop(115): Above H.
+        Target(85): Below L.
+      
+
+Why This Outcome:
+
+        Fill at 105. Price goes to 110, then 90, then 92.
+        Target 85 not reached. Stop 115 not reached.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-red-blocked-by-stop > Stop hit before Entry on O->H rise
+
+======================================================================
+TEST: short-red-blocked-by-stop
+======================================================================
+
+Description: Stop hit before Entry on O->H rise
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Entry: 108. Stop: 105.
+        
+        Path O(100) -> H(110).
+        Passes 105(Stop) then 108(Entry).
+      
+
+Why This Outcome:
+
+        Stop hit first. Blocked.
+        Note: This assumes Stop < Entry which is technically invalid for a Short Stop Loss order (should be > Entry).
+        But if user provided parameters are messy, or if this is a specialized order type?
+        Assuming standard Short: Stop should be > Entry.
+        If Stop > Entry, e.g. Entry 105, Stop 108.
+        100 -> 105 -> 108.
+        Entry hit first.
+        
+        So "Blocked by Stop" for Short (Stop > Entry) on Rise (O->H) is impossible.
+        What about on Fall (H->L)?
+        Entry 95. Stop 105.
+        O(100)->H(110). Crosses Stop(105).
+        H(110)->L(90). Crosses Entry(95).
+        Stop hit in segment 0. Entry hit in segment 1.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-red-fill-then-stop > Entry then Stop on O->H rise
+
+======================================================================
+TEST: short-red-fill-then-stop
+======================================================================
+
+Description: Entry then Stop on O->H rise
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Entry: 102. Stop: 108.
+        O(100)->H(110).
+      
+
+Why This Outcome:
+
+        Crosses 102 then 108. Stopped out immediately.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-red-fill-then-target-next-segment > Entry on rise, Target on fall
+
+======================================================================
+TEST: short-red-fill-then-target-next-segment
+======================================================================
+
+Description: Entry on rise, Target on fall
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Entry: 105. Target: 95.
+        O->H fills Entry.
+        H->L fills Target.
+      
+
+Why This Outcome:
+
+        Short at 105, cover at 95.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-red-blocked-by-target > Target hit before Entry on O->H rise
+
+======================================================================
+TEST: short-red-blocked-by-target
+======================================================================
+
+Description: Target hit before Entry on O->H rise
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=92
+        Target: 105. Entry: 108.
+        O(100) -> H(110).
+      
+
+Why This Outcome:
+
+        Crosses 105(Target) then 108(Entry).
+        Blocked.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > neutral-default-red-path > Neutral candle uses Red path (O->H->L->C) by default
+
+======================================================================
+TEST: neutral-default-red-path
+======================================================================
+
+Description: Neutral candle uses Red path (O->H->L->C) by default
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=100
+        Default Path: O->H->L->C
+        
+        Entry(105) on O->H.
+        Target(95) on H->L.
+      
+
+Why This Outcome:
+
+        Uses Red logic. Hits Entry on way up, Target on way down.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > neutral-explicit-green-path > Neutral candle forces Green path (O->L->H->C)
+
+======================================================================
+TEST: neutral-explicit-green-path
+======================================================================
+
+Description: Neutral candle forces Green path (O->L->H->C)
+
+Path Explanation:
+
+        Candle: O=100, H=110, L=90, C=100
+        Force Green: O->L->H->C
+        
+        Entry(95) on O->L.
+        Target(105) on L->H.
+      
+
+Why This Outcome:
+
+        Uses Green logic. Hits Entry on way down, Target on way up.
+        (Short: Sell 95, Cover 105? No, Target < Entry for Short. This is Long params?)
+        Let's use Long params: Buy 95, Sell 105.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > edge-simultaneous-entry-stop > Entry and Stop at same price
+
+======================================================================
+TEST: edge-simultaneous-entry-stop
+======================================================================
+
+Description: Entry and Stop at same price
+
+Path Explanation:
+
+        Entry 100, Stop 100.
+        Path crosses 100.
+        Tie-breaker: Stop processed before Entry?
+      
+
+Why This Outcome:
+
+        If Stop == Entry, and we are Pending, we prioritized Stop detection.
+        So NO_FILL.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > edge-simultaneous-entry-target > Entry and Target at same price
+
+======================================================================
+TEST: edge-simultaneous-entry-target
+======================================================================
+
+Description: Entry and Target at same price
+
+Path Explanation:
+
+        Entry 100, Target 100.
+      
+
+Why This Outcome:
+
+        Blocked by Target prioritization. NO_FILL.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > edge-tight-range-all-hit > Entry 100, Stop 99, Target 101. All in range.
+
+======================================================================
+TEST: edge-tight-range-all-hit
+======================================================================
+
+Description: Entry 100, Stop 99, Target 101. All in range.
+
+Path Explanation:
+
+        Candle O=100, L=90, H=110...
+        O(100). Entry(100). Fill.
+        Next is L(90). Passes Stop(99).
+      
+
+Why This Outcome:
+
+        Fill at 100. Stop at 99.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > edge-flat-candle > No movement
+
+======================================================================
+TEST: edge-flat-candle
+======================================================================
+
+Description: No movement
+
+Path Explanation:
+
+        O=100, H=100, L=100, C=100.
+        Path O->H->L->C (Red default). All 100.
+        Entry 100.
+      
+
+Why This Outcome:
+
+        Fill at 100. Survive (Stop 90 not hit).
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-stop-at-low > Stop level equals Low
+
+======================================================================
+TEST: long-green-stop-at-low
+======================================================================
+
+Description: Stop level equals Low
+
+Path Explanation:
+
+        L=90. Stop=90.
+        O(100)->L(90).
+        Stop hit at 90.
+        Entry 105 (L->H).
+      
+
+Why This Outcome:
+
+        Stop hit before Entry. NO_FILL.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-entry-at-high-exact > Entry equals High
+
+======================================================================
+TEST: long-red-entry-at-high-exact
+======================================================================
+
+Description: Entry equals High
+
+Path Explanation:
+
+        H=110. Entry=110.
+        O(100)->H(110). Fill.
+      
+
+Why This Outcome:
+
+        Fill.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-target-at-low > Target equals Low
+
+======================================================================
+TEST: short-green-target-at-low
+======================================================================
+
+Description: Target equals Low
+
+Path Explanation:
+
+        L=90. Target=90.
+        O(100)->L(90). Target hit.
+        Entry 105 (L->H).
+      
+
+Why This Outcome:
+
+        Target hit before Entry. Blocked.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-red-stop-at-high > Stop equals High
+
+======================================================================
+TEST: short-red-stop-at-high
+======================================================================
+
+Description: Stop equals High
+
+Path Explanation:
+
+        H=110. Stop=110.
+        O(100)->H(110). Stop hit.
+        Entry 105 (O->H).
+        100 -> 105(Entry) -> 110(Stop).
+      
+
+Why This Outcome:
+
+        Entry hit first on way up.
+        Fill then Stop.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > robustness-large-numbers > Bitcoin prices
+
+======================================================================
+TEST: robustness-large-numbers
+======================================================================
+
+Description: Bitcoin prices
+
+Path Explanation:
+
+        O=50000, H=51000, L=49000, C=50500.
+        Entry 50800. Stop 48000.
+        O->L->H->C.
+        Entry on L->H.
+      
+
+Why This Outcome:
+
+        Fill and survive.
+      
+======================================================================
+
+
+stdout | src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > robustness-fractional-prices > Forex prices
+
+======================================================================
+TEST: robustness-fractional-prices
+======================================================================
+
+Description: Forex prices
+
+Path Explanation:
+
+        O=1.1000, H=1.1050, L=1.0950, C=1.1020.
+        Entry 1.1040.
+      
+
+Why This Outcome:
+
+        Fill.
+      
+======================================================================
+
+
+ ❯ src/lib/intrabar/__tests__/directional.test.ts (54 tests | 12 failed) 19ms
+         ✓ selects green path (O→L→H→C) when C > O 2ms
+         ✓ selects red path (O→H→L→C) when C < O 0ms
+         ✓ uses red path by default for neutral candle (C == O) 0ms
+         ✓ respects neutralPathChoice parameter for neutral candles 0ms
+         ✓ detects crossing in ascending segment 0ms
+         ✓ detects crossing in descending segment 0ms
+         ✓ treats touch (level == endpoint) as crossing 0ms
+         ✓ returns not crossed when level outside segment 0ms
+       × provides at least 40 permutation specs 3ms
+       ✓ covers all event types 0ms
+       ✓ covers both long and short sides 0ms
+       ✓ covers green, red, and neutral candles 0ms
+         ✓ Standard long entry, stop safely below L, target above H 1ms
+         ✓ Stop level hit during O->L descent before entry in L->H ascent 0ms
+         ✓ Stop level hit before Entry level during L->H ascent 0ms
+         × Attempt to have Stop > Entry on same upward segment 2ms
+         × Entry on L->H, then Stop hit on H->C descent 1ms
+         × Entry and Target both crossed on L->H ascent 0ms
+         × Entry level equals Open price 0ms
+         ✓ Entry level equals Low price 0ms
+         × Entry level equals High price 0ms
+         ✓ Entry level above High 0ms
+         ✓ Long entry on dip (H->L), survive 0ms
+         ✓ Stop hit before Entry on H->L descent 0ms
+         ✓ Entry then Stop on H->L descent 0ms
+         × Entry on H->L, Target on L->C 0ms
+         × Entry at H, then drop 0ms
+         ✓ Entry on O->H rise 0ms
+         ✓ Entry and Target on initial O->H rise 0ms
+         × Short entry on rise (L->H), survive 2ms
+         ✓ Stop (lower than entry?) Wait, Short Stop is HIGHER. 0ms
+         × Entry then Stop on L->H ascent 0ms
+         ✓ Entry and Target on O->L descent 0ms
+         × Short Entry at Low 0ms
+         ✓ Short entry on O->H rise, survive 0ms
+         ✓ Stop hit before Entry on O->H rise 0ms
+         ✓ Entry then Stop on O->H rise 0ms
+         ✓ Entry on rise, Target on fall 0ms
+         ✓ Target hit before Entry on O->H rise 0ms
+         ✓ Neutral candle uses Red path (O->H->L->C) by default 0ms
+         ✓ Neutral candle forces Green path (O->L->H->C) 0ms
+         ✓ Entry and Stop at same price 0ms
+         ✓ Entry and Target at same price 0ms
+         ✓ Entry 100, Stop 99, Target 101. All in range. 0ms
+         ✓ No movement 0ms
+         ✓ Stop level equals Low 0ms
+         × Entry equals High 0ms
+         ✓ Target equals Low 0ms
+         ✓ Stop equals High 0ms
+         ✓ Bitcoin prices 0ms
+         ✓ Forex prices 0ms
+       ✓ handles entry level exactly at open 0ms
+       ✓ handles stop level exactly at entry level 0ms
+       ✓ handles very wide range candle with all levels reachable 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > provides at least 40 permutation specs
+AssertionError: expected 39 to be greater than or equal to 40
+ ❯ src/lib/intrabar/__tests__/directional.test.ts:69:28
+     67| 
+     68|     it('provides at least 40 permutation specs', () => {
+     69|       expect(specs.length).toBeGreaterThanOrEqual(40);
+       |                            ^
+     70|     });
+     71| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-fill-then-stop-same-segment-impossible > Attempt to have Stop > Entry on same upward segment
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-fill-then-target-same-segment > Entry and Target both crossed on L->H ascent
+AssertionError: expected 'FILL_STOP_SAME_BAR' to be 'FILL_TARGET_SAME_BAR' // Object.is equality
+
+Expected: "FILL_TARGET_SAME_BAR"
+Received: "FILL_STOP_SAME_BAR"
+
+ ❯ src/lib/intrabar/__tests__/directional.test.ts:120:32
+    118| 
+    119|           // Verbose assertions with helpful error messages
+    120|           expect(result.event).toBe(spec.expected.event);
+       |                                ^
+    121|           
+    122|           if (spec.expected.entryFill !== undefined) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-fill-then-stop-next-segment > Entry on L->H, then Stop hit on H->C descent
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-entry-at-high > Entry at H, then drop
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-fill-then-stop > Entry then Stop on L->H ascent
+AssertionError: expected 'NO_FILL' to be 'FILL_STOP_SAME_BAR' // Object.is equality
+
+Expected: "FILL_STOP_SAME_BAR"
+Received: "NO_FILL"
+
+ ❯ src/lib/intrabar/__tests__/directional.test.ts:120:32
+    118| 
+    119|           // Verbose assertions with helpful error messages
+    120|           expect(result.event).toBe(spec.expected.event);
+       |                                ^
+    121|           
+    122|           if (spec.expected.entryFill !== undefined) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-entry-at-open > Entry level equals Open price
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-entry-at-high-exact > Entry equals High
+AssertionError: expected 'FILL_STOP_SAME_BAR' to be 'FILL_AND_SURVIVE' // Object.is equality
+
+Expected: "FILL_AND_SURVIVE"
+Received: "FILL_STOP_SAME_BAR"
+
+ ❯ src/lib/intrabar/__tests__/directional.test.ts:120:32
+    118| 
+    119|           // Verbose assertions with helpful error messages
+    120|           expect(result.event).toBe(spec.expected.event);
+       |                                ^
+    121|           
+    122|           if (spec.expected.entryFill !== undefined) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-green-entry-at-high > Entry level equals High price
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-clean-fill > Short entry on rise (L->H), survive
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > short-green-entry-at-low > Short Entry at Low
+AssertionError: expected 'NO_FILL' to be 'FILL_AND_SURVIVE' // Object.is equality
+
+Expected: "FILL_AND_SURVIVE"
+Received: "NO_FILL"
+
+ ❯ src/lib/intrabar/__tests__/directional.test.ts:120:32
+    118| 
+    119|           // Verbose assertions with helpful error messages
+    120|           expect(result.event).toBe(spec.expected.event);
+       |                                ^
+    121|           
+    122|           if (spec.expected.entryFill !== undefined) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  src/lib/intrabar/__tests__/directional.test.ts > Intrabar Directional Policy > Permutation Matrix - Comprehensive Coverage > long-red-fill-then-target-next-segment > Entry on H->L, Target on L->C
+AssertionError: expected 'NO_FILL' to be 'FILL_TARGET_SAME_BAR' // Object.is equality
+
+Expected: "FILL_TARGET_SAME_BAR"
+Received: "NO_FILL"
+
+ ❯ src/lib/intrabar/__tests__/directional.test.ts:120:32
+    118| 
+    119|           // Verbose assertions with helpful error messages
+    120|           expect(result.event).toBe(spec.expected.event);
+       |                                ^
+    121|           
+    122|           if (spec.expected.entryFill !== undefined) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed | 42 passed (54)
+   Start at  19:00:13
+   Duration  169ms (transform 56ms, setup 0ms, import 68ms, tests 19ms, environment 0ms)
+

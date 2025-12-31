@@ -1,0 +1,167 @@
+---
+description: "Workflow: Systematic ticket code review"
+globs: []
+---
+# Workflow: Build > Code Review Ticket
+
+<critical>Review MUST be systematic: Verify Spec, Evidence, and KISS.</critical>
+<critical>Ticket MUST have valid AC <-> Task mapping.</critical>
+<critical>Evidence MUST include actual test execution logs/artifacts.</critical>
+<critical>You MUST validate taxonomy drift for any doc changes.</critical>
+
+<workflow>
+
+<step n="1" goal="Load & Validate Preconditions">
+  <action>
+    **Load Ticket Context**:
+    - Read `plans/context.yaml` for `execution.current_ticket`.
+    - Read the full ticket file.
+  </action>
+
+  <action>
+    **Assert Preconditions**:
+    - Status is `Review`.
+    - `validation.state: passed`.
+    - No open `questions`.
+    - `## Dev Agent Record` has `### File List` and `### Test Evidence`.
+  </action>
+
+  <check if="preconditions failed">
+    <critical>STOP. Preconditions not met.</critical>
+    <action>Route back to `build/continue` or `plan/validate`.</action>
+  </check>
+
+  <action>
+    **Validate AC ↔ Task Mapping**:
+    - Ensure every top-level task has `(AC: AC-#)`.
+    - Ensure every AC is covered by a task.
+  </action>
+
+  <check if="mapping invalid">
+    <critical>STOP. Traceability broken.</critical>
+    <action>Request ticket fixes before review.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 1: Load & Validate Preconditions**
+    📋 Loaded ticket and validated structure
+    ✅ Verified AC ↔ Task mapping
+    
+    ➡️ **Beginning Step 2: Verify Test Evidence**
+  </output>
+</step>
+
+<step n="2" goal="Verify Test Evidence">
+  <action>
+    **Verify Execution**:
+    - Check `### Test Evidence` for actual commands and results.
+    - **Playwright**: Link to `tests/results/e2eresults.md` or report.
+    - **Vitest**: Link to `tests/results/vitest-results.md` or report.
+  </action>
+
+  <action>
+    **Re-Run Verification (if needed)**:
+    - If evidence is stale or unclear, run the tests now.
+    - `npm test` or specific suite.
+  </action>
+
+  <check if="tests failed">
+    <critical>BLOCKER. Tests failing.</critical>
+    <action>Mark review as **BLOCKED**.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 2: Verify Test Evidence**
+    ✅ Verified test execution artifacts exist
+    🧪 Confirmed tests passed (or blocked if failed)
+    
+    ➡️ **Beginning Step 3: Code Review (Spec & KISS)**
+  </output>
+</step>
+
+<step n="3" goal="Code Review (Spec & KISS)">
+  <action>
+    **Inspect Diffs**:
+    - `git status`, `git diff`, `git show`.
+  </action>
+
+  <action>
+    **Evaluate Criteria**:
+    - **Spec**: Does it match ACs?
+    - **KISS**: Is it overengineered? (Prototype bias).
+  </action>
+
+  <action>
+    **Taxonomy Drift Check**:
+    - If markdown front-matter `tags` changed:
+    - Verify tags exist in `docs/taxonomy.yaml`.
+    - If new, update taxonomy or flag for review.
+  </action>
+
+  <action>
+    **Log Concerns**:
+    - Record in `## TECH LEAD REVIEW`.
+    - Add to front-matter `review.concerns`.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Code Review (Spec & KISS)**
+    🔍 Reviewed code diffs for spec compliance
+    📝 Logged any KISS concerns
+    
+    ➡️ **Beginning Step 4: Validate Deliverables**
+  </output>
+</step>
+
+<step n="4" goal="Validate Deliverables">
+  <action>
+    **Validate ACs**:
+    - Mark each as `IMPLEMENTED`, `PARTIAL`, or `MISSING`.
+    - Update `review.ac_results` in front-matter.
+  </action>
+
+  <action>
+    **Validate Tasks**:
+    - Verify each `[x]` task.
+    - Update `review.task_results` in front-matter.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Validate Deliverables**
+    ✅ Validated all ACs (IMPLEMENTED/PARTIAL/MISSING)
+    ✅ Verified all completed tasks
+    
+    ➡️ **Beginning Step 5: Decision & Handoff**
+  </output>
+</step>
+
+<step n="5" goal="Decision & Handoff">
+  <action>
+    **Decide Outcome**:
+    - **APPROVE**: All ACs met, tests pass, no concerns.
+    - **CHANGES REQUESTED**: Partial ACs, minor concerns.
+    - **BLOCKED**: Failing tests, missing requirements.
+  </action>
+
+  <action>
+    **Update Ticket**:
+    - Update `Status:` (Done, In Progress, etc.).
+    - Update front-matter `facets.status`, `validation.state`, `review.state`.
+  </action>
+
+  <action>
+    **Write Summary**:
+    - Add `### Code Review` entry to `## Dev Agent Record`.
+    - Include date, outcome, findings, and action items.
+  </action>
+
+  <output>
+    ### Review Summary
+    - **Outcome**: [APPROVE / CHANGES REQUESTED / BLOCKED]
+    - **Tests**: [Verified / Failed]
+    - **AC Coverage**: [100% / Partial]
+    - **Next Step**: [Merge / Fix Items]
+  </output>
+</step>
+
+</workflow>

@@ -1,0 +1,207 @@
+---
+description: "Workflow: Create New Task (Structured & Enforced)"
+globs: []
+---
+# Workflow: Task > New
+
+Creates a standalone task file for ad-hoc work with structured TDD or non-TDD development paths.
+
+<workflow>
+
+<step n="1" goal="Initialize Task & Choose Development Approach">
+  <action>**Prompt for Task Details:**
+  - Task description/requirements
+  - Choose development approach: TDD (with tests first) or Direct (implement then test)
+  - Estimate complexity (small/medium/large)</action>
+
+  <action>**Create Task File:**
+  - From: `plans/templates/task.md` (if exists) or use standard format
+  - To: `plans/tasks/TASK-YYYYMMDD-<slug>.md`
+  - Include: title, date, status, description, approach, complexity</action>
+
+  <action>**Set Context:**
+  - Update `plans/context.yaml` with `execution.current_task`
+  - Add initial log entry</action>
+
+  <output>
+    ✅ **Ending Step 1: Initialize Task & Choose Development Approach**
+    📝 Created task file: `plans/tasks/TASK-YYYYMMDD-<slug>.md`
+    🎯 Approach selected: [TDD/Direct]
+
+    ➡️ **Beginning Step 2: Requirements & Planning**
+  </output>
+</step>
+
+<step n="2" goal="Requirements & Planning">
+  <action>**Define Clear Requirements:**
+  - Break down into specific, testable deliverables
+  - Add acceptance criteria if applicable
+  - Identify dependencies or prerequisites</action>
+
+  <action>**Plan Implementation:**
+  - List files that will be created/modified
+  - Consider edge cases and error handling
+  - Plan testing approach</action>
+
+  <output>
+    ✅ **Ending Step 2: Requirements & Planning**
+    📋 Requirements defined and documented
+    🗂️ Implementation plan created
+
+    ➡️ **Beginning Step 3: [TDD Path: Red Test / Direct Path: Implementation]**
+  </output>
+</step>
+
+<step n="3a" goal="TDD Path: Create Failing Test (Red)" condition="TDD approach selected">
+  <critical>This is the FIRST engineering step for TDD. Do not write implementation code yet.</critical>
+
+  <action>**Create Failing Test:**
+  - Location: `tests/` (unit) or `tests/e2e/` (integration)
+  - Test must FAIL on current codebase (red state)
+  - Cover the expected behavior from requirements</action>
+
+  <action>**Document Test:**
+  - Add test description to task file
+  - Link to test file location</action>
+
+  <check if="test passed unexpectedly">
+    <critical>The test PASSED but should have FAILED. Do not proceed.</critical>
+    <action>Refine the test case to correctly test the new functionality.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 3a: TDD Path: Create Failing Test (Red)**
+    🔴 Created failing test (Red state confirmed)
+    📋 Test documented in task
+
+    ➡️ **Beginning Step 4a: TDD Implementation (Green)**
+  </output>
+</step>
+
+<step n="3b" goal="Direct Path: Implementation" condition="Direct approach selected">
+  <action>**Implement Feature:**
+  - Write minimal code to satisfy requirements
+  - Follow established patterns and conventions
+  - Add appropriate error handling</action>
+
+  <action>**Log Progress:**
+  - Update task file with implementation details
+  - Track files created/modified</action>
+
+  <output>
+    ✅ **Ending Step 3b: Direct Path: Implementation**
+    💻 Feature implemented
+    📝 Progress logged
+
+    ➡️ **Beginning Step 4b: Testing & Verification**
+  </output>
+</step>
+
+<step n="4a" goal="TDD Implementation (Green)" condition="TDD approach selected">
+  <action>**Write Minimal Code:**
+  - Implement just enough code to make the test pass
+  - Avoid over-engineering (prototype bias)
+  - Refactor only if necessary for clarity</action>
+
+  <action>**Verify Test Passes:**
+  - Run the test created in Step 3a
+  - Ensure it now passes (green state)</action>
+
+  <check if="test still fails">
+    <action>Debug and fix the implementation.</action>
+    <action>Re-run test until it passes.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 4a: TDD Implementation (Green)**
+    🟢 Test now passes (Green state confirmed)
+    💻 Minimal implementation complete
+
+    ➡️ **Beginning Step 5: Final Testing & Refinement**
+  </output>
+</step>
+
+<step n="4b" goal="Testing & Verification" condition="Direct approach selected">
+  <action>**Add Tests:**
+  - Create unit tests for core logic
+  - Add integration tests if applicable
+  - Test edge cases and error conditions</action>
+
+  <action>**Manual Testing:**
+  - Verify functionality works as expected
+  - Test with different inputs/data</action>
+
+  <check if="tests fail or issues found">
+    <action>Fix implementation issues.</action>
+    <action>Re-test until all tests pass.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 4b: Testing & Verification**
+    ✅ All tests pass
+    🔍 Manual testing complete
+
+    ➡️ **Beginning Step 5: Final Testing & Refinement**
+  </output>
+</step>
+
+<step n="5" goal="Final Testing & Refinement">
+  <action>**Run Full Test Suite:**
+  - Ensure no regressions in existing functionality
+  - Check for console errors, linting issues
+  - Verify on different environments if applicable</action>
+
+  <action>**Code Review:**
+  - Self-review for code quality
+  - Check adherence to style guide
+  - Ensure documentation is updated</action>
+
+  <action>**Update Task Status:**
+  - Mark as completed in task file
+  - Add final log entries
+  - Update context.yaml if needed</action>
+
+  <output>
+    ✅ **Ending Step 5: Final Testing & Refinement**
+    🧪 Full test suite passes
+    🔍 Code review complete
+    ✅ Task marked as completed
+
+    ➡️ **Beginning Step 6: Summary & Handoff**
+  </output>
+</step>
+
+<step n="6" goal="Summary & Handoff">
+  <action>**Compile Summary:**
+  Provide a final structured summary confirming workflow completion.</action>
+
+  <output>
+    ### ✅ Task Completion Summary
+
+    **1. Task Overview**
+    - **Title:** [Task title]
+    - **Approach:** [TDD/Direct]
+    - **Complexity:** [Small/Medium/Large]
+
+    **2. Implementation Details**
+    - **Files Created/Modified:** [List]
+    - **Key Changes:** [Summary]
+
+    **3. Testing Approach**
+    - [x] TDD: Red → Green cycle (if TDD selected)
+    - [x] Direct: Implementation → Testing (if Direct selected)
+    - [x] Full test suite passes
+    - [x] No regressions introduced
+
+    **4. Quality Gates**
+    - [x] Code style guide followed
+    - [x] Documentation updated
+    - [x] Console errors: Verified ZERO (0)
+
+    **5. Artifacts**
+    - Task: `[Link to Task File]`
+    - Status: **Completed**
+  </output>
+</step>
+
+</workflow>

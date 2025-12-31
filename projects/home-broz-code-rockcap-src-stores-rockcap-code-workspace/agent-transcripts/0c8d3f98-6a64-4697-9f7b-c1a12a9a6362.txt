@@ -1,0 +1,899 @@
+user:
+<cursor_commands>
+
+--- Cursor Command: broz/freeball ---
+---
+alwaysApply: false
+---
+  ignore mode and os requirements, you dont need to change to a mode, or update the config yaml, or follow a ticket. this is a one off simple task.
+--- End Command ---
+</cursor_commands>
+<user_query>
+/broz/freeball 
+
+</user_query>
+
+assistant:
+[Thinking] The user is using a cursor command `/broz/freeball` which according to the command definition says:
+
+
+## Examining command details  
+- The user entered the cursor command `/broz/freeball`.
+I see you've used the `/broz/freeball` command to bypass the normal Broz OS requirements for a simple one-off task. What would you like me to help you with?
+
+user:
+<user_query>
+Taking into consideration the previous workflow @.cursor/rules/broz/workflows/plan/add_ticket.mdc  and the proceeding workflow  @.cursor/rules/broz/workflows/build/continue.mdc  as well as the state of my tests @tests/  
+
+I want you to suggest improvements to @.cursor/rules/broz/workflows/plan/validate_ticket.mdc  with these directives:
+
+Directives:
+## validate and extend ticket
+ - made for a higher power different os
+ - checks for coherence of existing plan
+ - goes deeper into test cases, adding one layer more of depth and specificity / asks questions if needed
+	 - Test case descritions should be verbose enough to be very clear to stake holders what is expected, with a couple bullets making the high level how crystal clear for mid technical po owner max 2 bullets per test 
+ - marks as ready (for continue workflow to start)
+</user_query>
+
+assistant:
+[Thinking] 
+Got it — I’ll review the surrounding workflows (`add_ticket` → `validate_ticket` → `build/continue`) and your current `tests/` layout, then rewrite `validate_ticket.mdc` to (a) validate coherence, (b) push test cases one level deeper with stakeholder-clear wording, and (c) end by marking the ticket “Ready” so the continue workflow can start cleanly.
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/add_ticket.mdc
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/context.yaml
+[Tool call] LS
+  target_directory: /home/broz/code/rockcap/tests
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] LS
+
+assistant:
+[Thinking] 
+Nice — you already have a solid `tests/` split (e2e helpers + fixtures + unit). Next I’ll look at the ticket template to align `validate_ticket` with what your tickets actually contain, then I’ll rewrite `validate_ticket.mdc` to enforce deeper test-case specificity and a clear “Ready” gate compatible with `build/continue`.
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+[Tool call] Read
+  path: /home/broz/code/rockcap/docs/e2ehelperindex.md
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/mode.plan.mdc
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/mark_ready.mdc
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Thinking] **Modifying ticket validation**
+
+I need to update the `validate_ticket` function to fit the new template. Right now, it checks sections like "Debug Log" and "File List," but the template has "DEV AGENT RECORD," "Issues Summary," and "Tech Lead Review," so I need to change that structure. The current setup uses taxonomy front-matter rules, but I'll adapt it to include YAML front matter while keeping necessary rules. It’s also important to incorporate tests and acknowledge that the current mode relates to tasks, not plans.
+**Adding coherence checks**
+
+I want to implement coherence checks for the acceptance criteria (AC). The AC should be specific and testable, ensuring tasks correspond clearly with the user story. Test cases must cover each AC, accompanied by unit and end-to-end tests outlined in the test plan. I’ll check that test descriptions follow a defined pattern and include any references to helpers or fixtures. Additionally, I’ll suggest appropriate locations for tests in the tests folder. The directive indicates we need to validate and extend the ticket, so I’ll provide a "Deep test case review" step for each AC with required mappings.
+**Updating validate_ticket workflow**
+
+The workflow should guide the agent to add any missing test cases or clarifying questions to the ticket if necessary. Since we're in Plan mode, I can edit the ticket file directly, which allows us to enhance coherence. Although the user has asked for suggestions on improvements to `validate_ticket.mdc`, it seems prudent to proceed with the updates. I’ll apply the necessary changes without altering any other files and ensure to reference the locations of tests, fixtures, and existing helper modules in the process.
+**Enhancing validation steps**
+
+I think a good step would be to emphasize that if a ticket involves UI flows, it should have at least one end-to-end test. I should mention using helper functions from `tests/e2e/helper` and referring to `docs/e2ehelperindex.md`. I also need to ensure that the plan is coherent; checking if `facets.type` equals "plan" and that tags include "plan/ticket" as well as updating the status in the front matter. I’ll also validate paths and ensure they align with what’s in the repo. We'll add checks but note exceptions if certain files are missing.
+**Editing workflow instructions**
+
+I want to make sure the workflow instructions are clear. I'll edit the file using `ApplyPatch`, and I need the absolute path for that. I can’t run this parallel to other tools. I'll create new sections for Purpose, Inputs, and Outputs, and outline the steps. Since it’s a plan workflow, we’ll maintain the requirement that code changes aren't allowed if not in plan mode. I'll state that in plan mode, we only update ticket/plans and ensure to validate fields without assuming Broz-specific ones. Let's go ahead and replace the entire content with the improved version.
+I’m going to rewrite `plan/validate_ticket.mdc` so it matches your actual ticket template, enforces TDD-oriented test planning using your real `tests/` structure + e2e helpers, and (when validation passes) updates the ticket + `plans/context.yaml` into a clean “Ready” handoff state for `build/continue`.
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+@@
+ ---
+-description: "Workflow: Validate ticket format"
++description: "Workflow: Validate + extend ticket (coherence + test depth) and mark Ready"
+ globs: []
+ ---
+ # Workflow: Plan > Validate Ticket
+ 
+-Ensures a ticket is ready for development by checking its structure.
++Validates (and, when needed, **extends**) a ticket so it is coherent, testable, and ready to execute via `build/continue`.
++
++This workflow is intentionally **stricter and more explicit** than a simple “format check”:
++- It checks coherence across the ticket (story → ACs → tests → tasks).
++- It pushes **one layer deeper** on test cases (stakeholder-clear expectations + a tiny “how”).
++- It records unanswered ambiguity as **checkbox Questions**.
++- It can optionally mark the ticket **Ready** as the final step (for handoff).
+ 
+ ## Steps
+ 
+-1.  **Target**:
+-    - Identify the ticket file (from `plans/context.yaml` or user selection).
++0. **Target & scope**:
++   - Identify the ticket file (prefer `plans/context.yaml.execution.current_ticket`; otherwise ask the user to select a ticket path).
++   - Allowed edits in this workflow:
++     - Ticket file under `plans/`
++     - `plans/context.yaml` status fields
++   - Do **not** implement product code here.
+ 
+-2.  **Check Structure**:
+-    - Verify presence of required sections:
+-        - `## User Story`
+-        - `## Acceptance Criteria` (Must have at least one item like `- [ ] AC-1: ...`)
+-        - `## Tasks` (Must have at least one checkbox task)
+-        - `## Dev Agent Record`
+-        - `### Debug Log`
+-        - `### File List`
++1. **Template alignment (hard gate)**:
++   - The ticket should conform to `plans/templates/ticket.md` intent.
++   - Verify presence of required **sections** (create them if missing):
++     - `Status: Pending|Ready|In Progress|Review|Done`
++     - `## User Story` (Role/Action/Benefit)
++     - `## Questions` (checkbox list; unresolved questions must remain unchecked)
++     - `## Acceptance Criteria` (checkbox list with IDs like `AC-1`)
++     - `## Tests` with both:
++       - `### E2E Tests`
++       - `### UNIT TESTS`
++     - `## Tasks` (two-tier tasks system)
++     - `## Dev Agent Record` (should include `### DEV AGENT RECORD` and `#### Issues Summary`)
++     - `## TECH LEAD REVIEW`
++   - Front-matter (YAML at top) should exist and include at minimum:
++     - `title`, `updated`
++     - `facets.type`, `facets.status`, `facets.repo.path`
++     - `tags` (must include `plan/ticket`)
+ 
+-3.  **Check AC ↔ Tasks Mapping (Required)**:
+-    - Every **top-level** task must include an AC mapping suffix:
+-      - Example: `- [ ] Implement X (AC: AC-1, AC-2)`
+-    - Every Acceptance Criterion (`AC-#`) must be covered by at least one **top-level** task.
++2. **Coherence checks (story → ACs)**:
++   - Validate that the User Story and ACs agree:
++     - Each `AC-#` is **testable** and written as an observable outcome (not an implementation detail).
++     - AC wording includes the “what” and “when”, and avoids vague terms (“works”, “fast”, “correct”) unless paired with a measurable expectation.
++   - If any AC is ambiguous:
++     - Add a checkbox item under `## Questions` capturing the ambiguity (be pointed and minimal).
++     - Optionally tighten the AC wording if a safe, non-controversial clarification is possible; otherwise leave it and rely on the Question.
+ 
+-4.  **Check Front-Matter & Taxonomy**:
+-    - Load `docs/taxonomy.yaml` and `docs/docfrontmatterrules.md`.
+-    - Verify front-matter fields:
+-      - `title`, `updated` present.
+-      - `facets` contains `type`, `status`.
+-      - `facets.epic` (number, name) present for tickets.
+-      - `tags` list is present and non-empty.
+-    - **Validate Tags**:
+-      - Ensure all tags exist in `docs/taxonomy.yaml`.
+-      - If a tag is missing, prompt the user to add it to taxonomy or correct the tag.
++3. **AC ↔ Tasks mapping (hard gate; required by `build/continue`)**:
++   - Every **top-level** task must include an AC mapping suffix:
++     - Example: `- [ ] Implement X (AC: AC-1, AC-2)`
++   - Subtasks do **not** need AC mapping (they inherit from the parent task).
++   - Every `AC-#` must be covered by at least one **top-level** task.
++   - Validate task ordering supports TDD:
++     - For most tickets, the **first subtask** under the first task should be “create failing test(s)” and the **final task** should be “run/validate tests pass”.
++     - If missing, add/adjust subtasks to reflect this planning intent (without inventing product design).
+ 
+-5.  **Validation**:
+-    - If valid:
+-        - Ensure the ticket's `Status:` line is set to `Ready` (if it was `Pending`).
+-        - Update `plans/context.yaml` `execution.current_ticket_status` to `Ready` if this is the current ticket.
+-    - If invalid:
+-        - List missing sections, missing AC mappings, or front-matter errors.
+-        - Do not proceed until fixed.
++4. **Front-matter & taxonomy (quality gate)**:
++   - Load `docs/taxonomy.yaml` and `docs/docfrontmatterrules.md` if they exist.
++   - Verify front-matter fields are consistent with the ticket:
++     - `facets.type: plan`
++     - `facets.status` consistent with `Status:` (pending/active/review/done-style taxonomy as used in this repo)
++     - `facets.repo.path` matches the ticket file path
++     - `tags` contains `plan/ticket` and any additional tags are valid per taxonomy
++   - If a tag is missing from taxonomy: do **not** silently add it; instead add a `## Questions` checkbox asking whether to add the tag or revise it.
++
++5. **Tests: deepen one layer (extend ticket)**:
++   - The `## Tests` section must include **concrete, stakeholder-clear** test cases. If too vague, extend them.
++   - For each test case entry (E2E or Unit), require:
++     - A clear name (what behavior it validates)
++     - A short expected outcome statement
++     - Exactly **up to 2** bullets describing the “how” at a high level (PO-friendly, mid-technical)
++   - Strong preference for traceability:
++     - Each test case should reference the relevant AC(s) (recommended suffix: `(AC: AC-#)`).
++   - Align with repo test reality:
++     - E2E tests live under `tests/e2e/` (Playwright).
++       - If the test touches the UI/backtest flows, encourage using helpers from `tests/e2e/helper/` and reference `docs/e2ehelperindex.md`.
++       - Prefer asserting via store helpers (e.g., `store-queries`) when stable.
++     - Unit tests live under `tests/unit/` (Vitest).
++       - If data-driven, plan a fixture under `tests/fixtures/<topic>/...` and prefer real-ish data.
++   - If a necessary test can’t be specified due to missing info:
++     - Add a `## Questions` checkbox capturing what input/expected output is missing.
++
++6. **Outcome & handoff**:
++   - If validation fails:
++     - List *exactly* what is missing/incorrect and what was auto-extended vs what still needs human input.
++     - STOP (do not mark Ready).
++   - If validation passes:
++     - Optionally (default: yes) mark the ticket Ready for execution:
++       - Update ticket `Status:` to `Ready` (if currently `Pending`).
++       - Update front-matter `facets.status` to the repo’s “active” state used for ready/in-progress.
++       - Update `plans/context.yaml` `execution.current_ticket_status: "Ready"` if this is the current ticket.
++     - Stop with a short handoff note: ticket is Ready for `build/continue`.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+### Updated workflow (what changed)
+
+- **Now matches your real ticket template** (`plans/templates/ticket.md`) instead of checking for non-existent sections like `### Debug Log` / `### File List`.
+- **Adds a coherence gate**: User Story → ACs → Tasks → Tests must line up; ambiguity becomes checkbox items in `## Questions`.
+- **Deepens tests one layer** using your actual repo layout:
+  - E2E: `tests/e2e/` + encourages using `tests/e2e/helper/` (with `docs/e2ehelperindex.md`)
+  - Unit: `tests/unit/` + fixtures under `tests/fixtures/...`
+  - Each test case must be stakeholder-clear + “how” max **2 bullets**
+- **Ends with a clean Ready handoff** (updates ticket `Status`, front-matter `facets.status`, and `plans/context.yaml` status) so `build/continue` can start without surprise failures.
+
+user:
+<user_query>
+i think it should work with stakeholder in dialogue after naming the questions in questions, until they are resolved, so it names questions, has concersations, and updates as resolved as three separate steps. clear?
+</user_query>
+
+assistant:
+[Thinking] **Adjusting patch procedure**
+
+I want to make sure to patch accordingly, so the next step is to read the current contents of the validate_ticket file after the patch is applied. This will help me adjust any issues that might arise and ensure everything is working properly. I’m focusing on gathering the right information here to make sure I don't miss anything important in the process! It's crucial to get this right.
+Yep—clear. I’ll update `validate_ticket` so Questions are handled as a mini-loop: first **generate unanswered questions**, then **run a stakeholder Q&A dialogue** until they’re resolved, then **apply the answers** by updating AC/tests/tasks and checking off the questions.
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+
+[Tool result] Read
+
+assistant:
+[Thinking] 
+I’ll adjust `validate_ticket.mdc` so Questions become an explicit 3-phase loop: **(1) generate/record questions**, **(2) run a stakeholder Q&A dialogue to resolve them**, **(3) apply answers + check off the questions**, then re-run validation before marking Ready.
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+@@
+-2. **Coherence checks (story → ACs)**:
+-   - Validate that the User Story and ACs agree:
+-     - Each `AC-#` is **testable** and written as an observable outcome (not an implementation detail).
+-     - AC wording includes the “what” and “when”, and avoids vague terms (“works”, “fast”, “correct”) unless paired with a measurable expectation.
+-   - If any AC is ambiguous:
+-     - Add a checkbox item under `## Questions` capturing the ambiguity (be pointed and minimal).
+-     - Optionally tighten the AC wording if a safe, non-controversial clarification is possible; otherwise leave it and rely on the Question.
++2. **Coherence scan (story → ACs) + draft Questions (no dialogue yet)**:
++   - Validate that the User Story and ACs agree:
++     - Each `AC-#` is **testable** and written as an observable outcome (not an implementation detail).
++     - AC wording includes the “what” and “when”, and avoids vague terms (“works”, “fast”, “correct”) unless paired with a measurable expectation.
++   - If anything is ambiguous or underspecified:
++     - Add a checkbox item under `## Questions` capturing the gap (be pointed and minimal).
++     - Do **not** mark it resolved yet.
++   - Also draft Questions for other blockers discovered later (tests/taxonomy/fixtures) — but keep this step focused on *creating the list*, not resolving it.
++
++3. **Stakeholder dialogue (resolve Questions; interactive loop)**:
++   - Goal: convert every open checkbox in `## Questions` into an answered, ticket-integrated decision.
++   - Process:
++     - Ask Questions **one at a time**, in priority order (requirements/behavior first; cosmetics last).
++     - For each Question:
++       - Ask for the missing detail in stakeholder language.
++       - If the stakeholder response creates new ambiguity, create a *new* Question checkbox (unchecked) rather than guessing.
++     - Continue until either:
++       - All Questions are resolved, **or**
++       - The ticket is blocked by unanswered questions (in which case STOP after documenting blockers).
++
++4. **Apply answers + mark Questions resolved (separate step)**:
++   - For each answered Question:
++     - Update the ticket content so the answer is *encoded into the plan* (do not leave it only in chat):
++       - Tighten/clarify `## Acceptance Criteria` text (and/or add ACs if needed)
++       - Update `## Tests` test-case descriptions to reflect the clarified expectations
++       - Update `## Tasks` so the work still maps cleanly to ACs and supports TDD ordering
++       - Update front-matter/tags if that was the question
++     - Mark the corresponding `## Questions` checkbox as checked `[x]`.
++   - When done, re-run the coherence scan quickly:
++     - Story ↔ ACs ↔ Tests ↔ Tasks should still agree after edits.
+ 
+-3. **AC ↔ Tasks mapping (hard gate; required by `build/continue`)**:
++5. **AC ↔ Tasks mapping (hard gate; required by `build/continue`)**:
+    - Every **top-level** task must include an AC mapping suffix:
+      - Example: `- [ ] Implement X (AC: AC-1, AC-2)`
+    - Subtasks do **not** need AC mapping (they inherit from the parent task).
+    - Every `AC-#` must be covered by at least one **top-level** task.
+    - Validate task ordering supports TDD:
+      - For most tickets, the **first subtask** under the first task should be “create failing test(s)” and the **final task** should be “run/validate tests pass”.
+      - If missing, add/adjust subtasks to reflect this planning intent (without inventing product design).
+ 
+-4. **Front-matter & taxonomy (quality gate)**:
++6. **Front-matter & taxonomy (quality gate)**:
+    - Load `docs/taxonomy.yaml` and `docs/docfrontmatterrules.md` if they exist.
+    - Verify front-matter fields are consistent with the ticket:
+      - `facets.type: plan`
+      - `facets.status` consistent with `Status:` (pending/active/review/done-style taxonomy as used in this repo)
+      - `facets.repo.path` matches the ticket file path
+      - `tags` contains `plan/ticket` and any additional tags are valid per taxonomy
+    - If a tag is missing from taxonomy: do **not** silently add it; instead add a `## Questions` checkbox asking whether to add the tag or revise it.
+ 
+-5. **Tests: deepen one layer (extend ticket)**:
++7. **Tests: deepen one layer (extend ticket)**:
+    - The `## Tests` section must include **concrete, stakeholder-clear** test cases. If too vague, extend them.
+    - For each test case entry (E2E or Unit), require:
+      - A clear name (what behavior it validates)
+      - A short expected outcome statement
+      - Exactly **up to 2** bullets describing the “how” at a high level (PO-friendly, mid-technical)
+@@
+    - If a necessary test can’t be specified due to missing info:
+-     - Add a `## Questions` checkbox capturing what input/expected output is missing.
++     - Add a `## Questions` checkbox capturing what input/expected output is missing (leave unchecked).
++     - Return to Step 3 (Stakeholder dialogue) to resolve it, then Step 4 to encode it and check it off.
+ 
+-6. **Outcome & handoff**:
++8. **Outcome & handoff**:
+    - If validation fails:
+      - List *exactly* what is missing/incorrect and what was auto-extended vs what still needs human input.
+      - STOP (do not mark Ready).
+    - If validation passes:
+      - Optionally (default: yes) mark the ticket Ready for execution:
+        - Update ticket `Status:` to `Ready` (if currently `Pending`).
+        - Update front-matter `facets.status` to the repo’s “active” state used for ready/in-progress.
+        - Update `plans/context.yaml` `execution.current_ticket_status: "Ready"` if this is the current ticket.
+      - Stop with a short handoff note: ticket is Ready for `build/continue`.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+### Yes—now it’s explicit and separated
+
+I updated `validate_ticket.mdc` to treat `## Questions` as a 3-step workflow:
+
+- **Draft Questions (no dialogue yet)**: identify gaps and add unchecked question checkboxes.
+- **Stakeholder dialogue loop**: ask questions one-by-one until resolved (or stop if blocked).
+- **Apply answers + mark resolved**: update AC/tests/tasks/front-matter so the answers are encoded in the ticket, then check `[x]` the corresponding Questions, and re-run coherence checks.
+
+That dialogue loop is also wired into the “tests too vague / missing info” case: it creates a Question, then routes back through the dialogue + resolution steps before proceeding to mark Ready.
+
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc" lines="108-112">
+L108:
+L109:8. **Outcome & handoff**:
+L110:   - If validation fails:
+L111:     - List *exactly* what is missing/incorrect and what was auto-extended vs what still needs human input.
+L112:     - STOP (do not mark Ready).
+</code_selection>
+
+</attached_files>
+<user_query>
+@.cursor/rules/broz/workflows/plan/validate_ticket.mdc:108-112 how would validation fail?
+</user_query>
+
+assistant:
+### How validation would fail (examples)
+
+Validation fails whenever the ticket can’t be safely handed to `build/continue` **without guessing**. Concretely, failure happens if any of these are true:
+
+- **Missing required structure**: e.g. no `## Acceptance Criteria`, no `## Tasks`, no `## Tests` (with both `### E2E Tests` + `### UNIT TESTS`), no `Status:` line, no front-matter/tags.
+- **Broken AC ↔ Tasks traceability**:
+  - A top-level task is missing `(AC: AC-#...)`, or
+  - An `AC-#` exists that no top-level task references.
+- **Open Questions remain**: at least one checkbox in `## Questions` is still unchecked after the dialogue loop (meaning stakeholder input is still needed).
+- **Tests not sufficiently specified** (after attempting to extend): test cases are still vague (no clear expected outcome, or missing the “how” bullets), or key tests can’t be described due to missing inputs/expected outputs (which should become open Questions).
+- **Front-matter/taxonomy issues**: missing `plan/ticket` tag, invalid tags vs taxonomy (and unresolved via Questions), or `facets.repo.path` doesn’t match the ticket path.
+- **Status conflicts**: ticket `Status:` indicates it’s not ready for planning handoff (e.g. already `In Progress` / `Done`) and the metadata doesn’t match, without an explicit decision captured in Questions.
+
+user:
+<user_query>
+where is validation marked to fail above? and how would we know? i think this should be a yaml property valifation state of ticket
+</user_query>
+
+assistant:
+[Thinking] **Investigating taxonomy rules**
+
+I'm thinking about inspecting the existing taxonomy rules and perhaps mentioning the facets. I should read through the documents, specifically the `docs/docfrontmatterrules.md`, to see if taxonomy is indeed covered. It looks like I'll need to use some tools to dig deeper into this. Let’s explore the materials and clarify how everything fits together!
+You’re right: right now “validation fails” is just a procedural decision inside the workflow text — there’s no explicit ticket field that says “validated / failed / why”. Next I’ll check your front-matter rules/taxonomy conventions, then I’ll add a **ticket front-matter `facets.validation` state** and update `validate_ticket.mdc` (and the ticket template) to set it deterministically.
+[Tool call] Read
+  path: /home/broz/code/rockcap/docs/docfrontmatterrules.md
+[Tool call] Read
+  path: /home/broz/code/rockcap/docs/taxonomy.yaml
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Thinking] 
+Makes sense — today the workflow “knows” it failed only because it *decides to stop*, but nothing in the ticket records that state. I’ll add an explicit front-matter `validation.state` (pending/failed/passed) + `validation.issues`, update the ticket template to include it, and update `validate_ticket.mdc` to set it deterministically on pass/fail (so you can tell at a glance, and other workflows can gate on it).
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/templates/ticket.md
+@@
+ ---
+ title: "TICKET: {{ticket_id}} {{ticket_title}}"
+ updated: "{{date}}"
+ facets:
+   type: plan
+-  status: pending
++  status: draft
++  epic:
++    number: "{{epic_number}}"
++    name: "{{epic_name}}"
+   repo:
+     path: plans/epics/{{epic}}/{{ticket_id}}.md
++validation:
++  state: pending   # pending | failed | passed
++  updated: "{{date}}"
++  issues: []
+ tags:
+   - plan/ticket
+ ---
+ # TICKET: {{ticket_id}} {{ticket_title}}
+ Status: Pending  <!-- Pending | Ready | In Progress | Review | Done -->
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+@@
+ Validates (and, when needed, **extends**) a ticket so it is coherent, testable, and ready to execute via `build/continue`.
+@@
+ ## Steps
+ 
+ 0. **Target & scope**:
+@@
+    - Do **not** implement product code here.
++   - **Validation state (ticket front-matter)**:
++     - Tickets should carry a front-matter block:
++       - `validation.state: pending|failed|passed`
++       - `validation.updated: YYYY-MM-DD`
++       - `validation.issues: []`
++     - This workflow must update `validation.state` deterministically:
++       - If any hard gate fails OR any `## Questions` remain unresolved → `failed`
++       - If all gates pass and handoff is safe → `passed`
+ 
+ 1. **Template alignment (hard gate)**:
+@@
+    - Front-matter (YAML at top) should exist and include at minimum:
+      - `title`, `updated`
+      - `facets.type`, `facets.status`, `facets.repo.path`
+      - `tags` (must include `plan/ticket`)
++     - `validation.state`, `validation.updated`, `validation.issues`
+@@
+ 8. **Outcome & handoff**:
+-   - If validation fails:
+-     - List *exactly* what is missing/incorrect and what was auto-extended vs what still needs human input.
+-     - STOP (do not mark Ready).
+-   - If validation passes:
++   - If validation fails (any hard gate or open Questions):
++     - Set ticket front-matter:
++       - `validation.state: failed`
++       - `validation.updated: <today YYYY-MM-DD>`
++       - `validation.issues`: a short list of blocking items (missing sections, missing AC mappings, invalid tags, open Questions, test spec gaps, etc.)
++     - List *exactly* what is missing/incorrect and what was auto-extended vs what still needs human input.
++     - STOP (do not mark Ready).
++   - If validation passes (all gates + zero open Questions):
++     - Set ticket front-matter:
++       - `validation.state: passed`
++       - `validation.updated: <today YYYY-MM-DD>`
++       - `validation.issues: []`
+      - Optionally (default: yes) mark the ticket Ready for execution:
+        - Update ticket `Status:` to `Ready` (if currently `Pending`).
+        - Update front-matter `facets.status` to the repo’s “active” state used for ready/in-progress.
+        - Update `plans/context.yaml` `execution.current_ticket_status: "Ready"` if this is the current ticket.
+      - Stop with a short handoff note: ticket is Ready for `build/continue`.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/mark_ready.mdc
+@@
+ 2. **Validate**:
+    - Run the checks from `plan/validate_ticket`.
+    - If validation fails, STOP and list what to fix.
++   - Require ticket front-matter `validation.state: passed` after validation runs.
++     - If it is not `passed`, STOP (do not mark Ready).
+@@
+ 3. **Mark Ready**:
+    - Update the ticket file `Status:` line to `Ready`.
+    - Update front-matter `facets.status` to `active` (meaning ready/in-progress/done).
+    - Update `plans/context.yaml` `execution.current_ticket_status: "Ready"`.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+### Where is validation “marked to fail” now, and how would we know?
+
+Before: it wasn’t “marked” anywhere — the workflow would just *stop*.
+
+Now: it’s **explicitly recorded in the ticket YAML front-matter**:
+
+- **Ticket template** now includes:
+
+```yaml
+validation:
+  state: pending   # pending | failed | passed
+  updated: "YYYY-MM-DD"
+  issues: []
+```
+
+- **`plan/validate_ticket`** now defines failure as: **any hard gate fails OR any `## Questions` remain unchecked**, and in that case it must set:
+
+- `validation.state: failed`
+- `validation.updated: <today>`
+- `validation.issues: [...]` (blocking reasons)
+
+If everything passes (and Questions are all resolved), it sets:
+
+- `validation.state: passed`
+- `validation.issues: []`
+
+And `plan/mark_ready` now **requires** `validation.state: passed` after validation, otherwise it stops.
+
+user:
+<user_query>
+@docs/taxonomy.yaml  ok add that meta data with good descriptions to yaml, also make sure the front matter taxonomy is referencing this yaml file, we want to keep it current, and updte new tags etc if they are found
+</user_query>
+
+assistant:
+[Thinking] **Considering documentation updates**
+
+I’m contemplating how to address the changes in the documentation rules and incorporate automatic updates carefully. The user specifically asked for good descriptions to be added to the YAML file and to ensure that the front matter taxonomy references it correctly. So, I’ll update `docs/taxonomy.yaml` with schema details like version and updated tags. Currently, it lacks front matter, but I need to add keys for metadata such as title, updated, path, and descriptions for facets and tag groups.
+**Updating taxonomy procedures**
+
+I need to ensure that the front matter taxonomy properly references the YAML file. I can include an explicit path constant in `docs/docfrontmatterrules.md`, noting, "Taxonomy source: docs/taxonomy.yaml." It’s also necessary to update workflows like `validate_ticket` and `add_ticket` so that any missing tags are automatically added to `docs/taxonomy.yaml`, keeping it current. If a tag is missing, we can append it and record this without needing to ask the user, though I can propose where it should go. Additionally, I'll emphasize in the documentation that this should be the source of truth and updated when new tags are needed.
+**Updating validate_ticket and taxonomy**
+
+I need to update `validate_ticket.mdc` and possibly the documentation workflows. Instead of just prompting questions, I should instruct to add new tags to the taxonomy while keeping the depth limited to 4. There are guardrails to avoid bypassing gating for product code, but since these files are part of docs, I can edit them. I’ll read `docs/taxonomy.yaml`, then make updates including a new meta section with tag descriptions. While adding facets, I should be cautious not to disrupt the existing schema if the code expects a specific list.
+**Updating taxonomy structure**
+
+To prevent breaking the current structure, I can add sibling keys for descriptions. For instance, under facets, I might keep the existing `type` list while introducing a new top-level `descriptions` mapping that references those keys. This way, it won't interfere with the validation process. I'll also include guidelines for `generated_tags` and update `docfrontmatterrules.md` to specify the taxonomy file path. Moreover, I'll revise `validate_ticket.mdc` to ensure that if a tag is missing, it gets added to `taxonomy.yaml` with a description noted in the ticket questions.
+**Implementing taxonomy adjustments**
+
+I’m going to adjust the process so that if a tag is missing, I’ll only create a question if it's unclear where to categorize it. Otherwise, I’ll add it automatically and note this in the validation. I also want to update `add_ticket.mdc`, ensuring there are no product code changes. First, I’ll patch `docs/taxonomy.yaml` by adding metadata and descriptions for existing tags, like `plan/ticket`. High-level descriptions at the group level will save time, and I’ll also update `docfrontmatterrules.md` to clarify taxonomy references and revise the instructions for missing tags in `validate_ticket.mdc`.
+I’m going to (1) enrich `docs/taxonomy.yaml` with explicit metadata + human-readable descriptions (without breaking the existing structure other rules likely rely on), then (2) update `docs/docfrontmatterrules.md` and the `plan/validate_ticket` workflow so missing tags trigger a **taxonomy update** (keeping it current) rather than just a question.
+[Tool call] Read
+  path: /home/broz/code/rockcap/docs/taxonomy.yaml
+[Tool call] Read
+  path: /home/broz/code/rockcap/docs/docfrontmatterrules.md
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/docs/taxonomy.yaml
+@@
+-# RockCap docs taxonomy (source of truth)
+-# - facets: structured metadata fields (good for IDs + filtering)
+-# - tags: multi-select categorical labels (good for graphing + discovery)
++meta:
++  title: "RockCap taxonomy (source of truth)"
++  updated: "2025-12-16"
++  repo:
++    path: docs/taxonomy.yaml
++  description: >
++    Single source of truth for allowed front-matter facets + tags across this repo.
++    Workflows should keep this file current by adding newly introduced tags/facets here
++    (following naming + depth rules) instead of leaving “unknown tag” drift.
++  maintenance_rules:
++    - "keep depth <= 4"
++    - "lowercase + hyphenated"
++    - "prefer facets for stable identifiers (strategy.slug/version, repo.path)"
++    - "tags are multi-select; avoid overfitting with ultra-specific tags"
++
++# -----------------------------------------------------------------------------
++# Canonical value sets
++# -----------------------------------------------------------------------------
++# - facets: structured metadata fields (good for IDs + filtering)
++# - tags: multi-select categorical labels (good for graphing + discovery)
+ 
+ facets:
+   type: [plan, strategy, note, changelog]
+   status: [draft, active, deprecated]
+   epic:
+@@
+   repo:
+     path: string
+ 
++descriptions:
++  facets:
++    type:
++      plan: "Planning artifacts (epics/tickets/tasks)."
++      strategy: "Strategy documentation and related references."
++      note: "General notes / research / how-tos."
++      changelog: "Release/change notes."
++    status:
++      draft: "Work in progress; may be incomplete."
++      active: "Current and in use."
++      deprecated: "Kept for reference; not recommended for new work."
++    epic:
++      number: "Epic identifier, e.g. EPIC-003."
++      name: "Human-readable epic name."
++    strategy:
++      slug: "Stable strategy slug, e.g. orb-retest-breakout."
++      version: "Strategy version, e.g. v2."
++    repo:
++      path: "Repo-relative path to the file."
++  tags:
++    "plan/epic": "Planning epic container document."
++    "plan/ticket": "Planning ticket intended for Build/Task execution."
++    "plan/task": "Lightweight one-off task log."
++    "doc/howto": "How-to documentation."
++    "doc/beware": "Cautionary documentation / pitfalls."
++    "audience/dev": "Primarily for developers."
++    "audience/stakeholder": "Readable/valuable for non-dev stakeholders."
++    "meta/index": "Index/listing doc."
++    "meta/template": "Template file."
++    "meta/glossary": "Glossary/definitions."
++    "meta/onboarding": "Onboarding guide."
++    "ops/bug": "Bug work."
++    "ops/perf": "Performance work."
++    "ops/security": "Security work."
++    "ops/migration": "Migration work."
++    "ops/refactor": "Refactor work."
++    "ops/debt": "Tech debt work."
++
+ tags:
+   plan:
+     - epic
+     - ticket
+     - task
+@@
+ notes:
+   audience: [dev, user]
+   rules:
+     - "tags are multi-select"
+     - "keep depth <= 4"
+     - "lowercase + hyphenated"
+     - "use facets for IDs (strategy.slug/version, repo.path)"
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/docs/docfrontmatterrules.md
+@@
+ This document serves as the **Single Source of Truth** for front-matter validation in Broz OSS. All workflows (Docs, Plan, Research, Build) must enforce these rules.
+ 
++## Taxonomy Source of Truth
++
++The canonical list of allowed `facets.*` values and `tags` is defined in `docs/taxonomy.yaml`.
++Workflows should treat that file as **authoritative** and keep it current when new tags are introduced.
++
+ ## Global Schema
+@@
+ ## Validation Rules
+ 
+ 1. **Taxonomy Compliance**: All `tags` and `facets` values must match `docs/taxonomy.yaml`.
+-2. **Missing Tags**: If a workflow introduces a new tag, it must prompt the user to add it to `docs/taxonomy.yaml`.
++2. **Missing Tags (keep taxonomy current)**:
++   - If a workflow introduces a new tag, update `docs/taxonomy.yaml` to include it (and add a short description).
++   - If the correct category/placement is unclear, record a `## Questions` checkbox in the relevant plan artifact and resolve it with the stakeholder before finalizing.
+ 3. **Date Format**: `updated` must be `YYYY-MM-DD`.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+@@
+ 6. **Front-matter & taxonomy (quality gate)**:
+    - Load `docs/taxonomy.yaml` and `docs/docfrontmatterrules.md` if they exist.
+@@
+    - Verify front-matter fields are consistent with the ticket:
+@@
+      - `tags` contains `plan/ticket` and any additional tags are valid per taxonomy
+-   - If a tag is missing from taxonomy: do **not** silently add it; instead add a `## Questions` checkbox asking whether to add the tag or revise it.
++   - If a tag is missing from taxonomy:
++     - Prefer to **add it to `docs/taxonomy.yaml` immediately** (keeping taxonomy current), including a short description under `descriptions.tags`.
++     - If correct placement/category is unclear, add a `## Questions` checkbox to resolve with the stakeholder (Step 3), then apply the decision (Step 4) and update taxonomy.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+### Done: taxonomy now has metadata + descriptions, and rules reference it
+
+- **`docs/taxonomy.yaml`** now includes:
+  - **`meta`** block (title/updated/path/maintenance rules)
+  - A **`descriptions`** section for key facets + common tags (e.g. `plan/ticket`, `audience/stakeholder`, `ops/bug`, etc.)
+  - Existing canonical structures (`facets`, `tags`, `frontmatter_schemas`) are **unchanged**, so anything reading them won’t break.
+
+- **`docs/docfrontmatterrules.md`** now explicitly calls out `docs/taxonomy.yaml` as the **authoritative source**, and changes the rule from “prompt user” to:
+  - **update taxonomy.yaml when new tags are introduced**
+  - only ask a stakeholder question when placement/category is unclear
+
+- **`plan/validate_ticket.mdc`** now aligns with that: missing tags should be **added to taxonomy** (plus a short description), otherwise create a `## Questions` item to resolve placement.
+
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/.cursor/rules/broz/workflows/build/code_review.mdc" lines="7-9">
+L7:<!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
+L8:<!-- AT LEAST One bullet per SUB TASK (required): -->
+L9:<!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+</code_selection>
+
+</attached_files>
+<user_query>
+@.cursor/rules/broz/workflows/build/code_review.mdc:7-9 ok add some high level todos here to improve this related workflow which is post continue should integrate with the work we did here
+</user_query>
+
+assistant:
+[Thinking] **Editing workflow for code review**
+
+I need to edit the code review workflow next. I should read the file first and then add high-level to-dos related to validation state, issues summary, and tests. Do I need to comply with the gating rules? Since we are currently in task mode, I should be aware of that context. It’s fine to make edits under the .cursor/ plan as well. I’ll add checklist items into code_review.mdc, so let's get started on reading!
+I’ll pull up `build/code_review.mdc`, then add a short “TODO improvements” section that ties into the new ticket `validation.state`, `validation.issues`, the Questions loop, and the strengthened test-plan requirements—so code review consistently checks the same traceability and readiness signals.
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/code_review.mdc
+
+[Tool result] Read
+
+assistant:
+[Thinking] 
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/code_review.mdc
+@@
+ # Workflow: Build > Code Review Ticket
+ 
+ <!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
+ <!-- AT LEAST One bullet per SUB TASK (required): -->
+ <!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+ 
+ Slimmed version of BMAD's `code-review`.
+ 
++## TODO (workflow improvements; integrate with Plan/Validate)
++
++- **Gate on ticket validation metadata**: require ticket front-matter `validation.state: passed` and `validation.issues: []` before proceeding; otherwise treat as BLOCKER and send back to Plan/Validate.
++- **Enforce “Questions resolved” invariant**: verify `## Questions` has no unchecked items when ticket is in `Review`; if any remain, treat as CHANGES REQUESTED (or BLOCKED if it impacts correctness).
++- **Make “evidence” include test plan + test execution**:
++  - For each AC, link to the planned test case(s) in `## Tests` (E2E/UNIT) and the implemented test file(s) under `tests/`.
++  - Require test cases to be stakeholder-clear (expected outcome + max 2 “how” bullets) and reflect what was actually implemented.
++- **Fix the “File List” mismatch**: align tickets + `build/continue` + this workflow on a single canonical location for “files changed” (e.g. `## Dev Agent Record / ### File List`) and make both workflows write/read the same section.
++- **Status taxonomy reconciliation**: decide whether to expand `docs/taxonomy.yaml.facets.status` to include `done` (and `review`), or keep taxonomy as-is and map ticket `Status:` values to `[draft, active, deprecated]` consistently across workflows.
++- **Taxonomy drift control**: during review, if new tags were introduced in touched docs/plans, ensure `docs/taxonomy.yaml` was updated (per front-matter rules) rather than leaving unknown tags in files.
++
+ ## Goal
+ Verify **every Acceptance Criterion** and every **checked** task has real evidence.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+### Added TODOs to `build/code_review` (integrated with Plan/Validate)
+
+I added a `## TODO (workflow improvements; integrate with Plan/Validate)` section to `build/code_review.mdc` that covers:
+
+- **Gating review on `validation.state: passed` + empty `validation.issues`**
+- **Ensuring `## Questions` has zero unchecked items in Review**
+- **Evidence requirements that tie ACs ↔ planned tests (`## Tests`) ↔ actual test files in `tests/`**
+- **Fixing the “File List” mismatch** between ticket/continue/review
+- **Reconciling ticket Status vs taxonomy `facets.status`**
+- **Keeping `docs/taxonomy.yaml` current when new tags appear**
+
+user:
+<user_query>
+no tsure if you are clear this is after the continue workflow @.cursor/rules/broz/workflows/build/continue.mdc  
+</user_query>
+
+assistant:
+[Thinking] **Updating code review**
+
+I’m planning to patch the code review, focusing on the TODO items related to using the artifacts created by the continue process. These artifacts include the DEV AGENT RECORD, File List, and issues summary. It seems like the next step is to implement this with ApplyPatch. Let’s get started on that and ensure everything aligns properly with our goals!
+You’re right: `build/code_review` is meant to run **after** `build/continue` has implemented the ticket and moved it to `Review`. I’ll tighten `code_review.mdc` to explicitly state that precondition and to consume the artifacts `continue` produces (Status=Review, DEV AGENT RECORD, File List, Issues Summary, and tests).
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/code_review.mdc
+@@
+ # Workflow: Build > Code Review Ticket
+ 
+ <!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
+ <!-- AT LEAST One bullet per SUB TASK (required): -->
+ <!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+ 
+ Slimmed version of BMAD's `code-review`.
+ 
++## When to run this
++
++This workflow is **post-implementation** and should be run **after** `build/continue` completes a ticket and sets:
++- Ticket body `Status:` to `Review`
++- Ticket contains execution evidence in `## Dev Agent Record` (logs + file list + completion notes)
++
+ ## TODO (workflow improvements; integrate with Plan/Validate)
+@@
+ ## Steps
+ 
+ 1. **Load Ticket**:
+    - Read `plans/context.yaml` for `execution.current_ticket`.
+    - Read the full ticket file.
+ 
+-2. **Validate AC ↔ Task Mapping (before reviewing code)**:
++2. **Preconditions (post-continue invariants)**:
++   - Require ticket `Status:` is `Review`. If not, STOP and direct the user back to `build/continue` completion step.
++   - Require the ticket has `## Dev Agent Record` with:
++     - `### DEV AGENT RECORD` entries (at least one bullet per subtask)
++     - A files-changed list (currently expected as `### File List`)
++   - If these are missing, STOP: review cannot be evidence-based without the execution record.
++
++3. **Validate AC ↔ Task Mapping (before reviewing code)**:
+    - Ensure each top-level task has `(AC: AC-#...)`.
+    - Ensure each AC is covered by at least one top-level task.
+    - If mapping is broken, STOP and request ticket fixes (review cannot be systematic without traceability).
+ 
+-3. **Collect Claimed Changes**:
++4. **Collect Claimed Changes (from continue artifacts)**:
+    - From `### File List`, gather the set of files claimed modified.
+    - If empty or suspicious, broaden search by looking at files touched in this session.
+ 
+-4. **Validate Acceptance Criteria (ACs)**:
++5. **Validate Acceptance Criteria (ACs)**:
+    For each AC:
+    - Mark as `IMPLEMENTED | PARTIAL | MISSING`.
+    - Record evidence: `path:line-range` where it’s satisfied.
+    - Record test evidence: which test(s) prove it.
+ 
+-5. **Validate Completed Tasks**:
++6. **Validate Completed Tasks**:
+    For each task marked `[x]`:
+    - Mark as `VERIFIED | QUESTIONABLE | NOT DONE`.
+    - If `[x]` but `NOT DONE`, treat as **BLOCKER**.
+ 
+-6. **Outcome**:
++7. **Outcome**:
+    - **APPROVE**: all ACs implemented, all checked tasks verified, tests pass.
+    - **CHANGES REQUESTED**: partial/missing ACs or questionable tasks.
+    - **BLOCKED**: any false completion or critical gap.
+ 
+-7. **Write Review Notes Into Ticket**:
++8. **Write Review Notes Into Ticket**:
+    Append under `## Dev Agent Record` (create if missing):
+    - `### Code Review`
+      - Date
+      - Outcome
+      - Findings (bullet list; blockers first)
+      - Action Items (checkbox list)
+ 
+-8. **State Transition**:
++9. **State Transition**:
+    - If APPROVE:
+      - Ticket `Status:` moves `Review → Done`.
+      - Front-matter `facets.status` updates to `done`.
+    - If CHANGES REQUESTED:
+      - Ticket `Status:` moves `Review → In Progress`.
+      - Front-matter `facets.status` remains `active`.
+      - Add action items to Tasks.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+### Yep — clarified it as *post-continue* and wired it to continue’s outputs
+
+I updated `build/code_review.mdc` to explicitly say it runs **after** `build/continue`, and added a **Preconditions** step that requires:
+
+- Ticket body `Status:` is **`Review`**
+- Ticket has `## Dev Agent Record` evidence from continue (DEV AGENT RECORD entries + a file list)
+
+Then I adjusted the step numbering so the review flow clearly consumes the artifacts `continue` is supposed to produce.

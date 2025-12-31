@@ -1,0 +1,1020 @@
+### New console messages
+- [WARNING] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/797e433ab9...
+- [WARNING] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/caa3a2e1cc...
+
+### Page state
+- Page URL: http://localhost:3000/backtest/2025-12-03?strategy=strategy12.8.2&pt=36&sl=7&trg=6&candleType=1s&cutoffTime=09%3A45
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: Broz Backtester
+        - navigation [ref=e6]:
+          - link "Backtest Tuner" [ref=e7] [cursor=pointer]:
+            - /url: /backtest
+          - link "Backtest Analysis" [ref=e8] [cursor=pointer]:
+            - /url: /analysis/dec2025-2yearbacktest-algo1.0
+          - link "Downloader" [ref=e9] [cursor=pointer]:
+            - /url: "#"
+          - link "Trader" [ref=e10] [cursor=pointer]:
+            - /url: "#"
+          - link "Docs" [ref=e11] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e13]:
+      - banner [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]: Backtesting
+          - generic [ref=e17]:
+            - generic [ref=e18]: "Strategy:"
+            - combobox "Strategy:" [ref=e19]:
+              - option "strategy12.7 - Baseline all the things, stable frontrunner since 12.7"
+              - option "strategy12.8 - Easy Peasy variant that shifts start price from 9:30 open to 9:35 candle open, causing all triggers and targets to recalculate at 9:35. Fixes same-candle reentry edge case (strategy 12.8)"
+              - 'option "strategy12.8.2 - Strategy 12.8 with stepped stop loss: SL moves up in discrete steps as unrealized profit increases" [selected]'
+          - generic [ref=e20]:
+            - generic [ref=e21]: "PT:"
+            - combobox "PT:" [ref=e22]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36" [selected]
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e23]:
+            - generic [ref=e24]: "SL:"
+            - combobox "SL:" [ref=e25]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7" [selected]
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e26]:
+            - generic [ref=e27]: "TRG:"
+            - combobox "TRG:" [ref=e28]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6" [selected]
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e29]:
+            - generic [ref=e30]: "Max Trades:"
+            - combobox "Max Trades:" [ref=e31]:
+              - option "1 RT"
+              - option "2 RTs"
+              - option "3 RTs" [selected]
+              - option "5 RTs"
+              - option "6 RTs"
+          - generic [ref=e32]:
+            - generic [ref=e33]: "Cutoff Time:"
+            - combobox "Cutoff Time:" [ref=e34]:
+              - option "09:30"
+              - option "09:35"
+              - option "09:40"
+              - option "09:45" [selected]
+              - option "09:50"
+              - option "09:55"
+              - option "10:00"
+              - option "10:05"
+              - option "10:10"
+              - option "10:15"
+              - option "10:30"
+              - option "11:00"
+              - option "12:00"
+          - generic [ref=e181]:
+            - generic [ref=e182]: "Stepped SL Config (JSON):"
+            - 'textbox "Stepped SL Config (JSON): Format: {\"threshold\": profitToLock} e.g. {\"20\": 2, \"25\": 10}" [ref=e183]':
+              - /placeholder: "{\"20\": 2, \"25\": 10, \"30\": 10}"
+              - text: "{\"20\":2,\"25\":10,\"30\":10}"
+            - generic [ref=e184]: "Format: {\"threshold\": profitToLock} e.g. {\"20\": 2, \"25\": 10}"
+        - generic [ref=e36]: "Date: 2025-12-03"
+      - region "Chart Controls" [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - button "◀ Prev" [ref=e41]
+              - button "Next ▶" [disabled] [ref=e42]
+              - generic [ref=e43]:
+                - generic [ref=e44]: Current day
+                - combobox "Current day" [ref=e45]:
+                  - option "Select day" [disabled]
+                  - option "2023-12-05"
+                  - option "2023-12-06"
+                  - option "2023-12-07"
+                  - option "2023-12-08"
+                  - option "2023-12-11"
+                  - option "2023-12-12"
+                  - option "2023-12-13"
+                  - option "2023-12-14"
+                  - option "2023-12-15"
+                  - option "2023-12-18"
+                  - option "2023-12-19"
+                  - option "2023-12-20"
+                  - option "2023-12-21"
+                  - option "2023-12-22"
+                  - option "2023-12-26"
+                  - option "2023-12-27"
+                  - option "2023-12-28"
+                  - option "2023-12-29"
+                  - option "2024-01-02"
+                  - option "2024-01-03"
+                  - option "2024-01-04"
+                  - option "2024-01-05"
+                  - option "2024-01-08"
+                  - option "2024-01-09"
+                  - option "2024-01-10"
+                  - option "2024-01-11"
+                  - option "2024-01-12"
+                  - option "2024-01-15"
+                  - option "2024-01-16"
+                  - option "2024-01-17"
+                  - option "2024-01-18"
+                  - option "2024-01-19"
+                  - option "2024-01-22"
+                  - option "2024-01-23"
+                  - option "2024-01-24"
+                  - option "2024-01-25"
+                  - option "2024-01-26"
+                  - option "2024-01-29"
+                  - option "2024-01-30"
+                  - option "2024-01-31"
+                  - option "2024-02-01"
+                  - option "2024-02-02"
+                  - option "2024-02-05"
+                  - option "2024-02-06"
+                  - option "2024-02-07"
+                  - option "2024-02-08"
+                  - option "2024-02-09"
+                  - option "2024-02-12"
+                  - option "2024-02-13"
+                  - option "2024-02-14"
+                  - option "2024-02-15"
+                  - option "2024-02-16"
+                  - option "2024-02-19"
+                  - option "2024-02-20"
+                  - option "2024-02-21"
+                  - option "2024-02-22"
+                  - option "2024-02-23"
+                  - option "2024-02-26"
+                  - option "2024-02-27"
+                  - option "2024-02-28"
+                  - option "2024-02-29"
+                  - option "2024-03-01"
+                  - option "2024-03-04"
+                  - option "2024-03-05"
+                  - option "2024-03-06"
+                  - option "2024-03-07"
+                  - option "2024-03-08"
+                  - option "2024-03-11"
+                  - option "2024-03-12"
+                  - option "2024-03-13"
+                  - option "2024-03-14"
+                  - option "2024-03-15"
+                  - option "2024-03-18"
+                  - option "2024-03-19"
+                  - option "2024-03-20"
+                  - option "2024-03-21"
+                  - option "2024-03-22"
+                  - option "2024-03-25"
+                  - option "2024-03-26"
+                  - option "2024-03-27"
+                  - option "2024-03-28"
+                  - option "2024-04-01"
+                  - option "2024-04-02"
+                  - option "2024-04-03"
+                  - option "2024-04-04"
+                  - option "2024-04-05"
+                  - option "2024-04-08"
+                  - option "2024-04-09"
+                  - option "2024-04-10"
+                  - option "2024-04-11"
+                  - option "2024-04-12"
+                  - option "2024-04-15"
+                  - option "2024-04-16"
+                  - option "2024-04-17"
+                  - option "2024-04-18"
+                  - option "2024-04-19"
+                  - option "2024-04-22"
+                  - option "2024-04-23"
+                  - option "2024-04-24"
+                  - option "2024-04-25"
+                  - option "2024-04-26"
+                  - option "2024-04-29"
+                  - option "2024-04-30"
+                  - option "2024-05-01"
+                  - option "2024-05-02"
+                  - option "2024-05-03"
+                  - option "2024-05-06"
+                  - option "2024-05-07"
+                  - option "2024-05-08"
+                  - option "2024-05-09"
+                  - option "2024-05-10"
+                  - option "2024-05-13"
+                  - option "2024-05-14"
+                  - option "2024-05-15"
+                  - option "2024-05-16"
+                  - option "2024-05-17"
+                  - option "2024-05-20"
+                  - option "2024-05-21"
+                  - option "2024-05-22"
+                  - option "2024-05-23"
+                  - option "2024-05-24"
+                  - option "2024-05-27"
+                  - option "2024-05-28"
+                  - option "2024-05-29"
+                  - option "2024-05-30"
+                  - option "2024-05-31"
+                  - option "2024-06-03"
+                  - option "2024-06-04"
+                  - option "2024-06-05"
+                  - option "2024-06-06"
+                  - option "2024-06-07"
+                  - option "2024-06-10"
+                  - option "2024-06-11"
+                  - option "2024-06-12"
+                  - option "2024-06-13"
+                  - option "2024-06-14"
+                  - option "2024-06-17"
+                  - option "2024-06-18"
+                  - option "2024-06-19"
+                  - option "2024-06-20"
+                  - option "2024-06-21"
+                  - option "2024-06-24"
+                  - option "2024-06-25"
+                  - option "2024-06-26"
+                  - option "2024-06-27"
+                  - option "2024-06-28"
+                  - option "2024-07-01"
+                  - option "2024-07-02"
+                  - option "2024-07-03"
+                  - option "2024-07-04"
+                  - option "2024-07-05"
+                  - option "2024-07-08"
+                  - option "2024-07-09"
+                  - option "2024-07-10"
+                  - option "2024-07-11"
+                  - option "2024-07-12"
+                  - option "2024-07-15"
+                  - option "2024-07-16"
+                  - option "2024-07-17"
+                  - option "2024-07-18"
+                  - option "2024-07-19"
+                  - option "2024-07-22"
+                  - option "2024-07-23"
+                  - option "2024-07-24"
+                  - option "2024-07-25"
+                  - option "2024-07-26"
+                  - option "2024-07-29"
+                  - option "2024-07-30"
+                  - option "2024-07-31"
+                  - option "2024-08-01"
+                  - option "2024-08-02"
+                  - option "2024-08-05"
+                  - option "2024-08-06"
+                  - option "2024-08-07"
+                  - option "2024-08-08"
+                  - option "2024-08-09"
+                  - option "2024-08-12"
+                  - option "2024-08-13"
+                  - option "2024-08-14"
+                  - option "2024-08-15"
+                  - option "2024-08-16"
+                  - option "2024-08-19"
+                  - option "2024-08-20"
+                  - option "2024-08-21"
+                  - option "2024-08-22"
+                  - option "2024-08-23"
+                  - option "2024-08-26"
+                  - option "2024-08-27"
+                  - option "2024-08-28"
+                  - option "2024-08-29"
+                  - option "2024-08-30"
+                  - option "2024-09-02"
+                  - option "2024-09-03"
+                  - option "2024-09-04"
+                  - option "2024-09-05"
+                  - option "2024-09-06"
+                  - option "2024-09-09"
+                  - option "2024-09-10"
+                  - option "2024-09-11"
+                  - option "2024-09-12"
+                  - option "2024-09-13"
+                  - option "2024-09-16"
+                  - option "2024-09-17"
+                  - option "2024-09-18"
+                  - option "2024-09-19"
+                  - option "2024-09-20"
+                  - option "2024-09-23"
+                  - option "2024-09-24"
+                  - option "2024-09-25"
+                  - option "2024-09-26"
+                  - option "2024-09-27"
+                  - option "2024-09-30"
+                  - option "2024-10-01"
+                  - option "2024-10-02"
+                  - option "2024-10-03"
+                  - option "2024-10-04"
+                  - option "2024-10-07"
+                  - option "2024-10-08"
+                  - option "2024-10-09"
+                  - option "2024-10-10"
+                  - option "2024-10-11"
+                  - option "2024-10-14"
+                  - option "2024-10-15"
+                  - option "2024-10-16"
+                  - option "2024-10-17"
+                  - option "2024-10-18"
+                  - option "2024-10-21"
+                  - option "2024-10-22"
+                  - option "2024-10-23"
+                  - option "2024-10-24"
+                  - option "2024-10-25"
+                  - option "2024-10-28"
+                  - option "2024-10-29"
+                  - option "2024-10-30"
+                  - option "2024-10-31"
+                  - option "2024-11-01"
+                  - option "2024-11-04"
+                  - option "2024-11-05"
+                  - option "2024-11-06"
+                  - option "2024-11-07"
+                  - option "2024-11-08"
+                  - option "2024-11-11"
+                  - option "2024-11-12"
+                  - option "2024-11-13"
+                  - option "2024-11-14"
+                  - option "2024-11-15"
+                  - option "2024-11-18"
+                  - option "2024-11-19"
+                  - option "2024-11-20"
+                  - option "2024-11-21"
+                  - option "2024-11-22"
+                  - option "2024-11-25"
+                  - option "2024-11-26"
+                  - option "2024-11-27"
+                  - option "2024-11-28"
+                  - option "2024-11-29"
+                  - option "2024-12-02"
+                  - option "2024-12-03"
+                  - option "2024-12-04"
+                  - option "2024-12-05"
+                  - option "2024-12-06"
+                  - option "2024-12-09"
+                  - option "2024-12-10"
+                  - option "2024-12-11"
+                  - option "2024-12-12"
+                  - option "2024-12-13"
+                  - option "2024-12-16"
+                  - option "2024-12-17"
+                  - option "2024-12-18"
+                  - option "2024-12-19"
+                  - option "2024-12-20"
+                  - option "2024-12-23"
+                  - option "2024-12-24"
+                  - option "2024-12-26"
+                  - option "2024-12-27"
+                  - option "2024-12-30"
+                  - option "2024-12-31"
+                  - option "2025-01-02"
+                  - option "2025-01-03"
+                  - option "2025-01-06"
+                  - option "2025-01-07"
+                  - option "2025-01-08"
+                  - option "2025-01-10"
+                  - option "2025-01-13"
+                  - option "2025-01-14"
+                  - option "2025-01-15"
+                  - option "2025-01-16"
+                  - option "2025-01-17"
+                  - option "2025-01-20"
+                  - option "2025-01-21"
+                  - option "2025-01-22"
+                  - option "2025-01-23"
+                  - option "2025-01-24"
+                  - option "2025-01-27"
+                  - option "2025-01-28"
+                  - option "2025-01-29"
+                  - option "2025-01-30"
+                  - option "2025-01-31"
+                  - option "2025-02-03"
+                  - option "2025-02-04"
+                  - option "2025-02-05"
+                  - option "2025-02-06"
+                  - option "2025-02-07"
+                  - option "2025-02-10"
+                  - option "2025-02-11"
+                  - option "2025-02-12"
+                  - option "2025-02-13"
+                  - option "2025-02-14"
+                  - option "2025-02-17"
+                  - option "2025-02-18"
+                  - option "2025-02-19"
+                  - option "2025-02-20"
+                  - option "2025-02-21"
+                  - option "2025-02-24"
+                  - option "2025-02-25"
+                  - option "2025-02-26"
+                  - option "2025-02-27"
+                  - option "2025-02-28"
+                  - option "2025-03-03"
+                  - option "2025-03-04"
+                  - option "2025-03-05"
+                  - option "2025-03-06"
+                  - option "2025-03-07"
+                  - option "2025-03-10"
+                  - option "2025-03-11"
+                  - option "2025-03-12"
+                  - option "2025-03-13"
+                  - option "2025-03-14"
+                  - option "2025-03-17"
+                  - option "2025-03-18"
+                  - option "2025-03-19"
+                  - option "2025-03-20"
+                  - option "2025-03-21"
+                  - option "2025-03-24"
+                  - option "2025-03-25"
+                  - option "2025-03-26"
+                  - option "2025-03-27"
+                  - option "2025-03-28"
+                  - option "2025-03-31"
+                  - option "2025-04-01"
+                  - option "2025-04-02"
+                  - option "2025-04-03"
+                  - option "2025-04-04"
+                  - option "2025-04-07"
+                  - option "2025-04-08"
+                  - option "2025-04-09"
+                  - option "2025-04-10"
+                  - option "2025-04-11"
+                  - option "2025-04-14"
+                  - option "2025-04-15"
+                  - option "2025-04-16"
+                  - option "2025-04-17"
+                  - option "2025-04-21"
+                  - option "2025-04-22"
+                  - option "2025-04-23"
+                  - option "2025-04-24"
+                  - option "2025-04-25"
+                  - option "2025-04-28"
+                  - option "2025-04-29"
+                  - option "2025-04-30"
+                  - option "2025-05-01"
+                  - option "2025-05-02"
+                  - option "2025-05-05"
+                  - option "2025-05-06"
+                  - option "2025-05-07"
+                  - option "2025-05-08"
+                  - option "2025-05-09"
+                  - option "2025-05-12"
+                  - option "2025-05-13"
+                  - option "2025-05-14"
+                  - option "2025-05-15"
+                  - option "2025-05-16"
+                  - option "2025-05-19"
+                  - option "2025-05-20"
+                  - option "2025-05-21"
+                  - option "2025-05-22"
+                  - option "2025-05-23"
+                  - option "2025-05-26"
+                  - option "2025-05-27"
+                  - option "2025-05-28"
+                  - option "2025-05-29"
+                  - option "2025-05-30"
+                  - option "2025-06-02"
+                  - option "2025-06-03"
+                  - option "2025-06-04"
+                  - option "2025-06-05"
+                  - option "2025-06-06"
+                  - option "2025-06-09"
+                  - option "2025-06-10"
+                  - option "2025-06-11"
+                  - option "2025-06-12"
+                  - option "2025-06-13"
+                  - option "2025-06-16"
+                  - option "2025-06-17"
+                  - option "2025-06-18"
+                  - option "2025-06-19"
+                  - option "2025-06-20"
+                  - option "2025-06-23"
+                  - option "2025-06-24"
+                  - option "2025-06-25"
+                  - option "2025-06-26"
+                  - option "2025-06-27"
+                  - option "2025-06-30"
+                  - option "2025-07-01"
+                  - option "2025-07-02"
+                  - option "2025-07-03"
+                  - option "2025-07-04"
+                  - option "2025-07-07"
+                  - option "2025-07-08"
+                  - option "2025-07-09"
+                  - option "2025-07-10"
+                  - option "2025-07-11"
+                  - option "2025-07-14"
+                  - option "2025-07-15"
+                  - option "2025-07-16"
+                  - option "2025-07-17"
+                  - option "2025-07-18"
+                  - option "2025-07-21"
+                  - option "2025-07-22"
+                  - option "2025-07-23"
+                  - option "2025-07-24"
+                  - option "2025-07-25"
+                  - option "2025-07-28"
+                  - option "2025-07-29"
+                  - option "2025-07-30"
+                  - option "2025-07-31"
+                  - option "2025-08-01"
+                  - option "2025-08-04"
+                  - option "2025-08-05"
+                  - option "2025-08-06"
+                  - option "2025-08-07"
+                  - option "2025-08-08"
+                  - option "2025-08-11"
+                  - option "2025-08-12"
+                  - option "2025-08-13"
+                  - option "2025-08-14"
+                  - option "2025-08-15"
+                  - option "2025-08-18"
+                  - option "2025-08-19"
+                  - option "2025-08-20"
+                  - option "2025-08-21"
+                  - option "2025-08-22"
+                  - option "2025-08-25"
+                  - option "2025-08-26"
+                  - option "2025-08-27"
+                  - option "2025-08-28"
+                  - option "2025-08-29"
+                  - option "2025-09-01"
+                  - option "2025-09-02"
+                  - option "2025-09-03"
+                  - option "2025-09-04"
+                  - option "2025-09-05"
+                  - option "2025-09-08"
+                  - option "2025-09-09"
+                  - option "2025-09-10"
+                  - option "2025-09-11"
+                  - option "2025-09-12"
+                  - option "2025-09-15"
+                  - option "2025-09-16"
+                  - option "2025-09-17"
+                  - option "2025-09-18"
+                  - option "2025-09-19"
+                  - option "2025-09-22"
+                  - option "2025-09-23"
+                  - option "2025-09-24"
+                  - option "2025-09-25"
+                  - option "2025-09-26"
+                  - option "2025-09-29"
+                  - option "2025-09-30"
+                  - option "2025-10-01"
+                  - option "2025-10-02"
+                  - option "2025-10-03"
+                  - option "2025-10-06"
+                  - option "2025-10-07"
+                  - option "2025-10-08"
+                  - option "2025-10-09"
+                  - option "2025-10-10"
+                  - option "2025-10-13"
+                  - option "2025-10-14"
+                  - option "2025-10-15"
+                  - option "2025-10-16"
+                  - option "2025-10-17"
+                  - option "2025-10-20"
+                  - option "2025-10-21"
+                  - option "2025-10-22"
+                  - option "2025-10-23"
+                  - option "2025-10-24"
+                  - option "2025-10-27"
+                  - option "2025-10-28"
+                  - option "2025-10-29"
+                  - option "2025-10-30"
+                  - option "2025-10-31"
+                  - option "2025-11-03"
+                  - option "2025-11-04"
+                  - option "2025-11-05"
+                  - option "2025-11-06"
+                  - option "2025-11-07"
+                  - option "2025-11-10"
+                  - option "2025-11-11"
+                  - option "2025-11-12"
+                  - option "2025-11-13"
+                  - option "2025-11-14"
+                  - option "2025-11-17"
+                  - option "2025-11-18"
+                  - option "2025-11-19"
+                  - option "2025-11-20"
+                  - option "2025-11-21"
+                  - option "2025-11-24"
+                  - option "2025-11-25"
+                  - option "2025-11-26"
+                  - option "2025-11-27"
+                  - option "2025-11-28"
+                  - option "2025-12-01"
+                  - option "2025-12-02"
+                  - option "2025-12-03" [selected]
+              - generic [ref=e46]:
+                - generic [ref=e47]: Candle Type
+                - combobox "Candle Type" [ref=e48]:
+                  - option "1s (Second)" [selected]
+                  - option "1m (Minute)"
+            - generic [ref=e49]: "Available days: 515"
+          - generic [ref=e50]:
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e54]: "Today's Net:"
+                - generic [ref=e55]: +7.00 pts
+              - generic [ref=e56]:
+                - generic [ref=e185]: "Per Trade:"
+                - generic [ref=e186]: +1.17 pts
+              - generic [ref=e57]:
+                - generic [ref=e58]: TRADES
+                - generic [ref=e59]: "6"
+            - generic [ref=e62]:
+              - generic [ref=e63]:
+                - generic [ref=e64]: "Cumulative:"
+                - generic [ref=e65]: "-43.00 pts"
+              - generic [ref=e66]:
+                - generic [ref=e187]: "Per Trade:"
+                - generic [ref=e188]: "-1.13 pts"
+              - generic [ref=e67]:
+                - generic [ref=e68]: TRADES
+                - generic [ref=e69]: "38"
+              - button "Reset Cache" [ref=e71]
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - text: Line visibility
+              - generic [ref=e74]:
+                - generic [ref=e75]:
+                  - checkbox "OPEN" [checked] [ref=e76]
+                  - generic [ref=e77]: OPEN
+                - generic [ref=e78]:
+                  - checkbox "Long TRG" [checked] [ref=e79]
+                  - generic [ref=e80]: Long TRG
+                - generic [ref=e81]:
+                  - checkbox "Short TRG" [checked] [ref=e82]
+                  - generic [ref=e83]: Short TRG
+                - generic [ref=e84]:
+                  - checkbox "TP" [checked] [ref=e85]
+                  - generic [ref=e86]: TP
+                - generic [ref=e87]:
+                  - checkbox "SL" [checked] [ref=e88]
+                  - generic [ref=e89]: SL
+                - generic [ref=e90]:
+                  - checkbox "MA20" [ref=e91]
+                  - generic [ref=e92]: MA20
+                - generic [ref=e93]:
+                  - checkbox "MA50" [ref=e94]
+                  - generic [ref=e95]: MA50
+                - generic [ref=e96]:
+                  - checkbox "MA100" [ref=e97]
+                  - generic [ref=e98]: MA100
+                - generic [ref=e99]:
+                  - checkbox "MA200" [ref=e100]
+                  - generic [ref=e101]: MA200
+                - generic [ref=e102]:
+                  - checkbox "Session Avg" [ref=e103]
+                  - generic [ref=e104]: Session Avg
+                - generic [ref=e105]:
+                  - checkbox "Lines 30" [checked] [ref=e106]
+                  - generic [ref=e107]: Lines 30
+                - generic [ref=e108]:
+                  - checkbox "Lines 35" [checked] [ref=e109]
+                  - generic [ref=e110]: Lines 35
+            - generic [ref=e190]: "Data source: static-1s"
+          - region "Price Chart" [ref=e111]:
+            - generic [ref=e112]:
+              - generic [ref=e113]: "Day 2025-12-03 · Series: candles"
+              - generic [ref=e114]: "Timezone: ET"
+            - table [ref=e192]:
+              - row [ref=e193]:
+                - cell
+                - cell [ref=e194]
+                - cell [ref=e198]
+              - row [ref=e202]:
+                - cell
+                - cell [ref=e203]
+                - cell [ref=e207]
+            - generic [ref=e117]: Horizontal lines use createPriceLine() to reduce flicker on zoom/pan. Chart preserves entry/direction when toggling series.
+          - region "Algorithmic Trades" [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e120]: Algorithmic Trades
+              - generic [ref=e121]: 6 RTs · 12 rows
+            - table [ref=e123]:
+              - rowgroup [ref=e124]:
+                - row "RT# Timestamp (ET) Type Price Slippage Note Net" [ref=e125]:
+                  - columnheader "RT#" [ref=e126]
+                  - columnheader "Timestamp (ET)" [ref=e127]
+                  - columnheader "Type" [ref=e128]
+                  - columnheader "Price" [ref=e129]
+                  - columnheader "Slippage" [ref=e130]
+                  - columnheader "Note" [ref=e131]
+                  - columnheader "Net" [ref=e132]
+              - rowgroup [ref=e133]:
+                - row "1 12/03/2025, 09:30:00 ET Open Long 25502.25 1.00 — —" [ref=e210] [cursor=pointer]:
+                  - cell "1" [ref=e211]
+                  - cell "12/03/2025, 09:30:00 ET" [ref=e212]
+                  - cell "Open Long" [ref=e213]
+                  - cell "25502.25" [ref=e214]
+                  - cell "1.00" [ref=e215]
+                  - cell "—" [ref=e216]
+                  - cell "—" [ref=e217]
+                - row "1 12/03/2025, 09:30:01 ET Close Long 25494.25 0.00 SL Hit -8.00" [ref=e218] [cursor=pointer]:
+                  - cell "1" [ref=e219]
+                  - cell "12/03/2025, 09:30:01 ET" [ref=e220]
+                  - cell "Close Long" [ref=e221]
+                  - cell "25494.25" [ref=e222]
+                  - cell "0.00" [ref=e223]
+                  - cell "SL Hit" [ref=e224]
+                  - cell "-8.00" [ref=e225]
+                - row "2 12/03/2025, 09:30:02 ET Open Long 25502.25 1.00 — —" [ref=e226] [cursor=pointer]:
+                  - cell "2" [ref=e227]
+                  - cell "12/03/2025, 09:30:02 ET" [ref=e228]
+                  - cell "Open Long" [ref=e229]
+                  - cell "25502.25" [ref=e230]
+                  - cell "1.00" [ref=e231]
+                  - cell "—" [ref=e232]
+                  - cell "—" [ref=e233]
+                - row "2 12/03/2025, 09:30:04 ET Close Long 25494.25 0.00 SL Hit -8.00" [ref=e234] [cursor=pointer]:
+                  - cell "2" [ref=e235]
+                  - cell "12/03/2025, 09:30:04 ET" [ref=e236]
+                  - cell "Close Long" [ref=e237]
+                  - cell "25494.25" [ref=e238]
+                  - cell "0.00" [ref=e239]
+                  - cell "SL Hit" [ref=e240]
+                  - cell "-8.00" [ref=e241]
+                - row "3 12/03/2025, 09:30:05 ET Open Short 25488.25 1.00 — —" [ref=e242] [cursor=pointer]:
+                  - cell "3" [ref=e243]
+                  - cell "12/03/2025, 09:30:05 ET" [ref=e244]
+                  - cell "Open Short" [ref=e245]
+                  - cell "25488.25" [ref=e246]
+                  - cell "1.00" [ref=e247]
+                  - cell "—" [ref=e248]
+                  - cell "—" [ref=e249]
+                - row "3 12/03/2025, 09:30:39 ET Close Short 25459.25 0.00 PT Hit 29.00" [ref=e250] [cursor=pointer]:
+                  - cell "3" [ref=e251]
+                  - cell "12/03/2025, 09:30:39 ET" [ref=e252]
+                  - cell "Close Short" [ref=e253]
+                  - cell "25459.25" [ref=e254]
+                  - cell "0.00" [ref=e255]
+                  - cell "PT Hit" [ref=e256]
+                  - cell "29.00" [ref=e257]
+                - row "4 12/03/2025, 09:35:00 ET Open Short 25466.75 1.00 — —" [ref=e258] [cursor=pointer]:
+                  - cell "4" [ref=e259]
+                  - cell "12/03/2025, 09:35:00 ET" [ref=e260]
+                  - cell "Open Short" [ref=e261]
+                  - cell "25466.75" [ref=e262]
+                  - cell "1.00" [ref=e263]
+                  - cell "—" [ref=e264]
+                  - cell "—" [ref=e265]
+                - row "4 12/03/2025, 09:35:01 ET Close Short 25474.75 0.00 SL Hit -8.00" [ref=e266] [cursor=pointer]:
+                  - cell "4" [ref=e267]
+                  - cell "12/03/2025, 09:35:01 ET" [ref=e268]
+                  - cell "Close Short" [ref=e269]
+                  - cell "25474.75" [ref=e270]
+                  - cell "0.00" [ref=e271]
+                  - cell "SL Hit" [ref=e272]
+                  - cell "-8.00" [ref=e273]
+                - row "5 12/03/2025, 09:35:02 ET Open Long 25480.75 1.00 — —" [ref=e274] [cursor=pointer]:
+                  - cell "5" [ref=e275]
+                  - cell "12/03/2025, 09:35:02 ET" [ref=e276]
+                  - cell "Open Long" [ref=e277]
+                  - cell "25480.75" [ref=e278]
+                  - cell "1.00" [ref=e279]
+                  - cell "—" [ref=e280]
+                  - cell "—" [ref=e281]
+                - row "5 12/03/2025, 09:35:36 ET Close Long 25490.75 0.00 SL Hit 10.00" [ref=e282] [cursor=pointer]:
+                  - cell "5" [ref=e283]
+                  - cell "12/03/2025, 09:35:36 ET" [ref=e284]
+                  - cell "Close Long" [ref=e285]
+                  - cell "25490.75" [ref=e286]
+                  - cell "0.00" [ref=e287]
+                  - cell "SL Hit" [ref=e288]
+                  - cell "10.00" [ref=e289]
+                - row "6 12/03/2025, 09:39:30 ET Open Short 25466.75 1.00 — —" [ref=e290] [cursor=pointer]:
+                  - cell "6" [ref=e291]
+                  - cell "12/03/2025, 09:39:30 ET" [ref=e292]
+                  - cell "Open Short" [ref=e293]
+                  - cell "25466.75" [ref=e294]
+                  - cell "1.00" [ref=e295]
+                  - cell "—" [ref=e296]
+                  - cell "—" [ref=e297]
+                - row "6 12/03/2025, 09:39:36 ET Close Short 25474.75 0.00 SL Hit -8.00" [ref=e298] [cursor=pointer]:
+                  - cell "6" [ref=e299]
+                  - cell "12/03/2025, 09:39:36 ET" [ref=e300]
+                  - cell "Close Short" [ref=e301]
+                  - cell "25474.75" [ref=e302]
+                  - cell "0.00" [ref=e303]
+                  - cell "SL Hit" [ref=e304]
+                  - cell "-8.00" [ref=e305]
+              - rowgroup [ref=e306]:
+                - row "Day Total (6 RTs) 7.00" [ref=e307]:
+                  - cell "Day Total (6 RTs)" [ref=e308]
+                  - cell "7.00" [ref=e309]
+            - generic [ref=e137]: "Easy Peasy: 6 trades found | Max RT: 3"
+        - region "Cumulative Results" [ref=e138]:
+          - heading "Cumulative Results" [level=1] [ref=e139]
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e143]: Today
+                - generic [ref=e144]: +7.00 pts
+              - generic [ref=e145]:
+                - generic [ref=e146]: Cumulative
+                - generic [ref=e147]: "-43.00 pts"
+                - generic [ref=e310]: 38 days sampled • 2025-09-05 – 2025-12-03
+            - generic [ref=e148]:
+              - generic [ref=e149]: Day-by-day performance (9 entries)
+              - generic [ref=e311]:
+                - generic [ref=e312]: Cumulative Total
+                - generic [ref=e314]:
+                  - generic [ref=e315]:
+                    - generic [ref=e316]: "+43"
+                    - generic [ref=e317]: "0"
+                    - generic [ref=e318]: "-43"
+                  - img [ref=e321]:
+                    - 'generic "2025-12-03: +7.00 pts" [ref=e330] [cursor=pointer]'
+                    - 'generic "2025-12-02: +7.00 pts" [ref=e331] [cursor=pointer]'
+                    - 'generic "2025-12-01: +7.00 pts" [ref=e332] [cursor=pointer]'
+                    - 'generic "2025-11-28: +7.00 pts" [ref=e333] [cursor=pointer]'
+                    - 'generic "2025-11-27: +7.00 pts" [ref=e334] [cursor=pointer]'
+                    - 'generic "2025-11-26: +7.00 pts" [ref=e335] [cursor=pointer]'
+                    - 'generic "2025-11-25: +7.00 pts" [ref=e336] [cursor=pointer]'
+                    - 'generic "2025-10-17: -29.00 pts" [ref=e337] [cursor=pointer]'
+                    - 'generic "2025-09-05: -43.00 pts" [ref=e338] [cursor=pointer]'
+              - generic [ref=e339]:
+                - generic [ref=e340]: Daily P&L
+                - generic [ref=e342]:
+                  - generic [ref=e343]:
+                    - generic [ref=e344]: "+36"
+                    - generic [ref=e345]: "0"
+                    - generic [ref=e346]: "-36"
+                  - generic [ref=e347]:
+                    - 'generic "2025-12-03: +7.00 pts" [ref=e349]'
+                    - 'generic "2025-12-02: +0.00 pts" [ref=e350]'
+                    - 'generic "2025-12-01: +0.00 pts" [ref=e351]'
+                    - 'generic "2025-11-28: +0.00 pts" [ref=e352]'
+                    - 'generic "2025-11-27: +0.00 pts" [ref=e353]'
+                    - 'generic "2025-11-26: +0.00 pts" [ref=e354]'
+                    - 'generic "2025-11-25: +0.00 pts" [ref=e355]'
+                    - 'generic "2025-10-17: -36.00 pts" [ref=e356]'
+                    - 'generic "2025-09-05: -14.00 pts" [ref=e357]'
+              - generic [ref=e358]: ← Newest | Oldest →
+      - region "Trade Data" [ref=e151]:
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - heading "Detailed Data" [level=1] [ref=e154]
+            - generic [ref=e155]: "⚠️ Warning: TICK DATA loads excessive amounts of data and will likely crash your browser"
+            - generic [ref=e156]:
+              - generic [ref=e157]: OHLCV — loads the chart at 1sec intervals
+              - generic [ref=e158]: Tick Data — not used but included for funsies
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - button "OHLCV" [ref=e161]
+              - button "Tick Data" [ref=e162]
+            - generic [ref=e163]: "Rows: 30"
+        - generic [ref=e164]:
+          - generic [ref=e165]: Debug Console Notes
+          - list [ref=e166]:
+            - listitem [ref=e167]: Console logs track date loads, series swaps, price-line sync, and data counts.
+            - listitem [ref=e168]: Entry/direction state stays unchanged when moving across days or series.
+            - listitem [ref=e169]: Start/trigger lines recompute per day using first trade price; invalid rows are dropped with counts logged.
+  - button "Open Next.js Dev Tools" [ref=e175] [cursor=pointer]:
+    - img [ref=e176]
+  - alert [ref=e180]
+```

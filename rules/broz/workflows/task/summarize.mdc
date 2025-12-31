@@ -1,0 +1,54 @@
+---
+description: "Workflow: Summarize recent task activity"
+globs: []
+---
+# Workflow: Task > Summarize
+
+<critical>You MUST filter for recent activity (24h or 1 week).</critical>
+<critical>You MUST provide specific file/task references.</critical>
+
+<workflow>
+
+<step n="1" goal="Scan Activity">
+  <action>
+    **Read Tasks**:
+    - Glob `plans/tasks/*.md`.
+  </action>
+
+  <action>
+    **Filter**:
+    - Identify modified files (last 24h or 1 week).
+    - Parse completion status.
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Scan Activity**
+    📂 Read all task files
+    🔍 Filtered for recent activity (24h/week)
+    
+    ➡️ **Beginning Step 2: Generate Report**
+  </output>
+</step>
+
+<step n="2" goal="Generate Report">
+  <action>
+    **Compile Summary**:
+    - Group by Status (Done, In Progress, Blocked).
+    - List Task Titles + Links.
+  </action>
+
+  <output>
+    ### Activity Summary
+    
+    **Completed**
+    - [Task A]
+    
+    **In Progress**
+    - [Task B]
+    
+    **New**
+    - [Task C]
+  </output>
+</step>
+
+</workflow>

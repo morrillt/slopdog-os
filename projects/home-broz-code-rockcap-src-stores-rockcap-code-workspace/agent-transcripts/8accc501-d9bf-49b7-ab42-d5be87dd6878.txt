@@ -1,0 +1,81 @@
+user:
+<cursor_commands>
+
+--- Cursor Command: broz-menu ---
+Activate Broz Menu. (Trigger: `broz-menu`)
+
+Do this EXACTLY in order:
+1) Read `plans/context.yaml`
+2) Read `.cursor/rules/broz/mode.menu.mdc`
+3) Follow the mode's `<agent-activation>` steps
+4) Display the numbered menu and STOP (wait for user choice)
+
+Do NOT execute any handler automatically.
+
+--- End Command ---
+</cursor_commands>
+<user_query>
+/broz-menu 
+</user_query>
+
+assistant:
+<think>
+The user wants me to activate the Broz Menu. According to the cursor command instructions, I need to:
+
+1. Read `plans/context.yaml`
+2. Read `.cursor/rules/broz/mode.menu.mdc`
+3. Follow the mode's `<agent-activation>` steps
+4. Display the numbered menu and STOP (wait for user choice)
+
+Let me start by reading these files.
+</think>
+Reading the required files to activate the Broz Menu.
+
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/plans/context.yaml
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/.cursor/rules/broz/mode.menu.mdc
+
+[Tool result] read_file
+
+[Tool result] read_file
+
+assistant:
+<think>
+Good, I've read both files. Now I understand:
+
+1. The current state from `context.yaml`:
+   - Current mode: "task"
+   - Current task: "TASK-20251213-poke-around-menus.md"
+   - Current task status: "In Progress"
+
+2. The menu mode instructions:
+   - Display the Mode Selection Menu
+   - Present as a numbered list
+   - Wait for user choice
+
+According to the instructions, I should:
+1. ✅ Read `plans/context.yaml` - Done
+2. ✅ Read `.cursor/rules/broz/mode.menu.mdc` - Done
+3. Follow the mode's `<agent-activation>` steps - Display the menu
+4. Display the numbered menu and STOP (wait for user choice)
+
+I should display the menu with the current state information, then wait for the user to select a number.
+</think>
+**Current State:**
+- Mode: `task`
+- Current Task: `TASK-20251213-poke-around-menus.md` (In Progress)
+
+---
+
+## Mode Selection Menu
+
+**1) Plan Mode** — Strategy & Architecture (Tyrion)  
+**2) Build Mode** — Implementation (Taylor)  
+**3) Task Mode** — Quick Tasks (Bronn)  
+**4) Research Mode** — Investigation (Varys)  
+**5) Docs Mode** — Librarian (Samwell)
+
+---
+
+Select a number (1-5) to switch modes.

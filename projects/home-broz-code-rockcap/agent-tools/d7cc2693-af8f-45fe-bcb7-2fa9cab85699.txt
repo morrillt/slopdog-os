@@ -1,0 +1,1136 @@
+
+> test:unit
+> vitest run tests/unit/stepped-sl-comparison.test.ts
+
+
+ RUN  v4.0.15 /home/broz/.cursor/worktrees/rockcap__Workspace_/jya
+
+stdout | tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03
+
+Loaded 1799 candles for 2025-12-03, startPrice: 25495.25
+
+stdout | tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03 > should generate trades for both strategies
+[Strategy12.8] ======================================================================
+[Strategy12.8] STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.8
+[Strategy12.8] ======================================================================
+[Strategy12.8] Inputs: {
+  startPrice: 25495.25,
+  triggerPts: 6,
+  profitTargetPts: 36,
+  stopLossPts: 7,
+  maxRoundTrips: 1,
+  cutoffTime: '09:45',
+  candleCount: 1799
+}
+[Strategy12.8] 9:35 Transition:
+[Strategy12.8]   9:35 candle index: 300
+[Strategy12.8]   Original start price (9:30): 25495.25
+[Strategy12.8]   New start price (9:35): 25473.75
+[Strategy12.8] Initial Triggers (before 9:35):
+[Strategy12.8]   Long Trigger  = 25495.25 + 6 = 25501.25
+[Strategy12.8]   Short Trigger = 25495.25 - 6 = 25489.25
+[Strategy12.8] ----------------------------------------------------------------------
+[Strategy12.8] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8:Alternate] ROUND TRIP #1: No alternating logic (lastExitNote=null, lastTradeDirection=null)
+[Strategy12.8:Trigger] Candle[0] 2025-12-03T09:30:00-05:00: high=25503.75 (>=25501.25? true), low=25493.75 (<=25489.25? false)
+
+================================================================================
+🔍 FIRST RT TRADE - INTRABAR ANALYSIS FOR CANDLE[0]
+================================================================================
+Candle Details:
+  Time: 2025-12-03T09:30:00-05:00
+  Open:  25495.25
+  High:  25503.75
+  Low:   25493.75
+  Close: 25497.5
+
+Trigger Levels:
+  Long Trigger:  25501.25 (hit: true)
+  Short Trigger: 25489.25 (hit: false)
+
+Candle Color: GREEN (C > O)
+  Path will be: O→L→H→C
+================================================================================
+
+[Strategy12.8:Trigger] Candle[0] LONG trigger hit and accepted
+[Strategy12.8]   Candle[0] LONG trigger hit
+[Strategy12.8]   Entry: 25502.25 at 2025-12-03T09:30:00-05:00
+[Strategy12.8]   Entry calculation: long trigger (25501.25) + slippage (1) = 25502.25
+
+================================================================================
+🎯 FIRST RT TRADE - ENTRY JUSTIFICATION (INTRABAR ANALYSIS)
+================================================================================
+
+Trade Direction: LONG
+Entry Level (Trigger): 25501.25
+Entry Price (with slippage): 25502.25
+
+Candle at Trigger Index [0]:
+  Time:  2025-12-03T09:30:00-05:00
+  Open:  25495.25
+  High:  25503.75
+  Low:   25493.75
+  Close: 25497.5
+
+Why This Entry Occurred:
+  1. Candle range [25493.75, 25503.75] contains entry level 25501.25
+  2. High (25503.75) >= 25501.25
+  3. Entry is filled at 25502.25 (trigger + slippage)
+================================================================================
+
+[Strategy12.8]   TP: 25531.25 (based on currentStartPrice: 25495.25), SL: 25494.25
+
+================================================================================
+🔍 FIRST RT TRADE - INTRABAR EXIT ANALYSIS FOR ENTRY CANDLE[0]
+================================================================================
+
+Scanning Entry Candle for Same-Bar Exit:
+  Time:  2025-12-03T09:30:00-05:00
+  Open:  25495.25
+  High:  25503.75
+  Low:   25493.75
+  Close: 25497.5
+
+Entry Details:
+  Direction: LONG
+  Entry Level: 25501.25
+  Entry Price: 25502.25
+
+Exit Levels:
+  TP Price: 25531.25
+  SL Price: 25494.25
+
+📊 INTRABAR RESOLUTION RESULT:
+  Event: FILL_AND_SURVIVE
+  Assumed Path: O→L→L→H→H→C
+  Entry Fill: 25502.25
+  Entry Path Index: 1
+  Exit Path Index: undefined
+
+🎯 JUSTIFICATION:
+  ✅ Entry occurred at 25502.25
+  ⏭️  No exit on this candle - trade survives to next candle
+  📍 Path: O→L→L→H→H→C
+  📍 Entry at path segment 1
+================================================================================
+
+[Strategy12.8:Exit] Candle[0]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Continuing to next candle.
+[Strategy12.8:Exit] Candle[1] 2025-12-03T09:30:01-05:00: Checking LONG exit - high=25503.25 (>=25531.25? false), low=25491.75 (<=25494.25? true)
+[Strategy12.8:Exit] Candle[1]: SL Hit. Exit price: 25494.25
+[Strategy12.8]   Exit: SL Hit at candle[1], price=25494.25
+[Strategy12.8]   Net P&L: -8
+[Strategy12.8]   Stored last trade: long exited with SL Hit
+[Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=1, triggerCandleIndex=0
+[Strategy12.8:Reentry] Checking exit candle[1] for re-eligibility: open=25497, high=25503.25, low=25491.75, close=25500.5
+[Strategy12.8:Reentry] Zone boundaries: shortTrigger=25489.25, longTrigger=25501.25
+[Strategy12.8:Reentry] Exit candle zone checks: lowInZone=true, highInZone=false, openInZone=true, closeInZone=true
+[Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[1]! Price is in zone.
+[Strategy12.8]   Re-eligibility found on exit candle[1] - price between triggers
+[Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8]   Start price switched to 25473.75 (at Reset)
+[Strategy12.8] ----------------------------------------------------------------------
+[Strategy12.8] ROUND TRIP #2 (Session #1) - Scanning from candle[300]
+[Strategy12.8:Alternate] ROUND TRIP #2: No alternating logic (lastExitNote=SL Hit, lastTradeDirection=null)
+[Strategy12.8:Trigger] Candle[300] 2025-12-03T09:35:00-05:00: high=25474.5 (>=25479.75? false), low=25466.25 (<=25467.75? true)
+[Strategy12.8:Trigger] Candle[300] SHORT trigger hit and accepted
+[Strategy12.8]   Candle[300] SHORT trigger hit
+[Strategy12.8]   Entry: 25466.75 at 2025-12-03T09:35:00-05:00
+[Strategy12.8]   Entry calculation: short trigger (25467.75) + slippage (1) = 25466.75
+[Strategy12.8]   TP: 25437.75 (based on currentStartPrice: 25473.75), SL: 25474.75
+[Strategy12.8:Exit] Candle[300]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Continuing to next candle.
+[Strategy12.8:Exit] Candle[301] 2025-12-03T09:35:01-05:00: Checking SHORT exit - low=25466 (<=25437.75? false), high=25478.75 (>=25474.75? true)
+[Strategy12.8:Exit] Candle[301]: SL Hit. Exit price: 25474.75
+[Strategy12.8]   Exit: SL Hit at candle[301], price=25474.75
+[Strategy12.8]   Net P&L: -8
+[Strategy12.8]   Stored last trade: short exited with SL Hit
+[Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=301, triggerCandleIndex=300
+[Strategy12.8:Reentry] Checking exit candle[301] for re-eligibility: open=25469.5, high=25478.75, low=25466, close=25477.25
+[Strategy12.8:Reentry] Zone boundaries: shortTrigger=25467.75, longTrigger=25479.75
+[Strategy12.8:Reentry] Exit candle zone checks: lowInZone=false, highInZone=true, openInZone=true, closeInZone=true
+[Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[301]! Price is in zone.
+[Strategy12.8]   Re-eligibility found on exit candle[301] - price between triggers
+[Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8]   Max round trips (1) reached for current session. Done.
+[Strategy12.8] ======================================================================
+[Strategy12.8] GENERATION COMPLETE: 4 rows (2 round trips)
+[Strategy12.8] ======================================================================
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8.2]   Candle[0] LONG trigger hit
+[Strategy12.8.2]   Entry: 25502.25 at 2025-12-03T09:30:00-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25501.25) + slippage (1) = 25502.25
+[Strategy12.8.2]   *** 9:35 TRANSITION detected during TP/SL calc ***
+[Strategy12.8.2]   Start price switched: 25495.25 -> 25473.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25472.75
+[Strategy12.8.2]   Exit: SL Hit at candle[1], price=25502.75
+[Strategy12.8.2]   Net P&L: 0.5
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found at candle[8] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[9] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8.2] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #2 (Session #1) - Scanning from candle[300]
+[Strategy12.8.2]   Candle[300] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25466.75 at 2025-12-03T09:35:00-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25467.75) + slippage (1) = 25466.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25474.75
+[Strategy12.8.2]   Exit: SL Hit at candle[301], price=25474.75
+[Strategy12.8.2]   Net P&L: -8
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[301] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[302] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for current session. Done.
+[Strategy12.8.2] ======================================================================
+[Strategy12.8.2] GENERATION COMPLETE: 4 rows (2 round trips)
+[Strategy12.8.2] ======================================================================
+
+stdout | tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03 > should produce different net P&L for strategy12.8 vs strategy12.8.2
+
+======================================================================
+Running Strategy 12.8...
+======================================================================
+[Strategy12.8] ======================================================================
+[Strategy12.8] STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.8
+[Strategy12.8] ======================================================================
+[Strategy12.8] Inputs: {
+  startPrice: 25495.25,
+  triggerPts: 6,
+  profitTargetPts: 36,
+  stopLossPts: 7,
+  maxRoundTrips: 1,
+  cutoffTime: '09:45',
+  candleCount: 1799
+}
+[Strategy12.8] 9:35 Transition:
+[Strategy12.8]   9:35 candle index: 300
+[Strategy12.8]   Original start price (9:30): 25495.25
+[Strategy12.8]   New start price (9:35): 25473.75
+[Strategy12.8] Initial Triggers (before 9:35):
+[Strategy12.8]   Long Trigger  = 25495.25 + 6 = 25501.25
+[Strategy12.8]   Short Trigger = 25495.25 - 6 = 25489.25
+[Strategy12.8] ----------------------------------------------------------------------
+[Strategy12.8] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8:Alternate] ROUND TRIP #1: No alternating logic (lastExitNote=null, lastTradeDirection=null)
+[Strategy12.8:Trigger] Candle[0] 2025-12-03T09:30:00-05:00: high=25503.75 (>=25501.25? true), low=25493.75 (<=25489.25? false)
+
+================================================================================
+🔍 FIRST RT TRADE - INTRABAR ANALYSIS FOR CANDLE[0]
+================================================================================
+Candle Details:
+  Time: 2025-12-03T09:30:00-05:00
+  Open:  25495.25
+  High:  25503.75
+  Low:   25493.75
+  Close: 25497.5
+
+Trigger Levels:
+  Long Trigger:  25501.25 (hit: true)
+  Short Trigger: 25489.25 (hit: false)
+
+Candle Color: GREEN (C > O)
+  Path will be: O→L→H→C
+================================================================================
+
+[Strategy12.8:Trigger] Candle[0] LONG trigger hit and accepted
+[Strategy12.8]   Candle[0] LONG trigger hit
+[Strategy12.8]   Entry: 25502.25 at 2025-12-03T09:30:00-05:00
+[Strategy12.8]   Entry calculation: long trigger (25501.25) + slippage (1) = 25502.25
+
+================================================================================
+🎯 FIRST RT TRADE - ENTRY JUSTIFICATION (INTRABAR ANALYSIS)
+================================================================================
+
+Trade Direction: LONG
+Entry Level (Trigger): 25501.25
+Entry Price (with slippage): 25502.25
+
+Candle at Trigger Index [0]:
+  Time:  2025-12-03T09:30:00-05:00
+  Open:  25495.25
+  High:  25503.75
+  Low:   25493.75
+  Close: 25497.5
+
+Why This Entry Occurred:
+  1. Candle range [25493.75, 25503.75] contains entry level 25501.25
+  2. High (25503.75) >= 25501.25
+  3. Entry is filled at 25502.25 (trigger + slippage)
+================================================================================
+
+[Strategy12.8]   TP: 25531.25 (based on currentStartPrice: 25495.25), SL: 25494.25
+
+================================================================================
+🔍 FIRST RT TRADE - INTRABAR EXIT ANALYSIS FOR ENTRY CANDLE[0]
+================================================================================
+
+Scanning Entry Candle for Same-Bar Exit:
+  Time:  2025-12-03T09:30:00-05:00
+  Open:  25495.25
+  High:  25503.75
+  Low:   25493.75
+  Close: 25497.5
+
+Entry Details:
+  Direction: LONG
+  Entry Level: 25501.25
+  Entry Price: 25502.25
+
+Exit Levels:
+  TP Price: 25531.25
+  SL Price: 25494.25
+
+📊 INTRABAR RESOLUTION RESULT:
+  Event: FILL_AND_SURVIVE
+  Assumed Path: O→L→L→H→H→C
+  Entry Fill: 25502.25
+  Entry Path Index: 1
+  Exit Path Index: undefined
+
+🎯 JUSTIFICATION:
+  ✅ Entry occurred at 25502.25
+  ⏭️  No exit on this candle - trade survives to next candle
+  📍 Path: O→L→L→H→H→C
+  📍 Entry at path segment 1
+================================================================================
+
+[Strategy12.8:Exit] Candle[0]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Continuing to next candle.
+[Strategy12.8:Exit] Candle[1] 2025-12-03T09:30:01-05:00: Checking LONG exit - high=25503.25 (>=25531.25? false), low=25491.75 (<=25494.25? true)
+[Strategy12.8:Exit] Candle[1]: SL Hit. Exit price: 25494.25
+[Strategy12.8]   Exit: SL Hit at candle[1], price=25494.25
+[Strategy12.8]   Net P&L: -8
+[Strategy12.8]   Stored last trade: long exited with SL Hit
+[Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=1, triggerCandleIndex=0
+[Strategy12.8:Reentry] Checking exit candle[1] for re-eligibility: open=25497, high=25503.25, low=25491.75, close=25500.5
+[Strategy12.8:Reentry] Zone boundaries: shortTrigger=25489.25, longTrigger=25501.25
+[Strategy12.8:Reentry] Exit candle zone checks: lowInZone=true, highInZone=false, openInZone=true, closeInZone=true
+[Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[1]! Price is in zone.
+[Strategy12.8]   Re-eligibility found on exit candle[1] - price between triggers
+[Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8]   Start price switched to 25473.75 (at Reset)
+[Strategy12.8] ----------------------------------------------------------------------
+[Strategy12.8] ROUND TRIP #2 (Session #1) - Scanning from candle[300]
+[Strategy12.8:Alternate] ROUND TRIP #2: No alternating logic (lastExitNote=SL Hit, lastTradeDirection=null)
+[Strategy12.8:Trigger] Candle[300] 2025-12-03T09:35:00-05:00: high=25474.5 (>=25479.75? false), low=25466.25 (<=25467.75? true)
+[Strategy12.8:Trigger] Candle[300] SHORT trigger hit and accepted
+[Strategy12.8]   Candle[300] SHORT trigger hit
+[Strategy12.8]   Entry: 25466.75 at 2025-12-03T09:35:00-05:00
+[Strategy12.8]   Entry calculation: short trigger (25467.75) + slippage (1) = 25466.75
+[Strategy12.8]   TP: 25437.75 (based on currentStartPrice: 25473.75), SL: 25474.75
+[Strategy12.8:Exit] Candle[300]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Continuing to next candle.
+[Strategy12.8:Exit] Candle[301] 2025-12-03T09:35:01-05:00: Checking SHORT exit - low=25466 (<=25437.75? false), high=25478.75 (>=25474.75? true)
+[Strategy12.8:Exit] Candle[301]: SL Hit. Exit price: 25474.75
+[Strategy12.8]   Exit: SL Hit at candle[301], price=25474.75
+[Strategy12.8]   Net P&L: -8
+[Strategy12.8]   Stored last trade: short exited with SL Hit
+[Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=301, triggerCandleIndex=300
+[Strategy12.8:Reentry] Checking exit candle[301] for re-eligibility: open=25469.5, high=25478.75, low=25466, close=25477.25
+[Strategy12.8:Reentry] Zone boundaries: shortTrigger=25467.75, longTrigger=25479.75
+[Strategy12.8:Reentry] Exit candle zone checks: lowInZone=false, highInZone=true, openInZone=true, closeInZone=true
+[Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[301]! Price is in zone.
+[Strategy12.8]   Re-eligibility found on exit candle[301] - price between triggers
+[Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8]   Max round trips (1) reached for current session. Done.
+[Strategy12.8] ======================================================================
+[Strategy12.8] GENERATION COMPLETE: 4 rows (2 round trips)
+[Strategy12.8] ======================================================================
+
+Strategy 12.8: 4 rows, Net P&L: -16.00
+
+======================================================================
+Running Strategy 12.8.2 with stepped SL...
+======================================================================
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8.2]   Candle[0] LONG trigger hit
+[Strategy12.8.2]   Entry: 25502.25 at 2025-12-03T09:30:00-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25501.25) + slippage (1) = 25502.25
+[Strategy12.8.2]   *** 9:35 TRANSITION detected during TP/SL calc ***
+[Strategy12.8.2]   Start price switched: 25495.25 -> 25473.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25472.75
+[Strategy12.8.2]   Exit: SL Hit at candle[1], price=25502.75
+[Strategy12.8.2]   Net P&L: 0.5
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found at candle[8] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[9] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8.2] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #2 (Session #1) - Scanning from candle[300]
+[Strategy12.8.2]   Candle[300] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25466.75 at 2025-12-03T09:35:00-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25467.75) + slippage (1) = 25466.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25474.75
+[Strategy12.8.2]   Exit: SL Hit at candle[301], price=25474.75
+[Strategy12.8.2]   Net P&L: -8
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[301] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[302] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for current session. Done.
+[Strategy12.8.2] ======================================================================
+[Strategy12.8.2] GENERATION COMPLETE: 4 rows (2 round trips)
+[Strategy12.8.2] ======================================================================
+
+Strategy 12.8.2: 4 rows, Net P&L: -7.50
+
+Difference: 8.50
+======================================================================
+
+Strategy 12.8 exit: SL Hit at 25494.25
+Strategy 12.8.2 exit: SL Hit at 25502.75
+
+stdout | tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03 > should show stepped SL updates in console logs
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8.2]   Candle[0] LONG trigger hit
+[Strategy12.8.2]   Entry: 25502.25 at 2025-12-03T09:30:00-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25501.25) + slippage (1) = 25502.25
+[Strategy12.8.2]   *** 9:35 TRANSITION detected during TP/SL calc ***
+[Strategy12.8.2]   Start price switched: 25495.25 -> 25473.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25472.75
+[Strategy12.8.2]   Exit: SL Hit at candle[1], price=25502.75
+[Strategy12.8.2]   Net P&L: 0.5
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found at candle[8] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[9] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8.2] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #2 (Session #1) - Scanning from candle[300]
+[Strategy12.8.2]   Candle[300] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25466.75 at 2025-12-03T09:35:00-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25467.75) + slippage (1) = 25466.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25474.75
+[Strategy12.8.2]   Exit: SL Hit at candle[301], price=25474.75
+[Strategy12.8.2]   Net P&L: -8
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[301] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[302] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for current session. Done.
+[Strategy12.8.2] ======================================================================
+[Strategy12.8.2] GENERATION COMPLETE: 4 rows (2 round trips)
+[Strategy12.8.2] ======================================================================
+
+stdout | tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03 > Strategy 12.8.2 - Profitable TP Trade Test (2025-12-03) > should hit a profitable TP trade in the first interval (before 9:35) with trg=10, pt=36, sl=7
+
+======================================================================
+Testing for profitable TP trade with trg=10, pt=36, sl=7
+======================================================================
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8.2]   Candle[2] LONG trigger hit
+[Strategy12.8.2]   Entry: 25506.25 at 2025-12-03T09:30:02-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25505.25) + slippage (1) = 25506.25
+[Strategy12.8.2]   *** 9:35 TRANSITION detected during TP/SL calc ***
+[Strategy12.8.2]   Start price switched: 25495.25 -> 25473.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[8], price=25476.75
+[Strategy12.8.2]   Net P&L: -29.5
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[8] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[9] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8.2] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #2 (Session #1) - Scanning from candle[300]
+[Strategy12.8.2]   Candle[303] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:35:03-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[339], price=25476.75
+[Strategy12.8.2]   Net P&L: -8
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[339] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[340] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (1) reached for current session. Done.
+[Strategy12.8.2] ======================================================================
+[Strategy12.8.2] GENERATION COMPLETE: 4 rows (2 round trips)
+[Strategy12.8.2] ======================================================================
+
+Total rows: 4
+Close rows: 2
+Net P&L: -37.50
+
+First interval close: SL Hit at 25476.75, net: -29.5
+
+TP Hits: 0
+
+stdout | tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03 > Strategy 12.8.2 - 6th RT Trade with Stepped SL (2025-12-03) > should have profitable stepped SL on 6th RT trade with big upward move (trg=10, pt=36, sl=7, maxRT=6) - CORRECTED URL: maxRT=6
+
+======================================================================
+Testing 6th RT trade with stepped SL - should lock profit on big upward move
+======================================================================
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[Strategy12.8.2]   Candle[2] LONG trigger hit
+[Strategy12.8.2]   Entry: 25506.25 at 2025-12-03T09:30:02-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25505.25) + slippage (1) = 25506.25
+[Strategy12.8.2]   *** 9:35 TRANSITION detected during TP/SL calc ***
+[Strategy12.8.2]   Start price switched: 25495.25 -> 25473.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[3], price=25506.75
+[Strategy12.8.2]   Net P&L: 0.5
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found at candle[6] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[7] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #2 (Session #2) - Scanning from candle[7]
+[Strategy12.8.2]   *** ALTERNATING LOGIC: Last trade was long with SL Hit, must trade short next ***
+[Strategy12.8.2]   Candle[7]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[8]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[9]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[10]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[11]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[12]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[13]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[14]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[15]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[16]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[17]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[18]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[19]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[20]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[21]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[22]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[23]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[24]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[25]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[26]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[27]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[28]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[29]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[30]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[31]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[31] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25462.75 at 2025-12-03T09:30:31-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25463.75) + slippage (1) = 25462.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25470.75
+[Strategy12.8.2]   Exit: SL Hit at candle[32], price=25470.75
+[Strategy12.8.2]   Net P&L: -8
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[32] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[33] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #3 (Session #3) - Scanning from candle[33]
+[Strategy12.8.2]   Candle[37] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25462.75 at 2025-12-03T09:30:37-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25463.75) + slippage (1) = 25462.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25470.75
+[Strategy12.8.2]   Exit: SL Hit at candle[38], price=25461.75
+[Strategy12.8.2]   Net P&L: 1
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[38] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[39] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #4 (Session #4) - Scanning from candle[39]
+[Strategy12.8.2]   Candle[39] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25462.75 at 2025-12-03T09:30:39-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25463.75) + slippage (1) = 25462.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25470.75
+[Strategy12.8.2]   Exit: SL Hit at candle[40], price=25460.75
+[Strategy12.8.2]   Net P&L: 2
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found at candle[42] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[43] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #5 (Session #5) - Scanning from candle[43]
+[Strategy12.8.2]   *** ALTERNATING LOGIC: Last trade was short with SL Hit, must trade long next ***
+[Strategy12.8.2]   Candle[43]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[44]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[45]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[46]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[47]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[48]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[49]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[50]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[51]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[52]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[53]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[54]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[55]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[56]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[57]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[58]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[59]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[60]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[61]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[62]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[63]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[64]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[65]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[66]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[67]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[68]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[69]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[70]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[71]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[72]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[73]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[74]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[75]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[76]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[77]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[78]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[79]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[80]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[81]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[82]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[83]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[84]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[85]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[86]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[87]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[88]: Alternating logic - only allowing LONG trigger
+[Strategy12.8.2]   Candle[88] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:31:28-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[89], price=25486.75
+[Strategy12.8.2]   Net P&L: 2
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[89] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[90] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #6 (Session #6) - Scanning from candle[90]
+[Strategy12.8.2]   Candle[90] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:31:30-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: PT Hit at candle[97], price=25509.75
+[Strategy12.8.2]   Net P&L: 25
+[Strategy12.8.2]   Stored last trade: long exited with PT Hit
+[Strategy12.8.2]   Re-eligibility found at candle[123] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[124] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (6) reached for pre-9:35. Fast-forwarding to 9:35.
+[Strategy12.8.2] *** 9:35 RESET TRIGGERED (No trade active) ***
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #7 (Session #1) - Scanning from candle[300]
+[Strategy12.8.2]   Candle[303] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:35:03-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[303], price=25484.75 (intrabar resolution)
+[Strategy12.8.2]   Net P&L: 0
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[303] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[304] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #8 (Session #2) - Scanning from candle[304]
+[Strategy12.8.2]   Candle[304] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:35:04-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[305], price=25486.75
+[Strategy12.8.2]   Net P&L: 2
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[305] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[306] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #9 (Session #3) - Scanning from candle[306]
+[Strategy12.8.2]   Candle[306] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:35:06-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[307], price=25486.75
+[Strategy12.8.2]   Net P&L: 2
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[307] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[308] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #10 (Session #4) - Scanning from candle[308]
+[Strategy12.8.2]   Candle[309] LONG trigger hit
+[Strategy12.8.2]   Entry: 25484.75 at 2025-12-03T09:35:09-05:00
+[Strategy12.8.2]   Entry calculation: long trigger (25483.75) + slippage (1) = 25484.75
+[Strategy12.8.2]   TP: 25509.75 (based on currentStartPrice: 25473.75), Initial SL: 25476.75
+[Strategy12.8.2]   Exit: SL Hit at candle[312], price=25489.75
+[Strategy12.8.2]   Net P&L: 5
+[Strategy12.8.2]   Stored last trade: long exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found at candle[317] - price returned between triggers
+[Strategy12.8.2]   Next scan will start from candle[318] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #11 (Session #5) - Scanning from candle[318]
+[Strategy12.8.2]   *** ALTERNATING LOGIC: Last trade was long with SL Hit, must trade short next ***
+[Strategy12.8.2]   Candle[318]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[319]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[320]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[321]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[322]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[323]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[324]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[325]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[326]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[327]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[328]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[329]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[330]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[331]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[332]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[333]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[334]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[335]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[336]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[337]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[338]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[339]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[340]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[341]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[342]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[343]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[344]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[345]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[346]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[347]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[348]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[349]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[350]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[351]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[352]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[353]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[354]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[355]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[356]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[357]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[358]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[359]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[360]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[361]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[362]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[363]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[364]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[365]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[366]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[367]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[368]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[369]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[370]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[371]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[372]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[373]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[374]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[375]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[376]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[377]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[378]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[379]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[380]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[381]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[382]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[383]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[384]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[385]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[386]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[387]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[388]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[389]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[390]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[391]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[392]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[393]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[394]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[395]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[396]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[397]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[398]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[399]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[400]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[401]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[402]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[403]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[404]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[405]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[406]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[407]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[408]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[409]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[410]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[411]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[412]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[413]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[414]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[415]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[416]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[417]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[418]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[419]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[420]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[421]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[422]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[423]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[424]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[425]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[426]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[427]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[428]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[429]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[430]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[431]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[432]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[433]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[434]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[435]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[436]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[437]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[438]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[439]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[440]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[441]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[442]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[443]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[444]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[445]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[446]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[447]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[448]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[449]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[450]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[451]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[452]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[453]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[454]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[455]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[456]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[457]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[458]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[459]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[460]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[461]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[462]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[463]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[464]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[465]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[466]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[467]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[468]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[469]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[470]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[471]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[472]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[473]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[474]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[475]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[476]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[477]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[478]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[479]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[480]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[481]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[482]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[483]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[484]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[485]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[486]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[487]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[488]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[489]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[490]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[491]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[492]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[493]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[494]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[495]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[496]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[497]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[498]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[499]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[500]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[501]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[502]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[503]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[504]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[505]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[506]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[507]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[508]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[509]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[510]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[511]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[512]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[513]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[514]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[515]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[516]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[517]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[518]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[519]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[520]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[521]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[522]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[523]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[524]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[525]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[526]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[527]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[528]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[529]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[530]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[531]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[532]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[533]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[534]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[535]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[536]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[537]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[538]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[539]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[540]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[541]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[542]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[543]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[544]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[545]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[546]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[547]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[548]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[549]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[550]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[551]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[552]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[553]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[554]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[555]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[556]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[557]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[558]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[559]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[560]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[561]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[562]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[563]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[564]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[565]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[566]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[567]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[568]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[569]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[570]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[571]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[572]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[573]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[574]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[575]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[576]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[577]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[578]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[579]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[580]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[581]: Alternating logic - only allowing SHORT trigger
+[Strategy12.8.2]   Candle[581] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25462.75 at 2025-12-03T09:39:41-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25463.75) + slippage (1) = 25462.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25470.75
+[Strategy12.8.2]   Exit: SL Hit at candle[582], price=25461.75
+[Strategy12.8.2]   Net P&L: 1
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[582] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[583] (after re-eligibility)
+[Strategy12.8.2] ----------------------------------------------------------------------
+[Strategy12.8.2] ROUND TRIP #12 (Session #6) - Scanning from candle[583]
+[Strategy12.8.2]   Candle[583] SHORT trigger hit
+[Strategy12.8.2]   Entry: 25462.75 at 2025-12-03T09:39:43-05:00
+[Strategy12.8.2]   Entry calculation: short trigger (25463.75) + slippage (1) = 25462.75
+[Strategy12.8.2]   TP: 25437.75 (based on currentStartPrice: 25473.75), Initial SL: 25470.75
+[Strategy12.8.2]   Exit: SL Hit at candle[584], price=25460.75
+[Strategy12.8.2]   Net P&L: 2
+[Strategy12.8.2]   Stored last trade: short exited with SL Hit
+[Strategy12.8.2]   Re-eligibility found on exit candle[584] - price between triggers
+[Strategy12.8.2]   Exit candle has eligible price - alternating logic will be overridden for next trade
+[Strategy12.8.2]   Next scan will start from candle[585] (after re-eligibility)
+[Strategy12.8.2]   Max round trips (6) reached for current session. Done.
+[Strategy12.8.2] ======================================================================
+[Strategy12.8.2] GENERATION COMPLETE: 24 rows (12 round trips)
+[Strategy12.8.2] ======================================================================
+
+Total rows: 24
+Open rows: 12
+Close rows: 12
+
+All trades with IDs and timestamps:
+  RT 1 (index 0): 9:30:02 - Open Long at 25506.25 [id: open-1]
+  RT 2 (index 1): 9:30:31 - Open Short at 25462.75 [id: open-2]
+  RT 3 (index 2): 9:30:37 - Open Short at 25462.75 [id: open-3]
+  RT 4 (index 3): 9:30:39 - Open Short at 25462.75 [id: open-4]
+  RT 5 (index 4): 9:31:28 - Open Long at 25484.75 [id: open-5]
+  RT 6 (index 5): 9:31:30 - Open Long at 25484.75 [id: open-6]
+  RT 7 (index 6): 9:35:03 - Open Long at 25484.75 [id: open-7]
+  RT 8 (index 7): 9:35:04 - Open Long at 25484.75 [id: open-8]
+  RT 9 (index 8): 9:35:06 - Open Long at 25484.75 [id: open-9]
+  RT 10 (index 9): 9:35:09 - Open Long at 25484.75 [id: open-10]
+  RT 11 (index 10): 9:39:41 - Open Short at 25462.75 [id: open-11]
+  RT 12 (index 11): 9:39:43 - Open Short at 25462.75 [id: open-12]
+
+Found RT #6 by ID: open-6
+  Open: 2025-12-03T09:31:30-05:00 at 25484.75 (Open Long)
+  Close: 2025-12-03T09:31:37-05:00 at 25509.75 (PT Hit) [id: close-6]
+  Net P&L: 25.00
+  ⚠️  Timestamp is 9:31:30 (not exactly 09:31:35)
+
+Found RT #6 at index 5
+
+RT #4 (index 3) is at 9:30:39 - closest to 09:31:35
+  Open: 2025-12-03T09:30:39-05:00 at 25462.75 (Open Short)
+  Close: 2025-12-03T09:30:40-05:00 at 25460.75 (SL Hit)
+  Net P&L: 2.00
+
+6th RT Trade Details (RT #6) - User says RT #6 matches 09:31:35 ET:
+  Open: 2025-12-03T09:31:30-05:00 at 25484.75 (Open Long)
+  Close: 2025-12-03T09:31:37-05:00 at 25509.75 (PT Hit)
+  Net P&L: 25.00
+  ✅ Found trade at 09:31 (9:31:30 - close to target 09:31:35)
+
+RT #5 Trade Details (had biggest upward move):
+  Open: 2025-12-03T09:31:28-05:00 at 25484.75 (Open Long)
+  Close: 2025-12-03T09:31:29-05:00 at 25486.75 (SL Hit)
+  Net P&L: 2.00
+
+🔍 DISCREPANCY ANALYSIS:
+  UI shows RT #6: 09:31:35, Price: 25502.25, Long
+  Test shows RT #6 (by ID): 9:31:30, Price: 25484.75, Open Long
+  No trade found at exactly 09:31:35
+  No trade found near price 25502.25
+  ⚠️  UI and test results don't match - UI may be using different parameters
+
+Analyzing RT #6 (by ID, index 5) for big upward move:
+
+  RT #6 Trade Duration: 8 candles
+  Entry Time: 2025-12-03T09:31:30-05:00
+  Exit Time: 2025-12-03T09:31:37-05:00
+  ✅ RT #6 is in the 09:31 time window (9:31:30 - matches target 09:31:35)
+
+  Entry Price: 25484.75
+  Max Price Reached: 25511.25
+  Min Price Reached: 25488.25
+  Max Unrealized Profit: 26.50pts
+  Max Drawdown: -3.50pts
+  Exit Price: 25509.75
+  Exit Note: PT Hit
+  Actual Net P&L: 25.00
+
+  Price Movement (all candles in trade):
+    Candle 0 [9:31:30]: high=25493.25, profit=8.50pts
+    Candle 1 [9:31:31]: high=25498.25, profit=13.50pts
+    Candle 2 [9:31:32]: high=25502.75, profit=18.00pts
+    Candle 3 [9:31:33]: high=25500.00, profit=15.25pts
+    Candle 4 [9:31:34]: high=25500.25, profit=15.50pts
+    Candle 5 [9:31:35]: high=25503.50, profit=18.75pts ⭐ TARGET
+    Candle 6 [9:31:36]: high=25503.50, profit=18.75pts
+    Candle 7 [9:31:37]: high=25511.25, profit=26.50pts
+
+  TP Price: 25531.25
+  Max Price: 25511.25
+  Distance to TP: 20.00pts
+  Almost hit TP? false (within 10pts)
+
+  ✅ BIG upward move detected (26.50pts)
+  Stepped SL should have locked in at least 8-12pts profit
+  ✅ Hit TP - that's profitable!
+
+Total Net P&L for all 12 RTs: 34.50
+
+All RTs:
+  RT 1: Open Long entry=25506.25, exit=25506.75 (SL Hit), net=0.50
+  RT 2: Open Short entry=25462.75, exit=25470.75 (SL Hit), net=-8.00
+  RT 3: Open Short entry=25462.75, exit=25461.75 (SL Hit), net=1.00
+  RT 4: Open Short entry=25462.75, exit=25460.75 (SL Hit), net=2.00
+  RT 5: Open Long entry=25484.75, exit=25486.75 (SL Hit), net=2.00
+  RT 6: Open Long entry=25484.75, exit=25509.75 (PT Hit), net=25.00
+  RT 7: Open Long entry=25484.75, exit=25484.75 (SL Hit), net=0.00
+  RT 8: Open Long entry=25484.75, exit=25486.75 (SL Hit), net=2.00
+  RT 9: Open Long entry=25484.75, exit=25486.75 (SL Hit), net=2.00
+  RT 10: Open Long entry=25484.75, exit=25489.75 (SL Hit), net=5.00
+  RT 11: Open Short entry=25462.75, exit=25461.75 (SL Hit), net=1.00
+  RT 12: Open Short entry=25462.75, exit=25460.75 (SL Hit), net=2.00
+
+======================================================================
+Analyzing all LONG trades for big upward moves:
+======================================================================
+
+RT 1 (LONG):
+  Entry: 25506.25, Max: 25507.50, Max Profit: 1.25pts
+  Exit: 25506.75 (SL Hit), Net: 0.50
+
+RT 5 (LONG):
+  Entry: 25484.75, Max: 25492.25, Max Profit: 7.50pts
+  Exit: 25486.75 (SL Hit), Net: 2.00
+
+RT 6 (LONG):
+  Entry: 25484.75, Max: 25511.25, Max Profit: 26.50pts
+  Exit: 25509.75 (PT Hit), Net: 25.00
+
+RT 7 (LONG):
+  Entry: 25484.75, Max: 25486.75, Max Profit: 2.00pts
+  Exit: 25484.75 (SL Hit), Net: 0.00
+
+RT 8 (LONG):
+  Entry: 25484.75, Max: 25490.50, Max Profit: 5.75pts
+  Exit: 25486.75 (SL Hit), Net: 2.00
+
+RT 9 (LONG):
+  Entry: 25484.75, Max: 25491.75, Max Profit: 7.00pts
+  Exit: 25486.75 (SL Hit), Net: 2.00
+
+RT 10 (LONG):
+  Entry: 25484.75, Max: 25494.75, Max Profit: 10.00pts
+  Exit: 25489.75 (SL Hit), Net: 5.00
+
+======================================================================
+BIGGEST UPWARD MOVE: RT #6
+  Entry: 25484.75
+  Max Price: 25511.25
+  Max Unrealized Profit: 26.50pts
+  Exit: 25509.75 (PT Hit)
+  Net P&L: 25.00
+======================================================================
+
+  ✅ VERY BIG upward move detected (26.50pts)
+  Stepped SL should have locked in at least 12pts profit
+
+ ❯ tests/unit/stepped-sl-comparison.test.ts (5 tests | 1 failed) 39ms
+     ✓ should generate trades for both strategies 7ms
+     ✓ should produce different net P&L for strategy12.8 vs strategy12.8.2 4ms
+     ✓ should show stepped SL updates in console logs 2ms
+       × should hit a profitable TP trade in the first interval (before 9:35) with trg=10, pt=36, sl=7 10ms
+       ✓ should have profitable stepped SL on 6th RT trade with big upward move (trg=10, pt=36, sl=7, maxRT=6) - CORRECTED URL: maxRT=6 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/stepped-sl-comparison.test.ts > Strategy 12.8 vs 12.8.2 Comparison - 2025-12-03 > Strategy 12.8.2 - Profitable TP Trade Test (2025-12-03) > should hit a profitable TP trade in the first interval (before 9:35) with trg=10, pt=36, sl=7
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/stepped-sl-comparison.test.ts:242:31
+    240|       // This test will fail if stepped SL is preventing TP hits
+    241|       const hasProfitableTP = tpHits.some(tp => (tp.net ?? 0) > 0);
+    242|       expect(hasProfitableTP).toBe(true);
+       |                               ^
+    243|       
+    244|       // Also verify net P&L is positive if we have TP hits
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  11:39:01
+   Duration  257ms (transform 114ms, setup 0ms, import 142ms, tests 39ms, environment 0ms)
+

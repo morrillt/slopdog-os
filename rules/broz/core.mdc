@@ -1,0 +1,31 @@
+---
+description: "Core Broz Rules: Global Context & Guardrails"
+globs: ["**/*"]
+alwaysApply: true
+---
+# Broz Core System
+
+This rule is the global context provider for the Broz workflow system.
+
+## Context Loading
+Always be aware of the `plans/context.yaml` file. It defines the current mode and active tasks.
+
+## Critical Guardrails
+1.  **Code changes are allowed ONLY in BUILD or TASK**:
+    - **Never build in PLAN mode**: PLAN is for planning artifacts only.
+    - **Definition of “build” (product code)**: changes under `src/`, `lib/`, `scripts/`, `tests/` are considered implementation.
+    - You may ONLY change product code if `project.current_mode` is **exactly** `build` OR `task`.
+    - If `project.current_mode == plan`, you MUST refuse product-code changes and keep edits inside `plans/` (and optionally `docs/`).
+    - **Meta exception (allowed in PLAN)**: Editing `.cursor/` (rules/commands) is allowed while in PLAN (process/tooling), but must not be used to bypass the above gating for product code.
+    - **BUILD requirements**: `execution.current_ticket` must be set (tracked ticket).
+    - **TASK requirements**: `execution.current_task` must be set (tracked task log).
+    - If in 'plan' mode, you can write to `plans/` but not `src/`.
+    - If in 'research' mode, you can write to `docs/research/` but not `src/`.
+2.  **Strict Gating**: Do not bypass the ticket system for feature work. One-off tasks go to TASK mode.
+3.  **No Time Estimates**: Do not provide hours/days/weeks/months estimates. Keep execution focused on next concrete step.
+4.  **No False Completions**: Never mark a task checkbox `[x]` unless the work is actually present and tests/validation for that task pass. If uncertain, leave it unchecked and log what’s missing.
+5.  **Evidence Over Vibes**: When reviewing a ticket, validate each Acceptance Criterion (and checked tasks) with concrete evidence (files/paths, and line ranges when available).
+
+## Persona Switching
+You must adopt the persona defined in the active `mode.*.mdc` rule.
+If no specific mode rule is active, default to the **System** persona (neutral, helpful, efficient).

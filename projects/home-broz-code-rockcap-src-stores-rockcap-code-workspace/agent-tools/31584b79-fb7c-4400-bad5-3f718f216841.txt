@@ -1,0 +1,973 @@
+
+Running 5 tests using 5 workers
+
+(node:423034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+(node:423041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:423035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[browser:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[browser:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[browser:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[browser:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[browser:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[WebServer]  ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+[WebServer] Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[browser:log] [HMR] connected
+[browser:log] [HMR] connected
+[browser:log] [HMR] connected
+[browser:log] [HMR] connected
+[browser:log] [HMR] connected
+[browser:log] [BacktestUI] chart script loaded
+[browser:log] [BacktestUI] chart script loaded
+[browser:log] [BacktestUI] chart script loaded
+[browser:log] [BacktestUI] chart script loaded
+[browser:log] [BacktestUI] chart script loaded
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] done in 325ms
+[browser:log] [Fast Refresh] done in 335ms
+[browser:log] [Fast Refresh] done in 351ms
+[browser:log] [Fast Refresh] done in 366ms
+[browser:log] [Fast Refresh] done in 380ms
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] rebuilding
+[browser:log] [Fast Refresh] done in 414ms
+[browser:log] [Fast Refresh] done in 407ms
+[browser:log] [Fast Refresh] done in 393ms
+[browser:log] [Fast Refresh] done in 403ms
+[browser:log] [Fast Refresh] done in 418ms
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-01 with preset pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-12-01 presetKey: pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt30, label: PT 30 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25255 Candle count: 1800
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25255, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6, candleCount: 1800}
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [AlgoGen]   Long Trigger  = 25255 + 5 = 25260
+[browser:log] [AlgoGen]   Short Trigger = 25255 - 5 = 25250
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-12-01T09:30:00.000-05:00 H=25261.75 L=25252.5 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[0]: direction=long
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Trigger candle: H=25261.75, L=25252.5
+[browser:log] [AlgoGen]   Entry price (worst-case): 25261
+[browser:log] [AlgoGen]   Entry timestamp: 2025-12-01T09:30:00.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 30 = 25291
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25255
+[browser:log] [AlgoGen]   Short trade: TP = entry - 30 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25291, SL=25255
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[1] H=25270.25 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[2] H=25275.5 L=25266.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[3] H=25271.75 L=25267.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[4] H=25274 L=25269.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[5] H=25274.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[6] H=25270 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[7] H=25265 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[8] H=25266.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[9] H=25274.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[10] H=25283 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[11] H=25281 L=25273.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[12] H=25278.75 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[13] H=25284 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[14] H=25286.25 L=25282.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[15] H=25286.5 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[16] H=25285.25 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[17] H=25281 L=25275.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[18] H=25280 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[19] H=25281.25 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[20] H=25286.5 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[21] H=25286.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[22] H=25283.75 L=25281 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[23] H=25286.75 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[24] H=25284.75 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[25] H=25284.5 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[26] H=25287.25 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[27] H=25289 L=25286.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[28] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[29] H=25287 L=25281.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[30] H=25284.5 L=25282 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[31] H=25288.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[32] H=25289 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[33] H=25286.5 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[34] H=25285.25 L=25282.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[35] H=25285 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[36] H=25283 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[37] H=25279.5 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[38] H=25281.75 L=25277.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[39] H=25285.5 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[40] H=25285.75 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[41] H=25279.75 L=25276 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[42] H=25277.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[43] H=25277.25 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[44] H=25276.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[45] H=25276.25 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[46] H=25276.25 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[47] H=25275 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[48] H=25274.75 L=25272.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[49] H=25276.25 L=25272 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[50] H=25278.75 L=25274.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[51] H=25280.75 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[52] H=25281.75 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[53] H=25282 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[54] H=25283.25 L=25280 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[55] H=25280.5 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[56] H=25280.75 L=25277.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[57] H=25280 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[58] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[59] H=25281 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[60] H=25286.5 L=25280.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[61] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[62] H=25287.5 L=25283 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[63] H=25284 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[64] H=25283.75 L=25279.75 | tpHit=false slHit=false
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-01 with preset pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-12-01 presetKey: pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt30, label: PT 30 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25255 Candle count: 1800
+[browser:log] [AlgoGen]   Candle[65] H=25283.5 L=25277.5 | tpHit=false slHit=false
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-01 with preset pt30
+[browser:log] [AlgoGen]   Candle[66] H=25278.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[67] H=25277.75 L=25275.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[68] H=25275.5 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[69] H=25277.25 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[70] H=25278 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[71] H=25280.75 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[72] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[73] H=25278.25 L=25275 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[74] H=25280.75 L=25274.25 | tpHit=false slHit=false
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-12-01 presetKey: pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt30, label: PT 30 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25255 Candle count: 1800
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-01 with preset pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-12-01 presetKey: pt30
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25255, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6, candleCount: 1800}
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [AlgoGen]   Long Trigger  = 25255 + 5 = 25260
+[browser:log] [AlgoGen]   Short Trigger = 25255 - 5 = 25250
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-12-01T09:30:00.000-05:00 H=25261.75 L=25252.5 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[0]: direction=long
+[browser:log] [AlgoGen]   Candle[75] H=25280.25 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[76] H=25277.75 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[77] H=25274 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[78] H=25275.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[79] H=25275 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[80] H=25272.75 L=25267 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[81] H=25269.5 L=25266 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[82] H=25272.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[83] H=25268.75 L=25262.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[84] H=25263 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[85] H=25262.75 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[86] H=25261.5 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[87] H=25260.5 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[88] H=25260.5 L=25258.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[89] H=25266.75 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[90] H=25269 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[91] H=25267 L=25263.25 | tpHit=false slHit=false
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt30, label: PT 30 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25255 Candle count: 1800
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Trigger candle: H=25261.75, L=25252.5
+[browser:log] [AlgoGen]   Entry price (worst-case): 25261
+[browser:log] [AlgoGen]   Entry timestamp: 2025-12-01T09:30:00.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 30 = 25291
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25255
+[browser:log] [AlgoGen]   Short trade: TP = entry - 30 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25291, SL=25255
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[1] H=25270.25 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[2] H=25275.5 L=25266.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[3] H=25271.75 L=25267.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[4] H=25274 L=25269.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[92] H=25264.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[93] H=25263 L=25261.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[94] H=25262 L=25259.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[95] H=25263.25 L=25260.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[96] H=25266.5 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[97] H=25265.75 L=25262.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[98] H=25262.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[99] H=25264.25 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[100] H=25262 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[101] H=25262.5 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[102] H=25260.25 L=25258.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[103] H=25258.5 L=25255.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[104] H=25261.25 L=25256.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen]   Candle[105] H=25263.25 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[106] H=25261 L=25258.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[107] H=25263 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[108] H=25260 L=25256.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[109] H=25259.75 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[110] H=25261.5 L=25258 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[111] H=25261 L=25257 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[112] H=25257.25 L=25250 | tpHit=false slHit=true
+[browser:log] [AlgoGen]   >>> SL HIT at candle[112] with slippage
+[browser:log] [AlgoGen]   >>> Exit: 25254 (SL ±1)
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25255, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6, candleCount: 1800}
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25261, Exit: 25254
+[browser:log] [AlgoGen]   Net = 25254 - 25261 = -7
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-12-01T09:30:00.000-05:00, type: Open Long, price: 25261, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-12-01T09:31:52.000-05:00, type: Close Long, price: 25254, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-12-01, pnl: -7, strategy: Easy Peasy Strategy}
+[browser:log] [AlgoGen]   Long Trigger  = 25255 + 5 = 25260
+[browser:log] [AlgoGen]   Short Trigger = 25255 - 5 = 25250
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-12-01T09:30:00.000-05:00 H=25261.75 L=25252.5 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[0]: direction=long
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25255, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6, candleCount: 1800}
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [AlgoGen]   Long Trigger  = 25255 + 5 = 25260
+[browser:log] [AlgoGen]   Short Trigger = 25255 - 5 = 25250
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-12-01T09:30:00.000-05:00 H=25261.75 L=25252.5 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[0]: direction=long
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Trigger candle: H=25261.75, L=25252.5
+[browser:log] [AlgoGen]   Trigger candle: H=25261.75, L=25252.5
+[browser:log] [AlgoGen]   Entry price (worst-case): 25261
+[browser:log] [AlgoGen]   Entry timestamp: 2025-12-01T09:30:00.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 30 = 25291
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25255
+[browser:log] [AlgoGen]   Short trade: TP = entry - 30 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25291, SL=25255
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[1] H=25270.25 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[2] H=25275.5 L=25266.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[3] H=25271.75 L=25267.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[4] H=25274 L=25269.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[5] H=25274.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[6] H=25270 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[7] H=25265 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[8] H=25266.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[9] H=25274.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[10] H=25283 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[11] H=25281 L=25273.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[12] H=25278.75 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[13] H=25284 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[14] H=25286.25 L=25282.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[15] H=25286.5 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[16] H=25285.25 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[17] H=25281 L=25275.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[18] H=25280 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[19] H=25281.25 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[20] H=25286.5 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Entry price (worst-case): 25261
+[browser:log] [AlgoGen]   Entry timestamp: 2025-12-01T09:30:00.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 30 = 25291
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25255
+[browser:log] [AlgoGen]   Short trade: TP = entry - 30 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25291, SL=25255
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[1] H=25270.25 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[5] H=25274.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[6] H=25270 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[7] H=25265 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[8] H=25266.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[9] H=25274.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[10] H=25283 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[11] H=25281 L=25273.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[12] H=25278.75 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[13] H=25284 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[14] H=25286.25 L=25282.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[15] H=25286.5 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[16] H=25285.25 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[17] H=25281 L=25275.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[18] H=25280 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[19] H=25281.25 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[2] H=25275.5 L=25266.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[20] H=25286.5 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[21] H=25286.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[22] H=25283.75 L=25281 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[3] H=25271.75 L=25267.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[23] H=25286.75 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[24] H=25284.75 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[25] H=25284.5 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[26] H=25287.25 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[27] H=25289 L=25286.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[28] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[29] H=25287 L=25281.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[4] H=25274 L=25269.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[5] H=25274.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[6] H=25270 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[30] H=25284.5 L=25282 | tpHit=false slHit=false
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [AlgoGen]   Candle[31] H=25288.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[7] H=25265 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[8] H=25266.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[9] H=25274.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[10] H=25283 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[32] H=25289 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[33] H=25286.5 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[34] H=25285.25 L=25282.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[35] H=25285 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[36] H=25283 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[37] H=25279.5 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[38] H=25281.75 L=25277.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[39] H=25285.5 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[40] H=25285.75 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[41] H=25279.75 L=25276 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[42] H=25277.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[43] H=25277.25 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[11] H=25281 L=25273.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[12] H=25278.75 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[13] H=25284 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[14] H=25286.25 L=25282.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[15] H=25286.5 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[16] H=25285.25 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[17] H=25281 L=25275.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[18] H=25280 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[19] H=25281.25 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[20] H=25286.5 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[21] H=25286.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[22] H=25283.75 L=25281 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[23] H=25286.75 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[24] H=25284.75 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[25] H=25284.5 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[26] H=25287.25 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[27] H=25289 L=25286.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[28] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[21] H=25286.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[22] H=25283.75 L=25281 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[23] H=25286.75 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[24] H=25284.75 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[25] H=25284.5 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[26] H=25287.25 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[27] H=25289 L=25286.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[28] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[29] H=25287 L=25281.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[30] H=25284.5 L=25282 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[31] H=25288.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[32] H=25289 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[33] H=25286.5 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[34] H=25285.25 L=25282.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[35] H=25285 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[36] H=25283 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[37] H=25279.5 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[38] H=25281.75 L=25277.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[39] H=25285.5 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[40] H=25285.75 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[41] H=25279.75 L=25276 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[42] H=25277.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[43] H=25277.25 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[29] H=25287 L=25281.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[30] H=25284.5 L=25282 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[44] H=25276.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[45] H=25276.25 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[46] H=25276.25 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[47] H=25275 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[48] H=25274.75 L=25272.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[49] H=25276.25 L=25272 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[44] H=25276.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[45] H=25276.25 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[46] H=25276.25 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[47] H=25275 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[48] H=25274.75 L=25272.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[49] H=25276.25 L=25272 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[50] H=25278.75 L=25274.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[51] H=25280.75 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[52] H=25281.75 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[53] H=25282 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[54] H=25283.25 L=25280 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[31] H=25288.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[32] H=25289 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[33] H=25286.5 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[34] H=25285.25 L=25282.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[55] H=25280.5 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[35] H=25285 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[36] H=25283 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[37] H=25279.5 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[38] H=25281.75 L=25277.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[39] H=25285.5 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[56] H=25280.75 L=25277.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[57] H=25280 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[40] H=25285.75 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[41] H=25279.75 L=25276 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[42] H=25277.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[43] H=25277.25 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[50] H=25278.75 L=25274.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[51] H=25280.75 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[52] H=25281.75 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[53] H=25282 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[54] H=25283.25 L=25280 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[55] H=25280.5 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[56] H=25280.75 L=25277.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[57] H=25280 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[58] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[58] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[59] H=25281 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[60] H=25286.5 L=25280.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[44] H=25276.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[45] H=25276.25 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[61] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[46] H=25276.25 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[47] H=25275 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[48] H=25274.75 L=25272.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[62] H=25287.5 L=25283 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[49] H=25276.25 L=25272 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[50] H=25278.75 L=25274.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[59] H=25281 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[51] H=25280.75 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[52] H=25281.75 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[53] H=25282 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[54] H=25283.25 L=25280 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[63] H=25284 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[64] H=25283.75 L=25279.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[55] H=25280.5 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[56] H=25280.75 L=25277.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[57] H=25280 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[58] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[59] H=25281 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[65] H=25283.5 L=25277.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[66] H=25278.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[60] H=25286.5 L=25280.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[61] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[62] H=25287.5 L=25283 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[63] H=25284 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[60] H=25286.5 L=25280.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[61] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[62] H=25287.5 L=25283 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[63] H=25284 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[64] H=25283.75 L=25279.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[65] H=25283.5 L=25277.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[66] H=25278.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[67] H=25277.75 L=25275.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[67] H=25277.75 L=25275.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[68] H=25275.5 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[69] H=25277.25 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[68] H=25275.5 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[69] H=25277.25 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[70] H=25278 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[71] H=25280.75 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[72] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[73] H=25278.25 L=25275 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[74] H=25280.75 L=25274.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[64] H=25283.75 L=25279.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[65] H=25283.5 L=25277.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[66] H=25278.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[67] H=25277.75 L=25275.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[75] H=25280.25 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[68] H=25275.5 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[69] H=25277.25 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[70] H=25278 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[70] H=25278 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[71] H=25280.75 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[72] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[73] H=25278.25 L=25275 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[74] H=25280.75 L=25274.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[75] H=25280.25 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[76] H=25277.75 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[76] H=25277.75 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[77] H=25274 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[78] H=25275.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[79] H=25275 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[80] H=25272.75 L=25267 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[71] H=25280.75 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[72] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[73] H=25278.25 L=25275 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[74] H=25280.75 L=25274.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[77] H=25274 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[78] H=25275.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[79] H=25275 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[75] H=25280.25 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[76] H=25277.75 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[77] H=25274 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[78] H=25275.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[79] H=25275 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[80] H=25272.75 L=25267 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[81] H=25269.5 L=25266 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[80] H=25272.75 L=25267 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[81] H=25269.5 L=25266 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[82] H=25272.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[83] H=25268.75 L=25262.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[84] H=25263 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[85] H=25262.75 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[86] H=25261.5 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[81] H=25269.5 L=25266 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[82] H=25272.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[83] H=25268.75 L=25262.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[84] H=25263 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[85] H=25262.75 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[87] H=25260.5 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[88] H=25260.5 L=25258.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[89] H=25266.75 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[90] H=25269 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[91] H=25267 L=25263.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[92] H=25264.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[93] H=25263 L=25261.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[94] H=25262 L=25259.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[95] H=25263.25 L=25260.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[96] H=25266.5 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[97] H=25265.75 L=25262.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[98] H=25262.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[86] H=25261.5 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[87] H=25260.5 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[88] H=25260.5 L=25258.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[89] H=25266.75 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[90] H=25269 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[91] H=25267 L=25263.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[92] H=25264.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[93] H=25263 L=25261.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[94] H=25262 L=25259.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[95] H=25263.25 L=25260.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[82] H=25272.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[83] H=25268.75 L=25262.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[84] H=25263 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[85] H=25262.75 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[86] H=25261.5 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[87] H=25260.5 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[88] H=25260.5 L=25258.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[89] H=25266.75 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[96] H=25266.5 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[90] H=25269 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[97] H=25265.75 L=25262.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[98] H=25262.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[99] H=25264.25 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[91] H=25267 L=25263.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[100] H=25262 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[92] H=25264.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[99] H=25264.25 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[100] H=25262 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[101] H=25262.5 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[102] H=25260.25 L=25258.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[103] H=25258.5 L=25255.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[93] H=25263 L=25261.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[94] H=25262 L=25259.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[95] H=25263.25 L=25260.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[96] H=25266.5 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[104] H=25261.25 L=25256.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[105] H=25263.25 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[106] H=25261 L=25258.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[107] H=25263 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[97] H=25265.75 L=25262.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[98] H=25262.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[99] H=25264.25 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[108] H=25260 L=25256.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[109] H=25259.75 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[100] H=25262 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[101] H=25262.5 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[110] H=25261.5 L=25258 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[111] H=25261 L=25257 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[102] H=25260.25 L=25258.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[103] H=25258.5 L=25255.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[104] H=25261.25 L=25256.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[105] H=25263.25 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[106] H=25261 L=25258.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[112] H=25257.25 L=25250 | tpHit=false slHit=true
+[browser:log] [AlgoGen]   >>> SL HIT at candle[112] with slippage
+[browser:log] [AlgoGen]   Candle[107] H=25263 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[108] H=25260 L=25256.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   >>> Exit: 25254 (SL ±1)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25261, Exit: 25254
+[browser:log] [AlgoGen]   Net = 25254 - 25261 = -7
+[browser:log] [AlgoGen]   Candle[101] H=25262.5 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[102] H=25260.25 L=25258.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[103] H=25258.5 L=25255.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[104] H=25261.25 L=25256.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[105] H=25263.25 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[106] H=25261 L=25258.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[107] H=25263 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[108] H=25260 L=25256.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[109] H=25259.75 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[110] H=25261.5 L=25258 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[111] H=25261 L=25257 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[112] H=25257.25 L=25250 | tpHit=false slHit=true
+[browser:log] [AlgoGen]   >>> SL HIT at candle[112] with slippage
+[browser:log] [AlgoGen]   >>> Exit: 25254 (SL ±1)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25261, Exit: 25254
+[browser:log] [AlgoGen]   Net = 25254 - 25261 = -7
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-12-01T09:30:00.000-05:00, type: Open Long, price: 25261, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-12-01T09:31:52.000-05:00, type: Close Long, price: 25254, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-12-01T09:30:00.000-05:00, type: Open Long, price: 25261, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-12-01T09:31:52.000-05:00, type: Close Long, price: 25254, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-12-01, pnl: -7, strategy: Easy Peasy Strategy}
+[browser:log] [AlgoGen]   Candle[109] H=25259.75 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[110] H=25261.5 L=25258 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[111] H=25261 L=25257 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[112] H=25257.25 L=25250 | tpHit=false slHit=true
+[browser:log] [AlgoGen]   >>> SL HIT at candle[112] with slippage
+[browser:log] [AlgoGen]   >>> Exit: 25254 (SL ±1)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25261, Exit: 25254
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-12-01, pnl: -7, strategy: Easy Peasy Strategy}
+[browser:log] [AlgoGen]   Net = 25254 - 25261 = -7
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-12-01T09:30:00.000-05:00, type: Open Long, price: 25261, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-12-01T09:31:52.000-05:00, type: Close Long, price: 25254, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-12-01, pnl: -7, strategy: Easy Peasy Strategy}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-01 with preset pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-12-01 presetKey: pt30
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt30, label: PT 30 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25255 Candle count: 1800
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25255, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6, candleCount: 1800}
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [AlgoGen]   Long Trigger  = 25255 + 5 = 25260
+[browser:log] [AlgoGen]   Short Trigger = 25255 - 5 = 25250
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-12-01T09:30:00.000-05:00 H=25261.75 L=25252.5 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[0]: direction=long
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Trigger candle: H=25261.75, L=25252.5
+[browser:log] [AlgoGen]   Entry price (worst-case): 25261
+[browser:log] [AlgoGen]   Entry timestamp: 2025-12-01T09:30:00.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 30 = 25291
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25255
+[browser:log] [AlgoGen]   Short trade: TP = entry - 30 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25291, SL=25255
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[1] H=25270.25 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[2] H=25275.5 L=25266.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[3] H=25271.75 L=25267.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[4] H=25274 L=25269.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[5] H=25274.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[6] H=25270 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[7] H=25265 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[8] H=25266.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[9] H=25274.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[10] H=25283 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[11] H=25281 L=25273.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[12] H=25278.75 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[13] H=25284 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[14] H=25286.25 L=25282.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[15] H=25286.5 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[16] H=25285.25 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[17] H=25281 L=25275.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[18] H=25280 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[19] H=25281.25 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[20] H=25286.5 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[21] H=25286.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[22] H=25283.75 L=25281 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[23] H=25286.75 L=25283.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[24] H=25284.75 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[25] H=25284.5 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[26] H=25287.25 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[27] H=25289 L=25286.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[28] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[29] H=25287 L=25281.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[30] H=25284.5 L=25282 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[31] H=25288.25 L=25282.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[32] H=25289 L=25285.75 | tpHit=false slHit=false
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [AlgoGen]   Candle[33] H=25286.5 L=25283.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[34] H=25285.25 L=25282.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[35] H=25285 L=25281.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[36] H=25283 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[37] H=25279.5 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[38] H=25281.75 L=25277.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[39] H=25285.5 L=25281.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[40] H=25285.75 L=25279.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[41] H=25279.75 L=25276 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[42] H=25277.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[43] H=25277.25 L=25274 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[44] H=25276.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[45] H=25276.25 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[46] H=25276.25 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[47] H=25275 L=25273.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[48] H=25274.75 L=25272.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[49] H=25276.25 L=25272 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[50] H=25278.75 L=25274.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[51] H=25280.75 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[52] H=25281.75 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[53] H=25282 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[54] H=25283.25 L=25280 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[55] H=25280.5 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[56] H=25280.75 L=25277.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[57] H=25280 L=25278.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[58] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[59] H=25281 L=25279 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[60] H=25286.5 L=25280.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[61] H=25288 L=25285.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[62] H=25287.5 L=25283 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[63] H=25284 L=25280.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[64] H=25283.75 L=25279.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[65] H=25283.5 L=25277.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[66] H=25278.25 L=25275.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[67] H=25277.75 L=25275.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[68] H=25275.5 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[69] H=25277.25 L=25273.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[70] H=25278 L=25274.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[71] H=25280.75 L=25276.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[72] H=25279.75 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[73] H=25278.25 L=25275 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[74] H=25280.75 L=25274.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[75] H=25280.25 L=25276.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[76] H=25277.75 L=25273 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[77] H=25274 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[78] H=25275.5 L=25272.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[79] H=25275 L=25271 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[80] H=25272.75 L=25267 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[81] H=25269.5 L=25266 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[82] H=25272.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[83] H=25268.75 L=25262.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[84] H=25263 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[85] H=25262.75 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[86] H=25261.5 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[87] H=25260.5 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[88] H=25260.5 L=25258.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[89] H=25266.75 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[90] H=25269 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[91] H=25267 L=25263.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[92] H=25264.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[93] H=25263 L=25261.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[94] H=25262 L=25259.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[95] H=25263.25 L=25260.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[96] H=25266.5 L=25262.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[97] H=25265.75 L=25262.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[98] H=25262.75 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[99] H=25264.25 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[100] H=25262 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[101] H=25262.5 L=25260 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[102] H=25260.25 L=25258.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[103] H=25258.5 L=25255.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[104] H=25261.25 L=25256.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[105] H=25263.25 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[106] H=25261 L=25258.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[107] H=25263 L=25259 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[108] H=25260 L=25256.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[109] H=25259.75 L=25257.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[110] H=25261.5 L=25258 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[111] H=25261 L=25257 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[112] H=25257.25 L=25250 | tpHit=false slHit=true
+[browser:log] [AlgoGen]   >>> SL HIT at candle[112] with slippage
+[browser:log] [AlgoGen]   >>> Exit: 25254 (SL ±1)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25261, Exit: 25254
+[browser:log] [AlgoGen]   Net = 25254 - 25261 = -7
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-12-01T09:30:00.000-05:00, type: Open Long, price: 25261, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-12-01T09:31:52.000-05:00, type: Close Long, price: 25254, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-12-01, pnl: -7, strategy: Easy Peasy Strategy}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-01 with preset pt20
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-12-01 presetKey: pt20
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt20, label: PT 20 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 20, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25255 Candle count: 1800
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25255, triggerPts: 5, profitTargetPts: 20, stopLossPts: 6, candleCount: 1800}
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [AlgoGen]   Long Trigger  = 25255 + 5 = 25260
+[browser:log] [AlgoGen]   Short Trigger = 25255 - 5 = 25250
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-12-01T09:30:00.000-05:00 H=25261.75 L=25252.5 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[0]: direction=long
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Trigger candle: H=25261.75, L=25252.5
+[browser:log] [AlgoGen]   Entry price (worst-case): 25261
+[browser:log] [AlgoGen]   Entry timestamp: 2025-12-01T09:30:00.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 20 = 25281
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25255
+[browser:log] [AlgoGen]   Short trade: TP = entry - 20 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25281, SL=25255
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[1] H=25270.25 L=25261 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[2] H=25275.5 L=25266.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[3] H=25271.75 L=25267.75 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[4] H=25274 L=25269.25 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[5] H=25274.25 L=25269 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[6] H=25270 L=25260.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[7] H=25265 L=25259.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[8] H=25266.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[9] H=25274.75 L=25263.5 | tpHit=false slHit=false
+[browser:log] [AlgoGen]   Candle[10] H=25283 L=25274.5 | tpHit=true slHit=false
+[browser:log] [AlgoGen]   >>> PT HIT at candle[10] with slippage
+[browser:log] [AlgoGen]   >>> Exit: 25280 (TP ±1)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25261, Exit: 25280
+[browser:log] [AlgoGen]   Net = 25280 - 25261 = 19
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-12-01T09:30:00.000-05:00, type: Open Long, price: 25261, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-12-01T09:30:10.000-05:00, type: Close Long, price: 25280, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-12-01, pnl: 19, strategy: Easy Peasy Strategy}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+  ✓  5 [chromium] › tests/e2e/backtest.e2e.spec.ts:118:5 › algo trades table shows timestamps in ET format (4.2s)
+[browser:log] [BacktestUI] skipping trades chart render to avoid null values 51005
+[browser:log] [BacktestUI] Generating algo trades for 2025-11-28 with preset pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Called. activeDate: 2025-11-28 presetKey: pt30
+[browser:log] [Hook:generateAlgoTradesForDay] Using preset: {key: pt30, label: PT 30 / SL 6 / TRG 5, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6}
+[browser:log] [Hook:generateAlgoTradesForDay] Start price: 25358 Candle count: 1714
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25358, triggerPts: 5, profitTargetPts: 30, stopLossPts: 6, candleCount: 1714}
+[browser:log] [AlgoGen] STEP 1 - Triggers calculated:
+[browser:log] [AlgoGen]   Long Trigger  = 25358 + 5 = 25363
+[browser:log] [AlgoGen]   Short Trigger = 25358 - 5 = 25353
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 2 - Scanning for first trigger crossing...
+[browser:log] [AlgoGen]   Candle[0] time=2025-11-28T09:30:00.000-05:00 H=25362.5 L=25357.5 | longHit=false shortHit=false
+[browser:log] [AlgoGen]   Candle[1] time=2025-11-28T09:30:01.000-05:00 H=25358.5 L=25353.75 | longHit=false shortHit=false
+[browser:log] [AlgoGen]   Candle[2] time=2025-11-28T09:30:02.000-05:00 H=25358.5 L=25354 | longHit=false shortHit=false
+[browser:log] [AlgoGen]   Candle[3] time=2025-11-28T09:30:03.000-05:00 H=25363.5 L=25357.25 | longHit=true shortHit=false
+[browser:log] [AlgoGen]   >>> TRIGGER FOUND at candle[3]: direction=long
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 3 - Calculating entry price (trigger price ±1)...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Trigger candle: H=25363.5, L=25357.25
+[browser:log] [AlgoGen]   Entry price (worst-case): 25364
+[browser:log] [AlgoGen]   Entry timestamp: 2025-11-28T09:30:03.000-05:00
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 4 - Calculating TP and SL...
+[browser:log] [AlgoGen]   Long trade: TP = entry + 30 = 25394
+[browser:log] [AlgoGen]   Long trade: SL = entry - 6 = 25358
+[browser:log] [AlgoGen]   Short trade: TP = entry - 30 = N/A
+[browser:log] [AlgoGen]   Short trade: SL = entry + 6 = N/A
+[browser:log] [AlgoGen]   Final: TP=25394, SL=25358
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 5 - Scanning for exit (TP/SL/EOD)...
+[browser:log] [AlgoGen]   Candle[4] H=25363 L=25357.25 | tpHit=false slHit=true
+[browser:log] [AlgoGen]   >>> SL HIT at candle[4] with slippage
+[browser:log] [AlgoGen]   >>> Exit: 25357 (SL ±1)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 6 - Calculating net P&L...
+[browser:log] [AlgoGen]   Direction: long
+[browser:log] [AlgoGen]   Entry: 25364, Exit: 25357
+[browser:log] [AlgoGen]   Net = 25357 - 25364 = -7
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] STEP 7 - Building result rows...
+[browser:log] [AlgoGen] RESULT:
+[browser:log] [AlgoGen]   Open row: {id: open, timestamp: 2025-11-28T09:30:03.000-05:00, type: Open Long, price: 25364, slippage: 1}
+[browser:log] [AlgoGen]   Close row: {id: close, timestamp: 2025-11-28T09:30:04.000-05:00, type: Close Long, price: 25357, slippage: -1}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [Hook:generateAlgoTradesForDay] Generated rows: [Object, Object]
+[browser:log] [Hook:generateAlgoTradesForDay] Saved strategy result: {date: 2025-11-28, pnl: -7, strategy: Easy Peasy Strategy}
+[browser:log] [BacktestUI] setting candle data 1714 {dropped: 0, original: 1714}
+  ✓  2 [chromium] › tests/e2e/backtest.e2e.spec.ts:33:5 › loads latest day with start + triggers and captures screenshot (4.4s)
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800}
+[browser:log] [BacktestUI] setting candle data 1714 {dropped: 0, original: 1714}
+  ✓  4 [chromium] › tests/e2e/backtest.e2e.spec.ts:48:5 › series toggle keeps algo-derived entry across view changes (4.5s)
+  ✓  1 [chromium] › tests/e2e/backtest.e2e.spec.ts:90:5 › preset changes recompute TP/SL from algo entry (4.9s)
+  ✓  3 [chromium] › tests/e2e/backtest.e2e.spec.ts:69:5 › day navigation regenerates algo entry for each day (5.0s)
+
+  5 passed (6.0s)

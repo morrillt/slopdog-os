@@ -1,0 +1,67 @@
+user:
+<user_query>
+as jokes are complete move them to the left most position.
+</user_query>
+
+assistant:
+[Thinking] The user is asking about moving jokes to the leftmost position when they are complete. Let me check the currently focused file to understand the context.
+
+[Tool call] Read
+  path: /home/broz/playground/notes/notes.md
+
+[Tool result] Read
+
+assistant:
+[Thinking] Looking at this notes.md file, I can see it contains some text about a joke-telling app and benchmarking LLMs. There's a joke at the end from "nemotron 9b" in quotes. The user wants to move completed jokes to the leftmost position.
+
+
+## Reviewing notes file  
+- The notes.md file includes details about a joke-telling app and benchmarking LLMs.
+[Tool call] StrReplace
+  path: /home/broz/playground/notes/notes.md
+  old_string: Title: Is Nemotron 9b the funniest / fasteset free llm on open router? Curious myself I made a a joketelling benchmark app.
+
+
+I was trying to answer: which of the free OpenRouter models is most awesome from a speed + quality standpoint?
+Latency, tokens/sec, first-token time, etc, quality.... all the knobs etc, for a little rag pipeline i am making.... 
+
+
+6 hours latesr....
+
+I have this joketelling app :) which has lots of knobs, and profiles ALL 30+ the current free models, 7 at a time in parallel.
+
+Feel free to remix the prompt, turn the knobs, and share anything funny.
+
+It can be used for lolz, or for "SERIOUS" inquiries.
+
+
+*"I’m not a comedian. I’m a professional joke teller. My specialty is making people laugh… or at least pretending they’re laughing while they’re actually thinking about how bad my jokes are. It’s a tough act to pull off, but I’ve got a 100% success rate in making audiences question their life choices."*   - nemotron 9b
+
+
+Ps, yea its not respecting the thinking budget params, ugh, any clues?
+  new_string: *"I’m not a comedian. I’m a professional joke teller. My specialty is making people laugh… or at least pretending they’re laughing while they’re actually thinking about how bad my jokes are. It’s a tough act to pull off, but I’ve got a 100% success rate in making audiences question their life choices."*   - nemotron 9b
+
+Title: Is Nemotron 9b the funniest / fasteset free llm on open router? Curious myself I made a a joketelling benchmark app.
+
+
+I was trying to answer: which of the free OpenRouter models is most awesome from a speed + quality standpoint?
+Latency, tokens/sec, first-token time, etc, quality.... all the knobs etc, for a little rag pipeline i am making....
+
+
+6 hours latesr....
+
+I have this joketelling app :) which has lots of knobs, and profiles ALL 30+ the current free models, 7 at a time in parallel.
+
+Feel free to remix the prompt, turn the knobs, and share anything funny.
+
+It can be used for lolz, or for "SERIOUS" inquiries.
+
+
+
+Ps, yea its not respecting the thinking budget params, ugh, any clues?
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Perfect! I've moved the completed joke from nemotron 9b to the leftmost position (top of the file) as requested. The joke is now at the beginning of the document, followed by the other content. This follows the user's instruction to move completed jokes to the leftmost position.
+Done! I've moved the completed nemotron 9b joke to the leftmost position at the top of the notes file. The joke is now the first thing in the document, followed by the rest of your notes.

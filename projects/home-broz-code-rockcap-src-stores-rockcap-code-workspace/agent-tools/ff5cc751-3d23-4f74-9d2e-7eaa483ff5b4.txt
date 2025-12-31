@@ -1,0 +1,1133 @@
+
+Running 1 test using 1 worker
+
+(node:163371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:163371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[browser:log] [useBacktest] Loading 1s candles from: /data/backtest/candles/2022-01-03_to_2025-12-04_1s_json/2025-12-02_1s.json
+[browser:log] [BacktestUI] chart script loaded
+[browser:log] [useBacktest] Loaded 1800 1s candles for 2025-12-02
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-02 with pt 42 sl 12 trg 15 maxRT 6 strategy 935startchange candleType 1s
+[browser:log] Module 935startchange Selected
+[browser:log] [BacktestUI] Raw candles sample: [Object, Object, Object]
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800, formattedLength: 1800, byTimeSize: 1800}
+[browser:log] [BacktestUI] Raw candles sample: [Object, Object, Object]
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800, formattedLength: 1800, byTimeSize: 1800}
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.7
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25492.75, triggerPts: 15, profitTargetPts: 42, stopLossPts: 12, maxRoundTrips: 6}
+[browser:log] [AlgoGen] 9:35 Transition:
+[browser:log] [AlgoGen]   9:35 candle index: 300
+[browser:log] [AlgoGen]   Original start price (9:30): 25492.75
+[browser:log] [AlgoGen]   New start price (9:35): 25526.25
+[browser:log] [AlgoGen] Initial Triggers (before 9:35):
+[browser:log] [AlgoGen]   Long Trigger  = 25492.75 + 15 = 25507.75
+[browser:log] [AlgoGen]   Short Trigger = 25492.75 - 15 = 25477.75
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[browser:log] [AlgoGen]   Candle[33] SHORT trigger hit
+[browser:log] [AlgoGen]   Entry: 25476.75 at 2025-12-02T09:30:33-05:00
+[browser:log] [AlgoGen]   TP: 25450.75 (based on currentStartPrice: 25492.75), SL: 25489.75
+[browser:log] [AlgoGen]   Exit: SL Hit at candle[103], price=25490.75
+[browser:log] [AlgoGen]   Net P&L: -14
+[browser:log] [AlgoGen]   Stored last trade: short exited with SL Hit
+[browser:log] [AlgoGen]   Re-eligibility found at candle[104] - price returned between triggers
+[browser:log] [AlgoGen]   Next scan will start from candle[105] (after re-eligibility)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] ROUND TRIP #2 (Session #2) - Scanning from candle[105]
+[browser:log] [AlgoGen]   *** ALTERNATING LOGIC: Last trade was short with SL Hit, must trade long next ***
+[browser:log] [AlgoGen]   Candle[105]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[106]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[107]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[108]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[109]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[110]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[111]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[112]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[113]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[114]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[115]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[116]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[117]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[118]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[119]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[120]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[121]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[122]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[123]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[124]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[125]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[126]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[127]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[128]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[129]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[130]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[131]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[132]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[133]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[134]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[135]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[136]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[137]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[138]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[139]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[140]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[141]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[142]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[143]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[144]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[145]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[146]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[147]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[148]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[149]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[150]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[151]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[151] LONG trigger hit
+[browser:log] [AlgoGen]   Entry: 25508.75 at 2025-12-02T09:32:31-05:00
+[browser:log] [AlgoGen]   TP: 25534.75 (based on currentStartPrice: 25492.75), SL: 25495.75
+[browser:log] [AlgoGen]   Exit: SL Hit at candle[155], price=25494.75
+[browser:log] [AlgoGen]   Net P&L: -14
+[browser:log] [AlgoGen]   Stored last trade: long exited with SL Hit
+[browser:log] [AlgoGen]   Re-eligibility found at candle[156] - price returned between triggers
+[browser:log] [AlgoGen]   Next scan will start from candle[157] (after re-eligibility)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] ROUND TRIP #3 (Session #3) - Scanning from candle[157]
+[browser:log] [AlgoGen]   *** ALTERNATING LOGIC: Last trade was long with SL Hit, must trade short next ***
+[browser:log] [AlgoGen]   Candle[157]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[158]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[159]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[160]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[161]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[162]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[163]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[164]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[165]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[166]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[167]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[168]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[169]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[170]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[171]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[172]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[173]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[174]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[175]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[176]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[177]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[178]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[179]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[180]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[181]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[182]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[183]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[184]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[185]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[186]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[187]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[188]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[189]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[190]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[191]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[192]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[193]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[194]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[195]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[196]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[197]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[198]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[199]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[200]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[201]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[202]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[203]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[204]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[205]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[206]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[207]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[208]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[209]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[210]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[211]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[212]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[213]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[214]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[215]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[216]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[217]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[218]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[219]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[220]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[221]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[222]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[223]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[224]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[225]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[226]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[227]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[228]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[229]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[230]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[231]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[232]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[233]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[234]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[235]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[236]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[237]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[238]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[239]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[240]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[241]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[242]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[243]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[244]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[245]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[246]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[247]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[248]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[249]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[250]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[251]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[252]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[253]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[254]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[255]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[256]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[257]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[258]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[259]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[260]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[261]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[262]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[263]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[264]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[265]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[266]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[267]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[268]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[269]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[270]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[271]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[272]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[273]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[274]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[275]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[276]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[277]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[278]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[279]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[280]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[281]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[282]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[283]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[284]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[285]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[286]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[287]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[288]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[289]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[290]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[291]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[292]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[293]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[294]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[295]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[296]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[297]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[298]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[299]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen] *** 9:35 RESET TRIGGERED (During Trigger Scan) ***
+[browser:log] [AlgoGen]   *** 9:35 TRANSITION at candle[300] ***
+[browser:log] [AlgoGen]   Start price switched: 25492.75 -> 25526.25
+[browser:log] [AlgoGen]   Triggers recalculated:
+[browser:log] [AlgoGen]     Long Trigger  = 25526.25 + 15 = 25541.25
+[browser:log] [AlgoGen]     Short Trigger = 25526.25 - 15 = 25511.25
+[browser:log] [AlgoGen]   Candle[300]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[301]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[302]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[303]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[304]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[305]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[306]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[307]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[308]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[309]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[310]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[311]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[312]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[313]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[314]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[315]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[316]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[317]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[318]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[319]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[320]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[321]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[322]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[323]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[324]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[325]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[326]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[327]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[328]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[329]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[330]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[331]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[332]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[333]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[334]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[335]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[336]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[337]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[338]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[339]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[340]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[341]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[342]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[343]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[344]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[345]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[346]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[347]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[348]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[349]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[350]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[351]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[352]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[353]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[354]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[355]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[356]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[357]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[358]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[359]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[360]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[361]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[362]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[363]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[364]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[365]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[366]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[367]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[368]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[369]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[370]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[371]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[372]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[373]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[374]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[375]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[376]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[377]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[378]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[379]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[380]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[381]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[382]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[383]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[384]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[385]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[386]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[387]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[388]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[389]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[390]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[391]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[392]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[393]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[394]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[395]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[396]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[397]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[398]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[399]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[400]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[401]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[402]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[403]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[404]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[405]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[406]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[407]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[408]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[409]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[410]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[411]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[412]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[413]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[414]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[415]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[416]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[417]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[418]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[419]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[420]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[421]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[422]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[423]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[424]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[425]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[426]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[427]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[428]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[429]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[430]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[431]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[432]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[433]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[434]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[435]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[436]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[437]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[438]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[439]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[440]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[441]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[442]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[443]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[444]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[445]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[446]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[447]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[448]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[449]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[450]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[451]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[452]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[453]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[454]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[455]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[456]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[457]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[458]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[459]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[460]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[461]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[462]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[463]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[464]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[465]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[466]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[467]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[468]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[469]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[470]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[471]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[472]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[473]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[474]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[475]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[476]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[477]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[478]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[479]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[480]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[481]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[482]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[483]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[484]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[485]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[486]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[487]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[488]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[489]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[490]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[491]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[492]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[493]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[494]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[495]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[496]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[497]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[498]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[499]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[500]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[501]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[502]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[503]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[504]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[505]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[506]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[507]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[508]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[509]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[510]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[511]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[512]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[513]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[514]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[515]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[516]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[517]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[518]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[519]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[520]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[521]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[522]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[523]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[524]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[525]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[526]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[527]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[528]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[529]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[530]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[531]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[532]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[533]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[534]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[535]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[536]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[537]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[538]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[539]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[540]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[541]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[542]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[543]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[544]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[545]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[546]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[547]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[548]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[549]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[550]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[551]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[552]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[553]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[554]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[555]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[556]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[557]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[558]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[559]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[560]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[561]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[562]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[563]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[564]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[565]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[566]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[567]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[568]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[569]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[570]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[571]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[572]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[573]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[574]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[575]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[576]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[577]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[578]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[579]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[580]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[581]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[582]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[583]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[584]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[585]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[586]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[587]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[588]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[589]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[590]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[591]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[592]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[593]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[594]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[595]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[596]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[597]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[598]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[599]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[600] is after cutoff time 09:40, stopping trade search
+[browser:log] [AlgoGen]   No trigger crossed from candle[157] onwards. Done.
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] GENERATION COMPLETE: 4 rows (3 round trips)
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [BacktestUI] Generating algo trades for 2025-12-02 with pt 42 sl 12 trg 15 maxRT 6 strategy strategy12.7 candleType 1s
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.7
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] Inputs: {startPrice: 25492.75, triggerPts: 15, profitTargetPts: 42, stopLossPts: 12, maxRoundTrips: 6}
+[browser:log] [AlgoGen] 9:35 Transition:
+[browser:log] [AlgoGen]   9:35 candle index: 300
+[browser:log] [AlgoGen]   Original start price (9:30): 25492.75
+[browser:log] [AlgoGen]   New start price (9:35): 25526.25
+[browser:log] [AlgoGen] Initial Triggers (before 9:35):
+[browser:log] [AlgoGen]   Long Trigger  = 25492.75 + 15 = 25507.75
+[browser:log] [AlgoGen]   Short Trigger = 25492.75 - 15 = 25477.75
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] ROUND TRIP #1 (Session #1) - Scanning from candle[0]
+[browser:log] [AlgoGen]   Candle[33] SHORT trigger hit
+[browser:log] [AlgoGen]   Entry: 25476.75 at 2025-12-02T09:30:33-05:00
+[browser:log] [AlgoGen]   TP: 25450.75 (based on currentStartPrice: 25492.75), SL: 25489.75
+[browser:log] [AlgoGen]   Exit: SL Hit at candle[103], price=25490.75
+[browser:log] [AlgoGen]   Net P&L: -14
+[browser:log] [AlgoGen]   Stored last trade: short exited with SL Hit
+[browser:log] [AlgoGen]   Re-eligibility found at candle[104] - price returned between triggers
+[browser:log] [AlgoGen]   Next scan will start from candle[105] (after re-eligibility)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] ROUND TRIP #2 (Session #2) - Scanning from candle[105]
+[browser:log] [AlgoGen]   *** ALTERNATING LOGIC: Last trade was short with SL Hit, must trade long next ***
+[browser:log] [AlgoGen]   Candle[105]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[106]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[107]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[108]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[109]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[110]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[111]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[112]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[113]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[114]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[115]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[116]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[117]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[118]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[119]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[120]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[121]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[122]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[123]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[124]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[125]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[126]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[127]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[128]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[129]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[130]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[131]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[132]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[133]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[134]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[135]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[136]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[137]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[138]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[139]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[140]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[141]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[142]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[143]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[144]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[145]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[146]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[147]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[148]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[149]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[150]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[151]: Alternating logic - only allowing LONG trigger
+[browser:log] [AlgoGen]   Candle[151] LONG trigger hit
+[browser:log] [AlgoGen]   Entry: 25508.75 at 2025-12-02T09:32:31-05:00
+[browser:log] [AlgoGen]   TP: 25534.75 (based on currentStartPrice: 25492.75), SL: 25495.75
+[browser:log] [AlgoGen]   Exit: SL Hit at candle[155], price=25494.75
+[browser:log] [AlgoGen]   Net P&L: -14
+[browser:log] [AlgoGen]   Stored last trade: long exited with SL Hit
+[browser:log] [AlgoGen]   Re-eligibility found at candle[156] - price returned between triggers
+[browser:log] [AlgoGen]   Next scan will start from candle[157] (after re-eligibility)
+[browser:log] [AlgoGen] ----------------------------------------------------------------------
+[browser:log] [AlgoGen] ROUND TRIP #3 (Session #3) - Scanning from candle[157]
+[browser:log] [AlgoGen]   *** ALTERNATING LOGIC: Last trade was long with SL Hit, must trade short next ***
+[browser:log] [AlgoGen]   Candle[157]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[158]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[159]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[160]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[161]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[162]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[163]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[164]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[165]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[166]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[167]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[168]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[169]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[170]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[171]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[172]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[173]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[174]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[175]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[176]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[177]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[178]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[179]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[180]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[181]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[182]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[183]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[184]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[185]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[186]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[187]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[188]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[189]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[190]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[191]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[192]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[193]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[194]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[195]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[196]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[197]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[198]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[199]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[200]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[201]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[202]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[203]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[204]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[205]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[206]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[207]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[208]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[209]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[210]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[211]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[212]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[213]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[214]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[215]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[216]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[217]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[218]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[219]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[220]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[221]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[222]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[223]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[224]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[225]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[226]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[227]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[228]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[229]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[230]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[231]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[232]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[233]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[234]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[235]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[236]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[237]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[238]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[239]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[240]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[241]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[242]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[243]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[244]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[245]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[246]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[247]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[248]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[249]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[250]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[251]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[252]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[253]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[254]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[255]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[256]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[257]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[258]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[259]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[260]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[261]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[262]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[263]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[264]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[265]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[266]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[267]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[268]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[269]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[270]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[271]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[272]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[273]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[274]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[275]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[276]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[277]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[278]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[279]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[280]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[281]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[282]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[283]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[284]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[285]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[286]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[287]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[288]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[289]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[290]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[291]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[292]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[293]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[294]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[295]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[296]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[297]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[298]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[299]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen] *** 9:35 RESET TRIGGERED (During Trigger Scan) ***
+[browser:log] [AlgoGen]   *** 9:35 TRANSITION at candle[300] ***
+[browser:log] [AlgoGen]   Start price switched: 25492.75 -> 25526.25
+[browser:log] [AlgoGen]   Triggers recalculated:
+[browser:log] [AlgoGen]     Long Trigger  = 25526.25 + 15 = 25541.25
+[browser:log] [AlgoGen]     Short Trigger = 25526.25 - 15 = 25511.25
+[browser:log] [AlgoGen]   Candle[300]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[301]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[302]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[303]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[304]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[305]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[306]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[307]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[308]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[309]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[310]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[311]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[312]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[313]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[314]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[315]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[316]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[317]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[318]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[319]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[320]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[321]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[322]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[323]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[324]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[325]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[326]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[327]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[328]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[329]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[330]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[331]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[332]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[333]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[334]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[335]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[336]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[337]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[338]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[339]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[340]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[341]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[342]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[343]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[344]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[345]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[346]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[347]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[348]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[349]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[350]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[351]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[352]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[353]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[354]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[355]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[356]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[357]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[358]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[359]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[360]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[361]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[362]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[363]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[364]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[365]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[366]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[367]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[368]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[369]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[370]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[371]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[372]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[373]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[374]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[375]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[376]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[377]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[378]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[379]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[380]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[381]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[382]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[383]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[384]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[385]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[386]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[387]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[388]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[389]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[390]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[391]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[392]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[393]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[394]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[395]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[396]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[397]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[398]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[399]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[400]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[401]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[402]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[403]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[404]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[405]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[406]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[407]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[408]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[409]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[410]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[411]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[412]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[413]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[414]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[415]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[416]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[417]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[418]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[419]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[420]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[421]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[422]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[423]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[424]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[425]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[426]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[427]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[428]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[429]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[430]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[431]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[432]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[433]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[434]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[435]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[436]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[437]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[438]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[439]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[440]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[441]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[442]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[443]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[444]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[445]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[446]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[447]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[448]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[449]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[450]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[451]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[452]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[453]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[454]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[455]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[456]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[457]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[458]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[459]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[460]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[461]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[462]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[463]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[464]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[465]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[466]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[467]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[468]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[469]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[470]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[471]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[472]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[473]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[474]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[475]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[476]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[477]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[478]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[479]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[480]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[481]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[482]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[483]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[484]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[485]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[486]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[487]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[488]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[489]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[490]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[491]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[492]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[493]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[494]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[495]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[496]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[497]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[498]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[499]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[500]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[501]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[502]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[503]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[504]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[505]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[506]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[507]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[508]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[509]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[510]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[511]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[512]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[513]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[514]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[515]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[516]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[517]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[518]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[519]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[520]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[521]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[522]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[523]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[524]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[525]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[526]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[527]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[528]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[529]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[530]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[531]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[532]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[533]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[534]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[535]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[536]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[537]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[538]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[539]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[540]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[541]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[542]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[543]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[544]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[545]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[546]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[547]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[548]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[549]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[550]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[551]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[552]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[553]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[554]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[555]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[556]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[557]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[558]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[559]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[560]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[561]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[562]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[563]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[564]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[565]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[566]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[567]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[568]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[569]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[570]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[571]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[572]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[573]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[574]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[575]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[576]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[577]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[578]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[579]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[580]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[581]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[582]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[583]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[584]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[585]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[586]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[587]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[588]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[589]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[590]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[591]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[592]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[593]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[594]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[595]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[596]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[597]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[598]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[599]: Alternating logic - only allowing SHORT trigger
+[browser:log] [AlgoGen]   Candle[600] is after cutoff time 09:40, stopping trade search
+[browser:log] [AlgoGen]   No trigger crossed from candle[157] onwards. Done.
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [AlgoGen] GENERATION COMPLETE: 4 rows (3 round trips)
+[browser:log] [AlgoGen] ======================================================================
+[browser:log] [BacktestUI] Raw candles sample: [Object, Object, Object]
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800, formattedLength: 1800, byTimeSize: 1800}
+[browser:log] [BacktestUI] Raw candles sample: [Object, Object, Object]
+[browser:log] [BacktestUI] setting candle data 1800 {dropped: 0, original: 1800, formattedLength: 1800, byTimeSize: 1800}
+Found 4 trade rows
+=== TRADE LOG START ===
+[12/02/2025, 09:30:33 ET] Open Short @ 25476.75 (—)
+[12/02/2025, 09:31:43 ET] Close Short @ 25490.75 (-14.00)
+[12/02/2025, 09:32:31 ET] Open Long @ 25508.75 (—)
+[12/02/2025, 09:32:35 ET] Close Long @ 25494.75 (-14.00)
+=== TRADE LOG END ===
+Has entry after 9:35: false
+  ✘  1 [chromium] › tests/e2e/strategy12dot7.spec.ts:4:7 › Strategy 12.7 E2E › should execute reset and forced close logic without errors (2.2s)
+
+
+  1) [chromium] › tests/e2e/strategy12dot7.spec.ts:4:7 › Strategy 12.7 E2E › should execute reset and forced close logic without errors 
+
+    Error: Should have a NEW trade entry at or after 9:35
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      73 |     
+      74 |     console.log(`Has entry after 9:35: ${hasEntryAfter935}`);
+    > 75 |     expect(hasEntryAfter935, "Should have a NEW trade entry at or after 9:35").toBeTruthy();
+         |                                                                                ^
+      76 |
+      77 |     const realErrors = errors.filter(err => 
+      78 |         !err.includes("Value is null") &&
+        at /home/broz/.cursor/worktrees/rockcap__Workspace_/vmf/tests/e2e/strategy12dot7.spec.ts:75:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/strategy12dot7-Strategy-12-51768--close-logic-without-errors-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/strategy12dot7-Strategy-12-51768--close-logic-without-errors-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/strategy12dot7-Strategy-12-51768--close-logic-without-errors-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/strategy12dot7.spec.ts:4:7 › Strategy 12.7 E2E › should execute reset and forced close logic without errors 

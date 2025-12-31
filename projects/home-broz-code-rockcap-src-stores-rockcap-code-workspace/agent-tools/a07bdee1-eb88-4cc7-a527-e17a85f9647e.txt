@@ -1,0 +1,531 @@
+
+> dl
+> node scripts/dl.js --skip-days 374
+
+Output path: data/trades/nq_trades_0930_1000_trades_2y_ohlcv1s.csv
+[downloader] Warning: OHLC_SCHEMA 'ohlcv-1s`' invalid. Falling back to ohlcv-1m. Allowed: ['bbo-1m', 'bbo-1s', 'cbbo-1m', 'cbbo-1s', 'cmbp-1', 'definition', 'imbalance', 'mbo', 'mbp-1', 'mbp-10', 'ohlcv-1d', 'ohlcv-1h', 'ohlcv-1m', 'ohlcv-1s', 'ohlcv-eod', 'statistics', 'status', 'tbbo', 'tcbbo', 'trades']
+Skipping first 374 day(s), resuming from day 375...
+
+Downloading NQ.FUT (ohlcv-1m) for 356 day(s) from 09:30 to 10:00 ET...
+
+Downloading:   0%|                                                | 0/356 [00:00<?, ?it/s]Downloading:   0%|                                        | 1/356 [00:05<34:12,  5.78s/it]Downloading:   1%|▍                                       | 4/356 [00:09<11:41,  1.99s/it]Downloading:   1%|▌                                       | 5/356 [00:12<14:21,  2.45s/it]Downloading:   2%|▋                                       | 6/356 [00:16<17:06,  2.93s/it]Downloading:   2%|▊                                       | 7/356 [00:20<17:30,  3.01s/it]Downloading:   2%|▉                                       | 8/356 [00:23<17:45,  3.06s/it]Downloading:   3%|█▏                                     | 11/356 [00:26<11:13,  1.95s/it]Downloading:   3%|█▎                                     | 12/356 [00:29<12:57,  2.26s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: No data found for the request you submitted.
+  store = client.timeseries.get_range(
+Downloading:   4%|█▍                                     | 13/356 [00:32<13:47,  2.41s/it]Downloading:   4%|█▌                                     | 14/356 [00:35<14:37,  2.57s/it]Downloading:   4%|█▋                                     | 15/356 [00:39<15:55,  2.80s/it]Downloading:   5%|█▉                                     | 18/356 [00:42<11:02,  1.96s/it]Downloading:   5%|██                                     | 19/356 [00:46<12:16,  2.19s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: No data found for the request you submitted.
+  store = client.timeseries.get_range(
+Downloading:   6%|██▏                                    | 20/356 [00:48<12:58,  2.32s/it]Downloading:   6%|██▎                                    | 21/356 [00:51<13:34,  2.43s/it]Downloading:   6%|██▍                                    | 22/356 [00:55<15:14,  2.74s/it]Downloading:   7%|██▋                                    | 25/356 [00:58<10:12,  1.85s/it]Downloading:   7%|██▊                                    | 26/356 [01:01<11:20,  2.06s/it]Downloading:   8%|██▉                                    | 27/356 [01:04<13:00,  2.37s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: No data found for the request you submitted.
+  store = client.timeseries.get_range(
+Downloading:   8%|███                                    | 28/356 [01:07<13:15,  2.43s/it]Downloading:   8%|███▏                                   | 29/356 [01:10<14:16,  2.62s/it]Downloading:   9%|███▌                                   | 32/356 [01:16<12:48,  2.37s/it]Downloading:   9%|███▌                                   | 33/356 [01:20<13:55,  2.59s/it]Downloading:  10%|███▋                                   | 34/356 [01:23<14:55,  2.78s/it]Downloading:  10%|███▊                                   | 35/356 [01:26<14:42,  2.75s/it]Downloading:  10%|███▉                                   | 36/356 [01:29<15:08,  2.84s/it]Downloading:  11%|████▎                                  | 39/356 [01:33<11:06,  2.10s/it]Downloading:  11%|████▍                                  | 40/356 [01:37<12:36,  2.40s/it]Downloading:  12%|████▍                                  | 41/356 [01:40<13:51,  2.64s/it]Downloading:  12%|████▌                                  | 42/356 [01:44<14:51,  2.84s/it]Downloading:  12%|████▋                                  | 43/356 [01:47<14:54,  2.86s/it]Downloading:  13%|█████                                  | 46/356 [01:50<10:00,  1.94s/it]Downloading:  13%|█████▏                                 | 47/356 [01:53<10:41,  2.08s/it]Downloading:  13%|█████▎                                 | 48/356 [01:57<12:39,  2.47s/it]Downloading:  14%|█████▎                                 | 49/356 [02:00<13:55,  2.72s/it]Downloading:  14%|█████▍                                 | 50/356 [02:03<14:22,  2.82s/it]Downloading:  15%|█████▊                                 | 53/356 [02:06<09:29,  1.88s/it]Downloading:  15%|█████▉                                 | 54/356 [02:10<11:23,  2.26s/it]Downloading:  15%|██████                                 | 55/356 [02:16<15:27,  3.08s/it]Downloading:  16%|██████▏                                | 56/356 [02:20<16:27,  3.29s/it]Downloading:  16%|██████▏                                | 57/356 [02:23<16:12,  3.25s/it]Downloading:  17%|██████▌                                | 60/356 [02:27<10:33,  2.14s/it]Downloading:  17%|██████▋                                | 61/356 [02:31<12:23,  2.52s/it]Downloading:  17%|██████▊                                | 62/356 [02:34<13:11,  2.69s/it]Downloading:  18%|██████▉                                | 63/356 [02:38<14:34,  2.99s/it]Downloading:  18%|███████                                | 64/356 [02:42<15:30,  3.19s/it]Downloading:  19%|███████▎                               | 67/356 [02:44<09:35,  1.99s/it]Downloading:  19%|███████▍                               | 68/356 [02:47<10:35,  2.21s/it]Downloading:  19%|███████▌                               | 69/356 [02:56<17:33,  3.67s/it]Downloading:  20%|███████▋                               | 70/356 [02:59<16:22,  3.44s/it]Downloading:  20%|███████▊                               | 71/356 [03:03<17:16,  3.64s/it]Downloading:  21%|████████                               | 74/356 [03:07<11:30,  2.45s/it]Downloading:  21%|████████▏                              | 75/356 [03:11<12:48,  2.73s/it]Downloading:  21%|████████▎                              | 76/356 [03:14<13:30,  2.90s/it]Downloading:  22%|████████▍                              | 77/356 [03:19<14:54,  3.21s/it]Downloading:  22%|████████▌                              | 78/356 [03:22<14:43,  3.18s/it]Downloading:  23%|████████▊                              | 81/356 [03:25<09:51,  2.15s/it]Downloading:  23%|████████▉                              | 82/356 [03:30<12:06,  2.65s/it]Downloading:  23%|█████████                              | 83/356 [03:33<12:43,  2.80s/it]Downloading:  24%|█████████▏                             | 84/356 [03:37<13:09,  2.90s/it]Downloading:  24%|█████████▎                             | 85/356 [03:40<13:20,  2.95s/it]Downloading:  25%|█████████▋                             | 88/356 [03:43<09:03,  2.03s/it]Downloading:  25%|█████████▊                             | 89/356 [03:47<10:30,  2.36s/it]Downloading:  25%|█████████▊                             | 90/356 [03:51<12:29,  2.82s/it]Downloading:  26%|█████████▉                             | 91/356 [03:55<13:33,  3.07s/it]Downloading:  26%|██████████                             | 92/356 [03:59<14:45,  3.35s/it]Downloading:  27%|██████████▍                            | 95/356 [04:02<09:02,  2.08s/it]Downloading:  27%|██████████▌                            | 96/356 [04:06<10:19,  2.38s/it]Downloading:  27%|██████████▋                            | 97/356 [04:11<12:54,  2.99s/it]Downloading:  28%|██████████▋                            | 98/356 [04:14<13:13,  3.08s/it]Downloading:  28%|██████████▊                            | 99/356 [04:18<13:39,  3.19s/it]Downloading:  29%|██████████▉                           | 102/356 [04:21<09:03,  2.14s/it]Downloading:  29%|██████████▉                           | 103/356 [04:24<09:51,  2.34s/it]Downloading:  29%|███████████                           | 104/356 [04:27<10:24,  2.48s/it]Downloading:  29%|███████████▏                          | 105/356 [04:30<10:45,  2.57s/it]Downloading:  30%|███████████▎                          | 106/356 [04:34<11:32,  2.77s/it]Downloading:  31%|███████████▋                          | 109/356 [04:37<07:30,  1.83s/it]Downloading:  31%|███████████▋                          | 110/356 [04:39<08:18,  2.03s/it]Downloading:  31%|███████████▊                          | 111/356 [04:44<10:17,  2.52s/it]Downloading:  31%|███████████▉                          | 112/356 [04:55<19:10,  4.72s/it]Downloading:  32%|████████████                          | 113/356 [05:02<20:49,  5.14s/it]Downloading:  33%|████████████▍                         | 116/356 [05:05<12:24,  3.10s/it]Downloading:  33%|████████████▍                         | 117/356 [05:09<13:07,  3.29s/it]Downloading:  33%|████████████▌                         | 118/356 [05:12<12:05,  3.05s/it]Downloading:  33%|████████████▋                         | 119/356 [05:16<12:57,  3.28s/it]Downloading:  34%|████████████▊                         | 120/356 [05:19<13:27,  3.42s/it]Downloading:  35%|█████████████▏                        | 123/356 [05:23<08:55,  2.30s/it]Day 2024-12-13: filtered to nearest expiry NQZ4 (30/95 rows)
+Day 2024-12-13: downloaded 30 rows
+Day 2024-12-16: filtered to nearest expiry NQZ4 (30/97 rows)
+Day 2024-12-16: downloaded 30 rows
+Day 2024-12-17: filtered to nearest expiry NQZ4 (30/91 rows)
+Day 2024-12-17: downloaded 30 rows
+Day 2024-12-18: filtered to nearest expiry NQZ4 (30/97 rows)
+Day 2024-12-18: downloaded 30 rows
+Day 2024-12-19: filtered to nearest expiry NQZ4 (30/94 rows)
+Day 2024-12-19: downloaded 30 rows
+Day 2024-12-20: filtered to nearest expiry NQH5 (30/58 rows)
+Day 2024-12-20: downloaded 30 rows
+Day 2024-12-23: filtered to nearest expiry NQH5 (30/53 rows)
+Day 2024-12-23: downloaded 30 rows
+Day 2024-12-24: filtered to nearest expiry NQH5 (30/41 rows)
+Day 2024-12-24: downloaded 30 rows
+Day 2024-12-25: no data returned
+Day 2024-12-26: filtered to nearest expiry NQH5 (30/61 rows)
+Day 2024-12-26: downloaded 30 rows
+Day 2024-12-27: filtered to nearest expiry NQH5 (30/57 rows)
+Day 2024-12-27: downloaded 30 rows
+Day 2024-12-30: filtered to nearest expiry NQH5 (30/63 rows)
+Day 2024-12-30: downloaded 30 rows
+Day 2024-12-31: filtered to nearest expiry NQH5 (30/55 rows)
+Day 2024-12-31: downloaded 30 rows
+Day 2025-01-01: no data returned
+Day 2025-01-02: filtered to nearest expiry NQH5 (30/76 rows)
+Day 2025-01-02: downloaded 30 rows
+Day 2025-01-03: filtered to nearest expiry NQH5 (30/64 rows)
+Day 2025-01-03: downloaded 30 rows
+Day 2025-01-06: filtered to nearest expiry NQH5 (30/62 rows)
+Day 2025-01-06: downloaded 30 rows
+Day 2025-01-07: filtered to nearest expiry NQH5 (30/52 rows)
+Day 2025-01-07: downloaded 30 rows
+Day 2025-01-08: filtered to nearest expiry NQH5 (30/66 rows)
+Day 2025-01-08: downloaded 30 rows
+Day 2025-01-09: no data returned
+Day 2025-01-10: filtered to nearest expiry NQH5 (30/68 rows)
+Day 2025-01-10: downloaded 30 rows
+Day 2025-01-13: filtered to nearest expiry NQH5 (30/64 rows)
+Day 2025-01-13: downloaded 30 rows
+Day 2025-01-14: filtered to nearest expiry NQH5 (30/59 rows)
+Day 2025-01-14: downloaded 30 rows
+Day 2025-01-15: filtered to nearest expiry NQH5 (30/67 rows)
+Day 2025-01-15: downloaded 30 rows
+Day 2025-01-16: filtered to nearest expiry NQH5 (30/52 rows)
+Day 2025-01-16: downloaded 30 rows
+Day 2025-01-17: filtered to nearest expiry NQH5 (30/58 rows)
+Day 2025-01-17: downloaded 30 rows
+Day 2025-01-20: filtered to nearest expiry NQH5 (30/50 rows)
+Day 2025-01-20: downloaded 30 rows
+Day 2025-01-21: filtered to nearest expiry NQH5 (30/58 rows)
+Day 2025-01-21: downloaded 30 rows
+Day 2025-01-22: filtered to nearest expiry NQH5 (30/63 rows)
+Day 2025-01-22: downloaded 30 rows
+Day 2025-01-23: filtered to nearest expiry NQH5 (30/45 rows)
+Day 2025-01-23: downloaded 30 rows
+Day 2025-01-24: filtered to nearest expiry NQH5 (30/43 rows)
+Day 2025-01-24: downloaded 30 rows
+Day 2025-01-27: filtered to nearest expiry NQH5 (30/63 rows)
+Day 2025-01-27: downloaded 30 rows
+Day 2025-01-28: filtered to nearest expiry NQH5 (30/72 rows)
+Day 2025-01-28: downloaded 30 rows
+Day 2025-01-29: filtered to nearest expiry NQH5 (30/58 rows)
+Day 2025-01-29: downloaded 30 rows
+Day 2025-01-30: filtered to nearest expiry NQH5 (30/62 rows)
+Day 2025-01-30: downloaded 30 rows
+Day 2025-01-31: filtered to nearest expiry NQH5 (30/59 rows)
+Day 2025-01-31: downloaded 30 rows
+Day 2025-02-03: filtered to nearest expiry NQH5 (30/72 rows)
+Day 2025-02-03: downloaded 30 rows
+Day 2025-02-04: filtered to nearest expiry NQH5 (30/65 rows)
+Day 2025-02-04: downloaded 30 rows
+Day 2025-02-05: filtered to nearest expiry NQH5 (30/63 rows)
+Day 2025-02-05: downloaded 30 rows
+Day 2025-02-06: filtered to nearest expiry NQH5 (30/55 rows)
+Day 2025-02-06: downloaded 30 rows
+Day 2025-02-07: filtered to nearest expiry NQH5 (30/62 rows)
+Day 2025-02-07: downloaded 30 rows
+Day 2025-02-10: filtered to nearest expiry NQH5 (30/50 rows)
+Day 2025-02-10: downloaded 30 rows
+Day 2025-02-11: filtered to nearest expiry NQH5 (30/59 rows)
+Day 2025-02-11: downloaded 30 rows
+Day 2025-02-12: filtered to nearest expiry NQH5 (30/69 rows)
+Day 2025-02-12: downloaded 30 rows
+Day 2025-02-13: filtered to nearest expiry NQH5 (30/63 rows)
+Day 2025-02-13: downloaded 30 rows
+Day 2025-02-14: filtered to nearest expiry NQH5 (30/48 rows)
+Day 2025-02-14: downloaded 30 rows
+Day 2025-02-17: filtered to nearest expiry NQH5 (30/35 rows)
+Day 2025-02-17: downloaded 30 rows
+Day 2025-02-18: filtered to nearest expiry NQH5 (30/61 rows)
+Day 2025-02-18: downloaded 30 rows
+Day 2025-02-19: filtered to nearest expiry NQH5 (30/44 rows)
+Day 2025-02-19: downloaded 30 rows
+Day 2025-02-20: filtered to nearest expiry NQH5 (30/64 rows)
+Day 2025-02-20: downloaded 30 rows
+Day 2025-02-21: filtered to nearest expiry NQH5 (30/55 rows)
+Day 2025-02-21: downloaded 30 rows
+Day 2025-02-24: filtered to nearest expiry NQH5 (30/74 rows)
+Day 2025-02-24: downloaded 30 rows
+Day 2025-02-25: filtered to nearest expiry NQH5 (30/71 rows)
+Day 2025-02-25: downloaded 30 rows
+Day 2025-02-26: filtered to nearest expiry NQH5 (30/78 rows)
+Day 2025-02-26: downloaded 30 rows
+Day 2025-02-27: filtered to nearest expiry NQH5 (30/81 rows)
+Day 2025-02-27: downloaded 30 rows
+Day 2025-02-28: filtered to nearest expiry NQH5 (30/84 rows)
+Day 2025-02-28: downloaded 30 rows
+Day 2025-03-03: filtered to nearest expiry NQH5 (30/84 rows)
+Day 2025-03-03: downloaded 30 rows
+Day 2025-03-04: filtered to nearest expiry NQH5 (30/89 rows)
+Day 2025-03-04: downloaded 30 rows
+Day 2025-03-05: filtered to nearest expiry NQH5 (30/87 rows)
+Day 2025-03-05: downloaded 30 rows
+Day 2025-03-06: filtered to nearest expiry NQH5 (30/88 rows)
+Day 2025-03-06: downloaded 30 rows
+Day 2025-03-07: filtered to nearest expiry NQH5 (30/82 rows)
+Day 2025-03-07: downloaded 30 rows
+Day 2025-03-10: filtered to nearest expiry NQH5 (30/91 rows)
+Day 2025-03-10: downloaded 30 rows
+Day 2025-03-11: filtered to nearest expiry NQH5 (30/91 rows)
+Day 2025-03-11: downloaded 30 rows
+Day 2025-03-12: filtered to nearest expiry NQH5 (30/95 rows)
+Day 2025-03-12: downloaded 30 rows
+Day 2025-03-13: filtered to nearest expiry NQH5 (30/95 rows)
+Day 2025-03-13: downloaded 30 rows
+Day 2025-03-14: filtered to nearest expiry NQH5 (30/94 rows)
+Day 2025-03-14: downloaded 30 rows
+Day 2025-03-17: filtered to nearest expiry NQH5 (30/101 rows)
+Day 2025-03-17: downloaded 30 rows
+Day 2025-03-18: filtered to nearest expiry NQH5 (30/99 rows)
+Day 2025-03-18: downloaded 30 rows
+Day 2025-03-19: filtered to nearest expiry NQH5 (30/91 rows)
+Day 2025-03-19: downloaded 30 rows
+Day 2025-03-20: filtered to nearest expiry NQH5 (30/93 rows)
+Day 2025-03-20: downloaded 30 rows
+Day 2025-03-21: filtered to nearest expiry NQM5 (30/74 rows)
+Day 2025-03-21: downloaded 30 rows
+Day 2025-03-24: filtered to nearest expiry NQM5 (30/51 rows)
+Day 2025-03-24: downloaded 30 rows
+Day 2025-03-25: filtered to nearest expiry NQM5 (30/43 rows)
+Day 2025-03-25: downloaded 30 rows
+Day 2025-03-26: filtered to nearest expiry NQM5 (30/45 rows)
+Day 2025-03-26: downloaded 30 rows
+Day 2025-03-27: filtered to nearest expiry NQM5 (30/65 rows)
+Day 2025-03-27: downloaded 30 rows
+Day 2025-03-28: filtered to nearest expiry NQM5 (30/57 rows)
+Day 2025-03-28: downloaded 30 rows
+Day 2025-03-31: filtered to nearest expiry NQM5 (30/69 rows)
+Day 2025-03-31: downloaded 30 rows
+Day 2025-04-01: filtered to nearest expiry NQM5 (30/70 rows)
+Day 2025-04-01: downloaded 30 rows
+Day 2025-04-02: filtered to nearest expiry NQM5 (30/62 rows)
+Day 2025-04-02: downloaded 30 rows
+Day 2025-04-03: filtered to nearest expiry NQM5 (30/57 rows)
+Day 2025-04-03: downloaded 30 rows
+Day 2025-04-04: filtered to nearest expiry NQM5 (30/75 rows)
+Day 2025-04-04: downloaded 30 rows
+Day 2025-04-07: filtered to nearest expiry NQM5 (30/78 rows)
+Day 2025-04-07: downloaded 30 rows
+Day 2025-04-08: filtered to nearest expiry NQM5 (30/78 rows)
+Day 2025-04-08: downloaded 30 rows
+Day 2025-04-09: filtered to nearest expiry NQM5 (30/74 rows)
+Day 2025-04-09: downloaded 30 rows
+Day 2025-04-10: filtered to nearest expiry NQM5 (30/64 rows)
+Day 2025-04-10: downloaded 30 rows
+Day 2025-04-11: filtered to nearest expiry NQM5 (30/69 rows)
+Day 2025-04-11: downloaded 30 rows
+Day 2025-04-14: filtered to nearest expiry NQM5 (30/65 rows)
+Day 2025-04-14: downloaded 30 rows
+Day 2025-04-15: filtered to nearest expiry NQM5 (30/45 rows)Downloading:  35%|█████████████▏                        | 124/356 [05:38<18:14,  4.72s/it]Downloading:  35%|█████████████▎                        | 125/356 [05:46<21:35,  5.61s/it]Downloading:  35%|█████████████▍                        | 126/356 [05:55<24:24,  6.37s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: No data found for the request you submitted.
+  store = client.timeseries.get_range(
+Downloading:  36%|█████████████▌                        | 127/356 [06:04<26:27,  6.93s/it]Downloading:  37%|█████████████▉                        | 130/356 [06:14<19:09,  5.09s/it]Downloading:  37%|█████████████▉                        | 131/356 [06:19<18:39,  4.97s/it]Downloading:  37%|██████████████                        | 132/356 [06:22<16:57,  4.54s/it]Downloading:  37%|██████████████▏                       | 133/356 [06:25<16:07,  4.34s/it]Downloading:  38%|██████████████▎                       | 134/356 [06:29<15:43,  4.25s/it]Downloading:  38%|██████████████▌                       | 137/356 [06:40<14:24,  3.95s/it]Downloading:  39%|██████████████▋                       | 138/356 [06:43<13:46,  3.79s/it]Downloading:  39%|██████████████▊                       | 139/356 [06:47<13:46,  3.81s/it]Downloading:  39%|██████████████▉                       | 140/356 [06:51<13:10,  3.66s/it]Downloading:  40%|███████████████                       | 141/356 [06:54<12:56,  3.61s/it]Downloading:  40%|███████████████▎                      | 144/356 [06:57<08:12,  2.32s/it]Downloading:  41%|███████████████▍                      | 145/356 [07:00<08:32,  2.43s/it]Downloading:  41%|███████████████▌                      | 146/356 [07:03<08:59,  2.57s/it]Downloading:  41%|███████████████▋                      | 147/356 [07:06<09:08,  2.63s/it]Downloading:  42%|███████████████▊                      | 148/356 [07:11<10:42,  3.09s/it]Downloading:  42%|████████████████                      | 151/356 [07:14<07:02,  2.06s/it]Downloading:  43%|████████████████▏                     | 152/356 [07:18<08:09,  2.40s/it]Downloading:  43%|████████████████▎                     | 153/356 [07:20<08:01,  2.37s/it]Downloading:  43%|████████████████▍                     | 154/356 [07:23<08:35,  2.55s/it]Downloading:  44%|████████████████▌                     | 155/356 [07:26<09:13,  2.76s/it]Downloading:  44%|████████████████▊                     | 158/356 [07:31<06:41,  2.03s/it]Downloading:  45%|████████████████▉                     | 159/356 [07:34<07:37,  2.32s/it]Downloading:  45%|█████████████████                     | 160/356 [07:41<10:54,  3.34s/it]Downloading:  45%|█████████████████▏                    | 161/356 [07:45<11:19,  3.49s/it]Downloading:  46%|█████████████████▎                    | 162/356 [07:50<12:26,  3.85s/it]Downloading:  46%|█████████████████▌                    | 165/356 [07:54<08:09,  2.56s/it]Downloading:  47%|█████████████████▋                    | 166/356 [07:58<08:43,  2.75s/it]Downloading:  47%|█████████████████▊                    | 167/356 [08:02<10:04,  3.20s/it]Downloading:  47%|█████████████████▉                    | 168/356 [08:06<10:24,  3.32s/it]Downloading:  47%|██████████████████                    | 169/356 [08:10<10:44,  3.45s/it]Downloading:  48%|██████████████████▎                   | 172/356 [08:14<07:21,  2.40s/it]Downloading:  49%|██████████████████▍                   | 173/356 [08:18<08:22,  2.75s/it]Downloading:  49%|██████████████████▌                   | 174/356 [08:22<09:04,  2.99s/it]Downloading:  49%|██████████████████▋                   | 175/356 [08:30<12:18,  4.08s/it]Downloading:  49%|██████████████████▊                   | 176/356 [08:33<11:55,  3.97s/it]Downloading:  50%|███████████████████                   | 179/356 [08:37<07:23,  2.51s/it]Downloading:  51%|███████████████████▏                  | 180/356 [08:40<07:54,  2.69s/it]Downloading:  51%|███████████████████▎                  | 181/356 [08:43<08:10,  2.80s/it]Downloading:  51%|███████████████████▍                  | 182/356 [08:48<09:14,  3.19s/it]Downloading:  51%|███████████████████▌                  | 183/356 [08:51<09:32,  3.31s/it]Downloading:  52%|███████████████████▊                  | 186/356 [08:54<05:47,  2.05s/it]Downloading:  53%|███████████████████▉                  | 187/356 [08:57<06:20,  2.25s/it]Downloading:  53%|████████████████████                  | 188/356 [09:01<06:59,  2.50s/it]Downloading:  53%|████████████████████▏                 | 189/356 [09:04<07:24,  2.66s/it]Downloading:  53%|████████████████████▎                 | 190/356 [09:07<07:28,  2.70s/it]Downloading:  54%|████████████████████▌                 | 193/356 [09:13<06:26,  2.37s/it]Downloading:  54%|████████████████████▋                 | 194/356 [09:16<06:52,  2.54s/it]Downloading:  55%|████████████████████▊                 | 195/356 [09:20<07:33,  2.82s/it]Downloading:  55%|████████████████████▉                 | 196/356 [09:24<08:18,  3.12s/it]Downloading:  55%|█████████████████████                 | 197/356 [09:27<08:10,  3.09s/it]Downloading:  56%|█████████████████████▎                | 200/356 [09:30<05:19,  2.05s/it]Downloading:  56%|█████████████████████▍                | 201/356 [09:33<05:54,  2.29s/it]Downloading:  57%|█████████████████████▌                | 202/356 [09:37<06:44,  2.62s/it]Downloading:  57%|█████████████████████▋                | 203/356 [09:41<07:39,  3.01s/it]Downloading:  57%|█████████████████████▊                | 204/356 [09:45<07:51,  3.10s/it]Downloading:  58%|██████████████████████                | 207/356 [09:48<05:09,  2.08s/it]Downloading:  58%|██████████████████████▏               | 208/356 [09:52<06:04,  2.46s/it]Downloading:  59%|██████████████████████▎               | 209/356 [09:55<06:18,  2.57s/it]Downloading:  59%|██████████████████████▍               | 210/356 [09:59<06:46,  2.79s/it]Downloading:  59%|██████████████████████▌               | 211/356 [10:02<07:01,  2.91s/it]Downloading:  60%|██████████████████████▊               | 214/356 [10:06<04:58,  2.10s/it]Downloading:  60%|██████████████████████▉               | 215/356 [10:09<05:28,  2.33s/it]Downloading:  61%|███████████████████████               | 216/356 [10:13<05:58,  2.56s/it]Downloading:  61%|███████████████████████▏              | 217/356 [10:17<06:42,  2.89s/it]Downloading:  61%|███████████████████████▎              | 218/356 [10:21<07:23,  3.21s/it]Downloading:  62%|███████████████████████▌              | 221/356 [10:24<04:42,  2.09s/it]Downloading:  62%|███████████████████████▋              | 222/356 [10:27<05:10,  2.31s/it]Downloading:  63%|███████████████████████▊              | 223/356 [10:31<05:38,  2.55s/it]Downloading:  63%|███████████████████████▉              | 224/356 [10:33<05:41,  2.58s/it]Downloading:  63%|████████████████████████              | 225/356 [10:38<06:34,  3.01s/it]Downloading:  64%|████████████████████████▎             | 228/356 [10:41<04:26,  2.08s/it]Downloading:  64%|████████████████████████▍             | 229/356 [10:45<04:55,  2.32s/it]Downloading:  65%|████████████████████████▌             | 230/356 [10:48<05:14,  2.49s/it]Downloading:  65%|████████████████████████▋             | 231/356 [10:51<05:38,  2.71s/it]Downloading:  65%|████████████████████████▊             | 232/356 [10:55<06:04,  2.94s/it]Downloading:  66%|█████████████████████████             | 235/356 [10:58<04:05,  2.03s/it]Downloading:  66%|█████████████████████████▏            | 236/356 [11:02<04:35,  2.30s/it]Downloading:  67%|█████████████████████████▎            | 237/356 [11:05<05:08,  2.59s/it]Downloading:  67%|█████████████████████████▍            | 238/356 [11:08<05:17,  2.69s/it]Downloading:  67%|█████████████████████████▌            | 239/356 [11:12<05:38,  2.89s/it]Downloading:  68%|█████████████████████████▊            | 242/356 [11:15<03:38,  1.92s/it]Downloading:  68%|█████████████████████████▉            | 243/356 [11:18<04:05,  2.18s/it]
+Day 2025-04-15: downloaded 30 rows
+Day 2025-04-16: filtered to nearest expiry NQM5 (30/48 rows)
+Day 2025-04-16: downloaded 30 rows
+Day 2025-04-17: filtered to nearest expiry NQM5 (30/56 rows)
+Day 2025-04-17: downloaded 30 rows
+Day 2025-04-18: no data returned
+Day 2025-04-21: filtered to nearest expiry NQM5 (30/55 rows)
+Day 2025-04-21: downloaded 30 rows
+Day 2025-04-22: filtered to nearest expiry NQM5 (30/57 rows)
+Day 2025-04-22: downloaded 30 rows
+Day 2025-04-23: filtered to nearest expiry NQM5 (30/64 rows)
+Day 2025-04-23: downloaded 30 rows
+Day 2025-04-24: filtered to nearest expiry NQM5 (30/55 rows)
+Day 2025-04-24: downloaded 30 rows
+Day 2025-04-25: filtered to nearest expiry NQM5 (30/51 rows)
+Day 2025-04-25: downloaded 30 rows
+Day 2025-04-28: filtered to nearest expiry NQM5 (30/45 rows)
+Day 2025-04-28: downloaded 30 rows
+Day 2025-04-29: filtered to nearest expiry NQM5 (30/44 rows)
+Day 2025-04-29: downloaded 30 rows
+Day 2025-04-30: filtered to nearest expiry NQM5 (30/69 rows)
+Day 2025-04-30: downloaded 30 rows
+Day 2025-05-01: filtered to nearest expiry NQM5 (30/75 rows)
+Day 2025-05-01: downloaded 30 rows
+Day 2025-05-02: filtered to nearest expiry NQM5 (30/62 rows)
+Day 2025-05-02: downloaded 30 rows
+Day 2025-05-05: filtered to nearest expiry NQM5 (30/52 rows)
+Day 2025-05-05: downloaded 30 rows
+Day 2025-05-06: filtered to nearest expiry NQM5 (30/59 rows)
+Day 2025-05-06: downloaded 30 rows
+Day 2025-05-07: filtered to nearest expiry NQM5 (30/47 rows)
+Day 2025-05-07: downloaded 30 rows
+Day 2025-05-08: filtered to nearest expiry NQM5 (30/62 rows)
+Day 2025-05-08: downloaded 30 rows
+Day 2025-05-09: filtered to nearest expiry NQM5 (30/42 rows)
+Day 2025-05-09: downloaded 30 rows
+Day 2025-05-12: filtered to nearest expiry NQM5 (30/60 rows)
+Day 2025-05-12: downloaded 30 rows
+Day 2025-05-13: filtered to nearest expiry NQM5 (30/67 rows)
+Day 2025-05-13: downloaded 30 rows
+Day 2025-05-14: filtered to nearest expiry NQM5 (30/67 rows)
+Day 2025-05-14: downloaded 30 rows
+Day 2025-05-15: filtered to nearest expiry NQM5 (30/55 rows)
+Day 2025-05-15: downloaded 30 rows
+Day 2025-05-16: filtered to nearest expiry NQM5 (30/48 rows)
+Day 2025-05-16: downloaded 30 rows
+Day 2025-05-19: filtered to nearest expiry NQM5 (30/60 rows)
+Day 2025-05-19: downloaded 30 rows
+Day 2025-05-20: filtered to nearest expiry NQM5 (30/57 rows)
+Day 2025-05-20: downloaded 30 rows
+Day 2025-05-21: filtered to nearest expiry NQM5 (30/65 rows)
+Day 2025-05-21: downloaded 30 rows
+Day 2025-05-22: filtered to nearest expiry NQM5 (30/66 rows)
+Day 2025-05-22: downloaded 30 rows
+Day 2025-05-23: filtered to nearest expiry NQM5 (30/59 rows)
+Day 2025-05-23: downloaded 30 rows
+Day 2025-05-26: filtered to nearest expiry NQM5 (30/37 rows)
+Day 2025-05-26: downloaded 30 rows
+Day 2025-05-27: filtered to nearest expiry NQM5 (30/50 rows)
+Day 2025-05-27: downloaded 30 rows
+Day 2025-05-28: filtered to nearest expiry NQM5 (30/59 rows)
+Day 2025-05-28: downloaded 30 rows
+Day 2025-05-29: filtered to nearest expiry NQM5 (30/82 rows)
+Day 2025-05-29: downloaded 30 rows
+Day 2025-05-30: filtered to nearest expiry NQM5 (30/66 rows)
+Day 2025-05-30: downloaded 30 rows
+Day 2025-06-02: filtered to nearest expiry NQM5 (30/82 rows)
+Day 2025-06-02: downloaded 30 rows
+Day 2025-06-03: filtered to nearest expiry NQM5 (30/56 rows)
+Day 2025-06-03: downloaded 30 rows
+Day 2025-06-04: filtered to nearest expiry NQM5 (30/65 rows)
+Day 2025-06-04: downloaded 30 rows
+Day 2025-06-05: filtered to nearest expiry NQM5 (30/75 rows)
+Day 2025-06-05: downloaded 30 rows
+Day 2025-06-06: filtered to nearest expiry NQM5 (30/76 rows)
+Day 2025-06-06: downloaded 30 rows
+Day 2025-06-09: filtered to nearest expiry NQM5 (30/74 rows)
+Day 2025-06-09: downloaded 30 rows
+Day 2025-06-10: filtered to nearest expiry NQM5 (30/82 rows)
+Day 2025-06-10: downloaded 30 rows
+Day 2025-06-11: filtered to nearest expiry NQM5 (30/90 rows)
+Day 2025-06-11: downloaded 30 rows
+Day 2025-06-12: filtered to nearest expiry NQM5 (30/95 rows)
+Day 2025-06-12: downloaded 30 rows
+Day 2025-06-13: filtered to nearest expiry NQM5 (30/92 rows)
+Day 2025-06-13: downloaded 30 rows
+Day 2025-06-16: filtered to nearest expiry NQM5 (30/104 rows)
+Day 2025-06-16: downloaded 30 rows
+Day 2025-06-17: filtered to nearest expiry NQM5 (30/91 rows)
+Day 2025-06-17: downloaded 30 rows
+Day 2025-06-18: filtered to nearest expiry NQM5 (30/94 rows)
+Day 2025-06-18: downloaded 30 rows
+Day 2025-06-19: filtered to nearest expiry NQM5 (30/97 rows)
+Day 2025-06-19: downloaded 30 rows
+Day 2025-06-20: filtered to nearest expiry NQU5 (30/59 rows)
+Day 2025-06-20: downloaded 30 rows
+Day 2025-06-23: filtered to nearest expiry NQU5 (30/44 rows)
+Day 2025-06-23: downloaded 30 rows
+Day 2025-06-24: filtered to nearest expiry NQU5 (30/43 rows)
+Day 2025-06-24: downloaded 30 rows
+Day 2025-06-25: filtered to nearest expiry NQU5 (30/45 rows)
+Day 2025-06-25: downloaded 30 rows
+Day 2025-06-26: filtered to nearest expiry NQU5 (30/49 rows)
+Day 2025-06-26: downloaded 30 rows
+Day 2025-06-27: filtered to nearest expiry NQU5 (30/49 rows)
+Day 2025-06-27: downloaded 30 rows
+Day 2025-06-30: filtered to nearest expiry NQU5 (30/44 rows)
+Day 2025-06-30: downloaded 30 rows
+Day 2025-07-01: filtered to nearest expiry NQU5 (30/43 rows)
+Day 2025-07-01: downloaded 30 rows
+Day 2025-07-02: filtered to nearest expiry NQU5 (30/49 rows)
+Day 2025-07-02: downloaded 30 rows
+Day 2025-07-03: filtered to nearest expiry NQU5 (30/55 rows)
+Day 2025-07-03: downloaded 30 rows
+Day 2025-07-04: filtered to nearest expiry NQU5 (30/38 rows)
+Day 2025-07-04: downloaded 30 rows
+Day 2025-07-07: filtered to nearest expiry NQU5 (30/45 rows)
+Day 2025-07-07: downloaded 30 rows
+Day 2025-07-08: filtered to nearest expiry NQU5 (30/38 rows)
+Day 2025-07-08: downloaded 30 rows
+Day 2025-07-09: filtered to nearest expiry NQU5 (30/56 rows)
+Day 2025-07-09: downloaded 30 rows
+Day 2025-07-10: filtered to nearest expiry NQU5 (30/43 rows)
+Day 2025-07-10: downloaded 30 rows
+Day 2025-07-11: filtered to nearest expiry NQU5 (30/53 rows)
+Day 2025-07-11: downloaded 30 rows
+Day 2025-07-14: filtered to nearest expiry NQU5 (30/51 rows)
+Day 2025-07-14: downloaded 30 rows
+Day 2025-07-15: filtered to nearest expiry NQU5 (30/46 rows)
+Day 2025-07-15: downloaded 30 rows
+Day 2025-07-16: filtered to nearest expiry NQU5 (30/51 rows)
+Day 2025-07-16: downloaded 30 rows
+Day 2025-07-17: filtered to nearest expiry NQU5 (30/52 rows)
+Day 2025-07-17: downloaded 30 rows
+Day 2025-07-18: filtered to nearest expiry NQU5 (30/48 rows)
+Day 2025-07-18: downloaded 30 rows
+Day 2025-07-21: filtered to nearest expiry NQU5 (30/49 rows)
+Day 2025-07-21: downloaded 30 rows
+Day 2025-07-22: filtered to nearest expiry NQU5 (30/62 rows)
+Day 2025-07-22: downloaded 30 rows
+Day 2025-07-23: filtered to nearest expiry NQU5 (30/54 rows)
+Day 2025-07-23: downloaded 30 rows
+Day 2025-07-24: filtered to nearest expiry NQU5 (30/43 rows)
+Day 2025-07-24: downloaded 30 rows
+Day 2025-07-25: filtered to nearest expiry NQU5 (30/41 rows)
+Day 2025-07-25: downloaded 30 rows
+Day 2025-07-28: filtered to nearest expiry NQU5 (30/39 rows)
+Day 2025-07-28: downloaded 30 rows
+Day 2025-07-29: filtered to nearest expiry NQU5 (30/62 rows)
+Day 2025-07-29: downloaded 30 rows
+Day 2025-07-30: filtered to nearest expiry NQU5 (30/44 rows)
+Day 2025-07-30: downloaded 30 rows
+Day 2025-07-31: filtered to nearest expiry NQU5 (30/68 rows)
+Day 2025-07-31: downloaded 30 rows
+Day 2025-08-01: filtered to nearest expiry NQU5 (30/74 rows)
+Day 2025-08-01: downloaded 30 rows
+Day 2025-08-04: filtered to nearest expiry NQU5 (30/70 rows)
+Day 2025-08-04: downloaded 30 rows
+Day 2025-08-05: filtered to nearest expiry NQU5 (30/45 rows)
+Day 2025-08-05: downloaded 30 rows
+Day 2025-08-06: filtered to nearest expiry NQU5 (30/47 rows)
+Day 2025-08-06: downloaded 30 rows
+Day 2025-08-07: filtered to nearest expiry NQU5 (30/63 rows)
+Day 2025-08-07: downloaded 30 rows
+Day 2025-08-08: filtered to nearest expiry NQU5 (30/54 rows)
+Day 2025-08-08: downloaded 30 rows
+Day 2025-08-11: filtered to nearest expiry NQU5 (30/42 rows)
+Day 2025-08-11: downloaded 30 rows
+Day 2025-08-12: filtered to nearest expiry NQU5 (30/64 rows)
+Day 2025-08-12: downloaded 30 rows
+Day 2025-08-13: filtered to nearest expiry NQU5 (30/51 rows)Downloading:  69%|██████████████████████████            | 244/356 [11:21<04:28,  2.40s/it]Downloading:  69%|██████████████████████████▏           | 245/356 [11:24<04:49,  2.61s/it]Downloading:  69%|██████████████████████████▎           | 246/356 [11:28<05:05,  2.78s/it]Downloading:  70%|██████████████████████████▌           | 249/356 [11:31<03:27,  1.93s/it]Downloading:  70%|██████████████████████████▋           | 250/356 [11:34<03:52,  2.20s/it]Downloading:  71%|██████████████████████████▊           | 251/356 [11:38<04:10,  2.38s/it]Downloading:  71%|██████████████████████████▉           | 252/356 [11:41<04:30,  2.60s/it]Downloading:  71%|███████████████████████████           | 253/356 [11:44<04:37,  2.69s/it]Downloading:  72%|███████████████████████████▎          | 256/356 [11:47<03:03,  1.84s/it]Downloading:  72%|███████████████████████████▍          | 257/356 [11:50<03:33,  2.16s/it]Downloading:  72%|███████████████████████████▌          | 258/356 [11:53<03:51,  2.36s/it]Downloading:  73%|███████████████████████████▋          | 259/356 [11:58<04:41,  2.90s/it]Downloading:  73%|███████████████████████████▊          | 260/356 [12:01<04:51,  3.03s/it]Downloading:  74%|████████████████████████████          | 263/356 [12:05<03:10,  2.04s/it]Downloading:  74%|████████████████████████████▏         | 264/356 [12:09<03:43,  2.43s/it]Downloading:  74%|████████████████████████████▎         | 265/356 [12:12<03:55,  2.59s/it]Downloading:  75%|████████████████████████████▍         | 266/356 [12:16<04:21,  2.91s/it]Downloading:  75%|████████████████████████████▌         | 267/356 [12:20<04:38,  3.13s/it]Downloading:  76%|████████████████████████████▊         | 270/356 [12:23<03:01,  2.11s/it]Downloading:  76%|████████████████████████████▉         | 271/356 [12:27<03:27,  2.44s/it]Downloading:  76%|█████████████████████████████         | 272/356 [12:31<03:56,  2.81s/it]Downloading:  77%|█████████████████████████████▏        | 273/356 [12:35<04:12,  3.05s/it]Downloading:  77%|█████████████████████████████▏        | 274/356 [12:38<04:20,  3.17s/it]Downloading:  78%|█████████████████████████████▌        | 277/356 [12:43<02:57,  2.25s/it]Downloading:  78%|█████████████████████████████▋        | 278/356 [12:46<03:19,  2.56s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: The streaming request contained one or more days which have reduced quality: 2025-09-17 (degraded). See: https://databento.com/docs/api-reference-historical/metadata/metadata-get-dataset-condition
+  store = client.timeseries.get_range(
+Downloading:  78%|█████████████████████████████▊        | 279/356 [12:51<03:43,  2.90s/it]Downloading:  79%|█████████████████████████████▉        | 280/356 [12:54<03:47,  3.00s/it]Downloading:  79%|█████████████████████████████▉        | 281/356 [12:57<03:47,  3.03s/it]Downloading:  80%|██████████████████████████████▎       | 284/356 [13:01<02:30,  2.09s/it]Downloading:  80%|██████████████████████████████▍       | 285/356 [13:05<03:00,  2.54s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: The streaming request contained one or more days which have reduced quality: 2025-09-24 (degraded). See: https://databento.com/docs/api-reference-historical/metadata/metadata-get-dataset-condition
+  store = client.timeseries.get_range(
+Downloading:  80%|██████████████████████████████▌       | 286/356 [13:08<03:05,  2.65s/it]Downloading:  81%|██████████████████████████████▋       | 287/356 [13:13<03:36,  3.14s/it]Downloading:  81%|██████████████████████████████▋       | 288/356 [13:16<03:36,  3.18s/it]Downloading:  82%|███████████████████████████████       | 291/356 [13:20<02:20,  2.16s/it]Downloading:  82%|███████████████████████████████▏      | 292/356 [13:24<02:39,  2.50s/it]Downloading:  82%|███████████████████████████████▎      | 293/356 [13:28<02:57,  2.82s/it]Downloading:  83%|███████████████████████████████▍      | 294/356 [13:31<03:07,  3.02s/it]Downloading:  83%|███████████████████████████████▍      | 295/356 [13:35<03:09,  3.11s/it]Downloading:  84%|███████████████████████████████▊      | 298/356 [13:38<01:55,  1.99s/it]Downloading:  84%|███████████████████████████████▉      | 299/356 [13:41<02:15,  2.38s/it]Downloading:  84%|████████████████████████████████      | 300/356 [13:45<02:25,  2.60s/it]Downloading:  85%|████████████████████████████████▏     | 301/356 [13:48<02:33,  2.78s/it]Downloading:  85%|████████████████████████████████▏     | 302/356 [13:52<02:38,  2.94s/it]Downloading:  86%|████████████████████████████████▌     | 305/356 [13:55<01:44,  2.05s/it]Downloading:  86%|████████████████████████████████▋     | 306/356 [13:58<01:48,  2.17s/it]Downloading:  86%|████████████████████████████████▊     | 307/356 [14:01<01:54,  2.33s/it]Downloading:  87%|████████████████████████████████▉     | 308/356 [14:04<01:59,  2.49s/it]Downloading:  87%|████████████████████████████████▉     | 309/356 [14:06<01:59,  2.54s/it]Downloading:  88%|█████████████████████████████████▎    | 312/356 [14:09<01:15,  1.71s/it]Downloading:  88%|█████████████████████████████████▍    | 313/356 [14:13<01:26,  2.01s/it]Downloading:  88%|█████████████████████████████████▌    | 314/356 [14:16<01:37,  2.32s/it]Downloading:  88%|█████████████████████████████████▌    | 315/356 [14:20<01:49,  2.66s/it]Downloading:  89%|█████████████████████████████████▋    | 316/356 [14:23<01:49,  2.74s/it]Downloading:  90%|██████████████████████████████████    | 319/356 [14:26<01:08,  1.86s/it]Downloading:  90%|██████████████████████████████████▏   | 320/356 [14:30<01:21,  2.26s/it]Downloading:  90%|██████████████████████████████████▎   | 321/356 [14:33<01:28,  2.54s/it]Downloading:  90%|██████████████████████████████████▎   | 322/356 [14:38<01:45,  3.10s/it]Downloading:  91%|██████████████████████████████████▍   | 323/356 [14:42<01:51,  3.39s/it]Downloading:  92%|██████████████████████████████████▊   | 326/356 [14:46<01:07,  2.23s/it]Downloading:  92%|██████████████████████████████████▉   | 327/356 [14:49<01:11,  2.46s/it]Downloading:  92%|███████████████████████████████████   | 328/356 [14:53<01:15,  2.71s/it]Downloading:  92%|███████████████████████████████████   | 329/356 [14:57<01:21,  3.01s/it]Downloading:  93%|███████████████████████████████████▏  | 330/356 [15:00<01:17,  2.99s/it]Downloading:  94%|███████████████████████████████████▌  | 333/356 [15:03<00:44,  1.95s/it]Downloading:  94%|███████████████████████████████████▋  | 334/356 [15:08<00:58,  2.68s/it]Downloading:  94%|███████████████████████████████████▊  | 335/356 [15:12<01:00,  2.88s/it]Downloading:  94%|███████████████████████████████████▊  | 336/356 [15:16<01:02,  3.10s/it]Downloading:  95%|███████████████████████████████████▉  | 337/356 [15:19<01:00,  3.16s/it]Downloading:  96%|████████████████████████████████████▎ | 340/356 [15:24<00:39,  2.45s/it]Downloading:  96%|████████████████████████████████████▍ | 341/356 [15:28<00:38,  2.58s/it]Downloading:  96%|████████████████████████████████████▌ | 342/356 [15:31<00:38,  2.74s/it]Downloading:  96%|████████████████████████████████████▌ | 343/356 [15:34<00:36,  2.79s/it]Downloading:  97%|████████████████████████████████████▋ | 344/356 [15:38<00:37,  3.16s/it]Downloading:  97%|█████████████████████████████████████ | 347/356 [15:41<00:18,  2.08s/it]Downloading:  98%|█████████████████████████████████████▏| 348/356 [15:44<00:17,  2.23s/it]Downloading:  98%|█████████████████████████████████████▎| 349/356 [15:47<00:16,  2.33s/it]Downloading:  98%|█████████████████████████████████████▎| 350/356 [15:51<00:15,  2.66s/it]/home/broz/code/rockcap/originalScripts/downloader.py:203: BentoWarning: The streaming request contained one or more days which have reduced quality: 2025-11-28 (degraded). See: https://databento.com/docs/api-reference-historical/metadata/metadata-get-dataset-condition
+  store = client.timeseries.get_range(
+Downloading:  99%|█████████████████████████████████████▍| 351/356 [15:53<00:13,  2.66s/it]Downloading:  99%|█████████████████████████████████████▊| 354/356 [15:57<00:03,  1.92s/it]Downloading: 100%|█████████████████████████████████████▉| 355/356 [16:01<00:02,  2.34s/it]Downloading: 100%|██████████████████████████████████████| 356/356 [16:03<00:00,  2.30s/it]Downloading: 100%|██████████████████████████████████████| 356/356 [16:03<00:00,  2.71s/it]
+
+Day 2025-08-13: downloaded 30 rows
+Day 2025-08-14: filtered to nearest expiry NQU5 (30/61 rows)
+Day 2025-08-14: downloaded 30 rows
+Day 2025-08-15: filtered to nearest expiry NQU5 (30/67 rows)
+Day 2025-08-15: downloaded 30 rows
+Day 2025-08-18: filtered to nearest expiry NQU5 (30/59 rows)
+Day 2025-08-18: downloaded 30 rows
+Day 2025-08-19: filtered to nearest expiry NQU5 (30/58 rows)
+Day 2025-08-19: downloaded 30 rows
+Day 2025-08-20: filtered to nearest expiry NQU5 (30/73 rows)
+Day 2025-08-20: downloaded 30 rows
+Day 2025-08-21: filtered to nearest expiry NQU5 (30/67 rows)
+Day 2025-08-21: downloaded 30 rows
+Day 2025-08-22: filtered to nearest expiry NQU5 (30/64 rows)
+Day 2025-08-22: downloaded 30 rows
+Day 2025-08-25: filtered to nearest expiry NQU5 (30/56 rows)
+Day 2025-08-25: downloaded 30 rows
+Day 2025-08-26: filtered to nearest expiry NQU5 (30/61 rows)
+Day 2025-08-26: downloaded 30 rows
+Day 2025-08-27: filtered to nearest expiry NQU5 (30/62 rows)
+Day 2025-08-27: downloaded 30 rows
+Day 2025-08-28: filtered to nearest expiry NQU5 (30/78 rows)
+Day 2025-08-28: downloaded 30 rows
+Day 2025-08-29: filtered to nearest expiry NQU5 (30/73 rows)
+Day 2025-08-29: downloaded 30 rows
+Day 2025-09-01: filtered to nearest expiry NQU5 (30/38 rows)
+Day 2025-09-01: downloaded 30 rows
+Day 2025-09-02: filtered to nearest expiry NQU5 (30/83 rows)
+Day 2025-09-02: downloaded 30 rows
+Day 2025-09-03: filtered to nearest expiry NQU5 (30/65 rows)
+Day 2025-09-03: downloaded 30 rows
+Day 2025-09-04: filtered to nearest expiry NQU5 (30/73 rows)
+Day 2025-09-04: downloaded 30 rows
+Day 2025-09-05: filtered to nearest expiry NQU5 (30/78 rows)
+Day 2025-09-05: downloaded 30 rows
+Day 2025-09-08: filtered to nearest expiry NQU5 (30/83 rows)
+Day 2025-09-08: downloaded 30 rows
+Day 2025-09-09: filtered to nearest expiry NQU5 (30/82 rows)
+Day 2025-09-09: downloaded 30 rows
+Day 2025-09-10: filtered to nearest expiry NQU5 (30/91 rows)
+Day 2025-09-10: downloaded 30 rows
+Day 2025-09-11: filtered to nearest expiry NQU5 (30/96 rows)
+Day 2025-09-11: downloaded 30 rows
+Day 2025-09-12: filtered to nearest expiry NQU5 (30/91 rows)
+Day 2025-09-12: downloaded 30 rows
+Day 2025-09-15: filtered to nearest expiry NQU5 (30/92 rows)
+Day 2025-09-15: downloaded 30 rows
+Day 2025-09-16: filtered to nearest expiry NQU5 (30/98 rows)
+Day 2025-09-16: downloaded 30 rows
+Day 2025-09-17: filtered to nearest expiry NQU5 (30/94 rows)
+Day 2025-09-17: downloaded 30 rows
+Day 2025-09-18: filtered to nearest expiry NQU5 (30/110 rows)
+Day 2025-09-18: downloaded 30 rows
+Day 2025-09-19: filtered to nearest expiry NQZ5 (30/49 rows)
+Day 2025-09-19: downloaded 30 rows
+Day 2025-09-22: filtered to nearest expiry NQZ5 (30/45 rows)
+Day 2025-09-22: downloaded 30 rows
+Day 2025-09-23: filtered to nearest expiry NQZ5 (30/41 rows)
+Day 2025-09-23: downloaded 30 rows
+Day 2025-09-24: filtered to nearest expiry NQZ5 (30/45 rows)
+Day 2025-09-24: downloaded 30 rows
+Day 2025-09-25: filtered to nearest expiry NQZ5 (30/56 rows)
+Day 2025-09-25: downloaded 30 rows
+Day 2025-09-26: filtered to nearest expiry NQZ5 (30/50 rows)
+Day 2025-09-26: downloaded 30 rows
+Day 2025-09-29: filtered to nearest expiry NQZ5 (30/50 rows)
+Day 2025-09-29: downloaded 30 rows
+Day 2025-09-30: filtered to nearest expiry NQZ5 (30/56 rows)
+Day 2025-09-30: downloaded 30 rows
+Day 2025-10-01: filtered to nearest expiry NQZ5 (30/49 rows)
+Day 2025-10-01: downloaded 30 rows
+Day 2025-10-02: filtered to nearest expiry NQZ5 (30/62 rows)
+Day 2025-10-02: downloaded 30 rows
+Day 2025-10-03: filtered to nearest expiry NQZ5 (30/51 rows)
+Day 2025-10-03: downloaded 30 rows
+Day 2025-10-06: filtered to nearest expiry NQZ5 (30/52 rows)
+Day 2025-10-06: downloaded 30 rows
+Day 2025-10-07: filtered to nearest expiry NQZ5 (30/41 rows)
+Day 2025-10-07: downloaded 30 rows
+Day 2025-10-08: filtered to nearest expiry NQZ5 (30/53 rows)
+Day 2025-10-08: downloaded 30 rows
+Day 2025-10-09: filtered to nearest expiry NQZ5 (30/51 rows)
+Day 2025-10-09: downloaded 30 rows
+Day 2025-10-10: filtered to nearest expiry NQZ5 (30/50 rows)
+Day 2025-10-10: downloaded 30 rows
+Day 2025-10-13: filtered to nearest expiry NQZ5 (30/64 rows)
+Day 2025-10-13: downloaded 30 rows
+Day 2025-10-14: filtered to nearest expiry NQZ5 (30/70 rows)
+Day 2025-10-14: downloaded 30 rows
+Day 2025-10-15: filtered to nearest expiry NQZ5 (30/60 rows)
+Day 2025-10-15: downloaded 30 rows
+Day 2025-10-16: filtered to nearest expiry NQZ5 (30/61 rows)
+Day 2025-10-16: downloaded 30 rows
+Day 2025-10-17: filtered to nearest expiry NQZ5 (30/59 rows)
+Day 2025-10-17: downloaded 30 rows
+Day 2025-10-20: filtered to nearest expiry NQZ5 (30/51 rows)
+Day 2025-10-20: downloaded 30 rows
+Day 2025-10-21: filtered to nearest expiry NQZ5 (30/49 rows)
+Day 2025-10-21: downloaded 30 rows
+Day 2025-10-22: filtered to nearest expiry NQZ5 (30/50 rows)
+Day 2025-10-22: downloaded 30 rows
+Day 2025-10-23: filtered to nearest expiry NQZ5 (30/58 rows)
+Day 2025-10-23: downloaded 30 rows
+Day 2025-10-24: filtered to nearest expiry NQZ5 (30/56 rows)
+Day 2025-10-24: downloaded 30 rows
+Day 2025-10-27: filtered to nearest expiry NQZ5 (30/51 rows)
+Day 2025-10-27: downloaded 30 rows
+Day 2025-10-28: filtered to nearest expiry NQZ5 (30/55 rows)
+Day 2025-10-28: downloaded 30 rows
+Day 2025-10-29: filtered to nearest expiry NQZ5 (30/52 rows)
+Day 2025-10-29: downloaded 30 rows
+Day 2025-10-30: filtered to nearest expiry NQZ5 (30/70 rows)
+Day 2025-10-30: downloaded 30 rows
+Day 2025-10-31: filtered to nearest expiry NQZ5 (30/58 rows)
+Day 2025-10-31: downloaded 30 rows
+Day 2025-11-03: filtered to nearest expiry NQZ5 (30/56 rows)
+Day 2025-11-03: downloaded 30 rows
+Day 2025-11-04: filtered to nearest expiry NQZ5 (30/63 rows)
+Day 2025-11-04: downloaded 30 rows
+Day 2025-11-05: filtered to nearest expiry NQZ5 (30/65 rows)
+Day 2025-11-05: downloaded 30 rows
+Day 2025-11-06: filtered to nearest expiry NQZ5 (30/74 rows)
+Day 2025-11-06: downloaded 30 rows
+Day 2025-11-07: filtered to nearest expiry NQZ5 (30/68 rows)
+Day 2025-11-07: downloaded 30 rows
+Day 2025-11-10: filtered to nearest expiry NQZ5 (30/62 rows)
+Day 2025-11-10: downloaded 30 rows
+Day 2025-11-11: filtered to nearest expiry NQZ5 (30/54 rows)
+Day 2025-11-11: downloaded 30 rows
+Day 2025-11-12: filtered to nearest expiry NQZ5 (30/65 rows)
+Day 2025-11-12: downloaded 30 rows
+Day 2025-11-13: filtered to nearest expiry NQZ5 (30/73 rows)
+Day 2025-11-13: downloaded 30 rows
+Day 2025-11-14: filtered to nearest expiry NQZ5 (30/72 rows)
+Day 2025-11-14: downloaded 30 rows
+Day 2025-11-17: filtered to nearest expiry NQZ5 (30/64 rows)
+Day 2025-11-17: downloaded 30 rows
+Day 2025-11-18: filtered to nearest expiry NQZ5 (30/78 rows)
+Day 2025-11-18: downloaded 30 rows
+Day 2025-11-19: filtered to nearest expiry NQZ5 (30/71 rows)
+Day 2025-11-19: downloaded 30 rows
+Day 2025-11-20: filtered to nearest expiry NQZ5 (30/73 rows)
+Day 2025-11-20: downloaded 30 rows
+Day 2025-11-21: filtered to nearest expiry NQZ5 (30/65 rows)
+Day 2025-11-21: downloaded 30 rows
+Day 2025-11-24: filtered to nearest expiry NQZ5 (30/71 rows)
+Day 2025-11-24: downloaded 30 rows
+Day 2025-11-25: filtered to nearest expiry NQZ5 (30/83 rows)
+Day 2025-11-25: downloaded 30 rows
+Day 2025-11-26: filtered to nearest expiry NQZ5 (30/79 rows)
+Day 2025-11-26: downloaded 30 rows
+Day 2025-11-27: filtered to nearest expiry NQZ5 (30/42 rows)
+Day 2025-11-27: downloaded 30 rows
+Day 2025-11-28: filtered to nearest expiry NQZ5 (30/55 rows)
+Day 2025-11-28: downloaded 30 rows
+Day 2025-12-01: filtered to nearest expiry NQZ5 (30/85 rows)
+Day 2025-12-01: downloaded 30 rows
+Day 2025-12-02: filtered to nearest expiry NQZ5 (30/74 rows)
+Day 2025-12-02: downloaded 30 rows
+Day 2025-12-03: filtered to nearest expiry NQZ5 (30/80 rows)
+Day 2025-12-03: downloaded 30 rows
+
+Saved → data/trades/nq_trades_0930_1000_trades_2y_ohlcv1s.csv (7500 rows)

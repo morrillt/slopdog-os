@@ -1,0 +1,22 @@
+{
+  "name": "browser_console_messages",
+  "description": "Returns all console messages",
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "level": {
+        "type": "string",
+        "enum": [
+          "error",
+          "warning",
+          "info",
+          "debug"
+        ],
+        "default": "info",
+        "description": "Level of the console messages to return. Each level includes the messages of more severe levels. Defaults to \"info\"."
+      }
+    },
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

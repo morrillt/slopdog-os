@@ -1,0 +1,46 @@
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/RockcapEssentials.md" lines="20-22">
+    20|- `data/`: pipeline inputs/outputs + generated artifacts (treat as non-source).
+    21|- '/plans'
+    22|- '/docs'
+</code_selection>
+
+</attached_files>
+<user_query>
+@.cursor/rules/broz/oneoffprompts/freeball.mdc 
+</user_query>
+
+assistant:
+<think>
+The user is referencing a file `.cursor/rules/broz/oneoffprompts/freeball.mdc`. Let me first read this file to understand what they want me to do.
+
+Looking at the open files, I can see this file is currently open and focused. Let me read it to see what's in it.
+</think>
+Reading the file to understand what's needed.
+
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/.cursor/rules/broz/oneoffprompts/freeball.mdc
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/plans/context.yaml
+[Tool call] read_file
+  target_file: /home/broz/code/rockcap/RockcapEssentials.md
+
+[Tool result] read_file
+
+[Tool result] read_file
+
+[Tool result] read_file
+
+assistant:
+<think>
+I see. The `freeball.mdc` file contains instructions to ignore mode and OS requirements - I don't need to change to a mode or update the config yaml. This is essentially a "free mode" where I can work without the Broz OS constraints.
+
+The user is just referencing this file, which seems to be a prompt/rule that tells me to ignore the normal mode switching requirements. Since they're just referencing it, they probably want me to acknowledge it or they're about to give me a task that should be done in this "freeball" mode.
+
+Let me wait to see if they have a specific task, or if they just want me to acknowledge that I understand the freeball mode.
+</think>
+Noted: freeball mode is active—ignoring mode switching and OS requirements. No need to change modes or update `plans/context.yaml`.
+
+What should I work on?

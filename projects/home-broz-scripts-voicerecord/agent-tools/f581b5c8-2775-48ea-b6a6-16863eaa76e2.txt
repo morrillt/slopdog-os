@@ -1,0 +1,2104 @@
+[Terminal output truncated: ~223KB dropped from beginning]
+nnx.h
+│   │           │   │   │   │   │   │   │   ├── scalar_type_analysis.h
+│   │           │   │   │   │   │   │   │   ├── shape_type_inference.h
+│   │           │   │   │   │   │   │   │   └── unpack_quantized_weights.h
+│   │           │   │   │   │   │   │   ├── onnx.h
+│   │           │   │   │   │   │   │   ├── pass_manager.h
+│   │           │   │   │   │   │   │   ├── peephole_alias_sensitive.h
+│   │           │   │   │   │   │   │   ├── peephole_dict_idioms.h
+│   │           │   │   │   │   │   │   ├── peephole.h
+│   │           │   │   │   │   │   │   ├── peephole_list_idioms.h
+│   │           │   │   │   │   │   │   ├── peephole_non_tensor.h
+│   │           │   │   │   │   │   │   ├── prepack_folding.h
+│   │           │   │   │   │   │   │   ├── quantization
+│   │           │   │   │   │   │   │   │   ├── dedup_module_uses.h
+│   │           │   │   │   │   │   │   │   ├── finalize.h
+│   │           │   │   │   │   │   │   │   ├── fusion_passes.h
+│   │           │   │   │   │   │   │   │   ├── helper.h
+│   │           │   │   │   │   │   │   │   ├── insert_observers.h
+│   │           │   │   │   │   │   │   │   ├── insert_quant_dequant.h
+│   │           │   │   │   │   │   │   │   ├── quantization_patterns.h
+│   │           │   │   │   │   │   │   │   ├── quantization_type.h
+│   │           │   │   │   │   │   │   │   └── register_packed_params.h
+│   │           │   │   │   │   │   │   ├── refine_tuple_types.h
+│   │           │   │   │   │   │   │   ├── remove_dropout.h
+│   │           │   │   │   │   │   │   ├── remove_exceptions.h
+│   │           │   │   │   │   │   │   ├── remove_expands.h
+│   │           │   │   │   │   │   │   ├── remove_inplace_ops.h
+│   │           │   │   │   │   │   │   ├── remove_mutation.h
+│   │           │   │   │   │   │   │   ├── remove_redundant_profiles.h
+│   │           │   │   │   │   │   │   ├── replacement_of_old_operators.h
+│   │           │   │   │   │   │   │   ├── requires_grad_analysis.h
+│   │           │   │   │   │   │   │   ├── restore_mutation.h
+│   │           │   │   │   │   │   │   ├── shape_analysis.h
+│   │           │   │   │   │   │   │   ├── specialize_autogradzero.h
+│   │           │   │   │   │   │   │   ├── subgraph_rewrite.h
+│   │           │   │   │   │   │   │   ├── symbolic_shape_analysis.h
+│   │           │   │   │   │   │   │   ├── symbolic_shape_cache.h
+│   │           │   │   │   │   │   │   ├── symbolic_shape_runtime_fusion.h
+│   │           │   │   │   │   │   │   ├── tensorexpr_fuser.h
+│   │           │   │   │   │   │   │   ├── update_differentiable_graph_requires_grad.h
+│   │           │   │   │   │   │   │   ├── utils
+│   │           │   │   │   │   │   │   │   ├── check_alias_annotation.h
+│   │           │   │   │   │   │   │   │   ├── memory_dag.h
+│   │           │   │   │   │   │   │   │   ├── op_registry.h
+│   │           │   │   │   │   │   │   │   ├── optimization_utils.h
+│   │           │   │   │   │   │   │   │   └── subgraph_utils.h
+│   │           │   │   │   │   │   │   ├── value_refinement_utils.h
+│   │           │   │   │   │   │   │   ├── variadic_ops.h
+│   │           │   │   │   │   │   │   ├── vulkan_rewrite.h
+│   │           │   │   │   │   │   │   └── xnnpack_rewrite.h
+│   │           │   │   │   │   │   ├── python
+│   │           │   │   │   │   │   │   ├── init.h
+│   │           │   │   │   │   │   │   ├── module_python.h
+│   │           │   │   │   │   │   │   ├── pybind.h
+│   │           │   │   │   │   │   │   ├── pybind_utils.h
+│   │           │   │   │   │   │   │   ├── python_arg_flatten.h
+│   │           │   │ �� │   │   │   │   ├── python_custom_class.h
+│   │           │   │   │   │   │   │   ├── python_dict.h
+│   │           │   │   │   │   │   │   ├── python_ir.h
+│   │           │   │   │   │   │   │   ├── python_ivalue.h
+│   │           │   │   │   │   │   │   ├── python_list.h
+│   │           │   │   │   │   │   │   ├── python_sugared_value.h
+│   │           │   │   │   │   │   │   ├── python_tracer.h
+│   │           │   │   │   │   │   │   ├── python_tree_views.h
+│   │           │   │   │   │   │   │   ├── script_init.h
+│   │           │   │   │   │   │   │   ├── update_graph_executor_opt.h
+│   │           │   │   │   │   │   │   └── utf8_decoding_ignore.h
+│   │           │   │   │   │   │   ├── resource_guard.h
+│   │           │   │   │   │   │   ├── runtime
+│   │           │   │   │   │   │   │   ├── argument_spec.h
+│   │           │   │   │   │   │   │   ├── autodiff.h
+│   │           │   │   │   │   │   │   ├── calculate_necessary_args.h
+│   │           │   │   │   │   │   │   ├── custom_operator.h
+│   │           │   │   │   │   │   │   ├── decomposition_registry.h
+│   │           │   │   │   │   │   │   ├── decomposition_registry_util.h
+│   │           │   │   │   │   │   │   ├── exception_message.h
+│   │           │   │   │   │   │   │   ├── graph_executor.h
+│   │           │   │   │   │   │   │   ├── graph_executor_impl.h
+│   │           │   │   │   │   │   │   ├── graph_iterator.h
+│   │           │   │   │   │   │   │   ├── instruction.h
+│   │           │   │   │   │   │   │   ├── interpreter
+│   │           │   │   │   │   │   │   │   ├── can_emit_inline.h
+│   │           │   │   │   │   │   │   │   ├── code_impl.h
+│   │           │   │   │   │   │   │   │   ├── frame.h
+│   │           │   │   │   │   │   │   │   └── preprocess_graph.h
+│   │           │   │   │   │   │   │   ├── interpreter.h
+│   │           │   │   │   │   │   │   ├── jit_exception.h
+│   │           │   │   │   │   │   │   ├── jit_trace.h
+│   │           │   │   │   │   │   │   ├── logging.h
+│   │           │   │   │   │   │   │   ├── operator.h
+│   │           │   │   │   │   │   │   ├── operator_options.h
+│   │           │   │   │   │   │   │   ├── print_handler.h
+│   │           │   │   │   │   │   │   ├── profiling_graph_executor_impl.h
+│   │           │   │   │   │   │   │   ├── profiling_record.h
+│   │           │   │   │   │   │   │   ├── register_ops_utils.h
+│   │           │   │   │   │   │   │   ├── script_profile.h
+│   │           │   │   │   │   │   │   ├── serialized_shape_function_registry.h
+│   │           │   │   │   │   │   │   ├── shape_function_registry.h
+│   │           │   │   │   │   │   │   ├── simple_graph_executor_impl.h
+│   │           │   │   │   │   │   │   ├── slice_indices_adjust.h
+│   │           │   │   │   │   │   │   ├── static
+│   │           │   │   │   │   │   │   │   ├── fusion.h
+│   │           │   │   │   │   │   │   │   ├── impl.h
+│   │           │   │   │   │   │   │   │   ├── init.h
+│   │           │   │   │   │   │   │   │   ├── memory_planner.h
+│   │           │   │   │   │   │   │   │   ├── ops.h
+│   │           │   │   │   │   │   │   │   ├── passes.h
+│   │           │   │   │   │   │   │   │   ├── ProcessedNodeInputs.h
+│   │           │   │   │   │   │   │   │   ├── processed_node_wrapper.h
+│   │           │   │   │   │   │   │   │   ├── static_method.h
+│   │           │   │   │   │   │   │   │   └── te_wrapper.h
+│   │           │   │   │   │   │   │   ├── symbolic_script.h
+│   │           │   │   │   │   │   │   ├── symbolic_shape_registry.h
+│   │           │   │   │   │   │   │   ├── symbolic_shape_registry_util.h
+│   │           │   │   │   │   │   │   ├── vararg_functions.h
+│   │           │   │   │   │   │   │   └── variable_tensor_list.h
+│   │           │   │   │   │   │   ├── serialization
+│   │           │   │   │   │   │   │   ├── callstack_debug_info_serialization.h
+│   │           │   │   │   │   │   │   ├── export_bytecode.h
+│   │           │   │   │   │   │   │   ├── export.h
+│   │           │   │   │   │   │   │   ├── flatbuffer_serializer.h
+│   │           │   │   │   │   │   │   ├── flatbuffer_serializer_jit.h
+│   │           │   │   │   │   │   │   ├── import_export_constants.h
+│   │           │   │   │   │   │   │   ├── import_export_functions.h
+│   │           │   │   │   │   │   │   ├── import_export_helpers.h
+│   │           │   │   │   │   │   │   ├── import.h
+│   │           │   │   │   │   │   │   ├── import_read.h
+│   │           │   │   │   │   │   │   ├── import_source.h
+│   │           │   │   │   │   │   │   ├── mobile_bytecode_generated.h
+│   │           │   │   │   │   │   │   ├── onnx.h
+│   │           │   │   │   │   │   │   ├── pickle.h
+│   │           │   │   │   │   │   │   ├── pickler.h
+│   │           │   │   │   │   │   │   ├── pickler_helper.h
+│   │           │   │   │   │   │   │   ├── python_print.h
+│   │           │   │   │   │   │   │   ├── source_range_serialization.h
+│   │           │   │   │   │   │   │   ├── source_range_serialization_impl.h
+│   │           │   │   │   │   │   │   ├── storage_context.h
+│   │           │   │   │   │   │   │   ├── type_name_uniquer.h
+│   │           │   │   │   │   │   │   └── unpickler.h
+│   │           │   │   │   │   │   ├── tensorexpr
+│   │           │   │   │   │   │   │   ├── analysis.h
+│   │           │   │   │   │   │   │   ├── block_codegen.h
+│   │           │   │   │   │   │   │   ├── bounds_inference.h
+│   │           │   │   │   │   │   │   ├── bounds_overlap.h
+│   │           │   │   │   │   │   │   ├── codegen.h
+│   │           │   │   │   │   │   │   ├── cpp_codegen.h
+│   │           │   │   │   │   │   │   ├── cpp_intrinsics.h
+│   │           │   │   │   │   │   │   ├── cuda_codegen.h
+│   │           │   │   │   │   │   │   ├── cuda_random.h
+│   │           │   │   │   │   │   │   ├── eval.h
+│   │           │   │   │   │   │   │   ├── exceptions.h
+│   │           │   │   │   │   │   │   ├── expr.h
+│   │           │   │   │   │   │   │   ├── external_functions_core.h
+│   │           │   │   │   │   │   │   ├── external_functions.h
+│   │           │   │   │   │   │   │   ├── external_functions_registry.h
+│   │           │   │   │   │   │   │   ├── fwd_decls.h
+│   │           │   │   │   │   │   │   ├── graph_opt.h
+│   │           │   │   │   │   │   │   ├── half_support.h
+│   │           │   │   │   │   │   │   ├── hash_provider.h
+│   │           │   │   │   │   │   │   ├── intrinsic_symbols.h
+│   │           │   │   │   │   │   │   ├── ir_cloner.h
+│   │           │   │   │   │   │   │   ├── ir.h
+│   │           │   │   │   │   │   │   ├── ir_mutator.h
+│   │           │   │   │   │   │   │   ├── ir_printer.h
+│   │           │   │   │   │   │   │   ├── ir_simplifier.h
+│   │           │   │   │   │   │   │   ├── ir_verifier.h
+│   │           │   │   │   │   │   │   ├── ir_visitor.h
+│   │           │   │   │   │   │   │   ├── kernel.h
+│   │           │   │   │   │   │   │   ├── llvm_codegen.h
+│   │           │   │   │   │   │   │   ├── llvm_jit.h
+│   │           │   │   │   │   │   │   ├── loopnest.h
+│   │           │   │   │   │   │   │   ├── loopnest_randomization.h
+│   │           │   │   │   │   │   │   ├── lowerings.h
+│   │           │   │   │   │   │   │   ├── mem_dependency_checker.h
+│   │           │   │   │   │   │   │   ├── operators
+│   │           │   │   │   │   │   │   │   ├── conv2d.h
+│   │           │   │   │   │   │   │   │   ├── matmul.h
+│   │           │   │   │   │   │   │   │   ├── misc.h
+│   │           │   │   │   │   │   │   │   ├── norm.h
+│   │           │   │   │   │   │   │   │   ├── operators.h
+│   │           │   │   │   │   │   │   │   ├── pointwise.h
+│   │           │   │   │   │   │   │   │   ├── quantization.h
+│   │           │   │   │   │   │   │   │   ├── reduction.h
+│   │           │   │   │   │   │   │   │   └── softmax.h
+│   │           │   │   │   │   │   │   ├── reduction.h
+│   │           │   │   │   │   │   │   ├── registerizer.h
+│   │           │   │   │   │   │   │   ├── stmt.h
+│   │           │   │   │   │   │   │   ├── tensorexpr_init.h
+│   │           │   │   │   │   │   │   ├── tensor.h
+│   │           │   │   │   │   │   │   ├── types.h
+│   │           │   │   │   │   │   │   ├── unique_name_manager.h
+│   │           │   │   │   │   │   │   └── var_substitutor.h
+│   │           │   │   │   │   │   └── testing
+│   │           │   │   │   │   │       ├── catch_utils.hpp
+│   │           │   │   │   │   │       ├── file_check.h
+│   │           │   │   │   │   │       └── hooks_for_testing.h
+│   │           │   │   │   │   ├── Layout.h
+│   │           │   │   │   │   ├── lazy
+│   │           │   │   │   │   │   ├── backend
+│   │           │   │   │   │   │   │   ├── backend_data.h
+│   │           │   │   │   │   │   │   ├── backend_device.h
+│   │           │   │   │   │   │   │   ├── backend_interface.h
+│   │           │   │   │   │   │   │   └── lowering_context.h
+│   │           │   │   │   │   │   ├── core
+│   │           │   │   │   │   │   │   ├── cache.h
+│   │           │   │   │   │   │   │   ├── config.h
+│   │           │   │   │   │   │   │   ├── debug_util.h
+│   │           │   │   │   │   │   │   ├── dynamic_ir.h
+│   │           │   │   │   │   │   │   ├── hash.h
+│   │           │   │   │   │   │   │   ├── helpers.h
+│   │           │   │   │   │   │   │   ├── internal_ops
+│   │           │   │   │   │   │   │   │   └── ltc_ops.h
+│   │           │   │   │   │   │   │   ├── ir_builder.h
+│   │           │   │   │   │   │   │   ├── ir_dump_util.h
+│   │           │   │   │   │   │   │   ├── ir.h
+│   │           │   │   │   │   │   │   ├── ir_metadata.h
+│   │           │   │   │   │   │   │   ├── ir_util.h
+│   │           │   │   │   │   │   │   ├── lazy_graph_executor.h
+│   │           │   │   │   │   │   │   ├── metrics.h
+│   │           │   │   │   │   │   │   ├── multi_wait.h
+│   │           │   │   │   │   │   │   ├── ops
+│   │           │   │   │   │   │   │   │   ├── arithmetic_ir_ops.h
+│   │           │   │   │   │   │   │   │   └── utils.h
+│   │           │   │   │   │   │   │   ├── permutation_util.h
+│   │           │   │   │   │   │   │   ├── shape.h
+│   │           │   │   │   │   │   │   ├── shape_inference.h
+│   │           │   │   │   │   │   │   ├── tensor.h
+│   │           │   │   │   │   │   │   ├── tensor_impl.h
+│   │           │   │   │   │   │   │   ├── tensor_util.h
+│   │           │   │   │   │   │   │   ├── thread_pool.h
+│   │           │   │   │   │   │   │   ├── trie.h
+│   │           │   │   │   │   │   │   ├── unique.h
+│   │           │   │   │   │   │   │   └── util.h
+│   │           │   │   │   │   │   ├── generated
+│   │           │   │   │   │   │   │   ├── LazyIr.h
+│   │           │   │   │   │   │   │   ├── LazyNativeFunctions.h
+│   │           │   │   │   │   │   │   └── LazyNonNativeIr.h
+│   │           │   │   │   │   │   ├── python
+│   │           │   │   │   │   │   │   ├── init.h
+│   │           │   │   │   │   │   │   └── python_util.h
+│   │           │   │   │   │   │   └── ts_backend
+│   │           │   │   │   │   │       ├── config.h
+│   │           │   │   │   │   │       ├── dynamic_ir.h
+│   │           │   │   │   │   │       ├── ir_builder.h
+│   │           │   │   │   │   │       ├── ops
+│   │           │   │   │   │   │       │   ├── device_data.h
+│   │           │   │   │   │   │       │   ├── generic.h
+│   │           │   │   │   │   │       │   └── to_copy.h
+│   │           │   │   │   │   │       ├── tensor_aten_ops.h
+│   │           │   │   │   │   │       ├── ts_autograd_functions.h
+│   │           │   │   │   │   │       ├── ts_backend_impl.h
+│   │           │   │   │   │   │       ├── ts_eager_fallback.h
+│   │           │   │   │   │   │       ├── ts_lowering_context.h
+│   │           │   │   │   │   │       ├── ts_node.h
+│   │           │   │   │   │   │       └── ts_node_lowering.h
+│   │           │   │   │   │   ├── MemoryFormat.h
+│   │           │   │   │   │   ├── Module.h
+│   │           │   │   │   │   ├── monitor
+│   │           │   │   │   │   │   ├── counters.h
+│   │           │   │   │   │   │   ├── events.h
+│   │           │   │   │   │   │   └── python_init.h
+│   │           │   │   │   │   ├── mps
+│   │           │   │   │   │   │   └── Module.h
+│   │           │   │   │   │   ├── mtia
+│   │           │   │   │   │   │   ├── Module.h
+│   │           │   │   │   │   │   └── profiler
+│   │           │   │   │   │   │       └── MTIAMemoryProfiler.h
+│   │           │   │   │   │   ├── multiprocessing
+│   │           │   │   │   │   │   └── init.h
+│   │           │   │   │   │   ├── onnx
+│   │           │   │   │   │   │   ├── back_compat.h
+│   │           │   │   │   │   │   ├── init.h
+│   │           │   │   │   │   │   └── onnx.h
+│   │           │   │   │   │   ├── profiler
+│   │           │   │   │   │   │   ├── api.h
+│   │           │   │   │   │   │   ├── collection.h
+│   │           │   │   │   │   │   ├── combined_traceback.h
+│   │           │   │   │   │   │   ├── containers.h
+│   │           │   │   │   │   │   ├── data_flow.h
+│   │           │   │   │   │   │   ├── events.h
+│   │           │   │   │   │   │   ├── kineto_client_interface.h
+│   │           │   │   │   │   │   ├── kineto_shim.h
+│   │           │   │   │   │   │   ├── orchestration
+│   │           │   │   │   │   │   │   ├── observer.h
+│   │           │   │   │   │   │   │   ├── python_tracer.h
+│   │           │   │   │   │   │   │   └── vulkan.h
+│   │           │   │   │   │   │   ├── perf.h
+│   │           │   │   │   │   │   ├── perf-inl.h
+│   │           │   │   │   │   │   ├── python
+│   │           │   │   │   │   │   │   ├── combined_traceback.h
+│   │           │   │   │   │   │   │   ├── init.h
+│   │           │   │   │   │   │   │   └── pybind.h
+│   │           │   │   │   │   │   ├── standalone
+│   │           │   │   │   │   │   │   ├── execution_trace_observer.h
+│   │           │   │   │   │   │   │   ├── itt_observer.h
+│   │           │   │   │   │   │   │   ├── nvtx_observer.h
+│   │           │   │   │   │   │   │   └── privateuse1_observer.h
+│   │           │   │   │   │   │   ├── stubs
+│   │           │   │   │   │   │   │   └── base.h
+│   │           │   │   │   │   │   ├── unwind
+│   │           │   │   │   │   │   │   ├── action.h
+│   │           │   │   │   │   │   │   ├── communicate.h
+│   │           │   │   │   │   │   │   ├── debug_info.h
+│   │           │   │   │   │   │   │   ├── dwarf_enums.h
+│   │           │   │   │   │   │   │   ├── dwarf_symbolize_enums.h
+│   │           │   │   │   │   │   │   ├── eh_frame_hdr.h
+│   │           │   │   │   │   │   │   ├── fast_symbolizer.h
+│   │           │   │   │   │   │   │   ├── fde.h
+│   │           │   │   │   │   │   │   ├── lexer.h
+│   │           │   │   │   │   │   │   ├── line_number_program.h
+│   │           │   │   │   │   │   │   ├── mem_file.h
+│   │           │   │   │   │   │   │   ├── range_table.h
+│   │           │   │   │   │   │   │   ├── sections.h
+│   │           │   │   │   │   │   │   ├─��� unwinder.h
+│   │           │   │   │   │   │   │   ├── unwind_error.h
+│   │           │   │   │   │   │   │   └── unwind.h
+│   │           │   │   │   │   │   └── util.h
+│   │           │   │   │   │   ├── PyInterpreter.h
+│   │           │   │   │   │   ├── PyInterpreterHooks.h
+│   │           │   │   │   │   ├── python_dimname.h
+│   │           │   │   │   │   ├── python_headers.h
+│   │           │   │   │   │   ├── QScheme.h
+│   │           │   │   │   │   ├── serialization.h
+│   │           │   │   │   │   ├── Size.h
+│   │           │   │   │   │   ├── stable
+│   │           │   │   │   │   │   ├── accelerator.h
+│   │           │   │   │   │   │   ├── library.h
+│   │           │   │   │   │   │   ├── ops.h
+│   │           │   │   │   │   │   ├── stableivalue_conversions.h
+│   │           │   │   │   │   │   ├── tensor.h
+│   │           │   │   │   │   │   ├── tensor_inl.h
+│   │           │   │   │   │   │   └── tensor_struct.h
+│   │           │   │   │   │   ├── Storage.h
+│   │           │   │   │   │   ├── StorageMethods.h
+│   │           │   │   │   │   ├── StorageSharing.h
+│   │           │   │   │   │   ├── Stream.h
+│   │           │   │   │   │   ├── tensor
+│   │           │   │   │   │   │   └── python_tensor.h
+│   │           │   │   │   │   ├── THConcat.h
+│   │           │   │   │   │   ├── THP.h
+│   │           │   │   │   │   ├── TypeInfo.h
+│   │           │   │   │   │   ├── Types.h
+│   │           │   │   │   │   ├── utils
+│   │           │   │   │   │   │   ├── byte_order.h
+│   │           │   │   │   │   │   ├── cpp_stacktraces.h
+│   │           │   │   │   │   │   ├── cuda_enabled.h
+│   │           │   │   │   │   │   ├── device_lazy_init.h
+│   │           │   │   │   │   │   ├── disable_torch_function.h
+│   │           │   │   │   │   │   ├── generated_serialization_types.h
+│   │           │   │   │   │   │   ├── init.h
+│   │           │   │   │   │   │   ├── invalid_arguments.h
+│   │           │   │   │   │   │   ├── nested.h
+│   │           │   │   │   │   │   ├── numpy_stub.h
+│   │           │   │   │   │   │   ├── object_ptr.h
+│   │           │   │   │   │   │   ├── out_types.h
+│   │           │   │   │   │   │   ├── pybind.h
+│   │           │   │   │   │   │   ├── pycfunction_helpers.h
+│   │           │   │   │   │   │   ├── pyobject_preservation.h
+│   │           │   │   │   │   │   ├── python_arg_parser.h
+│   │           │   │   │   │   │   ├── pythoncapi_compat.h
+│   │           │   │   │   │   │   ├── python_compat.h
+│   │           │   │   │   │   │   ├── python_dispatch.h
+│   │           │   │   │   │   │   ├── python_numbers.h
+│   │           │   │   │   │   │   ├── python_raii.h
+│   │           │   │   │   │   │   ├── python_scalars.h
+│   │           │   │   │   │   │   ├── python_strings.h
+│   │           │   │   │   │   │   ├── python_stub.h
+│   │           │   │   │   │   │   ├── python_symnode.h
+│   │           │   │   │   │   │   ├── python_torch_function_mode.h
+│   │           │   │   │   │   │   ├── python_tuples.h
+│   │           │   │   │   │   │   ├── schema_info.h
+│   │           │   │   │   │   │   ├── six.h
+│   │           │   │   │   │   │   ├── structseq.h
+│   │           │   │   │   │   │   ├── tensor_apply.h
+│   │           │   │   │   │   │   ├── tensor_dtypes.h
+│   │           │   │   │   │   │   ├── tensor_flatten.h
+│   │           │   │   │   │   │   ├── tensor_layouts.h
+│   │           │   │   │   │   │   ├── tensor_list.h
+│   │           │   │   │   │   │   ├── tensor_memoryformats.h
+│   │           │   │   │   │   │   ├── tensor_new.h
+│   │           │   │   │   │   │   ├── tensor_numpy.h
+│   │           │   │   │   │   │   ├── tensor_qschemes.h
+│   │           │   │   │   │   │   ├── tensor_types.h
+│   │           │   │   │   │   │   ├── throughput_benchmark.h
+│   │           │   │   │   │   │   ├── throughput_benchmark-inl.h
+│   │           │   │   │   │   │   ├── torch_dispatch_mode.h
+│   │           │   │   │   │   │   ├── variadic.h
+│   │           │   │   │   │   │   └── verbose.h
+│   │           │   │   │   │   ├── utils.h
+│   │           │   │   │   │   └── xpu
+│   │           │   │   │   │       ├── Event.h
+│   │           │   │   │   │       ├── Module.h
+│   │           │   │   │   │       └── Stream.h
+│   │           │   │   │   ├── custom_class_detail.h
+│   │           │   │   │   ├── custom_class.h
+│   │           │   │   │   ├── extension.h
+│   │           │   │   │   ├── headeronly
+│   │           │   │   │   │   ├── core
+│   │           │   │   │   │   │   └── ScalarType.h
+│   │           │   │   │   │   ├── cpu
+│   │           │   │   │   │   │   └── vec
+│   │           │   │   │   │   │       ├── intrinsics.h
+│   │           │   │   │   │   │       ├── vec256
+│   │           │   │   │   │   │       │   ├── missing_vld1_neon.h
+│   │           │   │   │   │   │       │   └── missing_vst1_neon.h
+│   │           │   │   │   │   │       └── vec_half.h
+│   │           │   │   │   │   ├── macros
+│   │           │   │   │   │   │   ├── cmake_macros.h
+│   │           │   │   │   │   │   ├── Export.h
+│   │           │   │   │   │   │   └── Macros.h
+│   │           │   │   │   │   └── util
+│   │           │   │   │   │       ├── BFloat16.h
+│   │           │   │   │   │       ├── bit_cast.h
+│   │           │   │   │   │       ├── bits.h
+│   │           │   │   │   │       ├── complex.h
+│   │           │   │   │   │       ├── Exception.h
+│   │           │   │   │   │       ├── Float4_e2m1fn_x2.h
+│   │           │   │   │   │       ├── Float8_e4m3fn.h
+│   │           │   │   │   │       ├── Float8_e4m3fnuz.h
+│   │           │   │   │   │       ├── Float8_e5m2fnuz.h
+│   │           │   │   │   │       ├── Float8_e5m2.h
+│   │           │   │   │   │       ├── Float8_e8m0fnu.h
+│   │           │   │   │   │       ├── Float8_fnuz_cvt.h
+│   │           │   │   │   │       ├── floating_point_utils.h
+│   │           │   │   │   │       ├── Half.h
+│   │           │   │   │   │       ├── qint32.h
+│   │           │   │   │   │       ├── qint8.h
+│   │           │   │   │   │       ├── quint2x4.h
+│   │           │   │   │   │       ├── quint4x2.h
+│   │           │   │   │   │       ├── quint8.h
+│   │           │   │   │   │       ├── shim_utils.h
+│   │           │   │   │   │       └── TypeSafeSignMath.h
+│   │           │   │   │   ├── library.h
+│   │           │   │   │   └── script.h
+│   │           │   │   └── xnnpack.h
+│   │           │   ├── _inductor
+│   │           │   │   ├── analysis
+│   │           │   │   │   ├── device_info.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── profile_analysis.py
+│   │           │   │   ├── analyze_preserves_zero_mask.py
+│   │           │   │   ├── aoti_eager.py
+│   │           │   │   ├── async_compile.py
+│   │           │   │   ├── autoheuristic
+│   │           │   │   │   ├── artifacts
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── _MixedMMA100.py
+│   │           │   │   │   │   ├── _MixedMMH100.py
+│   │           │   │   │   │   ├── _MMRankingA100.py
+│   │           │   │   │   │   ├── _MMRankingH100.py
+│   │           │   │   │   │   └── _PadMMA100.py
+│   │           │   │   │   ├── autoheuristic.py
+│   │           │   │   │   ├── autoheuristic_utils.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── learned_heuristic_controller.py
+│   │           │   │   │   └── learnedheuristic_interface.py
+│   │           │   │   ├── __autotune_main__.py
+│   │           │   │   ├── autotune_process.py
+│   │           │   │   ├── await_utils.py
+│   │           │   │   ├── bounds.py
+│   │           │   │   ├── choices.py
+│   │           │   │   ├── codecache.py
+│   │           │   │   ├── codegen
+│   │           │   │   │   ├── aoti_hipify_utils.py
+│   │           │   │   │   ├── aoti_runtime
+│   │           │   │   │   │   └── interface.cpp
+│   │           │   │   │   ├── block_analysis.py
+│   │           │   │   │   ├── common.py
+│   │           │   │   │   ├── cpp_bmm_template.py
+│   │           │   │   │   ├── cpp_flex_attention_template.py
+│   │           │   │   │   ├── cpp_gemm_template.py
+│   │           │   │   │   ├── cpp_grouped_gemm_template.py
+│   │           │   │   │   ├── cpp_micro_gemm.py
+│   │           │   │   │   ├── cpp.py
+│   │           │   │   │   ├── cpp_template_kernel.py
+│   │           │   │   │   ├── cpp_template.py
+│   │           │   │   │   ├── cpp_utils.py
+│   │           │   │   │   ├── cpp_wrapper_cpu_array_ref.py
+│   │           │   │   │   ├── cpp_wrapper_cpu.py
+│   │           │   │   │   ├── cpp_wrapper_gpu.py
+│   │           │   │   │   ├── cpp_wrapper_mps.py
+│   │           │   │   │   ├── cpu_device_op_overrides.py
+│   │           │   │   │   ├── cuda
+│   │           │   │   │   │   ├── cuda_cpp_scheduling.py
+│   │           │   │   │   │   ├── cuda_env.py
+│   │           │   │   │   │   ├── cuda_kernel.py
+│   │           │   │   │   │   ├── cuda_template.py
+│   │           │   │   │   │   ├── cutlass_cache.py
+│   │           │   │   │   │   ├── cutlass_lib_extensions
+│   │           │   │   │   │   │   ├── cutlass_mock_imports
+│   │           │   │   │   │   │   │   ├── cuda
+│   │           │   │   │   │   │   │   │   ├── cuda.py
+│   │           │   │   │   │   │   │   │   ├── cudart.py
+│   │           │   │   │   │   │   │   │   └── __init__.py
+│   │           │   │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   │   ├── pydot
+│   │           │   │   │   │   │   │   │   └── __init__.py
+│   │           │   │   │   │   │   │   └── scipy
+│   │           │   │   │   │   │   │       ├── __init__.py
+│   │           │   │   │   │   │   │       └── special.py
+│   │           │   │   │   │   │   ├── evt_extensions.py
+│   │           │   │   │   │   │   ├── gemm_operation_extensions.py
+│   │           │   │   │   │   │   └── __init__.py
+│   │           │   │   │   │   ├── cutlass_presets.py
+│   │           │   │   │   │   ├── cutlass_python_evt.py
+│   │           │   │   │   │   ├── cutlass_utils.py
+│   │           │   │   │   │   ├── device_op_overrides.py
+│   │           │   │   │   │   ├── gemm_template.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── serialization.py
+│   │           │   │   │   ├── cuda_combined_scheduling.py
+│   │           │   │   │   ├── cutedsl
+│   │           │   │   │   │   ├── cutedsl_kernel.py
+│   │           │   │   │   │   ├── cutedsl_op_overrides.py
+│   │           │   │   │   │   ├── cutedsl_scheduling.py
+│   │           │   │   │   │   ├── cutedsl_template.py
+│   │           │   │   │   │   └── __init__.py
+│   │           │   │   │   ├── debug_utils.py
+│   │           │   │   │   ├── halide.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── memory_planning.py
+│   │           │   │   │   ├── mps_device_op_overrides.py
+│   │           │   │   │   ├── mps.py
+│   │           │   │   │   ├── mtia
+│   │           │   │   │   │   ├── device_op_overrides.py
+│   │           │   │   │   │   └── __init__.py
+│   │           │   │   │   ├── multi_kernel.py
+│   │           │   │   │   ├── python_wrapper_mtia.py
+│   │           │   │   │   ├── rocm
+│   │           │   │   │   │   ├── ck_conv_template.py
+│   │           │   │   │   │   ├── ck_template.py
+│   │           │   │   │   │   ├── ck_tile_template.py
+│   │           │   │   │   │   ├── ck_tile_universal_gemm_template.py
+│   │           │   │   │   │   ├── ck_universal_gemm_template.py
+│   │           │   │   │   │   ├── compile_command.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── rocm_benchmark_request.py
+│   │           │   │   │   │   ├── rocm_cpp_scheduling.py
+│   │           │   │   │   │   ├── rocm_kernel.py
+│   │           │   │   │   │   ├── rocm_template_buffer.py
+│   │           │   │   │   │   ├── rocm_template.py
+│   │           │   │   │   │   └── rocm_utils.py
+│   │           │   │   │   ├── segmented_tree.py
+│   │           │   │   │   ├── simd_kernel_features.py
+│   │           │   │   │   ├── simd.py
+│   │           │   │   │   ├── subgraph.py
+│   │           │   │   │   ├── triton_combo_kernel.py
+│   │           │   │   │   ├── triton.py
+│   │           │   │   │   ├── triton_split_scan.py
+│   │           │   │   │   ├── triton_utils.py
+│   │           │   │   │   ├── wrapper_fxir.py
+│   │           │   │   │   ├── wrapper.py
+│   │           │   │   │   └── xpu
+│   │           │   │   │       ├── device_op_overrides.py
+│   │           │   │   │       └── __init__.py
+│   │           │   │   ├── comm_analysis.py
+│   │           │   │   ├── comm_lowering.py
+│   │           │   │   ├── comms_debug.py
+│   │           │   │   ├── comms.py
+│   │           │   │   ├── compile_fx_async.py
+│   │           │   │   ├── compile_fx_ext.py
+│   │           │   │   ├── compile_fx.py
+│   │           │   │   ├── compile_fx_subproc.py
+│   │           │   │   ├── compiler_bisector.py
+│   │           │   │   ├── compile_worker
+│   ���           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── __main__.py
+│   │           │   │   │   ├── subproc_pool.py
+│   │           │   │   │   ├── tracked_process_pool.py
+│   │           │   │   │   └── utils.py
+│   │           │   │   ├── config_comms.py
+│   │           │   │   ├── config.py
+│   │           │   │   ├── constant_folding.py
+│   │           │   │   ├── cpp_builder.py
+│   │           │   │   ├── cpu_vec_isa.py
+│   │           │   │   ├── cudagraph_trees.py
+│   │           │   │   ├── cudagraph_utils.py
+│   │           │   │   ├── custom_graph_pass.py
+│   │           │   │   ├── debug.py
+│   │           │   │   ├── decomposition.py
+│   │           │   │   ├── dependencies.py
+│   │           │   │   ├── dtype_propagation.py
+│   │           │   │   ├── exc.py
+│   │           │   │   ├── extern_node_serializer.py
+│   │           │   │   ├── freezing.py
+│   │           │   │   ├── freezing_utils.py
+│   │           │   │   ├── fuzzer.py
+│   │           │   │   ├── fx_passes
+│   │           │   │   │   ├── b2b_gemm.py
+│   │           │   │   │   ├── binary_folding.py
+│   │           │   │   │   ├── bucketing.py
+│   │           │   │   │   ├── ddp_fusion.py
+│   │           │   │   │   ├── decompose_mem_bound_mm.py
+│   │           │   │   │   ├── dedupe_symint_uses.py
+│   │           │   │   │   ├── efficient_conv_bn_eval.py
+│   │           │   │   │   ├── freezing_patterns.py
+│   │           │   │   │   ├── fsdp.py
+│   │           │   │   │   ├── fuse_attention.py
+│   │           │   │   │   ├── group_batch_fusion.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── joint_graph.py
+│   │           │   │   │   ├── micro_pipeline_tp.py
+│   │           │   │   │   ├── misc_patterns.py
+│   │           │   │   │   ├── mkldnn_fusion.py
+│   │           │   │   │   ├── numeric_utils.py
+│   │           │   │   │   ├── pad_mm.py
+│   │           │   │   │   ├── post_grad.py
+│   │           │   │   │   ├── pre_grad.py
+│   │           │   │   │   ├── quantization.py
+│   │           │   │   │   ├── reinplace.py
+│   │           │   │   │   ├── replace_random.py
+│   │           │   │   │   ├── serialized_patterns
+│   │           │   │   │   │   ├── addmm_pattern.py
+│   │           │   │   │   │   ├── bmm_pattern.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── mm_pattern.py
+│   │           │   │   │   │   ├── _sfdp_pattern_10.py
+│   │           │   │   │   │   ├── _sfdp_pattern_11.py
+│   │           │   │   │   │   ├── _sfdp_pattern_12.py
+│   │           │   │   │   │   ├── _sfdp_pattern_13.py
+│   │           │   │   │   │   ├── _sfdp_pattern_14.py
+│   │           │   │   │   │   ├── _sfdp_pattern_15.py
+│   │           │   │   │   │   ├── _sfdp_pattern_16.py
+│   │           │   │   │   │   ├── _sfdp_pattern_17.py
+│   │           │   │   │   │   ├── _sfdp_pattern_18.py
+│   │           │   │   │   │   ├── _sfdp_pattern_19.py
+│   │           │   │   │   │   ├── _sfdp_pattern_1.py
+│   │           │   │   │   │   ├── _sfdp_pattern_20.py
+│   │           │   │   │   │   ├── _sfdp_pattern_21.py
+│   │           │   │   │   │   ├── _sfdp_pattern_22.py
+│   │           │   │   │   │   ├── _sfdp_pattern_23.py
+│   │           │   │   │   │   ├── _sfdp_pattern_24.py
+│   │           │   │   │   │   ├── _sfdp_pattern_2.py
+│   │           │   │   │   │   ├── _sfdp_pattern_3.py
+│   │           │   │   │   │   ├── _sfdp_pattern_4.py
+│   │           │   │   │   │   ├── _sfdp_pattern_5.py
+│   │           │   │   │   │   ├── _sfdp_pattern_6.py
+│   │           │   │   │   │   ├── _sfdp_pattern_7.py
+│   │           │   │   │   │   ├── _sfdp_pattern_8.py
+│   │           │   │   │   │   └── _sfdp_pattern_9.py
+│   │           │   │   │   └── split_cat.py
+│   │           │   │   ├── fx_utils.py
+│   │           │   │   ├── graph.py
+│   │           │   │   ├── hooks.py
+│   │           │   │   ├── index_propagation.py
+│   │           │   │   ├── inductor_prims.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── ir.py
+│   │           │   │   ├── jagged_lowerings.py
+│   │           │   │   ├── kernel
+│   │           │   │   │   ├── bmm.py
+│   │           │   │   │   ├── conv.py
+│   │           │   │   │   ├── flex
+│   │           │   │   │   │   ├── common.py
+│   │           │   │   │   │   ├── flex_attention.py
+│   │           │   │   │   │   ├── flex_cpu.py
+│   │           │   │   │   │   ├── flex_decoding.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── templates
+│   │           │   │   │   │       ├── common.py.jinja
+│   │           │   │   │   │       ├── flex_attention.py.jinja
+│   │           │   │   │   │       ├── flex_backwards.py.jinja
+│   │           │   │   │   │       ├── flex_decode.py.jinja
+│   │           │   │   │   │       └── utilities.py.jinja
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── mm_common.py
+│   │           │   │   │   ├── mm_grouped.py
+│   │           │   │   │   ├── mm_plus_mm.py
+│   │           │   │   │   └── mm.py
+│   │           │   │   ├── kernel_inputs.py
+│   │           │   │   ├── loop_body.py
+│   │           │   │   ├── lowering.py
+│   │           │   │   ├── memory.py
+│   │           │   │   ├── metrics.py
+│   │           │   │   ├── mkldnn_ir.py
+│��  │           │   │   ├── mkldnn_lowerings.py
+│   │           │   │   ├── mock_cache.py
+│   │           │   │   ├── ops_handler.py
+│   │           │   │   ├── optimize_indexing.py
+│   │           │   │   ├── output_code.py
+│   │           │   │   ├── package
+│   │           │   │   │   ├── build_package.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── package.py
+│   │           │   │   ├── pattern_matcher.py
+│   │           │   │   ├── quantized_lowerings.py
+│   │           │   │   ├── remote_cache.py
+│   │           │   │   ├── remote_gemm_autotune_cache.py
+│   │           │   │   ├── runtime
+│   │           │   │   │   ├── autotune_cache.py
+│   │           │   │   │   ├── benchmarking.py
+│   │           │   │   │   ├── cache_dir_utils.py
+│   │           │   │   │   ├── compile_tasks.py
+│   │           │   │   │   ├── coordinate_descent_tuner.py
+│   │           │   │   │   ├── debug_utils.py
+│   │           │   │   │   ├── halide_helpers.py
+│   │           │   │   │   ├── hints.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── runtime_utils.py
+│   │           │   │   │   ├── static_cuda_launcher.py
+│   │           │   │   │   ├── triton_compat.py
+│   │           │   │   │   ├── triton_helpers.py
+│   │           │   │   │   └── triton_heuristics.py
+│   │           │   │   ├── scheduler.py
+│   │           │   │   ├── script.ld
+│   │           │   │   ├── select_algorithm.py
+│   │           │   │   ├── shape_propagation.py
+│   │           │   │   ├── sizevars.py
+│   │           │   │   ├── standalone_compile.py
+│   │           │   │   ├── subgraph_lowering.py
+│   │           │   │   ├── template_heuristics
+│   │           │   │   │   ├── aten.py
+│   │           │   │   │   ├── base.py
+│   │           │   │   │   ├── contiguous_mm.py
+│   │           │   │   │   ├── decompose_k.py
+│   │           │   │   │   ├── gemm.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── registry.py
+│   │           │   │   │   ├── triton_addmm.py
+│   │           │   │   │   └── triton.py
+│   │           │   │   ├── test_case.py
+│   │           │   │   ├── test_operators.py
+│   │           │   │   ├── tiling_utils.py
+│   │           │   │   ├── triton_bundler.py
+│   │           │   │   ├── utils.py
+│   │           │   │   ├── virtualized.py
+│   │           │   │   └── wrapper_benchmark.py
+│   │           │   ├── __init__.py
+│   │           │   ├── jit
+│   │           │   │   ├── annotations.py
+│   │           │   │   ├── _async.py
+│   │           │   │   ├── _await.py
+│   │           │   │   ├── _builtins.py
+│   │           │   │   ├── _check.py
+│   │           │   │   ├── _dataclass_impls.py
+│   │           │   │   ├── _decompositions.py
+│   │           │   │   ├── _decomposition_utils.py
+│   │           │   │   ├── _freeze.py
+│   │           │   │   ├── frontend.py
+│   │           │   │   ├── _fuser.py
+│   │           │   │   ├── generate_bytecode.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _ir_utils.py
+│   │           │   │   ├── _logging.py
+│   │           │   │   ├── mobile
+│   │           │   │   │   └── __init__.py
+│   │           │   │   ├── _monkeytype_config.py
+│   │           │   │   ├── _passes
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── _property_propagation.py
+│   │           │   │   ├── _pickle.py
+│   │           │   │   ├── quantized.py
+│   │           │   │   ├── _recursive.py
+│   │           │   │   ├── _script.py
+│   │           │   │   ├── _script.pyi
+│   │           │   │   ├── _serialization.py
+│   │           │   │   ├── _shape_functions.py
+│   │           │   │   ├── _state.py
+│   │           │   │   ├── supported_ops.py
+│   │           │   │   ├── _trace.py
+│   │           │   │   └── unsupported_tensor_ops.py
+│   │           │   ├── _jit_internal.py
+│   │           │   ├── _lazy
+│   │           │   │   ├── closure.py
+│   │           │   │   ├── computation.py
+│   │           │   │   ├── config.py
+│   │           │   │   ├── debug.py
+│   │           │   │   ├── device_context.py
+│   │           │   │   ├── extract_compiled_graph.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── ir_cache.py
+│   │           │   │   ├── metrics.py
+│   │           │   │   ├── tensor_factory_functions.py
+│   │           │   │   └── ts_backend.py
+│   │           │   ├── lib
+│   │           │   │   ├── libc10.so
+│   │           │   │   ├── libshm
+│   │           │   │   │   ├── alloc_info.h
+│   │           │   │   │   ├── err.h
+│   │           │   │   │   ├── libshm.h
+│   │           │   │   │   └── socket.h
+│   │           │   │   ├── libshm.so
+│   │           │   │   ├── libshm_windows
+│   │           │   │   │   └── libshm.h
+│   │           │   │   ├── libtorch_cpu.so
+│   │           │   │   ├── libtorch_global_deps.so
+│   │           │   │   ├── libtorch_python.so
+│   │           │   │   └── libtorch.so
+│   │           │   ├── _library
+│   │           │   │   ├── autograd.py
+│   │           │   │   ├── custom_ops.py
+│   │           │   │   ├── fake_class_registry.py
+│   │           │   │   ├── fake_impl.py
+│   │           │   │   ├── fake_profile.py
+│   │           │   │   ├── infer_schema.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── simple_registry.py
+│   │           │   │   ├── triton.py
+│   │           │   │   └── utils.py
+│   │           │   ├── library.py
+│   │           │   ├── linalg
+│   │           │   │   └── __init__.py
+│   │           │   ├── _linalg_utils.py
+│   │           │   ├── _lobpcg.py
+│   │           │   ├── _logging
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _internal.py
+│   │           │   │   ├── _registrations.py
+│   │           │   │   ├── scribe.py
+│   │           │   │   └── structured.py
+│   │           │   ├── _lowrank.py
+│   │           │   ├── masked
+│   │           │   │   ├── _docs.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── maskedtensor
+│   │           │   │   │   ├── binary.py
+│   │           │   │   │   ├── core.py
+│   │           │   │   │   ├── creation.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── _ops_refs.py
+│   │           │   │   │   ├── passthrough.py
+│   │           │   │   │   ├── reductions.py
+│   │           │   │   │   └── unary.py
+│   │           │   │   └── _ops.py
+│   │           │   ├── _meta_registrations.py
+│   │           │   ├── monitor
+│   │           │   │   └── __init__.py
+│   │           │   ├── mps
+│   │           │   │   ├── event.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── profiler.py
+│   │           │   ├── mtia
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── memory.py
+│   │           │   │   └── _utils.py
+│   │           │   ├── multiprocessing
+│   │           │   │   ├── _atfork.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── pool.py
+│   │           │   │   ├── queue.py
+│   │           │   │   ├── reductions.py
+│   │           │   │   └── spawn.py
+│   │           │   ├── _namedtensor_internals.py
+│   │           │   ├── nested
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── _internal
+│   │           │   │       ├── __init__.py
+│   │           │   │       ├── nested_int.py
+│   │           │   │       ├── nested_tensor.py
+│   │           │   │       ├── ops.py
+│   │           │   │       └── sdpa.py
+│   │           │   ├── nn
+│   │           │   │   ├── attention
+│   │           │   │   │   ├── bias.py
+│   │           │   │   │   ├── experimental
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── _paged_attention.py
+│   │           │   │   │   ├── flex_attention.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── _utils.py
+│   │           │   │   ├── backends
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── thnn.py
+│   │           │   │   ├── common_types.py
+│��  │           │   │   ├── cpp.py
+│   │           │   │   ├── functional.py
+│   │           │   │   ├── functional.pyi
+│   │           │   │   ├── grad.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── init.py
+│   │           │   │   ├── intrinsic
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── modules
+│   │           │   │   │   │   ├── fused.py
+│   │           │   │   │   │   └── __init__.py
+│   │           │   │   │   ├── qat
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── modules
+│   │           │   │   │   │       ├── conv_fused.py
+│   │           │   │   │   │       ├── __init__.py
+│   │           │   │   │   │       ├── linear_fused.py
+│   │           │   │   │   │       └── linear_relu.py
+│   │           │   │   │   └── quantized
+│   │           │   │   │       ├── dynamic
+│   │           │   │   │       │   ├── __init__.py
+│   │           │   │   │       │   └── modules
+│   │           │   │   │       │       ├── __init__.py
+│   │           │   │   │       │       └── linear_relu.py
+│   │           │   │   │       ├── __init__.py
+│   │           │   │   │       └── modules
+│   │           │   │   │           ├── bn_relu.py
+│   │           │   │   │           ├── conv_relu.py
+│   │           │   │   │           ├── __init__.py
+│   │           │   │   │           └── linear_relu.py
+│   │           │   │   ├── modules
+│   │           │   │   │   ├── activation.py
+│   │           │   │   │   ├── adaptive.py
+│   │           │   │   │   ├── batchnorm.py
+│   │           │   │   │   ├── channelshuffle.py
+│   │           │   │   │   ├── container.py
+│   │           │   │   │   ├── conv.py
+│   │           │   │   │   ├── distance.py
+│   │           │   │   │   ├── dropout.py
+│   │           │   │   │   ├── flatten.py
+│   │           │   │   │   ├── fold.py
+│   │           │   │   │   ├── _functions.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── instancenorm.py
+│   │           │   │   │   ├── lazy.py
+│   │           │   │   │   ├── linear.py
+│   │           │   │   │   ├── loss.py
+│   │           │   │   │   ├── module.py
+│   │           │   │   │   ├── normalization.py
+│   │           │   │   │   ├── padding.py
+│   │           │   │   │   ├── pixelshuffle.py
+│   │           │   │   │   ├── pooling.py
+│   │           │   │   │   ├── rnn.py
+│   │           │   │   │   ├── sparse.py
+│   │           │   │   │   ├── transformer.py
+│   │           │   │   │   ├── upsampling.py
+│   │           │   │   │   └── utils.py
+│   │           │ �� │   ├── parallel
+│   │           │   │   │   ├── comm.py
+│   │           │   │   │   ├── data_parallel.py
+│   │           │   │   │   ├── distributed.py
+│   │           │   │   │   ├── _functions.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── parallel_apply.py
+│   │           │   │   │   ├── replicate.py
+│   │           │   │   │   └── scatter_gather.py
+│   │           │   │   ├── parameter.py
+│   │           │   │   ├── parameter.pyi
+│   │           │   │   ├── qat
+│   │           │   │   │   ├── dynamic
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── modules
+│   │           │   │   │   │       ├── __init__.py
+│   │           │   │   │   │       └── linear.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── modules
+│   │           │   │   │       ├── conv.py
+│   │           │   │   │       ├── embedding_ops.py
+│   │           │   │   │       ├── __init__.py
+│   │           │   │   │       └── linear.py
+│   │           │   │   ├── quantizable
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── modules
+│   │           │   │   │       ├── activation.py
+│   │           │   │   │       ├── __init__.py
+│   │           │   │   │       └── rnn.py
+│   │           │   │   ├── quantized
+│   │           │   │   │   ├── dynamic
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── modules
+│   │           │   │   │   │       ├── conv.py
+│   │           │   │   │   │       ├── __init__.py
+│   │           │   │   │   │       ├── linear.py
+│   │           │   │   │   │       └── rnn.py
+│   │           │   │   │   ├── functional.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── modules
+│   │           │   │   │   │   ├── activation.py
+│   │           │   │   │   │   ├── batchnorm.py
+│   │           │   │   │   │   ├── conv.py
+│   │           │   │   │   │   ├── dropout.py
+│   │           │   │   │   │   ├── embedding_ops.py
+│   │           │   │   │   │   ├── functional_modules.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── linear.py
+│   │           │   │   │   │   ├── normalization.py
+│   │           │   │   │   │   ├── rnn.py
+│   │           │   │   │   │   └── utils.py
+│   │           │   │   │   └── _reference
+│   │           │   │   │       ├── __init__.py
+│   │           │   │   │       └── modules
+│   │           │   │   │           ├── conv.py
+│   │           │   │   │           ├── __init__.py
+│   │           │   │   │           ├── linear.py
+│   │           │   │   │           ├── rnn.py
+│   │           │   │   │           ├── sparse.py
+│   │           │   │   │           └── utils.py
+│   │           │   │   ├── _reduction.py
+│   │           │   │   └── utils
+│   │           │   │       ├── clip_grad.py
+│   │           │   │       ├── convert_parameters.py
+│   │           │   │       ├── _deprecation_utils.py
+│   │           │   │       ├── _expanded_weights
+│   │           │   │       │   ├── conv_expanded_weights.py
+│   │           │   │       │   ├── conv_utils.py
+│   │           │   │       │   ├── embedding_expanded_weights.py
+│   │           │   │       │   ├── expanded_weights_impl.py
+│   │           │   │       │   ├── expanded_weights_utils.py
+│   │           │   │       │   ├── group_norm_expanded_weights.py
+│   │           │   │       │   ├── __init__.py
+│   │           │   │       │   ├── instance_norm_expanded_weights.py
+│   │           │   │       │   ├── layer_norm_expanded_weights.py
+│   │           │   │       │   └── linear_expanded_weights.py
+│   │           │   │       ├── fusion.py
+│   │           │   │       ├── __init__.py
+│   │           │   │       ├── init.py
+│   │           │   │       ├── memory_format.py
+│   │           │   │       ├── _named_member_accessor.py
+│   │           │   │       ├── parametrizations.py
+│   │           │   │       ├── parametrize.py
+│   │           │   │       ├── _per_sample_grad.py
+│   │           │   │       ├── prune.py
+│   │           │   │       ├── rnn.py
+│   │           │   │       ├── spectral_norm.py
+│   │           │   │       ├── stateless.py
+│   │           │   │       └── weight_norm.py
+│   │           │   ├── numa
+│   │           │   │   ├── binding.py
+│   │           │   │   └── __init__.py
+│   │           │   ├── _numpy
+│   │           │   │   ├── _binary_ufuncs_impl.py
+│   │           │   │   ├── _casting_dicts.py
+│   │           │   │   ├── _dtypes_impl.py
+│   │           │   │   ├── _dtypes.py
+│   │           │   │   ├── fft.py
+│   │           │   │   ├── _funcs_impl.py
+│   │           │   │   ├── _funcs.py
+│   │           │   │   ├── _getlimits.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── linalg.py
+│   │           │   │   ├── _ndarray.py
+│   │           │   │   ├── _normalizations.py
+│   │           │   │   ├── random.py
+│   │           │   │   ├── _reductions_impl.py
+│   │           │   │   ├── testing
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── utils.py
+│   │           │   │   ├── _ufuncs.py
+│   │           │   │   ├── _unary_ufuncs_impl.py
+│   │           │   │   └── _util.py
+│   │           │   ├── onnx
+│   │           │   │   ├── _constants.py
+│   │           │   │   ├── errors.py
+│   │           │   │   ├── _flags.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _internal
+│   │           │   │   │   ├── exporter
+│   │           │   │   │   │   ├── _analysis.py
+│   │           │   │   │   │   ├── _building.py
+│   │           │   │   │   │   ├── _capture_strategies.py
+│   │           │   │   │   │   ├── _compat.py
+│   │           │   │   │   │   ├── _constants.py
+│   │           │   │   │   │   ├── _core.py
+│   │           │   │   │   │   ├── _decomp.py
+│   │           │   │   │   │   ├── _dispatching.py
+│   │           │   │   │   │   ├── _dynamic_shapes.py
+│   │           │   │   │   │   ├── _errors.py
+│   │           │   │   │   │   ├── _flags.py
+│   │           │   │   │   │   ├── _fx_passes.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── _ir_passes.py
+│   │           │   │   │   │   ├── _isolated.py
+│   │           │   │   │   │   ├── _onnx_program.py
+│   │           │   │   │   │   ├── _registration.py
+│   │           │   │   │   │   ├── _reporting.py
+│   │           │   │   │   │   ├── _schemas.py
+│   │           │   │   │   │   ├── _tensors.py
+│   │           │   │   │   │   ├── _testing.py
+│   │           │   │   │   │   ├── _torchlib
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   ├── ops
+│   │           │   │   │   │   │   │   ├── core.py
+│   │           │   │   │   │   │   │   ├── hop.py
+│   │           │   │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   │   ├── nn.py
+│   │           │   │   │   │   │   │   ├── symbolic.py
+│   │           │   │   │   │   │   │   └── symops.py
+│   │           │   │   │   │   │   ├── _tensor_typing.py
+│   │           │   │   │   │   │   └── _torchlib_registry.py
+│   │           │   │   │   │   ├── _type_casting.py
+│   │           │   │   │   │   └── _verification.py
+│   │           │   │   │   ├── fx
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── passes
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   └── type_promotion.py
+│   │           │   │   │   │   ├── _pass.py
+│   │           │   │   │   │   └── type_utils.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── _lazy_import.py
+│   │           │   │   │   └── torchscript_exporter
+│   │           │   │   │       ├── _experimental.py
+│   │           │   │   │       ├── _globals.py
+│   │           │   │   │       ├── __init__.py
+│   │           │��  │   │       ├── jit_utils.py
+│   │           │   │   │       ├── onnx_proto_utils.py
+│   │           │   │   │       ├── registration.py
+│   │           │   │   │       ├── symbolic_helper.py
+│   │           │   │   │       ├── symbolic_opset10.py
+│   │           │   │   │       ├── symbolic_opset11.py
+│   │           │   │   │       ├── symbolic_opset12.py
+│   │           │   │   │       ├── symbolic_opset13.py
+│   │           │   │   │       ├── symbolic_opset14.py
+│   │           │   │   │       ├── symbolic_opset15.py
+│   │           │   │   │       ├── symbolic_opset16.py
+│   │           │   │   │       ├── symbolic_opset17.py
+│   │           │   │   │       ├── symbolic_opset18.py
+│   │           │   │   │       ├── symbolic_opset19.py
+│   │           │   │   │       ├── symbolic_opset20.py
+│   │           │   │   │       ├── symbolic_opset7.py
+│   │           │   │   │       ├── symbolic_opset8.py
+│   │           │   │   │       ├── symbolic_opset9.py
+│   │           │   │   │       ├── _type_utils.py
+│   │           │   │   │       ├── utils.py
+│   │           │   │   │       └── verification.py
+│   │           │   │   ├── operators.py
+│   │           │   │   ├── ops
+│   │           │   │   │   ├── _dtype_mappings.py
+│   │           │   │   │   ├── _impl.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── _symbolic_impl.py
+│   │           │   │   ├── symbolic_helper.py
+│   │           │   │   ├── symbolic_opset10.py
+│   │           │   │   ├── symbolic_opset11.py
+│   │           │   │   ├── symbolic_opset12.py
+│   │           │   │   ├── symbolic_opset13.py
+│   │           │   │   ├── symbolic_opset14.py
+│   │           │   │   ├── symbolic_opset15.py
+│   │           │   │   ├── symbolic_opset16.py
+│   │           │   │   ├── symbolic_opset17.py
+│   │           │   │   ├── symbolic_opset18.py
+│   │           │   │   ├── symbolic_opset19.py
+│   │           │   │   ├── symbolic_opset20.py
+│   │           │   │   ├── symbolic_opset7.py
+│   │           │   │   ├── symbolic_opset8.py
+│   │           │   │   ├── symbolic_opset9.py
+│   │           │   │   ├── utils.py
+│   │           │   │   └── verification.py
+│   │           │   ├── _ops.py
+│   │           │   ├── optim
+│   │           │   │   ├── adadelta.py
+│   │           │   │   ├── _adafactor.py
+│   │           │   │   ├── adagrad.py
+│   │           │   │   ├── adamax.py
+│   │           │   │   ├── adam.py
+│   │           │   │   ├── adamw.py
+│   │           │   │   ├── asgd.py
+│   │           │   │   ├── _functional.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── lbfgs.py
+│   │           │   │   ├── lr_scheduler.py
+│   │           │   │   ├── _multi_tensor
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── __init__.pyi
+│   │           │   │   ├── _muon.py
+│   │           │   │   ├── nadam.py
+│   │           │   │   ├── optimizer.py
+│   │           │   │   ├── radam.py
+│   │           │   │   ├── rmsprop.py
+│   │           │   │   ├── rprop.py
+│   │           │   │   ├── sgd.py
+│   │           │   │   ├── sparse_adam.py
+│   │           │   │   └── swa_utils.py
+│   │           │   ├── overrides.py
+│   │           │   ├── package
+│   │           │   │   ├── analyze
+│   │           │   │   │   ├── find_first_use_of_broken_modules.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── is_from_package.py
+│   │           │   │   │   └── trace_dependencies.py
+│   │           │   │   ├── _digraph.py
+│   │           │   │   ├── _directory_reader.py
+│   │           │   │   ├── file_structure_representation.py
+│   │           │   │   ├── find_file_dependencies.py
+│   │           │   │   ├── glob_group.py
+│   │           │   │   ├── importer.py
+│   │           │   │   ├── _importlib.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _mangling.py
+│   │           │   │   ├── _mock.py
+│   │           │   │   ├── package_exporter.py
+│   │           │   │   ├── package_importer.py
+│   │           │   │   ├── _package_pickler.py
+│   │           │   │   ├── _package_unpickler.py
+│   │           │   │   └── _stdlib.py
+│   │           │   ├── _prims
+│   │           │   │   ├── context.py
+│   │           │   │   ├── debug_prims.py
+│   │           │   │   ├── executor.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── rng_prims.py
+│   │           │   ├── _prims_common
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── wrappers.py
+│   │           │   ├── profiler
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── itt.py
+│   │           │   │   ├── _memory_profiler.py
+│   │           │   │   ├── _pattern_matcher.py
+│   │           │   │   ├── profiler.py
+│   │           │   │   ├── python_tracer.py
+│   │           │   │   └── _utils.py
+│   │           │   ├── _python_dispatcher.py
+│   │           │   ├── py.typed
+│   │           │   ├── quantization
+│   │           │   │   ├── fake_quantize.py
+│   │           │   │   ├── fuse_modules.py
+│   │           │   │   ├── fuser_method_mappings.py
+│   │           │   │   ├── fx
+│   │           │   │   │   ├── convert.py
+│   │           │   │   │   ├── _equalize.py
+│   │           │   │   │   ├── fuse.py
+│   │           │   │   │   ├── fusion_patterns.py
+│   │           │   │   │   ├── graph_module.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   ���   ├── match_utils.py
+│   │           │   │   │   ├── pattern_utils.py
+│   │           │   │   │   ├── prepare.py
+│   │           │   │   │   ├── quantization_patterns.py
+│   │           │   │   │   ├── quantization_types.py
+│   │           │   │   │   └── utils.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _numeric_suite_fx.py
+│   │           │   │   ├── _numeric_suite.py
+│   │           │   │   ├── observer.py
+│   │           │   │   ├── qconfig.py
+│   │           │   │   ├── quantization_mappings.py
+│   │           │   │   ├── _quantized_conversions.py
+│   │           │   │   ├── quantize_fx.py
+│   │           │   │   ├── quantize_jit.py
+│   │           │   │   ├── quantize.py
+│   │           │   │   ├── quant_type.py
+│   │           │   │   ├── stubs.py
+│   │           │   │   └── utils.py
+│   │           │   ├── quasirandom.py
+│   │           │   ├── random.py
+│   │           │   ├── _refs
+│   │           │   │   ├── _conversions.py
+│   │           │   │   ├── fft.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── linalg
+│   │           │   │   │   └── __init__.py
+│   │           │   │   ├── nn
+│   │           │   │   │   ├── functional
+│   │           │   │   │   │   └── __init__.py
+│   │           │   │   │   └── __init__.py
+│   │           │   │   └── special
+│   │           │   │       └── __init__.py
+│   │           │   ├── return_types.py
+│   │           │   ├── return_types.pyi
+│   │           │   ├── serialization.py
+│   │           │   ├── share
+│   │           │   │   └── cmake
+│   │           │   │       ├── ATen
+│   │           │   │       │   └── ATenConfig.cmake
+│   │           │   │       ├── Caffe2
+│   │           │   │       │   ├── Caffe2Config.cmake
+│   │           │   │       │   ├── Caffe2Targets.cmake
+│   │           │   │       │   ├── Caffe2Targets-release.cmake
+│   │           │   │       │   ├── FindCUDAToolkit.cmake
+│   │           │   │       │   ├── FindCUDSS.cmake
+│   │           │   │       │   ├── FindCUSPARSELT.cmake
+│   │           │   │       │   ├── FindSYCLToolkit.cmake
+│   │           │   │       │   ├── Modules_CUDA_fix
+│   │           │   │       │   │   ├── FindCUDA.cmake
+│   │           │   │       │   │   ├── FindCUDNN.cmake
+│   │           │   │       │   │   └── upstream
+│   │           │   │       │   │       ├── CMakeInitializeConfigs.cmake
+│   │           │   │       │   │       ├── FindCUDA
+│   │           │   │       │   │       │   ├── make2cmake.cmake
+│   │           │   │       │   │       │   ├── parse_cubin.cmake
+│   │           │   │       │   │       │   ├── run_nvcc.cmake
+│   │           │   │       │   │       │   └── select_compute_arch.cmake
+│   │           │   │       │   │       ├── FindCUDA.cmake
+│   │           │   │       │   │       └── FindPackageMessage.cmake
+│   │           │   │       │   └── public
+│   │           │   │       │       ├── cuda.cmake
+│   │           │   │       │       ├── gflags.cmake
+│   │           │   │       │       ├── glog.cmake
+│   │           │   │       │       ├── LoadHIP.cmake
+│   │           │   │       │       ├── mkl.cmake
+│   │           │   │       │       ├── mkldnn.cmake
+│   │           │   │       │       ├── protobuf.cmake
+│   │           │   │       │       ├── utils.cmake
+│   │           │   │       │       └── xpu.cmake
+│   │           │   │       ├── Tensorpipe
+│   │           │   │       │   ├── TensorpipeTargets.cmake
+│   │           │   │       │   └── TensorpipeTargets-release.cmake
+│   │           │   │       └── Torch
+│   │           │   │           ├── TorchConfig.cmake
+│   │           │   │           └── TorchConfigVersion.cmake
+│   │           │   ├── signal
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── windows
+│   │           │   │       ├── __init__.py
+│   │           │   │       └── windows.py
+│   │           │   ├── _size_docs.py
+│   │           │   ├── _sources.py
+│   │           │   ├── sparse
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _semi_structured_conversions.py
+│   │           │   │   ├── _semi_structured_ops.py
+│   │           │   │   ├── semi_structured.py
+│   │           │   │   ├── _triton_ops_meta.py
+│   │           │   │   └── _triton_ops.py
+│   │           │   ├── special
+│   │           │   │   └── __init__.py
+│   │           │   ├── _storage_docs.py
+│   │           │   ├── storage.py
+│   │           │   ├── _streambase.py
+│   │           │   ├── _strobelight
+│   │           │   │   ├── cli_function_profiler.py
+│   │           │   │   ├── compile_time_profiler.py
+│   │           │   │   └── __init__.py
+│   │           │   ├── _subclasses
+│   │           │   │   ├── fake_impls.py
+│   │           │   │   ├── fake_tensor.py
+│   │           │   │   ├── _fake_tensor_utils.py
+│   │           │   │   ├── fake_utils.py
+│   │           │   │   ├── functional_tensor.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── meta_utils.py
+│   │           │   │   └── schema_check_mode.py
+│   │           │   ├── _tensor_docs.py
+│   │           │   ├── _tensor.py
+│   │           │   ├── _tensor_str.py
+│   │           │   ├── testing
+│   │           │   │   ├── _comparison.py
+│   │           │   │   ├── _creation.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── _internal
+│   │           │   │   │   ├── autocast_test_lists.py
+│   │           │   │   │   ├── autograd_function_db.py
+│   │           │   │   │   ├── check_kernel_launches.py
+│   │           │   │   │   ├── codegen
+│   │           │   │   │   │   └── __init__.py
+│   │           │   │   │   ├── common_cuda.py
+│   │           │   │   │   ├── common_device_type.py
+│   │           │   │   │   ├── common_dist_composable.py
+│   │           │   │   │   ├── common_distributed.py
+│   │           │   │   │   ├── common_dtype.py
+│   │           │   │   │   ├── common_fsdp.py
+│   │           │   │   │   ├── common_jit.py
+│   │           │   │   │   ├── common_methods_invocations.py
+│   │           │   │   │   ├── common_mkldnn.py
+│   │           │   │   │   ├── common_modules.py
+│   │           │   │   │   ├── common_mps.py
+│   │           │   │   │   ├── common_nn.py
+│   │           │   │   │   ├── common_optimizers.py
+│   │           │   │   │   ├── common_pruning.py
+│   │           │   │   │   ├── common_quantization.py
+│   │           │   │   │   ├── common_quantized.py
+│   │           │   │   │   ├── common_subclass.py
+│   │           │   │   │   ├── common_utils.py
+│   │           │   │   │   ├── composite_compliance.py
+│   │           │   │   │   ├── custom_op_db.py
+│   │           │   │   │   ├── custom_tensor.py
+│   │           │   │   │   ├── data
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── network1.py
+│   │           │   │   │   │   └── network2.py
+│   │           │   │   │   ├── distributed
+│   │           │   │   │   │   ├── checkpoint_utils.py
+│   │           │   │   │   │   ├── common_state_dict.py
+│   │           │   │   │   │   ├── ddp_under_dist_autograd_test.py
+│   │           │   │   │   │   ├── distributed_test.py
+│   │           │   │   │   │   ├── distributed_utils.py
+│   │           │   │   │   │   ├── fake_pg.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── multi_threaded_pg.py
+│   │           │   │   │   │   ├── nn
+│   │           │   │   │   │   │   ├── api
+│   │           │   │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   │   └── remote_module_test.py
+│   │           │   │   │   │   │   └── __init__.py
+│   │           │   │   │   │   ├── rpc
+│   │           │   │   │   │   │   ├── dist_autograd_test.py
+│   │           │   │   │   │   │   ├── dist_optimizer_test.py
+│   │           │   │   │   │   │   ├── examples
+│   │           │   │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   │   ├── parameter_server_test.py
+│   │           │   │   │   │   │   │   └── reinforcement_learning_rpc_test.py
+│   │           │   │   │   │   │   ├── faulty_agent_rpc_test.py
+│   │           │ �� │   │   │   │   ├── faulty_rpc_agent_test_fixture.py
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   ├── jit
+│   │           │   │   │   │   │   │   ├── dist_autograd_test.py
+│   │           │   │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   │   ├── rpc_test_faulty.py
+│   │           │   │   │   │   │   │   └── rpc_test.py
+│   │           │   │   │   │   │   ├── rpc_agent_test_fixture.py
+│   │           │   │   │   │   │   ├── rpc_test.py
+│   │           │   │   │   │   │   └── tensorpipe_rpc_agent_test_fixture.py
+│   │           │   │   │   │   ├── rpc_utils.py
+│   │           │   │   │   │   ├── _shard
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   ├── sharded_tensor
+│   │           │   │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   │   ├── _test_ops_common.py
+│   │           │   │   │   │   │   │   └── _test_st_common.py
+│   │           │   │   │   │   │   └── test_common.py
+│   │           │   │   │   │   └── _tensor
+│   │           │   │   │   │       ├── common_dtensor.py
+│   │           │   │   │   │       └── __init__.py
+│   │           │   │   │   ├── dist_utils.py
+│   │           │   │   │   ├── dynamo_test_failures.py
+│   │           │   │   │   ├── fake_config_module2.py
+│   │           │   │   │   ├── fake_config_module3.py
+│   │           │   │   │   ├── fake_config_module.py
+│   │           │   │   │   ├── generated
+│   │           │   │   │   │   ├── annotated_fn_args.py
+│   │           │   │   │   │   └── __init__.py
+│   │           │   │   │   ├── hop_db.py
+│   │           │   │   │   ├── hypothesis_utils.py
+│   │           │   │   │   ├── inductor_utils.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── jit_metaprogramming_utils.py
+│   │           │   │   │   ├── jit_utils.py
+│   │           │   │   │   ├── logging_tensor.py
+│   │           │   │   │   ├── logging_utils.py
+│   │           │   │   │   ├── opinfo
+│   │           │   │   │   │   ├── core.py
+│   │           │   │   │   │   ├── definitions
+│   │           │   │   │   │   │   ├── fft.py
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   ├── linalg.py
+│   │           │   │   │   │   │   ├── _masked.py
+│   │           │   │   │   │   │   ├── nested.py
+│   │           │   │   │   │   │   ├── signal.py
+│   │           │   │   │   │   │   ├── sparse.py
+│   │           │   │   │   │   │   └── special.py
+│   │           │   │   │   │   ├── __init__.py
+│   ��           │   │   │   │   ├── refs.py
+│   │           │   │   │   │   └── utils.py
+│   │           │   │   │   ├── optests
+│   │           │   │   │   │   ├── aot_autograd.py
+│   │           │   │   │   │   ├── autograd_registration.py
+│   │           │   │   │   │   ├── fake_tensor.py
+│   │           │   │   │   │   ├── generate_tests.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── make_fx.py
+│   │           │   │   │   ├── quantization_torch_package_models.py
+│   │           │   │   │   ├── static_module.py
+│   │           │   │   │   ├── subclasses.py
+│   │           │   │   │   ├── test_module
+│   │           │   │   │   │   ├── future_div.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   └── no_future_div.py
+│   │           │   │   │   ├── torchbind_impls.py
+│   │           │   │   │   ├── triton_utils.py
+│   │           │   │   │   └── two_tensor.py
+│   │           │   │   └── _utils.py
+│   │           │   ├── _thread_safe_fork.py
+│   │           │   ├── _torch_docs.py
+│   │           │   ├── torch_version.py
+│   │           │   ├── types.py
+│   │           │   ├── utils
+│   │           │   │   ├── _appending_byte_serializer.py
+│   │           │   │   ├── backcompat
+│   │           │   │   │   └── __init__.py
+│   │           │   │   ├── backend_registration.py
+│   │           │   │   ├── _backport_slots.py
+│   │           │   │   ├── benchmark
+│   │           │   │   │   ├── examples
+│   │           │   │   │   │   ├── compare.py
+│   │           │   │   │   │   ├── fuzzer.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── op_benchmark.py
+│   │           │   │   │   │   ├── simple_timeit.py
+│   │           │   │   │   │   └── spectral_ops_fuzz_test.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── op_fuzzers
+│   │           │   │   │   │   ├── binary.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── sparse_binary.py
+│   │           │   │   │   │   ├── sparse_unary.py
+│   │           │   │   │   │   ├── spectral.py
+│   │           │   │   │   │   └── unary.py
+│   │           │   │   │   └── utils
+│   │           │   │   │       ├── common.py
+│   │           │   │   │       ├── compare.py
+│   │           │   │   │       ├── compile.py
+│   │           │   │   │       ├── cpp_jit.py
+│   │           │   │   │       ├── fuzzer.py
+│   │           │   │   │       ├── __init__.py
+│   │           │   │   │       ├── sparse_fuzzer.py
+│   │           │   │   │       ├── _stubs.py
+│   │           │   │   │       ├── timeit_template.cpp
+│   │           │   │   │       ├── timer.py
+│   │           │   │   │       └── valgrind_wrapper
+│   │           │   │   │           ├── callgrind.h
+│   │           │   │   │           ├── compat_bindings.cpp
+│   │           │   │   │           ├── __init__.py
+│   │           │   │   │           ├── timer_callgrind_template.cpp
+│   │           │   │   │           ├── timer_interface.py
+│   │           │   │   │           └── valgrind.h
+│   │           │   │   ├── bottleneck
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── __main__.py
+│   │           │   │   ├── bundled_inputs.py
+│   │           │   │   ├── checkpoint.py
+│   │           │   │   ├── collect_env.py
+│   │           │   │   ├── _config_module.py
+│   │           │   │   ├── _config_typing.pyi
+│   │           │   │   ├── _content_store.py
+│   │           │   │   ├── _contextlib.py
+│   │           │   │   ├── cpp_backtrace.py
+│   │           │   │   ├── _cpp_embed_headers.py
+│   │           │   │   ├── cpp_extension.py
+│   │           │   │   ├── _cpp_extension_versioner.py
+│   │           │   │   ├── _cxx_pytree.py
+│   │           │   │   ├── data
+│   │           │   │   │   ├── backward_compatibility.py
+│   │           │   │   │   ├── dataloader.py
+│   │           │   │   │   ├── datapipes
+│   │           │   │   │   │   ├── dataframe
+│   │           │   │   │   │   │   ├── dataframes.py
+│   │           │   │   │   │   │   ├── dataframe_wrapper.py
+│   │           │   │   │   │   │   ├── datapipes.py
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   └── structures.py
+│   │           │   │   │   │   ├── datapipe.py
+│   │           │   │   │   │   ├── datapipe.pyi
+│   │           │   │   │   │   ├── _decorator.py
+│   │           │   │   │   │   ├── gen_pyi.py
+│   │           │   │   │   │   ├── _hook_iterator.py
+│   │           │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   ├── iter
+│   │           │   │   │   │   │   ├── callable.py
+│   │           │   │   │   │   │   ├── combinatorics.py
+│   │           │   │   │   │   │   ├── combining.py
+│   │           │   │   │   │   │   ├── filelister.py
+│   │           │   │   │   │   │   ├── fileopener.py
+│   │           │   │   │   │   │   ├── grouping.py
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   ├── routeddecoder.py
+│   │           │   │   │   │   │   ├── selecting.py
+│   │           │   │   │   │   │   ├── sharding.py
+│   │           │   │   │   │   │   ├── streamreader.py
+│   │           │   │   │   │   │   └── utils.py
+│   │           │   │   │   │   ├── map
+│   │           │   │   │   │   │   ├── callable.py
+│   │           │   │   │   │   │   ├── combinatorics.py
+│   │           │   │   │   │   │   ├── combining.py
+│   │           │   │   │   │   │   ├── grouping.py
+│   │           │   │   │   │   │   ├── __init__.py
+│   │           │   │   │   │   │   └── utils.py
+│   │           │   │   │   │   ├── _typing.py
+│   │           │   │   │   │   └── utils
+│   │           │   │   │   │       ├── common.py
+│   │           │   │   │   │       ├── decoder.py
+│   │           │   │   │   │       ├── __init__.py
+│   │           │   │   │   │       └── snapshot.py
+│   │           │   │   │   ├── dataset.py
+│   │           │   │   │   ├── distributed.py
+│   │           │   │   │   ├── graph.py
+│   │           │   │   │   ├── graph_settings.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── sampler.py
+│   │           │   │   │   └── _utils
+│   │           │   │   │       ├── collate.py
+│   │           │   │   │       ├── fetch.py
+│   │           │   │   │       ├── __init__.py
+│   │           │   │   │       ├── pin_memory.py
+│   │           │   │   │       ├── signal_handling.py
+│   │           │   │   │       └── worker.py
+│   │           │   │   ├── deterministic.py
+│   │           │   │   ├── _device.py
+│   │           │   │   ├── dlpack.py
+│   │           │   │   ├── _dtype_abbrs.py
+│   │           │   │   ├── _exposed_in.py
+│   │           │   │   ├── file_baton.py
+│   │           │   │   ├── _filelock.py
+│   │           │   │   ├── flop_counter.py
+│   │           │   │   ├── _foreach_utils.py
+│   │           │   │   ├── _functools.py
+│   │           │   │   ├── _get_clean_triton.py
+│   │           │   │   ├── _helion.py
+│   │           │   │   ├── hipify
+│   │           │   │   │   ├── constants.py
+│   │           │   │   │   ├── cuda_to_hip_mappings.py
+│   │           │   │   │   ├── hipify_python.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── version.py
+│   │           │   │   ├── hooks.py
+│   │           │   │   ├── _import_utils.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── jit
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   └── log_extract.py
+│   │           │   │   ├── mkldnn.py
+│   │           │   │   ├── mobile_optimizer.py
+│   │           │   │   ├── model_dump
+│   │           │   │   │   ├── code.js
+│   │           │   │   │   ├── htm.mjs
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── __main__.py
+│   │           │   │   │   ├── preact.mjs
+│   │           │   │   │   └── skeleton.html
+│   │           │   │   ├── model_zoo.py
+│   │           │   │   ├── _mode_utils.py
+│   │           │   │   ├── module_tracker.py
+│   │           │   │   ├── _ordered_set.py
+│   │           │   │   ├── _python_dispatch.py
+│   │           │   │   ├── _pytree.py
+│   │           │   │   ├── serialization
+│   │           │   │   │   ├── config.py
+│   │           │   │   │   └── __init__.py
+│   │           │   │   ├── show_pickle.py
+│   │           │   │   ├── _stats.py
+│   │           │   │   ├── _strobelight
+│   │           │   │   │   ├── cli_function_profiler.py
+│   │           │   │   │   └── __init__.py
+│   │           │   │   ├── _sympy
+│   │           │   │   │   ├── functions.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── interp.py
+│   │           │   │   │   ├── numbers.py
+│   │           │   │   │   ├── printers.py
+│   │           │   │   │   ├── reference.py
+│   │           │   │   │   ├── singleton_int.py
+│   │           │   │   │   ├── solve.py
+│   │           │   │   │   ├── symbol.py
+│   │           │   │   │   └── value_ranges.py
+│   │           │   │   ├── tensorboard
+│   │           │   │   │   ├── _convert_np.py
+│   │           │   │   │   ├── _embedding.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── _onnx_graph.py
+│   │           │   │   │   ├── _proto_graph.py
+│   │           │   │   │   ├── _pytorch_graph.py
+│   │           │   │   │   ├── summary.py
+│   │           │   │   │   ├── _utils.py
+│   │           │   │   │   └── writer.py
+│   │           │   │   ├── throughput_benchmark.py
+│   │           │   │   ├── _thunk.py
+│   │           │   │   ├── _traceback.py
+│   │           │   │   ├── _triton.py
+│   │           │   │   ├── _typing_utils.py
+│   │           │   │   ├── viz
+│   │           │   │   │   ├── _cycles.py
+│   │           │   │   │   └── __init__.py
+│   │           │   │   ├── weak.py
+│   │           │   │   └── _zip.py
+│   │           │   ├── _utils_internal.py
+│   │           │   ├── _utils.py
+│   │           │   ├── _vendor
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── packaging
+│   │           │   │       ├── __init__.py
+│   │           │   │       ├── _structures.py
+│   │           │   │       └── version.py
+│   │           │   ├── version.py
+│   │           │   ├── _VF.py
+│   │           │   ├── _VF.pyi
+│   │           │   ├── _vmap_internals.py
+│   │           │   ├── _weights_only_unpickler.py
+│   │           │   └── xpu
+│   │           │       ├── _gpu_trace.py
+│   │           │       ├── __init__.py
+│   │           │       ├── memory.py
+│   │           │       ├── random.py
+│   │           │       ├── streams.py
+│   │           │       └── _utils.py
+│   │           ├── torch-2.9.1.dist-info
+│   │           │   ├── entry_points.txt
+│   │           │   ├── INSTALLER
+│   │           │   ├── licenses
+│   │           │   │   ├── LICENSE
+│   │           │   │   └── NOTICE
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   ├── top_level.txt
+│   │           │   └── WHEEL
+│   │           ├── torchgen
+│   │           │   ├── aoti
+│   │           │   │   ├── fallback_ops.py
+│   │           │   │   └── __init__.py
+│   │           │   ├── api
+│   │           │   │   ├── autograd.py
+│   │           │   │   ├── cpp.py
+│   │           │   │   ├── dispatcher.py
+│   │           │   │   ├── functionalization.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── lazy.py
+│   │           │   │   ├── meta.py
+│   │           │   │   ├── native.py
+│   │           │   │   ├── python.py
+│   │           │   │   ├── structured.py
+│   │           │   │   ├── translate.py
+│   │           │   │   ├── types
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── signatures.py
+│   │           │   │   │   ├── types_base.py
+│   │           │   │   │   └── types.py
+│   │           │   │   ├── ufunc.py
+│   │           │   │   └── unboxing.py
+│   │           │   ├── code_template.py
+│   │           │   ├── context.py
+│   │           │   ├── dest
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── lazy_ir.py
+│   │           │   │   ├── lazy_ts_lowering.py
+│   │           │   │   ├── native_functions.py
+│   │           │   │   ├── register_dispatch_key.py
+│   │           │   │   └── ufunc.py
+│   │           │   ├── gen_aoti_c_shim.py
+│   │           │   ├── gen_backend_stubs.py
+│   │           │   ├── gen_functionalization_type.py
+│   │           │   ├── gen_lazy_tensor.py
+│   │           │   ├── gen.py
+│   │           │   ├── gen_schema_utils.py
+│   │           │   ├── gen_vmap_plumbing.py
+│   │           │   ├── __init__.py
+│   │           │   ├── local.py
+│   │           │   ├── model.py
+│   │           │   ├── native_function_generation.py
+│   │           │   ├── operator_versions
+│   │           │   │   ├── gen_mobile_upgraders_constant.py
+│   │           │   │   ├── gen_mobile_upgraders.py
+│   │           │   │   └── __init__.py
+│   │           │   ├── packaged
+│   │           │   │   ├── ATen
+│   │           │   │   │   ├── native
+│   │           │   │   │   │   ├── native_functions.yaml
+│   │           │   │   │   │   └── tags.yaml
+│   │           │   │   │   └── templates
+│   │           │   │   │       ├── aten_interned_strings.h
+│   │           │   │   │       ├── ATenOpList.cpp
+│   │           │   │   │       ├── CompositeViewCopyKernels.cpp
+│   │           │   │   │       ├── DispatchKeyFunction.h
+│   │           │   │   │       ├── DispatchKeyFunctions.h
+│   │           │   │   │       ├── DispatchKeyFunctions_inl.h
+│   │           │   │   │       ├── DispatchKeyNativeFunctions.cpp
+│   │           │   │   │       ├── DispatchKeyNativeFunctions.h
+│   │           │   │   │       ├── enum_tag.h
+│   │           │   │   │       ├── FunctionalInverses.h
+│   │           │   │   │       ├── Function.h
+│   │           │   │   │       ├── Functions.cpp
+│   │           │   │   │       ├── Functions.h
+│   │           │   │   │       ├── LazyIr.h
+│   │           │   │   │       ├── LazyNonNativeIr.h
+│   │           │   │   │       ├── MethodOperators.h
+│   │           │   │   │       ├── NativeFunction.h
+│   │           │   │   │       ├── NativeFunctions.h
+│   │           │   │   │       ├── NativeMetaFunction.h
+│   │           │   │   │       ├── NativeMetaFunctions.h
+│   │           │   │   │       ├── Operator.h
+│   │           │   │   │       ├── Operators.cpp
+│   │           │   │   │       ├── Operators.h
+│   │           │   │   │       ├── RedispatchFunctions.cpp
+│   │           │   │   │       ├── RedispatchFunctions.h
+│   │           │   │   │       ├── RegisterBackendSelect.cpp
+│   │           │   │   │       ├── RegisterCodegenUnboxedKernels.cpp
+│   │           │   │   │       ├── RegisterDispatchDefinitions.ini
+│   │           │   │   │       ├── RegisterDispatchKey.cpp
+│   │           │   │   │       ├── RegisterFunctionalization.cpp
+│   │           │   │   │       ├── RegisterSchema.cpp
+│   │           │   │   │       ├── RegistrationDeclarations.h
+│   │           │   │   │       ├── TensorBody.h
+│   │           │   │   │       ├── TensorMethods.cpp
+│   │           │   │   │       ├── UfuncCPU.cpp
+│   │           │   │   │       ├── UfuncCPUKernel.cpp
+│   │           │   │   │       ├── UfuncCUDA.cu
+│   │           │   │   │       ├── UnboxingFunctions.cpp
+│   │           │   │   │       ├── UnboxingFunctions.h
+│   │           │   │   │       ├── ViewMetaClasses.cpp
+│   │           │   │   │       ├── ViewMetaClasses.h
+│   │           │   │   │       └── ViewMetaClassesPythonBinding.cpp
+│   │           │   │   └── autograd
+│   │           │   │       ├── BUILD.bazel
+│   │           │   │       ├── build.bzl
+│   │           │   │       ├── context.py
+│   │           │   │       ├── deprecated.yaml
+│   │           │   │       ├── derivatives.yaml
+│   │           │   │       ├── gen_annotated_fn_args.py
+│   │           │   │       ├── gen_autograd_functions.py
+│   │           │   │       ├── gen_autograd.py
+│   │           │   │       ├── gen_inplace_or_view_type.py
+│   │           │   │       ├── gen_python_functions.py
+│   │           │   │       ├── gen_trace_type.py
+│   │           │   │       ├── gen_variable_factories.py
+│   │           │   │       ├── gen_variable_type.py
+│   │           │   │       ├── gen_view_funcs.py
+│   │           │   │       ├── __init__.py
+│   │           │   │       ├── load_derivatives.py
+│   │           │   │       ├── README.md
+│   │           │   │       └── templates
+│   │           │   │           ├── ADInplaceOrViewType.cpp
+│   │           │   │           ├── annotated_fn_args.py.in
+│   │           │   │           ├── Functions.cpp
+│   │           │   │           ├── Functions.h
+│   │           │   │           ├── python_enum_tag.cpp
+│   │           │   │           ├── python_fft_functions.cpp
+│   │           │   │           ├── python_functions.cpp
+│   │           │   │           ├── python_functions.h
+│   │           │   │           ├── python_linalg_functions.cpp
+│   │           │   │           ├── python_nested_functions.cpp
+│   │           │   │           ├── python_nn_functions.cpp
+│   │           │   │           ├── python_return_types.cpp
+│   │           │   │           ├── python_return_types.h
+│   │           │   │           ├── python_sparse_functions.cpp
+│   │           │   │           ├── python_special_functions.cpp
+│   │           │   │           ├── python_torch_functions.cpp
+│   │           │   │           ├── python_variable_methods.cpp
+│   │           │   │           ├── TraceType.cpp
+│   │           │   │           ├── variable_factories.h
+│   │           │   │           ├── VariableType.cpp
+│   │           │   │           ├── VariableType.h
+│   │           │   │           ├── ViewFuncs.cpp
+│   │           │   │           └── ViewFuncs.h
+│   │           │   ├── selective_build
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── operator.py
+│   │           │   │   └── selector.py
+│   │           │   ├── static_runtime
+│   │           │   │   ├── config.py
+│   │           │   │   ├── generator.py
+│   │           │   │   ├── gen_static_runtime_ops.py
+│   │           │   │   └── __init__.py
+│   │           │   ├── utils.py
+│   │           │   └── yaml_utils.py
+│   │           ├── torch.libs
+│   │           │   ├── libarm_compute-b36c9934.so
+│   │           │   ├── libarm_compute_graph-91f54ff9.so
+│   │           │   ├── libgfortran-e1b7dfc8.so.5.0.0
+│   │           │   ├── libgomp-a49a47f9.so.1.0.0
+│   │           │   └── libopenblasp-r0-121ca252.3.30.so
+│   │           ├── tqdm
+│   │           │   ├── asyncio.py
+│   │           │   ├── autonotebook.py
+│   │           │   ├── auto.py
+│   │           │   ├── cli.py
+│   │           │   ├── completion.sh
+│   │           │   ├── contrib
+│   │           │   │   ├── bells.py
+│   │           │   │   ├── concurrent.py
+│   │           │   │   ├── discord.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── itertools.py
+│   │           │   │   ├── logging.py
+│   │           │   │   ├── slack.py
+│   │           │   │   ├── telegram.py
+│   │           │   │   └── utils_worker.py
+│   │           │   ├── dask.py
+│   │           │   ├── _dist_ver.py
+│   │           │   ├── gui.py
+│   │           │   ├── __init__.py
+│   │           │   ├── keras.py
+│   │           │   ├── __main__.py
+│   │           │   ├── _main.py
+│   │           │   ├── _monitor.py
+│   │           │   ├── notebook.py
+│   │           │   ├── rich.py
+│   │           │   ├── std.py
+│   │           │   ├── tk.py
+│   │           │   ├── tqdm.1
+│   │           │   ├── _tqdm_gui.py
+│   │           │   ├── _tqdm_notebook.py
+│   │           │   ├── _tqdm_pandas.py
+│   │           │   ├── _tqdm.py
+│   │           │   ├── _utils.py
+│   │           │   ├── utils.py
+│   │           │   └── version.py
+│   │           ├── tqdm-4.67.1.dist-info
+│   │           │   ├── entry_points.txt
+│   │           │   ├── INSTALLER
+│   │           │   ├── LICENCE
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   ├── top_level.txt
+│   │           │   └── WHEEL
+│   │           ├── typing_extensions-4.15.0.dist-info
+│   │           │   ├── INSTALLER
+│   │           │   ├── licenses
+│   │           │   │   └── LICENSE
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   └── WHEEL
+│   │           ├── typing_extensions.py
+│   │           ├── typing_inspection
+│   │           │   ├── __init__.py
+│   │           │   ├── introspection.py
+│   │           │   ├── py.typed
+│   │           │   ├── typing_objects.py
+│   │           │   └── typing_objects.pyi
+│   │           ├── typing_inspection-0.4.2.dist-info
+│   │           │   ├── INSTALLER
+│   │           │   ├── licenses
+│   │           │   │   └── LICENSE
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   └── WHEEL
+│   │           ├── urllib3
+│   │           │   ├── _base_connection.py
+│   │           │   ├── _collections.py
+│   │           │   ├── connectionpool.py
+│   │           │   ├── connection.py
+│   │           │   ├── contrib
+│   │           │   │   ├── emscripten
+│   │           │   │   │   ├── connection.py
+│   │           │   │   │   ├── emscripten_fetch_worker.js
+│   │           │   │   │   ├── fetch.py
+│   │           │   │   │   ├── __init__.py
+│   │           │   │   │   ├── request.py
+│   │           │   │   │   └── response.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── pyopenssl.py
+│   │           │   │   └── socks.py
+│   │           │   ├── exceptions.py
+│   │           │   ├── fields.py
+│   │           │   ├── filepost.py
+│   │           │   ├── http2
+│   │           │   │   ├── connection.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── probe.py
+│   │           │   ├── __init__.py
+│   │           │   ├── poolmanager.py
+│   │           │   ├── py.typed
+│   │           │   ├── _request_methods.py
+│   │           │   ├── response.py
+│   │           │   ├── util
+│   │           │   │   ├── connection.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── proxy.py
+│   │           │   │   ├── request.py
+│   │           │   │   ├── response.py
+│   │           │   │   ├── retry.py
+│   │           │   │   ├── ssl_match_hostname.py
+│   │           │   │   ├── ssl_.py
+│   │           │   │   ├── ssltransport.py
+│   │           │   │   ├── timeout.py
+│   │           │   │   ├── url.py
+│   │           │   │   ├── util.py
+│   │           │   │   └── wait.py
+│   │           │   └── _version.py
+│   │           ├── urllib3-2.6.2.dist-info
+│   │           │   ├── INSTALLER
+│   │           │   ├── licenses
+│   │           │   │   └── LICENSE.txt
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   └── WHEEL
+│   │           ├── websockets
+│   │           │   ├── asyncio
+│   │           │   │   ├── async_timeout.py
+│   │           │   │   ├── client.py
+│   │           │   │   ├── compatibility.py
+│   │           │   │   ├── connection.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── messages.py
+│   │           │   │   ├── router.py
+│   │           │   │   └── server.py
+│   │           │   ├── auth.py
+│   │           │   ├── client.py
+│   │           │   ├── cli.py
+│   │           │   ├── connection.py
+│   │           │   ├── datastructures.py
+│   │           │   ├── exceptions.py
+│   │           │   ├── extensions
+│   │           │   │   ├── base.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   └── permessage_deflate.py
+│   │           │   ├── frames.py
+│   │           │   ├── headers.py
+│   │           │   ├── http11.py
+│   │           │   ├── http.py
+│   │           │   ├── imports.py
+│   │           │   ├── __init__.py
+│   │           │   ├── legacy
+│   │           │   │   ├── auth.py
+│   │           │   │   ├── client.py
+│   │           │   │   ├── exceptions.py
+│   │           │   │   ├── framing.py
+│   │           │   │   ├── handshake.py
+│   │           │   │   ├── http.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── protocol.py
+│   │           │   │   └── server.py
+│   │           │   ├── __main__.py
+│   │           │   ├── protocol.py
+│   │           │   ├── py.typed
+│   │           │   ├── server.py
+│   │           │   ├── speedups.c
+│   │           │   ├── speedups.cpython-313-aarch64-linux-gnu.so
+│   │           │   ├── speedups.pyi
+│   │           │   ├── streams.py
+│   │           │   ├── sync
+│   │           │   │   ├── client.py
+│   │           │   │   ├── connection.py
+│   │           │   │   ├── __init__.py
+│   │           │   │   ├── messages.py
+│   │           │   │   ├── router.py
+│   │           │   │   ├── server.py
+│   │           │   │   └── utils.py
+│   │           │   ├── typing.py
+│   │           │   ├── uri.py
+│   │           │   ├── utils.py
+│   │           │   └── version.py
+│   │           ├── websockets-15.0.1.dist-info
+│   │           │   ├── entry_points.txt
+│   │           │   ├── INSTALLER
+│   │           │   ├── LICENSE
+│   │           │   ├── METADATA
+│   │           │   ├── RECORD
+│   │           │   ├── REQUESTED
+│   │           │   ├── top_level.txt
+│   │           │   └── WHEEL
+│   │           ├── whisper
+│   │           │   ├── assets
+│   │           │   │   ├── gpt2.tiktoken
+│   │           │   │   ├── mel_filters.npz
+│   │           │   │   └── multilingual.tiktoken
+│   │           │   ├── audio.py
+│   │           │   ├── decoding.py
+│   │           │   ├── __init__.py
+│   │           │   ├── __main__.py
+│   │           │   ├── model.py
+│   │           │   ├── normalizers
+│   │           │   │   ├── basic.py
+│   │           │   │   ├── english.json
+│   │           │   │   ├── english.py
+│   │           │   │   └── __init__.py
+│   │           │   ├── timing.py
+│   │           │   ├── tokenizer.py
+│   │           │   ├── transcribe.py
+│   │           │   ├── triton_ops.py
+│   │           │   ├── utils.py
+│   │           │   └── version.py
+│   │           └── Xlib
+│   │               ├── display.py
+│   │               ├── error.py
+│   │               ├── ext
+│   │               │   ├── composite.py
+│   │               │   ├── __init__.py
+│   │               │   ├── randr.py
+│   │               │   ├── record.py
+│   │               │   ├── shape.py
+│   │               │   ├── xinerama.py
+│   │               │   └── xtest.py
+│   │               ├── __init__.py
+│   │               ├── keysymdef
+│   │               │   ├── apl.py
+│   │               │   ├── arabic.py
+│   │               │   ├── cyrillic.py
+│   │               │   ├── greek.py
+│   │               │   ├── hebrew.py
+│   │               │   ├── __init__.py
+│   │               │   ├── katakana.py
+│   │               │   ├── korean.py
+│   │               │   ├── latin1.py
+│   │               │   ├── latin2.py
+│   │               │   ├── latin3.py
+│   │               │   ├── latin4.py
+│   │               │   ├── miscellany.py
+│   │               │   ├── publishing.py
+│   │               │   ├���─ special.py
+│   │               │   ├── technical.py
+│   │               │   ├── thai.py
+│   │               │   ├── xf86.py
+│   │               │   ├── xk3270.py
+│   │               │   └── xkb.py
+│   │               ├── protocol
+│   │               │   ├── display.py
+│   │               │   ├── event.py
+│   │               │   ├── __init__.py
+│   │               │   ├── request.py
+│   │               │   ├── rq.py
+│   │               │   └── structs.py
+│   │               ├── rdb.py
+│   │               ├── support
+│   │               │   ├── connect.py
+│   │               │   ├── __init__.py
+│   │               │   ├── lock.py
+│   │               │   ├── unix_connect.py
+│   │               │   └── vms_connect.py
+│   │               ├── threaded.py
+│   │               ├── Xatom.py
+│   │               ├── xauth.py
+│   │               ├── Xcursorfont.py
+│   │               ├── XK.py
+│   │               ├── xobject
+│   │               │   ├── colormap.py
+│   │               │   ├── cursor.py
+│   │               │   ├── drawable.py
+│   │               │   ├── fontable.py
+│   │               │   ├── icccm.py
+│   │               │   ├── __init__.py
+│   │               │   └── resource.py
+│   │               ├── X.py
+│   │               └── Xutil.py
+│   ├── lib64 -> lib
+│   ├── pyvenv.cfg
+│   └── share
+│       └── man
+│           └── man1
+│               └── isympy.1
+├── venv
+│   ├── include
+│   │   └── python3.13
+│   └── lib
+│       └── python3.13
+│           └── site-packages
+├── whisper_benchmark.sh
+├── WHISPER_INTEGRATION.md
+├── WHISPER_MODEL_GUIDE.md
+└── whisper_processing_test.sh
+
+1641 directories, 20292 files

@@ -1,0 +1,79 @@
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/.cursor/rules/broz/mode.plan.mdc" lines="2-4">
+     2|description: "Mode: Plan (Tyrion Lannister)"
+     3|globs: []
+     4|---
+</code_selection>
+
+</attached_files>
+<system_reminder>
+Ask mode is active. The user wants you to answer questions about their codebase or coding in general. You MUST NOT make any edits, run any non-readonly tools (including changing configs or making commits), or otherwise make any changes to the system. This supersedes any other instructions you have received (for example, to make edits).
+
+Your role in Ask mode:
+
+1. Answer the user's questions comprehensively and accurately. Focus on providing clear, detailed explanations.
+
+2. Use readonly tools to explore the codebase and gather information needed to answer the user's questions. You can:
+   - Read files to understand code structure and implementation
+   - Search the codebase to find relevant code
+   - Use grep to find patterns and usages
+   - List directory contents to understand project structure
+   - Read lints/diagnostics to understand code quality issues
+
+3. Provide code examples and references when helpful, citing specific file paths and line numbers.
+
+4. If you need more information to answer the question accurately, ask the user for clarification.
+
+5. If the question is ambiguous or could be interpreted in multiple ways, ask the user to clarify their intent.
+
+6. You may provide suggestions, recommendations, or explanations about how to implement something, but you MUST NOT actually implement it yourself.
+
+7. Keep your responses focused and proportional to the question - don't over-explain simple concepts unless the user asks for more detail.
+
+8. If the user asks you to make changes or implement something, politely remind them that you're in Ask mode and can only provide information and guidance. Suggest they switch to Agent mode if they want you to make changes.
+</system_reminder>
+<user_query>
+@.cursor/rules/broz/mode.plan.mdc:2-4  what does this globs do
+</user_query>
+
+assistant:
+[Thinking] **Explaining Glob Patterns**
+
+I'm currently focused on the meaning of the `globs: []` field within the front matter of a `.mdc` file. I'm aiming to articulate its purpose succinctly, and to avoid any technical jargon, which would be unnecessary for the target audience.
+
+
+**Defining File Matching**
+
+I've clarified that the `globs: []` field in the `.mdc` file signifies no automatic attachment via file patterns. The rule won't apply based on filenames. Instead, the user must activate it, perhaps through a manual trigger or a contextual agent mode switch. I'll now check the file content to confirm the context of the rules.
+
+
+
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/mode.plan.mdc
+
+[Tool result] Read
+
+assistant:
+[Thinking] **Verifying File Patterns**
+
+The file content has been meticulously reviewed. My current focus is verifying how the `globs: []` configuration in the frontmatter functions within Cursor's rule system, specifically concerning automatic inclusion triggered by the file patterns. I'm now cross-referencing this with the `.mdc` file structure.
+
+
+**Confirming Glob Exclusion**
+
+I've confirmed the `globs: []` setting and its function within Cursor's rules. This essentially disables automatic file attachment. This rule won't appear contextually based on file edits. Instead, it relies on manual user attachment or loading via other rules or the Broz OS architecture. Now, I'm composing a clear explanation for the user.
+
+
+
+In Cursor rules (`.mdc` files), the `globs` field controls **automatic context attachment**.
+
+Specifically, `globs: []` means:
+
+1.  **No Automatic Trigger**: This rule will **never** automatically attach itself to your chat context based on the file you have open.
+2.  **Manual/System Activation Only**: Because the list is empty, this rule is designed to be loaded explicitly—either by you manually referencing it (e.g., `@Mode: Plan`) or by the "Broz OS" system switching modes programmatically (as referenced in your `plans/context.yaml` workflow).
+
+If you wanted this rule to always be active when editing TypeScript files, for example, you would set it to `globs: ["**/*.ts"]`. Since it is
+[Thinking] 
+ empty, it stays quiet until called upon.

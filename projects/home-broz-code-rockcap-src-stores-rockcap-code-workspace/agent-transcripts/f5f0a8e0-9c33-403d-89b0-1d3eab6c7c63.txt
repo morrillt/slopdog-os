@@ -1,0 +1,117 @@
+user:
+<cursor_commands>
+
+--- Cursor Command: broz-menu ---
+Activate Broz Menu. (Trigger: broz:menu)
+
+Do this EXACTLY in order:
+1) Read `plans/context.yaml`
+2) Read `.cursor/rules/broz/mode.menu.mdc`
+3) Follow the mode's <agent-activation> steps
+4) Display the menu and STOP (wait for user choice)
+
+Do NOT execute any handler automatically.
+
+--- End Command ---
+</cursor_commands>
+<user_query>
+/broz-menu 
+</user_query>
+
+assistant:
+[Thinking] 
+Got it—I'll load the current Broz mode from `plans/context.yaml`, then load the Menu mode rule, follow its activation steps, and then present the menu and pause for your selection.
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/context.yaml
+
+[Tool result] Read
+
+assistant:
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/mode.menu.mdc
+
+[Tool result] Read
+
+assistant:
+### Broz Menu (current mode: **plan**)
+
+- **Plan Mode** (`broz-plan`): Strategy & Architecture (Tyrion)  
+- **Build Mode** (`broz-build`): Implementation (Taylor)  
+- **Task Mode** (`broz-task`): Quick Tasks (Bronn)  
+- **Research Mode** (`broz-research`): Investigation (Varys)  
+- **Docs Mode** (`broz-docs`): Librarian (Samwell)
+
+Tell me which one you want (or run the command), and I’ll stop here.
+
+user:
+<cursor_commands>
+
+--- Cursor Command: broz/build ---
+Activate Build Mode. (Trigger: broz:build)
+
+Do this EXACTLY in order:
+1) Read `plans/context.yaml`
+2) Set `project.current_mode: build` in `plans/context.yaml`
+3) Read the repo style guide: `/home/broz/code/rockcap/.cursor-user/commands/styleguide.md`
+4) Read `.cursor/rules/broz/mode.build.mdc`
+5) Follow the mode's <agent-activation> steps
+6) Display the menu and STOP (wait for user choice)
+
+Hard rule: code changes only allowed if `execution.current_ticket` is set.
+
+--- End Command ---
+</cursor_commands>
+<user_query>
+/broz/build 
+</user_query>
+
+assistant:
+[Thinking] 
+I’m going to switch the repo context into **Build** mode in `plans/context.yaml`, then load the style guide + Build-mode rules, and finally show the Build menu and pause for your selection.
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/context.yaml
+
+[Tool result] Read
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/context.yaml
+@@
+ project:
+   name: "RockCap Strategy Analysis"
+-  current_mode: "plan" # plan, build, task, research, docs
++  current_mode: "build" # plan, build, task, research, docs
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+Now I’ll load the repo style guide and the Build-mode rule, then I’ll show you the Build menu (and won’t run anything automatically).
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor-user/commands/styleguide.md
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/mode.build.mdc
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+Build mode is now active in `plans/context.yaml`, and I’ve loaded the style guide + Build rules. Next I’ll verify whether a ticket is set (required for code changes), then I’ll show the Build menu and pause for your choice.
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/context.yaml
+
+[Tool result] Read
+
+assistant:
+### Build Mode (current mode: **build**)
+
+**Warning:** `execution.current_ticket` is **not set**, so I’m **not allowed to make product code changes** yet. Choose **Start Next Ticket** to set one.
+
+### Build Menu
+- **Execute Ticket**: Dev Story Loop (Plan→Code→Test→Log)
+- **Code Review Ticket**: Systematic AC + task verification
+- **Start Next Ticket**
+- **Update Status**
+
+Tell me which one you want to run (or type the label).

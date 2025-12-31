@@ -1,0 +1,144 @@
+---
+description: "Workflow: Validate + extend ticket (coherence + test depth) and mark Ready"
+globs: []
+---
+# Workflow: Plan > Validate Ticket
+
+<critical>Ticket MUST have valid AC <-> Task mapping.</critical>
+<critical>Ticket MUST have concrete, stakeholder-clear test cases.</critical>
+<critical>You MUST resolve all open questions before marking Ready.</critical>
+<critical>You MUST enforce taxonomy drift checks.</critical>
+
+<workflow>
+
+<step n="1" goal="Initialization">
+  <action>
+    **Load Ticket**:
+    - Identify target ticket.
+    - Verify `plans/context.yaml`.
+  </action>
+
+  <action>
+    **Template Check**:
+    - Verify all sections present (`User Story`, `AC`, `Tests`, `Tasks`).
+    - Verify front-matter exists and valid.
+  </action>
+
+  <check if="template invalid">
+    <critical>STOP. Ticket structure broken.</critical>
+    <action>Repair structure before validation.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 1: Initialization**
+    📋 Loaded ticket and verified context
+    ✅ Confirmed template structure valid
+    
+    ➡️ **Beginning Step 2: Coherence & Ambiguity**
+  </output>
+</step>
+
+<step n="2" goal="Coherence & Ambiguity">
+  <action>
+    **Scan Coherence**:
+    - Story -> ACs -> Tests -> Tasks.
+    - Do they align?
+  </action>
+
+  <action>
+    **Identify Ambiguity**:
+    - Add `questions.items` for any gaps.
+  </action>
+
+  <action>
+    **Resolve Questions**:
+    - Loop with stakeholder to answer open questions.
+    - Update ticket content with answers.
+    - Mark questions resolved.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Coherence & Ambiguity**
+    🔗 Verified Story → ACs → Tests → Tasks alignment
+    ❓ Resolved all open questions
+    
+    ➡️ **Beginning Step 3: Gate Validation (Hard Gates)**
+  </output>
+</step>
+
+<step n="3" goal="Gate Validation (Hard Gates)">
+  <action>
+    **Validate AC-Task Mapping**:
+    - Every top-level task must map to ACs: `(AC: AC-#...)`.
+    - Every AC must be covered.
+  </action>
+
+  <action>
+    **Validate TDD Structure**:
+    - First task: Failing tests.
+    - Last task: Verify pass.
+  </action>
+
+  <check if="gates failed">
+    <critical>STOP. Hard gates failed.</critical>
+    <action>Fix mapping or task order.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 3: Gate Validation (Hard Gates)**
+    ✅ Verified AC ↔ Task mapping complete
+    🔴 Confirmed TDD structure (failing tests first)
+    
+    ➡️ **Beginning Step 4: Quality Validation**
+  </output>
+</step>
+
+<step n="4" goal="Quality Validation">
+  <action>
+    **Taxonomy Check**:
+    - Verify `tags` against `docs/taxonomy.yaml`.
+  </action>
+
+  <action>
+    **Deepen Tests**:
+    - Ensure `## Tests` has concrete cases.
+    - Add "how" bullets (max 2) per case.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Quality Validation**
+    🏷️ Verified tags against taxonomy.yaml
+    📋 Deepened test case descriptions
+    
+    ➡️ **Beginning Step 5: Decision & Output**
+  </output>
+</step>
+
+<step n="5" goal="Decision & Output">
+  <action>
+    **Determine State**:
+    - **Passed**: All gates pass, no open questions.
+    - **Failed**: Gates failed or questions remain.
+  </action>
+
+  <action>
+    **Update Metadata**:
+    - `validation.state`: passed/failed.
+    - `validation.updated`: Today.
+  </action>
+
+  <action>
+    **Mark Ready (Optional)**:
+    - If passed, update `Status: Ready`.
+  </action>
+
+  <output>
+    ### Validation Complete
+    - **Ticket**: [Link]
+    - **State**: [Passed/Failed]
+    - **Status**: [Pending/Ready]
+    - **Issues**: [List if any]
+  </output>
+</step>
+
+</workflow>

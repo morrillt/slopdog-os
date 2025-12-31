@@ -1,0 +1,967 @@
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/plans/templates/ticket.md" lines="62-73">
+    62|## BUILD Log
+    63|
+    64|<!--
+    65|CRITICAL:
+    66|- Every task should have at least 2 logs, will be used for senior tech lead reviewer to double check and resolve / confirm decisions and amnbiguities. And for stake holder to confirm alignment with business logic.
+    67|- should be a table, of associated task, type of entry then update
+    68|- Types: 
+    69|  Bug, 
+    70|  Ambiguity, 
+    71|  Progress,
+    72|
+    73|-->
+</code_selection>
+
+</attached_files>
+<cursor_commands>
+
+--- Cursor Command: broz/freeball ---
+---
+alwaysApply: false
+---
+  ignore mode and os requirements, you dont need to change to a mode, or update the config yaml, or follow a ticket. this is a one off simple task.
+--- End Command ---
+</cursor_commands>
+<user_query>
+/broz/freeball 
+</user_query>
+
+assistant:
+[Thinking] The user has invoked the `/broz/freeball` command. Looking at the cursor command definition:
+
+
+## Processing user command  
+- The user invoked the `/broz/freeball` command, triggering specific system behavior.
+What's the one-off task you'd like me to handle? I see you have the ticket template open at the BUILD Log section - is this related to what you want me to work on?
+
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/plans/templates/ticket.md" lines="62-73">
+    62|## BUILD Log
+    63|
+    64|<!--
+    65|CRITICAL:
+    66|- Every task should have at least 2 logs, will be used for senior tech lead reviewer to double check and resolve / confirm decisions and amnbiguities. And for stake holder to confirm alignment with business logic.
+    67|- should be a table, of associated task, type of entry then update
+    68|- Types: 
+    69|  Bug, 
+    70|  Ambiguity, 
+    71|  Progress,
+    72|
+    73|-->
+</code_selection>
+
+</attached_files>
+<user_query>
+@plans/templates/ticket.md:62-73 just refine this
+</user_query>
+
+assistant:
+[Thinking] The user wants me to refine the BUILD Log section in the ticket template. Looking at the current content, there's a comment block with instructions about how the BUILD Log should work:
+
+[Tool call] Read
+  path: plans/templates/ticket.md
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I can see the full context. The BUILD Log section is currently just a header with an empty line and a comment block describing how it should work. I need to refine this by:
+
+[Tool call] StrReplace
+  path: plans/templates/ticket.md
+  old_string: ## BUILD Log
+
+<!--
+CRITICAL:
+- Every task should have at least 2 logs, will be used for senior tech lead reviewer to double check and resolve / confirm decisions and amnbiguities. And for stake holder to confirm alignment with business logic.
+- should be a table, of associated task, type of entry then update
+- Types: 
+  Bug, 
+  Ambiguity, 
+  Progress,
+
+-->
+  new_string: ## BUILD Log
+
+<!-- CRITICAL: Every task should have at least 2 logs for senior tech lead review and stakeholder alignment -->
+
+| Task | Type | Update |
+|------|------|--------|
+| Task 1 | Progress | Started implementation, identified edge case in data validation |
+| Task 1 | Ambiguity | Clarified with PO: error handling should be user-friendly, not technical |
+| Task 1 | Progress | Completed core logic, added comprehensive error handling |
+| Task 2 | Bug | Found race condition in async operations, implementing mutex |
+| Task 2 | Progress | Fixed race condition, added unit tests for concurrent scenarios |
+
+**Types:**
+- **Progress**: Implementation updates, completed work, design decisions
+- **Bug**: Issues found and fixed, unexpected behavior encountered
+- **Ambiguity**: Clarifications needed, requirements questions resolved
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Perfect! I've refined the BUILD Log section by:
+
+Done! I've refined the BUILD Log section by:
+
+1. **Converted to a functional table** with columns for Task, Type, and Update
+2. **Added example entries** showing different log types (Progress, Ambiguity, Bug) 
+3. **Preserved the critical requirement** that every task needs at least 2 logs
+4. **Added type definitions** below the table for clarity
+
+The table format makes it easy to track development progress, issues, and clarifications per task, which supports the review process and stakeholder alignment mentioned in the original comment.
+
+user:
+<attached_files>
+The user made the following changes. If they reverted your changes, assume it was intentional and leave intact; ask if unsure.
+--- plans/templates/ticket.md	
++++ plans/templates/ticket.md	
+@@ -75,5 +75,5 @@
+ - **Progress**: Implementation updates, completed work, design decisions
+ - **Bug**: Issues found and fixed, unexpected behavior encountered
+-- **Ambiguity**: Clarifications needed, requirements questions resolved
++- **Ambiguity**: Clarifications requested to confirm alignment (PRODUCT AND TECH)
+ 
+ 
+
+<code_selection path="/home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc" lines="32-38">
+    32|        - **Log issues and concerns in `### Debug Log`** as they arise:
+    33|            - **Spec ambiguities**: When requirements are unclear and you made assumptions that need Product Owner review
+    34|            - **Implementation blockers**: Technical issues encountered that delayed or complicated the work
+    35|            - **Design decisions**: Non-obvious choices made during implementation that future developers should understand
+    36|            - **Gotchas**: Subtle bugs, edge cases, or pitfalls discovered that could trip up future work
+    37|            - Add **one bullet per entry** using: `- [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step`
+    38|        - *Constraint*: Only touch files relevant to this task.
+</code_selection>
+
+</attached_files>
+<user_query>
+@.cursor/rules/broz/workflows/build/continue.mdc:32-38  ok align template with these instructions
+</user_query>
+
+assistant:
+[Thinking] The user wants me to align the ticket template with the instructions in the build/continue.mdc workflow file. Let me look at what that section says:
+
+[Tool call] Read
+  path: .cursor/rules/broz/workflows/build/continue.mdc
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I understand! The workflow is describing a different section called "### Debug Log" (not BUILD Log), and it has a specific format:
+
+[Tool call] StrReplace
+  path: plans/templates/ticket.md
+  old_string: ## BUILD Log
+
+<!-- CRITICAL: Every task should have at least 2 logs for senior tech lead review and stakeholder alignment -->
+
+| Task | Type | Update |
+|------|------|--------|
+| Task 1 | Progress | Started implementation, identified edge case in data validation |
+| Task 1 | Ambiguity | Clarified with PO: error handling should be user-friendly, not technical |
+| Task 1 | Progress | Completed core logic, added comprehensive error handling |
+| Task 2 | Bug | Found race condition in async operations, implementing mutex |
+| Task 2 | Progress | Fixed race condition, added unit tests for concurrent scenarios |
+
+**Types:**
+- **Progress**: Implementation updates, completed work, design decisions
+- **Bug**: Issues found and fixed, unexpected behavior encountered
+- **Ambiguity**: Clarifications requested to confirm alignment (PRODUCT AND TECH)
+  new_string: ## Dev Agent Record
+
+### Debug Log
+<!-- Log issues and concerns as they arise during implementation -->
+
+<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+
+#### Issues Summary
+<!-- At completion, extract all logged issues into this table -->
+
+| Priority | Category | Issue | Status | Notes |
+|----------|----------|-------|--------|-------|
+| High | Spec ambiguities | | Resolved | |
+| Medium | Implementation blockers | | Resolved | |
+| Low | Design decisions | | Resolved | |
+| Low | Gotchas | | Resolved | |
+
+*Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+*Status options: Resolved, Deferred, Needs Review, Open*
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Perfect! I've aligned the ticket template with the build/continue workflow by:
+
+Perfect! I've aligned the ticket template with the build workflow instructions:
+
+1. **Renamed to "Dev Agent Record"** with "### Debug Log" subsection as specified
+2. **Added the required bullet format**: `- [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step`
+3. **Included "#### Issues Summary" table** with the exact columns: `Priority | Category | Issue | Status | Notes`
+4. **Added priority levels and status options** as defined in the workflow
+
+This now matches the implementation workflow where developers log issues during coding and create a final issues summary table at completion for review. The format supports the four categories mentioned: Spec ambiguities, Implementation blockers, Design decisions, and Gotchas.
+
+user:
+<attached_files>
+
+<code_selection path="/home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc" lines="31-38">
+    31|        - Write/Edit code to satisfy the task.
+    32|        - **CRITICAL Log issues and concerns in `### DEV AGENT RECORD`** as they arise:
+    33|            - **Spec ambiguities**: When requirements are unclear and you made assumptions that need Product Owner review
+    34|            - **Implementation blockers**: Technical issues encountered that delayed or complicated the work
+    35|            - **Design decisions**: Non-obvious choices made during implementation that future developers should understand
+    36|            - **Gotchas**: Subtle bugs, edge cases, or pitfalls discovered that could trip up future work
+    37|            - Add **one bullet per entry** using: `- [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step`
+    38|        - *Constraint*: Only touch files relevant to this task.
+</code_selection>
+
+</attached_files>
+<user_query>
+@.cursor/rules/broz/workflows/build/continue.mdc:31-38  no this needs to write to DEV AGENT RECORD, MAKE THE OTHER SECTION MORE CLEAR TECH LEAD REVIEW (tech lead also does qa)
+</user_query>
+
+assistant:
+[Thinking] The user is pointing out that the workflow says to log in "### DEV AGENT RECORD" (not "### Debug Log") and that I need to make the BUILD Log section clearer for tech lead review where the tech lead also does QA. Let me check the current ticket template and understand what needs to be adjusted.
+
+[Tool call] Read
+  path: plans/templates/ticket.md
+  offset: 75
+  limit: 15
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I need to understand the full structure. Let me read more of the ticket template around the Dev Agent Record section:
+[Tool call] Read
+  path: plans/templates/ticket.md
+  offset: 60
+  limit: 25
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I understand the issue. The workflow says to log in "### DEV AGENT RECORD" but I have it as "### Debug Log". I need to:
+
+[Tool call] StrReplace
+  path: plans/templates/ticket.md
+  old_string: ## Dev Agent Record
+
+### Debug Log
+<!-- Log issues and concerns as they arise during implementation -->
+
+<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+  new_string: ## Dev Agent Record
+
+### Dev Agent Record
+<!-- Log issues and concerns as they arise during implementation -->
+
+<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now I need to add a separate BUILD Log section for tech lead review/QA. Let me add it after the Dev Agent Record section but before QA RECORD. The BUILD Log should be where the tech lead reviews the work and does QA, so it should have a different format focused on review and quality assessment.
+[Tool call] StrReplace
+  path: plans/templates/ticket.md
+  old_string: *Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+*Status options: Resolved, Deferred, Needs Review, Open*
+
+
+
+## QA RECORD
+  new_string: *Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+*Status options: Resolved, Deferred, Needs Review, Open*
+
+## BUILD Log
+<!-- TECH LEAD REVIEW & QA: Review each task's implementation, test coverage, and code quality -->
+
+| Task | Review Status | QA Notes | Tech Lead Feedback |
+|------|---------------|----------|-------------------|
+| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+| Task 3 | ❓ Pending Review | | |
+
+**Review Status:**
+- ✅ **Approved**: Code is production-ready, meets requirements
+- ⚠️ **Needs Changes**: Issues found that must be fixed before merge
+- ❓ **Pending Review**: Awaiting tech lead review
+
+**QA Focus Areas:**
+- Code quality and patterns
+- Test coverage completeness
+- Error handling robustness
+- Performance considerations
+- Security implications
+- Documentation accuracy
+
+## QA RECORD
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Let me read the file again to see the exact content around that area:
+[Tool call] Read
+  path: plans/templates/ticket.md
+  offset: 75
+  limit: 15
+
+[Tool result] Read
+
+assistant:
+[Thinking] I see the issue - there are extra blank lines. Let me use the exact text:
+[Tool call] StrReplace
+  path: plans/templates/ticket.md
+  old_string: *Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+*Status options: Resolved, Deferred, Needs Review, Open*
+
+
+
+## QA RECORD
+  new_string: *Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+*Status options: Resolved, Deferred, Needs Review, Open*
+
+## BUILD Log
+<!-- TECH LEAD REVIEW & QA: Review each task's implementation, test coverage, and code quality -->
+
+| Task | Review Status | QA Notes | Tech Lead Feedback |
+|------|---------------|----------|-------------------|
+| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+| Task 3 | ❓ Pending Review | | |
+
+**Review Status:**
+- ✅ **Approved**: Code is production-ready, meets requirements
+- ⚠️ **Needs Changes**: Issues found that must be fixed before merge
+- ❓ **Pending Review**: Awaiting tech lead review
+
+**QA Focus Areas:**
+- Code quality and patterns
+- Test coverage completeness
+- Error handling robustness
+- Performance considerations
+- Security implications
+- Documentation accuracy
+
+## QA RECORD
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Let me try a more targeted approach. I'll search for the exact text around the QA RECORD section:
+[Tool call] StrReplace
+  path: plans/templates/ticket.md
+  old_string: *Status options: Resolved, Deferred, Needs Review, Open*
+
+
+
+
+## QA RECORD
+  new_string: *Status options: Resolved, Deferred, Needs Review, Open*
+
+## BUILD Log
+<!-- TECH LEAD REVIEW & QA: Review each task's implementation, test coverage, and code quality -->
+
+| Task | Review Status | QA Notes | Tech Lead Feedback |
+|------|---------------|----------|-------------------|
+| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+| Task 3 | ❓ Pending Review | | |
+
+**Review Status:**
+- ✅ **Approved**: Code is production-ready, meets requirements
+- ⚠️ **Needs Changes**: Issues found that must be fixed before merge
+- ❓ **Pending Review**: Awaiting tech lead review
+
+**QA Focus Areas:**
+- Code quality and patterns
+- Test coverage completeness
+- Error handling robustness
+- Performance considerations
+- Security implications
+- Documentation accuracy
+
+## QA RECORD
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Perfect! Now I have:
+
+1. "### Dev Agent Record" section where developers log issues during implementation (as specified in the workflow)
+Perfect! Now the ticket template properly separates the concerns:
+
+1. **### Dev Agent Record** - Where developers log issues and concerns during implementation (as specified in the workflow)
+2. **## BUILD Log** - Where tech leads do review and QA of the completed work
+
+The BUILD Log section now has:
+- **Clear review workflow** with status indicators (✅ Approved, ⚠️ Needs Changes, ❓ Pending Review)
+- **QA focus areas** that tech leads should check (code quality, test coverage, error handling, etc.)
+- **Structured feedback format** with QA notes and tech lead feedback columns
+- **Examples** showing how to use it for each task
+
+This gives tech leads a clear framework for reviewing code and doing QA, separate from the development logging that happens in the Dev Agent Record section.
+
+user:
+<attached_files>
+The user made the following changes. If they reverted your changes, assume it was intentional and leave intact; ask if unsure.
+--- plans/templates/ticket.md	
++++ plans/templates/ticket.md	
+@@ -63,5 +63,5 @@
+ 
+ ### Dev Agent Record
+-<!-- Log issues and concerns as they arise during implementation -->
++<!-- Log issues and concerns as they arise during implementation of continue workflow-->
+ 
+ <!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+@@ -80,7 +80,7 @@
+ *Status options: Resolved, Deferred, Needs Review, Open*
+ 
+-## BUILD Log
+-<!-- TECH LEAD REVIEW & QA: Review each task's implementation, test coverage, and code quality -->
++## DEV AGENT RECORD
+ 
++
+ | Task | Review Status | QA Notes | Tech Lead Feedback |
+ |------|---------------|----------|-------------------|
+@@ -89,16 +89,9 @@
+ | Task 3 | ❓ Pending Review | | |
+ 
+-**Review Status:**
+-- ✅ **Approved**: Code is production-ready, meets requirements
+-- ⚠️ **Needs Changes**: Issues found that must be fixed before merge
+-- ❓ **Pending Review**: Awaiting tech lead review
+ 
+-**QA Focus Areas:**
+-- Code quality and patterns
+-- Test coverage completeness
+-- Error handling robustness
+-- Performance considerations
+-- Security implications
+-- Documentation accuracy
+ 
+-## QA RECORD
++
++
++## TECH LEAD REVIEW
++
++<!-- To be filled out by tech lead, in QA and FINALIZE workflow-->
+\ No newline at end of file
+
+<code_selection path="/home/broz/code/rockcap/plans/templates/ticket.md" lines="65-89">
+L65:<!-- Log issues and concerns as they arise during implementation of continue workflow-->
+L66:
+L67:<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+L68:
+L69:#### Issues Summary
+L70:<!-- At completion, extract all logged issues into this table -->
+L71:
+L72:| Priority | Category | Issue | Status | Notes |
+L73:|----------|----------|-------|--------|-------|
+L74:| High | Spec ambiguities | | Resolved | |
+L75:| Medium | Implementation blockers | | Resolved | |
+L76:| Low | Design decisions | | Resolved | |
+L77:| Low | Gotchas | | Resolved | |
+L78:
+L79:*Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+L80:*Status options: Resolved, Deferred, Needs Review, Open*
+L81:
+L82:## DEV AGENT RECORD
+L83:
+L84:
+L85:| Task | Review Status | QA Notes | Tech Lead Feedback |
+L86:|------|---------------|----------|-------------------|
+L87:| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+L88:| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+L89:| Task 3 | ❓ Pending Review | | |
+</code_selection>
+
+<code_selection path="/home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc" lines="30-38">
+L30:    - **Step B: Implement**:
+L31:        - Write/Edit code to satisfy the task.
+L32:        - **CRITICAL Log issues and concerns in `### DEV AGENT RECORD`** as they arise:
+L33:            - **Spec ambiguities**: When requirements are unclear and you made assumptions that need Product Owner review
+L34:            - **Implementation blockers**: Technical issues encountered that delayed or complicated the work
+L35:            - **Design decisions**: Non-obvious choices made during implementation that future developers should understand
+L36:            - **Gotchas**: Subtle bugs, edge cases, or pitfalls discovered that could trip up future work
+L37:            - Add **one bullet per entry** using: `- [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step`
+L38:        - *Constraint*: Only touch files relevant to this task.
+</code_selection>
+
+</attached_files>
+<user_query>
+@plans/templates/ticket.md:65-89 these tneed to be merged into one concise log format request format, that integrates CONCISELY, and KISS with @.cursor/rules/broz/workflows/build/continue.mdc:30-38 
+</user_query>
+
+assistant:
+[Thinking] 
+Got it — I’m going to simplify `plans/templates/ticket.md` so there’s **one** Dev Agent log section that matches the workflow wording and format (timestamped bullets + the four categories), and remove the extra/duplicated headings/tables from that block.
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+  offset: 55
+  limit: 60
+
+[Tool result] Read
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/templates/ticket.md
+@@
+ ## Dev Agent Record
+ 
+-### Dev Agent Record
+-<!-- Log issues and concerns as they arise during implementation of continue workflow-->
+-
+-<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+-
+-#### Issues Summary
+-<!-- At completion, extract all logged issues into this table -->
+-
+-| Priority | Category | Issue | Status | Notes |
+-|----------|----------|-------|--------|-------|
+-| High | Spec ambiguities | | Resolved | |
+-| Medium | Implementation blockers | | Resolved | |
+-| Low | Design decisions | | Resolved | |
+-| Low | Gotchas | | Resolved | |
+-
+-*Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+-*Status options: Resolved, Deferred, Needs Review, Open*
+-
+-## DEV AGENT RECORD
+-
+-
+-| Task | Review Status | QA Notes | Tech Lead Feedback |
+-|------|---------------|----------|-------------------|
+-| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+-| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+-| Task 3 | ❓ Pending Review | | |
++### DEV AGENT RECORD
++<!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
++
++<!-- One bullet per entry (required): -->
++<!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
++
++#### Issues Summary (fill at completion)
++<!-- Extract entries above into this table -->
++| Priority | Category | Issue | Status | Notes |
++|----------|----------|-------|--------|-------|
++| High |  |  | Open |  |
++
++<!-- Priority: High → Medium → Low. Status: Resolved, Deferred, Needs Review, Open. -->
+ 
+ 
+ 
+ 
+ ## TECH LEAD REVIEW
+ 
+ <!-- To be filled out by tech lead, in QA and FINALIZE workflow-->
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Thinking] 
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+  offset: 58
+  limit: 50
+
+[Tool result] Read
+
+assistant:
+[Thinking] 
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/templates/ticket.md
+@@
+-### Dev Agent Record
+-<!-- Log issues and concerns as they arise during implementation of continue workflow-->
+-
+-<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
++### DEV AGENT RECORD
++<!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
++
++<!-- One bullet per entry (required): -->
++<!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+@@
+-#### Issues Summary
+-<!-- At completion, extract all logged issues into this table -->
+-
+-| Priority | Category | Issue | Status | Notes |
+-|----------|----------|-------|--------|-------|
+-| High | Spec ambiguities | | Resolved | |
+-| Medium | Implementation blockers | | Resolved | |
+-| Low | Design decisions | | Resolved | |
+-| Low | Gotchas | | Resolved | |
+-
+-*Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+-*Status options: Resolved, Deferred, Needs Review, Open*
++#### Issues Summary (fill at completion)
++<!-- Extract entries above into this table -->
++| Priority | Category | Issue | Status | Notes |
++|----------|----------|-------|--------|-------|
++| High |  |  | Open |  |
++
++<!-- Priority: High → Medium → Low. Status: Resolved, Deferred, Needs Review, Open. -->
+@@
+-## DEV AGENT RECORD
+-
+-
+-| Task | Review Status | QA Notes | Tech Lead Feedback |
+-|------|---------------|----------|-------------------|
+-| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+-| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+-| Task 3 | ❓ Pending Review | | |
+-
+-
+-
+-
+-
+ ## TECH LEAD REVIEW
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+  offset: 58
+  limit: 50
+
+[Tool result] Read
+
+assistant:
+Updated `@plans/templates/ticket.md:65-89` into **one KISS log format** that matches the workflow requirement (“one bullet per entry” + timestamp + category + description + resolution/next step), and removed the duplicated `## DEV AGENT RECORD` + review table from that block.
+
+Now that section is:
+
+- **`## Dev Agent Record` → `### DEV AGENT RECORD`** (single place to write the required bullets)
+- **`#### Issues Summary`** kept, but minimal (fill at completion from the bullets)
+- **Tech lead content** stays under `## TECH LEAD REVIEW` (separate)
+
+user:
+<attached_files>
+The user made the following changes. If they reverted your changes, assume it was intentional and leave intact; ask if unsure.
+--- /home/broz/code/rockcap/plans/templates/ticket.md	
++++ /home/broz/code/rockcap/plans/templates/ticket.md	
+@@ -64,6 +64,5 @@
+ ### DEV AGENT RECORD
+ <!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
+-
+-<!-- One bullet per entry (required): -->
++<!-- AT LEAST One bullet per SUB TASK (required): -->
+ <!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+ 
+--- plans/templates/ticket.md	
++++ plans/templates/ticket.md	
+@@ -62,35 +62,17 @@
+ ## Dev Agent Record
+ 
+-### Dev Agent Record
+-<!-- Log issues and concerns as they arise during implementation of continue workflow-->
++### DEV AGENT RECORD
++<!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
++<!-- AT LEAST One bullet per SUB TASK (required): -->
++<!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+ 
+-<!-- Example format: - [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step -->
+-
+-#### Issues Summary
+-<!-- At completion, extract all logged issues into this table -->
+-
++#### Issues Summary (fill at completion)
++<!-- Extract entries above into this table -->
+ | Priority | Category | Issue | Status | Notes |
+ |----------|----------|-------|--------|-------|
+-| High | Spec ambiguities | | Resolved | |
+-| Medium | Implementation blockers | | Resolved | |
+-| Low | Design decisions | | Resolved | |
+-| Low | Gotchas | | Resolved | |
++| High |  |  | Open |  |
+ 
+-*Priority levels: High (blocks future work/PO decision) → Medium (should address) → Low (nice-to-have/informational)*
+-*Status options: Resolved, Deferred, Needs Review, Open*
++<!-- Priority: High → Medium → Low. Status: Resolved, Deferred, Needs Review, Open. -->
+ 
+-## DEV AGENT RECORD
+-
+-
+-| Task | Review Status | QA Notes | Tech Lead Feedback |
+-|------|---------------|----------|-------------------|
+-| Task 1 | ✅ Approved | All tests passing, good error handling | Solid implementation, consider adding input validation |
+-| Task 2 | ⚠️ Needs Changes | Missing edge case tests | Add unit tests for null inputs, otherwise good |
+-| Task 3 | ❓ Pending Review | | |
+-
+-
+-
+-
+-
+ ## TECH LEAD REVIEW
+ 
+
+<code_selection path="/home/broz/code/rockcap/plans/templates/ticket.md" lines="69-73">
+L69:#### Issues Summary (fill at completion)
+L70:<!-- Extract entries above into this table -->
+L71:| Priority | Category | Issue | Status | Notes |
+L72:|----------|----------|-------|--------|-------|
+L73:| High |  |  | Open |  |
+</code_selection>
+
+</attached_files>
+<user_query>
+@plans/templates/ticket.md:69-73 remove status
+</user_query>
+
+assistant:
+[Thinking] **Updating ticket template**
+
+I need to edit the plans and templates, specifically in the ticket.md file. My task is to remove the status column from the issues summary. It seems I can edit the planning file directly, so I'll read through the lines and make the necessary patches. I might use ApplyPatch or StrReplace to adjust the table header and rows by taking out any mention of status in the comments. I'll definitely double-check to make sure everything is accurate!
+I’ll simplify the Issues Summary table by dropping the `Status` column everywhere it appears (header, separator, sample row, and the helper comment) so it stays minimal and consistent.
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+  offset: 60
+  limit: 20
+
+[Tool result] Read
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/templates/ticket.md
+@@
+ | Priority | Category | Issue | Status | Notes |
+-|----------|----------|-------|--------|-------|
+-| High |  |  | Open |  |
++|----------|----------|-------|-------|
++| High |  |  |  |
+ 
+-<!-- Priority: High → Medium → Low. Status: Resolved, Deferred, Needs Review, Open. -->
++<!-- Priority: High → Medium → Low. -->
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/templates/ticket.md
+@@
+-| Priority | Category | Issue | Status | Notes |
++| Priority | Category | Issue | Notes |
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] Read
+  path: /home/broz/code/rockcap/plans/templates/ticket.md
+  offset: 66
+  limit: 12
+
+[Tool result] Read
+
+assistant:
+Removed the `Status` column from the Issues Summary table (header + row), and simplified the helper comment accordingly.
+
+Now it’s:
+
+```69:75:/home/broz/code/rockcap/plans/templates/ticket.md
+#### Issues Summary (fill at completion)
+<!-- Extract entries above into this table -->
+| Priority | Category | Issue | Notes |
+|----------|----------|-------|-------|
+| High |  |  |  |
+
+<!-- Priority: High → Medium → Low. -->
+```
+
+user:
+<attached_files>
+The user made the following changes. If they reverted your changes, assume it was intentional and leave intact; ask if unsure.
+--- plans/templates/ticket.md	
++++ plans/templates/ticket.md	
+@@ -69,9 +69,9 @@
+ #### Issues Summary (fill at completion)
+ <!-- Extract entries above into this table -->
+-| Priority | Category | Issue | Status | Notes |
+-|----------|----------|-------|--------|-------|
+-| High |  |  | Open |  |
++| Priority | Category | Issue | Notes |
++|----------|----------|-------|-------|
++| High |  |  |  |
+ 
+-<!-- Priority: High → Medium → Low. Status: Resolved, Deferred, Needs Review, Open. -->
++<!-- Priority: High → Medium → Low. -->
+ 
+ ## TECH LEAD REVIEW
+
+</attached_files>
+<user_query>
+remove tpriority and put  also a yaml / comment for categories synch with the continue instruction
+</user_query>
+
+assistant:
+[Thinking] **Editing ticket details**
+
+I need to edit the ticket.md file to remove the Priority column from the Issues Summary table. I also have to add a YAML comment that lists categories synchronized with continue.mdc, like spec ambiguities, implementation blockers, design decisions, and gotchas. They mentioned including this YAML comment for category syncing. So, I'll focus on editing the section around the issues summary and use ApplyPatch for the necessary changes. There aren't any mode restrictions for the plans file, which is good. Let's patch it!
+I’ll simplify the Issues Summary table to remove `Priority`, and add a small “categories” YAML/comment block right above it so the allowed categories stay synced with the Build `continue` workflow.
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/plans/templates/ticket.md
+@@
+ ### DEV AGENT RECORD
+ <!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
+ <!-- AT LEAST One bullet per SUB TASK (required): -->
+ <!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+ 
+ #### Issues Summary (fill at completion)
++<!--
++categories:
++  - Spec ambiguity        # requirements unclear; assumptions needing PO review
++  - Implementation blocker # technical issue delaying/complicating work
++  - Design decision       # non-obvious choice future devs should know
++  - Gotcha               # subtle bug/edge case/pitfall discovered
++-->
+ <!-- Extract entries above into this table -->
+-| Priority | Category | Issue | Notes |
+-|----------|----------|-------|-------|
+-| High |  |  |  |
+-
+-<!-- Priority: High → Medium → Low. -->
++| Category | Issue | Notes |
++|----------|-------|-------|
++|  |  |  |
+ 
+ ## TECH LEAD REVIEW
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+Done in `plans/templates/ticket.md`:
+
+- **Removed `Priority`** from the Issues Summary table (now `Category | Issue | Notes`)
+- Added a **categories YAML/comment block** listing the four categories synced to the `continue` workflow:
+  - `Spec ambiguity`
+  - `Implementation blocker`
+  - `Design decision`
+  - `Gotcha`
+
+user:
+<attached_files>
+The user made the following changes. If they reverted your changes, assume it was intentional and leave intact; ask if unsure.
+--- /home/broz/code/rockcap/plans/templates/ticket.md	
++++ /home/broz/code/rockcap/plans/templates/ticket.md	
+@@ -72,6 +72,6 @@
+   - Spec ambiguity        # requirements unclear; assumptions needing PO review
+   - Implementation blocker # technical issue delaying/complicating work
+-  - Design decision       # non-obvious choice future devs should know
+-  - Gotcha               # subtle bug/edge case/pitfall discovered
++  - Implementation decision       # non-obvious choice future devs should know
++  - Bug               # subtle bug/edge case/pitfall discovered
+ -->
+ <!-- Extract entries above into this table -->
+--- plans/templates/ticket.md	
++++ plans/templates/ticket.md	
+@@ -68,11 +68,16 @@
+ 
+ #### Issues Summary (fill at completion)
++<!--
++categories:
++  - Spec ambiguity        # requirements unclear; assumptions needing PO review
++  - Implementation blocker # technical issue delaying/complicating work
++  - Implementation decision       # non-obvious choice future devs should know
++  - Bug               # subtle bug/edge case/pitfall discovered
++-->
+ <!-- Extract entries above into this table -->
+-| Priority | Category | Issue | Notes |
+-|----------|----------|-------|-------|
+-| High |  |  |  |
++| Category | Issue | Notes |
++|----------|-------|-------|
++|  |  |  |
+ 
+-<!-- Priority: High → Medium → Low. -->
+-
+ ## TECH LEAD REVIEW
+ 
+
+<code_selection path="/home/broz/code/rockcap/plans/templates/ticket.md" lines="70-75">
+L70:<!--
+L71:categories:
+L72:  - Spec ambiguity        # requirements unclear; assumptions needing PO review
+L73:  - Implementation blocker # technical issue delaying/complicating work
+L74:  - Implementation decision       # non-obvious choice future devs should know
+L75:  - Bug               # subtle bug/edge case/pitfall discovered
+</code_selection>
+
+</attached_files>
+<user_query>
+@plans/templates/ticket.md:70-75 update language in continue doc based on this revised comment
+</user_query>
+
+assistant:
+[Thinking] **Adjusting patch instructions**
+
+I need to adjust steps 58-63 to align with the new table and remove any sorting instructions, while keeping the remainder intact. My next step is to apply the patch using ApplyPatch. It's also important that I read the relevant portions of the file, especially around lines 25-65, to get the necessary context for making these adjustments. Let's ensure everything is clear and accurate!
+I’m going to update the Build `continue` workflow doc so its log categories (and the example bullet format) match the revised ticket template: **Spec ambiguity / Implementation blocker / Implementation decision / Bug**. I’ll also sync the “Issues Summary” instructions so the workflow matches the simplified summary table format.
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc
+
+[Tool result] Read
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc
+@@
+     - **Step B: Implement**:
+         - Write/Edit code to satisfy the task.
+         - **CRITICAL Log issues and concerns in `### DEV AGENT RECORD`** as they arise:
+-            - **Spec ambiguities**: When requirements are unclear and you made assumptions that need Product Owner review
+-            - **Implementation blockers**: Technical issues encountered that delayed or complicated the work
+-            - **Design decisions**: Non-obvious choices made during implementation that future developers should understand
+-            - **Gotchas**: Subtle bugs, edge cases, or pitfalls discovered that could trip up future work
+-            - Add **one bullet per entry** using: `- [YYYY-MM-DD HH:MM] [Category] Description + resolution/next step`
++            - **Spec ambiguity**: Requirements unclear; assumptions needing Product Owner review
++            - **Implementation blocker**: Technical issue that delayed or complicated the work
++            - **Implementation decision**: Non-obvious choice made during implementation that future developers should understand
++            - **Bug**: Subtle bug / edge case / pitfall discovered
++            - Add **one bullet per entry** using: `- [YYYY-MM-DD HH:MM] [Spec ambiguity | Implementation blocker | Implementation decision | Bug] Description + resolution/next step`
+         - *Constraint*: Only touch files relevant to this task.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] ApplyPatch*** Begin Patch
+*** Update File: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc
+@@
+     - **Step A: Plan**: 
+         - Look at the current unchecked task.
+-        - Write a 1-line plan in `## Dev Agent Record / ### Debug Log`.
++        - Write a 1-line plan in `## Dev Agent Record / ### DEV AGENT RECORD`.
+*** End Patch
+
+[Tool result] ApplyPatch
+
+assistant:
+[Tool call] Read
+  path: /home/broz/code/rockcap/.cursor/rules/broz/workflows/build/continue.mdc
+  offset: 24
+  limit: 35
+
+[Tool result] Read
+
+assistant:
+Updated `.cursor/rules/broz/workflows/build/continue.mdc` to match the revised ticket template comment:
+
+- **Categories renamed/synced** to:
+  - `Spec ambiguity`
+  - `Implementation blocker`
+  - `Implementation decision`
+  - `Bug`
+- **Bullet format updated** to explicitly require one of those categories:
+  - `- [YYYY-MM-DD HH:MM] [Spec ambiguity | Implementation blocker | Implementation decision | Bug] Description + resolution/next step`
+- **Step A reference fixed** to point at `## Dev Agent Record / ### DEV AGENT RECORD` (instead of the old Debug Log wording)

@@ -1,0 +1,117 @@
+---
+description: "Workflow: Publish a draft doc"
+globs: []
+---
+# Workflow: Docs > Publish
+
+<critical>You MUST enforce `docs/taxonomy.yaml` tags.</critical>
+<critical>You MUST ensure `facets.repo.path` matches file location.</critical>
+<critical>You MUST update status to `active`.</critical>
+
+<workflow>
+
+<step n="1" goal="Select & Verify Doc">
+  <action>
+    **Select Doc**:
+    - Target a `docs/` file (currently draft).
+  </action>
+
+  <action>
+    **Verify Path**:
+    - Check `facets.repo.path`.
+    - Fix if mismatch.
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Select & Verify Doc**
+    📄 Selected draft doc
+    ✅ Verified repo path matches file location
+    
+    ➡️ **Beginning Step 2: Enforce Taxonomy**
+  </output>
+</step>
+
+<step n="2" goal="Enforce Taxonomy">
+  <action>
+    **Load Taxonomy**:
+    - Read `docs/taxonomy.yaml`.
+  </action>
+
+  <action>
+    **Select Tags**:
+    - Present available tags.
+    - Requirements:
+      - 1+ `audience/*`
+      - 1+ `doc/*`
+  </action>
+
+  <action>
+    **Handle New Tags**:
+    - If user wants new tag:
+      - Confirm Group + Description.
+      - Add to `docs/taxonomy.yaml`.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Enforce Taxonomy**
+    🏷️ Selected valid tags (audience + doc types)
+    📝 Updated taxonomy.yaml if new tags added
+    
+    ➡️ **Beginning Step 3: Update Metadata**
+  </output>
+</step>
+
+<step n="3" goal="Update Metadata">
+  <action>
+    **Update Front-Matter**:
+    - `facets.status`: `active`
+    - `tags`: [Selected Tags]
+    - `updated`: [Today]
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Update Metadata**
+    ✏️ Updated status to `active`
+    🏷️ Applied selected tags to front-matter
+    
+    ➡️ **Beginning Step 4: Validation**
+  </output>
+</step>
+
+<step n="4" goal="Validation">
+  <action>
+    **Validate Rules**:
+    - Check `docs/docfrontmatterrules.md`.
+  </action>
+
+  <check if="validation failed">
+    <critical>Invalid front-matter.</critical>
+    <action>Fix errors before finishing.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 4: Validation**
+    ✅ Validated against docfrontmatterrules
+    ✅ Confirmed all required fields present
+    
+    ➡️ **Beginning Step 5: Completion**
+  </output>
+</step>
+
+<step n="5" goal="Completion">
+  <action>
+    **Provide Links**:
+    - Canonical Slug: `http://localhost:3000/docs/<slug>`
+    - Index: `http://localhost:3000/docs`
+  </action>
+
+  <output>
+    ### Doc Published
+    - **File**: [Path]
+    - **Status**: Active
+    - **Tags**: [List]
+    - **URL**: [Link]
+  </output>
+</step>
+
+</workflow>

@@ -1,0 +1,1443 @@
+### Result
+{
+  "config": {
+    "strategy": "strategy12.8refactored",
+    "maxRoundTrips": 5
+  },
+  "trades": [
+    {
+      "id": "open-1",
+      "type": "Open Short",
+      "price": 24729.25,
+      "timestamp": "2025-10-17T09:30:00-04:00"
+    },
+    {
+      "id": "close-1",
+      "type": "Close Short",
+      "price": 24737.25,
+      "timestamp": "2025-10-17T09:30:03-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-2",
+      "type": "Open Long",
+      "price": 24743.25,
+      "timestamp": "2025-10-17T09:30:04-04:00"
+    },
+    {
+      "id": "close-2",
+      "type": "Close Long",
+      "price": 24769.25,
+      "timestamp": "2025-10-17T09:30:11-04:00",
+      "note": "PT Hit",
+      "net": 26
+    },
+    {
+      "id": "open-3",
+      "type": "Open Short",
+      "price": 24729.25,
+      "timestamp": "2025-10-17T09:30:32-04:00"
+    },
+    {
+      "id": "close-3",
+      "type": "Close Short",
+      "price": 24703.25,
+      "timestamp": "2025-10-17T09:30:44-04:00",
+      "note": "PT Hit",
+      "net": 26
+    },
+    {
+      "id": "open-4",
+      "type": "Open Long",
+      "price": 24743.25,
+      "timestamp": "2025-10-17T09:31:33-04:00"
+    },
+    {
+      "id": "close-4",
+      "type": "Close Long",
+      "price": 24735.25,
+      "timestamp": "2025-10-17T09:31:55-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-5",
+      "type": "Open Long",
+      "price": 24743.25,
+      "timestamp": "2025-10-17T09:31:57-04:00"
+    },
+    {
+      "id": "close-5",
+      "type": "Close Long",
+      "price": 24735.25,
+      "timestamp": "2025-10-17T09:32:05-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-6",
+      "type": "Open Long",
+      "price": 24787.25,
+      "timestamp": "2025-10-17T09:35:12-04:00"
+    },
+    {
+      "id": "close-6",
+      "type": "Close Long",
+      "price": 24779.25,
+      "timestamp": "2025-10-17T09:35:16-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-7",
+      "type": "Open Short",
+      "price": 24773.25,
+      "timestamp": "2025-10-17T09:35:17-04:00"
+    },
+    {
+      "id": "close-7",
+      "type": "Close Short",
+      "price": 24781.25,
+      "timestamp": "2025-10-17T09:35:22-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-8",
+      "type": "Open Long",
+      "price": 24787.25,
+      "timestamp": "2025-10-17T09:35:24-04:00"
+    },
+    {
+      "id": "close-8",
+      "type": "Close Long",
+      "price": 24779.25,
+      "timestamp": "2025-10-17T09:35:56-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-9",
+      "type": "Open Short",
+      "price": 24773.25,
+      "timestamp": "2025-10-17T09:36:02-04:00"
+    },
+    {
+      "id": "close-9",
+      "type": "Close Short",
+      "price": 24781.25,
+      "timestamp": "2025-10-17T09:36:24-04:00",
+      "note": "SL Hit",
+      "net": -8
+    },
+    {
+      "id": "open-10",
+      "type": "Open Long",
+      "price": 24787.25,
+      "timestamp": "2025-10-17T09:36:25-04:00"
+    },
+    {
+      "id": "close-10",
+      "type": "Close Long",
+      "price": 24779.25,
+      "timestamp": "2025-10-17T09:36:30-04:00",
+      "note": "SL Hit",
+      "net": -8
+    }
+  ],
+  "summary": {
+    "totalTrades": 20,
+    "roundTrips": 10,
+    "totalPnL": -12
+  }
+}
+
+### Ran Playwright code
+await page.evaluate('() => {\n  if (typeof window !== \'undefined\' && window.__backtestState) {\n    const state = window.__backtestState;\n    const trades = state.generatedAlgoRows || [];\n    const closeRows = trades.filter((row) => row.id && row.id.startsWith("close-"));\n    const roundTrips = closeRows.length;\n    const totalPnL = closeRows.reduce((sum, row) => sum + (row.net || 0), 0);\n    \n    return {\n      config: {\n        strategy: state.selectedStrategyId,\n        maxRoundTrips: state.maxRoundTrips,\n      },\n      trades: trades.map(t => ({\n        id: t.id,\n        type: t.type,\n        price: t.price,\n        timestamp: t.timestamp,\n        note: t.note,\n        net: t.net\n      })),\n      summary: {\n        totalTrades: trades.length,\n        roundTrips: roundTrips,\n        totalPnL: totalPnL,\n      },\n    };\n  }\n  return { error: \'No state found\' };\n}');
+
+### New console messages
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​Preloads @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​HTTPAccessErrorFallback @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] ​NotFound @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​RootLayout @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Prepared @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Script @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Script @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [useBacktest] Loading 1s candles from: /data/backtest/candles/2022-01-03_to_2025-12-04_1s_json...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [LOG] [BacktestUI] chart script loaded @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] Waiting @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [LOG] [useBacktest] Loaded 1800 1s candles for 2025-10-17 @ http://localhost:3000/_next/static/chunk...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Generating algo trades for 2025-10-17 with pt 33 sl 7 trg 6 maxRT 5 strategy stra...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #1 (Session #1) - Scanning from candle[0] @ http://localho...
+- [LOG] [Strategy12.8refactored]   Candle[0] SHORT trigger hit @ http://localhost:3000/_next/static/ch...
+- [LOG] [Strategy12.8refactored]   Entry: 24729.25 at 2025-10-17T09:30:00-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: short trigger (24730.25) + slippage (1) = 24729....
+- [LOG] [Strategy12.8refactored]   TP: 24703.25 (based on currentStartPrice: 24736.25), SL: 24737.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[3], price=24737.25 @ http://localhost:3000/_...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: short exited with SL Hit @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[3] - price between triggers @ h...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[4] (after re-eligibility) @ http:/...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #2 (Session #2) - Scanning from candle[4] @ http://localho...
+- [LOG] [Strategy12.8refactored]   Candle[4] LONG trigger hit @ http://localhost:3000/_next/static/chu...
+- [LOG] [Strategy12.8refactored]   Entry: 24743.25 at 2025-10-17T09:30:04-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: long trigger (24742.25) + slippage (1) = 24743.2...
+- [LOG] [Strategy12.8refactored]   TP: 24769.25 (based on currentStartPrice: 24736.25), SL: 24735.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: PT Hit at candle[11], price=24769.25 @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Net P&L: 26 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: long exited with PT Hit @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found at candle[24] - price returned between trigger...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[25] (after re-eligibility) @ http:...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #3 (Session #3) - Scanning from candle[25] @ http://localh...
+- [LOG] [Strategy12.8refactored]   Candle[32] SHORT trigger hit @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8refactored]   Entry: 24729.25 at 2025-10-17T09:30:32-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: short trigger (24730.25) + slippage (1) = 24729....
+- [LOG] [Strategy12.8refactored]   TP: 24703.25 (based on currentStartPrice: 24736.25), SL: 24737.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: PT Hit at candle[44], price=24703.25 @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Net P&L: 26 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: short exited with PT Hit @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found at candle[92] - price returned between trigger...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[93] (after re-eligibility) @ http:...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #4 (Session #4) - Scanning from candle[93] @ http://localh...
+- [LOG] [Strategy12.8refactored]   Candle[93] LONG trigger hit @ http://localhost:3000/_next/static/ch...
+- [LOG] [Strategy12.8refactored]   Entry: 24743.25 at 2025-10-17T09:31:33-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: long trigger (24742.25) + slippage (1) = 24743.2...
+- [LOG] [Strategy12.8refactored]   TP: 24769.25 (based on currentStartPrice: 24736.25), SL: 24735.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[115], price=24735.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: long exited with SL Hit @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[115] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[116] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #5 (Session #5) - Scanning from candle[116] @ http://local...
+- [LOG] [Strategy12.8refactored]   Candle[117] LONG trigger hit @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8refactored]   Entry: 24743.25 at 2025-10-17T09:31:57-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: long trigger (24742.25) + slippage (1) = 24743.2...
+- [LOG] [Strategy12.8refactored]   TP: 24769.25 (based on currentStartPrice: 24736.25), SL: 24735.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[125], price=24735.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: long exited with SL Hit @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[125] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[126] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored]   Max round trips (5) reached for pre-9:35. Fast-forwarding to 9:35. ...
+- [LOG] [Strategy12.8refactored] *** 9:35 RESET TRIGGERED (No trade active) *** @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Start price switched to 24780.25 (at Reset) @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #6 (Session #1) - Scanning from candle[300] @ http://local...
+- [LOG] [Strategy12.8refactored]   Candle[312] LONG trigger hit @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8refactored]   Entry: 24787.25 at 2025-10-17T09:35:12-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: long trigger (24786.25) + slippage (1) = 24787.2...
+- [LOG] [Strategy12.8refactored]   TP: 24813.25 (based on currentStartPrice: 24780.25), SL: 24779.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[316], price=24779.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: long exited with SL Hit @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[316] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[317] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #7 (Session #2) - Scanning from candle[317] @ http://local...
+- [LOG] [Strategy12.8refactored]   Candle[317] SHORT trigger hit @ http://localhost:3000/_next/static/...
+- [LOG] [Strategy12.8refactored]   Entry: 24773.25 at 2025-10-17T09:35:17-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: short trigger (24774.25) + slippage (1) = 24773....
+- [LOG] [Strategy12.8refactored]   TP: 24747.25 (based on currentStartPrice: 24780.25), SL: 24781.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[322], price=24781.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: short exited with SL Hit @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[322] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[323] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #8 (Session #3) - Scanning from candle[323] @ http://local...
+- [LOG] [Strategy12.8refactored]   Candle[324] LONG trigger hit @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8refactored]   Entry: 24787.25 at 2025-10-17T09:35:24-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: long trigger (24786.25) + slippage (1) = 24787.2...
+- [LOG] [Strategy12.8refactored]   TP: 24813.25 (based on currentStartPrice: 24780.25), SL: 24779.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[356], price=24779.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: long exited with SL Hit @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[356] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[357] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #9 (Session #4) - Scanning from candle[357] @ http://local...
+- [LOG] [Strategy12.8refactored]   Candle[362] SHORT trigger hit @ http://localhost:3000/_next/static/...
+- [LOG] [Strategy12.8refactored]   Entry: 24773.25 at 2025-10-17T09:36:02-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: short trigger (24774.25) + slippage (1) = 24773....
+- [LOG] [Strategy12.8refactored]   TP: 24747.25 (based on currentStartPrice: 24780.25), SL: 24781.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[384], price=24781.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: short exited with SL Hit @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[384] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[385] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored] ---------------------------------------------------------------------...
+- [LOG] [Strategy12.8refactored] ROUND TRIP #10 (Session #5) - Scanning from candle[385] @ http://loca...
+- [LOG] [Strategy12.8refactored]   Candle[385] LONG trigger hit @ http://localhost:3000/_next/static/c...
+- [LOG] [Strategy12.8refactored]   Entry: 24787.25 at 2025-10-17T09:36:25-04:00 @ http://localhost:300...
+- [LOG] [Strategy12.8refactored]   Entry calculation: long trigger (24786.25) + slippage (1) = 24787.2...
+- [LOG] [Strategy12.8refactored]   TP: 24813.25 (based on currentStartPrice: 24780.25), SL: 24779.25 @...
+- [LOG] [Strategy12.8refactored]   Exit: SL Hit at candle[390], price=24779.25 @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8refactored]   Stored last trade: long exited with SL Hit @ http://localhost:3000/...
+- [LOG] [Strategy12.8refactored]   Re-eligibility found on exit candle[390] - price between triggers @...
+- [LOG] [Strategy12.8refactored]   Exit candle has eligible price - alternating logic will be overridd...
+- [LOG] [Strategy12.8refactored]   Next scan will start from candle[391] (after re-eligibility) @ http...
+- [LOG] [Strategy12.8refactored]   Max round trips (5) reached for current session. Done. @ http://loc...
+- [LOG] [Strategy12.8refactored] =====================================================================...
+- [LOG] [Strategy12.8refactored] GENERATION COMPLETE: 20 rows (10 round trips) @ http://localhost:3000...
+- [LOG] [Strategy12.8refactored] =====================================================================...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1800 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1800 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+
+### Page state
+- Page URL: http://localhost:3000/backtest/2025-10-17?pt=33&sl=7&trg=6&strategy=strategy12.8refactored&maxRT=5
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- <changed> generic [active] [ref=e1]:
+  - generic [ref=e14]:
+    - banner [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Broz Backtester
+        - navigation [ref=e18]:
+          - link "Backtest Tuner" [ref=e19] [cursor=pointer]:
+            - /url: /backtest
+          - link "Backtest Analysis" [ref=e20] [cursor=pointer]:
+            - /url: /analysis/dec2025-2yearbacktest-algo1.0
+          - link "Downloader" [ref=e21] [cursor=pointer]:
+            - /url: "#"
+          - link "Trader" [ref=e22] [cursor=pointer]:
+            - /url: "#"
+          - link "Docs" [ref=e23] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: Backtesting
+          - generic [ref=e29]:
+            - generic [ref=e30]: "Strategy:"
+            - combobox "Strategy:" [ref=e31]:
+              - option "strategy12.7 - Baseline all the things, stable frontrunner since 12.7"
+              - option "strategy12.8 - Added handling the same 1 sec candle hitting all the lines coverage"
+              - option "strategy12.8.2 - layered in staggered tps"
+              - option "strategy12.8refactored - Refactored version of strategy12.8 with comprehensive logging" [selected]
+          - generic [ref=e32]:
+            - generic [ref=e33]: "PT:"
+            - combobox "PT:" [ref=e34]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33" [selected]
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e35]:
+            - generic [ref=e36]: "SL:"
+            - combobox "SL:" [ref=e37]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7" [selected]
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e38]:
+            - generic [ref=e39]: "TRG:"
+            - combobox "TRG:" [ref=e40]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6" [selected]
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e41]:
+            - generic [ref=e42]: "Max Trades:"
+            - combobox "Max Trades:" [ref=e43]:
+              - option "1 RT"
+              - option "2 RTs"
+              - option "3 RTs"
+              - option "5 RTs" [selected]
+              - option "6 RTs"
+          - generic [ref=e44]:
+            - generic [ref=e45]: "Cutoff Time:"
+            - combobox "Cutoff Time:" [ref=e46]:
+              - option "09:30"
+              - option "09:35"
+              - option "09:40"
+              - option "09:45" [selected]
+              - option "09:50"
+              - option "09:55"
+              - option "10:00"
+              - option "10:05"
+              - option "10:10"
+              - option "10:15"
+              - option "10:30"
+              - option "11:00"
+              - option "12:00"
+        - generic [ref=e48]: "Date: 2025-10-17"
+      - region "Chart Controls" [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - button "◀ Prev" [ref=e53]
+              - button "Next ▶" [ref=e54]
+              - generic [ref=e55]:
+                - generic [ref=e56]: Current day
+                - combobox "Current day" [ref=e57]:
+                  - option "Select day" [disabled]
+                  - option "2023-12-05"
+                  - option "2023-12-06"
+                  - option "2023-12-07"
+                  - option "2023-12-08"
+                  - option "2023-12-11"
+                  - option "2023-12-12"
+                  - option "2023-12-13"
+                  - option "2023-12-14"
+                  - option "2023-12-15"
+                  - option "2023-12-18"
+                  - option "2023-12-19"
+                  - option "2023-12-20"
+                  - option "2023-12-21"
+                  - option "2023-12-22"
+                  - option "2023-12-26"
+                  - option "2023-12-27"
+                  - option "2023-12-28"
+                  - option "2023-12-29"
+                  - option "2024-01-02"
+                  - option "2024-01-03"
+                  - option "2024-01-04"
+                  - option "2024-01-05"
+                  - option "2024-01-08"
+                  - option "2024-01-09"
+                  - option "2024-01-10"
+                  - option "2024-01-11"
+                  - option "2024-01-12"
+                  - option "2024-01-15"
+                  - option "2024-01-16"
+                  - option "2024-01-17"
+                  - option "2024-01-18"
+                  - option "2024-01-19"
+                  - option "2024-01-22"
+                  - option "2024-01-23"
+                  - option "2024-01-24"
+                  - option "2024-01-25"
+                  - option "2024-01-26"
+                  - option "2024-01-29"
+                  - option "2024-01-30"
+                  - option "2024-01-31"
+                  - option "2024-02-01"
+                  - option "2024-02-02"
+                  - option "2024-02-05"
+                  - option "2024-02-06"
+                  - option "2024-02-07"
+                  - option "2024-02-08"
+                  - option "2024-02-09"
+                  - option "2024-02-12"
+                  - option "2024-02-13"
+                  - option "2024-02-14"
+                  - option "2024-02-15"
+                  - option "2024-02-16"
+                  - option "2024-02-19"
+                  - option "2024-02-20"
+                  - option "2024-02-21"
+                  - option "2024-02-22"
+                  - option "2024-02-23"
+                  - option "2024-02-26"
+                  - option "2024-02-27"
+                  - option "2024-02-28"
+                  - option "2024-02-29"
+                  - option "2024-03-01"
+                  - option "2024-03-04"
+                  - option "2024-03-05"
+                  - option "2024-03-06"
+                  - option "2024-03-07"
+                  - option "2024-03-08"
+                  - option "2024-03-11"
+                  - option "2024-03-12"
+                  - option "2024-03-13"
+                  - option "2024-03-14"
+                  - option "2024-03-15"
+                  - option "2024-03-18"
+                  - option "2024-03-19"
+                  - option "2024-03-20"
+                  - option "2024-03-21"
+                  - option "2024-03-22"
+                  - option "2024-03-25"
+                  - option "2024-03-26"
+                  - option "2024-03-27"
+                  - option "2024-03-28"
+                  - option "2024-04-01"
+                  - option "2024-04-02"
+                  - option "2024-04-03"
+                  - option "2024-04-04"
+                  - option "2024-04-05"
+                  - option "2024-04-08"
+                  - option "2024-04-09"
+                  - option "2024-04-10"
+                  - option "2024-04-11"
+                  - option "2024-04-12"
+                  - option "2024-04-15"
+                  - option "2024-04-16"
+                  - option "2024-04-17"
+                  - option "2024-04-18"
+                  - option "2024-04-19"
+                  - option "2024-04-22"
+                  - option "2024-04-23"
+                  - option "2024-04-24"
+                  - option "2024-04-25"
+                  - option "2024-04-26"
+                  - option "2024-04-29"
+                  - option "2024-04-30"
+                  - option "2024-05-01"
+                  - option "2024-05-02"
+                  - option "2024-05-03"
+                  - option "2024-05-06"
+                  - option "2024-05-07"
+                  - option "2024-05-08"
+                  - option "2024-05-09"
+                  - option "2024-05-10"
+                  - option "2024-05-13"
+                  - option "2024-05-14"
+                  - option "2024-05-15"
+                  - option "2024-05-16"
+                  - option "2024-05-17"
+                  - option "2024-05-20"
+                  - option "2024-05-21"
+                  - option "2024-05-22"
+                  - option "2024-05-23"
+                  - option "2024-05-24"
+                  - option "2024-05-27"
+                  - option "2024-05-28"
+                  - option "2024-05-29"
+                  - option "2024-05-30"
+                  - option "2024-05-31"
+                  - option "2024-06-03"
+                  - option "2024-06-04"
+                  - option "2024-06-05"
+                  - option "2024-06-06"
+                  - option "2024-06-07"
+                  - option "2024-06-10"
+                  - option "2024-06-11"
+                  - option "2024-06-12"
+                  - option "2024-06-13"
+                  - option "2024-06-14"
+                  - option "2024-06-17"
+                  - option "2024-06-18"
+                  - option "2024-06-19"
+                  - option "2024-06-20"
+                  - option "2024-06-21"
+                  - option "2024-06-24"
+                  - option "2024-06-25"
+                  - option "2024-06-26"
+                  - option "2024-06-27"
+                  - option "2024-06-28"
+                  - option "2024-07-01"
+                  - option "2024-07-02"
+                  - option "2024-07-03"
+                  - option "2024-07-04"
+                  - option "2024-07-05"
+                  - option "2024-07-08"
+                  - option "2024-07-09"
+                  - option "2024-07-10"
+                  - option "2024-07-11"
+                  - option "2024-07-12"
+                  - option "2024-07-15"
+                  - option "2024-07-16"
+                  - option "2024-07-17"
+                  - option "2024-07-18"
+                  - option "2024-07-19"
+                  - option "2024-07-22"
+                  - option "2024-07-23"
+                  - option "2024-07-24"
+                  - option "2024-07-25"
+                  - option "2024-07-26"
+                  - option "2024-07-29"
+                  - option "2024-07-30"
+                  - option "2024-07-31"
+                  - option "2024-08-01"
+                  - option "2024-08-02"
+                  - option "2024-08-05"
+                  - option "2024-08-06"
+                  - option "2024-08-07"
+                  - option "2024-08-08"
+                  - option "2024-08-09"
+                  - option "2024-08-12"
+                  - option "2024-08-13"
+                  - option "2024-08-14"
+                  - option "2024-08-15"
+                  - option "2024-08-16"
+                  - option "2024-08-19"
+                  - option "2024-08-20"
+                  - option "2024-08-21"
+                  - option "2024-08-22"
+                  - option "2024-08-23"
+                  - option "2024-08-26"
+                  - option "2024-08-27"
+                  - option "2024-08-28"
+                  - option "2024-08-29"
+                  - option "2024-08-30"
+                  - option "2024-09-02"
+                  - option "2024-09-03"
+                  - option "2024-09-04"
+                  - option "2024-09-05"
+                  - option "2024-09-06"
+                  - option "2024-09-09"
+                  - option "2024-09-10"
+                  - option "2024-09-11"
+                  - option "2024-09-12"
+                  - option "2024-09-13"
+                  - option "2024-09-16"
+                  - option "2024-09-17"
+                  - option "2024-09-18"
+                  - option "2024-09-19"
+                  - option "2024-09-20"
+                  - option "2024-09-23"
+                  - option "2024-09-24"
+                  - option "2024-09-25"
+                  - option "2024-09-26"
+                  - option "2024-09-27"
+                  - option "2024-09-30"
+                  - option "2024-10-01"
+                  - option "2024-10-02"
+                  - option "2024-10-03"
+                  - option "2024-10-04"
+                  - option "2024-10-07"
+                  - option "2024-10-08"
+                  - option "2024-10-09"
+                  - option "2024-10-10"
+                  - option "2024-10-11"
+                  - option "2024-10-14"
+                  - option "2024-10-15"
+                  - option "2024-10-16"
+                  - option "2024-10-17"
+                  - option "2024-10-18"
+                  - option "2024-10-21"
+                  - option "2024-10-22"
+                  - option "2024-10-23"
+                  - option "2024-10-24"
+                  - option "2024-10-25"
+                  - option "2024-10-28"
+                  - option "2024-10-29"
+                  - option "2024-10-30"
+                  - option "2024-10-31"
+                  - option "2024-11-01"
+                  - option "2024-11-04"
+                  - option "2024-11-05"
+                  - option "2024-11-06"
+                  - option "2024-11-07"
+                  - option "2024-11-08"
+                  - option "2024-11-11"
+                  - option "2024-11-12"
+                  - option "2024-11-13"
+                  - option "2024-11-14"
+                  - option "2024-11-15"
+                  - option "2024-11-18"
+                  - option "2024-11-19"
+                  - option "2024-11-20"
+                  - option "2024-11-21"
+                  - option "2024-11-22"
+                  - option "2024-11-25"
+                  - option "2024-11-26"
+                  - option "2024-11-27"
+                  - option "2024-11-28"
+                  - option "2024-11-29"
+                  - option "2024-12-02"
+                  - option "2024-12-03"
+                  - option "2024-12-04"
+                  - option "2024-12-05"
+                  - option "2024-12-06"
+                  - option "2024-12-09"
+                  - option "2024-12-10"
+                  - option "2024-12-11"
+                  - option "2024-12-12"
+                  - option "2024-12-13"
+                  - option "2024-12-16"
+                  - option "2024-12-17"
+                  - option "2024-12-18"
+                  - option "2024-12-19"
+                  - option "2024-12-20"
+                  - option "2024-12-23"
+                  - option "2024-12-24"
+                  - option "2024-12-26"
+                  - option "2024-12-27"
+                  - option "2024-12-30"
+                  - option "2024-12-31"
+                  - option "2025-01-02"
+                  - option "2025-01-03"
+                  - option "2025-01-06"
+                  - option "2025-01-07"
+                  - option "2025-01-08"
+                  - option "2025-01-10"
+                  - option "2025-01-13"
+                  - option "2025-01-14"
+                  - option "2025-01-15"
+                  - option "2025-01-16"
+                  - option "2025-01-17"
+                  - option "2025-01-20"
+                  - option "2025-01-21"
+                  - option "2025-01-22"
+                  - option "2025-01-23"
+                  - option "2025-01-24"
+                  - option "2025-01-27"
+                  - option "2025-01-28"
+                  - option "2025-01-29"
+                  - option "2025-01-30"
+                  - option "2025-01-31"
+                  - option "2025-02-03"
+                  - option "2025-02-04"
+                  - option "2025-02-05"
+                  - option "2025-02-06"
+                  - option "2025-02-07"
+                  - option "2025-02-10"
+                  - option "2025-02-11"
+                  - option "2025-02-12"
+                  - option "2025-02-13"
+                  - option "2025-02-14"
+                  - option "2025-02-17"
+                  - option "2025-02-18"
+                  - option "2025-02-19"
+                  - option "2025-02-20"
+                  - option "2025-02-21"
+                  - option "2025-02-24"
+                  - option "2025-02-25"
+                  - option "2025-02-26"
+                  - option "2025-02-27"
+                  - option "2025-02-28"
+                  - option "2025-03-03"
+                  - option "2025-03-04"
+                  - option "2025-03-05"
+                  - option "2025-03-06"
+                  - option "2025-03-07"
+                  - option "2025-03-10"
+                  - option "2025-03-11"
+                  - option "2025-03-12"
+                  - option "2025-03-13"
+                  - option "2025-03-14"
+                  - option "2025-03-17"
+                  - option "2025-03-18"
+                  - option "2025-03-19"
+                  - option "2025-03-20"
+                  - option "2025-03-21"
+                  - option "2025-03-24"
+                  - option "2025-03-25"
+                  - option "2025-03-26"
+                  - option "2025-03-27"
+                  - option "2025-03-28"
+                  - option "2025-03-31"
+                  - option "2025-04-01"
+                  - option "2025-04-02"
+                  - option "2025-04-03"
+                  - option "2025-04-04"
+                  - option "2025-04-07"
+                  - option "2025-04-08"
+                  - option "2025-04-09"
+                  - option "2025-04-10"
+                  - option "2025-04-11"
+                  - option "2025-04-14"
+                  - option "2025-04-15"
+                  - option "2025-04-16"
+                  - option "2025-04-17"
+                  - option "2025-04-21"
+                  - option "2025-04-22"
+                  - option "2025-04-23"
+                  - option "2025-04-24"
+                  - option "2025-04-25"
+                  - option "2025-04-28"
+                  - option "2025-04-29"
+                  - option "2025-04-30"
+                  - option "2025-05-01"
+                  - option "2025-05-02"
+                  - option "2025-05-05"
+                  - option "2025-05-06"
+                  - option "2025-05-07"
+                  - option "2025-05-08"
+                  - option "2025-05-09"
+                  - option "2025-05-12"
+                  - option "2025-05-13"
+                  - option "2025-05-14"
+                  - option "2025-05-15"
+                  - option "2025-05-16"
+                  - option "2025-05-19"
+                  - option "2025-05-20"
+                  - option "2025-05-21"
+                  - option "2025-05-22"
+                  - option "2025-05-23"
+                  - option "2025-05-26"
+                  - option "2025-05-27"
+                  - option "2025-05-28"
+                  - option "2025-05-29"
+                  - option "2025-05-30"
+                  - option "2025-06-02"
+                  - option "2025-06-03"
+                  - option "2025-06-04"
+                  - option "2025-06-05"
+                  - option "2025-06-06"
+                  - option "2025-06-09"
+                  - option "2025-06-10"
+                  - option "2025-06-11"
+                  - option "2025-06-12"
+                  - option "2025-06-13"
+                  - option "2025-06-16"
+                  - option "2025-06-17"
+                  - option "2025-06-18"
+                  - option "2025-06-19"
+                  - option "2025-06-20"
+                  - option "2025-06-23"
+                  - option "2025-06-24"
+                  - option "2025-06-25"
+                  - option "2025-06-26"
+                  - option "2025-06-27"
+                  - option "2025-06-30"
+                  - option "2025-07-01"
+                  - option "2025-07-02"
+                  - option "2025-07-03"
+                  - option "2025-07-04"
+                  - option "2025-07-07"
+                  - option "2025-07-08"
+                  - option "2025-07-09"
+                  - option "2025-07-10"
+                  - option "2025-07-11"
+                  - option "2025-07-14"
+                  - option "2025-07-15"
+                  - option "2025-07-16"
+                  - option "2025-07-17"
+                  - option "2025-07-18"
+                  - option "2025-07-21"
+                  - option "2025-07-22"
+                  - option "2025-07-23"
+                  - option "2025-07-24"
+                  - option "2025-07-25"
+                  - option "2025-07-28"
+                  - option "2025-07-29"
+                  - option "2025-07-30"
+                  - option "2025-07-31"
+                  - option "2025-08-01"
+                  - option "2025-08-04"
+                  - option "2025-08-05"
+                  - option "2025-08-06"
+                  - option "2025-08-07"
+                  - option "2025-08-08"
+                  - option "2025-08-11"
+                  - option "2025-08-12"
+                  - option "2025-08-13"
+                  - option "2025-08-14"
+                  - option "2025-08-15"
+                  - option "2025-08-18"
+                  - option "2025-08-19"
+                  - option "2025-08-20"
+                  - option "2025-08-21"
+                  - option "2025-08-22"
+                  - option "2025-08-25"
+                  - option "2025-08-26"
+                  - option "2025-08-27"
+                  - option "2025-08-28"
+                  - option "2025-08-29"
+                  - option "2025-09-01"
+                  - option "2025-09-02"
+                  - option "2025-09-03"
+                  - option "2025-09-04"
+                  - option "2025-09-05"
+                  - option "2025-09-08"
+                  - option "2025-09-09"
+                  - option "2025-09-10"
+                  - option "2025-09-11"
+                  - option "2025-09-12"
+                  - option "2025-09-15"
+                  - option "2025-09-16"
+                  - option "2025-09-17"
+                  - option "2025-09-18"
+                  - option "2025-09-19"
+                  - option "2025-09-22"
+                  - option "2025-09-23"
+                  - option "2025-09-24"
+                  - option "2025-09-25"
+                  - option "2025-09-26"
+                  - option "2025-09-29"
+                  - option "2025-09-30"
+                  - option "2025-10-01"
+                  - option "2025-10-02"
+                  - option "2025-10-03"
+                  - option "2025-10-06"
+                  - option "2025-10-07"
+                  - option "2025-10-08"
+                  - option "2025-10-09"
+                  - option "2025-10-10"
+                  - option "2025-10-13"
+                  - option "2025-10-14"
+                  - option "2025-10-15"
+                  - option "2025-10-16"
+                  - option "2025-10-17" [selected]
+                  - option "2025-10-20"
+                  - option "2025-10-21"
+                  - option "2025-10-22"
+                  - option "2025-10-23"
+                  - option "2025-10-24"
+                  - option "2025-10-27"
+                  - option "2025-10-28"
+                  - option "2025-10-29"
+                  - option "2025-10-30"
+                  - option "2025-10-31"
+                  - option "2025-11-03"
+                  - option "2025-11-04"
+                  - option "2025-11-05"
+                  - option "2025-11-06"
+                  - option "2025-11-07"
+                  - option "2025-11-10"
+                  - option "2025-11-11"
+                  - option "2025-11-12"
+                  - option "2025-11-13"
+                  - option "2025-11-14"
+                  - option "2025-11-17"
+                  - option "2025-11-18"
+                  - option "2025-11-19"
+                  - option "2025-11-20"
+                  - option "2025-11-21"
+                  - option "2025-11-24"
+                  - option "2025-11-25"
+                  - option "2025-11-26"
+                  - option "2025-11-27"
+                  - option "2025-11-28"
+                  - option "2025-12-01"
+                  - option "2025-12-02"
+                  - option "2025-12-03"
+              - generic [ref=e58]:
+                - generic [ref=e59]: Candle Type
+                - combobox "Candle Type" [ref=e60]:
+                  - option "1s (Second)" [selected]
+                  - option "1m (Minute)"
+            - generic [ref=e61]: "Available days: 515"
+          - generic [ref=e62]:
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - generic [ref=e66]: "Today's Net:"
+                - generic [ref=e67]: "-12.00 pts"
+              - generic [ref=e68]:
+                - generic [ref=e69]: "Per Trade:"
+                - generic [ref=e70]: "-1.20 pts"
+              - generic [ref=e71]:
+                - generic [ref=e72]: TRADES
+                - generic [ref=e73]: "10"
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - generic [ref=e78]: "Cumulative:"
+                - generic [ref=e79]: "-34.00 pts"
+              - generic [ref=e80]:
+                - generic [ref=e81]: "Per Trade:"
+                - generic [ref=e82]: "-0.87 pts"
+              - generic [ref=e83]:
+                - generic [ref=e84]: TRADES
+                - generic [ref=e85]: "39"
+              - button "Reset Cache" [ref=e87]
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - text: Line visibility
+              - generic [ref=e90]:
+                - generic [ref=e91]:
+                  - checkbox "OPEN" [checked] [ref=e92]
+                  - generic [ref=e93]: OPEN
+                - generic [ref=e94]:
+                  - checkbox "Long TRG" [checked] [ref=e95]
+                  - generic [ref=e96]: Long TRG
+                - generic [ref=e97]:
+                  - checkbox "Short TRG" [checked] [ref=e98]
+                  - generic [ref=e99]: Short TRG
+                - generic [ref=e100]:
+                  - checkbox "TP" [checked] [ref=e101]
+                  - generic [ref=e102]: TP
+                - generic [ref=e103]:
+                  - checkbox "SL" [checked] [ref=e104]
+                  - generic [ref=e105]: SL
+                - generic [ref=e106]:
+                  - checkbox "MA20" [ref=e107]
+                  - generic [ref=e108]: MA20
+                - generic [ref=e109]:
+                  - checkbox "MA50" [ref=e110]
+                  - generic [ref=e111]: MA50
+                - generic [ref=e112]:
+                  - checkbox "MA100" [ref=e113]
+                  - generic [ref=e114]: MA100
+                - generic [ref=e115]:
+                  - checkbox "MA200" [ref=e116]
+                  - generic [ref=e117]: MA200
+                - generic [ref=e118]:
+                  - checkbox "Session Avg" [ref=e119]
+                  - generic [ref=e120]: Session Avg
+            - generic [ref=e122]: "Data source: static-1s"
+          - region "Price Chart" [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]: "Day 2025-10-17 · Series: candles"
+              - generic [ref=e126]: "Timezone: ET"
+            - table [ref=e130]:
+              - row [ref=e131]:
+                - cell
+                - cell [ref=e132]
+                - cell [ref=e136]
+              - row [ref=e140]:
+                - cell
+                - cell [ref=e141]
+                - cell [ref=e145]
+            - generic [ref=e148]: Horizontal lines use createPriceLine() to reduce flicker on zoom/pan. Chart preserves entry/direction when toggling series.
+          - region "Algorithmic Trades" [ref=e149]:
+            - generic [ref=e150]:
+              - generic [ref=e151]: Algorithmic Trades
+              - generic [ref=e152]: 10 RTs · 20 rows
+            - table [ref=e154]:
+              - rowgroup [ref=e155]:
+                - row "RT# Timestamp (ET) Type Price Slippage Note Net" [ref=e156]:
+                  - columnheader "RT#" [ref=e157]
+                  - columnheader "Timestamp (ET)" [ref=e158]
+                  - columnheader "Type" [ref=e159]
+                  - columnheader "Price" [ref=e160]
+                  - columnheader "Slippage" [ref=e161]
+                  - columnheader "Note" [ref=e162]
+                  - columnheader "Net" [ref=e163]
+              - rowgroup [ref=e164]:
+                - row "1 10/17/2025, 09:30:00 ET Open Short 24729.25 1.00 — —" [ref=e165] [cursor=pointer]:
+                  - cell "1" [ref=e166]
+                  - cell "10/17/2025, 09:30:00 ET" [ref=e167]
+                  - cell "Open Short" [ref=e168]
+                  - cell "24729.25" [ref=e169]
+                  - cell "1.00" [ref=e170]
+                  - cell "—" [ref=e171]
+                  - cell "—" [ref=e172]
+                - row "1 10/17/2025, 09:30:03 ET Close Short 24737.25 0.00 SL Hit -8.00" [ref=e173] [cursor=pointer]:
+                  - cell "1" [ref=e174]
+                  - cell "10/17/2025, 09:30:03 ET" [ref=e175]
+                  - cell "Close Short" [ref=e176]
+                  - cell "24737.25" [ref=e177]
+                  - cell "0.00" [ref=e178]
+                  - cell "SL Hit" [ref=e179]
+                  - cell "-8.00" [ref=e180]
+                - row "2 10/17/2025, 09:30:04 ET Open Long 24743.25 1.00 — —" [ref=e181] [cursor=pointer]:
+                  - cell "2" [ref=e182]
+                  - cell "10/17/2025, 09:30:04 ET" [ref=e183]
+                  - cell "Open Long" [ref=e184]
+                  - cell "24743.25" [ref=e185]
+                  - cell "1.00" [ref=e186]
+                  - cell "—" [ref=e187]
+                  - cell "—" [ref=e188]
+                - row "2 10/17/2025, 09:30:11 ET Close Long 24769.25 0.00 PT Hit 26.00" [ref=e189] [cursor=pointer]:
+                  - cell "2" [ref=e190]
+                  - cell "10/17/2025, 09:30:11 ET" [ref=e191]
+                  - cell "Close Long" [ref=e192]
+                  - cell "24769.25" [ref=e193]
+                  - cell "0.00" [ref=e194]
+                  - cell "PT Hit" [ref=e195]
+                  - cell "26.00" [ref=e196]
+                - row "3 10/17/2025, 09:30:32 ET Open Short 24729.25 1.00 — —" [ref=e197] [cursor=pointer]:
+                  - cell "3" [ref=e198]
+                  - cell "10/17/2025, 09:30:32 ET" [ref=e199]
+                  - cell "Open Short" [ref=e200]
+                  - cell "24729.25" [ref=e201]
+                  - cell "1.00" [ref=e202]
+                  - cell "—" [ref=e203]
+                  - cell "—" [ref=e204]
+                - row "3 10/17/2025, 09:30:44 ET Close Short 24703.25 0.00 PT Hit 26.00" [ref=e205] [cursor=pointer]:
+                  - cell "3" [ref=e206]
+                  - cell "10/17/2025, 09:30:44 ET" [ref=e207]
+                  - cell "Close Short" [ref=e208]
+                  - cell "24703.25" [ref=e209]
+                  - cell "0.00" [ref=e210]
+                  - cell "PT Hit" [ref=e211]
+                  - cell "26.00" [ref=e212]
+                - row "4 10/17/2025, 09:31:33 ET Open Long 24743.25 1.00 — —" [ref=e213] [cursor=pointer]:
+                  - cell "4" [ref=e214]
+                  - cell "10/17/2025, 09:31:33 ET" [ref=e215]
+                  - cell "Open Long" [ref=e216]
+                  - cell "24743.25" [ref=e217]
+                  - cell "1.00" [ref=e218]
+                  - cell "—" [ref=e219]
+                  - cell "—" [ref=e220]
+                - row "4 10/17/2025, 09:31:55 ET Close Long 24735.25 0.00 SL Hit -8.00" [ref=e221] [cursor=pointer]:
+                  - cell "4" [ref=e222]
+                  - cell "10/17/2025, 09:31:55 ET" [ref=e223]
+                  - cell "Close Long" [ref=e224]
+                  - cell "24735.25" [ref=e225]
+                  - cell "0.00" [ref=e226]
+                  - cell "SL Hit" [ref=e227]
+                  - cell "-8.00" [ref=e228]
+                - row "5 10/17/2025, 09:31:57 ET Open Long 24743.25 1.00 — —" [ref=e229] [cursor=pointer]:
+                  - cell "5" [ref=e230]
+                  - cell "10/17/2025, 09:31:57 ET" [ref=e231]
+                  - cell "Open Long" [ref=e232]
+                  - cell "24743.25" [ref=e233]
+                  - cell "1.00" [ref=e234]
+                  - cell "—" [ref=e235]
+                  - cell "—" [ref=e236]
+                - row "5 10/17/2025, 09:32:05 ET Close Long 24735.25 0.00 SL Hit -8.00" [ref=e237] [cursor=pointer]:
+                  - cell "5" [ref=e238]
+                  - cell "10/17/2025, 09:32:05 ET" [ref=e239]
+                  - cell "Close Long" [ref=e240]
+                  - cell "24735.25" [ref=e241]
+                  - cell "0.00" [ref=e242]
+                  - cell "SL Hit" [ref=e243]
+                  - cell "-8.00" [ref=e244]
+                - row "6 10/17/2025, 09:35:12 ET Open Long 24787.25 1.00 — —" [ref=e245] [cursor=pointer]:
+                  - cell "6" [ref=e246]
+                  - cell "10/17/2025, 09:35:12 ET" [ref=e247]
+                  - cell "Open Long" [ref=e248]
+                  - cell "24787.25" [ref=e249]
+                  - cell "1.00" [ref=e250]
+                  - cell "—" [ref=e251]
+                  - cell "—" [ref=e252]
+                - row "6 10/17/2025, 09:35:16 ET Close Long 24779.25 0.00 SL Hit -8.00" [ref=e253] [cursor=pointer]:
+                  - cell "6" [ref=e254]
+                  - cell "10/17/2025, 09:35:16 ET" [ref=e255]
+                  - cell "Close Long" [ref=e256]
+                  - cell "24779.25" [ref=e257]
+                  - cell "0.00" [ref=e258]
+                  - cell "SL Hit" [ref=e259]
+                  - cell "-8.00" [ref=e260]
+                - row "7 10/17/2025, 09:35:17 ET Open Short 24773.25 1.00 — —" [ref=e261] [cursor=pointer]:
+                  - cell "7" [ref=e262]
+                  - cell "10/17/2025, 09:35:17 ET" [ref=e263]
+                  - cell "Open Short" [ref=e264]
+                  - cell "24773.25" [ref=e265]
+                  - cell "1.00" [ref=e266]
+                  - cell "—" [ref=e267]
+                  - cell "—" [ref=e268]
+                - row "7 10/17/2025, 09:35:22 ET Close Short 24781.25 0.00 SL Hit -8.00" [ref=e269] [cursor=pointer]:
+                  - cell "7" [ref=e270]
+                  - cell "10/17/2025, 09:35:22 ET" [ref=e271]
+                  - cell "Close Short" [ref=e272]
+                  - cell "24781.25" [ref=e273]
+                  - cell "0.00" [ref=e274]
+                  - cell "SL Hit" [ref=e275]
+                  - cell "-8.00" [ref=e276]
+                - row "8 10/17/2025, 09:35:24 ET Open Long 24787.25 1.00 — —" [ref=e277] [cursor=pointer]:
+                  - cell "8" [ref=e278]
+                  - cell "10/17/2025, 09:35:24 ET" [ref=e279]
+                  - cell "Open Long" [ref=e280]
+                  - cell "24787.25" [ref=e281]
+                  - cell "1.00" [ref=e282]
+                  - cell "—" [ref=e283]
+                  - cell "—" [ref=e284]
+                - row "8 10/17/2025, 09:35:56 ET Close Long 24779.25 0.00 SL Hit -8.00" [ref=e285] [cursor=pointer]:
+                  - cell "8" [ref=e286]
+                  - cell "10/17/2025, 09:35:56 ET" [ref=e287]
+                  - cell "Close Long" [ref=e288]
+                  - cell "24779.25" [ref=e289]
+                  - cell "0.00" [ref=e290]
+                  - cell "SL Hit" [ref=e291]
+                  - cell "-8.00" [ref=e292]
+                - row "9 10/17/2025, 09:36:02 ET Open Short 24773.25 1.00 — —" [ref=e293] [cursor=pointer]:
+                  - cell "9" [ref=e294]
+                  - cell "10/17/2025, 09:36:02 ET" [ref=e295]
+                  - cell "Open Short" [ref=e296]
+                  - cell "24773.25" [ref=e297]
+                  - cell "1.00" [ref=e298]
+                  - cell "—" [ref=e299]
+                  - cell "—" [ref=e300]
+                - row "9 10/17/2025, 09:36:24 ET Close Short 24781.25 0.00 SL Hit -8.00" [ref=e301] [cursor=pointer]:
+                  - cell "9" [ref=e302]
+                  - cell "10/17/2025, 09:36:24 ET" [ref=e303]
+                  - cell "Close Short" [ref=e304]
+                  - cell "24781.25" [ref=e305]
+                  - cell "0.00" [ref=e306]
+                  - cell "SL Hit" [ref=e307]
+                  - cell "-8.00" [ref=e308]
+                - row "10 10/17/2025, 09:36:25 ET Open Long 24787.25 1.00 — —" [ref=e309] [cursor=pointer]:
+                  - cell "10" [ref=e310]
+                  - cell "10/17/2025, 09:36:25 ET" [ref=e311]
+                  - cell "Open Long" [ref=e312]
+                  - cell "24787.25" [ref=e313]
+                  - cell "1.00" [ref=e314]
+                  - cell "—" [ref=e315]
+                  - cell "—" [ref=e316]
+                - row "10 10/17/2025, 09:36:30 ET Close Long 24779.25 0.00 SL Hit -8.00" [ref=e317] [cursor=pointer]:
+                  - cell "10" [ref=e318]
+                  - cell "10/17/2025, 09:36:30 ET" [ref=e319]
+                  - cell "Close Long" [ref=e320]
+                  - cell "24779.25" [ref=e321]
+                  - cell "0.00" [ref=e322]
+                  - cell "SL Hit" [ref=e323]
+                  - cell "-8.00" [ref=e324]
+              - rowgroup [ref=e325]:
+                - row "Day Total (10 RTs) -12.00" [ref=e326]:
+                  - cell "Day Total (10 RTs)" [ref=e327]
+                  - cell "-12.00" [ref=e328]
+            - generic [ref=e330]: "Easy Peasy: 10 trades found | Max RT: 5"
+        - region "Cumulative Results" [ref=e331]:
+          - heading "Cumulative Results" [level=1] [ref=e332]
+          - generic [ref=e333]:
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]: Today
+                - generic [ref=e337]: "-12.00 pts"
+              - generic [ref=e338]:
+                - generic [ref=e339]: Cumulative
+                - generic [ref=e340]: "-34.00 pts"
+                - generic [ref=e341]: 39 days sampled • 2025-09-05 – 2025-12-03
+            - generic [ref=e342]:
+              - generic [ref=e343]: Day-by-day performance (9 entries)
+              - generic [ref=e344]:
+                - generic [ref=e345]: Cumulative Total
+                - generic [ref=e347]:
+                  - generic [ref=e348]:
+                    - generic [ref=e349]: "+34"
+                    - generic [ref=e350]: "0"
+                    - generic [ref=e351]: "-34"
+                  - img [ref=e354]:
+                    - 'generic "2025-12-03: -8.00 pts" [ref=e363] [cursor=pointer]'
+                    - 'generic "2025-12-02: -8.00 pts" [ref=e364] [cursor=pointer]'
+                    - 'generic "2025-12-01: -8.00 pts" [ref=e365] [cursor=pointer]'
+                    - 'generic "2025-11-28: -8.00 pts" [ref=e366] [cursor=pointer]'
+                    - 'generic "2025-11-27: -8.00 pts" [ref=e367] [cursor=pointer]'
+                    - 'generic "2025-11-26: -8.00 pts" [ref=e368] [cursor=pointer]'
+                    - 'generic "2025-11-25: -8.00 pts" [ref=e369] [cursor=pointer]'
+                    - 'generic "2025-10-17: -20.00 pts" [ref=e370] [cursor=pointer]'
+                    - 'generic "2025-09-05: -34.00 pts" [ref=e371] [cursor=pointer]'
+              - generic [ref=e372]:
+                - generic [ref=e373]: Daily P&L
+                - generic [ref=e375]:
+                  - generic [ref=e376]:
+                    - generic [ref=e377]: "+14"
+                    - generic [ref=e378]: "0"
+                    - generic [ref=e379]: "-14"
+                  - generic [ref=e380]:
+                    - 'generic "2025-12-03: -8.00 pts" [ref=e382]'
+                    - 'generic "2025-12-02: +0.00 pts" [ref=e383]'
+                    - 'generic "2025-12-01: +0.00 pts" [ref=e384]'
+                    - 'generic "2025-11-28: +0.00 pts" [ref=e385]'
+                    - 'generic "2025-11-27: +0.00 pts" [ref=e386]'
+                    - 'generic "2025-11-26: +0.00 pts" [ref=e387]'
+                    - 'generic "2025-11-25: +0.00 pts" [ref=e388]'
+                    - 'generic "2025-10-17: -12.00 pts" [ref=e389]'
+                    - 'generic "2025-09-05: -14.00 pts" [ref=e390]'
+              - generic [ref=e391]: ← Newest | Oldest →
+      - region "Trade Data" [ref=e392]:
+        - generic [ref=e393]:
+          - generic [ref=e394]:
+            - heading "Detailed Data" [level=1] [ref=e395]
+            - generic [ref=e396]: "⚠️ Warning: TICK DATA loads excessive amounts of data and will likely crash your browser"
+            - generic [ref=e397]:
+              - generic [ref=e398]: OHLCV — loads the chart at 1sec intervals
+              - generic [ref=e399]: Tick Data — not used but included for funsies
+          - generic [ref=e400]:
+            - generic [ref=e401]:
+              - button "OHLCV" [ref=e402]
+              - button "Tick Data" [ref=e403]
+            - generic [ref=e404]: "Rows: 1800"
+        - generic [ref=e405]:
+          - generic [ref=e406]: Debug Console Notes
+          - list [ref=e407]:
+            - listitem [ref=e408]: Console logs track date loads, series swaps, price-line sync, and data counts.
+            - listitem [ref=e409]: Entry/direction state stays unchanged when moving across days or series.
+            - listitem [ref=e410]: Start/trigger lines recompute per day using first trade price; invalid rows are dropped with counts logged.
+    - button "📋 Logs" [ref=e411]
+  - ref=e8 [unchanged]
+  - ref=e13 [unchanged]
+```

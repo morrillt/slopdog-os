@@ -1,0 +1,124 @@
+---
+description: "Workflow: Execute Ticket (Dev Story Loop)"
+globs: []
+---
+# Workflow: Build > Execute Ticket (Dev Story)
+
+<critical>You MUST only start with clean GIT status.</critical>
+<critical>You MUST clarify ambiguous requirements BEFORE implementing.</critical>
+<critical>You MUST log all issues/decisions in `### DEV AGENT RECORD`.</critical>
+<critical>You MUST run all tests (Unit + E2E) before completing.</critical>
+
+<workflow>
+
+<step n="1" goal="Context Loading & Validation">
+  <action>
+    **Check Git Status**:
+    - Must be clean. If not, HALT.
+  </action>
+
+  <action>
+    **Load Ticket**:
+    - Ask user to select ticket (if not current).
+    - Update `plans/context.yaml` (`current_ticket`, `status: In Progress`).
+  </action>
+
+  <action>
+    **Validate Readiness**:
+    - Mode must be `build` or `task`.
+    - First unchecked task must exist.
+    - Tasks must map to ACs: `(AC: AC-#...)`.
+  </action>
+
+  <check if="not ready">
+    <critical>STOP. Ticket not ready or invalid mode.</critical>
+    <action>Fix ticket or switch mode.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 1: Context Loading & Validation**
+    📋 Loaded ticket and validated readiness
+    ✅ Confirmed clean git status and valid mode
+    
+    ➡️ **Beginning Step 2: Execution Loop (Plan -> Implement -> Mark)**
+  </output>
+</step>
+
+<step n="2" goal="Execution Loop (Plan -> Implement -> Mark)">
+  <action>
+    **Loop until all tasks [x]:**
+    
+    **A. Plan**:
+    - Read current unchecked task.
+    - Write 1-line plan in `### DEV AGENT RECORD`.
+    
+    **B. Implement**:
+    - Write/Edit code.
+    - **Log immediately**:
+      - `- [Time] [Spec ambiguity] ...`
+      - `- [Time] [Bug] ...`
+      - `- [Time] [Decision] ...`
+    
+    **C. Mark**:
+    - Check `[x]` task.
+    - Add files to `### File List`.
+    
+    **D. Check Next**:
+    - If more tasks, repeat A.
+  </action>
+</step>
+
+<step n="3" goal="Completion & Verification">
+  <action>
+    **Verify Acceptance Criteria**:
+    - Review `## Acceptance Criteria`. Are they met?
+  </action>
+
+  <action>
+    **Run All Tests**:
+    - Unit (Vitest): Record command + pass/fail + artifact link.
+    - E2E (Playwright): Record command + pass/fail + artifact link.
+  </action>
+
+  <check if="tests failed">
+    <critical>Cannot complete ticket with failing tests.</critical>
+    <action>Fix regressions before proceeding.</action>
+  </check>
+
+  <action>
+    **Run Build & Lint**:
+    - Ensure clean build.
+  </action>
+
+  <action>
+    **Taxonomy Drift Check**:
+    - If docs touched, check `docs/taxonomy.yaml` for new tags.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Completion & Verification**
+    ✅ Verified all ACs met
+    🧪 Ran all tests (Unit + E2E) and confirmed pass
+    
+    ➡️ **Beginning Step 4: Handoff**
+  </output>
+</step>
+
+<step n="4" goal="Handoff">
+  <action>
+    **Update Ticket**:
+    - Status: `Review`.
+    - Add `### Completion Notes` to `## Dev Agent Record`.
+    - Include: PO Summary, Tech Lead Summary, Evidence Links.
+  </action>
+
+  <output>
+    ### Execution Complete
+    - **Ticket**: [Link]
+    - **Status**: Review
+    - **Tests**: Passed (Evidence Attached)
+    - **Ready for**: Code Review
+  </output>
+</step>
+
+</workflow>

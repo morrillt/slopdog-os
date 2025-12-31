@@ -1,0 +1,399 @@
+<PRDTemplate version="1.1" size="full">
+
+  <Meta>
+    <Title>Transparent Personal RAG Pipeline + MCP Server (ChatGPT, YouTube, Notes)</Title>
+    <ProductArea>Personal Knowledge / RAG Tooling</ProductArea>
+    <Owner>broz</Owner>
+    <Stakeholders>
+      <Stakeholder role="PM/Eng" name="broz" />
+    </Stakeholders>
+    <Status>Draft</Status>
+    <LastUpdated>2025-12-27</LastUpdated>
+  </Meta>
+
+  <Section id="1" name="High-Level Description">
+    <IntroParagraph>
+      Build a personal, transparent RAG pipeline (exposed “knobs”, end-to-end visibility, explainable retrieval) that ingests my official ChatGPT export history first, then YouTube transcripts (with chapter-level retrieval), then my markdown notes/tickets; the system must summarize and deduplicate repetitive content while preserving grounded citations back to original sources, and be usable daily via CLI, a Next.js UI, and an MCP server (query-only in v1).
+    </IntroParagraph>
+    <SupportingBullets>
+      <Bullet>Primary persona: a single developer (learning-by-doing; prefers JavaScript/Node + Next.js, uses Python where it fits).</Bullet>
+      <Bullet>Core journey: ingest data sources → normalize + chunk → index → query via UI/CLI/MCP → inspect “why this was retrieved” → tune parameters → re-index.</Bullet>
+      <Bullet>Business value: reduce repeated conversations/debugging; faster recall of best practices and personal decisions; a durable personal knowledge base.</Bullet>
+      <Bullet>Out-of-scope (initially): multi-user SaaS, full auth/roles, enterprise-grade hosting, “one library does everything” opaque pipeline.</Bullet>
+      <Bullet>Constraints: local-first usage, ability to use local LLMs and OpenRouter, transparency/observability requirements, evolving schema/indexing strategy.</Bullet>
+    </SupportingBullets>
+  </Section>
+
+  <Section id="2" name="Goals and Non-Goals">
+    <Goals>
+      <Goal>Within MVP, ingest official ChatGPT exports end-to-end (parse → normalize → chunk → summarize → dedupe/merge → embed → index) with deterministic re-runs.</Goal>
+      <Goal>Early v1 expansion: ingest YouTube transcripts with chapter metadata and support a “What’s new” / digest-like view grouped by chapter with tags.</Goal>
+      <Goal>Provide explainable retrieval: for every answer/query, show the retrieved chunks, scores/signals, and the pipeline decisions that produced them.</Goal>
+      <Goal>Provide a usable daily workflow via CLI and a Next.js UI, plus an MCP server query API for agent/tool integrations (Cursor/Cline-style usage).</Goal>
+      <Goal>Prefer after-the-fact inspection (trace log / waterfall) first, and only add real-time dashboards if needed.</Goal>
+    </Goals>
+    <NonGoals>
+      <NonGoal>Perfect “best possible” RAG quality at day 1; MVP optimizes for learning and transparency over raw quality.</NonGoal>
+      <NonGoal>Advanced access control, multi-tenancy, or syncing to a hosted cloud service.</NonGoal>
+      <NonGoal>Support for “any file type under the sun” in MVP (start with known formats and add iteratively).</NonGoal>
+      <NonGoal>MCP “write” / ingestion via MCP in v1 (query-only first; add later).</NonGoal>
+    </NonGoals>
+  </Section>
+
+  <Section id="3" name="Functional Requirements">
+    <FunctionalRequirementsTable>
+      <Row>
+        <ID>FR-1</ID>
+        <UserStory>As a user, I want to ingest my official ChatGPT history exports into the system, so that past conversations are searchable and referenceable.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given an official ChatGPT export (format documented by the project), when I run an ingest command, then the system parses, normalizes, and stores documents/chunks with stable IDs and source metadata.</Criterion>
+          <Criterion>Re-running ingest on unchanged inputs does not create duplicates (idempotent behavior).</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>Corrupted/partial export files are skipped with a clear error and do not break the whole ingest run.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-2</ID>
+        <UserStory>As a user, I want the system to summarize and compress verbose conversations/notes into grounded summary chunks, so that the index is compact and less repetitive while still allowing me to trace back to original text.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given an ingested document, when summarization runs, then it produces one or more summary chunks, each with citations back to the originating source ranges (message IDs / chunk IDs / timestamps).</Criterion>
+          <Criterion>Summaries are stored as first-class retrievable chunks and can be shown side-by-side with linked original sources.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If summarization fails for a document, the raw normalized chunks still ingest and the failure is visible/retryable.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-3</ID>
+        <UserStory>As a user, I want deduplication/merge of highly-similar content (e.g., repetitive chats) to produce a “complete” merged chunk, so that near-duplicates don’t clutter retrieval while preserving unique details.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given many near-duplicate summaries, when I query, then results can be grouped and clearly labeled as near-duplicates (retrieval-time grouping) with links to each original.</Criterion>
+          <Criterion>Optional: given two summary chunks with high overlap, the system can synthesize a merged representation that preserves unique details and links back to both originals (allowed at retrieval time first; ingest-time “master chunk” synthesis can be deferred if it adds too much complexity).</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>When overlap is borderline, the system can fall back to grouping (not merging) and surface this to the user.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-4</ID>
+        <UserStory>As a user, I want to ingest YouTube transcripts with chapter-aware chunking, so that retrieval can return the most relevant chapter segment.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given a transcript with chapters (or chapter timestamps), when ingested, then chunks include chapter metadata (title, start time, end time) where available.</Criterion>
+          <Criterion>When I query, the system can return chapter-scoped chunks and display that metadata in results.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>Transcripts with no chapters still ingest with a fallback chunking strategy.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-5</ID>
+        <UserStory>As a user, I want to ingest my local markdown notes/tickets/bug logs, so that recurring issues are searchable and reusable.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given a folder of markdown files, when ingested, then documents are indexed with file path, modified time, and frontmatter tags (if present).</Criterion>
+          <Criterion>After parsing, the normalized content is stored and does not require referencing the original directory structure to query and retrieve.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>Binary or unsupported files in the folder are ignored with a warning.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-6</ID>
+        <UserStory>As a user, I want a transparent pipeline view of each stage (parse → normalize → chunk → summarize → dedupe/merge → embed → index), so that I can learn and tune each knob.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given an ingest run, when I open the UI or run a CLI inspect command, then I can see per-stage configuration values and outputs (counts, timings, errors).</Criterion>
+          <Criterion>Given a single document, I can view its normalized text, derived chunks, summaries, and merged/deduped artifacts.</Criterion>
+          <Criterion>The UI provides a trace-log (“waterfall”) view per run, e.g., [Load] → [Normalize] → [Split] → [Summarize] → [Embed] → [Index], with timings and clickable artifacts.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If embedding fails for a subset of chunks, the failure is visible and retryable without redoing earlier stages.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-7</ID>
+        <UserStory>As a user, I want explainable retrieval with grounding, so that I can see why a chunk was retrieved (and whether it was correct or duplicated) and always navigate back to the original source via citations.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given a query, when results are returned, then the UI/CLI shows top-k chunks with their scores and contributing signals (e.g., vector similarity score, keyword match, recency boost).</Criterion>
+          <Criterion>Each result includes citations/links to original source locations (conversation/message IDs, file paths, transcript timestamps), and the system can display the cited original text.</Criterion>
+          <Criterion>For each query, the system logs the retrieval trace (inputs, configs, retrieved IDs) in a human-readable way.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If duplicate/nearly-duplicate chunks exist, the system can optionally de-duplicate or group them and show that grouping.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-8</ID>
+        <UserStory>As a user, I want to query via a CLI, so that I can use the system quickly while working in the terminal.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>CLI supports: ingest, re-index, query, inspect document/chunk, and export results.</Criterion>
+          <Criterion>CLI supports a config file and/or environment variables to change chunk sizes, embedding model, summarization/dedupe settings, and retriever settings.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If the server is not running, the CLI can still run offline operations (e.g., ingest/index) and warns for query operations that require a running service.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-9</ID>
+        <UserStory>As a user, I want a Next.js UI (starting from an existing `flashbuild-llmcomparer` app) to visualize the pipeline, browse sources, and run queries, so that I can debug and tune the system.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>UI supports: ingest status, corpus stats, config view, query view (results + explainability), and document/chunk browser.</Criterion>
+          <Criterion>UI highlights chapter metadata for YouTube content and conversation metadata for chat history.</Criterion>
+          <Criterion>From any result or trace step, I can click into a stored chunk/summary and immediately see its source citation(s); optionally show raw vector values behind an “advanced” toggle.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>Large corpora do not freeze the UI; paging and server-side queries are used.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-10</ID>
+        <UserStory>As a user, I want an MCP server interface (query-only in v1), so that my coding agents/tools can query and retrieve context from the same index.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>MCP server exposes tools/endpoints for query and retrieval with citations to sources/chunks.</Criterion>
+          <Criterion>MCP server supports returning retrieval traces (optional) for debugging.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If MCP is disabled, core CLI/UI still works.</EdgeCase>
+        </EdgeCases>
+        <Priority>P0</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-11</ID>
+        <UserStory>As a user, I want to choose which LLM/provider is used for each stage (summarization, dedupe assist, embeddings, synthesis), so that I can experiment with local models and OpenRouter.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Config supports selecting local models and OpenRouter-backed models per stage, with clear defaults.</Criterion>
+          <Criterion>The system records which model was used for each run and includes it in trace logs.</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If a configured model is unavailable, the system fails fast with a clear error and suggested fallback.</EdgeCase>
+        </EdgeCases>
+        <Priority>P1</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-12</ID>
+        <UserStory>As a user, I want a containerized/dev-friendly setup, so that I can run the pipeline reliably and reproduce the environment.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Provide a Docker-based setup (or equivalent) that can run the indexer and the UI/server components.</Criterion>
+          <Criterion>All configs are manageable via .env and checked-in sample configs (no secrets committed).</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>When running without Docker, local dev instructions still work.</EdgeCase>
+        </EdgeCases>
+        <Priority>P1</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-13</ID>
+        <UserStory>As a user, I want a “What’s new” digest view for YouTube content (chapter-aware), so that I can browse recent material like a homepage/news feed and filter/sort by tags.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given newly ingested YouTube transcripts, when I open the digest view, then I see a list grouped by video and chapter with the ability to sort/filter by tags and recency.</Criterion>
+          <Criterion>Each digest item includes citations/links back to the original transcript segment (and ideally the original video timestamp).</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>When chapters are missing, the UI shows a fallback grouping (e.g., semantic/temporal segments).</EdgeCase>
+        </EdgeCases>
+        <Priority>P1</Priority>
+      </Row>
+
+      <Row>
+        <ID>FR-14</ID>
+        <UserStory>As a user, I want hierarchical chunking (chapter → semantic sub-chunks with overlap), so that I can retrieve precise details while keeping chapter context as a parent.</UserStory>
+        <AcceptanceCriteria>
+          <Criterion>Given a transcript with chapters, when ingested, then chapters are stored as parent units and semantic overlapping sub-chunks are stored as children referencing the parent.</Criterion>
+          <Criterion>The UI can visualize the parent/child relationship as a “knob” (toggle retrieval on parent vs child; show how retrieval maps back to the parent chapter).</Criterion>
+        </AcceptanceCriteria>
+        <EdgeCases>
+          <EdgeCase>If chapter boundaries are missing, the system falls back to time-based or semantic segment parents.</EdgeCase>
+        </EdgeCases>
+        <Priority>P1</Priority>
+      </Row>
+    </FunctionalRequirementsTable>
+  </Section>
+
+  <Section id="4" name="User Flows">
+    <UserFlow id="UF-1">
+      <Name>Initial setup and first ingest</Name>
+      <Goal>Get first working index from at least one source</Goal>
+      <PrimaryUser>Single developer (broz)</PrimaryUser>
+      <EntryPoints>
+        <EntryPoint>CLI</EntryPoint>
+        <EntryPoint>Next.js UI</EntryPoint>
+      </EntryPoints>
+      <Steps>
+        <Step index="1">User configures paths and models via .env/config.</Step>
+        <Step index="2">User runs ingest (CLI or UI).</Step>
+        <Step index="3">System parses, normalizes, chunks, summarizes, groups near-duplicates (and optionally merges), embeds, and indexes; shows per-stage progress.</Step>
+        <Step index="4">User runs a first query; views results and retrieval trace.</Step>
+      </Steps>
+      <DecisionPoints />
+      <ExitStates />
+      <EdgeCases />
+    </UserFlow>
+
+    <UserFlow id="UF-2">
+      <Name>Daily query + tuning loop</Name>
+      <Goal>Retrieve useful context and tune pipeline knobs based on outcomes</Goal>
+      <PrimaryUser>Single developer (broz)</PrimaryUser>
+      <EntryPoints>
+        <EntryPoint>CLI query</EntryPoint>
+        <EntryPoint>UI query page</EntryPoint>
+        <EntryPoint>MCP tool call</EntryPoint>
+      </EntryPoints>
+      <Steps>
+        <Step index="1">User enters a query (e.g., “how did I fix X bug last time?”).</Step>
+        <Step index="2">System retrieves top-k chunks and shows explainability (scores, signals, metadata).</Step>
+        <Step index="3">User marks results as good/bad (optional) and adjusts knobs (chunking, filters, dedupe, ranking weights).</Step>
+        <Step index="4">User re-runs query and compares results and traces.</Step>
+      </Steps>
+      <DecisionPoints />
+      <ExitStates />
+      <EdgeCases />
+    </UserFlow>
+
+    <UserFlow id="UF-3">
+      <Name>YouTube “What’s new” digest</Name>
+      <Goal>Browse new YouTube content by chapter and quickly open grounded sources</Goal>
+      <PrimaryUser>Single developer (broz)</PrimaryUser>
+      <EntryPoints>
+        <EntryPoint>Next.js UI digest/homepage</EntryPoint>
+      </EntryPoints>
+      <Steps>
+        <Step index="1">User opens digest view.</Step>
+        <Step index="2">System shows recent videos with chapter entries and extracted tags.</Step>
+        <Step index="3">User filters/sorts by tags (positive/negative later) and opens a chapter item.</Step>
+        <Step index="4">System shows the chapter summary plus citations to original transcript segments.</Step>
+      </Steps>
+      <DecisionPoints />
+      <ExitStates />
+      <EdgeCases />
+    </UserFlow>
+  </Section>
+
+  <Section id="5" name="Architecture and Tech Options">
+    <SystemComponents>
+      <Component>
+        <Name>Ingestion + Normalization</Name>
+        <Option name="OptionA">Node.js-first ingestion pipeline with per-source adapters; Python subprocesses allowed for specialized parsing.</Option>
+        <Option name="OptionB">Python-first ingestion pipeline with a Node/Next UI wrapper.</Option>
+        <Tradeoffs>OptionA matches preference (“TypeScript-first”); OptionB may have stronger ecosystem for certain parsing/ML libs.</Tradeoffs>
+      </Component>
+      <Component>
+        <Name>Storage / Index</Name>
+        <Option name="OptionA">LanceDB (embedded, file-based) with TypeScript SDK + metadata filtering for tags/facets.</Option>
+        <Option name="OptionB">ChromaDB as a local service (good for learning; more “explicit” operations).</Option>
+        <Option name="OptionC">Qdrant as a local service (more production-like server; more ops).</Option>
+        <Tradeoffs>OptionA best aligns with “inspect the data files” + TypeScript-first; Options B/C may be easier to follow tutorials or scale features but add a service boundary and operational complexity.</Tradeoffs>
+      </Component>
+      <Component>
+        <Name>Retrieval + Ranking</Name>
+        <Option name="OptionA">Hybrid retrieval (vector + keyword + metadata filters) with configurable weighting and dedupe.</Option>
+        <Option name="OptionB">Vector-only retrieval for MVP.</Option>
+        <Tradeoffs>Hybrid improves relevance and explainability but adds tuning surface area.</Tradeoffs>
+      </Component>
+      <Component>
+        <Name>Interfaces</Name>
+        <Option name="OptionA">CLI + Next.js UI + MCP server sharing one backend.</Option>
+        <Option name="OptionB">Only CLI in MVP; UI/MCP later.</Option>
+        <Tradeoffs>OptionA fits stated goals; OptionB reduces MVP scope.</Tradeoffs>
+      </Component>
+      <Component>
+        <Name>Repo / Packaging</Name>
+        <Option name="OptionA">Monorepo with separate packages: `pipeline` (core), `ui` (Next.js), `mcp-server` (query-only; calls pipeline).</Option>
+        <Option name="OptionB">Single package with all concerns co-located initially.</Option>
+        <Tradeoffs>OptionA clean boundaries for MCP + reuse; OptionB faster bootstrap but can get tangled.</Tradeoffs>
+      </Component>
+      <Component>
+        <Name>LLM/Embedding Providers</Name>
+        <Option name="OptionA">Local LLMs (e.g., Qwen 8B/14B) for synthesis + local embeddings (TBD).</Option>
+        <Option name="OptionB">OpenRouter (free tier OSS where possible) for synthesis and/or embeddings.</Option>
+        <Tradeoffs>Use a combination: local-first where possible, OpenRouter for experimentation/comparison across pipeline stages.</Tradeoffs>
+      </Component>
+    </SystemComponents>
+  </Section>
+
+  <Section id="6" name="Metrics and Instrumentation">
+    <Metrics>
+      <Metric>
+        <Name>Ingest success rate</Name>
+        <Definition>Number of successfully ingested documents/chunks divided by attempted documents/chunks per run.</Definition>
+        <SuccessThreshold>&gt;= 99% for known-good inputs; failures are visible and actionable.</SuccessThreshold>
+        <WhereMeasured>Server</WhereMeasured>
+      </Metric>
+      <Metric>
+        <Name>Query usefulness (manual)</Name>
+        <Definition>User-marked “useful” retrieval results divided by total queries (or per-query top-k usefulness).</Definition>
+        <SuccessThreshold>Initial target: &gt;= 60% useful top-5 results for core workflows (bug recall, best-practice recall).</SuccessThreshold>
+        <WhereMeasured>Client/Server</WhereMeasured>
+      </Metric>
+      <Metric>
+        <Name>Retrieval trace completeness</Name>
+        <Definition>Percentage of queries where trace includes config, retrieved IDs, scores, and source metadata.</Definition>
+        <SuccessThreshold>100% for CLI/UI/MCP queries.</SuccessThreshold>
+        <WhereMeasured>Server</WhereMeasured>
+      </Metric>
+      <Metric>
+        <Name>Index rebuild time</Name>
+        <Definition>Wall-clock duration to rebuild embeddings + vector index for the corpus.</Definition>
+        <SuccessThreshold>TBD (set after first baseline on target machine); must be observable and optimizable.</SuccessThreshold>
+        <WhereMeasured>Server</WhereMeasured>
+      </Metric>
+    </Metrics>
+  </Section>
+
+  <Section id="7" name="Risks Dependencies and Open Questions">
+    <Risks>
+      <Risk>Transcript mentions a strong desire for transparency; picking “black box” libraries could undermine the learning goal.</Risk>
+      <Risk>ChatGPT export formats can change; ingestion adapters may need maintenance.</Risk>
+      <Risk>Embedding/model choice and chunking strategy could dominate quality; tuning surface area may cause scope creep.</Risk>
+      <Risk>Copyright/privacy concerns for storing and indexing third-party transcript content.</Risk>
+      <Risk>Summarization + dedupe/merge is a core requirement; if done poorly it can lose nuance or break grounding/citations.</Risk>
+    </Risks>
+    <Dependencies>
+      <Dependency>Access to ChatGPT export data in a known format.</Dependency>
+      <Dependency>A consistent method to obtain YouTube transcripts + chapters (source/format TBD).</Dependency>
+      <Dependency>Local model runtime availability (for Qwen 8B/14B) and/or OpenRouter credentials.</Dependency>
+      <Dependency>Starting codebase: copy/extend `/home/broz/playground/flashbuild-llmcomparer` to become the UI hub for pipeline stage experimentation.</Dependency>
+    </Dependencies>
+    <OpenQuestions>
+      <Question>Decision: ChatGPT exports are official exports (confirm exact file layout of your existing export sets to lock parser assumptions).</Question>
+      <Question>How will YouTube transcripts be sourced (manual paste, API, yt-dlp, existing transcript files), and do you require chapter extraction?</Question>
+      <Question>Decision: LanceDB is the initial vector store (confirm whether we also want SQLite for additional relational metadata, or keep all metadata in LanceDB first).</Question>
+      <Question>Should v1 focus on retrieval + citations + trace only, or include answer synthesis (noting that summarization is required at ingest regardless)?</Question>
+      <Question>What metadata facets/tags matter most on day 1 (source type, author/channel, topic, project, recency, “importance”)?</Question>
+      <Question>What’s the minimum “pipeline visualization” you consider acceptable: after-the-fact inspection first (recommended), or real-time dashboard from day 1?</Question>
+      <Question>YouTube chunking strategy: chapter-only chunks vs chapter + overlapping semantic sub-chunks (recommended: both, with chapters as primary grouping and semantic chunks as retrievable units).</Question>
+      <Question>Deduplication strategy for v1: is retrieval-time grouping sufficient for MVP, with ingest-time “master chunk” synthesis deferred to later milestones?</Question>
+    </OpenQuestions>
+  </Section>
+
+  <NextStep name="Ticket Generation">
+    <TicketingRules>
+      <Rule>One ticket per FR row.</Rule>
+      <Rule>Sub-tasks from edge cases.</Rule>
+      <Rule>Tests from acceptance criteria.</Rule>
+      <Rule>Group by user flow.</Rule>
+    </TicketingRules>
+  </NextStep>
+
+</PRDTemplate>
+
+

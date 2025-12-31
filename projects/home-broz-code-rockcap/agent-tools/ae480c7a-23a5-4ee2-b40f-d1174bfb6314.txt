@@ -1,0 +1,1358 @@
+### Result
+Waited for 3
+
+### Ran Playwright code
+await new Promise(f => setTimeout(f, 3 * 1000));
+
+### New console messages
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [LOG] [useBacktest] Loading 1s candles from: /data/backtest/candles/2022-01-03_to_2025-12-04_1s_json...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] HistoryUpdater @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] AppRouterAnnouncer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_co...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Prewarm @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Suspended @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Blocked @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [LOG] [useBacktest] Loaded 1799 1s candles for 2025-12-03 @ http://localhost:3000/_next/static/chunk...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_viewport_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_metadata_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentStateProvider @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] ScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] ErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LoadingBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] HTTPAccessFallbackBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] RedirectBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] RedirectErrorBoundary @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] InnerLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] SegmentViewNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Script @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [LOG] [useBacktest] Loading 1s candles from: /data/backtest/candles/2022-01-03_to_2025-12-04_1s_json...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] __next_outlet_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [LOG] [useBacktest] Loading 1s candles from: /data/backtest/candles/2022-01-03_to_2025-12-04_1s_json...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] HistoryUpdater @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Generating algo trades for 2025-12-03 with pt 33 sl 7 trg 6 maxRT 1 strategy stra...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [Strategy12.8] STARTING TRADE GENERATION (Multi-RT) - STRATEGY 12.8 @ http://localhost:3000/_n...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [Strategy12.8] Inputs: JSHandle@object @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [Strategy12.8] 9:35 Transition: @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG] [Strategy12.8]   9:35 candle index: 300 @ http://localhost:3000/_next/static/chunks/node_modul...
+- [LOG] [Strategy12.8]   Original start price (9:30): 25495.25 @ http://localhost:3000/_next/static/ch...
+- [LOG] [Strategy12.8]   New start price (9:35): 25473.75 @ http://localhost:3000/_next/static/chunks/...
+- [LOG] [Strategy12.8] Initial Triggers (before 9:35): @ http://localhost:3000/_next/static/chunks/nod...
+- [LOG] [Strategy12.8]   Long Trigger  = 25495.25 + 6 = 25501.25 @ http://localhost:3000/_next/static/...
+- [LOG] [Strategy12.8]   Short Trigger = 25495.25 - 6 = 25489.25 @ http://localhost:3000/_next/static/...
+- [LOG] [Strategy12.8] ---------------------------------------------------------------------- @ http:/...
+- [LOG] [Strategy12.8] ROUND TRIP #1 (Session #1) - Scanning from candle[0] @ http://localhost:3000/_n...
+- [LOG] [Strategy12.8:Alternate] ROUND TRIP #1: No alternating logic (lastExitNote=null, lastTradeDire...
+- [LOG] [Strategy12.8:Trigger] Candle[0] 2025-12-03T09:30:00-05:00: high=25503.75 (>=25501.25? true), ...
+- [LOG] 
+================================================================================ @ http://loc...
+- [LOG] 🔍 FIRST RT TRADE - INTRABAR ANALYSIS FOR CANDLE[0] @ http://localhost:3000/_next/static/chunk...
+- [LOG] ================================================================================ @ http://loca...
+- [LOG] Candle Details: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._....
+- [LOG]   Time: 2025-12-03T09:30:00-05:00 @ http://localhost:3000/_next/static/chunks/node_modules_nex...
+- [LOG]   Open:  25495.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   High:  25503.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Low:   25493.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Close: 25497.5 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG] 
+Trigger Levels: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG]   Long Trigger:  25501.25 (hit: true) @ http://localhost:3000/_next/static/chunks/node_modules...
+- [LOG]   Short Trigger: 25489.25 (hit: false) @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] 
+Candle Color: GREEN (C > O) @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG]   Path will be: O→L→H→C @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG] ================================================================================
+ @ http://loc...
+- [LOG] [Strategy12.8:Trigger] Candle[0] LONG trigger hit and accepted @ http://localhost:3000/_next/s...
+- [LOG] [Strategy12.8]   Candle[0] LONG trigger hit @ http://localhost:3000/_next/static/chunks/node_m...
+- [LOG] [Strategy12.8]   Entry: 25502.25 at 2025-12-03T09:30:00-05:00 @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Entry calculation: long trigger (25501.25) + slippage (1) = 25502.25 @ http:/...
+- [LOG] 
+================================================================================ @ http://loc...
+- [LOG] 🎯 FIRST RT TRADE - ENTRY JUSTIFICATION (INTRABAR ANALYSIS) @ http://localhost:3000/_next/stat...
+- [LOG] ================================================================================ @ http://loca...
+- [LOG] 
+Trade Direction: LONG @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a81...
+- [LOG] Entry Level (Trigger): 25501.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG] Entry Price (with slippage): 25502.25 @ http://localhost:3000/_next/static/chunks/node_modules...
+- [LOG] 
+Candle at Trigger Index [0]: @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [LOG]   Time:  2025-12-03T09:30:00-05:00 @ http://localhost:3000/_next/static/chunks/node_modules_ne...
+- [LOG]   Open:  25495.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   High:  25503.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Low:   25493.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Close: 25497.5 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG] 
+Why This Entry Occurred: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [LOG]   1. Candle range [25493.75, 25503.75] contains entry level 25501.25 @ http://localhost:3000/_...
+- [LOG]   2. High (25503.75) >= 25501.25 @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [LOG]   3. Entry is filled at 25502.25 (trigger + slippage) @ http://localhost:3000/_next/static/chu...
+- [LOG] ================================================================================
+ @ http://loc...
+- [LOG] [Strategy12.8]   TP: 25528.25 (based on currentStartPrice: 25495.25), SL: 25494.25 @ http://lo...
+- [LOG] 
+================================================================================ @ http://loc...
+- [LOG] 🔍 FIRST RT TRADE - INTRABAR EXIT ANALYSIS FOR ENTRY CANDLE[0] @ http://localhost:3000/_next/s...
+- [LOG] ================================================================================ @ http://loca...
+- [LOG] 
+Scanning Entry Candle for Same-Bar Exit: @ http://localhost:3000/_next/static/chunks/node_mod...
+- [LOG]   Time:  2025-12-03T09:30:00-05:00 @ http://localhost:3000/_next/static/chunks/node_modules_ne...
+- [LOG]   Open:  25495.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   High:  25503.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Low:   25493.75 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Close: 25497.5 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._...
+- [LOG] 
+Entry Details: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._....
+- [LOG]   Direction: LONG @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0....
+- [LOG]   Entry Level: 25501.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG]   Entry Price: 25502.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8...
+- [LOG] 
+Exit Levels: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0._.js...
+- [LOG]   TP Price: 25528.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122...
+- [LOG]   SL Price: 25494.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122...
+- [LOG] 
+📊 INTRABAR RESOLUTION RESULT: @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [LOG]   Event: FILL_AND_SURVIVE @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [LOG]   Assumed Path: O→L→L→H→H→C @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [LOG]   Entry Fill: 25502.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a81...
+- [LOG]   Entry Path Index: 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a812...
+- [LOG]   Exit Path Index: undefined @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] 
+🎯 JUSTIFICATION: @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a8122d0...
+- [LOG]   ✅ Entry occurred at 25502.25 @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [LOG]   ⏭️  No exit on this candle - trade survives to next candle @ http://localhost:3000/_next/sta...
+- [LOG]   📍 Path: O→L→L→H→H→C @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7a81...
+- [LOG]   📍 Entry at path segment 1 @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] ================================================================================
+ @ http://loc...
+- [LOG] [Strategy12.8:Exit] Candle[0]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Contin...
+- [LOG] [Strategy12.8:Exit] Candle[1] 2025-12-03T09:30:01-05:00: Checking LONG exit - high=25503.25 (>...
+- [LOG] [Strategy12.8:Exit] Candle[1]: SL Hit. Exit price: 25494.25 @ http://localhost:3000/_next/stat...
+- [LOG] [Strategy12.8]   Exit: SL Hit at candle[1], price=25494.25 @ http://localhost:3000/_next/stati...
+- [LOG] [Strategy12.8]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] [Strategy12.8]   Stored last trade: long exited with SL Hit @ http://localhost:3000/_next/stat...
+- [LOG] [Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=1, triggerCandleIndex=0 @ http...
+- [LOG] [Strategy12.8:Reentry] Checking exit candle[1] for re-eligibility: open=25497, high=25503.25, ...
+- [LOG] [Strategy12.8:Reentry] Zone boundaries: shortTrigger=25489.25, longTrigger=25501.25 @ http://l...
+- [LOG] [Strategy12.8:Reentry] Exit candle zone checks: lowInZone=true, highInZone=false, openInZone=t...
+- [LOG] [Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[1]! Price is in zone. @ http://lo...
+- [LOG] [Strategy12.8]   Re-eligibility found on exit candle[1] - price between triggers @ http://loca...
+- [LOG] [Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for nex...
+- [LOG] [Strategy12.8]   Max round trips (1) reached for pre-9:35. Fast-forwarding to 9:35. @ http://l...
+- [LOG] [Strategy12.8] *** 9:35 RESET TRIGGERED (No trade active) *** @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Start price switched to 25473.75 (at Reset) @ http://localhost:3000/_next/sta...
+- [LOG] [Strategy12.8] ---------------------------------------------------------------------- @ http:/...
+- [LOG] [Strategy12.8] ROUND TRIP #2 (Session #1) - Scanning from candle[300] @ http://localhost:3000/...
+- [LOG] [Strategy12.8:Alternate] ROUND TRIP #2: No alternating logic (lastExitNote=SL Hit, lastTradeDi...
+- [LOG] [Strategy12.8:Trigger] Candle[300] 2025-12-03T09:35:00-05:00: high=25474.5 (>=25479.75? false)...
+- [LOG] [Strategy12.8:Trigger] Candle[300] SHORT trigger hit and accepted @ http://localhost:3000/_nex...
+- [LOG] [Strategy12.8]   Candle[300] SHORT trigger hit @ http://localhost:3000/_next/static/chunks/nod...
+- [LOG] [Strategy12.8]   Entry: 25466.75 at 2025-12-03T09:35:00-05:00 @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Entry calculation: short trigger (25467.75) + slippage (1) = 25466.75 @ http:...
+- [LOG] [Strategy12.8]   TP: 25440.75 (based on currentStartPrice: 25473.75), SL: 25474.75 @ http://lo...
+- [LOG] [Strategy12.8:Exit] Candle[300]: Same-candle entry, no exit (intrabar: FILL_AND_SURVIVE). Cont...
+- [LOG] [Strategy12.8:Exit] Candle[301] 2025-12-03T09:35:01-05:00: Checking SHORT exit - low=25466 (<=...
+- [LOG] [Strategy12.8:Exit] Candle[301]: SL Hit. Exit price: 25474.75 @ http://localhost:3000/_next/st...
+- [LOG] [Strategy12.8]   Exit: SL Hit at candle[301], price=25474.75 @ http://localhost:3000/_next/sta...
+- [LOG] [Strategy12.8]   Net P&L: -8 @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] [Strategy12.8]   Stored last trade: short exited with SL Hit @ http://localhost:3000/_next/sta...
+- [LOG] [Strategy12.8:Reentry] Checking re-eligibility: exitCandleIndex=301, triggerCandleIndex=300 @ ...
+- [LOG] [Strategy12.8:Reentry] Checking exit candle[301] for re-eligibility: open=25469.5, high=25478....
+- [LOG] [Strategy12.8:Reentry] Zone boundaries: shortTrigger=25467.75, longTrigger=25479.75 @ http://l...
+- [LOG] [Strategy12.8:Reentry] Exit candle zone checks: lowInZone=false, highInZone=true, openInZone=t...
+- [LOG] [Strategy12.8:Reentry] ✓ RE-ELIGIBILITY FOUND on exit candle[301]! Price is in zone. @ http://...
+- [LOG] [Strategy12.8]   Re-eligibility found on exit candle[301] - price between triggers @ http://lo...
+- [LOG] [Strategy12.8]   Exit candle has eligible price - alternating logic will be overridden for nex...
+- [LOG] [Strategy12.8]   Max round trips (1) reached for current session. Done. @ http://localhost:300...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [Strategy12.8] GENERATION COMPLETE: 4 rows (2 round trips) @ http://localhost:3000/_next/stati...
+- [LOG] [Strategy12.8] ====================================================================== @ http:/...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1799 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] AppRouterAnnouncer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_co...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1799 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Blocked @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_viewport_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_metadata_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] IconMark @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Prewarm @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [LOG] [useBacktest] Loaded 1799 1s candles for 2025-12-03 @ http://localhost:3000/_next/static/chunk...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [LOG] [BacktestUI] Raw candles sample: Array @ http://localhost:3000/_next/static/chunks/node_module...
+- [LOG] [BacktestUI] setting candle data 1799 JSHandle@object @ http://localhost:3000/_next/static/chu...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [LOG] [useBacktest] Loaded 1799 1s candles for 2025-12-03 @ http://localhost:3000/_next/static/chunk...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Suspended @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Blocked @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] InnerScrollAndFocusHandler @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Router @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] RuntimeStyles @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] ReplaySsrOnlyErrors @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_c...
+- [TIMESTAMP] Head @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] __next_viewport_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_metadata_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_next...
+- [TIMESTAMP] __next_root_layout_boundary__ @ http://localhost:3000/_next/static/chunks/node_modules_n...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] OuterLayoutRouter @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] RenderFromTemplateContext @ http://localhost:3000/_next/static/chunks/node_modules_next_...
+- [TIMESTAMP] SegmentTrieNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compi...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] LogDrawer @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] BacktestUI @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] SegmentViewStateNode @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​BacktestDatePage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [WARNING] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/797e433ab9...
+- [WARNING] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/caa3a2e1cc...
+
+### Page state
+- Page URL: http://localhost:3000/backtest/2025-12-03?date=2025-10-17&strategy=strategy12.8&pt=33&sl=7&trg=6&candleType=1s&cutoffTime=09%3A45
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- <changed> generic [active] [ref=e1]:
+  - ref=e226 [unchanged]
+  - ref=e231 [unchanged]
+  - generic [ref=e232]:
+    - banner [ref=e233]:
+      - generic [ref=e234]:
+        - generic [ref=e235]: Broz Backtester
+        - navigation [ref=e236]:
+          - link "Backtest Tuner" [ref=e237] [cursor=pointer]:
+            - /url: /backtest
+          - link "Backtest Analysis" [ref=e238] [cursor=pointer]:
+            - /url: /analysis/dec2025-2yearbacktest-algo1.0
+          - link "Downloader" [ref=e239] [cursor=pointer]:
+            - /url: "#"
+          - link "Trader" [ref=e240] [cursor=pointer]:
+            - /url: "#"
+          - link "Docs" [ref=e241] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e243]:
+      - banner [ref=e244]:
+        - generic [ref=e245]:
+          - generic [ref=e246]: Backtesting
+          - generic [ref=e247]:
+            - generic [ref=e248]: "Strategy:"
+            - combobox "Strategy:" [ref=e249]:
+              - option "strategy12.7 - Baseline all the things, stable frontrunner since 12.7"
+              - option "strategy12.8 - Added handling the same 1 sec candle hitting all the lines coverage" [selected]
+              - option "strategy12.8refactored - Refactored version of strategy12.8 with comprehensive logging"
+              - option "strategy12.8.2 - layered in staggered tps"
+          - generic [ref=e250]:
+            - generic [ref=e251]: "PT:"
+            - combobox "PT:" [ref=e252]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33" [selected]
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e253]:
+            - generic [ref=e254]: "SL:"
+            - combobox "SL:" [ref=e255]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7" [selected]
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e256]:
+            - generic [ref=e257]: "TRG:"
+            - combobox "TRG:" [ref=e258]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6" [selected]
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+              - option "32"
+              - option "33"
+              - option "34"
+              - option "35"
+              - option "36"
+              - option "37"
+              - option "38"
+              - option "39"
+              - option "40"
+              - option "41"
+              - option "42"
+              - option "43"
+              - option "44"
+              - option "45"
+              - option "46"
+              - option "47"
+              - option "48"
+              - option "49"
+              - option "50"
+          - generic [ref=e259]:
+            - generic [ref=e260]: "Max Trades:"
+            - combobox "Max Trades:" [ref=e261]:
+              - option "1 RT" [selected]
+              - option "2 RTs"
+              - option "3 RTs"
+              - option "5 RTs"
+              - option "6 RTs"
+          - generic [ref=e262]:
+            - generic [ref=e263]: "Cutoff Time:"
+            - combobox "Cutoff Time:" [ref=e264]:
+              - option "09:30"
+              - option "09:35"
+              - option "09:40"
+              - option "09:45" [selected]
+              - option "09:50"
+              - option "09:55"
+              - option "10:00"
+              - option "10:05"
+              - option "10:10"
+              - option "10:15"
+              - option "10:30"
+              - option "11:00"
+              - option "12:00"
+        - generic [ref=e266]: "Date: 2025-12-03"
+      - region "Chart Controls" [ref=e267]:
+        - generic [ref=e268]:
+          - generic [ref=e269]:
+            - generic [ref=e270]:
+              - button "◀ Prev" [ref=e271]
+              - button "Next ▶" [disabled] [ref=e272]
+              - generic [ref=e273]:
+                - generic [ref=e274]: Current day
+                - combobox "Current day" [ref=e275]:
+                  - option "Select day" [disabled]
+                  - option "2023-12-05"
+                  - option "2023-12-06"
+                  - option "2023-12-07"
+                  - option "2023-12-08"
+                  - option "2023-12-11"
+                  - option "2023-12-12"
+                  - option "2023-12-13"
+                  - option "2023-12-14"
+                  - option "2023-12-15"
+                  - option "2023-12-18"
+                  - option "2023-12-19"
+                  - option "2023-12-20"
+                  - option "2023-12-21"
+                  - option "2023-12-22"
+                  - option "2023-12-26"
+                  - option "2023-12-27"
+                  - option "2023-12-28"
+                  - option "2023-12-29"
+                  - option "2024-01-02"
+                  - option "2024-01-03"
+                  - option "2024-01-04"
+                  - option "2024-01-05"
+                  - option "2024-01-08"
+                  - option "2024-01-09"
+                  - option "2024-01-10"
+                  - option "2024-01-11"
+                  - option "2024-01-12"
+                  - option "2024-01-15"
+                  - option "2024-01-16"
+                  - option "2024-01-17"
+                  - option "2024-01-18"
+                  - option "2024-01-19"
+                  - option "2024-01-22"
+                  - option "2024-01-23"
+                  - option "2024-01-24"
+                  - option "2024-01-25"
+                  - option "2024-01-26"
+                  - option "2024-01-29"
+                  - option "2024-01-30"
+                  - option "2024-01-31"
+                  - option "2024-02-01"
+                  - option "2024-02-02"
+                  - option "2024-02-05"
+                  - option "2024-02-06"
+                  - option "2024-02-07"
+                  - option "2024-02-08"
+                  - option "2024-02-09"
+                  - option "2024-02-12"
+                  - option "2024-02-13"
+                  - option "2024-02-14"
+                  - option "2024-02-15"
+                  - option "2024-02-16"
+                  - option "2024-02-19"
+                  - option "2024-02-20"
+                  - option "2024-02-21"
+                  - option "2024-02-22"
+                  - option "2024-02-23"
+                  - option "2024-02-26"
+                  - option "2024-02-27"
+                  - option "2024-02-28"
+                  - option "2024-02-29"
+                  - option "2024-03-01"
+                  - option "2024-03-04"
+                  - option "2024-03-05"
+                  - option "2024-03-06"
+                  - option "2024-03-07"
+                  - option "2024-03-08"
+                  - option "2024-03-11"
+                  - option "2024-03-12"
+                  - option "2024-03-13"
+                  - option "2024-03-14"
+                  - option "2024-03-15"
+                  - option "2024-03-18"
+                  - option "2024-03-19"
+                  - option "2024-03-20"
+                  - option "2024-03-21"
+                  - option "2024-03-22"
+                  - option "2024-03-25"
+                  - option "2024-03-26"
+                  - option "2024-03-27"
+                  - option "2024-03-28"
+                  - option "2024-04-01"
+                  - option "2024-04-02"
+                  - option "2024-04-03"
+                  - option "2024-04-04"
+                  - option "2024-04-05"
+                  - option "2024-04-08"
+                  - option "2024-04-09"
+                  - option "2024-04-10"
+                  - option "2024-04-11"
+                  - option "2024-04-12"
+                  - option "2024-04-15"
+                  - option "2024-04-16"
+                  - option "2024-04-17"
+                  - option "2024-04-18"
+                  - option "2024-04-19"
+                  - option "2024-04-22"
+                  - option "2024-04-23"
+                  - option "2024-04-24"
+                  - option "2024-04-25"
+                  - option "2024-04-26"
+                  - option "2024-04-29"
+                  - option "2024-04-30"
+                  - option "2024-05-01"
+                  - option "2024-05-02"
+                  - option "2024-05-03"
+                  - option "2024-05-06"
+                  - option "2024-05-07"
+                  - option "2024-05-08"
+                  - option "2024-05-09"
+                  - option "2024-05-10"
+                  - option "2024-05-13"
+                  - option "2024-05-14"
+                  - option "2024-05-15"
+                  - option "2024-05-16"
+                  - option "2024-05-17"
+                  - option "2024-05-20"
+                  - option "2024-05-21"
+                  - option "2024-05-22"
+                  - option "2024-05-23"
+                  - option "2024-05-24"
+                  - option "2024-05-27"
+                  - option "2024-05-28"
+                  - option "2024-05-29"
+                  - option "2024-05-30"
+                  - option "2024-05-31"
+                  - option "2024-06-03"
+                  - option "2024-06-04"
+                  - option "2024-06-05"
+                  - option "2024-06-06"
+                  - option "2024-06-07"
+                  - option "2024-06-10"
+                  - option "2024-06-11"
+                  - option "2024-06-12"
+                  - option "2024-06-13"
+                  - option "2024-06-14"
+                  - option "2024-06-17"
+                  - option "2024-06-18"
+                  - option "2024-06-19"
+                  - option "2024-06-20"
+                  - option "2024-06-21"
+                  - option "2024-06-24"
+                  - option "2024-06-25"
+                  - option "2024-06-26"
+                  - option "2024-06-27"
+                  - option "2024-06-28"
+                  - option "2024-07-01"
+                  - option "2024-07-02"
+                  - option "2024-07-03"
+                  - option "2024-07-04"
+                  - option "2024-07-05"
+                  - option "2024-07-08"
+                  - option "2024-07-09"
+                  - option "2024-07-10"
+                  - option "2024-07-11"
+                  - option "2024-07-12"
+                  - option "2024-07-15"
+                  - option "2024-07-16"
+                  - option "2024-07-17"
+                  - option "2024-07-18"
+                  - option "2024-07-19"
+                  - option "2024-07-22"
+                  - option "2024-07-23"
+                  - option "2024-07-24"
+                  - option "2024-07-25"
+                  - option "2024-07-26"
+                  - option "2024-07-29"
+                  - option "2024-07-30"
+                  - option "2024-07-31"
+                  - option "2024-08-01"
+                  - option "2024-08-02"
+                  - option "2024-08-05"
+                  - option "2024-08-06"
+                  - option "2024-08-07"
+                  - option "2024-08-08"
+                  - option "2024-08-09"
+                  - option "2024-08-12"
+                  - option "2024-08-13"
+                  - option "2024-08-14"
+                  - option "2024-08-15"
+                  - option "2024-08-16"
+                  - option "2024-08-19"
+                  - option "2024-08-20"
+                  - option "2024-08-21"
+                  - option "2024-08-22"
+                  - option "2024-08-23"
+                  - option "2024-08-26"
+                  - option "2024-08-27"
+                  - option "2024-08-28"
+                  - option "2024-08-29"
+                  - option "2024-08-30"
+                  - option "2024-09-02"
+                  - option "2024-09-03"
+                  - option "2024-09-04"
+                  - option "2024-09-05"
+                  - option "2024-09-06"
+                  - option "2024-09-09"
+                  - option "2024-09-10"
+                  - option "2024-09-11"
+                  - option "2024-09-12"
+                  - option "2024-09-13"
+                  - option "2024-09-16"
+                  - option "2024-09-17"
+                  - option "2024-09-18"
+                  - option "2024-09-19"
+                  - option "2024-09-20"
+                  - option "2024-09-23"
+                  - option "2024-09-24"
+                  - option "2024-09-25"
+                  - option "2024-09-26"
+                  - option "2024-09-27"
+                  - option "2024-09-30"
+                  - option "2024-10-01"
+                  - option "2024-10-02"
+                  - option "2024-10-03"
+                  - option "2024-10-04"
+                  - option "2024-10-07"
+                  - option "2024-10-08"
+                  - option "2024-10-09"
+                  - option "2024-10-10"
+                  - option "2024-10-11"
+                  - option "2024-10-14"
+                  - option "2024-10-15"
+                  - option "2024-10-16"
+                  - option "2024-10-17"
+                  - option "2024-10-18"
+                  - option "2024-10-21"
+                  - option "2024-10-22"
+                  - option "2024-10-23"
+                  - option "2024-10-24"
+                  - option "2024-10-25"
+                  - option "2024-10-28"
+                  - option "2024-10-29"
+                  - option "2024-10-30"
+                  - option "2024-10-31"
+                  - option "2024-11-01"
+                  - option "2024-11-04"
+                  - option "2024-11-05"
+                  - option "2024-11-06"
+                  - option "2024-11-07"
+                  - option "2024-11-08"
+                  - option "2024-11-11"
+                  - option "2024-11-12"
+                  - option "2024-11-13"
+                  - option "2024-11-14"
+                  - option "2024-11-15"
+                  - option "2024-11-18"
+                  - option "2024-11-19"
+                  - option "2024-11-20"
+                  - option "2024-11-21"
+                  - option "2024-11-22"
+                  - option "2024-11-25"
+                  - option "2024-11-26"
+                  - option "2024-11-27"
+                  - option "2024-11-28"
+                  - option "2024-11-29"
+                  - option "2024-12-02"
+                  - option "2024-12-03"
+                  - option "2024-12-04"
+                  - option "2024-12-05"
+                  - option "2024-12-06"
+                  - option "2024-12-09"
+                  - option "2024-12-10"
+                  - option "2024-12-11"
+                  - option "2024-12-12"
+                  - option "2024-12-13"
+                  - option "2024-12-16"
+                  - option "2024-12-17"
+                  - option "2024-12-18"
+                  - option "2024-12-19"
+                  - option "2024-12-20"
+                  - option "2024-12-23"
+                  - option "2024-12-24"
+                  - option "2024-12-26"
+                  - option "2024-12-27"
+                  - option "2024-12-30"
+                  - option "2024-12-31"
+                  - option "2025-01-02"
+                  - option "2025-01-03"
+                  - option "2025-01-06"
+                  - option "2025-01-07"
+                  - option "2025-01-08"
+                  - option "2025-01-10"
+                  - option "2025-01-13"
+                  - option "2025-01-14"
+                  - option "2025-01-15"
+                  - option "2025-01-16"
+                  - option "2025-01-17"
+                  - option "2025-01-20"
+                  - option "2025-01-21"
+                  - option "2025-01-22"
+                  - option "2025-01-23"
+                  - option "2025-01-24"
+                  - option "2025-01-27"
+                  - option "2025-01-28"
+                  - option "2025-01-29"
+                  - option "2025-01-30"
+                  - option "2025-01-31"
+                  - option "2025-02-03"
+                  - option "2025-02-04"
+                  - option "2025-02-05"
+                  - option "2025-02-06"
+                  - option "2025-02-07"
+                  - option "2025-02-10"
+                  - option "2025-02-11"
+                  - option "2025-02-12"
+                  - option "2025-02-13"
+                  - option "2025-02-14"
+                  - option "2025-02-17"
+                  - option "2025-02-18"
+                  - option "2025-02-19"
+                  - option "2025-02-20"
+                  - option "2025-02-21"
+                  - option "2025-02-24"
+                  - option "2025-02-25"
+                  - option "2025-02-26"
+                  - option "2025-02-27"
+                  - option "2025-02-28"
+                  - option "2025-03-03"
+                  - option "2025-03-04"
+                  - option "2025-03-05"
+                  - option "2025-03-06"
+                  - option "2025-03-07"
+                  - option "2025-03-10"
+                  - option "2025-03-11"
+                  - option "2025-03-12"
+                  - option "2025-03-13"
+                  - option "2025-03-14"
+                  - option "2025-03-17"
+                  - option "2025-03-18"
+                  - option "2025-03-19"
+                  - option "2025-03-20"
+                  - option "2025-03-21"
+                  - option "2025-03-24"
+                  - option "2025-03-25"
+                  - option "2025-03-26"
+                  - option "2025-03-27"
+                  - option "2025-03-28"
+                  - option "2025-03-31"
+                  - option "2025-04-01"
+                  - option "2025-04-02"
+                  - option "2025-04-03"
+                  - option "2025-04-04"
+                  - option "2025-04-07"
+                  - option "2025-04-08"
+                  - option "2025-04-09"
+                  - option "2025-04-10"
+                  - option "2025-04-11"
+                  - option "2025-04-14"
+                  - option "2025-04-15"
+                  - option "2025-04-16"
+                  - option "2025-04-17"
+                  - option "2025-04-21"
+                  - option "2025-04-22"
+                  - option "2025-04-23"
+                  - option "2025-04-24"
+                  - option "2025-04-25"
+                  - option "2025-04-28"
+                  - option "2025-04-29"
+                  - option "2025-04-30"
+                  - option "2025-05-01"
+                  - option "2025-05-02"
+                  - option "2025-05-05"
+                  - option "2025-05-06"
+                  - option "2025-05-07"
+                  - option "2025-05-08"
+                  - option "2025-05-09"
+                  - option "2025-05-12"
+                  - option "2025-05-13"
+                  - option "2025-05-14"
+                  - option "2025-05-15"
+                  - option "2025-05-16"
+                  - option "2025-05-19"
+                  - option "2025-05-20"
+                  - option "2025-05-21"
+                  - option "2025-05-22"
+                  - option "2025-05-23"
+                  - option "2025-05-26"
+                  - option "2025-05-27"
+                  - option "2025-05-28"
+                  - option "2025-05-29"
+                  - option "2025-05-30"
+                  - option "2025-06-02"
+                  - option "2025-06-03"
+                  - option "2025-06-04"
+                  - option "2025-06-05"
+                  - option "2025-06-06"
+                  - option "2025-06-09"
+                  - option "2025-06-10"
+                  - option "2025-06-11"
+                  - option "2025-06-12"
+                  - option "2025-06-13"
+                  - option "2025-06-16"
+                  - option "2025-06-17"
+                  - option "2025-06-18"
+                  - option "2025-06-19"
+                  - option "2025-06-20"
+                  - option "2025-06-23"
+                  - option "2025-06-24"
+                  - option "2025-06-25"
+                  - option "2025-06-26"
+                  - option "2025-06-27"
+                  - option "2025-06-30"
+                  - option "2025-07-01"
+                  - option "2025-07-02"
+                  - option "2025-07-03"
+                  - option "2025-07-04"
+                  - option "2025-07-07"
+                  - option "2025-07-08"
+                  - option "2025-07-09"
+                  - option "2025-07-10"
+                  - option "2025-07-11"
+                  - option "2025-07-14"
+                  - option "2025-07-15"
+                  - option "2025-07-16"
+                  - option "2025-07-17"
+                  - option "2025-07-18"
+                  - option "2025-07-21"
+                  - option "2025-07-22"
+                  - option "2025-07-23"
+                  - option "2025-07-24"
+                  - option "2025-07-25"
+                  - option "2025-07-28"
+                  - option "2025-07-29"
+                  - option "2025-07-30"
+                  - option "2025-07-31"
+                  - option "2025-08-01"
+                  - option "2025-08-04"
+                  - option "2025-08-05"
+                  - option "2025-08-06"
+                  - option "2025-08-07"
+                  - option "2025-08-08"
+                  - option "2025-08-11"
+                  - option "2025-08-12"
+                  - option "2025-08-13"
+                  - option "2025-08-14"
+                  - option "2025-08-15"
+                  - option "2025-08-18"
+                  - option "2025-08-19"
+                  - option "2025-08-20"
+                  - option "2025-08-21"
+                  - option "2025-08-22"
+                  - option "2025-08-25"
+                  - option "2025-08-26"
+                  - option "2025-08-27"
+                  - option "2025-08-28"
+                  - option "2025-08-29"
+                  - option "2025-09-01"
+                  - option "2025-09-02"
+                  - option "2025-09-03"
+                  - option "2025-09-04"
+                  - option "2025-09-05"
+                  - option "2025-09-08"
+                  - option "2025-09-09"
+                  - option "2025-09-10"
+                  - option "2025-09-11"
+                  - option "2025-09-12"
+                  - option "2025-09-15"
+                  - option "2025-09-16"
+                  - option "2025-09-17"
+                  - option "2025-09-18"
+                  - option "2025-09-19"
+                  - option "2025-09-22"
+                  - option "2025-09-23"
+                  - option "2025-09-24"
+                  - option "2025-09-25"
+                  - option "2025-09-26"
+                  - option "2025-09-29"
+                  - option "2025-09-30"
+                  - option "2025-10-01"
+                  - option "2025-10-02"
+                  - option "2025-10-03"
+                  - option "2025-10-06"
+                  - option "2025-10-07"
+                  - option "2025-10-08"
+                  - option "2025-10-09"
+                  - option "2025-10-10"
+                  - option "2025-10-13"
+                  - option "2025-10-14"
+                  - option "2025-10-15"
+                  - option "2025-10-16"
+                  - option "2025-10-17"
+                  - option "2025-10-20"
+                  - option "2025-10-21"
+                  - option "2025-10-22"
+                  - option "2025-10-23"
+                  - option "2025-10-24"
+                  - option "2025-10-27"
+                  - option "2025-10-28"
+                  - option "2025-10-29"
+                  - option "2025-10-30"
+                  - option "2025-10-31"
+                  - option "2025-11-03"
+                  - option "2025-11-04"
+                  - option "2025-11-05"
+                  - option "2025-11-06"
+                  - option "2025-11-07"
+                  - option "2025-11-10"
+                  - option "2025-11-11"
+                  - option "2025-11-12"
+                  - option "2025-11-13"
+                  - option "2025-11-14"
+                  - option "2025-11-17"
+                  - option "2025-11-18"
+                  - option "2025-11-19"
+                  - option "2025-11-20"
+                  - option "2025-11-21"
+                  - option "2025-11-24"
+                  - option "2025-11-25"
+                  - option "2025-11-26"
+                  - option "2025-11-27"
+                  - option "2025-11-28"
+                  - option "2025-12-01"
+                  - option "2025-12-02"
+                  - option "2025-12-03" [selected]
+              - generic [ref=e276]:
+                - generic [ref=e277]: Candle Type
+                - combobox "Candle Type" [ref=e278]:
+                  - option "1s (Second)" [selected]
+                  - option "1m (Minute)"
+            - generic [ref=e279]: "Available days: 515"
+          - generic [ref=e280]:
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - generic [ref=e284]: "Today's Net:"
+                - generic [ref=e285]: "-16.00 pts"
+              - generic [ref=e286]:
+                - generic [ref=e287]: "Per Trade:"
+                - generic [ref=e288]: "-8.00 pts"
+              - generic [ref=e289]:
+                - generic [ref=e290]: TRADES
+                - generic [ref=e291]: "2"
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]: "Cumulative:"
+                - generic [ref=e297]: "-66.00 pts"
+              - generic [ref=e298]:
+                - generic [ref=e299]: "Per Trade:"
+                - generic [ref=e300]: "-1.94 pts"
+              - generic [ref=e301]:
+                - generic [ref=e302]: TRADES
+                - generic [ref=e303]: "34"
+              - button "Reset Cache" [ref=e305]
+          - generic [ref=e306]:
+            - generic [ref=e307]:
+              - text: Line visibility
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - checkbox "OPEN" [checked] [ref=e310]
+                  - generic [ref=e311]: OPEN
+                - generic [ref=e312]:
+                  - checkbox "Long TRG" [checked] [ref=e313]
+                  - generic [ref=e314]: Long TRG
+                - generic [ref=e315]:
+                  - checkbox "Short TRG" [checked] [ref=e316]
+                  - generic [ref=e317]: Short TRG
+                - generic [ref=e318]:
+                  - checkbox "TP" [checked] [ref=e319]
+                  - generic [ref=e320]: TP
+                - generic [ref=e321]:
+                  - checkbox "SL" [checked] [ref=e322]
+                  - generic [ref=e323]: SL
+                - generic [ref=e324]:
+                  - checkbox "MA20" [ref=e325]
+                  - generic [ref=e326]: MA20
+                - generic [ref=e327]:
+                  - checkbox "MA50" [ref=e328]
+                  - generic [ref=e329]: MA50
+                - generic [ref=e330]:
+                  - checkbox "MA100" [ref=e331]
+                  - generic [ref=e332]: MA100
+                - generic [ref=e333]:
+                  - checkbox "MA200" [ref=e334]
+                  - generic [ref=e335]: MA200
+                - generic [ref=e336]:
+                  - checkbox "Session Avg" [ref=e337]
+                  - generic [ref=e338]: Session Avg
+                - generic [ref=e339]:
+                  - checkbox "Lines 30" [checked] [ref=e340]
+                  - generic [ref=e341]: Lines 30
+                - generic [ref=e342]:
+                  - checkbox "Lines 35" [checked] [ref=e343]
+                  - generic [ref=e344]: Lines 35
+            - generic [ref=e346]: "Data source: static-1s"
+          - region "Price Chart" [ref=e347]:
+            - generic [ref=e348]:
+              - generic [ref=e349]: "Day 2025-12-03 · Series: candles"
+              - generic [ref=e350]: "Timezone: ET"
+            - table [ref=e354]:
+              - row [ref=e355]:
+                - cell
+                - cell [ref=e356]
+                - cell [ref=e360]
+              - row [ref=e364]:
+                - cell
+                - cell [ref=e365]
+                - cell [ref=e369]
+            - generic [ref=e372]: Horizontal lines use createPriceLine() to reduce flicker on zoom/pan. Chart preserves entry/direction when toggling series.
+          - region "Algorithmic Trades" [ref=e373]:
+            - generic [ref=e374]:
+              - generic [ref=e375]: Algorithmic Trades
+              - generic [ref=e376]: 2 RTs · 4 rows
+            - table [ref=e378]:
+              - rowgroup [ref=e379]:
+                - row "RT# Timestamp (ET) Type Price Slippage Note Net" [ref=e380]:
+                  - columnheader "RT#" [ref=e381]
+                  - columnheader "Timestamp (ET)" [ref=e382]
+                  - columnheader "Type" [ref=e383]
+                  - columnheader "Price" [ref=e384]
+                  - columnheader "Slippage" [ref=e385]
+                  - columnheader "Note" [ref=e386]
+                  - columnheader "Net" [ref=e387]
+              - rowgroup [ref=e388]:
+                - row "1 12/03/2025, 09:30:00 ET Open Long 25502.25 1.00 — —" [ref=e389] [cursor=pointer]:
+                  - cell "1" [ref=e390]
+                  - cell "12/03/2025, 09:30:00 ET" [ref=e391]
+                  - cell "Open Long" [ref=e392]
+                  - cell "25502.25" [ref=e393]
+                  - cell "1.00" [ref=e394]
+                  - cell "—" [ref=e395]
+                  - cell "—" [ref=e396]
+                - row "1 12/03/2025, 09:30:01 ET Close Long 25494.25 0.00 SL Hit -8.00" [ref=e397] [cursor=pointer]:
+                  - cell "1" [ref=e398]
+                  - cell "12/03/2025, 09:30:01 ET" [ref=e399]
+                  - cell "Close Long" [ref=e400]
+                  - cell "25494.25" [ref=e401]
+                  - cell "0.00" [ref=e402]
+                  - cell "SL Hit" [ref=e403]
+                  - cell "-8.00" [ref=e404]
+                - row "2 12/03/2025, 09:35:00 ET Open Short 25466.75 1.00 — —" [ref=e405] [cursor=pointer]:
+                  - cell "2" [ref=e406]
+                  - cell "12/03/2025, 09:35:00 ET" [ref=e407]
+                  - cell "Open Short" [ref=e408]
+                  - cell "25466.75" [ref=e409]
+                  - cell "1.00" [ref=e410]
+                  - cell "—" [ref=e411]
+                  - cell "—" [ref=e412]
+                - row "2 12/03/2025, 09:35:01 ET Close Short 25474.75 0.00 SL Hit -8.00" [ref=e413] [cursor=pointer]:
+                  - cell "2" [ref=e414]
+                  - cell "12/03/2025, 09:35:01 ET" [ref=e415]
+                  - cell "Close Short" [ref=e416]
+                  - cell "25474.75" [ref=e417]
+                  - cell "0.00" [ref=e418]
+                  - cell "SL Hit" [ref=e419]
+                  - cell "-8.00" [ref=e420]
+              - rowgroup [ref=e421]:
+                - row "Day Total (2 RTs) -16.00" [ref=e422]:
+                  - cell "Day Total (2 RTs)" [ref=e423]
+                  - cell "-16.00" [ref=e424]
+            - generic [ref=e426]: "Easy Peasy: 2 trades found | Max RT: 1"
+        - region "Cumulative Results" [ref=e427]:
+          - heading "Cumulative Results" [level=1] [ref=e428]
+          - generic [ref=e429]:
+            - generic [ref=e430]:
+              - generic [ref=e431]:
+                - generic [ref=e432]: Today
+                - generic [ref=e433]: "-16.00 pts"
+              - generic [ref=e434]:
+                - generic [ref=e435]: Cumulative
+                - generic [ref=e436]: "-66.00 pts"
+                - generic [ref=e437]: 34 days sampled • 2025-09-05 – 2025-12-03
+            - generic [ref=e438]:
+              - generic [ref=e439]: Day-by-day performance (9 entries)
+              - generic [ref=e440]:
+                - generic [ref=e441]: Cumulative Total
+                - generic [ref=e443]:
+                  - generic [ref=e444]:
+                    - generic [ref=e445]: "+66"
+                    - generic [ref=e446]: "0"
+                    - generic [ref=e447]: "-66"
+                  - img [ref=e450]:
+                    - 'generic "2025-12-03: -16.00 pts" [ref=e459] [cursor=pointer]'
+                    - 'generic "2025-12-02: -16.00 pts" [ref=e460] [cursor=pointer]'
+                    - 'generic "2025-12-01: -16.00 pts" [ref=e461] [cursor=pointer]'
+                    - 'generic "2025-11-28: -16.00 pts" [ref=e462] [cursor=pointer]'
+                    - 'generic "2025-11-27: -16.00 pts" [ref=e463] [cursor=pointer]'
+                    - 'generic "2025-11-26: -16.00 pts" [ref=e464] [cursor=pointer]'
+                    - 'generic "2025-11-25: -16.00 pts" [ref=e465] [cursor=pointer]'
+                    - 'generic "2025-10-17: -52.00 pts" [ref=e466] [cursor=pointer]'
+                    - 'generic "2025-09-05: -66.00 pts" [ref=e467] [cursor=pointer]'
+              - generic [ref=e468]:
+                - generic [ref=e469]: Daily P&L
+                - generic [ref=e471]:
+                  - generic [ref=e472]:
+                    - generic [ref=e473]: "+36"
+                    - generic [ref=e474]: "0"
+                    - generic [ref=e475]: "-36"
+                  - generic [ref=e476]:
+                    - 'generic "2025-12-03: -16.00 pts" [ref=e478]'
+                    - 'generic "2025-12-02: +0.00 pts" [ref=e479]'
+                    - 'generic "2025-12-01: +0.00 pts" [ref=e480]'
+                    - 'generic "2025-11-28: +0.00 pts" [ref=e481]'
+                    - 'generic "2025-11-27: +0.00 pts" [ref=e482]'
+                    - 'generic "2025-11-26: +0.00 pts" [ref=e483]'
+                    - 'generic "2025-11-25: +0.00 pts" [ref=e484]'
+                    - 'generic "2025-10-17: -36.00 pts" [ref=e485]'
+                    - 'generic "2025-09-05: -14.00 pts" [ref=e486]'
+              - generic [ref=e487]: ← Newest | Oldest →
+      - region "Trade Data" [ref=e488]:
+        - generic [ref=e489]:
+          - generic [ref=e490]:
+            - heading "Detailed Data" [level=1] [ref=e491]
+            - generic [ref=e492]: "⚠️ Warning: TICK DATA loads excessive amounts of data and will likely crash your browser"
+            - generic [ref=e493]:
+              - generic [ref=e494]: OHLCV — loads the chart at 1sec intervals
+              - generic [ref=e495]: Tick Data — not used but included for funsies
+          - generic [ref=e496]:
+            - generic [ref=e497]:
+              - button "OHLCV" [ref=e498]
+              - button "Tick Data" [ref=e499]
+            - generic [ref=e500]: "Rows: 30"
+        - generic [ref=e501]:
+          - generic [ref=e502]: Debug Console Notes
+          - list [ref=e503]:
+            - listitem [ref=e504]: Console logs track date loads, series swaps, price-line sync, and data counts.
+            - listitem [ref=e505]: Entry/direction state stays unchanged when moving across days or series.
+            - listitem [ref=e506]: Start/trigger lines recompute per day using first trade price; invalid rows are dropped with counts logged.
+    - button "📋 Logs" [ref=e507]
+```

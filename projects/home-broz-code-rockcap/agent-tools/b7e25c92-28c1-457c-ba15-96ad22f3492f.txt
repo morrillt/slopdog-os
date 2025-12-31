@@ -1,0 +1,1180 @@
+diff --git a/.cursor/rules/broz/mode.task.mdc b/.cursor/rules/broz/mode.task.mdc
+index 0aacb4a..e7ba15b 100644
+--- a/.cursor/rules/broz/mode.task.mdc
++++ b/.cursor/rules/broz/mode.task.mdc
+@@ -29,8 +29,10 @@ globs: []
+   <menu>
+     <item label="1) 🆕 New Task" handler="h_new" />
+     <item label="2) ♻️ Resume Task" handler="h_resume" />
+-    <item label="3) 🧾 Summarize" handler="h_summarize" />
+-    <item label="4) 💾 Commit All to Main" handler="h_commit" />
++    <item label="3) 🐞 File Bug" handler="h_file_bug" />
++    <item label="4) ✅ Confirm Bug Fixed" handler="h_confirm_bug_fixed" />
++    <item label="5) 🧾 Summarize" handler="h_summarize" />
++    <item label="6) 💾 Commit All to Main" handler="h_commit" />
+   </menu>
+ 
+   <handlers>
+@@ -42,6 +44,14 @@ globs: []
+       Load rule: @broz/workflows/task/resume
+       Run workflow: "Workflow: Task > Resume"
+     </handler>
++    <handler id="h_file_bug">
++      Load rule: @broz/workflows/task/file_bug
++      Run workflow: "Workflow: Task > File Bug"
++    </handler>
++    <handler id="h_confirm_bug_fixed">
++      Load rule: @broz/workflows/task/confirm_bug_fixed
++      Run workflow: "Workflow: Task > Confirm Bug Fixed"
++    </handler>
+     <handler id="h_summarize">
+       Load rule: @broz/workflows/task/summarize
+       Run workflow: "Workflow: Task > Summarize"
+diff --git a/.cursor/rules/broz/workflows/build/code_review.mdc b/.cursor/rules/broz/workflows/build/code_review.mdc
+index 66da7e5..10da545 100644
+--- a/.cursor/rules/broz/workflows/build/code_review.mdc
++++ b/.cursor/rules/broz/workflows/build/code_review.mdc
+@@ -4,10 +4,60 @@ globs: []
+ ---
+ # Workflow: Build > Code Review Ticket
+ 
++<!-- Continue workflow: log issues/concerns as they arise (KISS + concise) -->
++<!-- AT LEAST One bullet per SUB TASK (required): -->
++<!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
++
+ Slimmed version of BMAD's `code-review`.
+ 
+ ## Goal
+-Verify **every Acceptance Criterion** and every **checked** task has real evidence.
++Post-`build/continue`, verify the delivered change is:
++- **Spec-correct** (implements every Acceptance Criterion, ambigiguities surfaced and confirmed with PO)
++- **Evidence-backed** (tests actually ran + passed; logs support claims)
++- **KISS** (no overengineering / unnecessary abstraction)
++
++## Preconditions (must be true to start)
++- Ticket body `Status:` is `Review` (set by `build/continue` completion)
++- Ticket front-matter `validation.state: passed` (Plan/Validate gate)
++- Ticket front-matter `questions.items` has **no items with `status: open`**
++- Ticket contains `## Dev Agent Record` with:
++  - `### DEV AGENT RECORD` entries (at least one bullet per subtask)
++  - `### File List` populated
++  - `### Test Evidence` populated (Vitest + Playwright commands/results + artifact links under `tests/results/`)
++  - `### Completion Notes` populated (PO Summary + Tech Lead Summary)
++
++If any precondition fails: STOP and route back to the correct workflow (Plan/Validate or Continue).
++
++## Postconditions (what “done” looks like)
++- Ticket has an updated `## TECH LEAD REVIEW` section:
++  - `### Review Log` includes any spec/KISS/tests concerns (one bullet per concern)
++  - `### Concerns / Action Items` includes checkboxes for required follow-ups
++  - `### Resolution Notes` captures outcomes after dialogue/resolution
++- Ticket front-matter `review.concerns` mirrors the same concerns in structured form:
++  - one entry per concern
++  - status must be `open|resolved` (resolved requires a resolution note)
++- Ticket has a summary `## Dev Agent Record / ### Code Review` entry:
++  - Date, outcome, findings, action items
++- Ticket front-matter reflects the review outcome (YAML):
++  - Always update:
++    - `validation.updated: <today YYYY-MM-DD>`
++    - `review.updated: <today YYYY-MM-DD>`
++  - If **APPROVE**:
++    - Ticket body `Status: Done`
++    - `facets.status: done`
++    - `validation.state: passed`
++    - `validation.issues: []`
++    - `review.state: approved`
++    - `review.ac_results`: populated for all ACs
++    - `review.task_results`: populated for all top-level tasks
++  - If **CHANGES REQUESTED** or **BLOCKED**:
++    - Ticket body `Status: In Progress`
++    - `facets.status: active`
++    - `validation.state: failed`
++    - `validation.issues`: list of review blockers/concerns to resolve (spec gaps, KISS concerns, missing test evidence, etc.)
++    - `review.state: changes_requested|blocked`
++    - `review.ac_results`: populated for all ACs (even if missing/partial)
++    - `review.task_results`: populated for all top-level tasks (even if not_done/questionable)
+ 
+ ## Steps
+ 
+@@ -15,40 +65,104 @@ Verify **every Acceptance Criterion** and every **checked** task has real eviden
+    - Read `plans/context.yaml` for `execution.current_ticket`.
+    - Read the full ticket file.
+ 
+-2. **Validate AC ↔ Task Mapping (before reviewing code)**:
++2. **Assert Preconditions**:
++   - Confirm every item in “Preconditions” is true.
++   - If not, STOP and write the blocker into `## TECH LEAD REVIEW / ### Concerns / Action Items`.
++
++3. **Validate AC ↔ Task Mapping (before reviewing code)**:
+    - Ensure each top-level task has `(AC: AC-#...)`.
+    - Ensure each AC is covered by at least one top-level task.
+    - If mapping is broken, STOP and request ticket fixes (review cannot be systematic without traceability).
+ 
+-3. **Collect Claimed Changes**:
++4. **Collect Claimed Changes (from continue artifacts)**:
+    - From `### File List`, gather the set of files claimed modified.
+    - If empty or suspicious, broaden search by looking at files touched in this session.
+ 
+-4. **Validate Acceptance Criteria (ACs)**:
++5. **Verify tests actually passed (not just “we think so”)**:
++   - Validate that test execution happened:
++     - Prefer concrete evidence in ticket `## Dev Agent Record` completion notes (commands run + pass/fail).
++     - Require **linked artifacts** in the ticket so the reviewer can spot-check “done”:
++       - **Playwright (E2E)**:
++         - Link to `tests/results/e2eresults.md` (repo artifact used today)
++         - If an HTML report is generated in the future, also link to the report entry file (e.g. `tests/results/playwright-report/index.html`)
++       - **Vitest (Unit)**:
++         - Link to a repo artifact containing the last run summary (recommended to keep under `tests/results/`, e.g. `tests/results/vitest-results.md`)
++         - If you use JUnit/coverage in the future, link those outputs too (e.g. `tests/results/vitest-junit.xml`, `tests/results/coverage/index.html`)
++   - Re-run as needed (especially if anything is unclear):
++     - Unit tests under `tests/unit/`
++     - E2E tests under `tests/e2e/`
++   - If any test failures exist → **BLOCKED** until resolved.
++
++6. **Review code diffs since the last commit (spec + KISS)**:
++   - Inspect current working tree + diffs:
++     - `git status`
++     - `git diff` (unstaged) and `git diff --staged` (staged)
++     - If relevant work is committed: `git show` for the latest commit(s)
++   - Evaluate:
++     - **Spec**: implementation matches ACs and clarified outcomes
++     - **KISS**: avoid unnecessary abstraction, premature generalization, and “clever” code that raises maintenance cost
++       - Prototype bias: we are optimizing for a small number of users and fast iteration.
++       - Flag overengineering when it:
++         - Adds lots of code/structure for an unlikely edge case
++         - Introduces heavy indirection/frameworking “just in case”
++         - Builds a generalized system where a simple, readable implementation would do
++   - If concerns exist, record them under `## TECH LEAD REVIEW` and treat as CHANGES REQUESTED/BLOCKED as appropriate.
++
++6.1 **Taxonomy drift control (during diff review)**:
++   - If any modified markdown file introduces a new front-matter `tags:` value not present in `docs/taxonomy.yaml`:
++     - Update `docs/taxonomy.yaml` to include the tag in the correct category and add a short description.
++     - If placement is unclear, add a ticket front-matter `questions.items` entry (`status: open`) and mark outcome as CHANGES REQUESTED until resolved.
++
++7. **Validate Acceptance Criteria (ACs)**:
+    For each AC:
+    - Mark as `IMPLEMENTED | PARTIAL | MISSING`.
+    - Record evidence: `path:line-range` where it’s satisfied.
+    - Record test evidence: which test(s) prove it.
++   - Also write/update ticket front-matter `review.ac_results` entries:
++     - `id: "AC-#"`
++     - `status: implemented|partial|missing`
++     - `evidence: "<path:start-end>"`
++     - `tests: ["tests/unit/...", "tests/e2e/..."]`
++
++8. **Validate Completed Tasks (integrated with review YAML)**:
++   - For each **top-level** task marked `[x]`:
++     - Determine `verified|questionable|not_done` based on diffs + evidence + tests.
++     - If `[x]` but `not_done`, treat as **BLOCKER**.
++   - Write/update ticket front-matter `review.task_results` entries:
++     - `id: "Task-<n>"` (top-level task order)
++     - `status: verified|questionable|not_done`
++     - `evidence: "<path:start-end>"`
+ 
+-5. **Validate Completed Tasks**:
+-   For each task marked `[x]`:
+-   - Mark as `VERIFIED | QUESTIONABLE | NOT DONE`.
+-   - If `[x]` but `NOT DONE`, treat as **BLOCKER**.
++9. **Write Tech Lead Review + dialogue loop (required if any concerns)**:
++   - Append to ticket `## TECH LEAD REVIEW`:
++     - `### Review Log`: one bullet per concern/point (Spec/KISS/Tests/Risk/etc.)
++     - `### Concerns / Action Items`: checkbox list of required follow-ups
++     - `### Resolution Notes`: filled after stakeholder/dev dialogue resolves items
++   - Also record each concern in ticket front-matter `review.concerns`:
++     - `id: "C-<n>"`, `status: open|resolved`, `type: "Spec"|"KISS"|"Tests"|"Risk"|"Docs"|"Taxonomy"`, `note: "..."`, `resolution: ""|"..."`
++   - Loop with the stakeholder (you) until concerns are resolved:
++     - Ask targeted questions
++     - Record any new unresolved questions in ticket front-matter `questions.items`:
++       - `id: "Q-<n>"`, `status: open`, `owner: "PO"|"Dev"|"TechLead"`, `question: "..."`, `answer: ""`
++       - When resolved, set `status: resolved` and fill `answer`
++     - Update code/tests/ticket as needed
++     - Check off resolved items
+ 
+-6. **Outcome**:
++10. **Decide Outcome**:
+    - **APPROVE**: all ACs implemented, all checked tasks verified, tests pass.
+    - **CHANGES REQUESTED**: partial/missing ACs or questionable tasks.
+    - **BLOCKED**: any false completion or critical gap.
+ 
+-7. **Write Review Notes Into Ticket**:
+-   Append under `## Dev Agent Record` (create if missing):
+-   - `### Code Review`
+-     - Date
+-     - Outcome
+-     - Findings (bullet list; blockers first)
+-     - Action Items (checkbox list)
++11. **Write summary review notes into ticket**:
++   - Append under `## Dev Agent Record`:
++     - `### Code Review`
++       - Date
++       - Outcome
++       - Findings (bullet list; blockers first)
++       - Action Items (checkbox list)
++   - Ensure `## TECH LEAD REVIEW` contains the detailed concerns/dialogue trail when applicable.
+ 
+-8. **State Transition**:
++12. **State Transition**:
+    - If APPROVE:
+      - Ticket `Status:` moves `Review → Done`.
+      - Front-matter `facets.status` updates to `done`.
+@@ -56,3 +170,10 @@ Verify **every Acceptance Criterion** and every **checked** task has real eviden
+      - Ticket `Status:` moves `Review → In Progress`.
+      - Front-matter `facets.status` remains `active`.
+      - Add action items to Tasks.
++   - If BLOCKED:
++      - Ticket `Status:` moves `Review → In Progress` (or stays `Review` if you prefer) and action items must be explicit.
++
++## Notes
++
++- The “evidence includes test execution” requirement is enforced via `### Test Evidence` in the ticket template and validated in Preconditions + Step 5.
++- Taxonomy drift control is enforced in Step 6.1.
+diff --git a/.cursor/rules/broz/workflows/build/continue.mdc b/.cursor/rules/broz/workflows/build/continue.mdc
+index 0996157..16236a8 100644
+--- a/.cursor/rules/broz/workflows/build/continue.mdc
++++ b/.cursor/rules/broz/workflows/build/continue.mdc
+@@ -46,8 +46,22 @@ The core execution loop for implementing a ticket. Replaces "Continue".
+ 3.  **Completion**:
+     - If all tasks are `[x]`:
+         - Verify `## Acceptance Criteria` are met.
+-        - RUN ALL TESTS AGAIN
+-        - RUN BUILD AND LINT
+-        - MAKE A FINAL set of logs to 
++        - RUN ALL TESTS AGAIN (and capture evidence in the ticket)
++          - Unit (Vitest): run the unit suite and record:
++            - command(s) run
++            - pass/fail summary
++            - link to a persisted artifact under `tests/results/` (recommended: `tests/results/vitest-results.md`)
++          - E2E (Playwright): run the e2e suite and record:
++            - command(s) run
++            - pass/fail summary
++            - link to a persisted artifact under `tests/results/` (today: `tests/results/e2eresults.md`)
++        - RUN BUILD AND LINT (and record command + pass/fail in ticket completion notes)
++        - TAXONOMY DRIFT CHECK (only if touched docs/plans front-matter):
++          - If new `tags` were introduced in any modified markdown front-matter, ensure `docs/taxonomy.yaml` was updated with the new tag(s) + descriptions.
++          - If unclear where a tag belongs, add a ticket `## Questions` checkbox instead of guessing.
+         - Update Status to `Review` (not `Done`).
+-        - Add a more extensive note to  `## Dev Agent Record / ### Completion Notes`. Summarizing progress and the table of log entries, make it two sub parts one for PO, one for tech lead **IMPORTANT**
++        - Add a more extensive note to  `## Dev Agent Record / ### Completion Notes`.
++          - Must include:
++            - PO Summary (what changed, what to verify)
++            - Tech Lead Summary (key decisions, risks, KISS notes)
++            - Test Evidence links (Playwright/Vitest artifacts under `tests/results/`)
+diff --git a/.cursor/rules/broz/workflows/plan/mark_ready.mdc b/.cursor/rules/broz/workflows/plan/mark_ready.mdc
+index 5738fd1..43c12df 100644
+--- a/.cursor/rules/broz/workflows/plan/mark_ready.mdc
++++ b/.cursor/rules/broz/workflows/plan/mark_ready.mdc
+@@ -15,6 +15,8 @@ BMAD-inspired state transition: **Pending → Ready**.
+ 2. **Validate**:
+    - Run the checks from `plan/validate_ticket`.
+    - If validation fails, STOP and list what to fix.
++   - Require ticket front-matter `validation.state: passed` after validation runs.
++     - If it is not `passed`, STOP (do not mark Ready).
+ 
+ 3. **Mark Ready**:
+    - Update the ticket file `Status:` line to `Ready`.
+diff --git a/.cursor/rules/broz/workflows/plan/validate_ticket.mdc b/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+index 2b4765f..43e782e 100644
+--- a/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
++++ b/.cursor/rules/broz/workflows/plan/validate_ticket.mdc
+@@ -1,45 +1,144 @@
+ ---
+-description: "Workflow: Validate ticket format"
++description: "Workflow: Validate + extend ticket (coherence + test depth) and mark Ready"
+ globs: []
+ ---
+ # Workflow: Plan > Validate Ticket
+ 
+-Ensures a ticket is ready for development by checking its structure.
++Validates (and, when needed, **extends**) a ticket so it is coherent, testable, and ready to execute via `build/continue`.
++
++This workflow is intentionally **stricter and more explicit** than a simple “format check”:
++- It checks coherence across the ticket (story → ACs → tests → tasks).
++- It pushes **one layer deeper** on test cases (stakeholder-clear expectations + a tiny “how”).
++- It records unanswered ambiguity as **front-matter questions** (`questions.items`).
++- It can optionally mark the ticket **Ready** as the final step (for handoff).
+ 
+ ## Steps
+ 
+-1.  **Target**:
+-    - Identify the ticket file (from `plans/context.yaml` or user selection).
+-
+-2.  **Check Structure**:
+-    - Verify presence of required sections:
+-        - `## User Story`
+-        - `## Acceptance Criteria` (Must have at least one item like `- [ ] AC-1: ...`)
+-        - `## Tasks` (Must have at least one checkbox task)
+-        - `## Dev Agent Record`
+-        - `### Debug Log`
+-        - `### File List`
+-
+-3.  **Check AC ↔ Tasks Mapping (Required)**:
+-    - Every **top-level** task must include an AC mapping suffix:
+-      - Example: `- [ ] Implement X (AC: AC-1, AC-2)`
+-    - Every Acceptance Criterion (`AC-#`) must be covered by at least one **top-level** task.
+-
+-4.  **Check Front-Matter & Taxonomy**:
+-    - Load `docs/taxonomy.yaml` and `docs/docfrontmatterrules.md`.
+-    - Verify front-matter fields:
+-      - `title`, `updated` present.
+-      - `facets` contains `type`, `status`.
+-      - `facets.epic` (number, name) present for tickets.
+-      - `tags` list is present and non-empty.
+-    - **Validate Tags**:
+-      - Ensure all tags exist in `docs/taxonomy.yaml`.
+-      - If a tag is missing, prompt the user to add it to taxonomy or correct the tag.
+-
+-5.  **Validation**:
+-    - If valid:
+-        - Ensure the ticket's `Status:` line is set to `Ready` (if it was `Pending`).
+-        - Update `plans/context.yaml` `execution.current_ticket_status` to `Ready` if this is the current ticket.
+-    - If invalid:
+-        - List missing sections, missing AC mappings, or front-matter errors.
+-        - Do not proceed until fixed.
++0. **Target & scope**:
++   - Identify the ticket file (prefer `plans/context.yaml.execution.current_ticket`; otherwise ask the user to select a ticket path).
++   - Allowed edits in this workflow:
++     - Ticket file under `plans/`
++     - `plans/context.yaml` status fields
++   - Do **not** implement product code here.
++   - **Validation state (ticket front-matter)**:
++     - Tickets should carry a front-matter block:
++       - `validation.state: pending|failed|passed`
++       - `validation.updated: YYYY-MM-DD`
++       - `validation.issues: []`
++     - This workflow must update `validation.state` deterministically:
++       - If any hard gate fails OR any `questions.items` remain `status: open` → `failed`
++       - If all gates pass and handoff is safe → `passed`
++   - **Questions (ticket front-matter)**:
++     - Questions live in YAML front-matter `questions.items` (single source of truth).
++     - A ticket is not Ready if any question has `status: open`.
++
++1. **Template alignment (hard gate)**:
++   - The ticket should conform to `plans/templates/ticket.md` intent.
++   - Verify presence of required **sections** (create them if missing):
++     - `Status: Pending|Ready|In Progress|Review|Done`
++     - `## User Story` (Role/Action/Benefit)
++     - `## Acceptance Criteria` (checkbox list with IDs like `AC-1`)
++     - `## Tests` with both:
++       - `### E2E Tests`
++       - `### UNIT TESTS`
++     - `## Tasks` (two-tier tasks system)
++     - `## Dev Agent Record` (should include `### DEV AGENT RECORD` and `#### Issues Summary`)
++     - `## TECH LEAD REVIEW`
++   - Front-matter (YAML at top) should exist and include at minimum:
++     - `title`, `updated`
++     - `facets.type`, `facets.status`, `facets.repo.path`
++     - `tags` (must include `plan/ticket`)
++     - `questions.updated`, `questions.items`
++     - `validation.state`, `validation.updated`, `validation.issues`
++     - `review.state`, `review.updated` (can remain `pending`)
++     - `review.ac_results`, `review.task_results`, `review.concerns` (can be empty arrays)
++
++2. **Coherence scan (story → ACs) + draft Questions (no dialogue yet)**:
++   - Validate that the User Story and ACs agree:
++     - Each `AC-#` is **testable** and written as an observable outcome (not an implementation detail).
++     - AC wording includes the “what” and “when”, and avoids vague terms (“works”, “fast”, “correct”) unless paired with a measurable expectation.
++   - If anything is ambiguous or underspecified:
++     - Add an item under front-matter `questions.items` capturing the gap (be pointed and minimal).
++       - `id: "Q-<n>"`, `status: open`, `owner: "PO"` (default), `question: "..."`, `answer: ""`
++   - Also draft Questions for other blockers discovered later (tests/taxonomy/fixtures) — but keep this step focused on *creating the list*, not resolving it.
++
++3. **Stakeholder dialogue (resolve Questions; interactive loop)**:
++   - Goal: convert every `questions.items` entry with `status: open` into an answered, ticket-integrated decision.
++   - Process:
++     - Ask Questions from `questions.items` where `status: open`, **one at a time**, in priority order (requirements/behavior first; cosmetics last).
++     - For each Question:
++       - Ask for the missing detail in stakeholder language.
++       - If the stakeholder response creates new ambiguity, create a *new* Question checkbox (unchecked) rather than guessing.
++     - Continue until either:
++       - All Questions are resolved, **or**
++       - The ticket is blocked by unanswered questions (in which case STOP after documenting blockers).
++
++4. **Apply answers + mark Questions resolved (separate step)**:
++   - For each answered Question in `questions.items`:
++     - Update the ticket content so the answer is *encoded into the plan* (do not leave it only in chat):
++       - Tighten/clarify `## Acceptance Criteria` text (and/or add ACs if needed)
++       - Update `## Tests` test-case descriptions to reflect the clarified expectations
++       - Update `## Tasks` so the work still maps cleanly to ACs and supports TDD ordering
++       - Update front-matter/tags if that was the question
++     - Mark the corresponding question as resolved:
++       - set `status: resolved`
++       - fill `answer: "..."`
++   - When done, re-run the coherence scan quickly:
++     - Story ↔ ACs ↔ Tests ↔ Tasks should still agree after edits.
++
++5. **AC ↔ Tasks mapping (hard gate; required by `build/continue`)**:
++   - Every **top-level** task must include an AC mapping suffix:
++     - Example: `- [ ] Implement X (AC: AC-1, AC-2)`
++   - Subtasks do **not** need AC mapping (they inherit from the parent task).
++   - Every `AC-#` must be covered by at least one **top-level** task.
++   - Validate task ordering supports TDD:
++     - For most tickets, the **first subtask** under the first task should be “create failing test(s)” and the **final task** should be “run/validate tests pass”.
++     - If missing, add/adjust subtasks to reflect this planning intent (without inventing product design).
++
++6. **Front-matter & taxonomy (quality gate)**:
++   - Load `docs/taxonomy.yaml` and `docs/docfrontmatterrules.md` if they exist.
++   - Verify front-matter fields are consistent with the ticket:
++     - `facets.type: plan`
++     - `facets.status` consistent with `Status:` (pending/active/review/done-style taxonomy as used in this repo)
++     - `facets.repo.path` matches the ticket file path
++     - `tags` contains `plan/ticket` and any additional tags are valid per taxonomy
++   - If a tag is missing from taxonomy:
++     - Prefer to **add it to `docs/taxonomy.yaml` immediately** (keeping taxonomy current), including a short description under `descriptions.tags`.
++     - If correct placement/category is unclear, add a `questions.items` entry (`status: open`) to resolve with the stakeholder (Step 3), then apply the decision (Step 4) and update taxonomy.
++
++7. **Tests: deepen one layer (extend ticket)**:
++   - The `## Tests` section must include **concrete, stakeholder-clear** test cases. If too vague, extend them.
++   - For each test case entry (E2E or Unit), require:
++     - A clear name (what behavior it validates)
++     - A short expected outcome statement
++     - Exactly **up to 2** bullets describing the “how” at a high level (PO-friendly, mid-technical)
++   - Strong preference for traceability:
++     - Each test case should reference the relevant AC(s) (recommended suffix: `(AC: AC-#)`).
++   - Align with repo test reality:
++     - E2E tests live under `tests/e2e/` (Playwright).
++       - If the test touches the UI/backtest flows, encourage using helpers from `tests/e2e/helper/` and reference `docs/e2ehelperindex.md`.
++       - Prefer asserting via store helpers (e.g., `store-queries`) when stable.
++     - Unit tests live under `tests/unit/` (Vitest).
++       - If data-driven, plan a fixture under `tests/fixtures/<topic>/...` and prefer real-ish data.
++   - If a necessary test can’t be specified due to missing info:
++     - Add a `questions.items` entry capturing what input/expected output is missing (`status: open`).
++     - Return to Step 3 (Stakeholder dialogue) to resolve it, then Step 4 to encode it and check it off.
++
++8. **Outcome & handoff**:
++   - If validation fails (any hard gate or any `questions.items` with `status: open`):
++     - Set ticket front-matter:
++       - `validation.state: failed`
++       - `validation.updated: <today YYYY-MM-DD>`
++       - `validation.issues`: a short list of blocking items (missing sections, missing AC mappings, invalid tags, open Questions, test spec gaps, etc.)
++     - List *exactly* what is missing/incorrect and what was auto-extended vs what still needs human input.
++     - STOP (do not mark Ready).
++   - If validation passes (all gates + zero open Questions):
++     - Set ticket front-matter:
++       - `validation.state: passed`
++       - `validation.updated: <today YYYY-MM-DD>`
++       - `validation.issues: []`
++     - Optionally (default: yes) mark the ticket Ready for execution:
++       - Update ticket `Status:` to `Ready` (if currently `Pending`).
++       - Update front-matter `facets.status` to the repo’s “active” state used for ready/in-progress.
++       - Update `plans/context.yaml` `execution.current_ticket_status: "Ready"` if this is the current ticket.
++     - Stop with a short handoff note: ticket is Ready for `build/continue`.
+diff --git a/.cursor/rules/broz/workflows/task/confirm_bug_fixed.mdc b/.cursor/rules/broz/workflows/task/confirm_bug_fixed.mdc
+new file mode 100644
+index 0000000..f3c5d79
+--- /dev/null
++++ b/.cursor/rules/broz/workflows/task/confirm_bug_fixed.mdc
+@@ -0,0 +1,54 @@
++---
++description: "Workflow: Confirm Bug Fixed (review + no overengineering + tests)"
++globs: []
++---
++# Workflow: Task > Confirm Bug Fixed
++
++Paired workflow to close a bug ticket after `Task > File Bug` implementation work.
++
++## Goal
++Confirm the bug is truly fixed, the fix is not overengineered (prototype bias), and existing behavior/tests were not broken.
++
++## Preconditions
++- Bug ticket body `Status:` is `Review`
++- Ticket includes `## Dev Agent Record` with:
++  - `### File List`
++  - `### Test Evidence` (links under `tests/results/`)
++
++## Steps
++
++1. **Review the fix quality**
++   - Read the ticket’s `## Dev Agent Record` logs to understand decisions and risks.
++   - Review `git diff` since last commit:
++     - Ensure it matches the intended behavior (spec)
++     - Ensure it’s KISS / not overengineered for unlikely edge cases
++
++2. **Confirm tests actually passed**
++   - Verify ticket `### Test Evidence` includes:
++     - Vitest commands + outcome + artifact link (recommended `tests/results/vitest-results.md`)
++     - Playwright commands + outcome + artifact link (`tests/results/e2eresults.md` today)
++   - Re-run tests if anything is unclear; bug is not “done” without green tests.
++
++3. **Surface ambiguities**
++   - If anything is unclear/spec-ambiguous:
++     - Add an item to ticket front-matter `questions.items` (`status: open`)
++     - Loop with stakeholder to resolve (fill `answer`, mark `status: resolved`)
++     - If unresolved, stop and keep ticket in `Status: In Progress`.
++
++4. **No overengineering check (prototype bias)**
++   - If the fix introduced heavy abstraction/generalization:
++     - Record concern under `## TECH LEAD REVIEW`
++     - Also record concern in ticket front-matter `review.concerns`:
++       - `id: "C-<n>"`, `status: open`, `type: "KISS"`, `note: "..."`, `resolution: ""`
++     - Create action items (checkboxes) and loop with stakeholder/dev to simplify.
++
++5. **Close out**
++   - If all checks pass:
++     - Set ticket front-matter:
++       - `review.state: approved`
++       - populate `review.ac_results` / `review.task_results` for the ticket’s ACs/tasks
++     - Set ticket body `Status: Done`
++     - Set `facets.status: done`
++   - If issues remain:
++     - `review.state: changes_requested|blocked`
++     - keep/return ticket `Status: In Progress` with explicit action items.
+diff --git a/.cursor/rules/broz/workflows/task/file_bug.mdc b/.cursor/rules/broz/workflows/task/file_bug.mdc
+new file mode 100644
+index 0000000..44c2b1e
+--- /dev/null
++++ b/.cursor/rules/broz/workflows/task/file_bug.mdc
+@@ -0,0 +1,65 @@
++---
++description: "Workflow: File Bug (notes → questions → failing tests → fix/log)"
++globs: []
++---
++# Workflow: Task > File Bug
++
++Paired-down bug workflow for fast iteration:
++- Capture **loose** stakeholder notes (don’t over-polish early).
++- Convert ambiguity into **front-matter questions** (`questions.items`).
++- Design the fix via **failing test cases** (TDD).
++- Implement the fix and keep a tight log in the bug ticket.
++
++## Outputs
++- A bug ticket created from `plans/templates/bug.md`
++- A clear set of failing test cases planned (and ideally implemented) before the fix
++
++## Steps
++
++1. **Capture stakeholder notes (expect loose input)**
++   - Ask for:
++     - What happened vs what was expected?
++     - Repro steps (best effort)
++     - Any screenshots/logs/timestamps
++     - How bad / who is impacted (rough severity)
++   - Paste notes verbatim into the ticket under `## Stakeholder Notes (raw)`.
++
++2. **Create a bug ticket (own template)**
++   - Create a new file from `plans/templates/bug.md`:
++     - Location: `plans/epics/<EPIC-DIR>/` if this bug belongs to an active epic; otherwise `plans/tickets/`
++     - Naming: `BUG-YYYYMMDD-<slug>.md`
++   - Fill in front-matter rails (must exist):
++     - `questions.items` (start empty)
++     - `validation.*` (pending)
++     - `review.*` (pending; arrays empty)
++   - Ensure tags include: `plan/ticket`, `ops/bug`.
++
++3. **Clarifying questions (expected; dialogue loop)**
++   - Translate ambiguity into front-matter questions:
++     - Add `questions.items` entries with:
++       - `id: "Q-<n>"`, `status: open`, `owner: PO` (default), `question: ...`, `answer: ""`
++   - Ask questions one-by-one until you can write:
++     - concrete acceptance criteria
++     - concrete test cases
++   - When answered:
++     - set `status: resolved`
++     - fill `answer`
++     - update ACs/tests/tasks so the answer is encoded into the ticket (not just chat).
++
++4. **Make failing test cases (TDD)**
++   - Add test cases under `## Tests` (E2E + UNIT as applicable):
++     - verbose expected outcomes (stakeholder-clear)
++     - max 2 bullets describing “how” at a high level
++   - Prefer real fixtures for unit tests (`tests/fixtures/...`) when data-driven.
++   - Prefer Playwright helpers (`tests/e2e/helper/`) for stable e2e assertions.
++   - Implement tests first where practical; ensure they fail for the bug condition.
++   - If you can’t specify a test due to missing info:
++     - add a new `questions.items` entry and resolve it before proceeding.
++
++5. **Fix + log in the bug ticket**
++   - Implement the smallest fix that makes tests pass (prototype bias: avoid overengineering).
++   - Maintain the ticket log:
++     - Add entries to `## Dev Agent Record / ### DEV AGENT RECORD`
++     - Update `### File List`
++     - Fill `### Test Evidence` (commands + results + artifact links under `tests/results/`)
++   - Update ticket body `Status:` to `Review` when ready for the paired workflow `Confirm Bug Fixed`.
+diff --git a/.obsidian/workspace.json b/.obsidian/workspace.json
+index 6a6b745..e377925 100644
+--- a/.obsidian/workspace.json
++++ b/.obsidian/workspace.json
+@@ -215,6 +215,9 @@
+   },
+   "active": "9cf0acc2911e3d5a",
+   "lastOpenFiles": [
++    "plans/templates/bug.md",
++    "tests/e2e/test-helpers-real.spec.ts",
++    "tests/e2e/test-helpers.spec.ts",
+     "Broz OSS TODO.md",
+     "2025-12-16.md",
+     "tests/unit/helpers-logic.test.ts",
+@@ -225,8 +228,6 @@
+     "data/tmp-convert-pEYMom",
+     "data/tmp-convert-onOWWL/out_b.csv",
+     "data/tmp-convert-onOWWL/out.csv",
+-    "data/tmp-convert-onOWWL/sample_trades.csv",
+-    "data/tmp-convert-onOWWL",
+     "docs/e2ehelperindex.md",
+     "plans/tasks/TASK-20251216-organize-e2e-helpers.md",
+     "2025-12-15.md",
+@@ -250,7 +251,6 @@
+     "plans/tickets/EPIC-003-bulletproof-backtest/TICKET-007-orb-r-v2-gap-aware-entry-and-analyzer-run-folders.md",
+     "plans/tickets/EPIC-003-bulletproof-backtest/TICKET-006-orb-r-tests-and-readability-refactor.md",
+     "plans/tickets/EPIC-003-bulletproof-backtest/TICKET-004-e2e-alignment.md",
+-    "plans/tickets/EPIC-003-bulletproof-backtest/TICKET-003-experiment-runner.md",
+     "test-results/strategy12dot7-Strategy-12-51768--close-logic-without-errors-chromium-retry2/test-failed-1.png",
+     "test-results/stepped-sl-12dot10.e2e-ver-f9463-0-for-2025-11-12-long-trade-chromium-retry2/test-failed-1.png",
+     "test-results/strategy12dot7-Strategy-12-51768--close-logic-without-errors-chromium-retry1/test-failed-1.png",
+diff --git a/Broz OSS TODO.md b/Broz OSS TODO.md
+index a6ae2a9..ca3e848 100644
+--- a/Broz OSS TODO.md	
++++ b/Broz OSS TODO.md	
+@@ -7,10 +7,10 @@
+ 
+ ## validate and extend ticket
+  - made for a higher power different os
+- - checks for coherence
++ - checks for coherence of existing plan
+  - goes deeper into test cases, adding one layer more of depth and specificity / asks questions if needed
+ 	 - Test case descritions should be verbose enough to be very clear to stake holders what is expected, with a couple bullets making the high level how crystal clear for mid technical po owner max 2 bullets per test 
+- - marks as ready
++ - marks as ready (for continue workflow to start)
+ 
+ 
+ ## Build
+diff --git a/docs/sprint-artifacts/backlog.md b/docs/sprint-artifacts/backlog.md
+index a3b50de..5bc53ce 100644
+--- a/docs/sprint-artifacts/backlog.md
++++ b/docs/sprint-artifacts/backlog.md
+@@ -807,4 +807,24 @@ ssssssdadsad  sdsa4
+                   for (const breakoutBuffer of [0.0, 0.25, 0.5]) {  // Buffer in ATR multiples
+                     for (const confirmationMode of ["close", "two_closes"]) {  // Confirmation mode
+                       for (const requireRetest of [true, false]) {  // Whether to require retest
+-                        const strategyParams = {
+\ No newline at end of file
++                        const strategyParams = {
++
++
++
++
++
++                          File bug 
++                          1. takes notes from stakeholder expect loose notes which you will refine 
++                          2. asks clarifying questions, important and  expected, rough report will be loose.
++                          3. makes failing test cases, ask questions if ambiguities arise!
++                          4. fix, and build log in bug ticket
++                          5. ticket should have most of the the things in yaml of a ticket, and have its own template.
++                          
++
++                          COnfirm bug is fixed.
++                          1. make sure fixes are good.
++                          2. make sure no overengineering was done.
++                          3. make sure you didnt break other existing tests.
++                          4. surface amniguities
++                          5. no overengineering.
++                          
+\ No newline at end of file
+diff --git a/plans/templates/bug.md b/plans/templates/bug.md
+new file mode 100644
+index 0000000..cf5a04e
+--- /dev/null
++++ b/plans/templates/bug.md
+@@ -0,0 +1,108 @@
++---
++title: "BUG: {{bug_id}} {{bug_title}}"
++updated: "{{date}}"
++facets:
++  type: plan
++  status: draft
++  epic:
++    number: "{{epic_number}}"
++    name: "{{epic_name}}"
++  repo:
++    path: "{{repo_path}}"
++tags:
++  - plan/ticket
++  - ops/bug
++
++# Single source of truth for ambiguities/decisions (no checkbox Questions in body)
++questions:
++  updated: "{{date}}"
++  items: []
++
++validation:
++  state: pending   # pending | failed | passed
++  updated: "{{date}}"
++  issues: []
++
++review:
++  state: pending   # pending | approved | changes_requested | blocked
++  updated: "{{date}}"
++  ac_results: []
++  task_results: []
++  concerns: []
++---
++
++# BUG: {{bug_id}} {{bug_title}}
++Status: Pending  <!-- Pending | Ready | In Progress | Review | Done -->
++
++## Bug Summary
++<!-- 1-3 sentences: what’s broken and why it matters -->
++
++## Stakeholder Notes (raw)
++<!-- Paste the loose notes verbatim here -->
++
++## Expected Behavior
++<!-- Plain language: what should happen -->
++
++## Observed Behavior
++<!-- Plain language: what actually happened -->
++
++## Repro Steps
++<!-- Best-effort steps; can be partial -->
++
++## Scope / Impact
++<!-- Who is affected, how often, severity -->
++
++## Acceptance Criteria
++- [ ] AC-1: Bug is fixed per Expected Behavior above.
++- [ ] AC-2: No regressions: relevant unit + e2e tests pass.
++
++## Tests
++
++### E2E Tests
++<!-- tests/e2e/ — write stakeholder-clear cases + max 2 “how” bullets -->
++
++### UNIT TESTS
++<!-- tests/unit/ — use fixtures in tests/fixtures when data-driven -->
++
++## Tasks
++<!-- Two-tier tasks system; top-level tasks must map to ACs -->
++
++- [ ] Task 1: Write failing test(s) that reproduce the bug (AC: AC-1)
++  - [ ] Subtask 1.1: Add/extend unit tests (or e2e if needed) to fail on current behavior.
++- [ ] Task 2: Implement minimal fix (AC: AC-1)
++  - [ ] Subtask 2.1: Fix root cause (prototype bias; avoid overengineering).
++- [ ] Task 3: Validate all tests pass + attach evidence (AC: AC-2)
++  - [ ] Subtask 3.1: Run unit + e2e suites; write `### Test Evidence` links.
++
++## Dev Notes
++<!-- Optional: suspected root cause, links, relevant modules -->
++
++## Dev Agent Record
++
++### DEV AGENT RECORD
++<!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
++
++### File List
++<!-- One file per line, repo-relative -->
++
++### Test Evidence
++<!-- Commands + results + links to persisted artifacts under tests/results/ -->
++
++### Completion Notes
++<!-- PO Summary + Tech Lead Summary -->
++
++#### Issues Summary (fill at completion)
++| Category | Issue | Notes |
++|----------|-------|-------|
++|  |  |  |
++
++## TECH LEAD REVIEW
++
++### Review Log
++<!-- - [YYYY-MM-DD HH:MM] [Spec | KISS | Tests | Risk] Note + required follow-up -->
++
++### Concerns / Action Items
++<!-- - [ ] Concern: ... -->
++
++### Resolution Notes
++<!-- What changed / what was agreed -->
+diff --git a/plans/templates/ticket.md b/plans/templates/ticket.md
+index e375c1f..7039792 100644
+--- a/plans/templates/ticket.md
++++ b/plans/templates/ticket.md
+@@ -3,9 +3,78 @@ title: "TICKET: {{ticket_id}} {{ticket_title}}"
+ updated: "{{date}}"
+ facets:
+   type: plan
+-  status: pending
++  status: draft
++  epic:
++    number: "{{epic_number}}"
++    name: "{{epic_name}}"
+   repo:
+     path: plans/epics/{{epic}}/{{ticket_id}}.md
++questions:
++  updated: "{{date}}"
++  # Rails:
++  # - Use this as the single source of truth for open/resolved questions.
++  # - Keep questions minimal and decision-oriented.
++  # - When resolved, set status=resolved and fill `answer`.
++  items: []
++  # Example (copy/paste + fill in):
++  # items:
++  #   - id: "Q-1"
++  #     status: open        # open | resolved
++  #     owner: "PO"         # PO | Dev | TechLead
++  #     question: "What is the expected behavior when X happens?"
++  #     answer: ""          # fill when resolved
++validation:
++  state: pending   # pending | failed | passed
++  updated: "{{date}}"
++  issues: []
++review:
++  state: pending   # pending | approved | changes_requested | blocked
++  updated: "{{date}}"
++  # Per-AC review results (filled by Build > Code Review).
++  # Strong rails:
++  # - one entry per AC in `## Acceptance Criteria`
++  # - `id` must match exactly (e.g. "AC-1")
++  # - `status` must be one of: implemented | partial | missing
++  # - `evidence` must be repo-relative with line range: "path/to/file.ts:12-44"
++  # - `tests` must be repo-relative file paths under `tests/`
++  ac_results: []
++  # Example (copy/paste + fill in):
++  # ac_results:
++  #   - id: "AC-1"
++  #     status: implemented
++  #     evidence: "src/path/file.ts:12-44"
++  #     tests:
++  #       - "tests/unit/<name>.test.ts"
++  #       - "tests/e2e/<name>.e2e.spec.ts"
++  #   - id: "AC-2"
++  #     status: partial
++  #     evidence: "src/path/other.ts:5-90"
++  #     tests: []
++  # Per-top-level-task review results (filled by Build > Code Review).
++  # Rails:
++  # - include ONLY top-level Tasks (not subtasks)
++  # - `id` should be "Task-<n>" aligned to ordering in `## Tasks` (Task-1, Task-2, ...)
++  # - `status` must be one of: verified | questionable | not_done
++  # - `evidence` should point to key code/PR diff areas: "path/to/file.ts:12-44"
++  task_results: []
++  # Example:
++  # task_results:
++  #   - id: "Task-1"
++  #     status: verified
++  #     evidence: "src/path/file.ts:12-44"
++  # Review concerns (structured; mirrors `## TECH LEAD REVIEW` but machine-readable).
++  # Rails:
++  # - `status` must be: open | resolved
++  # - `type` must be: Spec | KISS | Tests | Risk | Docs | Taxonomy
++  # - If status=resolved, `resolution` must be non-empty
++  concerns: []
++  # Example:
++  # concerns:
++  #   - id: "C-1"
++  #     status: open
++  #     type: "KISS"
++  #     note: "Fix added an abstraction layer we likely don't need."
++  #     resolution: ""
+ tags:
+   - plan/ticket
+ ---
+@@ -17,10 +86,7 @@ As a {{role}},
+ I want {{action}},
+ so that {{benefit}}.
+ 
+-## Questions
+-<!--
+-As ambiguities arise ask them here, both during planning, as well as during exeuction, make them checkboxes, and resolve when adequately answered by checking box
+--->
++<!-- Questions live in front-matter under `questions.items` (single source of truth). -->
+ 
+ ## Acceptance Criteria
+ - [ ] AC-1: ...
+@@ -66,6 +132,34 @@ CRITICAL STRUCTURE :
+ <!-- AT LEAST One bullet per SUB TASK (required): -->
+ <!-- - [YYYY-MM-DD HH:MM] [Spec ambiguity | Blocker | Decision | Gotcha] Description + resolution/next step -->
+ 
++### File List
++<!--
++Continue workflow: keep this up to date.
++List files changed during implementation (one per line), repo-relative paths.
++-->
++
++### Test Evidence
++<!--
++Continue workflow: REQUIRED at completion (so code review can verify “done” quickly).
++Provide commands + pass/fail summary + links to persisted artifacts under `tests/results/`.
++
++- Unit (Vitest):
++  - Command(s):
++  - Result:
++  - Artifact: tests/results/vitest-results.md
++- E2E (Playwright):
++  - Command(s):
++  - Result:
++  - Artifact: tests/results/e2eresults.md
++-->
++
++### Completion Notes
++<!--
++Continue workflow: REQUIRED at completion.
++- PO Summary: what changed + what to verify (stakeholder-friendly)
++- Tech Lead Summary: key decisions, risks, KISS notes
++-->
++
+ #### Issues Summary (fill at completion)
+ <!--
+ categories:
+@@ -81,4 +175,21 @@ categories:
+ 
+ ## TECH LEAD REVIEW
+ 
+-<!-- To be filled out by tech lead, in QA and FINALIZE workflow-->
+\ No newline at end of file
++<!--
++Post-`build/continue` review loop:
++- Read `### DEV AGENT RECORD` logs
++- Validate tests actually ran + passed
++- Review `git diff` since last commit for spec compliance + KISS
++- If concerns exist, capture them here and resolve in dialogue with stakeholder/dev
++-->
++
++### Review Log
++<!-- One bullet per concern / noteworthy point -->
++<!-- - [YYYY-MM-DD HH:MM] [Spec | KISS | Tests | Risk | Docs | Taxonomy] Note + required follow-up -->
++
++### Concerns / Action Items
++<!-- Checkbox list; resolve by checking off -->
++<!-- - [ ] Concern: ... -->
++
++### Resolution Notes
++<!-- Short outcomes after dialogue: what changed / what was agreed -->
+\ No newline at end of file
+diff --git a/tests/e2e/test-helpers-real.spec.ts b/tests/e2e/test-helpers-real.spec.ts
+new file mode 100644
+index 0000000..c3c930f
+--- /dev/null
++++ b/tests/e2e/test-helpers-real.spec.ts
+@@ -0,0 +1,164 @@
++/**
++ * =============================================================================
++ * TEST E2E HELPERS - REAL FUNCTIONALITY
++ * =============================================================================
++ *
++ * Test script to verify that helper functions work in real browser scenarios.
++ * Tests actual functionality with browser state.
++ */
++
++import { expect, test } from "@playwright/test";
++const helpers = require('./helper');
++
++test.describe('E2E Helper Real Functionality', () => {
++  test.beforeEach(async ({ page }) => {
++    page.on("console", (msg) => {
++      // Surface browser logs for debugging
++      console.log(`[browser:${msg.type()}]`, msg.text());
++    });
++  });
++
++  test('waitForStart helper works correctly', async ({ page }) => {
++    await page.goto("/");
++
++    // Use the helper to wait for page load
++    await helpers.waitForStart(page);
++
++    // Verify we can access the expected elements
++    const summaryStart = page.getByTestId("summary-start");
++    await expect(summaryStart).not.toHaveText("–");
++
++    console.log('✅ waitForStart helper works correctly');
++  });
++
++  test('getBacktestState returns state object', async ({ page }) => {
++    await page.goto("/");
++    await helpers.waitForStart(page);
++
++    // Test that we can get the backtest state
++    const state = await helpers.getBacktestState(page);
++
++    // State should be an object (may be null/undefined initially)
++    expect(typeof state).toBe('object');
++
++    // Should have some expected properties if state exists
++    if (state) {
++      expect(state).toHaveProperty('activeDate');
++      expect(state).toHaveProperty('series');
++    }
++
++    console.log('✅ getBacktestState helper works correctly');
++  });
++
++  test('getBacktestParams returns parameter object', async ({ page }) => {
++    await page.goto("/");
++    await helpers.waitForStart(page);
++
++    // Test getting backtest parameters
++    const params = await helpers.getBacktestParams(page);
++
++    // Should return an object with expected structure
++    expect(typeof params).toBe('object');
++    expect(params).toHaveProperty('profitTargetPts');
++    expect(params).toHaveProperty('stopLossPts');
++    expect(params).toHaveProperty('triggerPts');
++
++    console.log('✅ getBacktestParams helper works correctly');
++  });
++
++  test('useBacktestConfig hook provides config validation', async ({ page }) => {
++    await page.goto("/");
++    await helpers.waitForStart(page);
++
++    // Test the config hook
++    const config = await helpers.useBacktestConfig(page);
++
++    // Should have all expected properties
++    expect(config).toHaveProperty('hasValidParams');
++    expect(config).toHaveProperty('profitTargetPts');
++    expect(config).toHaveProperty('strategy');
++
++    // hasValidParams should be a boolean
++    expect(typeof config.hasValidParams).toBe('boolean');
++
++    console.log('✅ useBacktestConfig hook works correctly');
++  });
++
++  test('getEntryInfo returns entry data structure', async ({ page }) => {
++    await page.goto("/");
++    await helpers.waitForStart(page);
++
++    // Test getting entry information
++    const entryInfo = await helpers.getEntryInfo(page);
++
++    // Should return object with entryPrice and direction
++    expect(typeof entryInfo).toBe('object');
++    expect(entryInfo).toHaveProperty('entryPrice');
++    expect(entryInfo).toHaveProperty('direction');
++
++    console.log('✅ getEntryInfo helper works correctly');
++  });
++
++  test('useEntryInfo hook provides validation flags', async ({ page }) => {
++    await page.goto("/");
++    await helpers.waitForStart(page);
++
++    // Test the entry info hook
++    const entry = await helpers.useEntryInfo(page);
++
++    // Should have validation properties
++    expect(entry).toHaveProperty('hasEntry');
++    expect(entry).toHaveProperty('isLong');
++    expect(entry).toHaveProperty('isShort');
++
++    // Validation flags should be booleans
++    expect(typeof entry.hasEntry).toBe('boolean');
++    expect(typeof entry.isLong).toBe('boolean');
++    expect(typeof entry.isShort).toBe('boolean');
++
++    console.log('✅ useEntryInfo hook works correctly');
++  });
++
++  test('useBacktestValidation provides comprehensive validation', async ({ page }) => {
++    await page.goto("/");
++    await helpers.waitForStart(page);
++
++    // Test the comprehensive validation hook
++    const validation = await helpers.useBacktestValidation(page);
++
++    // Should have all expected sections
++    expect(validation).toHaveProperty('config');
++    expect(validation).toHaveProperty('entry');
++    expect(validation).toHaveProperty('trades');
++    expect(validation).toHaveProperty('performance');
++    expect(validation).toHaveProperty('isReady');
++    expect(validation).toHaveProperty('hasCompleteWorkflow');
++
++    // Validation flags should be booleans
++    expect(typeof validation.isReady).toBe('boolean');
++    expect(typeof validation.hasCompleteWorkflow).toBe('boolean');
++
++    console.log('✅ useBacktestValidation hook works correctly');
++  });
++
++  test('getStrategyResultsSummary handles empty state', async ({ page }) => {
++    await page.goto("/");
++
++    // Clear any existing localStorage data
++    await page.evaluate(() => {
++      localStorage.removeItem("rockcap:strategyResults");
++    });
++
++    // Test getting strategy results summary when empty
++    const summary = await helpers.getStrategyResultsSummary(page);
++
++    // Should return default empty state
++    expect(summary).toEqual({
++      days: 0,
++      totalPnL: 0,
++      avgPnL: 0
++    });
++
++    console.log('✅ getStrategyResultsSummary handles empty state correctly');
++  });
++});
+\ No newline at end of file
+diff --git a/tests/e2e/test-helpers.spec.ts b/tests/e2e/test-helpers.spec.ts
+new file mode 100644
+index 0000000..8f1522c
+--- /dev/null
++++ b/tests/e2e/test-helpers.spec.ts
+@@ -0,0 +1,61 @@
++/**
++ * =============================================================================
++ * TEST E2E HELPERS
++ * =============================================================================
++ *
++ * Test script to verify that all e2e helper functions can be imported and work correctly.
++ * This tests the helper infrastructure without running full browser tests.
++ */
++
++import { test, expect } from "@playwright/test";
++
++// Test that helpers can be imported
++test.describe('E2E Helper Imports', () => {
++  test('can import all helper functions', async () => {
++    // Test basic imports work
++    const helpers = require('./helper');
++
++    // Verify key exports exist
++    expect(helpers.waitForStart).toBeDefined();
++    expect(helpers.waitForAlgoEntry).toBeDefined();
++    expect(helpers.authenticate).toBeDefined();
++    expect(helpers.getBacktestState).toBeDefined();
++    expect(helpers.useAlgoTrades).toBeDefined();
++
++    console.log('✅ All helper functions imported successfully');
++  });
++
++  test('store query functions are exported', async () => {
++    const helpers = require('./helper');
++
++    expect(typeof helpers.getAlgoTradeRows).toBe('function');
++    expect(typeof helpers.getBacktestParams).toBe('function');
++    expect(typeof helpers.getAlgoTotalPnL).toBe('function');
++
++    console.log('✅ Store query functions exported correctly');
++  });
++
++  test('hook functions are exported', async () => {
++    const helpers = require('./helper');
++
++    expect(typeof helpers.useAlgoTrades).toBe('function');
++    expect(typeof helpers.useBacktestConfig).toBe('function');
++    expect(typeof helpers.useBacktestValidation).toBe('function');
++
++    console.log('✅ Hook functions exported correctly');
++  });
++});
++
++// Mock browser environment for testing helper logic
++test.describe('Helper Function Logic', () => {
++  test('validateAlgoTradePairs handles valid pairs', async () => {
++    // This would normally run in browser context, but we can test the logic structure
++    const helpers = require('./helper');
++
++    // Note: This test would require actual browser context to work fully
++    // For now, just verify the function exists and can be called
++    expect(typeof helpers.validateAlgoTradePairs).toBe('function');
++
++    console.log('✅ Helper logic functions are properly structured');
++  });
++});
+\ No newline at end of file

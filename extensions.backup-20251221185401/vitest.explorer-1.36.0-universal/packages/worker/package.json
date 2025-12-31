@@ -1,0 +1,13 @@
+{
+  "name": "vitest-vscode-worker",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@vitest/utils": "catalog:latest",
+    "vitest": "catalog:latest",
+    "vitest-vscode-shared": "workspace:*"
+  }
+}

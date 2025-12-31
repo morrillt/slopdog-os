@@ -1,0 +1,778 @@
+### Result
+Waited for 3
+
+### Ran Playwright code
+await new Promise(f => setTimeout(f, 3 * 1000));
+
+### New console messages
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Prepared @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] IconMark @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Server Requests Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist...
+- [TIMESTAMP] Server Components Track @ http://localhost:3000/_next/static/chunks/node_modules_next_di...
+- [TIMESTAMP] ​Preloads @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​HTTPAccessErrorFallback @ http://localhost:3000/_next/static/chunks/node_modules_next_d...
+- [TIMESTAMP] ​NotFound @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​RootLayout @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_...
+- [TIMESTAMP] ​Next.MetadataOutlet @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_...
+- [TIMESTAMP] ​NonIndex @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_re...
+- [TIMESTAMP] ​Next.Viewport @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] ​Next.Metadata @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] DocPage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] Blocking Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Transition Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_comp...
+- [TIMESTAMP] Suspense Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compil...
+- [TIMESTAMP] Idle Track @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_r...
+- [TIMESTAMP] Render @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [TIMESTAMP] Commit @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react...
+- [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [TIMESTAMP] Waiting for Paint @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [TIMESTAMP] DocPage @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_reac...
+- [TIMESTAMP] LinkComponent @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compile...
+- [TIMESTAMP] Markdown @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_rea...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ol @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ol @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ol @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] code @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-d...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ol @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] pre @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-do...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ol @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ol @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] p @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] li @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] h2 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] ul @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom...
+- [TIMESTAMP] Remaining Effects @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_com...
+- [LOG] [Fast Refresh] done in 164ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [LOG] [Fast Refresh] done in 224ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+- [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_7...
+- [LOG] [Fast Refresh] done in 378ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dis...
+
+### Page state
+- Page URL: http://localhost:3000/docs/dev/docs-system-architecture
+- Page Title: Create Next App
+- Page Snapshot:
+```yaml
+- <changed> generic [ref=e2]:
+  - ref=e3 [unchanged]
+  - generic [ref=e12]:
+    - complementary [ref=e25]:
+      - navigation [ref=e27]:
+        - generic [ref=e28]: Table of Contents
+        - link "Docs System Architecture - Technical Reference" [ref=e29] [cursor=pointer]:
+          - /url: "#docs-system-architecture-technical-reference"
+        - link "Overview" [ref=e30] [cursor=pointer]:
+          - /url: "#overview"
+        - link "Tech Stack" [ref=e31] [cursor=pointer]:
+          - /url: "#tech-stack"
+        - link "Architecture" [ref=e32] [cursor=pointer]:
+          - /url: "#architecture"
+        - link "API Endpoints" [ref=e33] [cursor=pointer]:
+          - /url: "#api-endpoints"
+        - link "Frontend Components" [ref=e34] [cursor=pointer]:
+          - /url: "#frontend-components"
+        - link "Front Matter Schema" [ref=e35] [cursor=pointer]:
+          - /url: "#front-matter-schema"
+        - link "Taxonomy System" [ref=e36] [cursor=pointer]:
+          - /url: "#taxonomy-system"
+        - link "URL Routing" [ref=e37] [cursor=pointer]:
+          - /url: "#url-routing"
+        - link "Markdown Processing Pipeline" [ref=e38] [cursor=pointer]:
+          - /url: "#markdown-processing-pipeline"
+        - link "Styling" [ref=e39] [cursor=pointer]:
+          - /url: "#styling"
+        - link "Performance Considerations" [ref=e40] [cursor=pointer]:
+          - /url: "#performance-considerations"
+        - link "Security" [ref=e41] [cursor=pointer]:
+          - /url: "#security"
+        - link "Future Enhancements" [ref=e42] [cursor=pointer]:
+          - /url: "#future-enhancements"
+        - link "Related Files" [ref=e43] [cursor=pointer]:
+          - /url: "#related-files"
+    - generic [ref=e44]:
+      - link "← Back to Docs" [ref=e46] [cursor=pointer]:
+        - /url: /docs
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - heading "Docs System Architecture - Technical Reference" [level=1] [ref=e49]
+          - generic [ref=e50]:
+            - generic [ref=e51]: "Updated: 2025-12-15"
+            - generic [ref=e52]: "Path: docs/dev/docs-system-architecture.md"
+          - generic [ref=e53]:
+            - generic [ref=e54]: tech/frontend/architecture
+            - generic [ref=e55]: tech/backend/api
+            - generic [ref=e56]: meta/index
+            - generic [ref=e57]: audience/dev
+          - paragraph [ref=e58]: Complete technical documentation of the RockCap documentation system architecture, implementation, and APIs for developers and AI agents.
+        - generic [ref=e59]:
+          - heading "Overview" [level=2] [ref=e60]
+          - paragraph [ref=e61]:
+            - text: The RockCap documentation system is a custom-built, React-based documentation explorer that indexes and serves Markdown files from the
+            - code [ref=e62]: docs/
+            - text: and
+            - code [ref=e63]: plans/
+            - text: directories. It provides a searchable, filterable interface with dynamic routing, markdown rendering, and a taxonomy-based categorization system.
+          - heading "Tech Stack" [level=2] [ref=e64]
+          - heading "Frontend" [level=3] [ref=e65]
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - strong [ref=e68]: Next.js 16.0.7
+              - text: "- React framework with App Router"
+            - listitem [ref=e69]:
+              - strong [ref=e70]: React 19.2.1
+              - text: "- UI library"
+            - listitem [ref=e71]:
+              - strong [ref=e72]: TypeScript 5
+              - text: "- Type safety"
+            - listitem [ref=e73]:
+              - strong [ref=e74]: Tailwind CSS 4
+              - text: "- Styling with"
+              - code [ref=e75]: "@tailwindcss/typography"
+              - text: plugin
+            - listitem [ref=e76]:
+              - strong [ref=e77]: react-markdown 10.1.0
+              - text: "- Markdown to React component rendering"
+            - listitem [ref=e78]:
+              - strong [ref=e79]: remark-gfm 4.0.1
+              - text: "- GitHub Flavored Markdown support (tables, task lists, etc.)"
+          - heading "Backend" [level=3] [ref=e80]
+          - list [ref=e81]:
+            - listitem [ref=e82]:
+              - strong [ref=e83]: Next.js API Routes
+              - text: "- Server-side endpoints"
+            - listitem [ref=e84]:
+              - strong [ref=e85]: Node.js File System (fs)
+              - text: "- File scanning and reading"
+            - listitem [ref=e86]:
+              - strong [ref=e87]: js-yaml 4.1.1
+              - text: "- YAML front matter parsing"
+          - heading "Key Dependencies" [level=3] [ref=e88]
+          - code [ref=e90]: "{ \"react-markdown\": \"^10.1.0\", \"remark-gfm\": \"^4.0.1\", \"js-yaml\": \"^4.1.1\", \"@tailwindcss/typography\": \"^4\" }"
+          - heading "Architecture" [level=2] [ref=e91]
+          - heading "System Components" [level=3] [ref=e92]
+          - code [ref=e94]: ┌─────────────────────────────────────────────────────────────┐ │ Docs Explorer System │ ├─────────────────────────────────────────────────────────────┤ │ │ │ ┌──────────────┐ ┌──────────────┐ ┌──────────┐ │ │ │ Index Page │─────▶│ API Routes │─────▶│ File │ │ │ │ (page.tsx) │ │ (manifest/ │ │ System │ │ │ │ │ │ content) │ │ │ │ │ └──────────────┘ └──────────────┘ └──────────┘ │ │ │ │ │ │ │ │ │ │ ▼ ▼ │ │ ┌──────────────┐ ┌──────────────┐ │ │ │ Doc Viewer │ │ Taxonomy │ │ │ │ ([...slug]) │ │ (YAML) │ │ │ └──────────────┘ └──────────────┘ │ │ │ └─────────────────────────────────────────────────────────────┘
+          - heading "Directory Structure" [level=3] [ref=e95]
+          - code [ref=e97]: "rockcap/ ├── docs/ # Documentation files │ ├── taxonomy.yaml # Taxonomy definition │ ├── templates/ # Document templates │ └── [various .md files] ├── plans/ # Planning documents │ └── epics/ # Epic and ticket files │ └── EPIC-003-*/ # Epic directories │ └── [ticket files].md └── src/ └── app/ ├── docs/ │ ├── page.tsx # Index/explorer page │ └── [...slug]/ │ └── page.tsx # Individual doc viewer └── api/ └── docs/ ├── manifest/ │ └── route.ts # Manifest generation API └── content/ └── route.ts # Content serving API"
+          - heading "API Endpoints" [level=2] [ref=e98]
+          - heading "GET /api/docs/manifest" [level=3] [ref=e99]:
+            - text: GET
+            - code [ref=e100]: /api/docs/manifest
+          - paragraph [ref=e101]:
+            - text: Generates a complete manifest of all Markdown documents in
+            - code [ref=e102]: docs/
+            - text: and
+            - code [ref=e103]: plans/
+            - text: directories.
+          - paragraph [ref=e104]:
+            - strong [ref=e105]: "Response Structure:"
+          - code [ref=e107]: "{ taxonomy: { facets: { type: string[]; status: string[]; }; tags: Record<string, any>; }; docs: DocMetadata[]; count: number; }"
+          - paragraph [ref=e108]:
+            - strong [ref=e109]: "DocMetadata Type:"
+          - code [ref=e111]: "{ path: string; // e.g., \"plans/epics/EPIC-003/3.1.md\" title: string; // From front matter or H1 updated: string; // ISO date string description?: string; // From front matter or first paragraph facets: { type: string; // \"plan\" | \"strategy\" | \"note\" | \"changelog\" status: string; // \"draft\" | \"active\" | \"deprecated\" strategy?: { slug: string; version: string; }; repo?: { path: string; }; }; tags: string[]; // Array of tag strings }"
+          - paragraph [ref=e112]:
+            - strong [ref=e113]: "Implementation Details:"
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - text: Recursively scans
+              - code [ref=e116]: docs/
+              - text: and
+              - code [ref=e117]: plans/
+              - text: directories
+            - listitem [ref=e118]:
+              - text: Parses YAML front matter from each
+              - code [ref=e119]: .md
+              - text: file
+            - listitem [ref=e120]: Extracts title from front matter or first H1 heading
+            - listitem [ref=e121]: Extracts description from front matter or first paragraph
+            - listitem [ref=e122]:
+              - text: Loads taxonomy from
+              - code [ref=e123]: docs/taxonomy.yaml
+            - listitem [ref=e124]: Normalizes file paths to use forward slashes
+            - listitem [ref=e125]:
+              - text: Skips hidden directories (
+              - code [ref=e126]: .git
+              - text: ","
+              - code [ref=e127]: node_modules
+              - text: ","
+              - code [ref=e128]: data
+              - text: )
+          - 'heading "GET /api/docs/content?path={filePath}" [level=3] [ref=e129]':
+            - text: GET
+            - code [ref=e130]: "/api/docs/content?path={filePath}"
+          - paragraph [ref=e131]: Serves the raw content of a specific Markdown file.
+          - paragraph [ref=e132]:
+            - strong [ref=e133]: "Query Parameters:"
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - code [ref=e136]: path
+              - text: "(required): Relative path from repo root (e.g.,"
+              - code [ref=e137]: plans/epics/EPIC-003/3.1.md
+              - text: )
+          - paragraph [ref=e138]:
+            - strong [ref=e139]: "Response:"
+          - code [ref=e141]: "{ content: string; // Raw markdown content path: string; // Normalized path }"
+          - paragraph [ref=e142]:
+            - strong [ref=e143]: "Security:"
+          - list [ref=e144]:
+            - listitem [ref=e145]:
+              - text: Validates path starts with
+              - code [ref=e146]: docs/
+              - text: or
+              - code [ref=e147]: plans/
+            - listitem [ref=e148]:
+              - text: Prevents directory traversal (
+              - code [ref=e149]: ..
+              - text: )
+            - listitem [ref=e150]: Returns 404 if file doesn't exist
+          - heading "Frontend Components" [level=2] [ref=e151]
+          - heading "/docs - Index Page (src/app/docs/page.tsx)" [level=3] [ref=e152]:
+            - code [ref=e153]: /docs
+            - text: "- Index Page ("
+            - code [ref=e154]: src/app/docs/page.tsx
+            - text: )
+          - paragraph [ref=e155]:
+            - strong [ref=e156]: "Purpose:"
+            - text: Document explorer with filtering and search capabilities.
+          - paragraph [ref=e157]:
+            - strong [ref=e158]: "Features:"
+          - list [ref=e159]:
+            - listitem [ref=e160]: Document listing grouped by type (Strategies → Plans → Changelogs → Notes)
+            - listitem [ref=e161]:
+              - text: "Multi-faceted filtering:"
+              - list [ref=e162]:
+                - listitem [ref=e163]: Type filter (plan, strategy, note, changelog)
+                - listitem [ref=e164]: Status filter (draft, active, deprecated)
+                - listitem [ref=e165]: Tag filters (plan, domain, doc, tech, ops, meta, audience)
+            - listitem [ref=e166]: URL parameter persistence for filters
+            - listitem [ref=e167]: Responsive grid layout
+          - paragraph [ref=e168]:
+            - strong [ref=e169]: "State Management:"
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - text: Uses React hooks (
+              - code [ref=e172]: useState
+              - text: ","
+              - code [ref=e173]: useEffect
+              - text: )
+            - listitem [ref=e174]: Syncs filter state with URL query parameters
+            - listitem [ref=e175]: Fetches manifest on mount
+          - paragraph [ref=e176]:
+            - strong [ref=e177]: "Filter Logic:"
+          - list [ref=e178]:
+            - listitem [ref=e179]: Documents must match selected type (if not "all")
+            - listitem [ref=e180]: Documents must match selected status (if not "all")
+            - listitem [ref=e181]: Documents must match ALL selected tag categories (AND logic)
+          - paragraph [ref=e182]:
+            - strong [ref=e183]: "URL Format:"
+          - code [ref=e185]: /docs?type=plan&status=active&tag:plan=ticket&tag:tech=testing
+          - heading "/docs/[...slug] - Document Viewer (src/app/docs/[...slug]/page.tsx)" [level=3] [ref=e186]:
+            - code [ref=e187]: /docs/[...slug]
+            - text: "- Document Viewer ("
+            - code [ref=e188]: src/app/docs/[...slug]/page.tsx
+            - text: )
+          - paragraph [ref=e189]:
+            - strong [ref=e190]: "Purpose:"
+            - text: Renders individual Markdown documents with navigation.
+          - paragraph [ref=e191]:
+            - strong [ref=e192]: "Features:"
+          - list [ref=e193]:
+            - listitem [ref=e194]: Dynamic routing for any document path
+            - listitem [ref=e195]:
+              - text: Markdown rendering with
+              - code [ref=e196]: react-markdown
+            - listitem [ref=e197]: GitHub Flavored Markdown support (tables, task lists, etc.)
+            - listitem [ref=e198]: Sticky table of contents sidebar (H1 and H2 headings)
+            - listitem [ref=e199]: Active heading highlighting based on scroll position
+            - listitem [ref=e200]: Custom styling for code blocks, tables, lists, etc.
+          - paragraph [ref=e201]:
+            - strong [ref=e202]: "URL Decoding:"
+          - list [ref=e203]:
+            - listitem [ref=e204]:
+              - text: Automatically decodes URL-encoded characters (e.g.,
+              - code [ref=e205]: "%20"
+              - text: → space)
+            - listitem [ref=e206]: Handles paths with spaces and special characters
+          - paragraph [ref=e207]:
+            - strong [ref=e208]: "Document Matching Logic:"
+          - list [ref=e209]:
+            - listitem [ref=e210]: Decodes URL slug segments
+            - listitem [ref=e211]:
+              - text: Joins segments with
+              - code [ref=e212]: /
+              - text: to form document path
+            - listitem [ref=e213]:
+              - text: "Matches against manifest using multiple strategies:"
+              - list [ref=e214]:
+                - listitem [ref=e215]: Exact path match
+                - listitem [ref=e216]:
+                  - text: Path with
+                  - code [ref=e217]: .md
+                  - text: extension
+                - listitem [ref=e218]:
+                  - text: Path without
+                  - code [ref=e219]: docs/
+                  - text: or
+                  - code [ref=e220]: plans/
+                  - text: prefix
+                - listitem [ref=e221]: Path without extension and prefix
+          - paragraph [ref=e222]:
+            - strong [ref=e223]: "Content Processing:"
+          - list [ref=e224]:
+            - listitem [ref=e225]: Strips YAML front matter from markdown content
+            - listitem [ref=e226]: "Removes HTML comments (``)"
+            - listitem [ref=e227]: Removes first H1 if it matches front matter title (prevents duplicates)
+            - listitem [ref=e228]: Extracts headings for table of contents
+            - listitem [ref=e229]: Renders with custom React components
+          - paragraph [ref=e230]:
+            - strong [ref=e231]: "Custom Markdown Components:"
+          - list [ref=e232]:
+            - listitem [ref=e233]:
+              - code [ref=e234]: h1
+              - text: ","
+              - code [ref=e235]: h2
+              - text: ","
+              - code [ref=e236]: h3
+              - text: "- Styled headings with anchor IDs"
+            - listitem [ref=e237]:
+              - code [ref=e238]: code
+              - text: "- Inline code with background"
+            - listitem [ref=e239]:
+              - code [ref=e240]: pre
+              - text: "- Code blocks with syntax highlighting container"
+            - listitem [ref=e241]:
+              - code [ref=e242]: ul
+              - text: ","
+              - code [ref=e243]: ol
+              - text: ","
+              - code [ref=e244]: li
+              - text: "- Nested list support with proper indentation"
+            - listitem [ref=e245]:
+              - code [ref=e246]: table
+              - text: ","
+              - code [ref=e247]: th
+              - text: ","
+              - code [ref=e248]: td
+              - text: "- Styled tables"
+            - listitem [ref=e249]:
+              - code [ref=e250]: a
+              - text: "- Internal links to other docs"
+            - listitem [ref=e251]:
+              - code [ref=e252]: blockquote
+              - text: "- Styled quotes"
+            - listitem [ref=e253]:
+              - code [ref=e254]: hr
+              - text: "- Horizontal rules"
+          - paragraph [ref=e255]:
+            - strong [ref=e256]: "Table of Contents:"
+          - list [ref=e257]:
+            - listitem [ref=e258]: Extracted from H1 and H2 headings
+            - listitem [ref=e259]: Sticky sidebar on large screens
+            - listitem [ref=e260]: Clickable anchor links
+            - listitem [ref=e261]: Active heading highlighting via scroll tracking
+          - heading "Front Matter Schema" [level=2] [ref=e262]
+          - paragraph [ref=e263]: "All Markdown files should include YAML front matter:"
+          - code [ref=e265]: "--- title: \"Document Title\" updated: \"2025-12-15\" description: \"Optional description\" facets: type: plan | strategy | note | changelog status: draft | active | deprecated strategy: # Optional, for strategy docs slug: string version: string repo: # Optional, for tracking path: string tags: - plan/ticket - tech/testing - domain/strategy/orb-retest-breakout ---"
+          - paragraph [ref=e266]:
+            - strong [ref=e267]: "Required Fields:"
+          - list [ref=e268]:
+            - listitem [ref=e269]:
+              - code [ref=e270]: title
+              - text: "- Document title"
+            - listitem [ref=e271]:
+              - code [ref=e272]: updated
+              - text: "- Last update date (ISO format: YYYY-MM-DD)"
+            - listitem [ref=e273]:
+              - code [ref=e274]: facets.type
+              - text: "- Document type"
+            - listitem [ref=e275]:
+              - code [ref=e276]: facets.status
+              - text: "- Document status"
+          - paragraph [ref=e277]:
+            - strong [ref=e278]: "Optional Fields:"
+          - list [ref=e279]:
+            - listitem [ref=e280]:
+              - code [ref=e281]: description
+              - text: "- Short description (used in index)"
+            - listitem [ref=e282]:
+              - code [ref=e283]: facets.strategy
+              - text: "- Strategy metadata"
+            - listitem [ref=e284]:
+              - code [ref=e285]: facets.repo.path
+              - text: "- Repository path reference"
+            - listitem [ref=e286]:
+              - code [ref=e287]: tags
+              - text: "- Array of tag strings"
+          - heading "Taxonomy System" [level=2] [ref=e288]
+          - paragraph [ref=e289]:
+            - text: The taxonomy is defined in
+            - code [ref=e290]: docs/taxonomy.yaml
+            - text: "and provides:"
+          - list [ref=e291]:
+            - listitem [ref=e292]:
+              - paragraph [ref=e293]:
+                - strong [ref=e294]: Facets
+                - text: "- Structured metadata (single-select):"
+              - list [ref=e295]:
+                - listitem [ref=e296]:
+                  - code [ref=e297]: type
+                  - text: ": Document type"
+                - listitem [ref=e298]:
+                  - code [ref=e299]: status
+                  - text: ": Document status"
+                - listitem [ref=e300]:
+                  - code [ref=e301]: strategy
+                  - text: ": Strategy-specific metadata"
+                - listitem [ref=e302]:
+                  - code [ref=e303]: repo
+                  - text: ": Repository path reference"
+            - listitem [ref=e304]:
+              - paragraph [ref=e305]:
+                - strong [ref=e306]: Tags
+                - text: "- Multi-select categorical labels:"
+              - list [ref=e307]:
+                - listitem [ref=e308]:
+                  - code [ref=e309]: plan/
+                  - text: "- Planning-related tags (epic, ticket, task)"
+                - listitem [ref=e310]:
+                  - code [ref=e311]: domain/
+                  - text: "- Domain-specific tags (indicator, strategy, tag)"
+                - listitem [ref=e312]:
+                  - code [ref=e313]: doc/
+                  - text: "- Documentation tags (howto, beware)"
+                - listitem [ref=e314]:
+                  - code [ref=e315]: tech/
+                  - text: "- Technical tags (frontend, backend, scripts, testing)"
+                - listitem [ref=e316]:
+                  - code [ref=e317]: ops/
+                  - text: "- Operations tags (bug, perf, security, migration, refactor)"
+                - listitem [ref=e318]:
+                  - code [ref=e319]: meta/
+                  - text: "- Meta tags (index, template, glossary, onboarding)"
+                - listitem [ref=e320]:
+                  - code [ref=e321]: audience/
+                  - text: "- Audience tags (dev, stakeholder)"
+          - paragraph [ref=e322]:
+            - strong [ref=e323]: "Tag Format:"
+          - list [ref=e324]:
+            - listitem [ref=e325]: Lowercase with hyphens
+            - listitem [ref=e326]:
+              - text: Hierarchical structure with
+              - code [ref=e327]: /
+              - text: separator
+            - listitem [ref=e328]: "Maximum depth: 4 levels"
+          - heading "URL Routing" [level=2] [ref=e329]
+          - heading "Index Page" [level=3] [ref=e330]
+          - list [ref=e331]:
+            - listitem [ref=e332]:
+              - text: "Route:"
+              - code [ref=e333]: /docs
+            - listitem [ref=e334]:
+              - text: "Query parameters:"
+              - code [ref=e335]: "?type=plan&status=active&tag:plan=ticket"
+          - heading "Document Pages" [level=3] [ref=e336]
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - text: "Route:"
+              - code [ref=e339]: /docs/[...slug]
+            - listitem [ref=e340]:
+              - text: "Examples:"
+              - list [ref=e341]:
+                - listitem [ref=e342]:
+                  - code [ref=e343]: /docs/Strategies/basic
+                - listitem [ref=e344]:
+                  - code [ref=e345]: /docs/epics/EPIC-003-bulletproof-backtest/3.1
+                - listitem [ref=e346]:
+                  - code [ref=e347]: /docs/DEPRECATED%20-%20sprintplanning/epic1-stories/story1-env-cli
+          - paragraph [ref=e348]:
+            - strong [ref=e349]: "URL Construction:"
+          - list [ref=e350]:
+            - listitem [ref=e351]:
+              - text: Remove
+              - code [ref=e352]: .md
+              - text: extension from file path
+            - listitem [ref=e353]:
+              - text: Remove
+              - code [ref=e354]: docs/
+              - text: or
+              - code [ref=e355]: plans/
+              - text: prefix
+            - listitem [ref=e356]: URL-encode special characters (handled automatically by Next.js Link)
+            - listitem [ref=e357]:
+              - text: Join path segments with
+              - code [ref=e358]: /
+          - paragraph [ref=e359]:
+            - strong [ref=e360]: "URL Decoding:"
+          - list [ref=e361]:
+            - listitem [ref=e362]: Next.js automatically decodes URL segments
+            - listitem [ref=e363]:
+              - text: Additional
+              - code [ref=e364]: decodeURIComponent
+              - text: applied for safety
+            - listitem [ref=e365]: Handles spaces, special characters, and Unicode
+          - heading "Markdown Processing Pipeline" [level=2] [ref=e366]
+          - code [ref=e368]: Raw Markdown File ↓ Parse YAML Front Matter (js-yaml) ↓ Extract Metadata (title, tags, facets) ↓ Strip Front Matter from Content ↓ Remove HTML Comments ↓ Remove Duplicate H1 (if matches title) ↓ Extract Headings (for TOC) ↓ Render with react-markdown ↓ Apply Custom Components ↓ Styled HTML Output
+          - heading "Styling" [level=2] [ref=e369]
+          - heading "Tailwind CSS Configuration" [level=3] [ref=e370]
+          - list [ref=e371]:
+            - listitem [ref=e372]:
+              - text: Uses
+              - code [ref=e373]: prose
+              - text: classes from
+              - code [ref=e374]: "@tailwindcss/typography"
+            - listitem [ref=e375]: Custom prose variants for nested lists
+            - listitem [ref=e376]:
+              - text: Dark theme (
+              - code [ref=e377]: prose-invert
+              - text: ","
+              - code [ref=e378]: prose-slate
+              - text: )
+            - listitem [ref=e379]: Custom code block styling
+            - listitem [ref=e380]: Responsive design (mobile-first)
+          - heading "Custom Styles" [level=3] [ref=e381]
+          - list [ref=e382]:
+            - listitem [ref=e383]: Nested list indentation via arbitrary variants
+            - listitem [ref=e384]: Code block background and padding
+            - listitem [ref=e385]: Table borders and spacing
+            - listitem [ref=e386]: Link hover states
+            - listitem [ref=e387]: Active heading highlighting
+          - heading "Performance Considerations" [level=2] [ref=e388]
+          - list [ref=e389]:
+            - listitem [ref=e390]:
+              - strong [ref=e391]: "Manifest Caching:"
+              - text: Manifest is generated on-demand (could be cached)
+            - listitem [ref=e392]:
+              - strong [ref=e393]: "Content Loading:"
+              - text: Content fetched separately after manifest lookup
+            - listitem [ref=e394]:
+              - strong [ref=e395]: "Client-Side Rendering:"
+              - text: All rendering happens client-side
+            - listitem [ref=e396]:
+              - strong [ref=e397]: "Scroll Tracking:"
+              - text: Uses
+              - code [ref=e398]: IntersectionObserver
+              - text: for active heading detection
+          - heading "Security" [level=2] [ref=e399]
+          - list [ref=e400]:
+            - listitem [ref=e401]:
+              - strong [ref=e402]: "Path Validation:"
+              - text: API routes validate paths are within
+              - code [ref=e403]: docs/
+              - text: or
+              - code [ref=e404]: plans/
+            - listitem [ref=e405]:
+              - strong [ref=e406]: "Directory Traversal Prevention:"
+              - text: Blocks
+              - code [ref=e407]: ..
+              - text: in paths
+            - listitem [ref=e408]:
+              - strong [ref=e409]: "File Type Restriction:"
+              - text: Only serves
+              - code [ref=e410]: .md
+              - text: files
+            - listitem [ref=e411]:
+              - strong [ref=e412]: "Content Sanitization:"
+              - code [ref=e413]: react-markdown
+              - text: with
+              - code [ref=e414]: skipHtml
+              - text: option
+          - heading "Future Enhancements" [level=2] [ref=e415]
+          - paragraph [ref=e416]: "Potential improvements:"
+          - list [ref=e417]:
+            - listitem [ref=e418]: Server-side rendering for better SEO
+            - listitem [ref=e419]: Full-text search
+            - listitem [ref=e420]: Document versioning
+            - listitem [ref=e421]: Edit links to source files
+            - listitem [ref=e422]: Export to PDF
+            - listitem [ref=e423]: Print-friendly styles
+            - listitem [ref=e424]: Document relationships graph
+            - listitem [ref=e425]: Recent documents tracking
+          - heading "Related Files" [level=2] [ref=e426]
+          - list [ref=e427]:
+            - listitem [ref=e428]:
+              - code [ref=e429]: src/app/docs/page.tsx
+              - text: "- Index page component"
+            - listitem [ref=e430]:
+              - code [ref=e431]: src/app/docs/[...slug]/page.tsx
+              - text: "- Document viewer component"
+            - listitem [ref=e432]:
+              - code [ref=e433]: src/app/api/docs/manifest/route.ts
+              - text: "- Manifest API"
+            - listitem [ref=e434]:
+              - code [ref=e435]: src/app/api/docs/content/route.ts
+              - text: "- Content API"
+            - listitem [ref=e436]:
+              - code [ref=e437]: docs/taxonomy.yaml
+              - text: "- Taxonomy definition"
+            - listitem [ref=e438]:
+              - code [ref=e439]: docs/templates/front-matter-schema.md
+              - text: "- Front matter template"
+```
