@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# But not these files/directories
+!.gitignore
+!README.md
+!commands/
+!commands/broz/
+!commands/broz/**
+!rules/
+!rules/broz/
+!rules/broz/**
+!templates/
+!templates/**

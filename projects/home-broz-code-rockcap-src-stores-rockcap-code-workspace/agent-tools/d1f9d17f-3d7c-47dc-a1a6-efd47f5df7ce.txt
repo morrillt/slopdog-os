@@ -1,528 +1,0 @@
-
-> dl
-> node scripts/dl.js
-
-Output path: data/trades/nq_trades_0930_1000_trades_2y_ohlcv1s.csv
-[downloader] Warning: OHLC_SCHEMA 'ohlcv-1s`' invalid. Falling back to ohlcv-1m. Allowed: ['bbo-1m', 'bbo-1s', 'cbbo-1m', 'cbbo-1s', 'cmbp-1', 'definition', 'imbalance', 'mbo', 'mbp-1', 'mbp-10', 'ohlcv-1d', 'ohlcv-1h', 'ohlcv-1m', 'ohlcv-1s', 'ohlcv-eod', 'statistics', 'status', 'tbbo', 'tcbbo', 'trades']
-Downloading NQ.FUT (ohlcv-1m) for 730 day(s) from 09:30 to 10:00 ET...
-
-Downloading:   0%|                                                | 0/730 [00:00<?, ?it/s]Downloading:   0%|                                        | 1/730 [00:04<54:22,  4.48s/it]Downloading:   0%|                                        | 2/730 [00:08<49:30,  4.08s/it]Downloading:   0%|▏                                       | 3/730 [00:13<58:29,  4.83s/it]Downloading:   1%|▏                                       | 4/730 [00:17<51:39,  4.27s/it]Downloading:   1%|▍                                       | 7/730 [00:21<29:01,  2.41s/it]Downloading:   1%|▍                                       | 8/730 [00:25<34:31,  2.87s/it]Downloading:   1%|▍                                       | 9/730 [00:30<39:55,  3.32s/it]Downloading:   1%|▌                                      | 10/730 [00:34<41:18,  3.44s/it]Downloading:   2%|▌                                      | 11/730 [00:37<40:13,  3.36s/it]Downloading:   2%|▋                                      | 14/730 [00:46<37:16,  3.12s/it]Downloading:   2%|▊                                      | 15/730 [00:51<43:45,  3.67s/it]Downloading:   2%|▊                                      | 16/730 [00:56<44:54,  3.77s/it]Downloading:   2%|▉                                      | 17/730 [00:59<43:44,  3.68s/it]Downloading:   2%|▉                                      | 18/730 [01:06<52:33,  4.43s/it]/home/broz/code/rockcap/originalScripts/downloader.py:194: BentoWarning: No data found for the request you submitted.
-  store = client.timeseries.get_range(
-Downloading:   3%|█                                      | 21/730 [01:09<32:50,  2.78s/it]Downloading:   3%|█▏                                     | 22/730 [01:13<35:36,  3.02s/it]Downloading:   3%|█▏                                     | 23/730 [01:17<37:20,  3.17s/it]Downloading:   3%|█▎                                     | 24/730 [01:20<37:17,  3.17s/it]Downloading:   3%|█▎                                     | 25/730 [01:24<37:46,  3.21s/it]/home/broz/code/rockcap/originalScripts/downloader.py:194: BentoWarning: No data found for the request you submitted.
-  store = client.timeseries.get_range(
-Downloading:   4%|█▍                                     | 28/730 [01:27<24:48,  2.12s/it]Downloading:   4%|█▌                                     | 29/730 [01:31<29:32,  2.53s/it]Downloading:   4%|█▌                                     | 30/730 [01:35<32:38,  2.80s/it]Downloading:   4%|█▋                                     | 31/730 [01:38<34:21,  2.95s/it]Downloading:   4%|█▋                                     | 32/730 [01:41<34:44,  2.99s/it]Downloading:   5%|█▊                                     | 35/730 [01:45<22:49,  1.97s/it]Downloading:   5%|█▉                                     | 36/730 [01:48<25:11,  2.18s/it]Downloading:   5%|█▉                                     | 37/730 [01:51<27:19,  2.37s/it]Downloading:   5%|██                                     | 38/730 [01:54<31:09,  2.70s/it]Downloading:   5%|██                                     | 39/730 [01:58<33:53,  2.94s/it]Downloading:   6%|██▏                                    | 42/730 [02:03<25:58,  2.26s/it]Downloading:   6%|██▎                                    | 43/730 [02:06<26:57,  2.35s/it]Downloading:   6%|██▎                                    | 44/730 [02:09<29:54,  2.62s/it]Downloading:   6%|██▍                                    | 45/730 [02:12<31:29,  2.76s/it]Downloading:   6%|██▍                                    | 46/730 [02:16<33:41,  2.96s/it]Downloading:   7%|██▌                                    | 49/730 [02:26<35:37,  3.14s/it]Downloading:   7%|██▋                                    | 50/730 [02:30<38:38,  3.41s/it]Downloading:   7%|██▋                                    | 51/730 [02:33<36:39,  3.24s/it]Downloading:   7%|██▊                                    | 52/730 [02:37<37:45,  3.34s/it]Downloading:   7%|██▊                                    | 53/730 [02:40<38:00,  3.37s/it]Downloading:   8%|██▉                                    | 56/730 [02:44<26:34,  2.37s/it]Downloading:   8%|███                                    | 57/730 [02:48<28:22,  2.53s/it]Downloading:   8%|███                                    | 58/730 [02:51<31:03,  2.77s/it]Downloading:   8%|███▏                                   | 59/730 [02:55<33:42,  3.01s/it]Downloading:   8%|███▏                                   | 60/730 [02:59<35:57,  3.22s/it]Downloading:   9%|███▎                                   | 63/730 [03:02<24:11,  2.18s/it]Downloading:   9%|███▍                                   | 64/730 [03:07<28:51,  2.60s/it]Downloading:   9%|███▍                                   | 65/730 [03:11<31:36,  2.85s/it]Downloading:   9%|███▌                                   | 66/730 [03:14<33:19,  3.01s/it]Downloading:   9%|███▌                                   | 67/730 [03:17<34:18,  3.10s/it]Downloading:  10%|███▋                                   | 70/730 [03:22<25:03,  2.28s/it]Downloading:  10%|███▊                                   | 71/730 [03:25<27:24,  2.50s/it]Downloading:  10%|███▊                                   | 72/730 [03:29<29:10,  2.66s/it]Downloading:  10%|███▉                                   | 73/730 [03:32<30:58,  2.83s/it]Downloading:  10%|███▉                                   | 74/730 [03:35<31:36,  2.89s/it]Downloading:  11%|████                                   | 77/730 [03:39<21:38,  1.99s/it]Downloading:  11%|████▏                                  | 78/730 [03:42<24:36,  2.27s/it]Downloading:  11%|████▏                                  | 79/730 [03:45<27:05,  2.50s/it]Downloading:  11%|████▎                                  | 80/730 [03:49<30:21,  2.80s/it]Downloading:  11%|████▎                                  | 81/730 [03:53<32:32,  3.01s/it]Downloading:  12%|████▍                                  | 84/730 [03:57<23:10,  2.15s/it]Downloading:  12%|████▌                                  | 85/730 [04:00<25:15,  2.35s/it]Downloading:  12%|████▌                                  | 86/730 [04:03<27:32,  2.57s/it]Downloading:  12%|████▋                                  | 87/730 [04:06<29:00,  2.71s/it]Downloading:  12%|████▋                                  | 88/730 [04:10<31:40,  2.96s/it]Downloading:  12%|████▊                                  | 91/730 [04:15<23:28,  2.20s/it]Downloading:  13%|████▉                                  | 92/730 [04:19<27:40,  2.60s/it]Downloading:  13%|████▉                                  | 93/730 [04:22<30:05,  2.83s/it]Downloading:  13%|█████                                  | 94/730 [04:26<31:27,  2.97s/it]Downloading:  13%|█████                                  | 95/730 [04:29<31:15,  2.95s/it]Downloading:  13%|█████▏                                 | 98/730 [04:32<21:09,  2.01s/it]Downloading:  14%|█████▎                                 | 99/730 [04:35<23:12,  2.21s/it]Downloading:  14%|█████▏                                | 100/730 [04:39<26:42,  2.54s/it]Downloading:  14%|█████▎                                | 101/730 [04:42<28:02,  2.68s/it]Downloading:  14%|█████▎                                | 102/730 [04:45<29:53,  2.86s/it]Downloading:  14%|█████▍                                | 105/730 [04:49<21:37,  2.08s/it]Downloading:  15%|█████▌                                | 106/730 [04:52<23:14,  2.23s/it]Downloading:  15%|█████▌                                | 107/730 [04:56<27:15,  2.62s/it]Downloading:  15%|█████▌                                | 108/730 [05:01<31:57,  3.08s/it]Downloading:  15%|█████▋                                | 109/730 [05:05<34:01,  3.29s/it]Downloading:  15%|█████▊                                | 112/730 [05:08<22:18,  2.17s/it]Downloading:  15%|█████▉                                | 113/730 [05:12<25:22,  2.47s/it]Downloading:  16%|█████▉                                | 114/730 [05:15<27:59,  2.73s/it]Downloading:  16%|█████▉                                | 115/730 [05:19<29:51,  2.91s/it]/home/broz/code/rockcap/originalScripts/downloader.py:194: BentoWarning: No data found for the request you submitted.
-  store = client.timeseries.get_range(
-Downloading:  16%|██████                                | 116/730 [05:22<30:08,  2.95s/it]Downloading:  16%|██████▏                               | 119/730 [05:25<20:20,  2.00s/it]Downloading:  16%|██████▏                               | 120/730 [05:29<23:59,  2.36s/it]Downloading:  17%|██████▎                               | 121/730 [05:33<27:44,  2.73s/it]Day 2023-12-05: filtered to nearest expiry NQZ3 (30/80 rows)
-Day 2023-12-05: downloaded 30 rows
-Day 2023-12-06: filtered to nearest expiry NQZ3 (30/95 rows)
-Day 2023-12-06: downloaded 30 rows
-Day 2023-12-07: filtered to nearest expiry NQZ3 (30/92 rows)
-Day 2023-12-07: downloaded 30 rows
-Day 2023-12-08: filtered to nearest expiry NQZ3 (30/92 rows)
-Day 2023-12-08: downloaded 30 rows
-Day 2023-12-11: filtered to nearest expiry NQZ3 (30/93 rows)
-Day 2023-12-11: downloaded 30 rows
-Day 2023-12-12: filtered to nearest expiry NQZ3 (30/96 rows)
-Day 2023-12-12: downloaded 30 rows
-Day 2023-12-13: filtered to nearest expiry NQZ3 (30/123 rows)
-Day 2023-12-13: downloaded 30 rows
-Day 2023-12-14: filtered to nearest expiry NQZ3 (30/105 rows)
-Day 2023-12-14: downloaded 30 rows
-Day 2023-12-15: filtered to nearest expiry NQH4 (30/43 rows)
-Day 2023-12-15: downloaded 30 rows
-Day 2023-12-18: filtered to nearest expiry NQH4 (30/54 rows)
-Day 2023-12-18: downloaded 30 rows
-Day 2023-12-19: filtered to nearest expiry NQH4 (30/53 rows)
-Day 2023-12-19: downloaded 30 rows
-Day 2023-12-20: filtered to nearest expiry NQH4 (30/43 rows)
-Day 2023-12-20: downloaded 30 rows
-Day 2023-12-21: filtered to nearest expiry NQH4 (30/43 rows)
-Day 2023-12-21: downloaded 30 rows
-Day 2023-12-22: filtered to nearest expiry NQH4 (30/41 rows)
-Day 2023-12-22: downloaded 30 rows
-Day 2023-12-25: no data returned
-Day 2023-12-26: filtered to nearest expiry NQH4 (30/36 rows)
-Day 2023-12-26: downloaded 30 rows
-Day 2023-12-27: filtered to nearest expiry NQH4 (30/47 rows)
-Day 2023-12-27: downloaded 30 rows
-Day 2023-12-28: filtered to nearest expiry NQH4 (30/40 rows)
-Day 2023-12-28: downloaded 30 rows
-Day 2023-12-29: filtered to nearest expiry NQH4 (30/35 rows)
-Day 2023-12-29: downloaded 30 rows
-Day 2024-01-01: no data returned
-Day 2024-01-02: filtered to nearest expiry NQH4 (30/56 rows)
-Day 2024-01-02: downloaded 30 rows
-Day 2024-01-03: filtered to nearest expiry NQH4 (30/48 rows)
-Day 2024-01-03: downloaded 30 rows
-Day 2024-01-04: filtered to nearest expiry NQH4 (30/60 rows)
-Day 2024-01-04: downloaded 30 rows
-Day 2024-01-05: filtered to nearest expiry NQH4 (30/56 rows)
-Day 2024-01-05: downloaded 30 rows
-Day 2024-01-08: filtered to nearest expiry NQH4 (30/64 rows)
-Day 2024-01-08: downloaded 30 rows
-Day 2024-01-09: filtered to nearest expiry NQH4 (30/50 rows)
-Day 2024-01-09: downloaded 30 rows
-Day 2024-01-10: filtered to nearest expiry NQH4 (30/48 rows)
-Day 2024-01-10: downloaded 30 rows
-Day 2024-01-11: filtered to nearest expiry NQH4 (30/60 rows)
-Day 2024-01-11: downloaded 30 rows
-Day 2024-01-12: filtered to nearest expiry NQH4 (30/56 rows)
-Day 2024-01-12: downloaded 30 rows
-Day 2024-01-15: filtered to nearest expiry NQH4 (30/35 rows)
-Day 2024-01-15: downloaded 30 rows
-Day 2024-01-16: filtered to nearest expiry NQH4 (30/50 rows)
-Day 2024-01-16: downloaded 30 rows
-Day 2024-01-17: filtered to nearest expiry NQH4 (30/62 rows)
-Day 2024-01-17: downloaded 30 rows
-Day 2024-01-18: filtered to nearest expiry NQH4 (30/52 rows)
-Day 2024-01-18: downloaded 30 rows
-Day 2024-01-19: filtered to nearest expiry NQH4 (30/45 rows)
-Day 2024-01-19: downloaded 30 rows
-Day 2024-01-22: filtered to nearest expiry NQH4 (30/52 rows)
-Day 2024-01-22: downloaded 30 rows
-Day 2024-01-23: filtered to nearest expiry NQH4 (30/58 rows)
-Day 2024-01-23: downloaded 30 rows
-Day 2024-01-24: filtered to nearest expiry NQH4 (30/61 rows)
-Day 2024-01-24: downloaded 30 rows
-Day 2024-01-25: filtered to nearest expiry NQH4 (30/49 rows)
-Day 2024-01-25: downloaded 30 rows
-Day 2024-01-26: filtered to nearest expiry NQH4 (30/52 rows)
-Day 2024-01-26: downloaded 30 rows
-Day 2024-01-29: filtered to nearest expiry NQH4 (30/36 rows)
-Day 2024-01-29: downloaded 30 rows
-Day 2024-01-30: filtered to nearest expiry NQH4 (30/54 rows)
-Day 2024-01-30: downloaded 30 rows
-Day 2024-01-31: filtered to nearest expiry NQH4 (30/67 rows)
-Day 2024-01-31: downloaded 30 rows
-Day 2024-02-01: filtered to nearest expiry NQH4 (30/50 rows)
-Day 2024-02-01: downloaded 30 rows
-Day 2024-02-02: filtered to nearest expiry NQH4 (30/64 rows)
-Day 2024-02-02: downloaded 30 rows
-Day 2024-02-05: filtered to nearest expiry NQH4 (30/51 rows)
-Day 2024-02-05: downloaded 30 rows
-Day 2024-02-06: filtered to nearest expiry NQH4 (30/55 rows)
-Day 2024-02-06: downloaded 30 rows
-Day 2024-02-07: filtered to nearest expiry NQH4 (30/56 rows)
-Day 2024-02-07: downloaded 30 rows
-Day 2024-02-08: filtered to nearest expiry NQH4 (30/45 rows)
-Day 2024-02-08: downloaded 30 rows
-Day 2024-02-09: filtered to nearest expiry NQH4 (30/57 rows)
-Day 2024-02-09: downloaded 30 rows
-Day 2024-02-12: filtered to nearest expiry NQH4 (30/50 rows)
-Day 2024-02-12: downloaded 30 rows
-Day 2024-02-13: filtered to nearest expiry NQH4 (30/72 rows)
-Day 2024-02-13: downloaded 30 rows
-Day 2024-02-14: filtered to nearest expiry NQH4 (30/66 rows)
-Day 2024-02-14: downloaded 30 rows
-Day 2024-02-15: filtered to nearest expiry NQH4 (30/67 rows)
-Day 2024-02-15: downloaded 30 rows
-Day 2024-02-16: filtered to nearest expiry NQH4 (30/75 rows)
-Day 2024-02-16: downloaded 30 rows
-Day 2024-02-19: filtered to nearest expiry NQH4 (30/39 rows)
-Day 2024-02-19: downloaded 30 rows
-Day 2024-02-20: filtered to nearest expiry NQH4 (30/73 rows)
-Day 2024-02-20: downloaded 30 rows
-Day 2024-02-21: filtered to nearest expiry NQH4 (30/62 rows)
-Day 2024-02-21: downloaded 30 rows
-Day 2024-02-22: filtered to nearest expiry NQH4 (30/70 rows)
-Day 2024-02-22: downloaded 30 rows
-Day 2024-02-23: filtered to nearest expiry NQH4 (30/70 rows)
-Day 2024-02-23: downloaded 30 rows
-Day 2024-02-26: filtered to nearest expiry NQH4 (30/56 rows)
-Day 2024-02-26: downloaded 30 rows
-Day 2024-02-27: filtered to nearest expiry NQH4 (30/62 rows)
-Day 2024-02-27: downloaded 30 rows
-Day 2024-02-28: filtered to nearest expiry NQH4 (30/72 rows)
-Day 2024-02-28: downloaded 30 rows
-Day 2024-02-29: filtered to nearest expiry NQH4 (30/75 rows)
-Day 2024-02-29: downloaded 30 rows
-Day 2024-03-01: filtered to nearest expiry NQH4 (30/63 rows)
-Day 2024-03-01: downloaded 30 rows
-Day 2024-03-04: filtered to nearest expiry NQH4 (30/72 rows)
-Day 2024-03-04: downloaded 30 rows
-Day 2024-03-05: filtered to nearest expiry NQH4 (30/94 rows)
-Day 2024-03-05: downloaded 30 rows
-Day 2024-03-06: filtered to nearest expiry NQH4 (30/85 rows)
-Day 2024-03-06: downloaded 30 rows
-Day 2024-03-07: filtered to nearest expiry NQH4 (30/99 rows)
-Day 2024-03-07: downloaded 30 rows
-Day 2024-03-08: filtered to nearest expiry NQH4 (30/97 rows)
-Day 2024-03-08: downloaded 30 rows
-Day 2024-03-11: filtered to nearest expiry NQH4 (30/95 rows)
-Day 2024-03-11: downloaded 30 rows
-Day 2024-03-12: filtered to nearest expiry NQH4 (30/112 rows)
-Day 2024-03-12: downloaded 30 rows
-Day 2024-03-13: filtered to nearest expiry NQH4 (30/103 rows)
-Day 2024-03-13: downloaded 30 rows
-Day 2024-03-14: filtered to nearest expiry NQH4 (30/100 rows)
-Day 2024-03-14: downloaded 30 rows
-Day 2024-03-15: filtered to nearest expiry NQM4 (30/66 rows)
-Day 2024-03-15: downloaded 30 rows
-Day 2024-03-18: filtered to nearest expiry NQM4 (30/64 rows)
-Day 2024-03-18: downloaded 30 rows
-Day 2024-03-19: filtered to nearest expiry NQM4 (30/51 rows)
-Day 2024-03-19: downloaded 30 rows
-Day 2024-03-20: filtered to nearest expiry NQM4 (30/60 rows)
-Day 2024-03-20: downloaded 30 rows
-Day 2024-03-21: filtered to nearest expiry NQM4 (30/64 rows)
-Day 2024-03-21: downloaded 30 rows
-Day 2024-03-22: filtered to nearest expiry NQM4 (30/41 rows)
-Day 2024-03-22: downloaded 30 rows
-Day 2024-03-25: filtered to nearest expiry NQM4 (30/56 rows)
-Day 2024-03-25: downloaded 30 rows
-Day 2024-03-26: filtered to nearest expiry NQM4 (30/41 rows)
-Day 2024-03-26: downloaded 30 rows
-Day 2024-03-27: filtered to nearest expiry NQM4 (30/50 rows)
-Day 2024-03-27: downloaded 30 rows
-Day 2024-03-28: filtered to nearest expiry NQM4 (30/53 rows)
-Day 2024-03-28: downloaded 30 rows
-Day 2024-03-29: no data returned
-Day 2024-04-01: filtered to nearest expiry NQM4 (30/46 rows)
-Day 2024-04-01: downloaded 30 rows
-Day 2024-04-02: filtered to nearest expiry NQM4 (30/59 rows)
-Day 2024-04-02: downloaded 30 rows
-Day 2024-04-03: filtered to nearest expiry NQM4 (30/45 rows)
-Day 2024-04-03: downloaded 30 rows
-Day 2024-04-04: filtered to nearest expiry NQM4 (30/45 rows)Downloading:  17%|██████▎                               | 122/730 [05:37<30:09,  2.98s/it]Downloading:  17%|██████▍                               | 123/730 [05:41<31:54,  3.15s/it]Downloading:  17%|██████▌                               | 126/730 [05:44<20:42,  2.06s/it]Downloading:  17%|██████▌                               | 127/730 [05:48<25:41,  2.56s/it]Downloading:  18%|██████▋                               | 128/730 [05:51<26:32,  2.65s/it]Downloading:  18%|██████▋                               | 129/730 [05:55<29:45,  2.97s/it]Downloading:  18%|██████▊                               | 130/730 [06:00<33:29,  3.35s/it]Downloading:  18%|██████▉                               | 133/730 [06:03<22:05,  2.22s/it]Downloading:  18%|██████▉                               | 134/730 [06:19<47:39,  4.80s/it]Downloading:  18%|███████                               | 135/730 [06:23<45:48,  4.62s/it]Downloading:  19%|███████                               | 136/730 [06:27<45:34,  4.60s/it]Downloading:  19%|███████▏                              | 137/730 [06:31<43:23,  4.39s/it]Downloading:  19%|███████▎                              | 140/730 [06:35<27:10,  2.76s/it]Downloading:  19%|███████▎                              | 141/730 [06:38<27:36,  2.81s/it]Downloading:  19%|███████▍                              | 142/730 [06:41<28:24,  2.90s/it]Downloading:  20%|███████▍                              | 143/730 [06:44<28:19,  2.89s/it]Downloading:  20%|███████                             | 144/730 [07:01<1:04:41,  6.62s/it]Downloading:  20%|███████▋                              | 147/730 [07:05<36:21,  3.74s/it]Downloading:  20%|███████▋                              | 148/730 [07:09<37:35,  3.88s/it]Downloading:  20%|███████▊                              | 149/730 [07:12<35:46,  3.69s/it]Downloading:  21%|███████▊                              | 150/730 [07:15<34:43,  3.59s/it]Downloading:  21%|███████▊                              | 151/730 [07:18<32:59,  3.42s/it]Downloading:  21%|████████                              | 154/730 [07:23<22:50,  2.38s/it]Downloading:  21%|████████                              | 155/730 [07:26<25:18,  2.64s/it]Downloading:  21%|████████                              | 156/730 [07:30<27:00,  2.82s/it]Downloading:  22%|████████▏                             | 157/730 [07:35<31:39,  3.31s/it]Downloading:  22%|████████▏                             | 158/730 [07:38<32:08,  3.37s/it]Downloading:  22%|████████▍                             | 161/730 [07:42<22:03,  2.33s/it]Downloading:  22%|████████▍                             | 162/730 [07:46<25:08,  2.66s/it]Downloading:  22%|████████▍                             | 163/730 [07:51<29:17,  3.10s/it]Downloading:  22%|████████▌                             | 164/730 [07:54<30:06,  3.19s/it]Downloading:  23%|████████▌                             | 165/730 [07:57<29:14,  3.11s/it]Downloading:  23%|████████▋                             | 168/730 [08:01<19:55,  2.13s/it]Downloading:  23%|████████▊                             | 169/730 [08:05<23:02,  2.46s/it]Downloading:  23%|████████▊                             | 170/730 [08:09<27:06,  2.91s/it]Downloading:  23%|████████▉                             | 171/730 [08:13<28:58,  3.11s/it]Downloading:  24%|████████▉                             | 172/730 [08:16<29:38,  3.19s/it]Downloading:  24%|█████████                             | 175/730 [08:20<19:25,  2.10s/it]Downloading:  24%|█████████▏                            | 176/730 [08:23<22:06,  2.39s/it]Downloading:  24%|█████████▏                            | 177/730 [08:26<22:22,  2.43s/it]Downloading:  24%|█████████▎                            | 178/730 [08:30<25:56,  2.82s/it]Downloading:  25%|█████████▎                            | 179/730 [08:34<29:12,  3.18s/it]Downloading:  25%|█████████▍                            | 182/730 [08:38<19:54,  2.18s/it]Downloading:  25%|█████████▌                            | 183/730 [08:41<21:56,  2.41s/it]Downloading:  25%|█████████▌                            | 184/730 [08:44<23:10,  2.55s/it]Downloading:  25%|█████████▋                            | 185/730 [08:47<23:54,  2.63s/it]Downloading:  25%|█████████▋                            | 186/730 [08:50<25:08,  2.77s/it]Downloading:  26%|█████████▊                            | 189/730 [08:54<17:04,  1.89s/it]Downloading:  26%|█████████▉                            | 190/730 [08:57<20:14,  2.25s/it]Downloading:  26%|█████████▉                            | 191/730 [09:02<25:03,  2.79s/it]Downloading:  26%|█████████▉                            | 192/730 [09:05<26:32,  2.96s/it]Downloading:  26%|██████████                            | 193/730 [09:09<28:04,  3.14s/it]Downloading:  27%|██████████▏                           | 196/730 [09:13<18:44,  2.11s/it]Downloading:  27%|██████████▎                           | 197/730 [09:16<21:03,  2.37s/it]Downloading:  27%|██████████▎                           | 198/730 [09:19<22:14,  2.51s/it]Downloading:  27%|██████████▎                           | 199/730 [09:22<22:40,  2.56s/it]Downloading:  27%|██████████▍                           | 200/730 [09:25<24:43,  2.80s/it]Downloading:  28%|██████████▌                           | 203/730 [09:29<17:18,  1.97s/it]Downloading:  28%|██████████▌                           | 204/730 [09:32<19:34,  2.23s/it]Downloading:  28%|██████████▋                           | 205/730 [09:36<21:52,  2.50s/it]Downloading:  28%|██████████▋                           | 206/730 [09:45<36:13,  4.15s/it]Downloading:  28%|██████████▊                           | 207/730 [09:49<35:36,  4.08s/it]Downloading:  29%|██████████▉                           | 210/730 [09:52<22:10,  2.56s/it]Downloading:  29%|██████████▉                           | 211/730 [09:56<23:42,  2.74s/it]Downloading:  29%|███████████                           | 212/730 [10:00<25:42,  2.98s/it]Downloading:  29%|███████████                           | 213/730 [10:03<26:53,  3.12s/it]Downloading:  29%|███████████▏                          | 214/730 [10:07<27:22,  3.18s/it]Downloading:  30%|███████████▎                          | 217/730 [10:10<18:12,  2.13s/it]Downloading:  30%|███████████▎                          | 218/730 [10:13<19:40,  2.31s/it]Downloading:  30%|███████████▍                          | 219/730 [10:19<26:58,  3.17s/it]Downloading:  30%|███████████▍                          | 220/730 [10:22<26:37,  3.13s/it]Downloading:  30%|███████████▌                          | 221/730 [10:26<26:59,  3.18s/it]Downloading:  31%|███████████▋                          | 224/730 [10:30<18:31,  2.20s/it]Downloading:  31%|███████████▋                          | 225/730 [10:34<21:45,  2.59s/it]Downloading:  31%|███████████▊                          | 226/730 [10:38<25:05,  2.99s/it]Downloading:  31%|███████████▊                          | 227/730 [10:42<26:43,  3.19s/it]Downloading:  31%|███████████▊                          | 228/730 [10:45<26:57,  3.22s/it]Downloading:  32%|████████████                          | 231/730 [10:52<23:15,  2.80s/it]Downloading:  32%|████████████                          | 232/730 [10:56<24:34,  2.96s/it]Downloading:  32%|████████████▏                         | 233/730 [11:00<26:13,  3.17s/it]Downloading:  32%|████████████▏                         | 234/730 [11:03<26:35,  3.22s/it]Downloading:  32%|████████████▏                         | 235/730 [11:07<27:15,  3.30s/it]Downloading:  33%|████████████▍                         | 238/730 [11:11<18:48,  2.29s/it]Downloading:  33%|████████████▍                         | 239/730 [11:14<20:16,  2.48s/it]Downloading:  33%|████████████▍                         | 240/730 [11:33<49:55,  6.11s/it]
-Day 2024-04-04: downloaded 30 rows
-Day 2024-04-05: filtered to nearest expiry NQM4 (30/64 rows)
-Day 2024-04-05: downloaded 30 rows
-Day 2024-04-08: filtered to nearest expiry NQM4 (30/58 rows)
-Day 2024-04-08: downloaded 30 rows
-Day 2024-04-09: filtered to nearest expiry NQM4 (30/54 rows)
-Day 2024-04-09: downloaded 30 rows
-Day 2024-04-10: filtered to nearest expiry NQM4 (30/72 rows)
-Day 2024-04-10: downloaded 30 rows
-Day 2024-04-11: filtered to nearest expiry NQM4 (30/50 rows)
-Day 2024-04-11: downloaded 30 rows
-Day 2024-04-12: filtered to nearest expiry NQM4 (30/57 rows)
-Day 2024-04-12: downloaded 30 rows
-Day 2024-04-15: filtered to nearest expiry NQM4 (30/65 rows)
-Day 2024-04-15: downloaded 30 rows
-Day 2024-04-16: filtered to nearest expiry NQM4 (30/55 rows)
-Day 2024-04-16: downloaded 30 rows
-Day 2024-04-17: filtered to nearest expiry NQM4 (30/72 rows)
-Day 2024-04-17: downloaded 30 rows
-Day 2024-04-18: filtered to nearest expiry NQM4 (30/61 rows)
-Day 2024-04-18: downloaded 30 rows
-Day 2024-04-19: filtered to nearest expiry NQM4 (30/62 rows)
-Day 2024-04-19: downloaded 30 rows
-Day 2024-04-22: filtered to nearest expiry NQM4 (30/53 rows)
-Day 2024-04-22: downloaded 30 rows
-Day 2024-04-23: filtered to nearest expiry NQM4 (30/62 rows)
-Day 2024-04-23: downloaded 30 rows
-Day 2024-04-24: filtered to nearest expiry NQM4 (30/57 rows)
-Day 2024-04-24: downloaded 30 rows
-Day 2024-04-25: filtered to nearest expiry NQM4 (30/59 rows)
-Day 2024-04-25: downloaded 30 rows
-Day 2024-04-26: filtered to nearest expiry NQM4 (30/60 rows)
-Day 2024-04-26: downloaded 30 rows
-Day 2024-04-29: filtered to nearest expiry NQM4 (30/54 rows)
-Day 2024-04-29: downloaded 30 rows
-Day 2024-04-30: filtered to nearest expiry NQM4 (30/52 rows)
-Day 2024-04-30: downloaded 30 rows
-Day 2024-05-01: filtered to nearest expiry NQM4 (30/56 rows)
-Day 2024-05-01: downloaded 30 rows
-Day 2024-05-02: filtered to nearest expiry NQM4 (30/61 rows)
-Day 2024-05-02: downloaded 30 rows
-Day 2024-05-03: filtered to nearest expiry NQM4 (30/64 rows)
-Day 2024-05-03: downloaded 30 rows
-Day 2024-05-06: filtered to nearest expiry NQM4 (30/59 rows)
-Day 2024-05-06: downloaded 30 rows
-Day 2024-05-07: filtered to nearest expiry NQM4 (30/57 rows)
-Day 2024-05-07: downloaded 30 rows
-Day 2024-05-08: filtered to nearest expiry NQM4 (30/52 rows)
-Day 2024-05-08: downloaded 30 rows
-Day 2024-05-09: filtered to nearest expiry NQM4 (30/58 rows)
-Day 2024-05-09: downloaded 30 rows
-Day 2024-05-10: filtered to nearest expiry NQM4 (30/56 rows)
-Day 2024-05-10: downloaded 30 rows
-Day 2024-05-13: filtered to nearest expiry NQM4 (30/54 rows)
-Day 2024-05-13: downloaded 30 rows
-Day 2024-05-14: filtered to nearest expiry NQM4 (30/55 rows)
-Day 2024-05-14: downloaded 30 rows
-Day 2024-05-15: filtered to nearest expiry NQM4 (30/69 rows)
-Day 2024-05-15: downloaded 30 rows
-Day 2024-05-16: filtered to nearest expiry NQM4 (30/48 rows)
-Day 2024-05-16: downloaded 30 rows
-Day 2024-05-17: filtered to nearest expiry NQM4 (30/56 rows)
-Day 2024-05-17: downloaded 30 rows
-Day 2024-05-20: filtered to nearest expiry NQM4 (30/55 rows)
-Day 2024-05-20: downloaded 30 rows
-Day 2024-05-21: filtered to nearest expiry NQM4 (30/45 rows)
-Day 2024-05-21: downloaded 30 rows
-Day 2024-05-22: filtered to nearest expiry NQM4 (30/56 rows)
-Day 2024-05-22: downloaded 30 rows
-Day 2024-05-23: filtered to nearest expiry NQM4 (30/88 rows)
-Day 2024-05-23: downloaded 30 rows
-Day 2024-05-24: filtered to nearest expiry NQM4 (30/63 rows)
-Day 2024-05-24: downloaded 30 rows
-Day 2024-05-27: filtered to nearest expiry NQM4 (30/44 rows)
-Day 2024-05-27: downloaded 30 rows
-Day 2024-05-28: filtered to nearest expiry NQM4 (30/56 rows)
-Day 2024-05-28: downloaded 30 rows
-Day 2024-05-29: filtered to nearest expiry NQM4 (30/74 rows)
-Day 2024-05-29: downloaded 30 rows
-Day 2024-05-30: filtered to nearest expiry NQM4 (30/70 rows)
-Day 2024-05-30: downloaded 30 rows
-Day 2024-05-31: filtered to nearest expiry NQM4 (30/69 rows)
-Day 2024-05-31: downloaded 30 rows
-Day 2024-06-03: filtered to nearest expiry NQM4 (30/85 rows)
-Day 2024-06-03: downloaded 30 rows
-Day 2024-06-04: filtered to nearest expiry NQM4 (30/67 rows)
-Day 2024-06-04: downloaded 30 rows
-Day 2024-06-05: filtered to nearest expiry NQM4 (30/89 rows)
-Day 2024-06-05: downloaded 30 rows
-Day 2024-06-06: filtered to nearest expiry NQM4 (30/78 rows)
-Day 2024-06-06: downloaded 30 rows
-Day 2024-06-07: filtered to nearest expiry NQM4 (30/78 rows)
-Day 2024-06-07: downloaded 30 rows
-Day 2024-06-10: filtered to nearest expiry NQM4 (30/72 rows)
-Day 2024-06-10: downloaded 30 rows
-Day 2024-06-11: filtered to nearest expiry NQM4 (30/81 rows)
-Day 2024-06-11: downloaded 30 rows
-Day 2024-06-12: filtered to nearest expiry NQM4 (30/98 rows)
-Day 2024-06-12: downloaded 30 rows
-Day 2024-06-13: filtered to nearest expiry NQM4 (30/100 rows)
-Day 2024-06-13: downloaded 30 rows
-Day 2024-06-14: filtered to nearest expiry NQM4 (30/97 rows)
-Day 2024-06-14: downloaded 30 rows
-Day 2024-06-17: filtered to nearest expiry NQM4 (30/93 rows)
-Day 2024-06-17: downloaded 30 rows
-Day 2024-06-18: filtered to nearest expiry NQM4 (30/100 rows)
-Day 2024-06-18: downloaded 30 rows
-Day 2024-06-19: filtered to nearest expiry NQM4 (30/91 rows)
-Day 2024-06-19: downloaded 30 rows
-Day 2024-06-20: filtered to nearest expiry NQM4 (30/105 rows)
-Day 2024-06-20: downloaded 30 rows
-Day 2024-06-21: filtered to nearest expiry NQU4 (30/53 rows)
-Day 2024-06-21: downloaded 30 rows
-Day 2024-06-24: filtered to nearest expiry NQU4 (30/56 rows)
-Day 2024-06-24: downloaded 30 rows
-Day 2024-06-25: filtered to nearest expiry NQU4 (30/49 rows)
-Day 2024-06-25: downloaded 30 rows
-Day 2024-06-26: filtered to nearest expiry NQU4 (30/55 rows)
-Day 2024-06-26: downloaded 30 rows
-Day 2024-06-27: filtered to nearest expiry NQU4 (30/65 rows)
-Day 2024-06-27: downloaded 30 rows
-Day 2024-06-28: filtered to nearest expiry NQU4 (30/66 rows)
-Day 2024-06-28: downloaded 30 rows
-Day 2024-07-01: filtered to nearest expiry NQU4 (30/52 rows)
-Day 2024-07-01: downloaded 30 rows
-Day 2024-07-02: filtered to nearest expiry NQU4 (30/51 rows)
-Day 2024-07-02: downloaded 30 rows
-Day 2024-07-03: filtered to nearest expiry NQU4 (30/40 rows)
-Day 2024-07-03: downloaded 30 rows
-Day 2024-07-04: filtered to nearest expiry NQU4 (30/32 rows)
-Day 2024-07-04: downloaded 30 rows
-Day 2024-07-05: filtered to nearest expiry NQU4 (30/56 rows)
-Day 2024-07-05: downloaded 30 rows
-Day 2024-07-08: filtered to nearest expiry NQU4 (30/61 rows)
-Day 2024-07-08: downloaded 30 rows
-Day 2024-07-09: filtered to nearest expiry NQU4 (30/56 rows)
-Day 2024-07-09: downloaded 30 rows
-Day 2024-07-10: filtered to nearest expiry NQU4 (30/51 rows)
-Day 2024-07-10: downloaded 30 rows
-Day 2024-07-11: filtered to nearest expiry NQU4 (30/62 rows)
-Day 2024-07-11: downloaded 30 rows
-Day 2024-07-12: filtered to nearest expiry NQU4 (30/60 rows)
-Day 2024-07-12: downloaded 30 rows
-Day 2024-07-15: filtered to nearest expiry NQU4 (30/45 rows)
-Day 2024-07-15: downloaded 30 rows
-Day 2024-07-16: filtered to nearest expiry NQU4 (30/54 rows)
-Day 2024-07-16: downloaded 30 rows
-Day 2024-07-17: filtered to nearest expiry NQU4 (30/64 rows)
-Day 2024-07-17: downloaded 30 rows
-Day 2024-07-18: filtered to nearest expiry NQU4 (30/57 rows)
-Day 2024-07-18: downloaded 30 rows
-Day 2024-07-19: filtered to nearest expiry NQU4 (30/56 rows)
-Day 2024-07-19: downloaded 30 rows
-Day 2024-07-22: filtered to nearest expiry NQU4 (30/66 rows)
-Day 2024-07-22: downloaded 30 rows
-Day 2024-07-23: filtered to nearest expiry NQU4 (30/42 rows)
-Day 2024-07-23: downloaded 30 rows
-Day 2024-07-24: filtered to nearest expiry NQU4 (30/75 rows)
-Day 2024-07-24: downloaded 30 rows
-Day 2024-07-25: filtered to nearest expiry NQU4 (30/59 rows)
-Day 2024-07-25: downloaded 30 rows
-Day 2024-07-26: filtered to nearest expiry NQU4 (30/59 rows)
-Day 2024-07-26: downloaded 30 rows
-Day 2024-07-29: filtered to nearest expiry NQU4 (30/64 rows)
-Day 2024-07-29: downloaded 30 rows
-Day 2024-07-30: filtered to nearest expiry NQU4 (30/65 rows)
-Day 2024-07-30: downloaded 30 rows
-Day 2024-07-31: filtered to nearest expiry NQU4 (30/75 rows)
-Day 2024-07-31: downloaded 30 rows
-Day 2024-08-01: filtered to nearest expiry NQU4 (30/56 rows)
-Day 2024-08-01: downloaded 30 rowsDownloading:  33%|████████████▌                         | 241/730 [11:36<43:19,  5.32s/it]Downloading:  33%|████████████▌                         | 242/730 [11:40<40:02,  4.92s/it]Downloading:  34%|████████████▊                         | 245/730 [11:43<24:07,  2.99s/it]Downloading:  34%|████████████▊                         | 246/730 [11:47<25:29,  3.16s/it]Downloading:  34%|████████████▊                         | 247/730 [11:50<25:32,  3.17s/it]Downloading:  34%|████████████▉                         | 248/730 [11:54<26:17,  3.27s/it]Downloading:  34%|████████████▉                         | 249/730 [11:57<25:49,  3.22s/it]Downloading:  35%|█████████████                         | 252/730 [12:01<17:03,  2.14s/it]Downloading:  35%|█████████████▏                        | 253/730 [12:04<18:37,  2.34s/it]Downloading:  35%|█████████████▏                        | 254/730 [12:07<19:25,  2.45s/it]Downloading:  35%|█████████████▎                        | 255/730 [12:10<20:48,  2.63s/it]Downloading:  35%|█████████████▎                        | 256/730 [12:14<23:54,  3.03s/it]Downloading:  35%|█████████████▍                        | 259/730 [12:17<16:15,  2.07s/it]Downloading:  36%|█████████████▌                        | 260/730 [12:22<20:40,  2.64s/it]Downloading:  36%|█████████████▌                        | 261/730 [12:26<21:52,  2.80s/it]Downloading:  36%|█████████████▋                        | 262/730 [12:29<23:04,  2.96s/it]Downloading:  36%|█████████████▋                        | 263/730 [12:32<23:33,  3.03s/it]Downloading:  36%|█████████████▊                        | 266/730 [12:36<15:50,  2.05s/it]Downloading:  37%|█████████████▉                        | 267/730 [12:40<18:22,  2.38s/it]Downloading:  37%|█████████████▉                        | 268/730 [12:44<20:56,  2.72s/it]Downloading:  37%|██████████████                        | 269/730 [12:47<22:14,  2.89s/it]Downloading:  37%|██████████████                        | 270/730 [12:51<24:34,  3.21s/it]Downloading:  37%|██████████████▏                       | 273/730 [12:55<16:38,  2.18s/it]Downloading:  38%|██████████████▎                       | 274/730 [12:58<18:33,  2.44s/it]Downloading:  38%|██████████████▎                       | 275/730 [13:02<20:23,  2.69s/it]Downloading:  38%|██████████████▎                       | 276/730 [13:05<21:34,  2.85s/it]Downloading:  38%|██████████████▍                       | 277/730 [13:08<21:51,  2.90s/it]Downloading:  38%|██████████████▌                       | 280/730 [13:11<14:31,  1.94s/it]Downloading:  38%|██████████████▋                       | 281/730 [13:14<16:03,  2.14s/it]Downloading:  39%|██████████████▋                       | 282/730 [13:17<17:09,  2.30s/it]Downloading:  39%|██████████████▋                       | 283/730 [13:21<19:50,  2.66s/it]Downloading:  39%|██████████████▊                       | 284/730 [13:25<22:49,  3.07s/it]Downloading:  39%|██████████████▉                       | 287/730 [13:29<15:06,  2.05s/it]Downloading:  39%|██████████████▉                       | 288/730 [13:32<16:21,  2.22s/it]Downloading:  40%|███████████████                       | 289/730 [13:35<18:55,  2.57s/it]Downloading:  40%|███████████████                       | 290/730 [13:39<19:56,  2.72s/it]Downloading:  40%|███████████████▏                      | 291/730 [13:42<21:23,  2.92s/it]Downloading:  40%|███████████████▎                      | 294/730 [13:46<14:32,  2.00s/it]Downloading:  40%|███████████████▎                      | 295/730 [13:49<15:59,  2.21s/it]Downloading:  41%|███████████████▍                      | 296/730 [13:53<18:53,  2.61s/it]Downloading:  41%|███████████████▍                      | 297/730 [13:56<19:44,  2.74s/it]Downloading:  41%|███████████████▌                      | 298/730 [13:59<20:10,  2.80s/it]Downloading:  41%|███████████████▋                      | 301/730 [14:02<13:40,  1.91s/it]Downloading:  41%|███████████████▋                      | 302/730 [14:06<15:47,  2.21s/it]Downloading:  42%|███████████████▊                      | 303/730 [14:10<19:34,  2.75s/it]Downloading:  42%|███████████████▊                      | 304/730 [14:13<19:38,  2.77s/it]Downloading:  42%|███████████████▉                      | 305/730 [14:17<21:33,  3.04s/it]Downloading:  42%|████████████████                      | 308/730 [14:20<14:08,  2.01s/it]Downloading:  42%|████████████████                      | 309/730 [14:23<15:42,  2.24s/it]Downloading:  42%|████████████████▏                     | 310/730 [14:27<18:12,  2.60s/it]Downloading:  43%|████████████████▏                     | 311/730 [14:31<20:36,  2.95s/it]Downloading:  43%|████████████████▏                     | 312/730 [14:35<21:45,  3.12s/it]Downloading:  43%|████████████████▍                     | 315/730 [14:38<14:24,  2.08s/it]Downloading:  43%|████████████████▍                     | 316/730 [14:43<18:12,  2.64s/it]Downloading:  43%|████████████████▌                     | 317/730 [14:46<19:06,  2.78s/it]Downloading:  44%|████████████████▌                     | 318/730 [14:50<21:03,  3.07s/it]Downloading:  44%|████████████████▌                     | 319/730 [14:54<22:33,  3.29s/it]Downloading:  44%|████████████████▊                     | 322/730 [14:59<16:05,  2.37s/it]Downloading:  44%|████████████████▊                     | 323/730 [15:02<17:40,  2.61s/it]Downloading:  44%|████████████████▊                     | 324/730 [15:06<18:39,  2.76s/it]Downloading:  45%|████████████████▉                     | 325/730 [15:09<19:34,  2.90s/it]Downloading:  45%|████████████████▉                     | 326/730 [15:12<20:22,  3.03s/it]Downloading:  45%|█████████████████▏                    | 329/730 [15:16<14:25,  2.16s/it]Downloading:  45%|█████████████████▏                    | 330/730 [15:19<15:11,  2.28s/it]Downloading:  45%|█████████████████▏                    | 331/730 [15:23<17:40,  2.66s/it]Downloading:  45%|█████████████████▎                    | 332/730 [15:27<19:10,  2.89s/it]Downloading:  46%|█████████████████▎                    | 333/730 [15:31<21:03,  3.18s/it]Downloading:  46%|█████████████████▍                    | 336/730 [15:34<14:04,  2.14s/it]Downloading:  46%|█████████████████▌                    | 337/730 [15:38<16:22,  2.50s/it]Downloading:  46%|█████████████████▌                    | 338/730 [15:41<16:12,  2.48s/it]Downloading:  46%|█████████████████▋                    | 339/730 [15:45<18:10,  2.79s/it]Downloading:  47%|█████████████████▋                    | 340/730 [15:47<17:53,  2.75s/it]Downloading:  47%|█████████████████▊                    | 343/730 [15:51<12:20,  1.91s/it]Downloading:  47%|█████████████████▉                    | 344/730 [15:54<14:26,  2.25s/it]Downloading:  47%|█████████████████▉                    | 345/730 [15:58<16:39,  2.60s/it]Downloading:  47%|██████████████████                    | 346/730 [16:01<17:27,  2.73s/it]Downloading:  48%|██████████████████                    | 347/730 [16:05<18:53,  2.96s/it]Downloading:  48%|██████████████████▏                   | 350/730 [16:08<12:26,  1.97s/it]Downloading:  48%|██████████████████▎                   | 351/730 [16:11<13:38,  2.16s/it]Downloading:  48%|██████████████████▎                   | 352/730 [16:16<18:06,  2.87s/it]Downloading:  48%|██████████████████▍                   | 353/730 [16:20<19:18,  3.07s/it]Downloading:  48%|██████████████████▍                   | 354/730 [16:23<18:31,  2.96s/it]Downloading:  49%|██████████████████▌                   | 357/730 [16:26<12:04,  1.94s/it]Downloading:  49%|██████████████████▋                   | 358/730 [16:30<14:51,  2.40s/it]Downloading:  49%|██████████████████▋                   | 359/730 [16:33<15:17,  2.47s/it]Downloading:  49%|██████████████████▋                   | 360/730 [16:35<15:40,  2.54s/it]
-Day 2024-08-02: filtered to nearest expiry NQU4 (30/76 rows)
-Day 2024-08-02: downloaded 30 rows
-Day 2024-08-05: filtered to nearest expiry NQU4 (30/82 rows)
-Day 2024-08-05: downloaded 30 rows
-Day 2024-08-06: filtered to nearest expiry NQU4 (30/63 rows)
-Day 2024-08-06: downloaded 30 rows
-Day 2024-08-07: filtered to nearest expiry NQU4 (30/64 rows)
-Day 2024-08-07: downloaded 30 rows
-Day 2024-08-08: filtered to nearest expiry NQU4 (30/66 rows)
-Day 2024-08-08: downloaded 30 rows
-Day 2024-08-09: filtered to nearest expiry NQU4 (30/54 rows)
-Day 2024-08-09: downloaded 30 rows
-Day 2024-08-12: filtered to nearest expiry NQU4 (30/60 rows)
-Day 2024-08-12: downloaded 30 rows
-Day 2024-08-13: filtered to nearest expiry NQU4 (30/62 rows)
-Day 2024-08-13: downloaded 30 rows
-Day 2024-08-14: filtered to nearest expiry NQU4 (30/69 rows)
-Day 2024-08-14: downloaded 30 rows
-Day 2024-08-15: filtered to nearest expiry NQU4 (30/66 rows)
-Day 2024-08-15: downloaded 30 rows
-Day 2024-08-16: filtered to nearest expiry NQU4 (30/59 rows)
-Day 2024-08-16: downloaded 30 rows
-Day 2024-08-19: filtered to nearest expiry NQU4 (30/61 rows)
-Day 2024-08-19: downloaded 30 rows
-Day 2024-08-20: filtered to nearest expiry NQU4 (30/51 rows)
-Day 2024-08-20: downloaded 30 rows
-Day 2024-08-21: filtered to nearest expiry NQU4 (30/52 rows)
-Day 2024-08-21: downloaded 30 rows
-Day 2024-08-22: filtered to nearest expiry NQU4 (30/65 rows)
-Day 2024-08-22: downloaded 30 rows
-Day 2024-08-23: filtered to nearest expiry NQU4 (30/53 rows)
-Day 2024-08-23: downloaded 30 rows
-Day 2024-08-26: filtered to nearest expiry NQU4 (30/51 rows)
-Day 2024-08-26: downloaded 30 rows
-Day 2024-08-27: filtered to nearest expiry NQU4 (30/74 rows)
-Day 2024-08-27: downloaded 30 rows
-Day 2024-08-28: filtered to nearest expiry NQU4 (30/60 rows)
-Day 2024-08-28: downloaded 30 rows
-Day 2024-08-29: filtered to nearest expiry NQU4 (30/74 rows)
-Day 2024-08-29: downloaded 30 rows
-Day 2024-08-30: filtered to nearest expiry NQU4 (30/64 rows)
-Day 2024-08-30: downloaded 30 rows
-Day 2024-09-02: filtered to nearest expiry NQU4 (30/42 rows)
-Day 2024-09-02: downloaded 30 rows
-Day 2024-09-03: filtered to nearest expiry NQU4 (30/74 rows)
-Day 2024-09-03: downloaded 30 rows
-Day 2024-09-04: filtered to nearest expiry NQU4 (30/76 rows)
-Day 2024-09-04: downloaded 30 rows
-Day 2024-09-05: filtered to nearest expiry NQU4 (30/73 rows)
-Day 2024-09-05: downloaded 30 rows
-Day 2024-09-06: filtered to nearest expiry NQU4 (30/87 rows)
-Day 2024-09-06: downloaded 30 rows
-Day 2024-09-09: filtered to nearest expiry NQU4 (30/81 rows)
-Day 2024-09-09: downloaded 30 rows
-Day 2024-09-10: filtered to nearest expiry NQU4 (30/79 rows)
-Day 2024-09-10: downloaded 30 rows
-Day 2024-09-11: filtered to nearest expiry NQU4 (30/90 rows)
-Day 2024-09-11: downloaded 30 rows
-Day 2024-09-12: filtered to nearest expiry NQU4 (30/92 rows)
-Day 2024-09-12: downloaded 30 rows
-Day 2024-09-13: filtered to nearest expiry NQU4 (30/90 rows)
-Day 2024-09-13: downloaded 30 rows
-Day 2024-09-16: filtered to nearest expiry NQU4 (30/93 rows)
-Day 2024-09-16: downloaded 30 rows
-Day 2024-09-17: filtered to nearest expiry NQU4 (30/99 rows)
-Day 2024-09-17: downloaded 30 rows
-Day 2024-09-18: filtered to nearest expiry NQU4 (30/94 rows)
-Day 2024-09-18: downloaded 30 rows
-Day 2024-09-19: filtered to nearest expiry NQU4 (30/104 rows)
-Day 2024-09-19: downloaded 30 rows
-Day 2024-09-20: filtered to nearest expiry NQZ4 (30/35 rows)
-Day 2024-09-20: downloaded 30 rows
-Day 2024-09-23: filtered to nearest expiry NQZ4 (30/35 rows)
-Day 2024-09-23: downloaded 30 rows
-Day 2024-09-24: filtered to nearest expiry NQZ4 (30/38 rows)
-Day 2024-09-24: downloaded 30 rows
-Day 2024-09-25: filtered to nearest expiry NQZ4 (30/55 rows)
-Day 2024-09-25: downloaded 30 rows
-Day 2024-09-26: filtered to nearest expiry NQZ4 (30/47 rows)
-Day 2024-09-26: downloaded 30 rows
-Day 2024-09-27: filtered to nearest expiry NQZ4 (30/39 rows)
-Day 2024-09-27: downloaded 30 rows
-Day 2024-09-30: filtered to nearest expiry NQZ4 (30/46 rows)
-Day 2024-09-30: downloaded 30 rows
-Day 2024-10-01: filtered to nearest expiry NQZ4 (30/71 rows)
-Day 2024-10-01: downloaded 30 rows
-Day 2024-10-02: filtered to nearest expiry NQZ4 (30/61 rows)
-Day 2024-10-02: downloaded 30 rows
-Day 2024-10-03: filtered to nearest expiry NQZ4 (30/48 rows)
-Day 2024-10-03: downloaded 30 rows
-Day 2024-10-04: filtered to nearest expiry NQZ4 (30/53 rows)
-Day 2024-10-04: downloaded 30 rows
-Day 2024-10-07: filtered to nearest expiry NQZ4 (30/51 rows)
-Day 2024-10-07: downloaded 30 rows
-Day 2024-10-08: filtered to nearest expiry NQZ4 (30/48 rows)
-Day 2024-10-08: downloaded 30 rows
-Day 2024-10-09: filtered to nearest expiry NQZ4 (30/50 rows)
-Day 2024-10-09: downloaded 30 rows
-Day 2024-10-10: filtered to nearest expiry NQZ4 (30/47 rows)
-Day 2024-10-10: downloaded 30 rows
-Day 2024-10-11: filtered to nearest expiry NQZ4 (30/46 rows)
-Day 2024-10-11: downloaded 30 rows
-Day 2024-10-14: filtered to nearest expiry NQZ4 (30/50 rows)
-Day 2024-10-14: downloaded 30 rows
-Day 2024-10-15: filtered to nearest expiry NQZ4 (30/48 rows)
-Day 2024-10-15: downloaded 30 rows
-Day 2024-10-16: filtered to nearest expiry NQZ4 (30/52 rows)
-Day 2024-10-16: downloaded 30 rows
-Day 2024-10-17: filtered to nearest expiry NQZ4 (30/57 rows)
-Day 2024-10-17: downloaded 30 rows
-Day 2024-10-18: filtered to nearest expiry NQZ4 (30/47 rows)
-Day 2024-10-18: downloaded 30 rows
-Day 2024-10-21: filtered to nearest expiry NQZ4 (30/50 rows)
-Day 2024-10-21: downloaded 30 rows
-Day 2024-10-22: filtered to nearest expiry NQZ4 (30/57 rows)
-Day 2024-10-22: downloaded 30 rows
-Day 2024-10-23: filtered to nearest expiry NQZ4 (30/33 rows)
-Day 2024-10-23: downloaded 30 rows
-Day 2024-10-24: filtered to nearest expiry NQZ4 (30/49 rows)
-Day 2024-10-24: downloaded 30 rows
-Day 2024-10-25: filtered to nearest expiry NQZ4 (30/69 rows)
-Day 2024-10-25: downloaded 30 rows
-Day 2024-10-28: filtered to nearest expiry NQZ4 (30/63 rows)
-Day 2024-10-28: downloaded 30 rows
-Day 2024-10-29: filtered to nearest expiry NQZ4 (30/54 rows)
-Day 2024-10-29: downloaded 30 rows
-Day 2024-10-30: filtered to nearest expiry NQZ4 (30/68 rows)
-Day 2024-10-30: downloaded 30 rows
-Day 2024-10-31: filtered to nearest expiry NQZ4 (30/77 rows)
-Day 2024-10-31: downloaded 30 rows
-Day 2024-11-01: filtered to nearest expiry NQZ4 (30/59 rows)
-Day 2024-11-01: downloaded 30 rows
-Day 2024-11-04: filtered to nearest expiry NQZ4 (30/56 rows)
-Day 2024-11-04: downloaded 30 rows
-Day 2024-11-05: filtered to nearest expiry NQZ4 (30/58 rows)
-Day 2024-11-05: downloaded 30 rows
-Day 2024-11-06: filtered to nearest expiry NQZ4 (30/68 rows)
-Day 2024-11-06: downloaded 30 rows
-Day 2024-11-07: filtered to nearest expiry NQZ4 (30/60 rows)
-Day 2024-11-07: downloaded 30 rows
-Day 2024-11-08: filtered to nearest expiry NQZ4 (30/46 rows)
-Day 2024-11-08: downloaded 30 rows
-Day 2024-11-11: filtered to nearest expiry NQZ4 (30/54 rows)
-Day 2024-11-11: downloaded 30 rows
-Day 2024-11-12: filtered to nearest expiry NQZ4 (30/45 rows)
-Day 2024-11-12: downloaded 30 rows
-Day 2024-11-13: filtered to nearest expiry NQZ4 (30/48 rows)
-Day 2024-11-13: downloaded 30 rows
-Day 2024-11-14: filtered to nearest expiry NQZ4 (30/49 rows)
-Day 2024-11-14: downloaded 30 rows
-Day 2024-11-15: filtered to nearest expiry NQZ4 (30/57 rows)
-Day 2024-11-15: downloaded 30 rows
-Day 2024-11-18: filtered to nearest expiry NQZ4 (30/55 rows)
-Day 2024-11-18: downloaded 30 rows
-Day 2024-11-19: filtered to nearest expiry NQZ4 (30/53 rows)
-Day 2024-11-19: downloaded 30 rows
-Day 2024-11-20: filtered to nearest expiry NQZ4 (30/61 rows)
-Day 2024-11-20: downloaded 30 rows
-Day 2024-11-21: filtered to nearest expiry NQZ4 (30/68 rows)
-Day 2024-11-21: downloaded 30 rows
-Day 2024-11-22: filtered to nearest expiry NQZ4 (30/65 rows)
-Day 2024-11-22: downloaded 30 rows
-Day 2024-11-25: filtered to nearest expiry NQZ4 (30/71 rows)
-Day 2024-11-25: downloaded 30 rows
-Day 2024-11-26: filtered to nearest expiry NQZ4 (30/66 rows)
-Day 2024-11-26: downloaded 30 rows
-Day 2024-11-27: filtered to nearest expiry NQZ4 (30/56 rows)
-Day 2024-11-27: downloaded 30 rows
-Day 2024-11-28: filtered to nearest expiry NQZ4 (30/42 rows)
-Day 2024-11-28: downloaded 30 rows
-Day 2024-11-29: filtered to nearest expiry NQZ4 (30/56 rows)Downloading:  49%|██████████████████▊                   | 361/730 [16:39<16:40,  2.71s/it]Downloading:  50%|██████████████████▉                   | 364/730 [16:42<11:03,  1.81s/it]Downloading:  50%|███████████████████                   | 365/730 [16:45<12:46,  2.10s/it]Downloading:  50%|███████████████████                   | 366/730 [16:49<14:55,  2.46s/it]Downloading:  50%|███████████████████                   | 367/730 [16:52<15:36,  2.58s/it]Downloading:  50%|███████████████████▏                  | 368/730 [16:55<16:09,  2.68s/it]Downloading:  51%|███████████████████▎                  | 371/730 [16:57<10:42,  1.79s/it]Downloading:  51%|███████████████████▎                  | 372/730 [17:01<12:41,  2.13s/it]Downloading:  51%|███████████████████▍                  | 373/730 [17:06<16:11,  2.72s/it]Downloading:  51%|███████████████████▍                  | 374/730 [17:09<17:37,  2.97s/it]

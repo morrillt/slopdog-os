@@ -1,9 +1,0 @@
-{
-  "name": "browser_console_messages",
-  "description": "Returns all console messages",
-  "arguments": {
-    "type": "object",
-    "properties": {},
-    "required": []
-  }
-}
