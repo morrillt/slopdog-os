@@ -1,6 +1,7 @@
 project:
   name: "UNNAMED"
   current_mode: ""
+  path: 
 execution:
   current_epic: ""
   current_ticket: ""
@@ -11,4 +12,3 @@ execution:
 paths:
   plans: "plans/"
   docs: "docs/"
-  research: "docs/research/"

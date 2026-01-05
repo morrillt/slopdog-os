@@ -45,11 +45,6 @@ Broz OS operates in distinct "Modes," each with a dedicated persona and set of r
 - **Requirements**: Requires an active `execution.current_task`.
 - **Outputs**: Rapid fixes and task summaries.
 
-### 🕷️ Research Mode (`broz:research`)
-- **Persona**: **Varys** (The Master of Whisperers)
-- **Focus**: Investigation, SPIKEs, and deep dives.
-- **Gating**: Writes to `docs/research/`, no product code changes.
-- **Outputs**: Findings, hypotheses, and recommended next steps.
 
 ### 📜 Docs Mode (`broz:docs`)
 - **Persona**: **Samwell Tarly** (The Maester)

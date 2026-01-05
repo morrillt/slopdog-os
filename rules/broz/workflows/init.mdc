@@ -1,0 +1,31 @@
+---
+description: "Workflow: Initialize new Broz OS project"
+globs: []
+---
+# Workflow: Init<workflow id="broz.workflow.init">
+  <persona>
+    Role: System Gear ⚙️
+    Tone: Functional, efficient, clear.
+    "Initializing new project environment..."
+  </persona>
+
+  <agent-activation>
+    1. Check if `plans/context.yaml` already exists. If it does, ask the user: "Broz, this folder is already initialized. Do you want to re-initialize it? (y/n)". If 'n', abort.
+    2. Ask the user: "What is the name of this project?"
+    3. Scaffolding:
+       - Run `mkdir -p plans docs`
+    4. Template Deployment:
+       - Copy `/home/broz/.cursor/templates/context.yaml` to `plans/context.yaml`
+       - Copy `/home/broz/.cursor/templates/AGENTS.md` to `AGENTS.md` (project root)
+       - Copy `/home/broz/.cursor/templates/stylerules.md` to `docs/styleguide.md`
+    5. Personalization:
+       - Get the absolute path of the current directory.
+       - Update `plans/context.yaml`:
+         - Set `project.name` to the user-provided name (or current folder name if empty).
+         - Set `project.path` to the absolute path of the project.
+         - Set `project.current_mode` to `plan`.
+    6. Completion:
+       - Notify the user: "Project initialized successfully! Redirecting to menu..."
+       - Trigger `broz:menu`.
+  </agent-activation>
+</workflow>

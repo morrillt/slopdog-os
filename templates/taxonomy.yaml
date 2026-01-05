@@ -1,0 +1,256 @@
+meta:
+  title: "RockCap taxonomy (source of truth)"
+  updated: "2025-12-16"
+  repo:
+    path: docs/taxonomy.yaml
+  description: >
+    Single source of truth for allowed front-matter facets + tags across this repo.
+    Workflows should keep this file current by adding newly introduced tags/facets here
+    (following naming + depth rules) instead of leaving “unknown tag” drift.
+  maintenance_rules:
+    - "keep depth <= 4"
+    - "lowercase + hyphenated"
+    - "prefer facets for stable identifiers (strategy.slug/version, repo.path)"
+    - "tags are multi-select; avoid overfitting with ultra-specific tags"
+
+# -----------------------------------------------------------------------------
+# Canonical value sets
+# -----------------------------------------------------------------------------
+# - facets: structured metadata fields (good for IDs + filtering)
+# - tags: multi-select categorical labels (good for graphing + discovery)
+
+facets:
+  type: [plan, strategy, note, changelog]
+  status: [draft, active, deprecated, done]
+  epic:
+    # epic information for tickets
+    number: string  # e.g., "EPIC-003"
+    name: string    # e.g., "Bulletproof backtest epic"
+  strategy:
+    # maps to the strategy files / implementation
+    slug: string
+    version: string
+  repo:
+    path: string
+
+descriptions:
+  facets:
+    type:
+      plan: "Planning artifacts (epics/tickets/tasks)."
+      strategy: "Strategy documentation and related references."
+      note: "General notes / research / how-tos."
+      changelog: "Release/change notes."
+    status:
+      draft: "Work in progress; may be incomplete."
+      active: "Current and in use."
+      deprecated: "Kept for reference; not recommended for new work."
+      done: "Completed (primarily used for plan tickets)."
+    epic:
+      number: "Epic identifier, e.g. EPIC-003."
+      name: "Human-readable epic name."
+    strategy:
+      slug: "Stable strategy slug, e.g. orb-retest-breakout."
+      version: "Strategy version, e.g. v2."
+    repo:
+      path: "Repo-relative path to the file."
+  tags:
+    "plan/epic": "Planning epic container document."
+    "plan/ticket": "Planning ticket intended for Build/Task execution."
+    "plan/task": "Lightweight one-off task log."
+    "doc/howto": "How-to documentation."
+    "doc/beware": "Cautionary documentation / pitfalls."
+    "doc/broz-oss": "Broz OSS documentation (modes, workflows, operations)."
+    "audience/dev": "Primarily for developers."
+    "audience/stakeholder": "Readable/valuable for non-dev stakeholders."
+    "meta/index": "Index/listing doc."
+    "meta/template": "Template file."
+    "meta/glossary": "Glossary/definitions."
+    "meta/onboarding": "Onboarding guide."
+    "ops/bug": "Bug work."
+    "ops/perf": "Performance work."
+    "ops/security": "Security work."
+    "ops/migration": "Migration work."
+    "ops/refactor": "Refactor work."
+    "ops/debt": "Tech debt work."
+
+  review:
+    state:
+      pending: "Not yet reviewed by tech lead."
+      approved: "Approved in code review; ready to mark Done."
+      changes_requested: "Review found issues; changes required."
+      blocked: "Review blocked by critical issues (tests/spec/false completion)."
+    ac_results: "Per-AC implementation verdicts with evidence + tests."
+    task_results: "Per-top-level-task verification verdicts with evidence."
+    concerns: "Structured review concerns (machine-readable mirror of TECH LEAD REVIEW)."
+
+  questions:
+    items: "List of open/resolved questions for the ticket (single source of truth)."
+
+schemas:
+  questions:
+    items:
+      required_keys: [id, status, owner, question, answer]
+      status_values: [open, resolved]
+      owner_values: [PO, Dev, TechLead]
+      notes:
+        - "Use questions.items as the single source of truth (avoid duplicating in markdown body)."
+        - "`id` should be Q-<n> (Q-1, Q-2, ...)."
+        - "If status=open then answer may be empty; if status=resolved then answer must be non-empty."
+  review:
+    ac_results:
+      required_keys: [id, status, evidence, tests]
+      status_values: [implemented, partial, missing]
+      notes:
+        - "`id` must match an AC checkbox ID in the ticket body (e.g. AC-1)."
+        - "`evidence` should be repo-relative with a line range: path/to/file.ts:12-44"
+        - "`tests` should be repo-relative file paths under tests/ (unit and/or e2e)."
+    task_results:
+      required_keys: [id, status, evidence]
+      status_values: [verified, questionable, not_done]
+      notes:
+        - "`id` should be Task-<n> aligned to top-level Tasks ordering (Task-1, Task-2, ...)."
+        - "Only include top-level tasks; subtasks are validated indirectly."
+        - "`evidence` should be repo-relative with a line range: path/to/file.ts:12-44"
+    concerns:
+      required_keys: [id, status, type, note, priority, resolution]
+      status_values: [open, resolved]
+      type_values: [Spec, KISS, Tests, Risk, Docs, Taxonomy]
+      priority_values: [star, normal]
+      notes:
+        - "`id` should be C-<n> (C-1, C-2, ...)."
+        - "`priority: star` means this concern must be resolved before marking Done."
+        - "If status=open then resolution may be empty; if status=resolved then resolution must be non-empty."
+
+tags:
+  plan:
+    - epic
+    - ticket
+    - task
+
+  domain:
+    indicator:
+      - atr
+      - orb
+    strategy:
+      - orb-retest-breakout
+      - stepped-no-orb
+      # Additional strategy slugs can be added as needed
+    tag:
+      - stoploss
+      - takeprofit
+      - entry
+      - exit
+      - data-candles
+
+  doc:
+    - howto
+    - beware
+    - broz-oss
+
+  tech:
+    frontend:
+      - ui
+      - stores
+      - hooks
+      - feature-spec
+      - architecture
+    backend:
+      - api
+      - lib
+      - architecture
+    scripts:
+      - dl
+      - analyze
+      - util
+    testing: []
+    logging: []
+    infra: []
+
+  ops:
+    - bug
+    - perf
+    - security
+    - migration
+    - refactor
+    - debt
+
+  meta:
+    - index
+    - template
+    - glossary
+    - onboarding
+
+  audience:
+    - dev
+    - stakeholder
+
+notes:
+  audience: [dev, user]
+  rules:
+    - "tags are multi-select"
+    - "keep depth <= 4"
+    - "lowercase + hyphenated"
+    - "use facets for IDs (strategy.slug/version, repo.path)"
+
+# -----------------------------------------------------------------------------
+# Front-matter schemas (guidance for UI + validation)
+# -----------------------------------------------------------------------------
+# Goal: keep docs flexible, but make expectations explicit per doc type/subtype.
+frontmatter_schemas:
+  common:
+    required:
+      - title
+      - updated
+      - facets.type
+      - facets.status
+      - facets.repo.path
+      - tags
+    notes:
+      - "`updated` is managed automatically by the UI/API on save."
+      - "`facets.repo.path` is treated as immutable once created (locked in UI/API)."
+
+  strategy:
+    required:
+      - facets.strategy.slug
+      - facets.strategy.version
+    optional:
+      - description
+
+  plan:
+    optional:
+      - description
+    subtypes:
+      ticket:
+        required:
+          - facets.epic.number
+          - facets.epic.name
+          - questions.updated
+          - questions.items
+          - validation.state
+          - validation.updated
+          - validation.issues
+          - review.state
+          - review.updated
+          - review.ac_results
+          - review.task_results
+          - review.concerns
+        notes:
+          - "Ticket workflow status (Pending/Ready/In Progress/Review/Done) lives in the markdown body as `Status:`."
+      task:
+        notes:
+          - "Tasks are lightweight; keep front-matter minimal and consistent."
+
+  note:
+    optional:
+      - description
+
+  changelog:
+    optional:
+      - description
+
+
+
+
+
+
+

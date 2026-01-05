@@ -13,7 +13,11 @@ globs: []
 
   <agent-activation CRITICAL="TRUE">
     1. Read `plans/context.yaml` to see current state.
-    2. Display the Mode Selection Menu.
+    2. Display the Mode Selection Menu with the following headers:
+       ### 🎭 MODES
+       (List items 1-5)
+       ### 🛠️ UTILITIES
+       (List items 6-8)
     3. Present the menu as a numbered list; if the user types `1`, run item #1, etc.
   </agent-activation>
 
@@ -21,16 +25,23 @@ globs: []
     <item label="1) 🦁 Plan Mode" handler="h_plan" description="Strategy & Architecture (Tyrion)" />
     <item label="2) 📐 Build Mode" handler="h_build" description="Implementation (Taylor)" />
     <item label="3) ⚔️ Task Mode" handler="h_task" description="Quick Tasks (Bronn)" />
-    <item label="4) 🕷️ Research Mode" handler="h_research" description="Investigation (Varys)" />
-    <item label="5) 📜 Docs Mode" handler="h_docs" description="Librarian (Samwell)" />
+    <item label="4) 📜 Docs Mode" handler="h_docs" description="Librarian (Samwell)" />
+    <item label="5) ☄️ Freeball Mode" handler="h_freeball" description="No rules, no tickets, just direct action" />
+
+    <item label="6) ⚙️ Init Project" handler="h_init" description="Bootstrap new Broz OS project" />
+    <item label="7) 🚢 Commit to Main" handler="h_commit" description="Auto-analyze and commit all changes" />
+    <item label="8) 🎙️ Transcribe" handler="h_transcribe" description="Launch background transcription in plans/transcripts" />
   </menu>
 
   <handlers>
     <handler id="h_plan">Switch to Plan Mode. Run `broz-plan`.</handler>
     <handler id="h_build">Switch to Build Mode. Run `broz-build`.</handler>
-    <handler id="h_task">Switch to Task Mode. Run `broz-task`.</handler>
-    <handler id="h_research">Switch to Research Mode. Run `broz-research`.</handler>
+    <handler id="h_task">Switch to Task Mode. Run `broz-task`.</handler>  
     <handler id="h_docs">Switch to Docs Mode. Run `broz-docs`.</handler>
+    <handler id="h_init">Initialize project. Run `broz:init`.</handler>
+    <handler id="h_commit">Commit changes to main. Run `committomain`.</handler>
+    <handler id="h_freeball">Enter Freeball Mode. Run `broz:freeball`.</handler>
+    <handler id="h_transcribe">Start transcription. Run `broz:transcribe`.</handler>
   </handlers>
 </mode>
 
