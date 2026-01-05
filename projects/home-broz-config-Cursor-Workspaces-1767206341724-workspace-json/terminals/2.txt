@@ -1,6 +1,6 @@
 ---
-pid: 7525
-cwd: /home/broz/playground/networkissues
+pid: 13252
+cwd: /home/broz/code/rockcap
 ---
 source: Error encountered while sourcing file “/home/broz/.cargo/env.fish”:
 source: No such file or directory
@@ -19,4 +19,4 @@ from sourcing file ~/.config/fish/config.fish
         called during startup
 source: Error encountered while sourcing file “/usr/share/doc/find-the-command/ftc.fish”:
 source: No such file or directory
-broz@broz-ThinkPad ~/p/networkissues (main)>
+broz@broz-ThinkPad ~/c/rockcap (modularloggar)>

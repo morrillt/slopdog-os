@@ -1,0 +1,764 @@
+--- FILEBOT ACTUAL RUN START ---
+Bad system encoding: ANSI_X3.4-1968
+* Please configure your locale with LANG=C.UTF-8 or LANG=en_US.UTF-8
+Rename episodes using [TVmaze] with [Airdate Order]
+Failed to read NFO file: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E04 - Nothing???s Wrong With It, I Just Don???t Need It Anymore.nfo: No Such File: Malformed input or input contains unmappable characters: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E04 - Nothing???s Wrong With It, I Just Don???t Need It Anymore.nfo
+Failed to read NFO file: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E02 - A Hundred Bucks Says You Won???t.nfo: No Such File: Malformed input or input contains unmappable characters: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E02 - A Hundred Bucks Says You Won???t.nfo
+Failed to read NFO file: /das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E10 - Once Upon a Time???.nfo: No Such File: Malformed input or input contains unmappable characters: /das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E10 - Once Upon a Time???.nfo
+Lookup via [] [Alien: Earth]
+Fetching episode data for [Alien: Earth]
+* Alien: Earth [52336] | 8 episodes | 1x01-08
+Lookup via [] [Alien: Earth]
+Fetching episode data for [Alien: Earth]
+* Alien: Earth [52336] | 8 episodes | 1x01-08
+Failed to read NFO file: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E04 - Nothing???s Wrong With It, I Just Don???t Need It Anymore.nfo: No Such File: Malformed input or input contains unmappable characters: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E04 - Nothing???s Wrong With It, I Just Don???t Need It Anymore.nfo
+Failed to read NFO file: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E02 - A Hundred Bucks Says You Won???t.nfo: No Such File: Malformed input or input contains unmappable characters: /das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E02 - A Hundred Bucks Says You Won???t.nfo
+Lookup via [] [Bad Monkey]
+Fetching episode data for [Bad Monkey]
+* Bad Monkey [56778] | 10 episodes | 1x01-10
+Lookup via [] [Bad Monkey]
+Fetching episode data for [Bad Monkey]
+* Bad Monkey [56778] | 10 episodes | 1x01-10
+Lookup via [] [Billions]
+Fetching episode data for [Billions]
+* Billions [3606] | 84 episodes | 1x01-12 .. 2x01-12 .. 3x01-12 .. 4x01-12 .. 5x01-12 .. 6x01-12 .. 7x01-12
+Fetching episode data for [The Foods That Make Billions]
+* The Foods That Make Billions [28501] | 3 episodes | 1x01-03
+* Billions [3606] | 84 episodes | 1x01-12 .. 2x01-12 .. 3x01-12 .. 4x01-12 .. 5x01-12 .. 6x01-12 .. 7x01-12
+Lookup via [] [Billions]
+Fetching episode data for [Billions]
+* Billions [3606] | 84 episodes | 1x01-12 .. 2x01-12 .. 3x01-12 .. 4x01-12 .. 5x01-12 .. 6x01-12 .. 7x01-12
+Fetching episode data for [The Foods That Make Billions]
+* The Foods That Make Billions [28501] | 3 episodes | 1x01-03
+* Billions [3606] | 84 episodes | 1x01-12 .. 2x01-12 .. 3x01-12 .. 4x01-12 .. 5x01-12 .. 6x01-12 .. 7x01-12
+Lookup via [] [Couples Therapy]
+Fetching episode data for [Couples Therapy]
+* Couples Therapy [43299] | 54 episodes | 1x01-09 .. 2x01-09 .. 3x01-18 .. 4x01-18
+Fetching episode data for [Couples Therapy]
+* Couples Therapy [43299] | 54 episodes | 1x01-09 .. 2x01-09 .. 3x01-18 .. 4x01-18
+* Couples Therapy [5526] | 60 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-12 .. 5x01-10 .. 6x01-10
+Fetching episode data for [Couples Therapy]
+* Couples Therapy [74097] | 10 episodes | 1x01-10
+* Couples Therapy [43299] | 54 episodes | 1x01-09 .. 2x01-09 .. 3x01-18 .. 4x01-18
+* Couples Therapy [5526] | 60 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-12 .. 5x01-10 .. 6x01-10
+Fetching episode data for [Couples Therapy NZ]
+* Couples Therapy [74097] | 10 episodes | 1x01-10
+* Couples Therapy [43299] | 54 episodes | 1x01-09 .. 2x01-09 .. 3x01-18 .. 4x01-18
+* Couples Therapy [5526] | 60 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-12 .. 5x01-10 .. 6x01-10
+* Couples Therapy NZ [68760] | 10 episodes | 1x01-10
+Fetching episode data for [Couples Therapy Australia]
+* Couples Therapy Australia [65857] | 12 episodes | 1x01-06 .. 2x01-06
+* Couples Therapy [74097] | 10 episodes | 1x01-10
+* Couples Therapy [43299] | 54 episodes | 1x01-09 .. 2x01-09 .. 3x01-18 .. 4x01-18
+* Couples Therapy [5526] | 60 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-12 .. 5x01-10 .. 6x01-10
+* Couples Therapy NZ [68760] | 10 episodes | 1x01-10
+Lookup via [] [Curb Your Enthusiasm]
+Fetching episode data for [Curb Your Enthusiasm]
+* Curb Your Enthusiasm [551] | 120 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-10 .. 8x01-10 .. 9x01-10 .. 10x01-10 .. 11x01-10 .. 12x01-10
+Lookup via [] [Curb Your Enthusiasm]
+Fetching episode data for [Curb Your Enthusiasm]
+* Curb Your Enthusiasm [551] | 120 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-10 .. 8x01-10 .. 9x01-10 .. 10x01-10 .. 11x01-10 .. 12x01-10
+Lookup via [] [Dune: Prophecy, Frank Herbert's Dune]
+Fetching episode data for [Dune: Prophecy]
+* Dune: Prophecy [42846] | 6 episodes | 1x01-06
+Fetching episode data for [Frank Herbert's Dune]
+* Frank Herbert's Dune [1101] | 3 episodes | 1x01-03
+* Dune: Prophecy [42846] | 6 episodes | 1x01-06
+Fetching episode data for [Frank Herbert's Children of Dune]
+* Frank Herbert's Children of Dune [1076] | 3 episodes | 1x01-03
+* Frank Herbert's Dune [1101] | 3 episodes | 1x01-03
+* Dune: Prophecy [42846] | 6 episodes | 1x01-06
+Lookup via [] [Fallout, Fallout 2024]
+Fetching episode data for [Fallout]
+* Fallout [49041] | 16 episodes | 1x01-08 .. 2x01-08
+Fetching episode data for [Fallout: Nuka Break]
+* Fallout [49041] | 16 episodes | 1x01-08 .. 2x01-08
+* Fallout: Nuka Break [26675] | 12 episodes | 1x01-06 .. 2x01-06
+Lookup via [] [Fallout, Fallout 2024]
+Fetching episode data for [Fallout]
+* Fallout [49041] | 16 episodes | 1x01-08 .. 2x01-08
+Fetching episode data for [Fallout: Nuka Break]
+* Fallout [49041] | 16 episodes | 1x01-08 .. 2x01-08
+* Fallout: Nuka Break [26675] | 12 episodes | 1x01-06 .. 2x01-06
+Failed to read NFO file: /das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E10 - Once Upon a Time???.nfo: No Such File: Malformed input or input contains unmappable characters: /das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E10 - Once Upon a Time???.nfo
+Lookup via [] [FROM]
+Fetching episode data for [FROM]
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+Fetching episode data for [From Beyond]
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Beyond [56857] | 7 episodes | 1x01-07
+Fetching episode data for [From Beyond]
+* From Beyond [39523] | 13 episodes | 1x01-13
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Beyond [56857] | 7 episodes | 1x01-07
+Fetching episode data for [From Scratch]
+* From Beyond [39523] | 13 episodes | 1x01-13
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Scratch [44917] | 8 episodes | 1x01-08
+* From Beyond [56857] | 7 episodes | 1x01-07
+Fetching episode data for [From Darkness]
+* From Darkness [4771] | 4 episodes | 1x01-04
+* From Beyond [39523] | 13 episodes | 1x01-13
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Scratch [44917] | 8 episodes | 1x01-08
+* From Beyond [56857] | 7 episodes | 1x01-07
+Lookup via [] [FROM]
+Fetching episode data for [FROM]
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+Fetching episode data for [From Beyond]
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Beyond [56857] | 7 episodes | 1x01-07
+Fetching episode data for [From Beyond]
+* From Beyond [39523] | 13 episodes | 1x01-13
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Beyond [56857] | 7 episodes | 1x01-07
+Fetching episode data for [From Scratch]
+* From Beyond [39523] | 13 episodes | 1x01-13
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Scratch [44917] | 8 episodes | 1x01-08
+* From Beyond [56857] | 7 episodes | 1x01-07
+Fetching episode data for [From Darkness]
+* From Darkness [4771] | 4 episodes | 1x01-04
+* From Beyond [39523] | 13 episodes | 1x01-13
+* FROM [54723] | 30 episodes | 1x01-10 .. 2x01-10 .. 3x01-10
+* From Scratch [44917] | 8 episodes | 1x01-08
+* From Beyond [56857] | 7 episodes | 1x01-07
+Lookup via [] [Game of Thrones, The Game]
+Fetching episode data for [Game of Thrones]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+Fetching episode data for [Game of Thrones: Inside the Episode]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+Fetching episode data for [Hip Hop Tribe 2 : Game of Thrones]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+* Hip Hop Tribe 2 : Game of Thrones [22602] | 15 episodes | 1x01-15
+Fetching episode data for [The Game]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+* Hip Hop Tribe 2 : Game of Thrones [22602] | 15 episodes | 1x01-15
+* The Game [1436] | 6 episodes | 1x01-06
+Fetching episode data for [The Game]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* The Game [83042] | 4 episodes | 1x01-04
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+* Hip Hop Tribe 2 : Game of Thrones [22602] | 15 episodes | 1x01-15
+* The Game [1436] | 6 episodes | 1x01-06
+Fetching episode data for [The Game]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* The Game [83042] | 4 episodes | 1x01-04
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+* Hip Hop Tribe 2 : Game of Thrones [22602] | 15 episodes | 1x01-15
+* The Game [1436] | 6 episodes | 1x01-06
+* The Game [333] | 147 episodes | 1x01-22 .. 2x01-20 .. 3x01-22 .. 4x01-13 .. 5x01-22 .. 6x01-20 .. 7x01-10 .. 8x01-08 .. 9x01-10
+Fetching episode data for [The Game]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* The Game [83042] | 4 episodes | 1x01-04
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+* Hip Hop Tribe 2 : Game of Thrones [22602] | 15 episodes | 1x01-15
+* The Game [1436] | 6 episodes | 1x01-06
+* The Game [333] | 147 episodes | 1x01-22 .. 2x01-20 .. 3x01-22 .. 4x01-13 .. 5x01-22 .. 6x01-20 .. 7x01-10 .. 8x01-08 .. 9x01-10
+* The Game [59231] | 20 episodes | 1x01-10 .. 2x01-10
+Fetching episode data for [The Game]
+* Game of Thrones [82] | 73 episodes | 1x01-10 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-10 .. 6x01-10 .. 7x01-07 .. 8x01-06
+* The Game [83042] | 4 episodes | 1x01-04
+* Game of Thrones: Inside the Episode [42281] | 5 episodes | 1x01-05
+* Hip Hop Tribe 2 : Game of Thrones [22602] | 15 episodes | 1x01-15
+* The Game [1436] | 6 episodes | 1x01-06
+* The Game [333] | 147 episodes | 1x01-22 .. 2x01-20 .. 3x01-22 .. 4x01-13 .. 5x01-22 .. 6x01-20 .. 7x01-10 .. 8x01-08 .. 9x01-10
+* The Game [52686] | 120 episodes | 1x01-30 .. 2x01-30 .. 3x01-30 .. 4x01-30
+* The Game [59231] | 20 episodes | 1x01-10 .. 2x01-10
+Lookup via [] [Garfield and Friends, The Garfield Show]
+Fetching episode data for [Garfield and Friends]
+* Garfield and Friends [6452] | 363 episodes | 1x01-39 .. 2x01-78 .. 3x01-54 .. 4x01-48 .. 5x01-48 .. 6x01-48 .. 7x01-48
+Fetching episode data for [The Garfield Show]
+* Garfield and Friends [6452] | 363 episodes | 1x01-39 .. 2x01-78 .. 3x01-54 .. 4x01-48 .. 5x01-48 .. 6x01-48 .. 7x01-48
+* The Garfield Show [16574] | 156 episodes | 1x01-52 .. 2x01-52 .. 3x01-52
+Lookup via [] [Gen V]
+Fetching episode data for [Gen V]
+* Gen V [62998] | 16 episodes | 1x01-08 .. 2x01-08
+Lookup via [] [Gen V]
+Fetching episode data for [Gen V]
+* Gen V [62998] | 16 episodes | 1x01-08 .. 2x01-08
+Lookup via [] [House of the Dragon, House]
+Fetching episode data for [House of the Dragon]
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [House of the Dragon: The House That Dragons Built]
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [Enter the House of the Dragon]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [Our House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [The House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* The House [55992] | 3 episodes | 1x01-03
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [The House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* The House [55992] | 3 episodes | 1x01-03
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+* The House [48127] | 6 episodes | 1x01-06
+Fetching episode data for [Full House]
+* Full House [1251] | 192 episodes | 1x01-22 .. 2x01-22 .. 3x01-24 .. 4x01-26 .. 5x01-26 .. 6x01-24 .. 7x01-24 .. 8x01-24
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* The House [55992] | 3 episodes | 1x01-03
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+* The House [48127] | 6 episodes | 1x01-06
+Lookup via [] [House of the Dragon, House]
+Fetching episode data for [House of the Dragon]
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [House of the Dragon: The House That Dragons Built]
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [Enter the House of the Dragon]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [Our House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [The House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* The House [55992] | 3 episodes | 1x01-03
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+Fetching episode data for [The House]
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* The House [55992] | 3 episodes | 1x01-03
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+* The House [48127] | 6 episodes | 1x01-06
+Fetching episode data for [Full House]
+* Full House [1251] | 192 episodes | 1x01-22 .. 2x01-22 .. 3x01-24 .. 4x01-26 .. 5x01-26 .. 6x01-24 .. 7x01-24 .. 8x01-24
+* Enter the House of the Dragon [63444] | 2 episodes | 1x01-02
+* Our House [56469] | 4 episodes | 1x01-04
+* House [118] | 176 episodes | 1x01-22 .. 2x01-24 .. 3x01-24 .. 4x01-16 .. 5x01-24 .. 6x01-21 .. 7x01-23 .. 8x01-22
+* The House [55992] | 3 episodes | 1x01-03
+* House of the Dragon [44778] | 18 episodes | 1x01-10 .. 2x01-08
+* House of the Dragon: The House That Dragons Built [63965] | 18 episodes | 1x01-10 .. 2x01-08
+* The House [48127] | 6 episodes | 1x01-06
+Lookup via [] [KAOS]
+Fetching episode data for [Kaos]
+* Kaos [37114] | 8 episodes | 1x01-08
+Fetching episode data for [Kaos i B?stad]
+* Kaos i B?stad [35925] | 4 episodes | 1x01-04
+* Kaos [37114] | 8 episodes | 1x01-08
+Lookup via [] [Landman]
+Fetching episode data for [Landman]
+* Landman [53777] | 20 episodes | 1x01-10 .. 2x01-10
+Lookup via [] [Landman]
+Fetching episode data for [Landman]
+* Landman [53777] | 20 episodes | 1x01-10 .. 2x01-10
+Lookup via [] [Lioness]
+Fetching episode data for [Lioness]
+* Lioness [50415] | 16 episodes | 1x01-08 .. 2x01-08
+Fetching episode data for [Lioness]
+* Lioness [70321] | 20 episodes | 1x01-10 .. 2x01-10
+* Lioness [50415] | 16 episodes | 1x01-08 .. 2x01-08
+Lookup via [] [Pluribus, PLUR1BUS]
+Fetching episode data for [Pluribus]
+* Pluribus [86175] | 9 episodes | 1x01-09
+Lookup via [] [Pluribus]
+Fetching episode data for [Pluribus]
+* Pluribus [86175] | 9 episodes | 1x01-09
+Lookup via [] [Pluribus]
+Fetching episode data for [Pluribus]
+* Pluribus [86175] | 9 episodes | 1x01-09
+Lookup via [] [Severance]
+Fetching episode data for [Severance]
+* Severance [44933] | 19 episodes | 1x01-09 .. 2x01-10
+Lookup via [] [Shrinking]
+Fetching episode data for [Shrinking]
+* Shrinking [58323] | 33 episodes | 1x01-10 .. 2x01-12 .. 3x01-11
+Lookup via [] [Task]
+Fetching episode data for [Task]
+* Task [80725] | 7 episodes | 1x01-07
+Fetching episode data for [Master of Task]
+* Task [80725] | 7 episodes | 1x01-07
+* Master of Task [50917] | 6 episodes | 1x01-06
+Lookup via [] [Task]
+Fetching episode data for [Task]
+* Task [80725] | 7 episodes | 1x01-07
+Fetching episode data for [Master of Task]
+* Task [80725] | 7 episodes | 1x01-07
+* Master of Task [50917] | 6 episodes | 1x01-06
+Lookup via [] [ted, Suits LA, Teds Notebook]
+Fetching episode data for [Ted]
+* Ted [55832] | 15 episodes | 1x01-07 .. 2x01-08
+Fetching episode data for [Ted Lasso]
+* Ted [55832] | 15 episodes | 1x01-07 .. 2x01-08
+* Ted Lasso [44458] | 34 episodes | 1x01-10 .. 2x01-12 .. 3x01-12
+Fetching episode data for [TED Talks]
+* TED Talks [17831] | 3 episodes | 1x01-03
+* Ted [55832] | 15 episodes | 1x01-07 .. 2x01-08
+* Ted Lasso [44458] | 34 episodes | 1x01-10 .. 2x01-12 .. 3x01-12
+Fetching episode data for [Ted and Alice]
+* TED Talks [17831] | 3 episodes | 1x01-03
+* Ted [55832] | 15 episodes | 1x01-07 .. 2x01-08
+* Ted Lasso [44458] | 34 episodes | 1x01-10 .. 2x01-12 .. 3x01-12
+* Ted and Alice [35500] | 3 episodes | 1x01-03
+Fetching episode data for [Tractor Ted]
+* Tractor Ted [57062] | 5 episodes | 1x01-05
+* TED Talks [17831] | 3 episodes | 1x01-03
+* Ted [55832] | 15 episodes | 1x01-07 .. 2x01-08
+* Ted Lasso [44458] | 34 episodes | 1x01-10 .. 2x01-12 .. 3x01-12
+* Ted and Alice [35500] | 3 episodes | 1x01-03
+Fetching episode data for [Suits LA]
+* Tractor Ted [57062] | 5 episodes | 1x01-05
+* TED Talks [17831] | 3 episodes | 1x01-03
+* Ted [55832] | 15 episodes | 1x01-07 .. 2x01-08
+* Ted Lasso [44458] | 34 episodes | 1x01-10 .. 2x01-12 .. 3x01-12
+* Ted and Alice [35500] | 3 episodes | 1x01-03
+* Suits LA [74414] | 13 episodes | 1x01-13
+Lookup via [] [The Bear]
+Fetching episode data for [The Bear]
+* The Bear [54198] | 38 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-10
+Fetching episode data for [BJ and the Bear]
+* The Bear [54198] | 38 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-10
+* BJ and the Bear [3913] | 46 episodes | 1x01-10 .. 2x01-21 .. 3x01-15
+Fetching episode data for [I Kill The Bear]
+* The Bear [54198] | 38 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-10
+* BJ and the Bear [3913] | 46 episodes | 1x01-10 .. 2x01-21 .. 3x01-15
+Lookup via [] [The Bear]
+Fetching episode data for [The Bear]
+* The Bear [54198] | 38 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-10
+Fetching episode data for [BJ and the Bear]
+* The Bear [54198] | 38 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-10
+* BJ and the Bear [3913] | 46 episodes | 1x01-10 .. 2x01-21 .. 3x01-15
+Fetching episode data for [I Kill The Bear]
+* The Bear [54198] | 38 episodes | 1x01-08 .. 2x01-10 .. 3x01-10 .. 4x01-10
+* BJ and the Bear [3913] | 46 episodes | 1x01-10 .. 2x01-21 .. 3x01-15
+Lookup via [] [The White Lotus]
+Fetching episode data for [The White Lotus]
+* The White Lotus [51394] | 21 episodes | 1x01-06 .. 2x01-07 .. 3x01-08
+Lookup via [] [The White Lotus]
+Fetching episode data for [The White Lotus]
+* The White Lotus [51394] | 21 episodes | 1x01-06 .. 2x01-07 .. 3x01-08
+Lookup via [] [The Day of the Jackal, The Kidnapping Day, The Day]
+Fetching episode data for [The Day of the Jackal]
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+Fetching episode data for [The Kidnapping Day]
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+* The Kidnapping Day [70612] | 12 episodes | 1x01-12
+Fetching episode data for [The Day Today]
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+* The Day Today [2578] | 6 episodes | 1x01-06
+* The Kidnapping Day [70612] | 12 episodes | 1x01-12
+Fetching episode data for [The Day When...]
+* The Day When... [34048] | 5 episodes | 1x01-05
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+* The Day Today [2578] | 6 episodes | 1x01-06
+* The Kidnapping Day [70612] | 12 episodes | 1x01-12
+Fetching episode data for [The Big Day]
+* The Day When... [34048] | 5 episodes | 1x01-05
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+* The Day Today [2578] | 6 episodes | 1x01-06
+* The Kidnapping Day [70612] | 12 episodes | 1x01-12
+* The Big Day [53575] | 6 episodes | 1x01-03 .. 2x01-03
+Fetching episode data for [Cherish the Day]
+* The Day When... [34048] | 5 episodes | 1x01-05
+* Cherish the Day [45393] | 16 episodes | 1x01-08 .. 2x01-08
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+* The Day Today [2578] | 6 episodes | 1x01-06
+* The Kidnapping Day [70612] | 12 episodes | 1x01-12
+* The Big Day [53575] | 6 episodes | 1x01-03 .. 2x01-03
+Fetching episode data for [Match of the Day]
+* Match of the Day [3968] | 1652 episodes | 1964x01-37 .. 1965x01-33 .. 1966x01-40 .. 1967x01-42 .. 1968x01-38 .. 1969x01-40 .. 1970x01-43 .. 1971x01-43 .. 1972x01-43 .. 1973x01-42 .. 1974x01-43 .. 1975x01-43 .. 1976x01-43 .. 1977x01-02 .. 1989x34 .. 2008x01-37 .. 2009x01x02x03x04x05x06x07x08x09x10x11x12x13x14x15x16x17x18x19x20x21x22x23x24x25x26x27x28x29x30x31x32x33x34x36x37x38x39x40x41 .. 2010x01x02x03x04x05x06x07x08x09x10x11x12x13x14x15x16x17x18x19x20x21x22x23x24x25x26x27x28x29x30x31x32x33x34x35x36x37x38x40 .. 2011x01-42 .. 2012x01-40 .. 2013x01x02x03x04x05x06x07x08x09x10x11x12x13x14x15x16x17x18x19x20x21x22x23x24x25x26x27x28x29x30x31x32x33x34x35x36x37x38x39x40x67 .. 2014x01-51 .. 2015x01-59 .. 2016x36x37x38x39x40x41x42x43x44x45x46x47x48x49x50x51x52x53x54x55x56x57x58x59x60x61x62x63x64x65x66x68x69x70 .. 2017x01x02x03x04x05x06x07x08x09x10x11x12x13x14x15x16x17x19x20x21x22x23x24x25x26x27x28x29x30x31x32x33x34x35x36x37x38x39x40x41x42x43x44x45x46x47x48x49x50x51x52x53x54x55x56x57x58x59x60x61x62x63x64x65x66x67x68x69x70x71x72 .. 2018x01-64 .. 2019x01-60 .. 2020x01-74 .. 2021x01-74 .. 2022x01-58 .. 2023x01-148 .. 2024x01-94 .. 2025x01-53 .. 2026x01-40
+* The Day When... [34048] | 5 episodes | 1x01-05
+* Cherish the Day [45393] | 16 episodes | 1x01-08 .. 2x01-08
+* The Day of the Jackal [64977] | 10 episodes | 1x01-10
+* The Day Today [2578] | 6 episodes | 1x01-06
+* The Kidnapping Day [70612] | 12 episodes | 1x01-12
+* The Big Day [53575] | 6 episodes | 1x01-03 .. 2x01-03
+Lookup via [] [The Last of Us]
+Fetching episode data for [The Last of Us]
+* The Last of Us [46562] | 16 episodes | 1x01-09 .. 2x01-07
+Fetching episode data for [Making of: The Last of Us]
+* The Last of Us [46562] | 16 episodes | 1x01-09 .. 2x01-07
+* Making of: The Last of Us [84452] | 8 episodes | 1x01 .. 2x01-07
+Lookup via [] [The Lord of the Rings: The Rings of Power]
+Fetching episode data for [The Lord of the Rings: The Rings of Power]
+* The Lord of the Rings: The Rings of Power [33352] | 16 episodes | 1x01-08 .. 2x01-08
+Lookup via [] [The Penguin]
+Fetching episode data for [The Penguin]
+* The Penguin [60920] | 8 episodes | 1x01-08
+Fetching episode data for [The Penguins of Madagascar]
+* The Penguins of Madagascar [4037] | 149 episodes | 1x01-48 .. 2x01-68 .. 3x01-33
+* The Penguin [60920] | 8 episodes | 1x01-08
+Lookup via [] [The X-Files]
+Fetching episode data for [The X-Files]
+* The X-Files [430] | 218 episodes | 1x01-24 .. 2x01-25 .. 3x01-24 .. 4x01-24 .. 5x01-20 .. 6x01-22 .. 7x01-22 .. 8x01-21 .. 9x01-20 .. 10x01-06 .. 11x01-10
+Lookup via [] [True Detective]
+Fetching episode data for [True Detective]
+* True Detective [5] | 30 episodes | 1x01-08 .. 2x01-08 .. 3x01-08 .. 4x01-06
+Fetching episode data for [True Detective Mr. Qin]
+* True Detective [5] | 30 episodes | 1x01-08 .. 2x01-08 .. 3x01-08 .. 4x01-06
+* True Detective Mr. Qin [67916] | 48 episodes | 1x01-24 .. 2x01-24
+Lookup via [] [Tulsa King]
+Fetching episode data for [Tulsa King]
+* Tulsa King [59344] | 29 episodes | 1x01-09 .. 2x01-10 .. 3x01-10
+Lookup via [] [Yellowstone]
+Fetching episode data for [Yellowstone]
+* Yellowstone [27848] | 53 episodes | 1x01-09 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-14
+Fetching episode data for [Yellowstone]
+* Yellowstone [10519] | 3 episodes | 1x01-03
+* Yellowstone [27848] | 53 episodes | 1x01-09 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-14
+Fetching episode data for [Yellowstone Live]
+* Yellowstone Live [38144] | 8 episodes | 1x01-04 .. 2x01-04
+* Yellowstone [10519] | 3 episodes | 1x01-03
+* Yellowstone [27848] | 53 episodes | 1x01-09 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-14
+Fetching episode data for [Yellowstone Wardens]
+* Yellowstone Live [38144] | 8 episodes | 1x01-04 .. 2x01-04
+* Yellowstone [10519] | 3 episodes | 1x01-03
+* Yellowstone [27848] | 53 episodes | 1x01-09 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-14
+* Yellowstone Wardens [66476] | 63 episodes | 1x01-08 .. 2x01-12 .. 3x01-09 .. 4x01-08 .. 5x01-11 .. 6x01-15
+Fetching episode data for [Yellowstone Journals]
+* Yellowstone Live [38144] | 8 episodes | 1x01-04 .. 2x01-04
+* Yellowstone Journals [45109] | 6 episodes | 1x01-06
+* Yellowstone [10519] | 3 episodes | 1x01-03
+* Yellowstone [27848] | 53 episodes | 1x01-09 .. 2x01-10 .. 3x01-10 .. 4x01-10 .. 5x01-14
+* Yellowstone Wardens [66476] | 63 episodes | 1x01-08 .. 2x01-12 .. 3x01-09 .. 4x01-08 .. 5x01-11 .. 6x01-15
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E01 - Neverland.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E02 - Mr. October.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E03 - Metamorphosis.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E04 - Observation.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E05 - In Space, No One....mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E06 - The Fly.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E07 - Emergence.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E08 - The Real Monsters.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E01 - Neverland.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E02 - Mr. October.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E03 - Metamorphosis.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E04 - Observation.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E05 - In Space, No One....mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E06 - The Fly.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E07 - Emergence.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Alien: Earth/Season 01/Alien: Earth - S01E08 - The Real Monsters.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E09 - Where the F*ck is Donnie?.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E07 - The Limitless Sh*t.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E09 - Where the F*ck is Donnie?.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Dune: Prophecy/Season 01/Dune: Prophecy - S01E01 - The Hidden Hand.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Dune: Prophecy/Season 01/Dune: Prophecy - S01E02 - Two Wolves.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Dune: Prophecy/Season 01/Dune: Prophecy - S01E03 - Sisterhood Above All.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Dune: Prophecy/Season 01/Dune: Prophecy - S01E05 - In Blood, Truth.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E09 - Revelations: Chapter One.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E10 - Revelations: Chapter Two.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E09 - Revelations: Chapter One.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E10 - Revelations: Chapter Two.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Garfield and Friends/Season 06/Garfield and Friends - S06E11 - What's It All About, Wade?.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/Severance/Season 02/Severance - S02E03 - Who Is Alive?.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/The Lord of the Rings: The Rings of Power/Season 02/The Lord of the Rings: The Rings of Power - S02E01 - Elven Kings Under the Sky.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/The Lord of the Rings: The Rings of Power/Season 02/The Lord of the Rings: The Rings of Power - S02E02 - Where the Stars are Strange.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/The Lord of the Rings: The Rings of Power/Season 02/The Lord of the Rings: The Rings of Power - S02E03 - The Eagle and the Sceptre.mkv
+Stripping invalid characters from the output file path: /das-20tb/TV_Shows/_library/The X-Files/Season 07/The X-Files - S07E02 - The Sixth Extinction: Amor Fati.mkv
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E01.Neverland.REPACK2.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E01 - Neverland.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E02.Mr.October.REPACK2.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E02 - Mr. October.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E03.Metamorphosis.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E03 - Metamorphosis.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E04.Observation.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E04 - Observation.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E05.In.Space.No.One.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E05 - In Space, No One....mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E06.The.Fly.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E06 - The Fly.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E07.Emergence.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E07 - Emergence.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth (2025)/Season 1/Alien.Earth.S01E08.The.Real.Monsters.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E08 - The Real Monsters.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E01.Neverland.REPACK2.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E01 - Neverland.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E02.Mr.October.REPACK2.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E02 - Mr. October.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E03.Metamorphosis.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E03 - Metamorphosis.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E04.Observation.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E04 - Observation.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E05.In.Space.No.One.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E05 - In Space, No One....mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E06.The.Fly.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E06 - The Fly.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E07.Emergence.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E07 - Emergence.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Alien Earth S01 REPACK 2160p DSNP WEB-DL DDP5 1 H 265-FLUX/Alien.Earth.S01E08.The.Real.Monsters.REPACK.2160p.DSNP.WEB-DL.DDP5.1.H.265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Alien Earth/Season 01/Alien Earth - S01E08 - The Real Monsters.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 1/Bad Monkey S01E05 That Damn Arm Is Back 2160p ATVP WEB-DL DDP5 1 Atmos H 265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Bad Monkey/Season 01/Bad Monkey - S01E05 - That Damn Arm Is Back.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E01 - The Floating-Human-Body-Parts Capital of America.mkv] to [/das-20tb/TV_Shows/_library/Bad Monkey/Season 01/Bad Monkey - S01E01 - The Floating-Human-Body-Parts Capital of America.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Bad Monkey (2024)/Season 01/Bad Monkey (2024) - S01E03 - Nobody Said He Was Alvin Einstein.mkv] to [/das-20tb/TV_Shows/_library/Bad Monkey/Season 01/Bad Monkey - S01E03 - Nobody Said He Was Alvin Einstein.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Bad Monkey S01E05 That Damn Arm Is Back 2160p ATVP WEB-DL DDP5 1 Atmos H 265-FLUX/Bad Monkey S01E05 That Damn Arm Is Back 2160p ATVP WEB-DL DDP5 1 Atmos H 265-FLUX.mkv] to [/das-20tb/TV_Shows/_library/Bad Monkey/Season 01/Bad Monkey - S01E05 - That Damn Arm Is Back.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E02.1080p.BluRay.x264-ROVERS/billions.s01e02.1080p.bluray.x264-rovers/Billions.S01E02.1080p.BluRay.x264-ROVERS/billions.s01e02.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E02 - Naming Rights.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E03.1080p.BluRay.x264-ROVERS/billions.s01e03.1080p.bluray.x264-rovers/Billions.S01E03.1080p.BluRay.x264-ROVERS/billions.s01e03.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E03 - YumTime.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E04.1080p.BluRay.x264-ROVERS/billions.s01e04.1080p.bluray.x264-rovers/Billions.S01E04.1080p.BluRay.x264-ROVERS/billions.s01e04.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E04 - Short Squeeze.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E05.1080p.BluRay.x264-ROVERS/billions.s01e05.1080p.bluray.x264-rovers/Billions.S01E05.1080p.BluRay.x264-ROVERS/billions.s01e05.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E05 - The Good Life.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E06.1080p.BluRay.x264-ROVERS/billions.s01e06.1080p.bluray.x264-rovers/Billions.S01E06.1080p.BluRay.x264-ROVERS/billions.s01e06.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E06 - The Deal.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E07.1080p.BluRay.x264-ROVERS/billions.s01e07.1080p.bluray.x264-rovers/Billions.S01E07.1080p.BluRay.x264-ROVERS/billions.s01e07.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E07 - The Punch.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E08.1080p.BluRay.x264-ROVERS/billions.s01e08.1080p.bluray.x264-rovers/Billions.S01E08.1080p.BluRay.x264-ROVERS/billions.s01e08.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E08 - Boasts and Rails.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E09.1080p.BluRay.x264-ROVERS/billions.s01e09.1080p.bluray.x264-rovers/Billions.S01E09.1080p.BluRay.x264-ROVERS/billions.s01e09.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E09 - Where the Fck is Donnie.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E10.1080p.BluRay.x264-ROVERS/billions.s01e10.1080p.bluray.x264-rovers/Billions.S01E10.1080p.BluRay.x264-ROVERS/billions.s01e10.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E10 - Quality of Life.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E11.1080p.BluRay.x264-ROVERS/billions.s01e11.1080p.bluray.x264-rovers/Billions.S01E11.1080p.BluRay.x264-ROVERS/billions.s01e11.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E11 - Magical Thinking.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions.S01E12.1080p.BluRay.x264-ROVERS/billions.s01e12.1080p.bluray.x264-rovers/Billions.S01E12.1080p.BluRay.x264-ROVERS/billions.s01e12.1080p.bluray.x264-rovers.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E12 - The Conversation.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 01/Billions (2016) - S01E01 - Pilot.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E01 - Pilot.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E01 - Risk Management.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E01 - Risk Management.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E02 - Dead Cat Bounce.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E02 - Dead Cat Bounce.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E03 - Optimal Play.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E03 - Optimal Play.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E04 - The Oath.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E04 - The Oath.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E05 - Currency.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E05 - Currency.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E06 - Indian Four.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E06 - Indian Four.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E07 - Victory Lap.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E07 - Victory Lap.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E08 - The Kingmaker.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E08 - The Kingmaker.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E09 - Sic Transit Imperium.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E09 - Sic Transit Imperium.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E10 - With or Without You.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E10 - With or Without You.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E11 - Golden Frog Time.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E11 - Golden Frog Time.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 02/Billions (2016) - S02E12 - Ball in Hand.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 02/Billions - S02E12 - Ball in Hand.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E01 - Tie Goes to the Runner.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E01 - Tie Goes to the Runner.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E02 - The Wrong Maria Gonzalez.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E02 - The Wrong Maria Gonzalez.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E03 - A Generation Too Late.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E03 - A Generation Too Late.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E04 - Hell of a Ride.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E04 - Hell of a Ride.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E05 - Flaw in the Death Star.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E05 - Flaw in the Death Star.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E06 - The Third Ortolan.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E06 - The Third Ortolan.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E07 - Not You, Mr. Dake.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E07 - Not You, Mr. Dake.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E08 - All the Wilburys.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E08 - All the Wilburys.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E09 - Icebreaker.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E09 - Icebreaker.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E10 - Redemption.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E10 - Redemption.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E11 - Kompenso.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E11 - Kompenso.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 03/Billions (2016) - S03E12 - Elmsley Count.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 03/Billions - S03E12 - Elmsley Count.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E01 - Chucky Rhoades's Greatest Game.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E01 - Chucky Rhoades's Greatest Game.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E02 - Arousal Template.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E02 - Arousal Template.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E03 - Chickentown.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E03 - Chickentown.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E04 - Overton Window.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E04 - Overton Window.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E05 - A Proper Sendoff.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E05 - A Proper Sendoff.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E06 - Maximum Recreational Depth.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E06 - Maximum Recreational Depth.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E07 - Infinite Game.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E07 - Infinite Game.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E08 - Fight Night.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E08 - Fight Night.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E09 - American Champion.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E09 - American Champion.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E10 - New Year's Day.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E10 - New Year's Day.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E11 - Lamster.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E11 - Lamster.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 04/Billions (2016) - S04E12 - Extreme Sandbox.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 04/Billions - S04E12 - Extreme Sandbox.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E01 - The New Decas.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E01 - The New Decas.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E02 - The Chris Rock Test.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E02 - The Chris Rock Test.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E03 - Beg, Bribe, Bully.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E03 - Beg, Bribe, Bully.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E04 - Opportunity Zone.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E04 - Opportunity Zone.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E05 - Contract.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E05 - Contract.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E06 - The Nordic Model.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E06 - The Nordic Model.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E07 - The Limitless Shit.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E07 - The Limitless Sht.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E08 - Copenhagen.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E08 - Copenhagen.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E09 - Implosion.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E09 - Implosion.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E10 - Liberty.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E10 - Liberty.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E11 - Victory Smoke.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E11 - Victory Smoke.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 05/Billions (2016) - S05E12 - No Direction Home.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 05/Billions - S05E12 - No Direction Home.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E01 - Cannonade.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E01 - Cannonade.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E02 - Lyin' Eyes.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E02 - Lyin' Eyes.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E03 - STD.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E03 - STD.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E04 - Burn Rate.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E04 - Burn Rate.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E05 - Rock of Eye.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E05 - Rock of Eye.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E06 - Hostis Humani Generis.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E06 - Hostis Humani Generis.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E07 - Napoleon's Hat.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E07 - Napoleon's Hat.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E08 - The Big Ugly.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E08 - The Big Ugly.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E09 - Hindenburg.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E09 - Hindenburg.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E10 - Johnny Favorite.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E10 - Johnny Favorite.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E11 - Succession.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E11 - Succession.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 06/Billions (2016) - S06E12 - Cold Storage.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 06/Billions - S06E12 - Cold Storage.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E01 - Tower of London.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E01 - Tower of London.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E02 - Original Sin.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E02 - Original Sin.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E03 - Winston Dick Energy.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E03 - Winston Dick Energy.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E04 - Hurricane Rosie.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E04 - Hurricane Rosie.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E05 - The Gulag Archipelago.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E05 - The Gulag Archipelago.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E06 - The Man in the Olive Drab T-Shirt.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E06 - The Man in the Olive Drab T-Shirt.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E07 - DMV.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E07 - DMV.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E08 - The Owl.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E08 - The Owl.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E09 - Game Theory Optimal.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E09 - Game Theory Optimal.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E10 - Enemies List.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E10 - Enemies List.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E11 - Axe Global.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E11 - Axe Global.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 07/Billions (2016) - S07E12 - Admirals Fund.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 07/Billions - S07E12 - Admirals Fund.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E02.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E02 - Naming Rights.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E03.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E03 - YumTime.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E04.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E04 - Short Squeeze.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E05.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E05 - The Good Life.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E06.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E06 - The Deal.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E07.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E07 - The Punch.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E08.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E08 - Boasts and Rails.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E09.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E09 - Where the Fck is Donnie.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E10.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E10 - Quality of Life.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E11.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E11 - Magical Thinking.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Billions (2016)/Season 1/Billions.S01E12.1080p.BluRay.x264-ROVERS.mkv] to [/das-20tb/TV_Shows/_library/Billions/Season 01/Billions - S01E12 - The Conversation.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E01 - 301.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E01 - 301.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E02 - 302.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E02 - 302.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E03 - 303.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E03 - 303.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E04 - 304.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E04 - 304.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E05 - 305.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E05 - 305.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E06 - 306.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E06 - 306.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E07 - 307.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E07 - 307.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E08 - 308.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E08 - 308.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E09 - 309.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E09 - 309.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E10 - 310.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E10 - 310.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E11 - 311.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E11 - 311.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E12 - 312.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E12 - 312.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E13 - 313.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E13 - 313.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E14 - 314.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E14 - 314.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E15 - 315.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E15 - 315.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E16 - 316.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E16 - 316.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E17 - 317.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E17 - 317.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Couples Therapy (2019) (2019)/Season 03/Couples Therapy (2019) (2019) - S03E18 - 318.mkv] to [/das-20tb/TV_Shows/_library/Couples Therapy/Season 03/Couples Therapy - S03E18 - 318.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E01 - The Pants Tent.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E01 - The Pants Tent.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E02 - Ted and Mary.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E02 - Ted and Mary.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E03 - Porno Gil.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E03 - Porno Gil.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E04 - The Bracelet.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E04 - The Bracelet.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E05 - Interior Decorator.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E05 - Interior Decorator.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E06 - The Wire.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E06 - The Wire.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E07 - AAMCO.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E07 - AAMCO.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E08 - Beloved Aunt.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E08 - Beloved Aunt.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E09 - Affirmative Action.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E09 - Affirmative Action.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 01/Curb Your Enthusiasm (2000) - S01E10 - The Group.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 01/Curb Your Enthusiasm - S01E10 - The Group.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E01 - The Car Salesman.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E01 - The Car Salesman.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E02 - Thor.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E02 - Thor.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E03 - Trick or Treat.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E03 - Trick or Treat.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E04 - The Shrimp Incident.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E04 - The Shrimp Incident.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E05 - The Thong.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E05 - The Thong.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E06 - The Acupuncturist.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E06 - The Acupuncturist.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E07 - The Doll.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E07 - The Doll.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E08 - Shaq.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E08 - Shaq.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E09 - The Baptism.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E09 - The Baptism.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 02/Curb Your Enthusiasm (2000) - S02E10 - The Massage.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 02/Curb Your Enthusiasm - S02E10 - The Massage.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E01 - Chet's Shirt.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E01 - Chet's Shirt.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E02 - The Benadryl Brownie.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E02 - The Benadryl Brownie.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E03 - Club Soda and Salt.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E03 - Club Soda and Salt.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E04 - The Nanny from Hell.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E04 - The Nanny from Hell.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E05 - The Terrorist Attack.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E05 - The Terrorist Attack.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E06 - The Special Section.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E06 - The Special Section.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E07 - The Corpse-Sniffing Dog.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E07 - The Corpse-Sniffing Dog.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E08 - Krazee-Eyez Killa.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E08 - Krazee-Eyez Killa.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E09 - Mary, Joseph and Larry.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E09 - Mary, Joseph and Larry.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 03/Curb Your Enthusiasm (2000) - S03E10 - The Grand Opening.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 03/Curb Your Enthusiasm - S03E10 - The Grand Opening.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E01 - Mel's Offer.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E01 - Mel's Offer.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E02 - Ben's Birthday Party.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E02 - Ben's Birthday Party.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E03 - The Blind Date.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E03 - The Blind Date.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E04 - The Weatherman.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E04 - The Weatherman.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E05 - The 5 Wood.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E05 - The 5 Wood.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E06 - The Car Pool Lane.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E06 - The Car Pool Lane.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E07 - The Surrogate.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E07 - The Surrogate.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E08 - Wandering Bear.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E08 - Wandering Bear.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E09 - The Survivor.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E09 - The Survivor.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 04/Curb Your Enthusiasm (2000) - S04E10 - Opening Night.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 04/Curb Your Enthusiasm - S04E10 - Opening Night.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E01 - The Larry David Sandwich.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E01 - The Larry David Sandwich.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E02 - The Bowtie.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E02 - The Bowtie.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E03 - The Christ Nail.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E03 - The Christ Nail.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E04 - Kamikaze Bingo.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E04 - Kamikaze Bingo.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E05 - Lewis Needs a Kidney.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E05 - Lewis Needs a Kidney.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E06 - The Smoking Jacket.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E06 - The Smoking Jacket.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E07 - The Seder.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E07 - The Seder.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E08 - The Ski Lift.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E08 - The Ski Lift.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E09 - The Korean Bookie.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E09 - The Korean Bookie.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 05/Curb Your Enthusiasm (2000) - S05E10 - The End.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 05/Curb Your Enthusiasm - S05E10 - The End.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E01 - Meet the Blacks.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E01 - Meet The Blacks.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E02 - The Anonymous Donor.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E02 - The Anonymous Donor.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E03 - The Ida Funkhouser Roadside Memorial.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E03 - The Ida Funkhouser Roadside Memorial.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E04 - The Lefty Call.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E04 - The Lefty Call.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E05 - The Freak Book.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E05 - The Freak Book.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E06 - The Rat Dog.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E06 - The Rat Dog.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E07 - The TiVo Guy.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E07 - The TiVo Guy.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E08 - The N Word.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E08 - The N Word.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E09 - The Therapists.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E09 - The Therapist.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 06/Curb Your Enthusiasm (2000) - S06E10 - The Bat Mitzvah.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 06/Curb Your Enthusiasm - S06E10 - The Bat Mitzvah.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E01 - Funkhouser's Crazy Sister.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E01 - Funkhouser's Crazy Sister.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E02 - Vehicular Fellatio.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E02 - Vehicular Fellatio.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E03 - The Reunion.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E03 - The Reunion.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E04 - The Hot Towel.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E04 - The Hot Towel.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E05 - Denise Handicap.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E05 - Denise Handicapped.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E06 - The Bare Midriff.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E06 - The Bare Midriff.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E07 - The Black Swan.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E07 - The Black Swan.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E08 - Officer Krupke.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E08 - Officer Krupke.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E09 - The Table Read.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E09 - The Table Read.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 07/Curb Your Enthusiasm (2000) - S07E10 - Seinfeld.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 07/Curb Your Enthusiasm - S07E10 - Seinfeld.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E01 - The Divorce.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E01 - The Divorce.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E02 - The Safe House.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E02 - The Safe House.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E03 - Palestinian Chicken.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E03 - Palestinian Chicken.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E04 - The Smiley Face.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E04 - The Smiley Face.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E05 - Vow of Silence.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E05 - Vow of Silence.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E06 - The Hero.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E06 - The Hero.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E07 - The Bi-Sexual.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E07 - The Bi-Sexual.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E08 - Car Periscope.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E08 - Car Periscope.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E09 - Mister Softee.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E09 - Mister Softee.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 08/Curb Your Enthusiasm (2000) - S08E10 - Larry vs. Michael J. Fox.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 08/Curb Your Enthusiasm - S08E10 - Larry vs. Michael J. Fox.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E01 - Foisted!.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E01 - Foisted!.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E02 - The Pickle Gambit.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E02 - The Pickle Gambit.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E03 - A Disturbance in the Kitchen.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E03 - A Disturbance in the Kitchen.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E04 - Running with the Bulls.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E04 - Running with the Bulls.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E05 - Thank You for Your Service.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E05 - Thank You for Your Service.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E06 - The Accidental Text on Purpose.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E06 - The Accidental Text on Purpose.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E07 - Namaste.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E07 - Namaste.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E08 - Never Wait for Seconds!.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E08 - Never Wait for Seconds!.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E09 - The Shucker.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E09 - The Shucker.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 09/Curb Your Enthusiasm (2000) - S09E10 - Fatwa!.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 09/Curb Your Enthusiasm - S09E10 - Fatwa!.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E01.Atlanta.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E01 - Atlanta.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E02.The.Lawn.Jockey.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E02 - The Lawn Jockey.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E03.Vertical.Drop.Horizontal.Tug.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E03 - Vertical Drop, Horizontal Tug.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E04.Disgruntled.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E04 - Disgruntled.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E05.Fish.Stuck.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E05 - Fish Stuck.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E07.The.Dream.Scheme.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E07 - The Dream Scheme.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E08.The.Colostomy.Bag.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E08 - The Colostomy Bag.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E09.Ken.Kendra.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E09 - Ken Kendra.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm (2000)/Season 12/Curb.Your.Enthusiasm.S12E10.No.Lessons.Learned.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E10 - No Lessons Learned.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E01.Atlanta.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E01 - Atlanta.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E02.The.Lawn.Jockey.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E02 - The Lawn Jockey.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E03.Vertical.Drop.Horizontal.Tug.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E03 - Vertical Drop, Horizontal Tug.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E04.Disgruntled.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E04 - Disgruntled.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E05.Fish.Stuck.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E05 - Fish Stuck.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E07.The.Dream.Scheme.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E07 - The Dream Scheme.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E08.The.Colostomy.Bag.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E08 - The Colostomy Bag.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E09.Ken.Kendra.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E09 - Ken Kendra.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Curb Your Enthusiasm S12 REPACK 1080p BluRay Remux DTS-HD MA5 1 H 264-BTN/Curb.Your.Enthusiasm.S12E10.No.Lessons.Learned.REPACK.1080p.BluRay.Remux.DTS-HD.MA5.1.H.264-BTN.mkv] to [/das-20tb/TV_Shows/_library/Curb Your Enthusiasm/Season 12/Curb Your Enthusiasm - S12E10 - No Lessons Learned.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Dune Prophecy (2024)/Season 01/Dune Prophecy (2024) - S01E01 - The Hidden Hand.mkv] to [/das-20tb/TV_Shows/_library/Dune Prophecy/Season 01/Dune Prophecy - S01E01 - The Hidden Hand.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Dune Prophecy (2024)/Season 01/Dune Prophecy (2024) - S01E02 - Two Wolves.mkv] to [/das-20tb/TV_Shows/_library/Dune Prophecy/Season 01/Dune Prophecy - S01E02 - Two Wolves.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Dune Prophecy (2024)/Season 01/Dune Prophecy (2024) - S01E03 - Sisterhood Above All.mkv] to [/das-20tb/TV_Shows/_library/Dune Prophecy/Season 01/Dune Prophecy - S01E03 - Sisterhood Above All.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Dune Prophecy (2024)/Season 01/Dune Prophecy (2024) - S01E05 - In Blood, Truth.mkv] to [/das-20tb/TV_Shows/_library/Dune Prophecy/Season 01/Dune Prophecy - S01E05 - In Blood, Truth.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Fallout.2024.S02E02.2160p.WEB.h265-ETHEL/fallout.2024.s02e02.2160p.web.h265-ethel/Fallout.2024.S02E02.2160p.WEB.h265-ETHEL/Fallout.2024.S02E02.2160p.WEB.h265-ETHEL.mkv] to [/das-20tb/TV_Shows/_library/Fallout/Season 02/Fallout - S02E02 - The Golden Rule.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Fallout (2024)/Season 02/Fallout (2024) - S02E01 - The Innovator.mkv] to [/das-20tb/TV_Shows/_library/Fallout/Season 02/Fallout - S02E01 - The Innovator.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/Fallout (2024)/Season 2/Fallout.2024.S02E02.2160p.WEB.h265-ETHEL.mkv] to [/das-20tb/TV_Shows/_library/Fallout/Season 02/Fallout - S02E02 - The Golden Rule.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E01 - Long Day's Journey Into Night.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E01 - Long Day's Journey Into Night.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E02 - The Way Things Are Now.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E02 - The Way Things Are Now.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E03 - Choosing Day.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E03 - Choosing Day.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E04 - A Rock and a Farway.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E04 - A Rock and a Farway.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E05 - Silhouettes.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E05 - Silhouettes.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E06 - Book 74.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E06 - Book 74.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E07 - All Good Things.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E07 - All Good Things....mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E08 - Broken Windows, Open Doors.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E08 - Broken Windows, Open Doors.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E09 - Into the Woods.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E09 - Into the Woods.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 01/From (2022) - S01E10 - Oh, the Places We'll Go.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 01/FROM - S01E10 - Oh, the Places We'll Go.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E01 - Strangers in a Strange Land.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E01 - Strangers in a Strange Land.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E02 - The Kindness of Strangers.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E02 - The Kindness of Strangers.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E03 - Tether.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E03 - Tether.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E04 - This Way Gone.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E04 - This Way Gone.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E05 - Lullaby.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E05 - Lullaby.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E06 - Pas de Deux.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E06 - Pas de Deux.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E07 - Belly of the Beast.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E07 - Belly of the Beast.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E08 - Forest for the Trees.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E08 - Forest for the Trees.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 02/From (2022) - S02E09 - Ball of Magic Fire.mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 02/FROM - S02E09 - Ball of Magic Fire.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E01 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E01 - Shatter.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E02 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E02 - When We Go.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E03 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E03 - Mouse Trap.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E04 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E04 - There and Back Again.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E05 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E05 - The Light of Day.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E06 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E06 - Scar Tissue.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E07 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E07 - These Fragile Lives.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E08 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E08 - Thresholds.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E09 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E09 - Revelations Chapter One.mkv]
+[MOVE] from [/das-20tb/TV_Shows/_dump/From (2022)/Season 3/FROM (2022) S03E10 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] to [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E10 - Revelations Chapter Two.mkv]
+Failed to process [/das-20tb/TV_Shows/_dump/FROM (2022) S03 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/FROM (2022) S03E01 (2160p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv] because [/das-20tb/TV_Shows/_library/FROM/Season 03/FROM - S03E01 - Shatter.mkv] is an exact copy and already exists [Last-Modified: Fri Dec 26 19:57:37 COT 2025]

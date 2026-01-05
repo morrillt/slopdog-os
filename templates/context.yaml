@@ -1,0 +1,14 @@
+project:
+  name: "UNNAMED"
+  current_mode: ""
+execution:
+  current_epic: ""
+  current_ticket: ""
+  next_ticket: ""
+  current_ticket_status: ""
+  current_task: ""
+  current_task_status: ""
+paths:
+  plans: "plans/"
+  docs: "docs/"
+  research: "docs/research/"

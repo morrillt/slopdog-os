@@ -16,11 +16,10 @@ Always be aware of the `plans/context.yaml` file. It defines the current mode an
     - **Definition of “build” (product code)**: changes under `src/`, `lib/`, `scripts/`, `tests/` are considered implementation.
     - You may ONLY change product code if `project.current_mode` is **exactly** `build` OR `task`.
     - If `project.current_mode == plan`, you MUST refuse product-code changes and keep edits inside `plans/` (and optionally `docs/`).
-    - **Meta exception (allowed in PLAN)**: Editing `.cursor/` (rules/commands) is allowed while in PLAN (process/tooling), but must not be used to bypass the above gating for product code.
     - **BUILD requirements**: `execution.current_ticket` must be set (tracked ticket).
     - **TASK requirements**: `execution.current_task` must be set (tracked task log).
-    - If in 'plan' mode, you can write to `plans/` but not `src/`.
-    - If in 'research' mode, you can write to `docs/research/` but not `src/`.
+    - If in 'plan' mode, you can write to `plans/` but no other files.
+    - If in 'research' mode, you can write to `docs/research/` but no other directgories`.
 2.  **Strict Gating**: Do not bypass the ticket system for feature work. One-off tasks go to TASK mode.
 3.  **No Time Estimates**: Do not provide hours/days/weeks/months estimates. Keep execution focused on next concrete step.
 4.  **No False Completions**: Never mark a task checkbox `[x]` unless the work is actually present and tests/validation for that task pass. If uncertain, leave it unchecked and log what’s missing.
