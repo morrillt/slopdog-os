@@ -2,28 +2,38 @@
 description: "Workflow: Publish a draft doc"
 globs: []
 ---
+
 # Workflow: Docs > Publish
 
-<critical>You MUST enforce `docs/taxonomy.yaml` tags.</critical>
+<critical>You MUST enforce taxonomy tags from `{{project.path}}/templates/taxonomy.yaml`.</critical>
 <critical>You MUST ensure `facets.repo.path` matches file location.</critical>
 <critical>You MUST update status to `active`.</critical>
+<critical>Read `plans/context.yaml` to get `project.path` for dynamic file paths.</critical>
 
 <workflow>
 
-<step n="1" goal="Select & Verify Doc">
+<step n="1" goal="Context Load & Doc Selection">
+  <action>
+    **Load Project Context**:
+    - Read `plans/context.yaml` to obtain `project.path`.
+    - Report: `[ ✅ | ❌ ] plans/context.yaml`
+  </action>
+
   <action>
     **Select Doc**:
-    - Target a `docs/` file (currently draft).
+    - Target a `{{project.path}}/docs/` file (currently draft).
+    - Ask the user which doc to publish.
   </action>
 
   <action>
     **Verify Path**:
-    - Check `facets.repo.path`.
+    - Check `facets.repo.path` matches the file's actual location.
     - Fix if mismatch.
   </action>
 
   <output>
     ✅ **Ending Step 1: Select & Verify Doc**
+    [ {{context_status}} ] `plans/context.yaml`
     📄 Selected draft doc
     ✅ Verified repo path matches file location
     
@@ -34,7 +44,8 @@ globs: []
 <step n="2" goal="Enforce Taxonomy">
   <action>
     **Load Taxonomy**:
-    - Read `docs/taxonomy.yaml`.
+    - Read `{{project.path}}/templates/taxonomy.yaml`.
+    - Report: `[ ✅ | ❌ ] Taxonomy loaded`
   </action>
 
   <action>
@@ -49,11 +60,12 @@ globs: []
     **Handle New Tags**:
     - If user wants new tag:
       - Confirm Group + Description.
-      - Add to `docs/taxonomy.yaml`.
+      - Add to `{{project.path}}/templates/taxonomy.yaml`.
   </action>
 
   <output>
     ✅ **Ending Step 2: Enforce Taxonomy**
+    [ {{taxonomy_status}} ] `{{project.path}}/templates/taxonomy.yaml`
     🏷️ Selected valid tags (audience + doc types)
     📝 Updated taxonomy.yaml if new tags added
     
@@ -66,7 +78,7 @@ globs: []
     **Update Front-Matter**:
     - `facets.status`: `active`
     - `tags`: [Selected Tags]
-    - `updated`: [Today]
+    - `updated`: [Today's Date YYYY-MM-DD]
   </action>
 
   <output>
@@ -81,7 +93,8 @@ globs: []
 <step n="4" goal="Validation">
   <action>
     **Validate Rules**:
-    - Check `docs/docfrontmatterrules.md`.
+    - Check against `{{project.path}}/templates/docs-metadata-spec.md`.
+    - Report: `[ ✅ | ❌ ] Validation passed`
   </action>
 
   <check if="validation failed">
@@ -91,7 +104,8 @@ globs: []
 
   <output>
     ✅ **Ending Step 4: Validation**
-    ✅ Validated against docfrontmatterrules
+    [ {{spec_status}} ] `{{project.path}}/templates/docs-metadata-spec.md`
+    ✅ Validated against metadata spec
     ✅ Confirmed all required fields present
     
     ➡️ **Beginning Step 5: Completion**
@@ -99,18 +113,11 @@ globs: []
 </step>
 
 <step n="5" goal="Completion">
-  <action>
-    **Provide Links**:
-    - Canonical Slug: `http://localhost:3000/docs/<slug>`
-    - Index: `http://localhost:3000/docs`
-  </action>
-
   <output>
     ### Doc Published
-    - **File**: [Path]
+    - **File**: `{{project.path}}/docs/{{type}}/{{filename}}.md`
     - **Status**: Active
     - **Tags**: [List]
-    - **URL**: [Link]
   </output>
 </step>
 

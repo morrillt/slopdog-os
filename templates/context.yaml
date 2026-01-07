@@ -9,6 +9,11 @@ execution:
   current_ticket_status: ""
   current_task: ""
   current_task_status: ""
+docs:
+  current_doc_type: ""
+  current_doc_title: ""
+  current_doc_filename: ""
+  current_doc_path: ""
 paths:
   plans: "plans/"
   docs: "docs/"
