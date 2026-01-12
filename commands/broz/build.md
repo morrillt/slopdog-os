@@ -1,7 +1,7 @@
 Activate Build Mode. (Trigger: `broz:build`)
 
 Do this EXACTLY in order:
-1) Read `plans/context.yaml`, if it does not exist, notify user and exit.
+1) Read `plans/context.yaml`, if it does not exist, notify user and exit.br
 2) Set `project.current_mode: build` in `plans/context.yaml`
 3) Read the repo style guide: `docs/styleguide.md`
 4) Read `~/.cursor/rules/broz/mode.build.mdc`

@@ -2,30 +2,132 @@
 description: "Workflow: Initialize new Broz OS project"
 globs: []
 ---
-# Workflow: Init<workflow id="broz.workflow.init">
+# Workflow: Init
+
+<workflow id="broz.workflow.init">
   <persona>
     Role: System Gear ⚙️
     Tone: Functional, efficient, clear.
     "Initializing new project environment..."
   </persona>
 
-  <agent-activation>
-    1. Check if `plans/context.yaml` already exists. If it does, ask the user: "Broz, this folder is already initialized. Do you want to re-initialize it? (y/n)". If 'n', abort.
-    2. Ask the user: "What is the name of this project?"
-    3. Scaffolding:
-       - Run `mkdir -p plans docs`
-    4. Template Deployment:
-       - Copy `/home/broz/.cursor/templates/context.yaml` to `plans/context.yaml`
-       - Copy `/home/broz/.cursor/templates/AGENTS.md` to `AGENTS.md` (project root)
-       - Copy `/home/broz/.cursor/templates/stylerules.md` to `docs/styleguide.md`
-    5. Personalization:
-       - Get the absolute path of the current directory.
-       - Update `plans/context.yaml`:
-         - Set `project.name` to the user-provided name (or current folder name if empty).
-         - Set `project.path` to the absolute path of the project.
-         - Set `project.current_mode` to `plan`.
-    6. Completion:
-       - Notify the user: "Project initialized successfully! Redirecting to menu..."
-       - Trigger `broz:menu`.
-  </agent-activation>
+  <step n="1" goal="Environment Check">
+    <action>
+      Check if `plans/context.yaml` already exists.
+      If it exists, **Prompt User**: "Broz, this folder is already initialized. Do you want to re-initialize it? (y/n)".
+      If 'n', abort.
+    </action>
+    <output>
+      ✅ **Ending Step 1: Environment Check**
+      🔍 Verified directory state.
+      
+      ➡️ **Beginning Step 2: Project Setup**
+    </output>
+  </step>
+
+  <step n="2" goal="Project Setup">
+    <action>
+      **Prompt User**: "What is the name of this project?"
+    </action>
+    <action>
+      **Scaffolding**: Run `mkdir -p plans docs`
+    </action>
+    <output>
+      ✅ **Ending Step 2: Project Setup**
+      📁 Created directory structure.
+      
+      ➡️ **Beginning Step 3: Scaffolding Options**
+    </output>
+  </step>
+
+  <step n="3" goal="Scaffolding Options">
+    <action>
+      **Prompt User**: "Broz, do you want to download the `slopdog-vanilla` scaffolding? (y/n)"
+    </action>
+    <action condition="User says 'y'">
+      1. Clone repo: `git clone https://github.com/morrillt/slopdog-vanilla.git tmp_vanilla`
+      2. Merge files: `cp -rn tmp_vanilla/* .` and `cp -rn tmp_vanilla/.[!.]* .`
+      3. Clean up: `rm -rf tmp_vanilla .git`
+    </action>
+    <output>
+      ✅ **Ending Step 3: Scaffolding Options**
+      🚀 Scaffolding applied (if selected).
+      
+      ➡️ **Beginning Step 4: Template Deployment**
+    </output>
+  </step>
+
+  <step n="4" goal="Template Deployment">
+    <action>
+      **Deploy Templates**:
+      - Copy `/home/broz/.cursor/templates/context.yaml` to `plans/context.yaml`
+      - Copy `/home/broz/.cursor/templates/AGENTS.md` to `AGENTS.md` (project root)
+      - Copy `/home/broz/.cursor/templates/stylerules.md` to `docs/styleguide.md`
+    </action>
+    <action>
+      **Fix Next.js Turbopack Root**:
+      - If `src/next.config.ts` exists, update it to set `turbopack.root` to the project root to avoid OS watch limit issues.
+    </action>
+    <action>
+      **Dependency Installation**:
+      - Run `npm install`
+    </action>
+    <output>
+      ✅ **Ending Step 4: Template Deployment**
+      📄 Deployed Broz OS core templates.
+      🔧 Configured Turbopack root.
+      📦 Installed dependencies.
+      
+      ➡️ **Beginning Step 5: Personalization**
+    </output>
+  </step>
+
+  <step n="5" goal="Personalization">
+    <action>
+      **Update Context**:
+      - Get absolute path of current directory.
+      - Update `plans/context.yaml`:
+        - `project.name`: User-provided name (or folder name).
+        - `project.path`: Absolute path.
+        - `project.current_mode`: `plan`.
+    </action>
+    <output>
+      ✅ **Ending Step 5: Personalization**
+      🔧 Project context configured.
+      
+      ➡️ **Beginning Step 6: Verification**
+    </output>
+  </step>
+
+  <step n="6" goal="Verification">
+    <action>
+      **Launch & Verify**:
+      1. Start dev server: `npm run dev` (background)
+      2. Wait for port 3001.
+      3. Use **Playwright MCP** to visit `http://localhost:3001`.
+      4. Take a screenshot and confirm "Hello" or page title.
+    </action>
+    <output>
+      ✅ **Ending Step 6: Verification**
+      🌐 Application verified via Playwright.
+      
+      ➡️ **Beginning Step 7: Completion**
+    </output>
+  </step>
+
+  <step n="7" goal="Completion">
+    <action>
+      Notify User: "Project initialized and verified! Redirecting to menu..."
+    </action>
+    <action>
+      Trigger `broz:menu`.
+    </action>
+    <output>
+      ### ✅ Initialization Complete
+      - **Project**: [project.name]
+      - **Path**: [project.path]
+      - **Mode**: Plan 🦁
+      - **Status**: Verified 🚀
+    </output>
+  </step>
 </workflow>

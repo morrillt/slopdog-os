@@ -19,6 +19,7 @@ The system is powered by Cursor Rules (`.mdc`) and Commands (`.md`) located in t
 - **`plans/`**: Directory for planning artifacts, epics, and tickets.
 - **`plans/context.yaml`**: The source of truth for the current system state (Mode, Ticket, Task).
 
+
 ---
 
 ## 🎭 Modes & Personas
@@ -121,3 +122,6 @@ execution:
   last_mode: "plan"
 ```
 
+References
+bmad workflows
+/home/broz/code/playground/bmad/_bmad/bmm/workflows

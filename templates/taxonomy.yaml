@@ -20,8 +20,11 @@ meta:
 # - tags: multi-select categorical labels (good for graphing + discovery)
 
 facets:
-  type: [plan, strategy, note, changelog]
+  type: [plan, strategy, note, changelog, how-to, research, dev-note]
   status: [draft, active, deprecated, done]
+  summary:
+    human: string
+    vector: string
   epic:
     # epic information for tickets
     number: string  # e.g., "EPIC-003"
@@ -60,6 +63,7 @@ descriptions:
     "doc/howto": "How-to documentation."
     "doc/beware": "Cautionary documentation / pitfalls."
     "doc/broz-oss": "Broz OSS documentation (modes, workflows, operations)."
+    "doc/research": "Exploratory research on problems and strategies."
     "audience/dev": "Primarily for developers."
     "audience/stakeholder": "Readable/valuable for non-dev stakeholders."
     "meta/index": "Index/listing doc."
@@ -146,6 +150,7 @@ tags:
     - howto
     - beware
     - broz-oss
+    - research
 
   tech:
     frontend:

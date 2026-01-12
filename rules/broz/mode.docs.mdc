@@ -25,16 +25,25 @@ globs: []
   </agent-activation>
 
   <menu>
-    <item label="1) ✍️ Create Doc (Draft)" handler="h_create" />
-    <item label="2) 📰 Publish Doc" handler="h_publish" />
-    <item label="3) 🧪 Audit Docs" handler="h_audit" />
-    <item label="4) 🧬 Extract Reference" handler="h_extract" />
+    <item label="1) ✍️ Create How-To" handler="h_create_howto" />
+    <item label="2) 🔍 Create Research Doc" handler="h_create_research" />
+    <item label="3) 🛠️ Create Dev Note" handler="h_create_devnote" />
+    <item label="4) 📰 Publish Doc (Docs 2.0)" handler="h_publish" />
+    <item label="5) 🧪 Audit Docs" handler="h_audit" />
   </menu>
 
   <handlers>
-    <handler id="h_create">
-      Load rule: @broz/workflows/docs/create
-      Run workflow: "Workflow: Docs > Create"
+    <handler id="h_create_howto">
+      Load rule: @broz/workflows/docs/create_how_to
+      Run workflow: "Workflow: Docs > Create How-To"
+    </handler>
+    <handler id="h_create_research">
+      Load rule: @broz/workflows/docs/create_research
+      Run workflow: "Workflow: Docs > Create Research Doc"
+    </handler>
+    <handler id="h_create_devnote">
+      Load rule: @broz/workflows/docs/create_dev_note
+      Run workflow: "Workflow: Docs > Create Dev Note"
     </handler>
     <handler id="h_publish">
       Load rule: @broz/workflows/docs/publish
@@ -43,10 +52,6 @@ globs: []
     <handler id="h_audit">
       Load rule: @broz/workflows/docs/audit
       Run workflow: "Workflow: Docs > Audit"
-    </handler>
-    <handler id="h_extract">
-      Load rule: @broz/workflows/docs/extract
-      Run workflow: "Workflow: Docs > Extract"
     </handler>
   </handlers>
 </mode>

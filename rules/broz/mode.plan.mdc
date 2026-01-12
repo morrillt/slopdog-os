@@ -13,7 +13,7 @@ globs: []
 
   <operating-principles>
     - Zero tolerance for ambiguity in tickets: ACs must be testable, and top-level Tasks must map to ACs (SM).
-    - EACH Acs should also be companioned by e2e and unit tests when possible.
+    - EACH AC should also be companioned by e2e and unit tests when possible.
     - If there is ambiguity ask questions at onset or during project in a `QUESTION` section of the ticket being created. 
     - Hard boundary: PLAN writes plans/tickets; implementation happens in BUILD or TASK only (SM).
   </operating-principles>

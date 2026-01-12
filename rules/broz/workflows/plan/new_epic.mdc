@@ -1,0 +1,333 @@
+---
+description: "Workflow: Create a new Epic PRD from the epic template (guided, section-by-section)"
+globs: []
+---
+# Workflow: Plan > New Epic
+
+<critical>This workflow is for PLANNING only. Do not modify product code.</critical>
+<critical>Read `plans/context.yaml` ONCE at the start to get `project.path`.</critical>
+<critical>Only ONE file is created, and ONLY in the final step.</critical>
+<critical>Follow the template in `~/.cursor/templates/epic-prd-template-airbnb.md` (section-by-section).</critical>
+
+<variables>
+  {{project_path}} - From `plans/context.yaml` (`project.path`)
+  {{epic_title}} - User-provided epic title
+  {{epic_filename}} - User-provided kebab-case filename (ex: `epic-1-search.md`)
+  {{epic_target_path}} - `{{project_path}}/plans/{{epic_filename}}`
+  {{overview}} - Filled section text
+  {{goals}} - Filled section text
+  {{non_goals}} - Filled section text
+  {{technical_context}} - Filled section text
+  {{user_stories}} - Filled section text (tables)
+  {{risks}} - Filled section text
+  {{notes}} - Filled section text
+  {{suggested_user_stories}} - Filled section text
+</variables>
+
+<workflow>
+
+<step n="1" goal="Initialize + load template">
+  <action>
+    **Load Context**:
+    - Read `plans/context.yaml`
+    - Set `{{project_path}}` = `project.path`
+    - Report: `[ ✅ | ❌ ] project.path loaded`
+  </action>
+
+  <action>
+    **Load Epic Template**:
+    - Read: `~/.cursor/templates/epic-prd-template-airbnb.md`
+    - Report: `[ ✅ | ❌ ] Template loaded`
+  </action>
+
+  <action>
+    **Collect Epic Metadata (Ask User)**:
+    - **Epic Title** (human readable)
+    - **Epic Filename** (kebab-case, include `.md`)
+      - Example: `epic-1-marketplace-prd.md`
+    - Store:
+      - `{{epic_title}}`
+      - `{{epic_filename}}`
+      - `{{epic_target_path}}` = `{{project_path}}/plans/{{epic_filename}}`
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Initialize + load template**
+    [ ✅ ] `plans/context.yaml` read
+    [ ✅ ] Template loaded: `~/.cursor/templates/epic-prd-template-airbnb.md`
+    📝 **Epic Title**: {{epic_title}}
+    📝 **Epic Output**: `{{epic_target_path}}`
+
+    ➡️ **Beginning Step 2: Clarifying Questions**
+  </output>
+</step>
+
+<step n="2" goal="Clarifying questions (improve clarity)">
+  <action>
+    **Ask Clarifying Questions** (do not draft the epic yet):
+    - What’s the one-sentence “what” of this epic?
+    - Who is the primary user/customer?
+    - What is the painful problem today (how do they do it now)?
+    - What does success look like (measurable outcomes)?
+    - What constraints matter (time, data, budget, compliance, platform)?
+    - What’s explicitly out of scope?
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Summarize your understanding in 5 bullets.
+    - Ask: "Confirm or correct these bullets before we draft sections. (Y to proceed / corrections)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Clarifying Questions**
+    🤝 Aligned on problem, user, scope, and success criteria.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 3: Missing / Additional User Stories**
+  </output>
+</step>
+
+<step n="3" goal="Missing user stories (suggest gaps early)">
+  <action>
+    **Prompt for overlooked stories**:
+    - Ask what workflows or actors might be missing (admins, support, onboarding, billing, analytics, etc.)
+    - Propose 5–10 candidate user stories that might be relevant, labeled "optional ideas"
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Ask: "Which of these should we include now vs park for later?"
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Missing / Additional User Stories**
+    💡 Captured additional candidate stories and scope decisions.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 4: Fill Section 1 — Overview**
+  </output>
+</step>
+
+<step n="4" goal="Fill Section 1 — Overview">
+  <action>
+    **Draft Overview**:
+    - Fill:
+      - **What**
+      - **Problem**
+      - **Why**
+    - Store as `{{overview}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show the drafted Overview section.
+    - Ask: "Approve Overview? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Overview**
+    ✍️ Drafted Overview.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 5: Fill Section 2 — Goals**
+  </output>
+</step>
+
+<step n="5" goal="Fill Section 2 — Goals">
+  <action>
+    **Draft Goals**:
+    - Produce 3–6 high-level goals grounded in user value.
+    - Store as `{{goals}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show drafted Goals.
+    - Ask: "Approve Goals? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 5: Goals**
+    ✍️ Drafted Goals.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 6: Fill Section 3 — Non-Goals**
+  </output>
+</step>
+
+<step n="6" goal="Fill Section 3 — Non-Goals">
+  <action>
+    **Draft Non-Goals**:
+    - Write explicit out-of-scope items (3–8 bullets).
+    - Store as `{{non_goals}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show drafted Non-Goals.
+    - Ask: "Approve Non-Goals? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 6: Non-Goals**
+    ✍️ Drafted Non-Goals.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 7: Fill Section 4 — Technical Context**
+  </output>
+</step>
+
+<step n="7" goal="Fill Section 4 — Technical Context">
+  <action>
+    **Draft Technical Context**:
+    - Confirm base stack (default: "Vanilla Broz template")
+    - If extra tech is needed, propose a small table: Tech + Rationale
+    - Store as `{{technical_context}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show drafted Technical Context.
+    - Ask: "Approve Technical Context? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 7: Technical Context**
+    ✍️ Drafted Technical Context.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 8: Fill Section 5 — User Stories & AC**
+  </output>
+</step>
+
+<step n="8" goal="Fill Section 5 — User Stories & Acceptance Criteria">
+  <action>
+    **Draft User Stories & AC**:
+    - Create tables grouped by goal.
+    - For each user story, include:
+      - ID `US-###`
+      - User Story
+      - Acceptance Criteria (testable)
+      - Edge Cases
+      - Size (S/M/L/XL fib)
+    - Store as `{{user_stories}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show the tables.
+    - Ask: "Approve User Stories & AC? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 8: User Stories & Acceptance Criteria**
+    ✍️ Drafted user story tables.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 9: Fill Section 6 — Concerns & Risks**
+  </output>
+</step>
+
+<step n="9" goal="Fill Section 6 — Concerns & Risks">
+  <action>
+    **Draft Concerns & Risks**:
+    - List key risks/concerns (3–10 bullets).
+    - Store as `{{risks}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show drafted Concerns & Risks.
+    - Ask: "Approve Concerns & Risks? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 9: Concerns & Risks**
+    ✍️ Drafted concerns/risks.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 10: Fill Section 7 — Notes**
+  </output>
+</step>
+
+<step n="10" goal="Fill Section 7 — Notes">
+  <action>
+    **Draft Notes**:
+    - Add miscellaneous context (0–10 bullets).
+    - Store as `{{notes}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show drafted Notes.
+    - Ask: "Approve Notes? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 10: Notes**
+    ✍️ Drafted notes.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 11: Fill Section 8 — Suggested Additional User Stories**
+  </output>
+</step>
+
+<step n="11" goal="Fill Section 8 — Suggested Additional User Stories">
+  <action>
+    **Draft Suggested Additional User Stories**:
+    - Propose 5–15 “future” user stories not required for v1.
+    - Store as `{{suggested_user_stories}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show suggested stories.
+    - Ask: "Approve suggested stories? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 11: Suggested Additional User Stories**
+    ✍️ Drafted suggested future stories.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 12: Finalize + Write Epic File**
+  </output>
+</step>
+
+<step n="12" goal="Finalize + Write Epic File">
+  <critical>This is the ONLY step where a file is created. Only ONE file.</critical>
+
+  <action>
+    **Assemble Epic PRD**:
+    - Produce a single markdown document mirroring the template headings:
+      - Overview
+      - Goals
+      - Non-Goals
+      - Technical Context
+      - User Stories & Acceptance Criteria
+      - Concerns & Risks
+      - Notes
+      - Suggested Additional User Stories
+      - Downstream Workflow: Sharding into Tickets
+  </action>
+
+  <action>
+    **Commit Single File to Disk**:
+    - Write the assembled document to: `{{epic_target_path}}`
+    - Report: `[ ✅ | ❌ ] File created`
+  </action>
+
+  <output>
+    ✅ **Ending Step 12: Finalize + Write Epic File**
+
+    ### Epic Created
+    - **Template**: [ ✅ ] `~/.cursor/templates/epic-prd-template-airbnb.md`
+    - **Output**: [ ✅ ] `{{epic_target_path}}`
+    - **Status**: Draft
+
+    📄 Epic PRD saved to: `{{epic_target_path}}`
+  </output>
+</step>
+
+</workflow>

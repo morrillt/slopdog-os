@@ -1,0 +1,413 @@
+---
+description: "Workflow: Create a new Research documentation file"
+globs: []
+---
+
+# Workflow: Docs > Create Research Doc
+
+<critical>Do NOT add H1 title in body (Front-matter `title` is H1).</critical>
+<critical>Use H2 (`##`) for major sections (required for TOC).</critical>
+<critical>New docs must start as `status: draft`.</critical>
+<critical>Read `plans/context.yaml` ONCE at start to get `project.path`. Do NOT write to context.yaml.</critical>
+<critical>Use workflow variables ({{title}}, {{filename}}, {{target_path}}) throughout. These are held in memory.</critical>
+<critical>Only ONE file is created at the FINAL step. Do NOT create any files before the final step.</critical>
+<critical>Use MCP servers for Reddit and YouTube searches. Use web_search for other platforms.</critical>
+
+<variables>
+  {{project_path}} - Read from context.yaml at Step 1 (e.g., /home/broz/.cursor)
+  {{title}} - User-provided title for the research doc
+  {{filename}} - User-provided kebab-case filename
+  {{target_path}} - Computed as {{project_path}}/docs/research/{{filename}}.md
+</variables>
+
+<scoring-rubric>
+  Use this rubric when assigning scores in the Findings Table:
+  | Score | Confidence Level | Description |
+  |-------|------------------|-------------|
+  | 90-100 | Primary Source | Creator/maintainer, official docs, first-hand account |
+  | 70-89 | Expert Practitioner | Experienced user with evidence (screenshots, code) |
+  | 50-69 | Anecdote | Credible but unverified claim |
+  | 30-49 | Speculation | Marketing, opinion without evidence |
+  | 0-29 | Contradicted | Outdated or disputed by other findings |
+</scoring-rubric>
+
+<workflow>
+
+<step n="1" goal="Context Load & Raw Note Capture">
+  <action>
+    **Load Project Path**:
+    - Read `plans/context.yaml` to obtain `project.path`.
+    - Store in workflow variable: `{{project_path}}`
+    - Report: `[ ✅ | ❌ ] plans/context.yaml`
+  </action>
+
+  <action>
+    **Initial Capture**:
+    - Ask the user for:
+      - **Title**: Human-readable title for the research doc.
+      - **Filename**: Kebab-case filename (e.g., `vector-db-comparison`).
+      - **Gist**: Rough notes or objective for the research.
+    - Store in workflow variables:
+      - `{{title}}` = User's title
+      - `{{filename}}` = User's filename
+      - `{{target_path}}` = `{{project_path}}/docs/research/{{filename}}.md`
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Initialize**
+    [ ✅ ] `plans/context.yaml` loaded
+    📝 **Title**: {{title}}
+    📝 **Filename**: {{filename}}
+    📝 **Target Path**: {{target_path}}
+    
+    ➡️ **Beginning Step 2: Problem Statement & Context Definition**
+  </output>
+</step>
+
+<step n="2" goal="Problem Statement & Context Definition">
+  <action>
+    **Draft Scope**:
+    - Create a **short, concise** Problem Statement.
+    - Enumerate **Additional Context** using a structured bullet/sub-bullet hierarchy.
+  </action>
+
+  <action>
+    **User Confirmation Gate** (STOP):
+    - Present the drafted Problem Statement and Context to the user.
+    - Ask: "Does this scope look correct? (Y to proceed, or provide corrections)"
+    - **Do NOT proceed to Step 3 until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Scope Defined**
+    🎯 Drafted short Problem Statement.
+    📂 Enumerated Additional Context (Bulleted).
+    ✋ Awaiting user confirmation before research.
+    
+    ➡️ **Beginning Step 3: Reddit Search (MCP)**
+  </output>
+</step>
+
+<step n="3" goal="Reddit Search">
+  <critical>Use the Reddit MCP server. Output feeds Step 4.</critical>
+
+  <handoff_input>
+    - **From Step 2**: Problem Statement, Initial Keywords
+  </handoff_input>
+
+  <action>
+    **Surface Search**:
+    - Identify 2-3 relevant subreddits.
+    - Use `mcp_reddit_get_subreddit_top_posts` (time: month/year) and `mcp_reddit_get_subreddit_hot_posts`.
+  </action>
+
+  <action>
+    **Firescrape (Deep Dive)**:
+    - For high-signal posts (score > 100 or highly relevant), use `mcp_reddit_get_post_content` to extract full post + top comments.
+    - Look for: Expert replies, linked resources, specific tool names.
+  </action>
+
+  <action>
+    **Capture to Findings Table**:
+    - Add each relevant finding with Score and Justification.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Reddit Search**
+    ⏱️ **Duration**: [HH:MM]
+    📊 **Posts Scanned**: [N] | **Firescraped**: [N]
+    📊 **Findings Captured**: [N]
+    
+    <handoff to="Step 4">
+      keywords: [List refined keywords discovered]
+      tools_mentioned: [Specific tools/projects found]
+      pain_points: [Common frustrations identified]
+      experts_to_follow: [Usernames with high-signal posts]
+    </handoff>
+    
+    ➡️ **Beginning Step 4: YouTube Search**
+  </output>
+</step>
+
+<step n="4" goal="YouTube Search">
+  <critical>Use the YouTube MCP server. Use handoff from Step 3 to refine search.</critical>
+
+  <handoff_input>
+    - **From Step 3**: keywords, tools_mentioned, pain_points
+  </handoff_input>
+
+  <action>
+    **Surface Search**:
+    - Use `web_search`: `site:youtube.com [keywords from Step 3] "workflow" "why" "tutorial"`
+    - Extract video IDs from results.
+  </action>
+
+  <action>
+    **Firescrape (Transcript Extraction)**:
+    - For each high-signal video, use `mcp_youtube_get_transcript`.
+    - Analyze for: "WHY" (unique value), "HOW" (specific steps), mentions of tools from Step 3.
+    - Note if video solves a pain_point from Step 3 handoff.
+  </action>
+
+  <action>
+    **Capture to Findings Table**:
+    - Include YouTube URL, timestamp of key insight if available.
+    - Justification should reference Step 3 pain point if applicable.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: YouTube Search**
+    ⏱️ **Duration**: [HH:MM]
+    📊 **Videos Found**: [N] | **Transcripts Analyzed**: [N]
+    📊 **Findings Captured**: [N]
+    
+    <handoff to="Step 5">
+      keywords: [Updated/refined keywords]
+      repos_mentioned: [GitHub repos or projects mentioned in videos]
+      workflows_identified: [Specific multi-step workflows found]
+    </handoff>
+    
+    ➡️ **Beginning Step 5: GitHub Search**
+  </output>
+</step>
+
+<step n="5" goal="GitHub Search">
+  <critical>Use GitHub MCP or web_search. Use handoff from Step 4 to find implementations.</critical>
+
+  <handoff_input>
+    - **From Step 4**: repos_mentioned, workflows_identified, keywords
+  </handoff_input>
+
+  <action>
+    **Surface Search**:
+    - Use `mcp_github_search_repositories` or `web_search`: `site:github.com [repos_mentioned]`
+    - Search for MCP servers, CLI tools, or scripts related to the research topic.
+  </action>
+
+  <action>
+    **Firescrape (Repo Deep Dive)**:
+    - For relevant repos, use `mcp_github_get_file_contents` to read README.md or key source files.
+    - Look for: Installation instructions, usage examples, star count, last commit date.
+  </action>
+
+  <action>
+    **Capture to Findings Table**:
+    - Include repo URL, star count, and relevance to workflows from Step 4.
+  </action>
+
+  <output>
+    ✅ **Ending Step 5: GitHub Search**
+    ⏱️ **Duration**: [HH:MM]
+    📊 **Repos Found**: [N] | **READMEs Analyzed**: [N]
+    📊 **Findings Captured**: [N]
+    
+    <handoff to="Step 6">
+      keywords: [Final refined keywords]
+      official_docs: [Any official documentation links found]
+      implementation_patterns: [Code patterns or architectures discovered]
+    </handoff>
+    
+    ➡️ **Beginning Step 6: Web Search (General)**
+  </output>
+</step>
+
+<step n="6" goal="Web Search (General)">
+  <critical>Final sweep for official docs, blog posts, and Q&A. Use handoff from Step 5.</critical>
+
+  <handoff_input>
+    - **From Step 5**: keywords, official_docs, implementation_patterns
+  </handoff_input>
+
+  <action>
+    **Surface Search (Multi-Site)**:
+    - Google: `web_search` with final keywords.
+    - Medium: `site:medium.com [keywords]`
+    - Stack Overflow: `site:stackoverflow.com [keywords]`
+    - Official Docs: `site:[official_docs domain] [keywords]` (if applicable).
+  </action>
+
+  <action>
+    **Firescrape (Article/Answer Deep Dive)**:
+    - Use `mcp_cursor-ide-browser_browser_navigate` + `mcp_cursor-ide-browser_browser_snapshot` to read full articles if needed.
+    - Extract key quotes, code snippets, or diagrams.
+  </action>
+
+  <action>
+    **Capture to Findings Table**:
+    - Include source URL, author/publication credibility, and relevance.
+  </action>
+
+  <output>
+    ✅ **Ending Step 6: Web Search (General)**
+    ⏱️ **Duration**: [HH:MM]
+    📊 **Sites Searched**: [N] | **Articles Firescraped**: [N]
+    📊 **Findings Captured**: [N]
+    
+    ### Cumulative Search Summary
+    | Step | Platform | Surface | Firescraped | Findings |
+    |------|----------|---------|-------------|----------|
+    | 3 | Reddit | [N] | [N] | [N] |
+    | 4 | YouTube | [N] | [N] | [N] |
+    | 5 | GitHub | [N] | [N] | [N] |
+    | 6 | Web (General) | [N] | [N] | [N] |
+    | **Total** | | | | **[N]** |
+    
+    ➡️ **Beginning Step 7: Research Methodology Audit**
+  </output>
+</step>
+
+<step n="7" goal="Research Methodology Audit">
+  <critical>This step produces the "console.log" for process refinement.</critical>
+
+  <action>
+    **Compile Handoff Chain**:
+    - Review all `<handoff>` outputs from Steps 3-6.
+    - Document how keywords evolved: Initial → Reddit → YouTube → GitHub → Final.
+    - Note which pain_points were solved by which findings.
+  </action>
+
+  <action>
+    **Generate Audit Log**:
+    Present the following structure:
+    ```
+    ## Research Audit Log
+    
+    ### Keyword Evolution
+    | Step | Keywords Added | Keywords Dropped | Rationale |
+    |------|----------------|------------------|-----------|
+    | 3 (Reddit) | [...] | [...] | [...] |
+    | 4 (YouTube) | [...] | [...] | [...] |
+    | 5 (GitHub) | [...] | [...] | [...] |
+    | 6 (Web) | [...] | [...] | [...] |
+    
+    ### Pain Point Resolution
+    | Pain Point (from Reddit) | Resolved By | Source |
+    |--------------------------|-------------|--------|
+    | [...] | [...] | Step X Finding Y |
+    
+    ### Coverage Gaps
+    - [ ] Areas not covered: [...]
+    - [ ] Potential follow-up searches: [...]
+    ```
+  </action>
+
+  <action>
+    **User Confirmation Gate** (STOP):
+    - Present the full Audit Log to the user.
+    - Ask: "Does this research methodology look complete? (Y to proceed to Analysis, or provide direction for more search)"
+    - **Do NOT proceed to Step 8 until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 7: Methodology Audited**
+    📊 Handoff chain documented.
+    📊 Keyword evolution tracked.
+    📊 Pain points mapped to resolutions.
+    ✋ Awaiting user confirmation before synthesis.
+    
+    ➡️ **Beginning Step 8: Findings Analysis & Option Generation**
+  </output>
+</step>
+
+<step n="8" goal="Findings Analysis & Option Generation">
+  <action>
+    **Synthesize Options**:
+    - Based on the findings, generate **2-4 Options** (A, B, C, D optional).
+    - Provide a detailed **Pros/Cons** list for each.
+    - **Record Assumptions & Concerns**: As you think through the options, capture every assumption or concern identified in the **Concerns / Risks / Assumptions** section.
+  </action>
+
+  <output>
+    ✅ **Ending Step 8: Options Generated**
+    📐 Drafted 2-4 Options with Pros/Cons.
+    🚩 Logged all Assumptions and Concerns discovered during synthesis.
+    
+    ➡️ **Beginning Step 9: Weighted Recommendation & Risk Assessment**
+  </output>
+</step>
+
+<step n="9" goal="Weighted Recommendation & Risk Assessment">
+  <action>
+    **Final Analysis**:
+    - Provide a **Recommendation** that weights all options against the research findings.
+    - Justify the choice based on the relevance scores and risks identified.
+  </action>
+
+  <output>
+    ✅ **Ending Step 9: Final Analysis**
+    ⚖️ Formulated Weighted Recommendation.
+    
+    ➡️ **Beginning Step 10: User Review**
+  </output>
+</step>
+
+<step n="10" goal="User Review">
+  <action>
+    **Present Full Research**:
+    - Share the complete Findings Table, Options, and Recommendation with the user.
+    - Ask: "Does this research look complete? (Y to finalize, or provide feedback)"
+  </action>
+
+  <action>
+    **Iteration Branch**:
+    - If user requests changes:
+      - If "search [Platform X]" → Loop back to appropriate step.
+      - If "add Option D" or "revise Option B" → Loop back to **Step 8**.
+      - If "adjust recommendation" → Loop back to **Step 9**.
+    - If user approves → Proceed to **Step 11**.
+  </action>
+
+  <output>
+    ✅ **Ending Step 10: Review & Feedback**
+    🗣️ Received user feedback on research.
+    
+    ➡️ **Beginning Step 11: Final File Creation**
+  </output>
+</step>
+
+<step n="11" goal="Final File Creation">
+  <critical>This is the ONLY step where a file is created. Only ONE file.</critical>
+
+  <action>
+    **Ensure Directory Exists**:
+    - Create `{{project_path}}/docs/research/` if it does not exist.
+  </action>
+
+  <action>
+    **Load Template**:
+    - Read template from: `{{project_path}}/templates/docs/research.md`
+    - Report: `[ ✅ | ❌ ] Template loaded`
+  </action>
+
+  <action>
+    **Commit Single File to Disk**:
+    - Target Path: `{{target_path}}`
+    - Populate all sections using the template as foundation:
+      - Front-matter with {{title}}, today's date, type: research, status: draft
+      - **Problem Statement**
+      - **Additional Context**
+      - **Research Audit Log** (from Step 7):
+        - Cumulative Search Summary table
+        - Keyword Evolution table
+        - Pain Point Resolution table
+        - Coverage Gaps checklist
+      - **Notes & Findings Table** (all entries from Steps 3-6, with Scores per rubric)
+      - **Options Explored** (from Step 8)
+      - **Recommendation** (from Step 9)
+      - **Concerns / Risks / Assumptions**
+    - Report: `[ ✅ | ❌ ] File created`
+  </action>
+
+  <output>
+    ✅ **Ending Step 11: Draft Created**
+    
+    ### File Created
+    - **Template**: [ ✅ ] `{{project_path}}/templates/docs/research.md`
+    - **Output**: [ ✅ ] `{{target_path}}`
+    - **Status**: Draft
+    
+    📄 Research Document saved to: `{{target_path}}`
+  </output>
+</step>
+
+</workflow>
