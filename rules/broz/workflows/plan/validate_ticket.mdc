@@ -96,7 +96,9 @@ globs: []
 <step n="4" goal="Quality Validation">
   <action>
     **Taxonomy Check**:
-    - Verify `tags` against `docs/taxonomy.yaml`.
+    - Prefer: verify `tags` against `{{project_path}}/docs/taxonomy.yaml` (where `{{project_path}}` comes from `plans/context.yaml`).
+    - If that file does not exist, fallback to: `~/.cursor/templates/taxonomy.yaml`.
+    - If fallback is used, add a validation issue noting: "Project missing docs/taxonomy.yaml; used template fallback".
   </action>
 
   <action>

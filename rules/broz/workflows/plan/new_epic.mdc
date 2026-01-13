@@ -14,6 +14,7 @@ globs: []
   {{epic_title}} - User-provided epic title
   {{epic_filename}} - User-provided kebab-case filename (ex: `epic-1-search.md`)
   {{epic_target_path}} - `{{project_path}}/plans/{{epic_filename}}`
+  {{rough_thoughts}} - User-provided raw starting thoughts / brain dump
   {{overview}} - Filled section text
   {{goals}} - Filled section text
   {{non_goals}} - Filled section text
@@ -22,11 +23,41 @@ globs: []
   {{risks}} - Filled section text
   {{notes}} - Filled section text
   {{suggested_user_stories}} - Filled section text
+  {{backlog}} - Parked ideas / deferred items (not MVP)
 </variables>
 
 <workflow>
 
-<step n="1" goal="Initialize + load template">
+<step n="1" goal="Collect rough thoughts (starting point)">
+  <action>
+    **Ask for your rough thoughts**:
+    - Give me a raw brain-dump to start from (bullets are great).
+    - Helpful prompts (optional):
+      - What are you trying to build?
+      - Who is it for?
+      - What problem does it solve?
+      - What would “this is working” look like?
+      - Any constraints or must-haves?
+      - Any hard “no” / out-of-scope?
+    - Store as `{{rough_thoughts}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Echo back your rough thoughts in a cleaned-up bullet list (no rewriting intent).
+    - Ask: "Confirm these rough thoughts are captured correctly. (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Collect rough thoughts (starting point)**
+    🧠 Captured starting point.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 2: Initialize + load template**
+  </output>
+</step>
+
+<step n="2" goal="Initialize + load template">
   <action>
     **Load Context**:
     - Read `plans/context.yaml`
@@ -52,17 +83,17 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 1: Initialize + load template**
+    ✅ **Ending Step 2: Initialize + load template**
     [ ✅ ] `plans/context.yaml` read
     [ ✅ ] Template loaded: `~/.cursor/templates/epic-prd-template-airbnb.md`
     📝 **Epic Title**: {{epic_title}}
     📝 **Epic Output**: `{{epic_target_path}}`
 
-    ➡️ **Beginning Step 2: Clarifying Questions**
+    ➡️ **Beginning Step 3: Clarifying questions (improve clarity)**
   </output>
 </step>
 
-<step n="2" goal="Clarifying questions (improve clarity)">
+<step n="3" goal="Clarifying questions (improve clarity)">
   <action>
     **Ask Clarifying Questions** (do not draft the epic yet):
     - What’s the one-sentence “what” of this epic?
@@ -80,15 +111,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 2: Clarifying Questions**
+    ✅ **Ending Step 3: Clarifying questions (improve clarity)**
     🤝 Aligned on problem, user, scope, and success criteria.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 3: Missing / Additional User Stories**
+    ➡️ **Beginning Step 4: Missing user stories (suggest gaps early)**
   </output>
 </step>
 
-<step n="3" goal="Missing user stories (suggest gaps early)">
+<step n="4" goal="Missing user stories (suggest gaps early)">
   <action>
     **Prompt for overlooked stories**:
     - Ask what workflows or actors might be missing (admins, support, onboarding, billing, analytics, etc.)
@@ -101,15 +132,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 3: Missing / Additional User Stories**
+    ✅ **Ending Step 4: Missing user stories (suggest gaps early)**
     💡 Captured additional candidate stories and scope decisions.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 4: Fill Section 1 — Overview**
+    ➡️ **Beginning Step 5: Fill Section 1 — Overview**
   </output>
 </step>
 
-<step n="4" goal="Fill Section 1 — Overview">
+<step n="5" goal="Fill Section 1 — Overview">
   <action>
     **Draft Overview**:
     - Fill:
@@ -126,15 +157,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 4: Overview**
+    ✅ **Ending Step 5: Fill Section 1 — Overview**
     ✍️ Drafted Overview.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 5: Fill Section 2 — Goals**
+    ➡️ **Beginning Step 6: Fill Section 2 — Goals**
   </output>
 </step>
 
-<step n="5" goal="Fill Section 2 — Goals">
+<step n="6" goal="Fill Section 2 — Goals">
   <action>
     **Draft Goals**:
     - Produce 3–6 high-level goals grounded in user value.
@@ -148,15 +179,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 5: Goals**
+    ✅ **Ending Step 6: Fill Section 2 — Goals**
     ✍️ Drafted Goals.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 6: Fill Section 3 — Non-Goals**
+    ➡️ **Beginning Step 7: Fill Section 3 — Non-Goals**
   </output>
 </step>
 
-<step n="6" goal="Fill Section 3 — Non-Goals">
+<step n="7" goal="Fill Section 3 — Non-Goals">
   <action>
     **Draft Non-Goals**:
     - Write explicit out-of-scope items (3–8 bullets).
@@ -170,15 +201,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 6: Non-Goals**
+    ✅ **Ending Step 7: Fill Section 3 — Non-Goals**
     ✍️ Drafted Non-Goals.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 7: Fill Section 4 — Technical Context**
+    ➡️ **Beginning Step 8: Fill Section 4 — Technical Context**
   </output>
 </step>
 
-<step n="7" goal="Fill Section 4 — Technical Context">
+<step n="8" goal="Fill Section 4 — Technical Context">
   <action>
     **Draft Technical Context**:
     - Confirm base stack (default: "Vanilla Broz template")
@@ -193,15 +224,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 7: Technical Context**
+    ✅ **Ending Step 8: Fill Section 4 — Technical Context**
     ✍️ Drafted Technical Context.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 8: Fill Section 5 — User Stories & AC**
+    ➡️ **Beginning Step 9: Fill Section 5 — User Stories & Acceptance Criteria**
   </output>
 </step>
 
-<step n="8" goal="Fill Section 5 — User Stories & Acceptance Criteria">
+<step n="9" goal="Fill Section 5 — User Stories & Acceptance Criteria">
   <action>
     **Draft User Stories & AC**:
     - Create tables grouped by goal.
@@ -221,15 +252,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 8: User Stories & Acceptance Criteria**
+    ✅ **Ending Step 9: Fill Section 5 — User Stories & Acceptance Criteria**
     ✍️ Drafted user story tables.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 9: Fill Section 6 — Concerns & Risks**
+    ➡️ **Beginning Step 10: Fill Section 6 — Concerns & Risks**
   </output>
 </step>
 
-<step n="9" goal="Fill Section 6 — Concerns & Risks">
+<step n="10" goal="Fill Section 6 — Concerns & Risks">
   <action>
     **Draft Concerns & Risks**:
     - List key risks/concerns (3–10 bullets).
@@ -243,15 +274,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 9: Concerns & Risks**
+    ✅ **Ending Step 10: Fill Section 6 — Concerns & Risks**
     ✍️ Drafted concerns/risks.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 10: Fill Section 7 — Notes**
+    ➡️ **Beginning Step 11: Fill Section 7 — Notes**
   </output>
 </step>
 
-<step n="10" goal="Fill Section 7 — Notes">
+<step n="11" goal="Fill Section 7 — Notes">
   <action>
     **Draft Notes**:
     - Add miscellaneous context (0–10 bullets).
@@ -265,15 +296,15 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 10: Notes**
+    ✅ **Ending Step 11: Fill Section 7 — Notes**
     ✍️ Drafted notes.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 11: Fill Section 8 — Suggested Additional User Stories**
+    ➡️ **Beginning Step 12: Fill Section 8 — Suggested Additional User Stories**
   </output>
 </step>
 
-<step n="11" goal="Fill Section 8 — Suggested Additional User Stories">
+<step n="12" goal="Fill Section 8 — Suggested Additional User Stories">
   <action>
     **Draft Suggested Additional User Stories**:
     - Propose 5–15 “future” user stories not required for v1.
@@ -287,15 +318,40 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 11: Suggested Additional User Stories**
+    ✅ **Ending Step 12: Fill Section 8 — Suggested Additional User Stories**
     ✍️ Drafted suggested future stories.
     ✋ Awaiting user confirmation.
 
-    ➡️ **Beginning Step 12: Finalize + Write Epic File**
+    ➡️ **Beginning Step 13: Backlog (deferred items)**
   </output>
 </step>
 
-<step n="12" goal="Finalize + Write Epic File">
+
+<step n="13" goal="Backlog (deferred items)">
+  <action>
+    **Create Backlog section**:
+    - Capture explicitly deferred items (not MVP).
+    - Include at least:
+      - Integrate **banananano / NANO thumbnail pipeline** (Epic 2)
+    - Store as `{{backlog}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show the Backlog section.
+    - Ask: "Approve Backlog? (Y / edits)"
+  </action>
+
+  <output>
+    ✅ **Ending Step 13: Backlog (deferred items)**
+    🧾 Captured backlog/deferred scope.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 14: Finalize + Write Epic File**
+  </output>
+</step>
+
+<step n="14" goal="Finalize + Write Epic File">
   <critical>This is the ONLY step where a file is created. Only ONE file.</critical>
 
   <action>
@@ -309,6 +365,7 @@ globs: []
       - Concerns & Risks
       - Notes
       - Suggested Additional User Stories
+      - Backlog
       - Downstream Workflow: Sharding into Tickets
   </action>
 
@@ -319,7 +376,7 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 12: Finalize + Write Epic File**
+    ✅ **Ending Step 14: Finalize + Write Epic File**
 
     ### Epic Created
     - **Template**: [ ✅ ] `~/.cursor/templates/epic-prd-template-airbnb.md`

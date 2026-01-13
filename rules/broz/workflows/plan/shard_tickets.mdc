@@ -1,0 +1,284 @@
+---
+description: "Workflow: Shard an Epic into a set of ready-to-run tickets (1 user story per ticket)"
+globs: []
+---
+# Workflow: Plan > Shard Tickets
+
+<critical>This workflow is for PLANNING only. Do not modify product code.</critical>
+<critical>Read `plans/context.yaml` ONCE at the start to get `project.path` and `execution.current_epic`.</critical>
+<critical>One user story per ticket. Each ticket MUST link back to the Epic for full context.</critical>
+<critical>Tickets MUST follow the template: `~/.cursor/templates/ticket.md`.</critical>
+<critical>Success criteria MUST be testable. Top-level Tasks MUST map to Acceptance Criteria using `(AC: AC-#...)`.</critical>
+<critical>TDD is CRUCIAL: the FIRST top-level task MUST be creating failing tests, and the LAST top-level task MUST be running/validating tests pass.</critical>
+<critical>All sharded tickets MUST be created in a state that will PASS **Plan > Validate Ticket** (no open questions; concrete tests; taxonomy-valid tags). Set `validation.state: passed` when gates are met.</critical>
+<critical>Do NOT create any files until the FINAL step. In the FINAL step you MAY create multiple ticket files (and only ticket files).</critical>
+
+<variables>
+  {{project_path}} - From `plans/context.yaml` (`project.path`)
+  {{epic_filename}} - From `plans/context.yaml` (`execution.current_epic`) or user-provided override
+  {{epic_path}} - `{{project_path}}/plans/{{epic_filename}}`
+  {{epic_slug}} - Kebab-case slug derived from `{{epic_filename}}` without `.md` (ex: `epic-1-youtube-channel-monitor`)
+  {{tickets_dir}} - `{{project_path}}/plans/epics/{{epic_slug}}/`
+
+  {{taxonomy_path}} - Preferred: `{{project_path}}/docs/taxonomy.yaml` (fallback: `~/.cursor/templates/taxonomy.yaml`)
+
+  {{user_story_rows}} - Extracted list of user stories from the Epic (IDs like `US-001`)
+  {{ticket_plan}} - Proposed tickets (IDs, filenames, titles) derived from the Epic
+  {{ambiguities}} - Cross-ticket ambiguity list (for final report)
+  {{tech_stack_notes}} - Notes on any tech stack decisions/options discovered while sharding
+</variables>
+
+<workflow>
+
+<step n="1" goal="Initialize: load context + locate epic">
+  <action>
+    **Load Context**:
+    - Read `plans/context.yaml`
+    - Set:
+      - `{{project_path}}` = `project.path`
+      - `{{epic_filename}}` = `execution.current_epic`
+    - Report: `[ ✅ | ❌ ] project.path loaded`
+    - Report: `[ ✅ | ❌ ] execution.current_epic loaded`
+  </action>
+
+  <action>
+    **Epic Override (Ask User)**:
+    - If `{{epic_filename}}` is empty OR user wants a different epic:
+      - Ask for **Epic Filename** (example: `epic-1-youtube-channel-monitor-chapter-summaries-mvp.md`)
+      - Set `{{epic_filename}}` accordingly
+  </action>
+
+  <action>
+    **Compute Paths**:
+    - `{{epic_path}}` = `{{project_path}}/plans/{{epic_filename}}`
+    - `{{epic_slug}}` = `{{epic_filename}}` without `.md`
+    - `{{tickets_dir}}` = `{{project_path}}/plans/epics/{{epic_slug}}/`
+  </action>
+
+  <action>
+    **Taxonomy File (for Validate Ticket compatibility)**:
+    - Prefer: `{{taxonomy_path}}` = `{{project_path}}/docs/taxonomy.yaml`
+    - If it does NOT exist, fallback to: `{{taxonomy_path}}` = `~/.cursor/templates/taxonomy.yaml`
+    - If neither exists:
+      - STOP and ask the user to create `docs/taxonomy.yaml` (copy from `~/.cursor/templates/taxonomy.yaml`)
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Initialize: load context + locate epic**
+    [ ✅ ] project path: `{{project_path}}`
+    🧾 Epic: `{{epic_path}}`
+    📁 Tickets dir (planned): `{{tickets_dir}}`
+    🏷️ Taxonomy: `{{taxonomy_path}}`
+
+    ➡️ **Beginning Step 2: Parse epic into shardable user stories**
+  </output>
+</step>
+
+<step n="2" goal="Parse epic into shardable user stories">
+  <action>
+    **Load Epic**:
+    - Read `{{epic_path}}`.
+    - Identify the `## 5. User Stories & Acceptance Criteria` section.
+  </action>
+
+  <action>
+    **Extract User Stories**:
+    - For each row in the user story tables (IDs like `US-001`):
+      - Capture:
+        - `US ID`
+        - Short label/title (derive from the User Story)
+        - Acceptance Criteria bullets (split into atomic ACs)
+        - Edge Cases (if present)
+        - Any obvious dependencies on other stories
+    - Store as `{{user_story_rows}}`.
+  </action>
+
+  <check if="no user story rows found">
+    <critical>STOP. Epic does not contain shardable user story rows.</critical>
+    <action>Ask the user to add user story rows (with IDs like `US-001`) to the epic before sharding.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 2: Parse epic into shardable user stories**
+    🔪 Extracted user story rows from epic.
+
+    ➡️ **Beginning Step 3: Draft ticket plan + naming**
+  </output>
+</step>
+
+<step n="3" goal="Draft ticket plan + naming">
+  <action>
+    **Draft Ticket Plan**:
+    - Rule: 1 ticket per `US-###` row.
+    - Ticket ID format:
+      - `{{ticket_id}}` = `TICKET-{{US_ID}}` (ex: `TICKET-US-001`)
+    - Ticket filename format (long + readable):
+      - `{{ticket_filename}}` = `{{ticket_id}}-{{kebab_title}}.md`
+      - Example: `TICKET-US-001-feed-newly-processed-videos.md`
+    - Ticket output path:
+      - `{{tickets_dir}}/{{ticket_filename}}`
+    - Store as `{{ticket_plan}}`.
+  </action>
+
+  <action>
+    **Ambiguity & Tech Stack Scan**:
+    - While drafting `{{ticket_plan}}`, identify:
+      - Spec ambiguities that would block a clean ticket.
+      - Tech stack choices/options (libraries, test frameworks, storage, hosting constraints).
+    - Store:
+      - `{{ambiguities}}` (bulleted list; include affected `US-###` / ticket)
+      - `{{tech_stack_notes}}` (bulleted list)
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Present:
+      - Epic: `{{epic_filename}}`
+      - Planned tickets list (ID + title + filename)
+      - Planned output directory: `{{tickets_dir}}`
+    - Ask: "Confirm this shard plan and naming? (Y to proceed / edits)"
+    - **Do NOT proceed to Step 4 until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Draft ticket plan + naming**
+    📋 Planned ticket set derived from epic user stories.
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 4: Draft ticket contents (template + validation gates)**
+  </output>
+</step>
+
+<step n="4" goal="Draft ticket contents (template + validation gates)">
+  <action>
+    **For each planned ticket** (in order of `US-###`):
+    - Populate `~/.cursor/templates/ticket.md` fields:
+      - `ticket_id`: `TICKET-US-###`
+      - `ticket_title`: A clear outcome title (stakeholder-friendly)
+      - `epic_number`: Derive from epic filename if present (example: `1`)
+      - `epic_name`: Short epic name (from epic H1)
+      - `epic`: `{{epic_slug}}`
+      - `date`: Today
+    - Ensure the ticket body includes a link back to the Epic for context:
+      - In `## Dev Notes`, add: `- Parent Epic: plans/{{epic_filename}}`
+  </action>
+
+  <action>
+    **Acceptance Criteria (Ticket-level)**:
+    - Convert the epic row's ACs into:
+      - `AC-1`, `AC-2`, ...
+    - Each AC must be testable and specific (no vague wording).
+    - Include key edge cases either:
+      - as dedicated ACs, OR
+      - as bullets under the most relevant AC (keep concise).
+  </action>
+
+  <action>
+    **Tests (Ticket-level) — concrete (Validate Ticket requirement)**:
+    - Add at least:
+      - 1 E2E test concept (Playwright; `tests/e2e/...`)
+      - 1 Unit test concept (Vitest; `tests/unit/...`)
+    - For each test concept, include up to 2 "how" bullets (max 2) to remove ambiguity.
+  </action>
+
+  <action>
+    **Tasks (Ticket-level, mapped to ACs)**:
+    - Enforce the 2-tier structure in the template.
+    - First TOP-LEVEL task (must be first):
+      - "TDD: create failing tests" (AC: list ALL ACs)
+      - Include subtasks for unit + e2e failing tests.
+    - Middle tasks:
+      - Implement minimal changes to satisfy ACs (split across tasks if needed).
+      - Every top-level task MUST map to 1+ ACs via `(AC: AC-#...)`.
+    - Last TOP-LEVEL task (must be last):
+      - "Run and validate tests pass" (AC: list ALL ACs)
+      - Include subtasks for commands + recording evidence in `### Test Evidence`.
+  </action>
+
+  <action>
+    **Questions (If ambiguity exists) — do NOT leave them open**:
+    - If any ticket has ambiguity:
+      - Add an item to YAML frontmatter `questions.items` (id `Q-<n>`, owner, question).
+      - Ask the stakeholder (PO) for the answer during this sharding workflow.
+      - Update the ticket content to reflect the answer.
+      - Mark the question `status: resolved` and fill `answer`.
+    - Append the ambiguity + resolution to `{{ambiguities}}` for the final report.
+  </action>
+
+  <action>
+    **Validation Gates (mirror Plan > Validate Ticket)**:
+    - For EACH ticket draft, before writing:
+      - Template sanity: sections present + valid YAML.
+      - Coherence: Story -> ACs -> Tests -> Tasks align.
+      - Hard gates:
+        - Every top-level task maps to ACs; every AC is covered.
+        - TDD structure: first top-level task = failing tests; last top-level task = validate pass.
+      - Taxonomy drift:
+        - Validate ticket `tags` against `{{taxonomy_path}}` (must include `plan/ticket`).
+      - Tests quality:
+        - Ensure concrete, stakeholder-clear test cases (E2E + Unit).
+      - Questions:
+        - Ensure there are no open questions remaining.
+    - If any gate fails: STOP and fix the draft(s) before proceeding.
+    - If all gates pass: set per-ticket frontmatter:
+      - `validation.state: passed`
+      - `validation.updated: {{date}}`
+      - `validation.issues: []`
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)**:
+    - Show a concise preview for 1-2 representative tickets:
+      - Title, AC list, Tests outline, Tasks outline.
+    - Ask: "Proceed to write ALL ticket files to disk? (Y to write / edits)"
+    - **Do NOT proceed to Step 5 until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Draft ticket contents (template + validation gates)**
+    ✅ Drafted tickets aligned to Story -> ACs -> Tests -> Tasks.
+    ✅ Drafted tickets meet Validate Ticket gates (ready to pass).
+    ✋ Awaiting user confirmation.
+
+    ➡️ **Beginning Step 5: Write ticket files + final shard report**
+  </output>
+</step>
+
+<step n="5" goal="Write ticket files + final shard report">
+  <critical>This is the ONLY step where files may be created.</critical>
+
+  <action>
+    **Ensure Directory Exists**:
+    - Create `{{tickets_dir}}` if it does not exist.
+  </action>
+
+  <action>
+    **Write Ticket Files**:
+    - For each ticket in `{{ticket_plan}}`, write ONE markdown file to:
+      - `{{tickets_dir}}/{{ticket_filename}}`
+    - Verify each file:
+      - Contains YAML frontmatter (valid)
+      - Has `## User Story`, `## Acceptance Criteria`, `## Tests`, `## Tasks`
+      - Includes the epic link under `## Dev Notes`
+      - Has `validation.state: passed`
+  </action>
+
+  <output>
+    ✅ **Ending Step 5: Write ticket files + final shard report**
+
+    ### Tickets Created
+    - Output Dir: `{{tickets_dir}}`
+    - Count: [N]
+    - Files: [List each ticket file path]
+
+    ### Ambiguities / Questions to Review
+    - {{ambiguities}}
+
+    ### Tech Stack Notes / Options
+    - {{tech_stack_notes}}
+
+    Next: Run **Plan > Validate Ticket** on each ticket to confirm no drift and optionally mark `Ready`.
+  </output>
+</step>
+
+</workflow>
