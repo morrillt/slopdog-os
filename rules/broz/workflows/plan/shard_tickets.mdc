@@ -171,9 +171,7 @@ globs: []
     - Include key edge cases either:
       - as dedicated ACs, OR
       - as bullets under the most relevant AC (keep concise).
-  </action>
-
-  <action>
+  </action>  <action>
     **Tests (Ticket-level) — concrete (Validate Ticket requirement)**:
     - Add at least:
       - 1 E2E test concept (Playwright; `tests/e2e/...`)
