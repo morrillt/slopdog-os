@@ -1,12 +1,12 @@
 project:
   name: "Broz OS"
-  current_mode: "plan"
+  current_mode: "build"
   path: "/home/broz/.cursor"
 execution:
   current_epic: "EPIC-BROZOS2.0"
-  current_ticket: "TICKET-001"
-  next_ticket: "TICKET-002"
-  current_ticket_status: "done"
+  current_ticket: "TICKET-002"
+  next_ticket: "TICKET-003"
+  current_ticket_status: "in_progress"
   current_task: ""
   current_task_status: ""
 docs:
