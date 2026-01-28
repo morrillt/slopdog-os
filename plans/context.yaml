@@ -1,6 +1,6 @@
 project:
   name: "Broz OS"
-  current_mode: "build"
+  current_mode: "docs"
   path: "/home/broz/.cursor"
 execution:
   current_epic: "EPIC-BROZOS2.0"

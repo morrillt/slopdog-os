@@ -9,15 +9,18 @@ globs: []
 <critical>Use H2 (`##`) for major sections (required for TOC).</critical>
 <critical>New docs must start as `status: draft`.</critical>
 <critical>Read `plans/context.yaml` ONCE at start to get `project.path`. Do NOT write to context.yaml.</critical>
-<critical>Use workflow variables ({{title}}, {{filename}}, {{target_path}}) throughout. These are held in memory.</critical>
+<critical>Use workflow variables ({{title}}, {{filename}}, {{target_path}}, {{keywords}}) throughout. These are held in memory.</critical>
 <critical>Only ONE file is created at the FINAL step. Do NOT create any files before the final step.</critical>
-<critical>Use MCP servers for Reddit and YouTube searches. Use web_search for other platforms.</critical>
+<critical>MUST read and follow the channel-specific skill BEFORE executing searches for that channel.</critical>
+<critical>Search ONE keyword at a time per platform to ensure thorough coverage.</critical>
 
 <variables>
   {{project_path}} - Read from context.yaml at Step 1 (e.g., /home/broz/.cursor)
   {{title}} - User-provided title for the research doc
   {{filename}} - User-provided kebab-case filename
   {{target_path}} - Computed as {{project_path}}/docs/research/{{filename}}.md
+  {{keywords}} - Confirmed keyword list for research (from Step 2.5)
+  {{technologies}} - Running list of specific libraries/tools/frameworks mentioned (accumulated through Steps 3-4)
 </variables>
 
 <scoring-rubric>
@@ -75,54 +78,113 @@ globs: []
     **User Confirmation Gate** (STOP):
     - Present the drafted Problem Statement and Context to the user.
     - Ask: "Does this scope look correct? (Y to proceed, or provide corrections)"
-    - **Do NOT proceed to Step 3 until user confirms.**
+    - **Do NOT proceed to Step 2.5 until user confirms.**
   </action>
 
   <output>
     ✅ **Ending Step 2: Scope Defined**
     🎯 Drafted short Problem Statement.
     📂 Enumerated Additional Context (Bulleted).
-    ✋ Awaiting user confirmation before research.
+    ✋ Awaiting user confirmation before keyword discovery.
     
-    ➡️ **Beginning Step 3: Reddit Search (MCP)**
+    ➡️ **Beginning Step 2.5: Keyword Discovery**
+  </output>
+</step>
+
+<step n="2.5" goal="Keyword Discovery (Iterative)">
+  <critical>This step is ITERATIVE. Loop until user confirms keywords.</critical>
+
+  <action>
+    **Propose Initial Keywords**:
+    - Based on the confirmed Problem Statement and Context, propose 5-10 keywords.
+    - Include:
+      - Primary topic terms
+      - Related technologies/tools
+      - Problem-specific terms
+      - Alternative phrasings
+    - Present as a numbered list.
+  </action>
+
+  <action>
+    **User Review Loop**:
+    - Ask: "Review these keywords. You can:"
+      - ✅ Confirm as-is (type 'Y')
+      - ➕ Add keywords (type 'add: keyword1, keyword2')
+      - ➖ Remove keywords (type 'remove: 3, 5' using numbers)
+      - 🔄 Replace (type 'replace 3 with: new keyword')
+    - Loop until user types 'Y' to confirm.
+    - **Do NOT proceed until user confirms.**
+  </action>
+
+  <action>
+    **Store Confirmed Keywords**:
+    - Store final keyword list in `{{keywords}}` variable.
+    - These will be used ONE at a time in subsequent search steps.
+  </action>
+
+  <output>
+    ✅ **Ending Step 2.5: Keywords Confirmed**
+    🔑 **Confirmed Keywords**: {{keywords}}
+    📊 **Count**: [N] keywords
+    
+    ➡️ **Beginning Step 3: Reddit Search**
   </output>
 </step>
 
 <step n="3" goal="Reddit Search">
-  <critical>Use the Reddit MCP server. Output feeds Step 4.</critical>
+  <critical>Search ONE keyword at a time.</critical>
+  <critical>MUST read and follow the `reddit-fetch` skill BEFORE executing any Reddit searches.</critical>
 
   <handoff_input>
-    - **From Step 2**: Problem Statement, Initial Keywords
+    - **From Step 2.5**: {{keywords}}
   </handoff_input>
 
   <action>
-    **Surface Search**:
-    - Identify 2-3 relevant subreddits.
-    - Use `mcp_reddit_get_subreddit_top_posts` (time: month/year) and `mcp_reddit_get_subreddit_hot_posts`.
+    **Load Skill** (MANDATORY):
+    - Read skill: `skills-cursor/reddit-search/SKILL.md`
+    - Follow the skill's instructions for fetching Reddit content.
+    - Report: `[ ✅ | ❌ ] reddit-fetch skill loaded`
   </action>
 
   <action>
-    **Firescrape (Deep Dive)**:
-    - For high-signal posts (score > 100 or highly relevant), use `mcp_reddit_get_post_content` to extract full post + top comments.
-    - Look for: Expert replies, linked resources, specific tool names.
+    **Keyword-by-Keyword Search**:
+    - For EACH keyword in {{keywords}}:
+      - Use the skill's query pattern to search Reddit for the keyword.
+      - Note: Search ONE keyword per query for thorough results.
+    - Identify 2-3 relevant subreddits from results.
+  </action>
+
+  <action>
+    **Deep Dive on High-Signal Posts**:
+    - For posts with high engagement (many comments, awards):
+      - Use the skill to fetch full thread content.
+      - Look for: Expert replies, linked resources, specific tool names.
   </action>
 
   <action>
     **Capture to Findings Table**:
     - Add each relevant finding with Score and Justification.
+    - Include post URL and key quotes.
+  </action>
+
+  <action>
+    **Track Technologies Mentioned**:
+    - Extract specific libraries, tools, frameworks, and services mentioned.
+    - Add to running list: `{{technologies}}`
+    - Include: library names, CLI tools, services, APIs, frameworks.
   </action>
 
   <output>
     ✅ **Ending Step 3: Reddit Search**
     ⏱️ **Duration**: [HH:MM]
-    📊 **Posts Scanned**: [N] | **Firescraped**: [N]
+    📊 **Keywords Searched**: [N] | **Posts Analyzed**: [N]
     📊 **Findings Captured**: [N]
+    📦 **Technologies Found**: [List technologies added to {{technologies}}]
     
     <handoff to="Step 4">
       keywords: [List refined keywords discovered]
-      tools_mentioned: [Specific tools/projects found]
+      technologies: {{technologies}}
       pain_points: [Common frustrations identified]
-      experts_to_follow: [Usernames with high-signal posts]
     </handoff>
     
     ➡️ **Beginning Step 4: YouTube Search**
@@ -130,105 +192,113 @@ globs: []
 </step>
 
 <step n="4" goal="YouTube Search">
-  <critical>Use the YouTube MCP server. Use handoff from Step 3 to refine search.</critical>
+  <critical>Search ONE keyword at a time. MUST download transcripts for high-signal videos.</critical>
+  <critical>Do NOT skip transcript download - search summaries alone are insufficient.</critical>
+  <critical>MUST read and follow the `youtube-search` skill BEFORE executing any YouTube searches.</critical>
 
   <handoff_input>
     - **From Step 3**: keywords, tools_mentioned, pain_points
   </handoff_input>
 
   <action>
-    **Surface Search**:
-    - Use `web_search`: `site:youtube.com [keywords from Step 3] "workflow" "why" "tutorial"`
-    - Extract video IDs from results.
+    **Load Skill** (MANDATORY):
+    - Read skill: `skills-cursor/youtube-search/SKILL.md`
+    - Follow the skill's instructions for searching and transcript fetching.
+    - Report: `[ ✅ | ❌ ] youtube-search skill loaded`
   </action>
 
   <action>
-    **Firescrape (Transcript Extraction)**:
-    - For each high-signal video, use `mcp_youtube_get_transcript`.
-    - Analyze for: "WHY" (unique value), "HOW" (specific steps), mentions of tools from Step 3.
-    - Note if video solves a pain_point from Step 3 handoff.
+    **4a. Keyword-by-Keyword Search**:
+    - For EACH keyword in {{keywords}} (plus any from Step 3 handoff):
+      - Use the skill's search pattern.
+      - Note: Search ONE keyword per query.
+    - Extract video URLs from results.
+    - Identify 3-5 high-signal videos (relevant title, high views, recent).
   </action>
 
   <action>
-    **Capture to Findings Table**:
-    - Include YouTube URL, timestamp of key insight if available.
-    - Justification should reference Step 3 pain point if applicable.
+    **4b. Transcript Download (MANDATORY for high-signal videos)**:
+    - For each high-signal video identified in 4a:
+      - Use the skill's transcript download instructions.
+      - Verify transcript was saved successfully.
+    - Report: `[ ✅ | ❌ ] Transcripts downloaded: [N] videos`
+  </action>
+
+  <action>
+    **4c. Transcript Analysis**:
+    - Read each downloaded transcript file.
+    - Analyze for:
+      - **WHY**: Unique value propositions, problem statements
+      - **HOW**: Specific implementation steps, code patterns
+      - **TOOLS**: Libraries, frameworks, services mentioned
+      - **PITFALLS**: Warnings, limitations, gotchas
+    - Extract verbatim quotes for high-value insights.
+  </action>
+
+  <action>
+    **4d. Capture to Findings Table**:
+    - Include YouTube URL and video title.
+    - Include key quotes from transcript (with approximate timestamps if available).
+    - Justification should reference pain points if applicable.
+    - Score based on: primary source (creator) = 90+, tutorial = 80+, overview = 70+.
+  </action>
+
+  <action>
+    **4e. Track Technologies Mentioned**:
+    - Extract additional libraries, tools, frameworks mentioned in videos/transcripts.
+    - Add to running list: `{{technologies}}`
+    - Note any version numbers or specific configurations mentioned.
   </action>
 
   <output>
     ✅ **Ending Step 4: YouTube Search**
     ⏱️ **Duration**: [HH:MM]
-    📊 **Videos Found**: [N] | **Transcripts Analyzed**: [N]
+    📊 **Keywords Searched**: [N]
+    📊 **Videos Found**: [N] | **Transcripts Downloaded**: [N]
     📊 **Findings Captured**: [N]
+    📦 **Technologies Found**: [List technologies added to {{technologies}}]
+    
+    ### Accumulated Technologies List
+    | Technology | First Mentioned | Type |
+    |------------|-----------------|------|
+    | [name] | Step 3/4 | library/tool/framework/service |
+    | ... | ... | ... |
     
     <handoff to="Step 5">
-      keywords: [Updated/refined keywords]
-      repos_mentioned: [GitHub repos or projects mentioned in videos]
+      technologies: {{technologies}}
       workflows_identified: [Specific multi-step workflows found]
+      implementation_details: [Key technical details from transcripts]
     </handoff>
     
-    ➡️ **Beginning Step 5: GitHub Search**
+    ➡️ **Beginning Step 5: Web Search (General)**
   </output>
 </step>
 
-<step n="5" goal="GitHub Search">
-  <critical>Use GitHub MCP or web_search. Use handoff from Step 4 to find implementations.</critical>
+<step n="5" goal="Web Search (General)">
+  <critical>MUST read and follow the `web-search` skill BEFORE executing any web searches.</critical>
 
   <handoff_input>
-    - **From Step 4**: repos_mentioned, workflows_identified, keywords
+    - **From Step 4**: {{technologies}}, workflows_identified, implementation_details
   </handoff_input>
 
   <action>
-    **Surface Search**:
-    - Use `mcp_github_search_repositories` or `web_search`: `site:github.com [repos_mentioned]`
-    - Search for MCP servers, CLI tools, or scripts related to the research topic.
+    **Load Skill** (MANDATORY):
+    - Read skill: `skills-cursor/web-search/SKILL.md`
+    - Follow the skill's instructions and best practices.
+    - Report: `[ ✅ | ❌ ] web-search skill loaded`
   </action>
 
   <action>
-    **Firescrape (Repo Deep Dive)**:
-    - For relevant repos, use `mcp_github_get_file_contents` to read README.md or key source files.
-    - Look for: Installation instructions, usage examples, star count, last commit date.
+    **Multi-Site Search**:
+    - For EACH technology in {{technologies}} (and original {{keywords}}):
+      - General web: Use the skill's search pattern
+      - Medium: `site:medium.com [technology/keyword]`
+      - Stack Overflow: `site:stackoverflow.com [technology/keyword]`
   </action>
 
   <action>
-    **Capture to Findings Table**:
-    - Include repo URL, star count, and relevance to workflows from Step 4.
-  </action>
-
-  <output>
-    ✅ **Ending Step 5: GitHub Search**
-    ⏱️ **Duration**: [HH:MM]
-    📊 **Repos Found**: [N] | **READMEs Analyzed**: [N]
-    📊 **Findings Captured**: [N]
-    
-    <handoff to="Step 6">
-      keywords: [Final refined keywords]
-      official_docs: [Any official documentation links found]
-      implementation_patterns: [Code patterns or architectures discovered]
-    </handoff>
-    
-    ➡️ **Beginning Step 6: Web Search (General)**
-  </output>
-</step>
-
-<step n="6" goal="Web Search (General)">
-  <critical>Final sweep for official docs, blog posts, and Q&A. Use handoff from Step 5.</critical>
-
-  <handoff_input>
-    - **From Step 5**: keywords, official_docs, implementation_patterns
-  </handoff_input>
-
-  <action>
-    **Surface Search (Multi-Site)**:
-    - Google: `web_search` with final keywords.
-    - Medium: `site:medium.com [keywords]`
-    - Stack Overflow: `site:stackoverflow.com [keywords]`
-    - Official Docs: `site:[official_docs domain] [keywords]` (if applicable).
-  </action>
-
-  <action>
-    **Firescrape (Article/Answer Deep Dive)**:
-    - Use `mcp_cursor-ide-browser_browser_navigate` + `mcp_cursor-ide-browser_browser_snapshot` to read full articles if needed.
+    **Article Deep Dive**:
+    - Use `web_fetch` to read full articles if summary is insufficient.
     - Extract key quotes, code snippets, or diagrams.
   </action>
 
@@ -238,18 +308,118 @@ globs: []
   </action>
 
   <output>
-    ✅ **Ending Step 6: Web Search (General)**
+    ✅ **Ending Step 5: Web Search (General)**
     ⏱️ **Duration**: [HH:MM]
-    📊 **Sites Searched**: [N] | **Articles Firescraped**: [N]
+    📊 **Keywords Searched**: [N] | **Articles Analyzed**: [N]
     📊 **Findings Captured**: [N]
     
+    <handoff to="Step 6">
+      technologies: {{technologies}}
+    </handoff>
+    
+    ➡️ **Beginning Step 6: GitHub Lookup**
+  </output>
+</step>
+
+<step n="6" goal="GitHub Lookup (Technologies Deep Dive)">
+  <critical>This step is LOOKUP ONLY - find official repos for technologies already mentioned.</critical>
+  <critical>Do NOT discover new technologies. Only enrich existing {{technologies}} list.</critical>
+  <critical>LIMIT: Maximum 5 technologies. User must confirm selection if more than 5.</critical>
+  <critical>MUST read and follow the `github-search` skill BEFORE executing lookups.</critical>
+  <critical>This is the FINAL search step before synthesis.</critical>
+
+  <handoff_input>
+    - **From Step 5**: {{technologies}}
+  </handoff_input>
+
+  <action>
+    **Load Skill** (MANDATORY):
+    - Read skill: `skills-cursor/github-search/SKILL.md`
+    - Follow the skill's instructions for technology lookup.
+    - Report: `[ ✅ | ❌ ] github-search skill loaded`
+  </action>
+
+  <action>
+    **6a. Technology Selection Gate** (STOP):
+    - Present the full list of accumulated technologies:
+      ```
+      ### Technologies to Look Up
+      | # | Technology | First Mentioned |
+      |---|------------|-----------------|
+      | 1 | [name] | Step 3/4/5 |
+      | ... | ... | ... |
+      ```
+    - **If 5 or fewer**: Ask "Confirm these [N] technologies for GitHub lookup? (Y to proceed)"
+    - **If more than 5**: Ask "Select up to 5 technologies for GitHub lookup (e.g., '1, 3, 4, 5, 7' or 'Y' for first 5)"
+    - **Do NOT proceed until user confirms.**
+    - Store confirmed selection as `{{selected_technologies}}`
+  </action>
+
+  <action>
+    **6b. Find Official Repos**:
+    - For EACH technology in {{selected_technologies}}:
+      - Search for the official GitHub repository/homepage.
+      - Use pattern: `site:github.com "[technology name]"` or direct URL if known.
+      - Verify it's the official/canonical repo (check org name, stars, activity).
+  </action>
+
+  <action>
+    **6c. Repo Confirmation Gate** (STOP):
+    - Present the found repos with clickable hyperlinks:
+      ```
+      ### Found Repositories - Please Verify
+      | # | Technology | Official Repo URL |
+      |---|------------|-------------------|
+      | 1 | [name] | https://github.com/org/repo |
+      | ... | ... | ... |
+      ```
+    - Ask: "Are these the correct official repos? (Y to proceed with enrichment, or specify corrections like '2: https://github.com/correct/repo')"
+    - **Do NOT proceed to enrichment until user confirms.**
+  </action>
+
+  <action>
+    **6d. Enrich from README/Docs**:
+    - For each confirmed official repo:
+      - Read the README for:
+        - **What it does**: Core purpose and features
+        - **Installation**: How to install/setup
+        - **Key concepts**: Important terminology or patterns
+        - **Limitations**: Known issues or constraints
+      - Use `web_fetch` on the GitHub README URL if needed.
+    - Extract key quotes and insights.
+  </action>
+
+  <action>
+    **6e. Capture to Findings Table**:
+    - Include official repo URL and star count.
+    - Include key quotes from README.
+    - Score as Primary Source (90+) since it's official documentation.
+  </action>
+
+  <output>
+    ✅ **Ending Step 6: GitHub Lookup**
+    ⏱️ **Duration**: [HH:MM]
+    📊 **Technologies Available**: [N] | **Selected for Lookup**: [N] (max 5)
+    📊 **Official Repos Found**: [N]
+    📊 **Findings Captured**: [N]
+    
+    ### Technology Lookup Results
+    | Technology | Official Repo | Stars | Status |
+    |------------|---------------|-------|--------|
+    | [name] | [URL] | [N] | ✅ Enriched |
+    | ... | ... | ... | ... |
+    
+    ### Technologies Not Looked Up
+    (If any were skipped due to 5-item limit)
+    - [technology name] - first mentioned in Step X
+    
     ### Cumulative Search Summary
-    | Step | Platform | Surface | Firescraped | Findings |
-    |------|----------|---------|-------------|----------|
-    | 3 | Reddit | [N] | [N] | [N] |
-    | 4 | YouTube | [N] | [N] | [N] |
-    | 5 | GitHub | [N] | [N] | [N] |
-    | 6 | Web (General) | [N] | [N] | [N] |
+    | Step | Platform | Keywords/Technologies | Sources Analyzed | Findings |
+    |------|----------|----------------------|------------------|----------|
+    | 3 | Reddit | [N] keywords | [N] | [N] |
+    | 4 | YouTube | [N] keywords | [N] | [N] |
+    | 5 | Web (General) | [N] | [N] | [N] |
+    | 6 | GitHub Lookup | [N] technologies (of [N] total) | [N] | [N] |
     | **Total** | | | | **[N]** |
     
     ➡️ **Beginning Step 7: Research Methodology Audit**
@@ -262,7 +432,7 @@ globs: []
   <action>
     **Compile Handoff Chain**:
     - Review all `<handoff>` outputs from Steps 3-6.
-    - Document how keywords evolved: Initial → Reddit → YouTube → GitHub → Final.
+    - Document how keywords evolved: Initial → Reddit → YouTube → Web → GitHub.
     - Note which pain_points were solved by which findings.
   </action>
 
@@ -275,10 +445,15 @@ globs: []
     ### Keyword Evolution
     | Step | Keywords Added | Keywords Dropped | Rationale |
     |------|----------------|------------------|-----------|
+    | 2.5 (Initial) | [...] | - | User confirmed |
     | 3 (Reddit) | [...] | [...] | [...] |
     | 4 (YouTube) | [...] | [...] | [...] |
-    | 5 (GitHub) | [...] | [...] | [...] |
-    | 6 (Web) | [...] | [...] | [...] |
+    | 5 (Web) | [...] | [...] | [...] |
+    
+    ### Technologies Discovered
+    | Technology | First Mentioned | Official Repo (Step 6) | Status |
+    |------------|-----------------|------------------------|--------|
+    | [...] | Step 3/4/5 | [URL] | ✅ Enriched / ❌ Not Found |
     
     ### Pain Point Resolution
     | Pain Point (from Reddit) | Resolved By | Source |
@@ -287,6 +462,7 @@ globs: []
     
     ### Coverage Gaps
     - [ ] Areas not covered: [...]
+    - [ ] Technologies not looked up: [...]
     - [ ] Potential follow-up searches: [...]
     ```
   </action>
@@ -386,6 +562,7 @@ globs: []
       - Front-matter with {{title}}, today's date, type: research, status: draft
       - **Problem Statement**
       - **Additional Context**
+      - **Confirmed Keywords** (from Step 2.5)
       - **Research Audit Log** (from Step 7):
         - Cumulative Search Summary table
         - Keyword Evolution table
