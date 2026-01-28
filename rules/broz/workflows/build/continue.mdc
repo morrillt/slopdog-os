@@ -8,6 +8,13 @@ globs: []
 <critical>You MUST clarify ambiguous requirements BEFORE implementing.</critical>
 <critical>You MUST log all issues/decisions in `### DEV AGENT RECORD`.</critical>
 <critical>You MUST run all tests (Unit + E2E) before completing.</critical>
+<critical>Read `plans/context.yaml` ONCE at start. Do NOT write to context.yaml unless updating ticket status/progress.</critical>
+
+<variables>
+  {{current_ticket}} - Read from context.yaml at Step 1
+  {{ticket_path}} - Path to the active ticket markdown file
+  {{git_status}} - Result of git status check
+</variables>
 
 <workflow>
 
@@ -15,12 +22,14 @@ globs: []
   <action>
     **Check Git Status**:
     - Must be clean. If not, HALT.
+    - Report: `[ ✅ | ❌ ] Git Status Clean`
   </action>
 
   <action>
     **Load Ticket**:
     - Ask user to select ticket (if not current).
     - Update `plans/context.yaml` (`current_ticket`, `status: In Progress`).
+    - Report: `[ ✅ | ❌ ] Ticket Loaded: {{current_ticket}}`
   </action>
 
   <action>
@@ -28,6 +37,7 @@ globs: []
     - Mode must be `build` or `task`.
     - First unchecked task must exist.
     - Tasks must map to ACs: `(AC: AC-#...)`.
+    - Report: `[ ✅ | ❌ ] Ticket Validated for Execution`
   </action>
 
   <check if="not ready">
@@ -37,8 +47,9 @@ globs: []
 
   <output>
     ✅ **Ending Step 1: Context Loading & Validation**
-    📋 Loaded ticket and validated readiness
-    ✅ Confirmed clean git status and valid mode
+    [ ✅ ] Git Status Clean
+    [ ✅ ] Ticket Loaded: {{current_ticket}}
+    [ ✅ ] Ticket Validated for Execution
     
     ➡️ **Beginning Step 2: Execution Loop (Plan -> Implement -> Mark)**
   </output>
@@ -61,9 +72,13 @@ globs: []
     
     **C. Mark**:
     - Check `[x]` task.
+    - **Sync ACs**: If all tasks for an AC are done, check `[x]` the corresponding AC in `## Acceptance Criteria`.
     - Add files to `### File List`.
     
-    **D. Check Next**:
+    **D. Update Progress**:
+    - Update ticket YAML `facets.progress` (e.g., `completed: x`, `total: y`).
+    
+    **E. Check Next**:
     - If more tasks, repeat A.
   </action>
 </step>
@@ -72,12 +87,14 @@ globs: []
   <action>
     **Verify Acceptance Criteria**:
     - Review `## Acceptance Criteria`. Are they met?
+    - Report: `[ ✅ | ❌ ] All ACs Met`
   </action>
 
   <action>
     **Run All Tests**:
     - Unit (Vitest): Record command + pass/fail + artifact link.
     - E2E (Playwright): Record command + pass/fail + artifact link.
+    - Report: `[ ✅ | ❌ ] Tests Passed (Unit + E2E)`
   </action>
 
   <check if="tests failed">
@@ -88,6 +105,7 @@ globs: []
   <action>
     **Run Build & Lint**:
     - Ensure clean build.
+    - Report: `[ ✅ | ❌ ] Build & Lint Clean`
   </action>
 
   <action>
@@ -97,8 +115,9 @@ globs: []
 
   <output>
     ✅ **Ending Step 3: Completion & Verification**
-    ✅ Verified all ACs met
-    🧪 Ran all tests (Unit + E2E) and confirmed pass
+    [ ✅ ] All ACs Met
+    [ ✅ ] Tests Passed (Unit + E2E)
+    [ ✅ ] Build & Lint Clean
     
     ➡️ **Beginning Step 4: Handoff**
   </output>
@@ -108,15 +127,19 @@ globs: []
   <action>
     **Update Ticket**:
     - Status: `Review`.
+    - **Final Sync**: Ensure all ACs and Tasks are `[x]`.
+    - **Progress Metadata**: Set `facets.progress.completed` to equal `total`.
     - Add `### Completion Notes` to `## Dev Agent Record`.
     - Include: PO Summary, Tech Lead Summary, Evidence Links.
+    - Report: `[ ✅ | ❌ ] Ticket Updated to Review`
   </action>
 
   <output>
     ### Execution Complete
     - **Ticket**: [Link]
-    - **Status**: Review
-    - **Tests**: Passed (Evidence Attached)
+    - **Status**: [ ✅ ] Review
+    - **Progress**: [ ✅ ] 100% [xxxxxxxxxx]
+    - **Tests**: [ ✅ ] Passed (Evidence Attached)
     - **Ready for**: Code Review
   </output>
 </step>

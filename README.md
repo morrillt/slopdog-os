@@ -37,7 +37,7 @@ Broz OS operates in distinct "Modes," each with a dedicated persona and set of r
 - **Persona**: **Taylor Mason** (The Quant Engineer)
 - **Focus**: Implementation and coding of specific tickets.
 - **Requirements**: Requires an active `execution.current_ticket`.
-- **Outputs**: Feature implementation, tests, and succint execution logs.
+- **Outputs**: Feature implementation, tests, and succinct execution logs.
 - **Rule**: Every change must map to an Acceptance Criterion (AC).
 
 ### ⚔️ Task Mode (`broz:task`)
@@ -46,6 +46,10 @@ Broz OS operates in distinct "Modes," each with a dedicated persona and set of r
 - **Requirements**: Requires an active `execution.current_task`.
 - **Outputs**: Rapid fixes and task summaries.
 
+### 🕷️ Research Mode (`broz:research`)
+- **Persona**: **Varys** (The Master of Whisperers)
+- **Focus**: Deep dives, spikes, and investigative research.
+- **Outputs**: Research documents in `docs/research/`.
 
 ### 📜 Docs Mode (`broz:docs`)
 - **Persona**: **Samwell Tarly** (The Maester)
@@ -56,6 +60,11 @@ Broz OS operates in distinct "Modes," each with a dedicated persona and set of r
 - **Persona**: **System Gear**
 - **Focus**: Main navigation hub to switch between modes.
 
+### ☄️ Freeball Mode (`broz:freeball`)
+- **Persona**: **The Wildcard**
+- **Focus**: Direct action without the overhead of tickets or tasks.
+- **Gating**: Use sparingly for exploration or when speed is paramount.
+
 ---
 
 ## 🛠️ Utility Commands
@@ -63,7 +72,8 @@ Broz OS operates in distinct "Modes," each with a dedicated persona and set of r
 Broz OS includes automation commands to streamline common tasks:
 
 - **`committomain`**: Automatically stages all changes, analyzes them, determines an appropriate prefix (`feat:`, `fix:`, `task:`, etc.), generates a detailed commit message referencing the current ticket, and commits to the local `main` branch.
-- **`broz:freeball`**: (Inferred) A more flexible mode for ad-hoc work outside the strict ticket system, while still maintaining some process awareness.
+- **`broz:init`**: Bootstraps a new project with the Broz OS structure.
+- **`broz:transcribe`**: Launches background transcription for audio files in `plans/transcripts/`.
 
 ---
 
@@ -76,6 +86,7 @@ Broz OS enforces strict rules to ensure quality and process integrity:
 3.  **Acceptance Criteria (AC)**: In Build mode, every task must be linked to a specific AC.
 4.  **Evidence Over Vibes**: Task completion requires concrete evidence (file paths, line ranges) and passing tests.
 5.  **No False Completions**: Never mark a task as complete unless the work is verified and tests pass.
+6.  **No Time Estimates**: Do not provide hours/days/weeks estimates. Keep execution focused on concrete next steps.
 
 ---
 

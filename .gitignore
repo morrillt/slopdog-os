@@ -12,3 +12,7 @@
 !rules/broz/**
 !templates/
 !templates/**
+!docs/
+!docs/**
+!plans/
+!plans/**

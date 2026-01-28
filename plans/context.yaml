@@ -1,0 +1,19 @@
+project:
+  name: "Broz OS"
+  current_mode: "plan"
+  path: "/home/broz/.cursor"
+execution:
+  current_epic: "EPIC-BROZOS2.0"
+  current_ticket: "TICKET-001"
+  next_ticket: "TICKET-002"
+  current_ticket_status: "done"
+  current_task: ""
+  current_task_status: ""
+docs:
+  current_doc_type: ""
+  current_doc_title: ""
+  current_doc_filename: ""
+  current_doc_path: ""
+paths:
+  plans: "plans/"
+  docs: "docs/"
