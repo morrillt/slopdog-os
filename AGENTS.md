@@ -25,7 +25,7 @@ You are in the .cursor user directory, which contains all .cursor files and a un
 ~/.cursor/
 ├── commands/broz/     # Entry points (triggers mode switches)
 ├── rules/broz/        # Modes + workflows (.mdc)
-├── skills-cursor/     # Reusable capabilities + scripts
+├── skills-cursor/     # Reusable capabilities + scripts (DO NOT DELETE)
 ├── plans/             # State tracking (context.yaml)
 └── docs/              # Documentation
 ```
