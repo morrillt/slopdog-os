@@ -17,6 +17,8 @@ globs: []
   {{title}} - User-provided title for the How-To
   {{filename}} - User-provided kebab-case filename
   {{target_path}} - Computed as {{project_path}}/docs/how-to/{{filename}}.md
+  {{summary_human}} - Tweet-sized summary for UI (~280 chars)
+  {{summary_vector}} - RAG-optimized dense summary (300-400 words)
 </variables>
 
 <workflow>
@@ -112,7 +114,49 @@ globs: []
   </output>
 </step>
 
-<step n="5" goal="Final File Creation">
+<step n="5" goal="Generate Summaries">
+  <critical>Summaries are REQUIRED for published docs. Generate both types.</critical>
+
+  <action>
+    **Generate Human Summary**:
+    - Create a tweet-sized summary (~280 chars max)
+    - Focus: What will the reader learn to do?
+    - Style: Action-oriented, clear benefit
+    - Store as `{{summary_human}}`
+  </action>
+
+  <action>
+    **Generate Vector Summary (RAG-optimized)**:
+    - Create a dense information block (300-400 words)
+    - Include: Key concepts, terminology, technologies, use cases
+    - Purpose: Optimized for semantic search and vector retrieval
+    - Style: Information-dense, keyword-rich, no fluff
+    - Store as `{{summary_vector}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate** (STOP):
+    - Present both summaries to user
+    - Ask: "Do these summaries look good? (Y to proceed, or provide corrections)"
+    - **Do NOT proceed until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 5: Summaries Generated**
+    
+    ### Human Summary (tweet-sized)
+    {{summary_human}}
+    
+    ### Vector Summary (RAG-optimized)
+    {{summary_vector}}
+    
+    ✋ Awaiting user confirmation before file creation.
+    
+    ➡️ **Beginning Step 6: Final File Creation**
+  </output>
+</step>
+
+<step n="6" goal="Final File Creation">
   <critical>This is the ONLY step where a file is created. Only ONE file.</critical>
 
   <action>
@@ -130,16 +174,24 @@ globs: []
     **Commit Single File to Disk**:
     - Target Path: `{{target_path}}`
     - Populate all sections using the template as foundation.
+    - Include in front-matter:
+      ```yaml
+      facets:
+        summary:
+          human: "{{summary_human}}"
+          vector: "{{summary_vector}}"
+      ```
     - Report: `[ ✅ | ❌ ] File created`
   </action>
 
   <output>
-    ✅ **Ending Step 5: Draft Created**
+    ✅ **Ending Step 6: Draft Created**
     
     ### File Created
     - **Template**: [ ✅ ] `{{project_path}}/templates/docs/how-to.md`
     - **Output**: [ ✅ ] `{{target_path}}`
     - **Status**: Draft
+    - **Summaries**: [ ✅ ] Human + Vector included
     
     📄 How-To Document saved to: `{{target_path}}`
   </output>

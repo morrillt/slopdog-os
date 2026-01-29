@@ -21,6 +21,8 @@ globs: []
   {{target_path}} - Computed as {{project_path}}/docs/research/{{filename}}.md
   {{keywords}} - Confirmed keyword list for research (from Step 2.5)
   {{technologies}} - Running list of specific libraries/tools/frameworks mentioned (accumulated through Steps 3-4)
+  {{summary_human}} - Tweet-sized summary for UI (~280 chars)
+  {{summary_vector}} - RAG-optimized dense summary (300-400 words)
 </variables>
 
 <scoring-rubric>
@@ -537,6 +539,48 @@ globs: []
     ✅ **Ending Step 10: Review & Feedback**
     🗣️ Received user feedback on research.
     
+    ➡️ **Beginning Step 10.5: Generate Summaries**
+  </output>
+</step>
+
+<step n="10.5" goal="Generate Summaries">
+  <critical>Summaries are REQUIRED for published docs. Generate both types.</critical>
+
+  <action>
+    **Generate Human Summary**:
+    - Create a tweet-sized summary (~280 chars max)
+    - Focus: What problem was researched? What's the recommendation?
+    - Style: Action-oriented, clear outcome
+    - Store as `{{summary_human}}`
+  </action>
+
+  <action>
+    **Generate Vector Summary (RAG-optimized)**:
+    - Create a dense information block (300-400 words)
+    - Include: Problem statement, key technologies evaluated, options explored, recommendation, risks
+    - Purpose: Optimized for semantic search and vector retrieval
+    - Style: Information-dense, keyword-rich, no fluff
+    - Store as `{{summary_vector}}`
+  </action>
+
+  <action>
+    **User Confirmation Gate** (STOP):
+    - Present both summaries to user
+    - Ask: "Do these summaries look good? (Y to proceed, or provide corrections)"
+    - **Do NOT proceed until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 10.5: Summaries Generated**
+    
+    ### Human Summary (tweet-sized)
+    {{summary_human}}
+    
+    ### Vector Summary (RAG-optimized)
+    {{summary_vector}}
+    
+    ✋ Awaiting user confirmation before file creation.
+    
     ➡️ **Beginning Step 11: Final File Creation**
   </output>
 </step>
@@ -560,6 +604,13 @@ globs: []
     - Target Path: `{{target_path}}`
     - Populate all sections using the template as foundation:
       - Front-matter with {{title}}, today's date, type: research, status: draft
+      - Include in front-matter:
+        ```yaml
+        facets:
+          summary:
+            human: "{{summary_human}}"
+            vector: "{{summary_vector}}"
+        ```
       - **Problem Statement**
       - **Additional Context**
       - **Confirmed Keywords** (from Step 2.5)
@@ -582,6 +633,7 @@ globs: []
     - **Template**: [ ✅ ] `{{project_path}}/templates/docs/research.md`
     - **Output**: [ ✅ ] `{{target_path}}`
     - **Status**: Draft
+    - **Summaries**: [ ✅ ] Human + Vector included
     
     📄 Research Document saved to: `{{target_path}}`
   </output>

@@ -15,6 +15,7 @@ globs: []
     - Ticket (and optional context) is authoritative; do not invent requirements (Dev).
     - Every change maps to an AC via the top-level task’s `(AC: ...)` tag (Dev).
     - Tests passing is not optional: 100% pass before moving to Review (Dev).
+    - **Verification Requirement**: Whenever claiming a fix or feature is "working", you MUST attempt to verify it by running relevant tests (e.g., E2E/smoke tests) and confirming no console/runtime errors (Dev).
     - Risk-based testing: depth scales with impact; flakiness is critical debt (TEA).
     - Ultra-succinct execution logs: record decisions, evidence, and file paths (Dev).
   </operating-principles>
