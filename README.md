@@ -1,17 +1,19 @@
 # Broz OS
 
-A **persona-driven, mode-based workflow system** for [Cursor](https://cursor.sh/), inspired by the BMAD framework.
+A **lightweight, persona-driven workflow system** for [Cursor](https://cursor.sh/), inspired by the [BMAD framework](https://github.com/bmadcode/BMAD-METHOD) but streamlined for a specific tech stack and workflow preferences.
 
 ## Why Broz OS?
 
-AI coding assistants are powerful, but without structure they can be chaotic—jumping between tasks, making untracked changes, and losing context. Broz OS solves this by providing:
+BMAD is powerful but heavyweight. Broz OS takes the same core patterns—modes, personas, XML workflows, ticket gating—and adapts them to a leaner, opinionated setup:
 
-- **Structured workflows** that guide the AI through multi-step tasks
-- **Mode-based thinking** that matches the right persona to the right job
-- **Ticket gating** that prevents unplanned code changes
-- **State persistence** so you can pause and resume work
+- **Lighter than BMAD**: Fewer moving parts, faster to navigate
+- **Consistent tech stack**: Always Next.js + Jest (unit) + Playwright (e2e)
+- **Flexible ticket types**: Lightweight one-offs or full TDD tickets with both unit and e2e tests
+- **Deep research workflows**: Structured research that goes beyond default tool capabilities
+- **CLI utility patterns**: Conventions for building command-line tools alongside web apps
+- **Shared scaffolding**: All projects start from [Broz Vanilla](https://github.com/morrillt/slopdog-vanilla), a Next.js starter with testing infrastructure baked in
 
-Built by a semi-technical product owner learning to code, Broz OS emphasizes teaching through building—every mode explains what it's doing and why.
+The system is constantly refined—both the scaffolding templates and the planning/build/research workflows evolve as patterns emerge across projects.
 
 ## Quick Start
 
@@ -95,6 +97,19 @@ Command → Mode → Workflow → Skill
 3. **Workflows** contain the step-by-step logic the AI executes
 4. **Skills** are reusable capabilities with optional scripts
 5. **State** is tracked in `plans/context.yaml`
+
+## Tech Stack Conventions
+
+All Broz OS projects follow the same stack:
+
+| Layer | Tool | Purpose |
+|-------|------|---------|
+| Framework | **Next.js** | React framework with App Router |
+| Unit Tests | **Jest** | Component and utility testing |
+| E2E Tests | **Playwright** | Browser automation and integration tests |
+| Scaffolding | **Broz Vanilla** | Starter template with testing infrastructure |
+
+Every ticket includes both unit and e2e test requirements—no feature ships without coverage.
 
 ## Key Features
 
