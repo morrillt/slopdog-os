@@ -8,7 +8,7 @@ A set of opinions and conventions that use the same project scaffolding, tech st
 
 We're also building **Slopdog UI**, a standalone interface for running these workflows outside of Cursor.
 
-[^1]: While Slopdog OS should work just as well in Claude, I stick to Cursor because I prefer using Gemini 3 Flash for execution and Opus/Codex 5.1 for reasoning. Cursor is more open and doesn't lock you into a single family of models.
+[^1]: While Slopdog OS should work just as well in Claude, I stick to Cursor because I prefer using Gemini 3 Flash for execution tasks and Opus/Codex 5.1 for planning tasks. Cursor is more open and doesn't lock you into a single family of models.
 
 ## Why Slopdog OS?
 
