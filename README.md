@@ -167,7 +167,6 @@ Command → Mode → Workflow → Skill
 For detailed architecture and usage:
 
 - [Slopdog OS Architecture](docs/how-to/broz-os-architecture.md) - Complete system documentation
-- [CLI Usage](docs/cli-usage.md) - Command reference
 
 ## License
 
