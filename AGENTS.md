@@ -12,7 +12,7 @@ You are in the .cursor user directory, which contains all .cursor files and a un
 | Mode | Purpose | Persona |
 |------|---------|---------|
 | `plan` | Epic & ticket creation | Tyrion 🦁 |
-| `build` | Tracked implementation | Taylor 📐 |
+| `build` | Tracked implementation | La Forge 🔧 |
 | `task` | Quick fixes & one-offs | Bronn ⚔️ |
 | `docs` | Documentation | Sam 📜 |
 
