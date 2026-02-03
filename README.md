@@ -1,20 +1,20 @@
 # Slopdog OS
 
-A **lightweight, persona-driven workflow system** for [Cursor](https://cursor.sh/), inspired by the [BMAD framework](https://github.com/bmadcode/BMAD-METHOD) but streamlined for rapid prototyping with a consistent tech stack.
+A **spec-driven, TDD workflow system** for [Cursor](https://cursor.sh/). Every feature starts with a spec, ships with unit tests (Jest) and integration tests (Playwright), and builds on Next.js + Node + SQLite/Supabase with consistent folder and file conventions.
+
+The goal: **idea to working prototype in the shortest possible time.**
 
 ## Why Slopdog OS?
 
-BMAD is powerful but heavyweight. Slopdog OS takes the same core patterns—modes, personas, XML workflows, ticket gating—and adapts them to a leaner, opinionated setup optimized for speccing and prototyping:
+We're constantly building prototypes with the same scaffolding. Slopdog OS tightens with every project—the patterns, the file layout, the test setup, the UI conventions all compound.
 
-- **Lighter than BMAD**: Fewer moving parts, faster to navigate
-- **Consistent tech stack**: Next.js + SQLite + shadcn/ui + Jest + Playwright
-- **Consistent theming**: Catppuccin color scheme with utility drawer layouts across all projects
-- **Flexible ticket types**: Lightweight one-offs or full TDD tickets with both unit and e2e tests
+Inspired by [BMAD](https://github.com/bmadcode/BMAD-METHOD) but much lighter:
+
+- **Spec-driven development**: Every ticket has acceptance criteria and test requirements before code
+- **Consistent scaffolding**: All projects start from [Slopdog Vanilla](https://github.com/morrillt/slopdog-vanilla)
+- **Same stack, every time**: Next.js, SQLite/Supabase, shadcn/ui, Catppuccin theming, utility drawer layouts
+- **Same folder conventions**: Predictable file structure across all projects
 - **Deep research workflows**: Structured research that goes beyond default tool capabilities
-- **CLI utility patterns**: Conventions for building command-line tools alongside web apps
-- **Shared scaffolding**: All projects start from [Slopdog Vanilla](https://github.com/morrillt/slopdog-vanilla), a Next.js starter with everything pre-configured
-
-The system is constantly refined—both the scaffolding templates and the planning/build/research workflows evolve as patterns emerge across projects.
 
 ## Quick Start
 
@@ -118,7 +118,7 @@ Command → Mode → Workflow → Skill
 
 ## Key Features
 
-- **Persona-Driven**: Each mode has a distinct character voice for consistent interactions
+- **Spec-Driven**: Every ticket starts with acceptance criteria and test requirements
 - **Ticket-Gated**: Build mode requires a tracked ticket to prevent unstructured code changes
 - **State Management**: `context.yaml` tracks current mode, tickets, and tasks
 - **Template System**: Standardized templates for epics, tickets, bugs, and documentation
