@@ -2,11 +2,13 @@
 
 ![Slopdog OS Crew](assets/slopdog-crew.png)
 
-A **spec-driven, test-driven workflow system** for [Cursor](https://cursor.sh/).
+A **spec-driven, test-driven workflow system** for [Cursor](https://cursor.sh/)[^1].
 
 A set of opinions and conventions that use the same project scaffolding, tech stack, and approach to build fully functional greenfield projects—from idea to shareable—in the shortest possible path.
 
 We're also building **Slopdog UI**, a standalone interface for running these workflows outside of Cursor.
+
+[^1]: While Slopdog OS should work just as well in Claude, I stick to Cursor because I prefer using Gemini 3 Flash for execution and Opus/Codex 5.1 for reasoning. Cursor is more open and doesn't lock you into a single family of models.
 
 ## Why Slopdog OS?
 
