@@ -8,7 +8,7 @@ The goal: **idea to working prototype in the shortest possible time.**
 
 We're constantly building prototypes with the same scaffolding. Slopdog OS tightens with every project—the patterns, the file layout, the test setup, the UI conventions all compound.
 
-Inspired by [BMAD](https://github.com/bmadcode/BMAD-METHOD) but much lighter:
+Inspired by [BMAD](https://github.com/bmadcode/BMAD-METHOD) and [Agent OS](https://github.com/anthropics/agent-os) but much lighter and more opinionated. Built for fresh greenfield, medium-complexity projects:
 
 - **Spec-driven development**: Every ticket has acceptance criteria and test requirements before code
 - **Consistent scaffolding**: All projects start from [Slopdog Vanilla](https://github.com/morrillt/slopdog-vanilla)
@@ -50,12 +50,47 @@ Each mode has a distinct character that shapes how the AI communicates and what 
 | **Build** | `/broz/build` | Taylor 📐 | Tracked implementation |
 | **Docs** | `/broz/docs` | Sam 📜 | Documentation & research |
 
-### Workflows (not modes)
+## Workflows
 
-Some operations are workflows within modes rather than standalone modes:
+Each mode has workflows—step-by-step processes the AI follows.
 
-- **Task** (`/broz/task`) — Quick fixes via Docs mode workflows
-- **Research** (`/broz/research`) — Deep investigation via Docs mode's research workflow
+### Plan Workflows
+| Workflow | Purpose |
+|----------|---------|
+| `new_epic` | Create a new epic/PRD |
+| `add_ticket` | Add a ticket to an epic |
+| `shard_tickets` | Break an epic into tickets |
+| `validate_ticket` | Verify ticket is ready for build |
+
+### Build Workflows
+| Workflow | Purpose |
+|----------|---------|
+| `continue` | Execute/continue ticket implementation |
+| `code_review` | Review completed ticket work |
+
+### Docs Workflows
+| Workflow | Purpose |
+|----------|---------|
+| `create_research` | Deep research on a topic |
+| `create_how_to` | Create a how-to guide |
+| `create_dev_note` | Create a developer note |
+| `audit` | Audit existing documentation |
+| `update_architecture` | Update architecture docs + changelog |
+| `publish` | Publish documentation |
+
+### Task Workflows
+| Workflow | Purpose |
+|----------|---------|
+| `new` | Start a new quick task |
+| `file_bug` | File a bug report |
+| `confirm_bug_fixed` | Verify a bug fix |
+| `commit_to_main` | Commit changes to main |
+| `summarize` | Summarize task work |
+
+### Other
+| Workflow | Purpose |
+|----------|---------|
+| `init` | Bootstrap a new project from Slopdog Vanilla |
 
 ## Skills
 
