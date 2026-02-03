@@ -18,7 +18,7 @@ Built by a semi-technical product owner learning to code, Broz OS emphasizes tea
 1. Open any project in Cursor
 2. Type `/broz/plan` to enter Plan Mode and start defining work
 3. Use `/broz/build` to implement tracked tickets
-4. Use `/broz/task` for quick one-off fixes
+4. Use `/broz/docs` for documentation and research
 
 ## Modes & Personas
 
@@ -28,9 +28,14 @@ Each mode has a distinct character that shapes how the AI communicates and what 
 |------|---------|---------|---------|
 | **Plan** | `/broz/plan` | Tyrion 🦁 | Epic & ticket creation |
 | **Build** | `/broz/build` | Taylor 📐 | Tracked implementation |
-| **Task** | `/broz/task` | Bronn ⚔️ | Quick fixes & one-offs |
-| **Docs** | `/broz/docs` | Sam 📜 | Documentation |
-| **Research** | `/broz/research` | Varys 🕷️ | Deep investigation |
+| **Docs** | `/broz/docs` | Sam 📜 | Documentation & research |
+
+### Workflows (not modes)
+
+Some operations are workflows within modes rather than standalone modes:
+
+- **Task** (`/broz/task`) — Quick fixes via Docs mode workflows
+- **Research** (`/broz/research`) — Deep investigation via Docs mode's research workflow
 
 ## Skills
 
