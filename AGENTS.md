@@ -1,13 +1,13 @@
-# Broz OS Bootloader
+# Slopdog OS Bootloader
 
 > **Always-On Rule** — This file loads for every conversation in `~/.cursor/`
 
 
-You are in the .cursor user directory, which contains all .cursor files and a unique set of prompts that make up the broz os workflow.
+You are in the .cursor user directory, which contains all .cursor files and a unique set of prompts that make up the Slopdog OS workflow.
 
 ## System Overview
 
-**Broz OS** is a persona-driven, mode-based workflow system for Cursor built around five operational modes:
+**Slopdog OS** is a persona-driven, mode-based workflow system for Cursor built around these operational modes:
 
 | Mode | Purpose | Persona |
 |------|---------|---------|

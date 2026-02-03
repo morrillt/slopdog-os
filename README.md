@@ -1,26 +1,44 @@
-# Broz OS
+# Slopdog OS
 
-A **lightweight, persona-driven workflow system** for [Cursor](https://cursor.sh/), inspired by the [BMAD framework](https://github.com/bmadcode/BMAD-METHOD) but streamlined for a specific tech stack and workflow preferences.
+A **lightweight, persona-driven workflow system** for [Cursor](https://cursor.sh/), inspired by the [BMAD framework](https://github.com/bmadcode/BMAD-METHOD) but streamlined for rapid prototyping with a consistent tech stack.
 
-## Why Broz OS?
+## Why Slopdog OS?
 
-BMAD is powerful but heavyweight. Broz OS takes the same core patterns—modes, personas, XML workflows, ticket gating—and adapts them to a leaner, opinionated setup:
+BMAD is powerful but heavyweight. Slopdog OS takes the same core patterns—modes, personas, XML workflows, ticket gating—and adapts them to a leaner, opinionated setup optimized for speccing and prototyping:
 
 - **Lighter than BMAD**: Fewer moving parts, faster to navigate
-- **Consistent tech stack**: Always Next.js + Jest (unit) + Playwright (e2e)
+- **Consistent tech stack**: Next.js + SQLite + shadcn/ui + Jest + Playwright
+- **Consistent theming**: Catppuccin color scheme with utility drawer layouts across all projects
 - **Flexible ticket types**: Lightweight one-offs or full TDD tickets with both unit and e2e tests
 - **Deep research workflows**: Structured research that goes beyond default tool capabilities
 - **CLI utility patterns**: Conventions for building command-line tools alongside web apps
-- **Shared scaffolding**: All projects start from [Broz Vanilla](https://github.com/morrillt/slopdog-vanilla), a Next.js starter with testing infrastructure baked in
+- **Shared scaffolding**: All projects start from [Slopdog Vanilla](https://github.com/morrillt/slopdog-vanilla), a Next.js starter with everything pre-configured
 
 The system is constantly refined—both the scaffolding templates and the planning/build/research workflows evolve as patterns emerge across projects.
 
 ## Quick Start
 
-1. Open any project in Cursor
+1. Run `/broz/init` to scaffold a new project from Slopdog Vanilla
 2. Type `/broz/plan` to enter Plan Mode and start defining work
 3. Use `/broz/build` to implement tracked tickets
 4. Use `/broz/docs` for documentation and research
+
+## Tech Stack Conventions
+
+All Slopdog OS projects follow the same stack:
+
+| Layer | Tool | Purpose |
+|-------|------|---------|
+| Framework | **Next.js** | React framework with App Router |
+| Database | **SQLite** | Local-first persistence |
+| UI Components | **shadcn/ui** | Accessible, composable components |
+| Theming | **Catppuccin** | Consistent color scheme across projects |
+| Layout | **Utility Drawers** | Consistent navigation and tool panels |
+| Unit Tests | **Jest** | Component and utility testing |
+| E2E Tests | **Playwright** | Browser automation and integration tests |
+| Scaffolding | **Slopdog Vanilla** | Starter template with all of the above |
+
+Every ticket includes both unit and e2e test requirements—no feature ships without coverage.
 
 ## Modes & Personas
 
@@ -98,19 +116,6 @@ Command → Mode → Workflow → Skill
 4. **Skills** are reusable capabilities with optional scripts
 5. **State** is tracked in `plans/context.yaml`
 
-## Tech Stack Conventions
-
-All Broz OS projects follow the same stack:
-
-| Layer | Tool | Purpose |
-|-------|------|---------|
-| Framework | **Next.js** | React framework with App Router |
-| Unit Tests | **Jest** | Component and utility testing |
-| E2E Tests | **Playwright** | Browser automation and integration tests |
-| Scaffolding | **Broz Vanilla** | Starter template with testing infrastructure |
-
-Every ticket includes both unit and e2e test requirements—no feature ships without coverage.
-
 ## Key Features
 
 - **Persona-Driven**: Each mode has a distinct character voice for consistent interactions
@@ -124,7 +129,7 @@ Every ticket includes both unit and e2e test requirements—no feature ships wit
 
 For detailed architecture and usage:
 
-- [Broz OS Architecture](docs/how-to/broz-os-architecture.md) - Complete system documentation
+- [Slopdog OS Architecture](docs/how-to/broz-os-architecture.md) - Complete system documentation
 - [CLI Usage](docs/cli-usage.md) - Command reference
 
 ## License
