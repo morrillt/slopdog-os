@@ -7,8 +7,8 @@ execution:
   current_ticket: "TICKET-002"
   next_ticket: "TICKET-003"
   current_ticket_status: "in_progress"
-  current_task: ""
-  current_task_status: ""
+  current_task: "TASK-20260129-update-architecture-workflow"
+  current_task_status: "completed"
 docs:
   current_doc_type: ""
   current_doc_title: ""
@@ -17,3 +17,5 @@ docs:
 paths:
   plans: "plans/"
   docs: "docs/"
+  architecture_doc: "docs/how-to/broz-os-architecture.md"
+  changelog: "plans/changelog.md"

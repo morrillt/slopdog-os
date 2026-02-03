@@ -6,6 +6,9 @@ facets:
   status: draft
   repo:
     path: docs/how-to/[filename].md
+  summary:
+    human: "[Tweet-sized summary: What will the reader learn? ~280 chars max]"
+    vector: "[RAG-optimized dense summary for semantic search. 300-400 words. Include: key concepts, terminology, technologies, use cases, problem solved. Information-dense, keyword-rich.]"
 tags:
   - doc/howto
 ---

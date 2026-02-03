@@ -1,6 +1,6 @@
 ---
 title: "Broz OS Architecture"
-updated: "2026-01-28"
+updated: "2026-01-29"
 facets:
   type: how-to
   status: active
@@ -35,15 +35,6 @@ Initially developed within individual project directories, Broz OS now lives in 
 - **Component Templates** — How to create new Commands, Modes, Workflows, and Skills
 - **State Management** — The `context.yaml` schema
 - **BMAD Comparison** — What we kept and simplified
-
-### Audience
-
-- **AI Agents**: To understand how to parse, execute, and create new Broz OS components
-- **Humans (Broz)**: To understand the architecture and extend the system
-
-### Key Principle: Slimmed-Down BMAD
-
-Broz OS deliberately strips out BMAD's complexity:
 
 ### Audience
 
@@ -114,6 +105,7 @@ Broz OS deliberately strips out BMAD's complexity:
 ├── task.md
 ├── research.md
 ├── menu.md
+├── updatedocs.md
 └── ...
 ```
 
@@ -282,7 +274,8 @@ globs: []
 │   ├── create_dev_note.mdc     # Create dev note
 │   ├── create_how_to.mdc       # Create how-to guide
 │   ├── create_research.mdc     # Create research doc
-│   └── publish.mdc             # Publish documentation
+│   ├── publish.mdc             # Publish documentation
+│   └── update_architecture.mdc # Update architecture doc + changelog
 ├── plan/
 │   ├── add_ticket.mdc          # Add ticket to epic
 │   ├── new_epic.mdc            # Create new epic
@@ -624,6 +617,8 @@ execution:
 paths:
   plans: "plans/"
   docs: "docs/"
+  architecture_doc: "docs/how-to/[project]-architecture.md"  # Main "how this works" doc
+  changelog: "plans/changelog.md"                             # Project changelog
 
 docs:
   current_doc_type: ""
@@ -654,6 +649,7 @@ Broz OS includes automation commands to streamline common tasks:
 | `broz:init` | Bootstrap a new project with Broz OS structure (`plans/`, `context.yaml`) |
 | `committomain` | Stage all changes, analyze them, generate commit message with appropriate prefix (`feat:`, `fix:`, `task:`), and commit to local `main` |
 | `broz:transcribe` | Launch background transcription for audio files in `plans/transcripts/` |
+| `broz:updatedocs` | Update architecture documentation and changelog after changes |
 
 ---
 
@@ -685,6 +681,17 @@ Broz OS includes automation commands to streamline common tasks:
 
 - Run `broz:freeball` when speed is paramount and you need to bypass ticket/task overhead
 - Use sparingly — intended for exploration or urgent fixes
+
+### Maintaining Documentation
+
+After completing work and committing changes:
+
+1. Run `broz:updatedocs` to update architecture documentation
+2. The workflow will:
+   - Scan for new logic to document
+   - Identify deprecated content to revise
+   - Update the changelog with a summary
+3. This keeps docs aligned with code
 
 ---
 
@@ -845,7 +852,8 @@ Broz OS includes automation commands to streamline common tasks:
 {project}/
 ├── .cursor/skills/         # Project-specific skills
 ├── plans/
-│   └── context.yaml        # State tracking
+│   ├── context.yaml        # State tracking
+│   └── changelog.md        # Project change history
 └── docs/
     ├── how-to/
     └── research/
@@ -853,4 +861,4 @@ Broz OS includes automation commands to streamline common tasks:
 
 ---
 
-*Last updated: 2026-01-28 | Broz OS v1.0*
+*Last updated: 2026-01-29 | Broz OS v1.0*

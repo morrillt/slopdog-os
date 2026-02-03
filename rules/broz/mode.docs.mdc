@@ -30,6 +30,7 @@ globs: []
     <item label="3) 🛠️ Create Dev Note" handler="h_create_devnote" />
     <item label="4) 📰 Publish Doc (Docs 2.0)" handler="h_publish" />
     <item label="5) 🧪 Audit Docs" handler="h_audit" />
+    <item label="6) 📚 Update Architecture" handler="h_update_architecture" />
   </menu>
 
   <handlers>
@@ -52,6 +53,10 @@ globs: []
     <handler id="h_audit">
       Load rule: @broz/workflows/docs/audit
       Run workflow: "Workflow: Docs > Audit"
+    </handler>
+    <handler id="h_update_architecture">
+      Load rule: @broz/workflows/docs/update_architecture
+      Run workflow: "Workflow: Docs > Update Architecture"
     </handler>
   </handlers>
 </mode>

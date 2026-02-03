@@ -6,6 +6,9 @@ facets:
   status: draft
   repo:
     path: docs/research/[filename].md
+  summary:
+    human: "[Tweet-sized summary: What problem? What recommendation? ~280 chars max]"
+    vector: "[RAG-optimized dense summary for semantic search. 300-400 words. Include: problem statement, technologies evaluated, options explored, recommendation, key risks. Information-dense, keyword-rich.]"
 tags:
   - doc/research
 ---
