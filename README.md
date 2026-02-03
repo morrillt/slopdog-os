@@ -1,5 +1,7 @@
 # Slopdog OS
 
+![Slopdog OS Crew](assets/slopdog-crew.png)
+
 A **spec-driven, test-driven workflow system** for [Cursor](https://cursor.sh/).
 
 A set of opinions and conventions that use the same project scaffolding, tech stack, and approach to build fully functional greenfield projects—from idea to shareable—in the shortest possible path.
