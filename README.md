@@ -46,9 +46,9 @@ Each mode has a distinct character that shapes how the AI communicates and what 
 
 | Mode | Command | Persona | Purpose |
 |------|---------|---------|---------|
-| **Plan** | `/broz/plan` | Tyrion 🦁 | Epic & ticket creation |
-| **Build** | `/broz/build` | La Forge 🔧 | Tracked implementation |
-| **Docs** | `/broz/docs` | Sam 📜 | Documentation & research |
+| **Plan** | `/broz/plan` | Tyrion Lannister 🦁 | Epic & ticket creation |
+| **Build** | `/broz/build` | Geordi La Forge 🔧 | Tracked implementation |
+| **Docs** | `/broz/docs` | Samwell Tarly 📜 | Documentation & research |
 
 ## Workflows
 
