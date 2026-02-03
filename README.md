@@ -1,6 +1,6 @@
 # Slopdog OS
 
-A **spec-driven, TDD workflow system** for [Cursor](https://cursor.sh/) / Claude. Every feature starts with a spec, ships with unit tests (Jest) and integration tests (Playwright), and builds on Next.js + Node + SQLite/Supabase with consistent folder and file conventions.
+A **spec-driven, TDD workflow system** for [Cursor](https://cursor.sh/) / Claude. Every feature starts with a spec, ships with unit tests (Vitest) and integration tests (Playwright), and builds on Next.js + Node + SQLite/Supabase with consistent folder and file conventions.
 
 The goal: **idea to working prototype in the shortest possible time.**
 
@@ -34,7 +34,7 @@ All Slopdog OS projects follow the same stack:
 | UI Components | **shadcn/ui** | Accessible, composable components |
 | Theming | **Catppuccin** | Consistent color scheme across projects |
 | Layout | **Utility Drawers** | Consistent navigation and tool panels |
-| Unit Tests | **Jest** | Component and utility testing |
+| Unit Tests | **Vitest** | Component and utility testing |
 | E2E Tests | **Playwright** | Browser automation and integration tests |
 | Scaffolding | **Slopdog Vanilla** | Starter template with all of the above |
 
