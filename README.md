@@ -1,6 +1,6 @@
 # Slopdog OS
 
-A **spec-driven, TDD workflow system** for [Cursor](https://cursor.sh/). Every feature starts with a spec, ships with unit tests (Jest) and integration tests (Playwright), and builds on Next.js + Node + SQLite/Supabase with consistent folder and file conventions.
+A **spec-driven, TDD workflow system** for [Cursor](https://cursor.sh/) / Claude. Every feature starts with a spec, ships with unit tests (Jest) and integration tests (Playwright), and builds on Next.js + Node + SQLite/Supabase with consistent folder and file conventions.
 
 The goal: **idea to working prototype in the shortest possible time.**
 
