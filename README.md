@@ -1,18 +1,18 @@
 # Slopdog OS
 
-A **spec-driven, TDD workflow system** for [Cursor](https://cursor.sh/) / Claude. Every feature starts with a spec, ships with unit tests (Vitest) and integration tests (Playwright), and builds on Next.js + Node + SQLite/Supabase with consistent folder and file conventions.
+A **spec-driven, test-driven workflow system** for [Cursor](https://cursor.sh/).
 
-The goal: **idea to working prototype in the shortest possible time.**
+A set of opinions and conventions that use the same project scaffolding, tech stack, and approach to build fully functional greenfield projects—from idea to shareable—in the shortest possible path.
+
+We're also building **Slopdog UI**, a standalone interface for running these workflows outside of Cursor.
 
 ## Why Slopdog OS?
 
-We're constantly building prototypes with the same scaffolding. Slopdog OS tightens with every project—the patterns, the file layout, the test setup, the UI conventions all compound.
-
 Inspired by [BMAD](https://github.com/bmadcode/BMAD-METHOD) and [Agent OS](https://github.com/anthropics/agent-os) but much lighter and more opinionated. Built for fresh greenfield, medium-complexity projects:
 
-- **Spec-driven development**: Every ticket has acceptance criteria and test requirements before code
+- **Spec-first**: Every ticket has acceptance criteria and test requirements before code
 - **Consistent scaffolding**: All projects start from [Slopdog Vanilla](https://github.com/morrillt/slopdog-vanilla)
-- **Same stack, every time**: Next.js, SQLite/Supabase, shadcn/ui, Catppuccin theming, utility drawer layouts
+- **Same stack, every time**: Predictable tech choices across all projects
 - **Same folder conventions**: Predictable file structure across all projects
 - **Deep research workflows**: Structured research that goes beyond default tool capabilities
 
