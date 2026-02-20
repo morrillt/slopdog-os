@@ -1,7 +1,7 @@
 Search YouTube for videos and optionally fetch transcripts. (Trigger: `broz:youtube`)
 
 Do this EXACTLY in order:
-1) Read the YouTube skill at `~/.cursor/skills-cursor/youtube-search/SKILL.md`
+1) Read the YouTube skill at `~/.cursor/skills/youtube-search/SKILL.md`
 2) Follow the skill's instructions to search YouTube using the user's query
 3) Present the top video results with evaluation criteria (views, date, channel)
 4) Ask the user if they want transcripts fetched for any specific videos

@@ -19,7 +19,7 @@ Convert Cursor rules ("Applied intelligently") and slash commands to Agent Skill
 Notes:
 - Cursor rules inside the project can live in nested directories. Be thorough in your search and use glob patterns to find them.
 - Ignore anything in ~/.cursor/worktrees
-- Ignore anything in ~/.cursor/skills-cursor. This is reserved for Cursor's internal built-in skills and is managed automatically by the system.
+- Ignore anything in ~/.cursor/skills-cursor (deprecated directory name). Active skills live in ~/.cursor/skills/.
 
 ## Finding Files to Migrate
 

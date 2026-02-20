@@ -131,8 +131,7 @@ Example: When you ask "find me a YouTube tutorial on RAG", the `youtube-search` 
 ~/.cursor/
 ├── commands/broz/     # Entry points (triggers mode switches)
 ├── rules/broz/        # Modes + workflows (.mdc)
-├── skills-cursor/     # Built-in skills (system-managed)
-├── skills/            # User-created personal skills
+├── skills/            # Reusable capabilities + scripts
 ├── plans/             # State tracking (context.yaml)
 ├── docs/              # Documentation
 └── templates/         # Document templates

@@ -58,7 +58,7 @@ skill-name/
 | Personal | ~/.cursor/skills/skill-name/ | Available across all your projects |
 | Project | .cursor/skills/skill-name/ | Shared with anyone using the repository |
 
-**IMPORTANT**: Never create skills in `~/.cursor/skills-cursor/`. This directory is reserved for Cursor's internal built-in skills and is managed automatically by the system.
+**IMPORTANT**: Never create skills in `~/.cursor/skills-cursor/`. That directory name is deprecated. Use `~/.cursor/skills/` for personal skills and `.cursor/skills/` for project skills.
 
 ### SKILL.md Structure
 
