@@ -1,0 +1,569 @@
+---
+description: "Workflow: Execute Ticket (Dev Story Loop)"
+globs: []
+---
+# Workflow: Build > Execute Ticket (Dev Story)
+
+<critical>You MUST only start with clean GIT status.</critical>
+<critical>You MUST clarify ambiguous requirements BEFORE implementing.</critical>
+<critical>You MUST log all issues/decisions in `### DEV AGENT RECORD`.</critical>
+<critical>You MUST run all tests (Unit + E2E) before completing.</critical>
+<critical>Read `plans/context.yaml` ONCE at start. Do NOT write to context.yaml unless updating ticket status/progress.</critical>
+<critical>Detect or ask for OUTPUT MODE before Step 1. All outputs MUST conform to the detected mode format.</critical>
+
+<variables>
+  {{output_mode}} - Either "app" or "cli" (detected at Step 0)
+  {{current_ticket}} - Read from context.yaml at Step 1
+  {{ticket_path}} - Path to the active ticket markdown file
+  {{git_status}} - Result of git status check
+</variables>
+
+<output-modes>
+  ## Output Mode: app
+  - **When**: Workflow executed directly in Cursor IDE
+  - **Format**: Markdown with emoji indicators
+  - **Audience**: Human user reading in IDE
+  
+  ## Output Mode: cli
+  - **When**: Workflow called via `cursor-agent` CLI
+  - **Format**: Structured XML for programmatic parsing
+  - **Audience**: Webapp GUI rendering engine
+  
+  ## Mode Detection Rules
+  1. If prompt contains `--mode=cli` or `[cli]` → cli mode
+  2. If prompt contains `--mode=app` or `[app]` → app mode
+  3. If environment variable `CURSOR_AGENT_CLI=true` → cli mode
+  4. If ambiguous → Ask user to select mode before proceeding
+  
+  ## Thinking Output Guidelines (CLI Mode)
+  Emit `<thinking>` outputs strategically - not for every micro-step:
+  
+  | EMIT thinking for | SKIP thinking for |
+  |-------------------|-------------------|
+  | Starting a new task | Trivial file reads |
+  | Making non-obvious decisions | Standard operations |
+  | Encountering ambiguity | Repetitive actions |
+  | Finding unexpected code | Simple checks |
+  | Changing implementation approach | Progress updates |
+  
+  **Frequency**: ~1-3 thinking outputs per task, more if complex decisions arise.
+</output-modes>
+
+<xml-schema>
+  ## CLI Mode XML Output Schema
+  
+  All CLI mode outputs MUST conform to these XML structures:
+  
+  ### Step Status Output
+  ```xml
+  <workflow-output>
+    <step number="N" goal="Step Goal Text">
+      <status>complete|in_progress|blocked|failed</status>
+      <checks>
+        <check id="check-id" status="pass|fail">Description</check>
+      </checks>
+      <message>Human-readable summary</message>
+      <next-step number="N+1" goal="Next Step Goal"/>
+    </step>
+  </workflow-output>
+  ```
+  
+  ### Progress Update Output
+  ```xml
+  <workflow-output>
+    <progress>
+      <ticket id="{{current_ticket}}">
+        <tasks completed="N" total="M"/>
+        <acceptance-criteria completed="N" total="M"/>
+        <current-task id="task-id">Task description</current-task>
+      </ticket>
+    </progress>
+  </workflow-output>
+  ```
+  
+  ### Action Log Output
+  ```xml
+  <workflow-output>
+    <action-log>
+      <entry type="plan|implement|decision|bug|ambiguity" timestamp="ISO8601">
+        <description>What happened</description>
+        <files>
+          <file path="path/to/file" action="created|modified|deleted"/>
+        </files>
+      </entry>
+    </action-log>
+  </workflow-output>
+  ```
+  
+  ### Completion Output
+  ```xml
+  <workflow-output>
+    <completion>
+      <ticket id="{{current_ticket}}" status="review">
+        <progress percent="100"/>
+        <tests status="pass|fail">
+          <unit status="pass|fail" command="npm test"/>
+          <e2e status="pass|fail" command="npm run e2e"/>
+        </tests>
+        <build status="pass|fail"/>
+        <lint status="pass|fail"/>
+        <summary>
+          <po-summary>Summary for product owner</po-summary>
+          <tech-summary>Summary for tech lead</tech-summary>
+        </summary>
+        <files-changed count="N">
+          <file path="path/to/file"/>
+        </files-changed>
+      </ticket>
+    </completion>
+  </workflow-output>
+  ```
+  
+  ### Question/Prompt Output (for user input)
+  ```xml
+  <workflow-output>
+    <prompt type="confirmation|selection|input">
+      <question>Question text</question>
+      <options>
+        <option id="opt-id" label="Option Label"/>
+      </options>
+      <default>default-option-id</default>
+    </prompt>
+  </workflow-output>
+  ```
+  
+  ### Error/Halt Output
+  ```xml
+  <workflow-output>
+    <error type="validation|git|test|build">
+      <message>Error description</message>
+      <action>Required action to resolve</action>
+      <halt>true|false</halt>
+    </error>
+  </workflow-output>
+  ```
+  
+  ### Thinking Output (Agent Reasoning)
+  Use `<thinking>` to expose agent reasoning for UI display (e.g., collapsible panels, loading states).
+  
+  ```xml
+  <workflow-output>
+    <thinking step="N" phase="planning|analyzing|implementing|verifying">
+      <context>What the agent is looking at</context>
+      <reasoning>Chain of thought / analysis</reasoning>
+      <hypothesis>What the agent believes or is testing</hypothesis>
+      <decision>Conclusion reached (if any)</decision>
+      <next-action>What the agent will do next</next-action>
+    </thinking>
+  </workflow-output>
+  ```
+  
+  ### Thinking Phases
+  | Phase | When Used |
+  |-------|-----------|
+  | `planning` | Reading task, determining approach |
+  | `analyzing` | Examining code, understanding context |
+  | `implementing` | Writing/editing code, making changes |
+  | `verifying` | Running tests, checking results |
+  
+  ### Streaming Thinking (for live updates)
+  For long operations, emit incremental thinking:
+  
+  ```xml
+  <workflow-output>
+    <thinking-stream step="N" phase="analyzing">
+      <chunk seq="1">Reading ticket requirements...</chunk>
+      <chunk seq="2">Found 3 unchecked tasks...</chunk>
+      <chunk seq="3">First task maps to AC-1...</chunk>
+    </thinking-stream>
+  </workflow-output>
+  ```
+  
+  ### Observation Output (intermediate findings)
+  ```xml
+  <workflow-output>
+    <observation type="code|test|file|dependency">
+      <target>What was examined (file path, test name, etc.)</target>
+      <finding>What was discovered</finding>
+      <relevance>high|medium|low</relevance>
+      <affects>Which task/AC this impacts</affects>
+    </observation>
+  </workflow-output>
+  ```
+</xml-schema>
+
+<workflow>
+
+<step n="0" goal="Mode Detection">
+  <action>
+    **Detect Output Mode**:
+    - Check initial prompt for explicit mode indicator:
+      - `--mode=cli` or `[cli]` → Set {{output_mode}} = "cli"
+      - `--mode=app` or `[app]` → Set {{output_mode}} = "app"
+    - Check for environment context (cursor-agent CLI typically sets context)
+    - If mode cannot be determined, ask user:
+      
+      **app mode**: "Which output mode? (app = Cursor IDE, cli = cursor-agent webapp)"
+      
+      **cli mode**:
+      ```xml
+      <workflow-output>
+        <prompt type="selection">
+          <question>Select output mode for this workflow</question>
+          <options>
+            <option id="app" label="App Mode - Cursor IDE (markdown + emoji)"/>
+            <option id="cli" label="CLI Mode - cursor-agent webapp (structured XML)"/>
+          </options>
+          <default>app</default>
+        </prompt>
+      </workflow-output>
+      ```
+  </action>
+
+  <output mode="app">
+    ✅ **Mode Detected**: {{output_mode}}
+    
+    ➡️ **Beginning Step 1: Context Loading & Validation**
+  </output>
+
+  <output mode="cli">
+    ```xml
+    <workflow-output>
+      <step number="0" goal="Mode Detection">
+        <status>complete</status>
+        <checks>
+          <check id="mode-detected" status="pass">Output mode: {{output_mode}}</check>
+        </checks>
+        <next-step number="1" goal="Context Loading &amp; Validation"/>
+      </step>
+    </workflow-output>
+    ```
+  </output>
+</step>
+
+<step n="1" goal="Context Loading & Validation">
+  <action>
+    **Check Git Status**:
+    - Must be clean. If not, HALT.
+    - Report: `[ ✅ | ❌ ] Git Status Clean`
+  </action>
+
+  <action>
+    **Load Ticket**:
+    - Ask user to select ticket (if not current).
+    - Update `plans/context.yaml` (`current_ticket`, `status: In Progress`).
+    - Report: `[ ✅ | ❌ ] Ticket Loaded: {{current_ticket}}`
+  </action>
+
+  <action>
+    **Validate Readiness**:
+    - Mode must be `build` or `task`.
+    - First unchecked task must exist.
+    - Tasks must map to ACs: `(AC: AC-#...)`.
+    - Report: `[ ✅ | ❌ ] Ticket Validated for Execution`
+  </action>
+
+  <check if="not ready">
+    <critical>STOP. Ticket not ready or invalid mode.</critical>
+    <action>Fix ticket or switch mode.</action>
+    
+    <error-output mode="app">
+      ❌ **HALT**: Ticket not ready or invalid mode.
+      **Action Required**: Fix ticket or switch to build/task mode.
+    </error-output>
+    
+    <error-output mode="cli">
+      ```xml
+      <workflow-output>
+        <error type="validation">
+          <message>Ticket not ready or invalid mode</message>
+          <action>Fix ticket or switch to build/task mode</action>
+          <halt>true</halt>
+        </error>
+      </workflow-output>
+      ```
+    </error-output>
+  </check>
+
+  <output mode="app">
+    ✅ **Ending Step 1: Context Loading & Validation**
+    [ ✅ ] Git Status Clean
+    [ ✅ ] Ticket Loaded: {{current_ticket}}
+    [ ✅ ] Ticket Validated for Execution
+    
+    ➡️ **Beginning Step 2: Execution Loop (Plan -> Implement -> Mark)**
+  </output>
+
+  <output mode="cli">
+    ```xml
+    <workflow-output>
+      <step number="1" goal="Context Loading &amp; Validation">
+        <status>complete</status>
+        <checks>
+          <check id="git-status" status="pass">Git status clean</check>
+          <check id="ticket-loaded" status="pass">Ticket loaded: {{current_ticket}}</check>
+          <check id="ticket-validated" status="pass">Ticket validated for execution</check>
+        </checks>
+        <message>Context loaded and validated successfully</message>
+        <next-step number="2" goal="Execution Loop (Plan -> Implement -> Mark)"/>
+      </step>
+    </workflow-output>
+    ```
+  </output>
+</step>
+
+<step n="2" goal="Execution Loop (Plan -> Implement -> Mark)">
+  <action>
+    **Loop until all tasks [x]:**
+    
+    **A. Plan**:
+    - Read current unchecked task.
+    - Write 1-line plan in `### DEV AGENT RECORD`.
+    
+    **B. Implement**:
+    - Write/Edit code.
+    - **Log immediately**:
+      - `- [Time] [Spec ambiguity] ...`
+      - `- [Time] [Bug] ...`
+      - `- [Time] [Decision] ...`
+    
+    **C. Mark**:
+    - Check `[x]` task.
+    - **Sync ACs**: If all tasks for an AC are done, check `[x]` the corresponding AC in `## Acceptance Criteria`.
+    - Add files to `### File List`.
+    
+    **D. Update Progress**:
+    - Update ticket YAML `facets.progress` (e.g., `completed: x`, `total: y`).
+    
+    **E. Check Next**:
+    - If more tasks, repeat A.
+  </action>
+
+  <loop-iteration-output mode="app">
+    📋 **Task**: [Task description]
+    🔧 **Plan**: [1-line implementation plan]
+    ⏳ **Implementing...**
+    
+    ---
+    ✅ **Task Complete**: [Task description]
+    📁 **Files Modified**: [file1.ts, file2.ts]
+    📊 **Progress**: [N/M] tasks | [X/Y] ACs
+  </loop-iteration-output>
+
+  <loop-iteration-output mode="cli">
+    ```xml
+    <workflow-output>
+      <progress>
+        <ticket id="{{current_ticket}}">
+          <tasks completed="N" total="M"/>
+          <acceptance-criteria completed="X" total="Y"/>
+          <current-task id="task-id">Task description</current-task>
+        </ticket>
+      </progress>
+      <action-log>
+        <entry type="plan" timestamp="2025-01-28T10:30:00Z">
+          <description>1-line implementation plan</description>
+        </entry>
+        <entry type="implement" timestamp="2025-01-28T10:35:00Z">
+          <description>Task completed</description>
+          <files>
+            <file path="src/file1.ts" action="modified"/>
+            <file path="src/file2.ts" action="created"/>
+          </files>
+        </entry>
+      </action-log>
+    </workflow-output>
+    ```
+  </loop-iteration-output>
+
+  <decision-log-output mode="app">
+    📝 **Log Entry**: `[Time] [Type] Description`
+  </decision-log-output>
+
+  <decision-log-output mode="cli">
+    ```xml
+    <workflow-output>
+      <action-log>
+        <entry type="decision|bug|ambiguity" timestamp="ISO8601">
+          <description>What was decided/found</description>
+        </entry>
+      </action-log>
+    </workflow-output>
+    ```
+  </decision-log-output>
+
+  <thinking-output mode="app">
+    💭 **Thinking**: [Brief reasoning shown inline or omitted]
+  </thinking-output>
+
+  <thinking-output mode="cli">
+    ```xml
+    <workflow-output>
+      <thinking step="2" phase="planning">
+        <context>Reading task: "Add input validation to form component"</context>
+        <reasoning>This task requires modifying the form component to validate user input before submission. Need to check existing validation patterns in codebase.</reasoning>
+        <hypothesis>Existing validation utils in src/utils/validation.ts can be reused</hypothesis>
+        <next-action>Read current form component and validation utils</next-action>
+      </thinking>
+    </workflow-output>
+    ```
+    
+    ```xml
+    <workflow-output>
+      <thinking step="2" phase="analyzing">
+        <context>Examining src/components/Form.tsx</context>
+        <reasoning>Form currently submits without validation. Found handleSubmit at line 45. Validation utils export validateEmail, validateRequired.</reasoning>
+        <decision>Will add validation call before form submission using existing utils</decision>
+        <next-action>Implement validation in handleSubmit function</next-action>
+      </thinking>
+    </workflow-output>
+    ```
+    
+    ```xml
+    <workflow-output>
+      <observation type="code">
+        <target>src/components/Form.tsx:45-60</target>
+        <finding>handleSubmit has no input validation, directly calls API</finding>
+        <relevance>high</relevance>
+        <affects>Task 1 (AC: AC-1)</affects>
+      </observation>
+    </workflow-output>
+    ```
+  </thinking-output>
+</step>
+
+<step n="3" goal="Completion & Verification">
+  <action>
+    **Verify Acceptance Criteria**:
+    - Review `## Acceptance Criteria`. Are they met?
+    - Report: `[ ✅ | ❌ ] All ACs Met`
+  </action>
+
+  <action>
+    **Run All Tests**:
+    - Unit (Vitest): Record command + pass/fail + artifact link.
+    - E2E (Playwright): Record command + pass/fail + artifact link.
+    - **Console/Runtime Check**: Verify no console errors or runtime crashes during basic smoke tests.
+    - Report: `[ ✅ | ❌ ] Tests Passed (Unit + E2E + Console)`
+  </action>
+
+  <check if="tests failed">
+    <critical>Cannot complete ticket with failing tests.</critical>
+    <action>Fix regressions before proceeding.</action>
+    
+    <error-output mode="app">
+      ❌ **Tests Failed**: Cannot complete ticket with failing tests.
+      **Action Required**: Fix regressions before proceeding.
+    </error-output>
+    
+    <error-output mode="cli">
+      ```xml
+      <workflow-output>
+        <error type="test">
+          <message>Tests failed - cannot complete ticket</message>
+          <action>Fix regressions before proceeding</action>
+          <halt>true</halt>
+          <details>
+            <unit status="fail" output="Test output here"/>
+            <e2e status="fail" output="E2E output here"/>
+          </details>
+        </error>
+      </workflow-output>
+      ```
+    </error-output>
+  </check>
+
+  <action>
+    **Run Build & Lint**:
+    - Ensure clean build.
+    - Report: `[ ✅ | ❌ ] Build & Lint Clean`
+  </action>
+
+  <action>
+    **Taxonomy Drift Check**:
+    - If docs touched, check `docs/taxonomy.yaml` for new tags.
+  </action>
+
+  <output mode="app">
+    ✅ **Ending Step 3: Completion & Verification**
+    [ ✅ ] All ACs Met
+    [ ✅ ] Tests Passed (Unit + E2E)
+    [ ✅ ] Build & Lint Clean
+    
+    ➡️ **Beginning Step 4: Handoff**
+  </output>
+
+  <output mode="cli">
+    ```xml
+    <workflow-output>
+      <step number="3" goal="Completion &amp; Verification">
+        <status>complete</status>
+        <checks>
+          <check id="acs-met" status="pass">All acceptance criteria met</check>
+          <check id="tests-unit" status="pass">Unit tests passed</check>
+          <check id="tests-e2e" status="pass">E2E tests passed</check>
+          <check id="build" status="pass">Build successful</check>
+          <check id="lint" status="pass">Lint clean</check>
+        </checks>
+        <tests status="pass">
+          <unit status="pass" command="npm run test"/>
+          <e2e status="pass" command="npm run e2e"/>
+        </tests>
+        <build status="pass"/>
+        <lint status="pass"/>
+        <next-step number="4" goal="Handoff"/>
+      </step>
+    </workflow-output>
+    ```
+  </output>
+</step>
+
+<step n="4" goal="Handoff">
+  <action>
+    **Update Ticket**:
+    - Status: `Review`.
+    - **Final Sync**: Ensure all ACs and Tasks are `[x]`.
+    - **Progress Metadata**: Set `facets.progress.completed` to equal `total`.
+    - Add `### Completion Notes` to `## Dev Agent Record`.
+    - Include: PO Summary, Tech Lead Summary, Evidence Links.
+    - Report: `[ ✅ | ❌ ] Ticket Updated to Review`
+  </action>
+
+  <output mode="app">
+    ### Execution Complete
+    - **Ticket**: [Link]
+    - **Status**: [ ✅ ] Review
+    - **Progress**: [ ✅ ] 100% [xxxxxxxxxx]
+    - **Tests**: [ ✅ ] Passed (Evidence Attached)
+    - **Ready for**: Code Review
+  </output>
+
+  <output mode="cli">
+    ```xml
+    <workflow-output>
+      <completion>
+        <ticket id="{{current_ticket}}" status="review">
+          <progress percent="100"/>
+          <tests status="pass">
+            <unit status="pass" command="npm run test"/>
+            <e2e status="pass" command="npm run e2e"/>
+          </tests>
+          <build status="pass"/>
+          <lint status="pass"/>
+          <summary>
+            <po-summary>Brief summary of what was implemented for product owner</po-summary>
+            <tech-summary>Technical implementation details for tech lead</tech-summary>
+          </summary>
+          <files-changed count="N">
+            <file path="src/feature/component.ts"/>
+            <file path="src/feature/component.test.ts"/>
+          </files-changed>
+          <ready-for>Code Review</ready-for>
+        </ticket>
+      </completion>
+    </workflow-output>
+    ```
+  </output>
+</step>
+
+</workflow>

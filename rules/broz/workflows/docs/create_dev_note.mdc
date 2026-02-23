@@ -1,0 +1,148 @@
+---
+description: "Workflow: Create a new Dev Note documentation file"
+globs: []
+---
+
+# Workflow: Docs > Create Dev Note
+
+<critical>Do NOT add H1 title in body (Front-matter `title` is H1).</critical>
+<critical>Use H2 (`##`) for major sections (required for TOC).</critical>
+<critical>New docs must start as `status: draft`.</critical>
+<critical>Read `plans/context.yaml` ONCE at start to get `project.path`. Do NOT write to context.yaml.</critical>
+<critical>Use workflow variables ({{title}}, {{filename}}, {{target_path}}) throughout. These are held in memory.</critical>
+<critical>Only ONE file is created at the FINAL step. Do NOT create any files before the final step.</critical>
+
+<variables>
+  {{project_path}} - Read from context.yaml at Step 1 (e.g., /home/broz/.cursor)
+  {{title}} - User-provided title for the Dev Note
+  {{filename}} - User-provided kebab-case filename
+  {{target_path}} - Computed as {{project_path}}/docs/dev-note/{{filename}}.md
+</variables>
+
+<workflow>
+
+<step n="1" goal="Context Load & Raw Note Capture">
+  <action>
+    **Load Project Path**:
+    - Read `plans/context.yaml` to obtain `project.path`.
+    - Store in workflow variable: `{{project_path}}`
+    - Report: `[ ✅ | ❌ ] plans/context.yaml`
+  </action>
+
+  <action>
+    **Initial Capture**:
+    - Ask the user for:
+      - **Title**: Human-readable title for the Dev Note.
+      - **Filename**: Kebab-case filename (e.g., `websocket-reconnection-gotcha`).
+      - **Gist**: Technical discovery, "gotcha," or workaround they want to record.
+    - Store in workflow variables:
+      - `{{title}}` = User's title
+      - `{{filename}}` = User's filename
+      - `{{target_path}}` = `{{project_path}}/docs/dev-note/{{filename}}.md`
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Initialize**
+    [ ✅ ] `plans/context.yaml` loaded
+    📝 **Title**: {{title}}
+    📝 **Filename**: {{filename}}
+    📝 **Target Path**: {{target_path}}
+    
+    ➡️ **Beginning Step 2: Clarification & Scope Confirmation**
+  </output>
+</step>
+
+<step n="2" goal="Clarification & Scope Confirmation">
+  <action>
+    **Ask Clarifying Questions**:
+    - Based on the gist, identify technical details that might be forgotten.
+    - Ask the user for specific files, error messages, or architecture decisions to capture.
+  </action>
+
+  <action>
+    **User Confirmation Gate** (STOP):
+    - Present the outlined scope to the user.
+    - Ask: "Does this scope look correct? (Y to proceed, or provide corrections)"
+    - **Do NOT proceed to Step 3 until user confirms.**
+  </action>
+
+  <output>
+    ✅ **Ending Step 2: Clarification**
+    🤔 Clarified technical details with user.
+    ✋ Awaiting user confirmation before research.
+    
+    ➡️ **Beginning Step 3: Research & Discovery**
+  </output>
+</step>
+
+<step n="3" goal="Research & Discovery">
+  <action>
+    **Execute Research**:
+    - Use `codebase_search` or `grep` to pull relevant code snippets.
+    - Analyze the technical area to provide context for the note.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Research & Discovery**
+    🔍 Gathered technical context and snippets.
+    
+    ➡️ **Beginning Step 4: Review & Feedback**
+  </output>
+</step>
+
+<step n="4" goal="Review & Feedback">
+  <action>
+    **Present Findings**:
+    - Share the gathered snippets and technical context with the user.
+    - Ask: "Does this look complete? (Y to finalize, or provide feedback)"
+  </action>
+
+  <action>
+    **Iteration Branch**:
+    - If user requests changes:
+      - If "add snippet from file X" or "include error Y" → Loop back to **Step 3**.
+    - If user approves → Proceed to **Step 5**.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Review & Feedback**
+    🗣️ Received user feedback on research.
+    
+    ➡️ **Beginning Step 5: Final File Creation**
+  </output>
+</step>
+
+<step n="5" goal="Final File Creation">
+  <critical>This is the ONLY step where a file is created. Only ONE file.</critical>
+
+  <action>
+    **Ensure Directory Exists**:
+    - Create `{{project_path}}/docs/dev-note/` if it does not exist.
+  </action>
+
+  <action>
+    **Load Template**:
+    - Read template from: `{{project_path}}/templates/docs/dev-note.md`
+    - Report: `[ ✅ | ❌ ] Template loaded`
+  </action>
+
+  <action>
+    **Commit Single File to Disk**:
+    - Target Path: `{{target_path}}`
+    - Populate all sections using the template as foundation.
+    - Report: `[ ✅ | ❌ ] File created`
+  </action>
+
+  <output>
+    ✅ **Ending Step 5: Draft Created**
+    
+    ### File Created
+    - **Template**: [ ✅ ] `{{project_path}}/templates/docs/dev-note.md`
+    - **Output**: [ ✅ ] `{{target_path}}`
+    - **Status**: Draft
+    
+    📄 Dev Note Document saved to: `{{target_path}}`
+  </output>
+</step>
+
+</workflow>
