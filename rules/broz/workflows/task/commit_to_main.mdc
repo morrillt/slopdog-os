@@ -1,25 +1,57 @@
 ---
-description: "Workflow: Commit all changes to main"
+description: "Workflow: Commit all changes and land them on main (worktree-aware, conversation-recording)"
 globs: []
 ---
 # Workflow: Task > Commit All to Main
 
-<critical>You MUST use the correct commit prefix (feat, fix, task, etc.).</critical>
+<critical>You MUST use the correct commit prefix (feat, fix, task, docs, plan, chore).</critical>
 <critical>You MUST auto-generate the message (do not prompt user).</critical>
-<critical>You MUST NOT push to origin (commit only).</critical>
+<critical>You MUST embed the session's conversation in the commit body (Step 3). It is what makes a later merge resolvable.</critical>
+<critical>You MUST write the message with `git commit -F <file>` — never `-m`. The body contains quotes, backticks and newlines that a shell-quoted `-m` will mangle or execute.</critical>
+<critical>You MUST NOT push to origin unless a remote exists AND the user opts into the PR path.</critical>
+<critical>You MUST NOT merge a branch that still has uncommitted changes.</critical>
+<critical>If `main` has uncommitted changes, you MUST STOP and summarize — never merge over dirty work.</critical>
+<critical>You MUST NOT remove a worktree while the shell is standing inside it.</critical>
+<critical>This workflow may be invoked from ANY mode. Merging is not a product-code change, so the `core.mdc` PLAN guardrail does not apply.</critical>
+
+<variables>
+  {{repo_root}} - Main checkout path (`git worktree list` → the entry marked `[main]`)
+  {{is_worktree}} - true if cwd is a linked worktree, not the main checkout
+  {{branch}} - Current branch name
+  {{main_clean}} - true if the main checkout has no uncommitted changes
+  {{has_remote}} - true if `git remote` is non-empty
+  {{convo_block}} - Timestamped conversation block harvested at Step 3 (may be empty)
+  {{msg_file}} - Temp file holding the full commit message
+  {{commit_hash}} - Short hash of the branch commit
+  {{merge_hash}} - Short hash of the merge commit on main
+</variables>
 
 <workflow>
 
-<step n="1" goal="Check Status">
+<step n="1" goal="Detect Context">
   <action>
-    **Run `git status`**:
-    - If clean, exit (nothing to do).
+    **Establish where we are**:
+    - `git rev-parse --show-toplevel` → current tree
+    - `git worktree list` → identify {{repo_root}} and set {{is_worktree}}
+    - `git branch --show-current` → {{branch}}
+    - `git remote` → {{has_remote}}
+    - `git status --short` → current tree cleanliness
+    - `git -C {{repo_root}} status --short` → {{main_clean}}
   </action>
 
+  <check if="not in a git repository">
+    <critical>STOP. Nothing to commit.</critical>
+  </check>
+
+  <check if="{{is_worktree}} is false AND {{branch}} is main">
+    <action>Simple path: run Steps 2–5 only, then jump to Step 9. There is nothing to merge or clean up.</action>
+  </check>
+
   <output>
-    ✅ **Ending Step 1: Check Status**
-    📊 Checked git status (clean or has changes)
-    
+    ✅ **Ending Step 1: Detect Context**
+    📍 Worktree: [ yes | no ] · Branch: `{{branch}}` · Remote: [ yes | none ]
+    🧹 Main checkout: [ clean | DIRTY ]
+
     ➡️ **Beginning Step 2: Stage & Analyze**
   </output>
 </step>
@@ -28,66 +60,285 @@ globs: []
   <action>
     **Stage All**:
     - `git add -A`
+    - If nothing to stage AND the branch has no unmerged commits, exit (nothing to do).
   </action>
 
   <action>
     **Analyze Changes**:
     - Identify modified/added/deleted files.
-    - Determine primary type (feat, fix, task, etc.).
+    - Determine primary type: `feat`, `fix`, `task`, `docs`, `plan`, `chore`.
+    - `plans/` changes → `plan`. `docs/` → `docs`. `src`/`lib`/`scripts`/`tests` → `feat` or `fix`.
   </action>
 
   <output>
     ✅ **Ending Step 2: Stage & Analyze**
     📦 Staged all changes
-    🔍 Analyzed file patterns and determined commit type
-    
-    ➡️ **Beginning Step 3: Generate Message**
+    🔍 Determined commit type
+
+    ➡️ **Beginning Step 3: Harvest the Conversation**
   </output>
 </step>
 
-<step n="3" goal="Generate Message">
+<step n="3" goal="Harvest the Conversation">
   <action>
-    **Draft Message**:
-    - **Title**: `<prefix>: <concise summary>`
-    - **Body**: Description of why/what.
-    - **Changes**: Bulleted list of files/groups.
+    **Why this step exists** — a commit records WHAT changed and WHEN it landed,
+    never when the DECISION was made or what it superseded. Broz runs several
+    sessions against one repo in an afternoon and closes them out of order, so
+    the branch that merges LAST often carries the OLDEST instruction. His own
+    timestamped prompts, in the commit body, are what makes a later conflict
+    resolvable instead of a coin flip. See the `conversation-log` skill.
+  </action>
+
+  <action>
+    **Harvest**:
+    ```
+    python3 ~/.cursor/skills/conversation-log/scripts/harvest_prompts.py
+    ```
+    Run it from the tree being committed. It auto-detects repo, branch and time
+    window (since this branch's newest commit, or its fork point if it has
+    none), and captures EVERY session that worked this branch — not just the
+    current one. stdout is the block; stderr is diagnostics.
+    - Store stdout as {{convo_block}}.
+  </action>
+
+  <action>
+    **Review before embedding** — read the block, do not just pipe it:
+    - Does the window look right? Diagnostics on stderr print it. A window that
+      opened days ago, or caught prompts from unrelated work, needs
+      `--since <ISO8601>` to tighten it.
+    - Anything truncated that mattered? Raise `--max-prompt-chars`.
+  </action>
+
+  <action>
+    **Privacy gate** — the block travels with the commit EVERYWHERE the commit
+    goes, and raw dictation is unedited:
+    - `git remote -v`, then check whether the remote is public
+      (`gh repo view --json visibility` when `gh` is available).
+    - PUBLIC remote → STOP and ask Broz before embedding.
+    - Private or no remote → proceed. This is the normal case.
+  </action>
+
+  <check if="the script errors, or returns zero prompts">
+    <action>
+      Do NOT block the commit. Set {{convo_block}} empty, say so in the report
+      with a ⚠️, and continue. A commit without conversation is worse than one
+      with it, but far better than no commit.
+    </action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 3: Harvest the Conversation**
+    💬 [N] prompts harvested · window [start → end]
+    🔒 Remote: [ private | none | PUBLIC — asked ]
+
+    ➡️ **Beginning Step 4: Generate Message**
+  </output>
+</step>
+
+<step n="4" goal="Generate Message">
+  <action>
+    **Draft the message** in this exact order:
+
+    ```
+    <prefix>: <concise summary>
+
+    <why/what — the reasoning that would otherwise be lost>
+
+    Changes:
+    - <file or group>: <what and why>
+
+    {{convo_block}}
+    ```
+
+    - **Title**: `<prefix>: <concise summary>`, imperative, under ~72 chars.
+    - **Body**: YOUR analysis of why — this is not made redundant by the
+      conversation block. The block is what Broz ASKED FOR; the body is what was
+      actually done and why. A reader needs both.
+    - **Changes**: bulleted list of files/groups.
+    - {{convo_block}} goes LAST, verbatim, including its `Session-Id:` trailers.
+      Do not reformat, re-indent, summarize or reorder it — `merge_timeline.py`
+      parses those markers back out.
+  </action>
+
+  <action>
+    **Write it to a file** — this is why `-m` is banned:
+    - Write the full message to {{msg_file}} (a temp path, e.g. under the
+      session scratchpad).
+    - Verify it round-trips: the file should still contain the
+      `--- Conversation (` marker and the `[YYYY-MM-DD HH:MM UTC] broz:` lines.
   </action>
 
   <output>
-    ✅ **Ending Step 3: Generate Message**
-    ✍️ Drafted commit message with prefix
-    📝 Included description and file list
-    
-    ➡️ **Beginning Step 4: Commit**
+    ✅ **Ending Step 4: Generate Message**
+    ✍️ Drafted commit message ({{msg_file}})
+    💬 Conversation block: [ embedded, N prompts | omitted — reason ]
+
+    ➡️ **Beginning Step 5: Commit on Branch**
   </output>
 </step>
 
-<step n="4" goal="Commit">
+<step n="5" goal="Commit on Branch">
   <action>
     **Execute Commit**:
-    - `git commit -m "<message>"`
+    - `git commit -F {{msg_file}}` → {{commit_hash}}
   </action>
 
   <action>
-    **Verify**:
-    - `git status --short`
-    - Ensure tree is clean.
+    **Verify the record survived**:
+    - `git log -1 --format=%B | head -40` — confirm the conversation block and
+      the `Session-Id:` trailer are actually in the commit, not eaten by
+      quoting. If they are missing, the commit is wrong: `git commit --amend -F`
+      with the file rather than leaving a commit that lost its provenance.
+    - `git status --short` must be empty.
   </action>
 
+  <check if="tree still dirty">
+    <critical>STOP. Do not proceed to merge with a dirty branch.</critical>
+    <action>Report what remains unstaged and why.</action>
+  </check>
+
+  <check if="{{is_worktree}} is false AND {{branch}} is main">
+    <action>Skip to Step 9. Work is already on main.</action>
+  </check>
+
   <output>
-    ✅ **Ending Step 4: Commit**
-    💾 Executed git commit
-    ✅ Verified working tree is clean
-    
-    ➡️ **Beginning Step 5: Summary**
+    ✅ **Ending Step 5: Commit on Branch**
+    💾 Committed `{{commit_hash}}` on `{{branch}}`
+    💬 Conversation verified present in the commit body
+    ✅ Branch tree clean
+
+    ➡️ **Beginning Step 6: Main Safety Gate**
   </output>
 </step>
 
-<step n="5" goal="Summary">
+<step n="6" goal="Main Safety Gate (HARD STOP)">
+  <action>
+    **Inspect the main checkout**:
+    - `git -C {{repo_root}} status --short`
+    - `git -C {{repo_root}} branch --show-current`
+  </action>
+
+  <check if="{{main_clean}} is false">
+    <critical>STOP. Do not merge over uncommitted work.</critical>
+    <action>
+      Present to the user:
+      - A summary of every uncommitted file in the main checkout, grouped by type
+      - Whether it looks related or unrelated to {{branch}}
+      - A concrete recommendation: commit it, stash it, or discard it
+      Then WAIT for the user's decision. Do not proceed unprompted.
+    </action>
+  </check>
+
+  <check if="main checkout is not on branch `main`">
+    <critical>STOP.</critical>
+    <action>Report which branch it is on and ask how to proceed.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 6: Main Safety Gate**
+    🟢 Main checkout clean and on `main` — proceeding automatically
+
+    ➡️ **Beginning Step 7: Land on Main**
+  </output>
+</step>
+
+<step n="7" goal="Land on Main">
+  <action>
+    **Look before you merge** — if any other branch has landed on main since
+    this one forked, check for overlap FIRST:
+    ```
+    python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py \
+      --repo {{repo_root}} --ours main --theirs {{branch}}
+    ```
+    A clean-looking merge between two sessions that edited the same feature is
+    exactly the case that silently reverts the newer decision. Cheap to check.
+  </action>
+
+  <action>
+    **Choose the landing path**:
+    - {{has_remote}} is false → **direct merge** (default; a PR is impossible without a remote)
+    - {{has_remote}} is true AND `gh` is available → offer the user the PR path; if declined, direct merge
+  </action>
+
+  <action>
+    **Direct merge**:
+    - `git -C {{repo_root}} merge --no-ff {{branch}} -m "merge: {{branch}} → main"` → {{merge_hash}}
+    - `--no-ff` is deliberate: it preserves the branch lineage so the session's work reads as one unit.
+  </action>
+
+  <action>
+    **PR path (only if the user opts in)**:
+    - `git push -u origin {{branch}}`
+    - `gh pr create` with a title and body derived from the branch commits
+    - Report the PR URL, then STOP. Merging the PR is the user's call.
+  </action>
+
+  <check if="merge conflicts">
+    <critical>STOP. Do not attempt to auto-resolve.</critical>
+    <action>
+      Hand off to the merge workflow — it exists for exactly this:
+      `~/.cursor/rules/broz/workflows/task/resolve_merge.mdc` (`broz:resolvemerge`).
+      It replays both sides' conversations in wall-clock order so precedence is
+      read, not guessed. Report the conflicted files and leave the merge in
+      progress.
+    </action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 7: Land on Main**
+    🔀 Merged `{{branch}}` → `main` as `{{merge_hash}}`
+
+    ➡️ **Beginning Step 8: Return & Cleanup**
+  </output>
+</step>
+
+<step n="8" goal="Return & Cleanup">
+  <critical>Move the shell to {{repo_root}} BEFORE removing the worktree.</critical>
+
+  <action>
+    **Return to the main working directory**:
+    - Change directory to {{repo_root}}.
+    - If an `ExitWorktree` tool is available in the harness, prefer it — it moves the session, not just the shell.
+  </action>
+
+  <action>
+    **Warn before destroying anything**:
+    - Check the worktree for ignored-but-valuable files (`.env`, `.env.local`, local-only configs) via `git status --ignored --short`.
+    - `git worktree remove` deletes ignored files too. If any are found, list them and ASK before removing.
+  </action>
+
+  <action>
+    **Remove the worktree**:
+    - `git -C {{repo_root}} worktree remove <worktree_path>`
+    - If it refuses, report why rather than forcing.
+  </action>
+
+  <action>
+    **Delete the merged branch**:
+    - `git -C {{repo_root}} branch -d {{branch}}` — safe delete; fails if not fully merged.
+    - Never use `-D`.
+  </action>
+
+  <output>
+    ✅ **Ending Step 8: Return & Cleanup**
+    📂 Returned to `{{repo_root}}`
+    🧹 Worktree removed · Branch `{{branch}}` deleted
+
+    ➡️ **Beginning Step 9: Summary**
+  </output>
+</step>
+
+<step n="9" goal="Summary">
   <output>
     ### Commit Complete
-    - **Hash**: [Short Hash]
-    - **Message**: [Title]
+    - **Branch commit**: `{{commit_hash}}` — [Title]
+    - **Conversation recorded**: [ N prompts, HH:MM → HH:MM | none — reason ]
+    - **Merge commit**: `{{merge_hash}}` (or `n/a`)
+    - **Main is now at**: [short hash]
+    - **Working directory**: `{{repo_root}}`
+    - **Worktree**: [removed | kept — reason]
+    - **Branch**: [deleted | kept — reason]
+    - **Pushed**: no (no remote) | yes (PR #N)
     - **Status**: Clean
   </output>
 </step>

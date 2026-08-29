@@ -1,0 +1,251 @@
+---
+description: "Workflow: Resolve a merge conflict using the conversation recorded in the commits"
+globs: []
+---
+# Workflow: Task > Resolve Merge
+
+<critical>You MUST build the conversation timeline BEFORE opening a single conflicted file. Reading the code first anchors you to whichever side you happened to read.</critical>
+<critical>A later timestamp is EVIDENCE, never proof. If the newest prompt is about a different topic, it does not settle the conflict — ask.</critical>
+<critical>You MUST NOT resolve a conflict by picking a side wholesale ("--ours"/"--theirs") unless the timeline shows one side genuinely superseded the other.</critical>
+<critical>GENERATED artefacts are never merged by hand. Resolve their SOURCE, then regenerate.</critical>
+<critical>You MUST NOT `git commit` the merge until every conflict is resolved AND the project's own verification has been run.</critical>
+<critical>If a conflict reflects two decisions that genuinely disagree, STOP and put it to Broz. That is a product decision, not a merge mechanic.</critical>
+
+<variables>
+  {{ours}}        - Our side (default HEAD / main)
+  {{theirs}}      - Their side (MERGE_HEAD, or the branch being landed)
+  {{base}}        - Common ancestor
+  {{conflicts}}   - Files with unresolved conflicts
+  {{timeline}}    - Interleaved wall-clock conversation from both sides
+  {{verdicts}}    - Per-conflict decision + the prompt that justifies it
+</variables>
+
+<workflow>
+
+<step n="1" goal="Establish the Merge">
+  <action>
+    **Where are we**:
+    - `git status` — is a merge actually in progress?
+    - `git rev-parse --verify -q MERGE_HEAD` → {{theirs}}
+    - `git merge-base HEAD MERGE_HEAD` → {{base}}
+    - `git diff --name-only --diff-filter=U` → {{conflicts}}
+  </action>
+
+  <check if="no merge in progress">
+    <action>
+      This workflow also runs AHEAD of a merge, to see whether two branches
+      overlap before committing to landing one. Ask for the two refs and set
+      {{ours}}/{{theirs}} from them. {{conflicts}} is empty in that mode —
+      preview `git merge --no-commit --no-ff` in a throwaway worktree rather
+      than dirtying the real one.
+    </action>
+  </check>
+
+  <action>
+    **Classify every conflicted file before reading any of them**:
+    - SOURCE (hand-written) vs GENERATED (build output — `out/`, `dist/`,
+      `deploy/`, `*.min.*`, lockfiles, anything a documented build command
+      writes). Check `CLAUDE.md` / `AGENTS.md` for the regeneration command.
+    - Generated files are NOT decisions. They are downstream of them. Never
+      hand-merge one — you would be hand-authoring a build artefact.
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Establish the Merge**
+    🔀 {{ours}} ← {{theirs}} · ancestor `{{base}}`
+    ⚔️ Conflicts: [N source] + [M generated]
+
+    ➡️ **Beginning Step 2: Build the Conversation Timeline**
+  </output>
+</step>
+
+<step n="2" goal="Build the Conversation Timeline">
+  <action>
+    **Replay both sides in wall-clock order**:
+    ```
+    python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py --no-color
+    ```
+    Or explicitly: `--ours <ref> --theirs <ref>`. Narrow to one file with
+    `--file <path>` once you are working a specific conflict.
+
+    Store the result as {{timeline}} and READ IT before anything else.
+  </action>
+
+  <action>
+    **Why this ordering is the whole point**: sessions get opened 1, 2, 3 and
+    closed 2, 3, 1. The branch that merges LAST routinely carries the OLDEST
+    instruction. Commit dates, branch topology and merge order all encode when
+    work was FILED, not when it was DECIDED. The prompt timestamps encode when
+    it was decided.
+  </action>
+
+  <check if="a commit shows '(no conversation recorded)'">
+    <action>
+      It predates this workflow, or was committed outside it. Treat its intent
+      as UNKNOWN, not as absent — fall back to reading its diff and message, and
+      say in the report that this side's intent was inferred rather than read.
+    </action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 2: Build the Conversation Timeline**
+    🕰️ [N] events across both sides
+    📖 Timeline read · [N] commits carried no conversation
+
+    ➡️ **Beginning Step 3: Assign Precedence Per Conflict**
+  </output>
+</step>
+
+<step n="3" goal="Assign Precedence Per Conflict">
+  <action>
+    **For EACH conflicted file, work the timeline before the diff**:
+    1. Find every prompt on either side that is ABOUT this file's subject.
+    2. Take the NEWEST such prompt. Which side is it on?
+    3. Apply the decision rules:
+       - **One side only** → that side is current intent. Take it.
+       - **Both sides instructed, on different aspects** → they are ADDITIVE,
+         not competing. Keep BOTH. This is the most common real case and the
+         one a wholesale side-pick destroys.
+       - **A later prompt REVERSES an earlier one** ("actually take that out",
+         "no, go back to") → the reversal wins even if its branch merged first.
+         This is the case the whole mechanism exists for.
+       - **Newest prompt is about something else** → it does not settle this.
+         Mark the conflict 🔲 and carry it to Step 6.
+    4. Record the verdict in {{verdicts}} WITH THE QUOTE — the specific prompt
+       and its timestamp — that justifies it. A verdict with no quote behind it
+       is a guess wearing a citation's clothes.
+  </action>
+
+  <action>
+    **Then, and only then, read the diff** — to work out how to express the
+    verdict in code, not to form it.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Assign Precedence Per Conflict**
+    ⚖️ Verdicts: [N take-newer] [N keep-both] [N 🔲 undecidable]
+
+    ➡️ **Beginning Step 4: Resolve**
+  </output>
+</step>
+
+<step n="4" goal="Resolve">
+  <action>
+    **Source files** — hand-resolve to match the verdict:
+    - Keep-both means genuinely both: apply each side's change to its own
+      region. Do not let the conflict markers dictate an either/or.
+    - Remove every marker. `grep -rn '^<<<<<<<\|^=======\|^>>>>>>>'` must
+      return nothing.
+  </action>
+
+  <action>
+    **Generated files** — never hand-merge:
+    - Resolve their SOURCE first, then run the project's documented
+      regeneration command and let it overwrite them.
+    - Binary artefacts (`.xlsx`, `.zip`, `.docx`, images) differ in BYTES on
+      every rebuild from embedded timestamps — a byte diff there is not a real
+      diff. Use the repo's content comparator if it has one.
+  </action>
+
+  <action>
+    **Stage as you go**: `git add <file>` per resolved file, so
+    `git diff --name-only --diff-filter=U` shrinks to empty and shows progress.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Resolve**
+    🧩 [N] source resolved · [M] generated regenerated
+    ✅ No conflict markers remain
+
+    ➡️ **Beginning Step 5: Verify**
+  </output>
+</step>
+
+<step n="5" goal="Verify">
+  <critical>A merge that compiles is not a merge that is correct. Verify against the VERDICTS, not against the build.</critical>
+
+  <action>
+    **Prove each verdict actually landed**:
+    - For every "keep both": confirm BOTH changes are present in the merged
+      file. Grep for a marker of each.
+    - For every "take newer": confirm the superseded version is genuinely gone,
+      and that nothing ELSE from that side was dropped with it.
+    - Re-read the merge diff against each side:
+      `git diff {{ours}} HEAD` and `git diff {{theirs}} HEAD`. Every line the
+      merge dropped from either side must be one you INTENDED to drop. Walk
+      them; do not sample.
+  </action>
+
+  <action>
+    **Run the project's own checks**:
+    - Regeneration command from `CLAUDE.md` / `AGENTS.md`, then confirm the tree
+      is clean — that proves committed artefacts match what the source produces.
+    - Tests, if the project has them.
+    - Cross-check any headline numbers against the figures recorded in the docs.
+  </action>
+
+  <check if="any verification fails">
+    <critical>STOP. Do not commit the merge.</critical>
+    <action>Report exactly what failed and which verdict it undermines.</action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 5: Verify**
+    🧪 Verdicts confirmed in the merged tree
+    🏗️ Build/regeneration clean
+
+    ➡️ **Beginning Step 6: Commit & Report**
+  </output>
+</step>
+
+<step n="6" goal="Commit & Report">
+  <check if="any conflict is still 🔲 undecidable">
+    <critical>STOP before committing. Put it to Broz.</critical>
+    <action>
+      Show him: the conflicting hunks, the newest prompt on each side with its
+      timestamp, and why the timeline does not settle it. Recommend one option
+      and say why. WAIT. Two sessions that were genuinely told different things
+      is a product decision, not a merge mechanic.
+    </action>
+  </check>
+
+  <action>
+    **Write the merge message** with `git commit -F <file>` (the body carries
+    quotes and markers that `-m` will mangle):
+
+    ```
+    merge: <theirs> → <ours>
+
+    <what auto-merged clean, and why that was safe>
+
+    Conflicts resolved, each with the instruction behind it:
+    - <file>: <verdict>
+      ← "[2026-08-18 05:14 UTC] broz: <the quote that decided it>"
+
+    Verified: <the actual evidence — numbers, hashes, tests>
+    ```
+
+    Quoting the deciding prompt is the point. The next person to touch this —
+    including you, next week — needs to see WHY the merge went the way it did
+    without re-deriving it.
+  </action>
+
+  <action>
+    **Report with status flags**, one emoji per line, at the start:
+    ✅ resolved and verified · ⚠️ resolved with a caveat · ❌ blocked · 🔲 needs Broz.
+    Group by status, not by file. Show evidence, not assertions.
+  </action>
+
+  <output>
+    ✅ **Ending Step 6: Commit & Report**
+
+    ### Merge Resolved
+    - **Merged**: {{theirs}} → {{ours}} as `[hash]`
+    - **Conflicts**: [N] — [take-newer / keep-both / escalated]
+    - **Decided by**: conversation timeline ([N] events, [N] commits without one)
+    - **Verified by**: [what was actually run]
+    - **Outstanding**: [🔲 items | none]
+  </output>
+</step>
+
+</workflow>

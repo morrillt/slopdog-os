@@ -1,6 +1,6 @@
 ---
 title: "Broz OS Architecture"
-updated: "2026-01-29"
+updated: "2026-08-18"
 facets:
   type: how-to
   status: active
@@ -282,10 +282,12 @@ globs: []
 │   ├── shard_tickets.mdc       # Break epic into tickets
 │   └── validate_ticket.mdc     # Validate ticket is ready
 └── task/
-    ├── commit_to_main.mdc      # Commit changes to main
+    ├── adjust_workflow.mdc     # Change Broz OS itself (command/mode/workflow/skill)
+    ├── commit_to_main.mdc      # Commit changes to main (records the conversation)
     ├── confirm_bug_fixed.mdc   # Verify bug fix
     ├── file_bug.mdc            # File a bug report
     ├── new.mdc                 # Start new task
+    ├── resolve_merge.mdc       # Resolve conflicts via the recorded conversation
     └── summarize.mdc           # Summarize task work
 ```
 
@@ -582,6 +584,7 @@ Workflows reference skills inline when they need specialized capabilities:
 | `web-search` | General web search best practices |
 | `create-skill` | Guide for authoring new skills |
 | `create-rule` | Guide for authoring Cursor rules |
+| `conversation-log` | Harvest Broz's timestamped prompts out of session transcripts into commit messages; replay both sides of a merge as one timeline |
 
 ### Best Practices
 
@@ -647,7 +650,9 @@ Broz OS includes automation commands to streamline common tasks:
 | Command | Description |
 |---------|-------------|
 | `broz:init` | Bootstrap a new project with Broz OS structure (`plans/`, `context.yaml`) |
-| `committomain` | Stage all changes, analyze them, generate commit message with appropriate prefix (`feat:`, `fix:`, `task:`), and commit to local `main` |
+| `committomain` | Stage all changes, analyze them, generate commit message with appropriate prefix (`feat:`, `fix:`, `task:`), embed the session's timestamped prompts in the body, and commit to local `main` |
+| `broz:resolvemerge` | Replay both sides of a merge as one wall-clock conversation timeline and resolve conflicts by which instruction is newest |
+| `broz:adjustworkflow` | Change Broz OS itself — loads the architecture contract, locates the owning component and its referrers, then edits in house style |
 | `broz:transcribe` | Launch background transcription for audio files in `plans/transcripts/` |
 | `broz:updatedocs` | Update architecture documentation and changelog after changes |
 
@@ -861,4 +866,4 @@ After completing work and committing changes:
 
 ---
 
-*Last updated: 2026-01-29 | Broz OS v1.0*
+*Last updated: 2026-08-18 | Broz OS v1.0*

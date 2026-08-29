@@ -33,6 +33,7 @@ globs: []
     <item label="4) ✅ Confirm Bug Fixed" handler="h_confirm_bug_fixed" />
     <item label="5) 🧾 Summarize" handler="h_summarize" />
     <item label="6) 💾 Commit All to Main" handler="h_commit" />
+    <item label="7) 🔀 Resolve Merge" handler="h_resolve_merge" description="Use the recorded conversation to decide precedence" />
   </menu>
 
   <handlers>
@@ -59,6 +60,10 @@ globs: []
     <handler id="h_commit">
       Load rule: @broz/workflows/task/commit_to_main
       Run workflow: "Workflow: Task > Commit All to Main"
+    </handler>
+    <handler id="h_resolve_merge">
+      Load rule: @broz/workflows/task/resolve_merge
+      Run workflow: "Workflow: Task > Resolve Merge"
     </handler>
   </handlers>
 </mode>

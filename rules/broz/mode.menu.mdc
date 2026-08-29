@@ -17,7 +17,7 @@ globs: []
        ### 🎭 MODES
        (List items 1-5)
        ### 🛠️ UTILITIES
-       (List items 6-8)
+       (List items 6-9)
     3. Present the menu as a numbered list; if the user types `1`, run item #1, etc.
   </agent-activation>
 
@@ -31,6 +31,7 @@ globs: []
     <item label="6) ⚙️ Init Project" handler="h_init" description="Bootstrap new Broz OS project" />
     <item label="7) 🚢 Commit to Main" handler="h_commit" description="Auto-analyze and commit all changes" />
     <item label="8) 🎙️ Transcribe" handler="h_transcribe" description="Launch background transcription in plans/transcripts" />
+    <item label="9) 🖥️ Fix Monitors" handler="h_fixmonitors" description="Turn off phantom xrandr outputs after unplugging a monitor (rescues stranded i3 workspaces)" />
   </menu>
 
   <handlers>
@@ -42,6 +43,7 @@ globs: []
     <handler id="h_commit">Commit changes to main. Run `committomain`.</handler>
     <handler id="h_freeball">Enter Freeball Mode. Run `broz:freeball`.</handler>
     <handler id="h_transcribe">Start transcription. Run `broz:transcribe`.</handler>
+    <handler id="h_fixmonitors">Fix phantom monitor outputs. Run the shell command `~/scripts/fix-monitors.sh` and report its output.</handler>
   </handlers>
 </mode>
 

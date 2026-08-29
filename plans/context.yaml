@@ -1,14 +1,14 @@
 project:
   name: "Broz OS"
-  current_mode: "docs"
+  current_mode: "plan"
   path: "/home/broz/.cursor"
 execution:
-  current_epic: "EPIC-BROZOS2.0"
-  current_ticket: "TICKET-002"
-  next_ticket: "TICKET-003"
-  current_ticket_status: "in_progress"
-  current_task: "TASK-20260129-update-architecture-workflow"
-  current_task_status: "completed"
+  current_epic: "EPIC-MACMOVE"
+  current_ticket: "TICKET-US-001"
+  next_ticket: "TICKET-US-011"
+  current_ticket_status: "pending"
+  current_task: ""
+  current_task_status: ""
 docs:
   current_doc_type: ""
   current_doc_title: ""

@@ -1,0 +1,199 @@
+---
+description: "Workflow: Change how Broz OS itself behaves — commands, modes, workflows, skills"
+globs: []
+---
+# Workflow: Task > Adjust Workflow
+
+<critical>Broz OS lives in `~/.cursor/`. NEVER satisfy a Broz OS request by editing project files.</critical>
+<critical>You MUST locate and READ the existing component before proposing a change. No blind writes.</critical>
+<critical>You MUST find every other file that references the component. A workflow is rarely edited alone.</critical>
+<critical>This workflow is exempt from the `core.mdc` mode/ticket gate — Broz OS files are not product code.</critical>
+<critical>You MUST NOT invent a new component when an existing one should be extended. Extending beats proliferating.</critical>
+<critical>Scripts belong in a SKILL, never inline in a workflow. If the change needs a script, create or extend a skill.</critical>
+
+<variables>
+  {{request}}    - What Broz wants changed, in his words
+  {{kind}}       - command | mode | workflow | skill | doc
+  {{targets}}    - Existing file(s) that own the behaviour today
+  {{referrers}}  - Every file that names {{targets}}
+  {{plan}}       - The proposed change, stated before any edit
+</variables>
+
+<workflow>
+
+<step n="1" goal="Load the System Contract">
+  <action>
+    **Read, in this order — this is the context that makes the rest safe**:
+    - `~/.cursor/AGENTS.md` — bootloader, user context, guardrails
+    - `~/.cursor/docs/how-to/broz-os-architecture.md` — the contract: component
+      templates, XML tag reference, naming rules, the creation checklists
+    - `~/.cursor/rules/broz/core.mdc` — global guardrails
+
+    Do NOT skim these. The architecture doc defines the shape every component
+    must keep; a change that ignores it produces a file that reads like Broz OS
+    but does not behave like it.
+  </action>
+
+  <action>
+    **Map the surface** (cheap, and prevents editing the wrong layer):
+    ```
+    ls ~/.cursor/commands/broz/
+    ls ~/.cursor/rules/broz/ ~/.cursor/rules/broz/workflows/*/
+    ls ~/.cursor/skills/ ~/.claude/skills/
+    ```
+    Remember the layering:
+    `Command (entry) → Mode (menu+persona) → Workflow (the steps) → Skill (the scripts)`
+    Behaviour changes almost always belong in the **workflow**, not the command.
+  </action>
+
+  <output>
+    ✅ **Ending Step 1: Load the System Contract**
+    📚 Architecture, core rules and bootloader loaded
+    🗺️ Component surface mapped
+
+    ➡️ **Beginning Step 2: Locate the Target**
+  </output>
+</step>
+
+<step n="2" goal="Locate the Target">
+  <action>
+    **Find what owns the behaviour today**:
+    - `grep -rl "<keyword>" ~/.cursor/commands ~/.cursor/rules ~/.cursor/skills`
+    - Classify into {{kind}}, set {{targets}}.
+    - READ every file in {{targets}} in full. Not a section — in full.
+  </action>
+
+  <action>
+    **Find the blast radius** — set {{referrers}}:
+    - `grep -rn "<component-name>" ~/.cursor/ --include=*.md --include=*.mdc`
+    - A command names its workflow. The architecture doc lists both. A mode
+      routes handlers to workflows. Renaming or renumbering breaks all three.
+  </action>
+
+  <check if="nothing matches">
+    <action>
+      This is a NEW component. Pick its layer from the architecture doc's
+      "Creating a New Component" checklist and follow that checklist exactly.
+      Say plainly that it is new rather than guessing at an existing owner.
+    </action>
+  </check>
+
+  <output>
+    ✅ **Ending Step 2: Locate the Target**
+    🎯 Kind: {{kind}} · Target(s): {{targets}}
+    🔗 Referrers: {{referrers}}
+
+    ➡️ **Beginning Step 3: Propose Before Editing**
+  </output>
+</step>
+
+<step n="3" goal="Propose Before Editing">
+  <action>
+    **State {{plan}} in plain language**, covering:
+    - What behaviour changes, and what deliberately does NOT
+    - Which files get touched, and why each one is unavoidable
+    - Whether a script is needed → then it goes in a skill, named here
+    - Anything in {{referrers}} that must be updated in the same pass
+
+    Then flag risk honestly:
+    - Does this change a step's NUMBER? Every `<goto>` and "Skip to Step N"
+      inside the file, and any doc that cites the numbers, moves with it.
+    - Does it make a workflow destructive, or newly touch git history,
+      credentials, or anything outside the repo? Say so.
+  </action>
+
+  <action>
+    **User Confirmation Gate (STOP)** — only when the change is structural:
+    a new component, a renumbering, a destructive step, or anything that
+    alters what an existing command does silently.
+    For a wording fix or an added clarification, proceed without asking.
+  </action>
+
+  <output>
+    ✅ **Ending Step 3: Propose Before Editing**
+    📝 Plan stated · Risks flagged
+
+    ➡️ **Beginning Step 4: Apply**
+  </output>
+</step>
+
+<step n="4" goal="Apply">
+  <action>
+    **Edit in house style** — match the file you are editing, not a generic one:
+    - `.mdc` workflows: `<critical>` block up front, `<variables>`, numbered
+      `<step n="" goal="">`, each ending in an `<output>` with the
+      ✅ Ending / ➡️ Beginning transition.
+    - `commands/broz/*.md`: short. An entry point that delegates. The newer
+      files (`endofday.md`) use plain prose phases — follow whichever shape the
+      file already has rather than converting it.
+    - Skills: YAML frontmatter with `name` + third-person `description` naming
+      the trigger scenarios. Under 500 lines.
+    - Comment density and voice: match the surrounding file.
+  </action>
+
+  <action>
+    **Update {{referrers}} in the SAME pass.** A command pointing at a step
+    number that moved is worse than no change at all.
+  </action>
+
+  <output>
+    ✅ **Ending Step 4: Apply**
+    ✍️ Component(s) edited · Referrers updated
+
+    ➡️ **Beginning Step 5: Verify**
+  </output>
+</step>
+
+<step n="5" goal="Verify">
+  <action>
+    **Prove it, do not assert it**:
+    - Any script added or changed: RUN it against real data and show the output.
+    - Round-trip anything that writes a format something else parses.
+    - Re-grep the component name to confirm no referrer was left stale.
+    - Re-read the edited file top to bottom: do the step numbers run 1..N with
+      no gaps, and does every internal jump still point somewhere real?
+  </action>
+
+  <check if="a script could not be run">
+    <critical>Say so explicitly. Never report an unrun script as working.</critical>
+  </check>
+
+  <output>
+    ✅ **Ending Step 5: Verify**
+    🧪 Evidence gathered
+
+    ➡️ **Beginning Step 6: Record & Report**
+  </output>
+</step>
+
+<step n="6" goal="Record & Report">
+  <action>
+    **Keep the architecture doc true**:
+    - New or renamed component → update the relevant table in
+      `~/.cursor/docs/how-to/broz-os-architecture.md` (commands table,
+      workflows tree, skills table) and bump its `updated:` frontmatter.
+    - A behaviour change inside an existing workflow needs no doc edit unless
+      the doc describes that behaviour.
+  </action>
+
+  <action>
+    **Report with status flags**, one emoji per line, at the start:
+    - ✅ done and verified · ⚠️ done with a caveat · ❌ blocked · 🔲 needs a decision
+
+    Cover: files changed, evidence that it works, anything left 🔲, and the
+    exact command Broz should run to exercise the change himself.
+  </action>
+
+  <output>
+    ✅ **Ending Step 6: Record & Report**
+
+    ### Broz OS Adjusted
+    - **Kind**: {{kind}}
+    - **Changed**: {{targets}}
+    - **Referrers updated**: {{referrers}}
+    - **Verified by**: [what was actually run]
+    - **Try it**: `[command]`
+  </output>
+</step>
+
+</workflow>

@@ -4,22 +4,22 @@ overview: "Symlink the Broz OS command set and portable skills from ~/.cursor in
 todos:
   - id: commit-cursor
     content: "Scoped safety commit in /home/broz/.cursor: stage .gitignore, skills/youtube-publish/, skills-cursor/ and the new plan files, leaving the 50 MB projects/ untracked"
-    status: in_progress
+    status: completed
   - id: init-claude-repo
     content: Write an allowlist .gitignore in /home/broz/.claude, git init the directory, and make a baseline commit of settings.json, settings.local.json and scheduled-tasks/ with secrets and runtime state excluded
-    status: pending
+    status: completed
   - id: link-commands
     content: Symlink /home/broz/.cursor/commands to /home/broz/.claude/commands
-    status: pending
+    status: completed
   - id: link-skills
     content: Symlink the 5 portable skills (web-search, github-search, reddit-search, youtube-search, youtube-publish) individually into /home/broz/.claude/skills/, preserving the existing humanizer directory
-    status: pending
+    status: completed
   - id: verify
     content: "Verify symlinks resolve with ls -l and confirm /broz: commands and skills are discoverable in a Claude Code session; fall back to linking the inner broz/ folder if the top-level commands symlink is not traversed"
-    status: pending
+    status: completed
   - id: commit-symlinks
     content: Second commit in /home/broz/.claude recording the symlinks themselves once verified
-    status: pending
+    status: completed
 isProject: false
 ---
 
