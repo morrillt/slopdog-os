@@ -43,3 +43,6 @@ projects/*/*
 !rules/
 !rules/**
 # <<< CURSOR MANAGED BLOCK <<<
+
+# Cursor session/chat scratch — not Broz OS content
+projects/
