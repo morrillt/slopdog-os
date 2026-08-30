@@ -15,7 +15,7 @@ globs: []
 <critical>Search ONE keyword at a time per platform to ensure thorough coverage.</critical>
 
 <variables>
-  {{project_path}} - Read from context.yaml at Step 1 (e.g., /home/broz/.cursor)
+  {{project_path}} - Read from context.yaml at Step 1 (e.g., ~/.cursor)
   {{title}} - User-provided title for the research doc
   {{filename}} - User-provided kebab-case filename
   {{target_path}} - Computed as {{project_path}}/docs/research/{{filename}}.md

@@ -3,22 +3,22 @@ name: broz-os-claude-symlinks
 overview: "Symlink the Broz OS command set and portable skills from ~/.cursor into ~/.claude so all /broz: slash commands and research skills work identically in Claude Code, with a single source of truth in ~/.cursor."
 todos:
   - id: commit-cursor
-    content: "Scoped safety commit in /home/broz/.cursor: stage .gitignore, skills/youtube-publish/, skills-cursor/ and the new plan files, leaving the 50 MB projects/ untracked"
+    content: "Scoped safety commit in ~/.cursor: stage .gitignore, skills/youtube-publish/, skills-cursor/ and the new plan files, leaving the 50 MB projects/ untracked"
     status: completed
   - id: init-claude-repo
-    content: Write an allowlist .gitignore in /home/broz/.claude, git init the directory, and make a baseline commit of settings.json, settings.local.json and scheduled-tasks/ with secrets and runtime state excluded
+    content: Write an allowlist .gitignore in ~/.claude, git init the directory, and make a baseline commit of settings.json, settings.local.json and scheduled-tasks/ with secrets and runtime state excluded
     status: completed
   - id: link-commands
-    content: Symlink /home/broz/.cursor/commands to /home/broz/.claude/commands
+    content: Symlink ~/.cursor/commands to ~/.claude/commands
     status: completed
   - id: link-skills
-    content: Symlink the 5 portable skills (web-search, github-search, reddit-search, youtube-search, youtube-publish) individually into /home/broz/.claude/skills/, preserving the existing humanizer directory
+    content: Symlink the 5 portable skills (web-search, github-search, reddit-search, youtube-search, youtube-publish) individually into ~/.claude/skills/, preserving the existing humanizer directory
     status: completed
   - id: verify
     content: "Verify symlinks resolve with ls -l and confirm /broz: commands and skills are discoverable in a Claude Code session; fall back to linking the inner broz/ folder if the top-level commands symlink is not traversed"
     status: completed
   - id: commit-symlinks
-    content: Second commit in /home/broz/.claude recording the symlinks themselves once verified
+    content: Second commit in ~/.claude recording the symlinks themselves once verified
     status: completed
 isProject: false
 ---
@@ -59,7 +59,7 @@ The two directories are in very different states, so they need different handlin
 This is a healthy repo on `main`, 5 commits deep, and all the Broz OS files we depend on (`commands/`, `rules/`, `docs/`, `AGENTS.md`) are already tracked and clean. The hazard is that Cursor rewrote `.gitignore` into a `CURSOR MANAGED BLOCK` that un-ignores `projects/**`, so a blanket `git add -A` would stage 10,467 files and 50 MB of agent transcripts and terminal dumps. Stage explicitly instead:
 
 ```bash
-cd /home/broz/.cursor
+cd ~/.cursor
 git add .gitignore skills/youtube-publish skills-cursor plans/*.plan.md
 git status --short   # confirm projects/ is still listed as untracked
 git commit -m "chore: snapshot Broz OS state before mirroring into .claude"
@@ -69,9 +69,9 @@ The `plans/*.plan.md` files are tiny and `plans/**` is already an allowlisted, t
 
 ### 0b. Give `~/.claude` its own repo
 
-`~/.claude` is not a git repo. It is an untracked directory inside the home dotfiles repo at `/home/broz/.git`, which tracks only 4 files and has no `.gitignore`. Committing it there would capture 71 MB including `.credentials.json` (live Claude auth tokens), `history.jsonl`, `sessions/`, `telemetry/`, and 61 MB of `projects/`. So instead, create a self-contained repo using the same deny-by-default allowlist pattern `~/.cursor` already uses.
+`~/.claude` is not a git repo. It is an untracked directory inside the home dotfiles repo at `~/.git`, which tracks only 4 files and has no `.gitignore`. Committing it there would capture 71 MB including `.credentials.json` (live Claude auth tokens), `history.jsonl`, `sessions/`, `telemetry/`, and 61 MB of `projects/`. So instead, create a self-contained repo using the same deny-by-default allowlist pattern `~/.cursor` already uses.
 
-First write `/home/broz/.claude/.gitignore`:
+First write `~/.claude/.gitignore`:
 
 ```gitignore
 # Deny by default
@@ -99,7 +99,7 @@ skills/humanizer/
 Then initialise and take the baseline snapshot:
 
 ```bash
-cd /home/broz/.claude
+cd ~/.claude
 git init
 git add -A
 git status --short   # MUST show no .credentials.json, projects/, sessions/, history.jsonl
@@ -115,7 +115,7 @@ Two notes. `!commands` has no trailing `/**` on purpose, because after Step 1 it
 `~/.claude/commands/` does not exist yet, so the whole directory can be linked. This is future-proof: any new command added to `~/.cursor/commands/broz/` appears in Claude Code automatically.
 
 ```bash
-ln -s /home/broz/.cursor/commands /home/broz/.claude/commands
+ln -s ~/.cursor/commands ~/.claude/commands
 ```
 
 This exposes all 15 commands as `/broz:build`, `/broz:menu`, `/broz:plan`, `/broz:task`, `/broz:docs`, `/broz:research`, `/broz:init`, `/broz:filebug`, `/broz:freeball`, `/broz:transcribe`, `/broz:transcriptcleanup`, `/broz:updatedocs`, `/broz:committomain`, `/broz:whatisbroze`, `/broz:youtube`.
@@ -126,7 +126,7 @@ Do NOT link the whole `skills/` directory, since `~/.claude/skills/humanizer/` i
 
 ```bash
 for s in web-search github-search reddit-search youtube-search youtube-publish; do
-  ln -s "/home/broz/.cursor/skills/$s" "/home/broz/.claude/skills/$s"
+  ln -s "~/.cursor/skills/$s" "~/.claude/skills/$s"
 done
 ```
 
@@ -134,12 +134,12 @@ Skipped on purpose (Cursor-product-specific, no value inside Claude Code): `crea
 
 ## Step 3: No global bootloader
 
-Per the opt-in choice, no `~/.claude/CLAUDE.md` is created. Broz OS activates only when a `/broz:` command is run. Note that Claude Code 2.1.220 natively reads project-level `AGENTS.md`, so `/home/broz/code/citadel/AGENTS.md` will still fire the bootloader inside the citadel repo without any extra work.
+Per the opt-in choice, no `~/.claude/CLAUDE.md` is created. Broz OS activates only when a `/broz:` command is run. Note that Claude Code 2.1.220 natively reads project-level `AGENTS.md`, so `~/code/citadel/AGENTS.md` will still fire the bootloader inside the citadel repo without any extra work.
 
 ## Step 4: Verify
 
 ```bash
-ls -l /home/broz/.claude/commands /home/broz/.claude/skills
+ls -l ~/.claude/commands ~/.claude/skills
 ```
 
 Then in a Claude Code session, confirm `/broz:menu` appears in the slash command list and that running it reads `plans/context.yaml` and `~/.cursor/rules/broz/mode.menu.mdc` correctly. If Claude Code turns out not to traverse the symlinked `commands` directory, the fallback is to link the inner `broz` folder instead (`mkdir ~/.claude/commands && ln -s ~/.cursor/commands/broz ~/.claude/commands/broz`), which preserves the same `/broz:` prefix.
@@ -149,7 +149,7 @@ Then in a Claude Code session, confirm `/broz:menu` appears in the slash command
 Once verified, record the links themselves so the setup is reproducible:
 
 ```bash
-cd /home/broz/.claude
+cd ~/.claude
 git add -A
 git commit -m "feat: symlink Broz OS commands and portable skills from .cursor"
 ```

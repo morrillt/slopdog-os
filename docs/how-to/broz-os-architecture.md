@@ -24,7 +24,7 @@ Broz OS is a **persona-driven, mode-based workflow system** for Cursor, inspired
 
 ### Migration & Environment
 
-Initially developed within individual project directories, Broz OS now lives in the **`.cursor/` user directory** (`/home/broz/.cursor/`). This centralizes the workflow logic, making it available across all projects opened in Cursor while maintaining project-specific state in the local `plans/` directory of the active workspace.
+Initially developed within individual project directories, Broz OS now lives in the **`.cursor/` user directory** (`~/.cursor/`). This centralizes the workflow logic, making it available across all projects opened in Cursor while maintaining project-specific state in the local `plans/` directory of the active workspace.
 
 ### What This Document Covers
 

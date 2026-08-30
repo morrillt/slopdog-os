@@ -156,7 +156,7 @@ End-to-end test that:
 
 ### 8. New systemd units
 
-**`/home/broz/.config/systemd/user/daily-digest.service`**:
+**`~/.config/systemd/user/daily-digest.service`**:
 
 ```ini
 [Unit]
@@ -164,15 +164,15 @@ Description=Run Pizzagate daily digest (scrape + classify + build + deploy + ema
 
 [Service]
 Type=oneshot
-ExecStart=/home/broz/.nvm/versions/node/v24.11.1/bin/node /home/broz/code/pizzagate/scripts/daily-digest.mjs
-WorkingDirectory=/home/broz/code/pizzagate
-Environment=PATH=/home/broz/.nvm/versions/node/v24.11.1/bin:/usr/local/bin:/usr/bin
+ExecStart=~/.nvm/versions/node/v24.11.1/bin/node ~/code/pizzagate/scripts/daily-digest.mjs
+WorkingDirectory=~/code/pizzagate
+Environment=PATH=~/.nvm/versions/node/v24.11.1/bin:/usr/local/bin:/usr/bin
 TimeoutStartSec=900
 ```
 
 Uses the full nvm node path (matching `which node` output). 15-minute timeout since the full pipeline with 4 scrape jobs typically takes 8-12 minutes.
 
-**`/home/broz/.config/systemd/user/daily-digest.timer`**:
+**`~/.config/systemd/user/daily-digest.timer`**:
 
 ```ini
 [Unit]

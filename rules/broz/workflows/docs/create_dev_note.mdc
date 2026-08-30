@@ -13,7 +13,7 @@ globs: []
 <critical>Only ONE file is created at the FINAL step. Do NOT create any files before the final step.</critical>
 
 <variables>
-  {{project_path}} - Read from context.yaml at Step 1 (e.g., /home/broz/.cursor)
+  {{project_path}} - Read from context.yaml at Step 1 (e.g., ~/.cursor)
   {{title}} - User-provided title for the Dev Note
   {{filename}} - User-provided kebab-case filename
   {{target_path}} - Computed as {{project_path}}/docs/dev-note/{{filename}}.md

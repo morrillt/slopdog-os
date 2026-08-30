@@ -35,7 +35,7 @@ You are in the .cursor user directory, which contains all .cursor files and a un
 ## Activation Sequence
 
 1. **Load** the architecture blueprint:
-   `@/home/broz/.cursor/docs/how-to/broz-os-architecture.md`
+   `@~/.cursor/docs/how-to/broz-os-architecture.md`
 
 
 

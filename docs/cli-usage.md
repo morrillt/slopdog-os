@@ -6,7 +6,7 @@ This guide explains how to use the Cursor Agent CLI effectively, including model
 
 The standard command to invoke the agent is:
 ```bash
-/home/broz/.local/share/cursor-agent/versions/2026.01.17-d239e66/cursor-agent [options] [prompt...]
+~/.local/share/cursor-agent/versions/2026.01.17-d239e66/cursor-agent [options] [prompt...]
 ```
 
 ## 🎭 Switching Models

@@ -134,7 +134,7 @@ so that research is systematic, reproducible, and not dependent on MCPs.
 
 ## Dev Notes
 
-- **Source Project**: YouTube transcript logic adapted from `/home/broz/code/playground/scraper-yt/src/lib/`
+- **Source Project**: YouTube transcript logic adapted from `~/code/playground/scraper-yt/src/lib/`
 - **Dependencies for youtube-search skill**: Node.js 20+, `yt-dlp` (pip install)
 - **Skills Location**: `skills-cursor/` (repo-level, tracked in git)
 - **Transcript Scope**: Full transcript download only — no summarization, no chunking. The research workflow handles synthesis.

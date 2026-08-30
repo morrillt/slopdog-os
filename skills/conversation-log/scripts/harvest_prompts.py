@@ -132,7 +132,7 @@ def default_window_start(repo: Path, branch: str) -> str | None:
 def slugify_path(p: str) -> str:
     """
     Reproduce Claude Code's project-directory naming: every character that is
-    not a letter or digit becomes a hyphen. '/home/broz/My Repo/.claude' →
+    not a letter or digit becomes a hyphen. '~/My Repo/.claude' →
     '-home-broz-My-Repo--claude'.
     """
     return re.sub(r"[^A-Za-z0-9]", "-", p)

@@ -1,9 +1,9 @@
 we want to make a new workflow called shard epic, that breaks an epic into a set of tickets that are ready for the broz os to run.
 
-First read the design patterns for broz os workflows /home/broz/code/citadel/docs/how-to/create-broz-os-components.md
+First read the design patterns for broz os workflows ~/code/citadel/docs/how-to/create-broz-os-components.md
 
 Then consider an existiing epic,
-Epic : /home/broz/code/playground/scraper-yt/plans/epic-1-youtube-channel-monitor-chapter-summaries-mvp.md
+Epic : ~/code/playground/scraper-yt/plans/epic-1-youtube-channel-monitor-chapter-summaries-mvp.md
 
 
 
@@ -19,8 +19,8 @@ Key rules
 5. tickets need to follow template.
 
 this should essentially extend the build ticket workflow (which super important integrated ticket template ). Read through the build ticket workflow it may be a little thing and we can add a bit more sophistication to bring it inline with current os design patterns. We want the entire set of tickets to run then we want to after get a report and asnwer questions on the set of tickets.
-Create ticket workflow: /home/broz/.cursor/rules/broz/workflows/plan/add_ticket.mdc
-Ticket template: /home/broz/.cursor/templates/ticket.md
+Create ticket workflow: ~/.cursor/rules/broz/workflows/plan/add_ticket.mdc
+Ticket template: ~/.cursor/templates/ticket.md
 
 
 If any ambiguities come up while writing the tickets, write them down for a review ambiguity etc report at end separate step. ALso VERY IMPORTANTLY this is where the tech stack is  defined, so in the final report step should be ambiguities and tech stack options  suggestions / current decision....
@@ -33,13 +33,13 @@ ALso look at the create ticket / validate ticket workflows first, and THE TEMPLA
 
 
 Quick questions before I write shard_tickets.mdc
-Target project path: should this shard workflow assume the epic lives under /home/broz/code/playground/scraper-yt/plans/ (like your example), or should it ask for any project path each run?
+Target project path: should this shard workflow assume the epic lives under ~/code/playground/scraper-yt/plans/ (like your example), or should it ask for any project path each run?
 pull project path from  yaml context file
 
 
 Where should ticket files be written? Pick one default:
-A) /home/broz/code/playground/scraper-yt/plans/tickets/
-B) /home/broz/code/playground/scraper-yt/plans/epics/<epic-slug>/ (we’d create this structure)
+A) ~/code/playground/scraper-yt/plans/tickets/
+B) ~/code/playground/scraper-yt/plans/epics/<epic-slug>/ (we’d create this structure)
 
 I like epic slug
 

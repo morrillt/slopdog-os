@@ -68,9 +68,9 @@ Description=Pizzagate daily deal digest
 
 [Service]
 Type=oneshot
-WorkingDirectory=/home/broz/code/pizzagate
-EnvironmentFile=/home/broz/code/pizzagate/.env
-ExecStart=/usr/bin/node /home/broz/code/pizzagate/scripts/daily-digest.mjs
+WorkingDirectory=~/code/pizzagate
+EnvironmentFile=~/code/pizzagate/.env
+ExecStart=/usr/bin/node ~/code/pizzagate/scripts/daily-digest.mjs
 StandardOutput=journal
 StandardError=journal
 ```

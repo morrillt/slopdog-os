@@ -1,7 +1,7 @@
 project:
   name: "Broz OS"
   current_mode: "plan"
-  path: "/home/broz/.cursor"
+  path: "~/.cursor"
 execution:
   current_epic: "EPIC-MACMOVE"
   current_ticket: "TICKET-US-001"

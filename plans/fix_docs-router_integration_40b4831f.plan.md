@@ -75,7 +75,7 @@ Additionally:
 Delete or rename `packages/docs-router/` to avoid shadowing:
 
 ```
-/home/broz/code/playground/slopdog-vanilla/packages/docs-router/
+~/code/playground/slopdog-vanilla/packages/docs-router/
 ```
 
 ### 2. Update Package Reference
@@ -86,7 +86,7 @@ In [`package.json`](package.json), change the docs-router dependency to point to
 "@rockcap/docs-router": "file:../packages/docs-router"
 ```
 
-This points to `/home/broz/code/packages/docs-router` (one level up from playground).
+This points to `~/code/packages/docs-router` (one level up from playground).
 
 ### 3. Replace API Routes with Real Package Handlers
 
@@ -216,7 +216,7 @@ In [`src/app/docs/[...slug]/page.tsx`](src/app/docs/[...slug]/page.tsx), add the
 
 ### 10. Update docs-router HOWTO
 
-Update [`/home/broz/code/packages/docs-router/HOWTO.md`](/home/broz/code/packages/docs-router/HOWTO.md) with:
+Update [`~/code/packages/docs-router/HOWTO.md`](~/code/packages/docs-router/HOWTO.md) with:
 
 - Clearer monorepo setup instructions
 - Emphasis on using `/server` import for API handlers

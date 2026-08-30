@@ -41,14 +41,14 @@ todos:
 
 ## Scope
 
-- Create a new project at `/home/broz/code/playground/slopdog-ticket-runner` from a fresh slopdog-vanilla GitHub pull (`git@github.com:morrillt/slopdog-vanilla.git`), then run slopdog init and integrate docs-router per the module HOWTO.
+- Create a new project at `~/code/playground/slopdog-ticket-runner` from a fresh slopdog-vanilla GitHub pull (`git@github.com:morrillt/slopdog-vanilla.git`), then run slopdog init and integrate docs-router per the module HOWTO.
 - Build a local web UI and a CLI-backed runner.
 - Tickets are defined in a markdown file; runner processes them one at a time and only advances when status is `completed`.
 - Provide UI controls to select model/provider and the command template for Cursor CLI, but the exact command can be configured later.
 
 ## Proposed structure
 
-- New project folder `/home/broz/code/playground/slopdog-ticket-runner` seeded from slopdog-vanilla
+- New project folder `~/code/playground/slopdog-ticket-runner` seeded from slopdog-vanilla
 - Run slopdog init after cloning/pulling the base
 - Pull in docs module and wire up API routes + pages per `docs-router` HOWTO
 - Runner core + state handling (tickets, status updates, sequential gating)
@@ -57,11 +57,11 @@ todos:
 
 ## Key files
 
-- `/home/broz/code/playground/slopdog-ticket-runner/README.md`
-- `/home/broz/code/playground/slopdog-ticket-runner/plans/context.yaml`
-- `/home/broz/code/playground/slopdog-ticket-runner/src/runner/*`
-- `/home/broz/code/playground/slopdog-ticket-runner/src/ui/*`
-- `/home/broz/code/playground/slopdog-ticket-runner/config/*`
+- `~/code/playground/slopdog-ticket-runner/README.md`
+- `~/code/playground/slopdog-ticket-runner/plans/context.yaml`
+- `~/code/playground/slopdog-ticket-runner/src/runner/*`
+- `~/code/playground/slopdog-ticket-runner/src/ui/*`
+- `~/code/playground/slopdog-ticket-runner/config/*`
 
 ## Flow
 
@@ -88,7 +88,7 @@ todos:
 
 ## Implementation todos
 
-- `fresh-base`: pull slopdog-vanilla from GitHub into `/home/broz/code/playground/slopdog-ticket-runner`.
+- `fresh-base`: pull slopdog-vanilla from GitHub into `~/code/playground/slopdog-ticket-runner`.
 - `init-project`: run slopdog init and integrate docs-router module.
 - `ticket-parser`: implement markdown ticket parser and status detection.
 - `runner-core`: implement sequential gating and state handling.
