@@ -18,5 +18,7 @@ Use this to navigate the Broz modes.
 | **Docs** | `broz:docs` | Knowledge mgmt | Samwell Tarly 📜 |
 
 ## Activation
-To switch modes, the user will typically use a Command (e.g., `broz-plan`).
+To switch modes, the user will typically use a Command. The name depends on the
+tool: `broz:plan` in Claude Code, `/broz-plan` in Cursor. Never name a specific
+command inside a rule -- point at the mode file instead.
 When a mode starts, READ `~/.slopdog/plans/context.yaml` and ADOPT the persona.
