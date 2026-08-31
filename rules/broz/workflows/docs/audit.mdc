@@ -6,15 +6,15 @@ globs: []
 # Workflow: Docs > Audit
 
 <critical>Ensure all docs conform to `{{project.path}}/templates/docs-metadata-spec.md`.</critical>
-<critical>Read `plans/context.yaml` to get `project.path` for dynamic file paths.</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` to get `project.path` for dynamic file paths.</critical>
 
 <workflow>
 
 <step n="1" goal="Context Load & Scan Documentation">
   <action>
     **Load Project Context**:
-    - Read `plans/context.yaml` to obtain `project.path`.
-    - Report: `[ ✅ | ❌ ] plans/context.yaml`
+    - Read `~/.slopdog/plans/context.yaml` to obtain `project.path`.
+    - Report: `[ ✅ | ❌ ] ~/.slopdog/plans/context.yaml`
   </action>
 
   <action>
@@ -25,7 +25,7 @@ globs: []
 
   <output>
     ✅ **Ending Step 1: Scan Documentation**
-    [ {{context_status}} ] `plans/context.yaml`
+    [ {{context_status}} ] `~/.slopdog/plans/context.yaml`
     📂 Found [N] documentation files to audit.
     
     ➡️ **Beginning Step 2: Validate Front-Matter**

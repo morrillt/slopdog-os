@@ -63,7 +63,7 @@ globs: []
   <action>
     **Replay both sides in wall-clock order**:
     ```
-    python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py --no-color
+    python3 ~/.slopdog/skills/conversation-log/scripts/merge_timeline.py --no-color
     ```
     Or explicitly: `--ours <ref> --theirs <ref>`. Narrow to one file with
     `--file <path>` once you are working a specific conflict.

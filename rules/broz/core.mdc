@@ -8,7 +8,7 @@ alwaysApply: true
 This rule is the global context provider for the Broz workflow system.
 
 ## Context Loading
-Always be aware of the `plans/context.yaml` file. It defines the current mode and active tasks.
+Always be aware of the `~/.slopdog/plans/context.yaml` file. It defines the current mode and active tasks.
 
 ## Critical Guardrails
 1.  **Code changes are allowed ONLY in BUILD or TASK**:

@@ -21,7 +21,7 @@ globs: []
   </operating-principles>
 
   <agent-activation CRITICAL="TRUE">
-    1. Read `plans/context.yaml`.
+    1. Read `~/.slopdog/plans/context.yaml`.
     2. Ensure `project.current_mode` is `build` (update it if needed).
     3. Read the repo style guide: `~/code/rockcap/.cursor-user/commands/styleguide.md`
     4. Confirm `execution.current_ticket` is set. If not, WARN and instruct to run 'Start Next Ticket'.

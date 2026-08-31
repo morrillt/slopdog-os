@@ -18,7 +18,7 @@ questions:
     - id: "Q-1"
       status: resolved
       owner: "PO"
-      question: "Should the skills be personal (~/.cursor/skills/) or project-level (.cursor/skills/)?"
+      question: "Should the skills be personal (~/.slopdog/skills/) or project-level (~/.slopdog/skills/)?"
       answer: "Repo-level skills in `skills-cursor/` directory (already exists with other skills, tracked in git)."
     - id: "Q-2"
       status: resolved
@@ -143,10 +143,10 @@ so that research is systematic, reproducible, and not dependent on MCPs.
 ## Dev Agent Record
 
 - [2026-01-28] [Created] Initial ticket for Research Workflow 2.0 with keyword-first methodology and Cursor skills.
-- [2026-01-28] [Decision] Q-1 resolved: Skills will be user-level at `~/.cursor/skills/`.
+- [2026-01-28] [Decision] Q-1 resolved: Skills will be user-level at `~/.slopdog/skills/`.
 - [2026-01-28] [Decision] Q-2 resolved: YouTube skill downloads full transcript only, no summarization.
 - [2026-01-28] [Refined] Added AC-1b: Problem Statement must have explicit user confirmation before Keyword Discovery begins.
-- [2026-01-28] [Revised] Q-1: Changed skills location from `~/.cursor/skills/` to `skills-cursor/` (repo-level, tracked in git).
+- [2026-01-28] [Revised] Q-1: Changed skills location from `~/.slopdog/skills/` to `skills-cursor/` (repo-level, tracked in git).
 - [2026-01-28] [Completed] Task 1: Scaffolded 4 research skill stubs with test infrastructure (vitest).
 - [2026-01-28] [Completed] Task 2: YouTube search skill with transcript download script (adapted from scraper-yt).
 - [2026-01-28] [Completed] Tasks 3-5: Reddit, GitHub, Web search skills with detailed SKILL.md documentation.

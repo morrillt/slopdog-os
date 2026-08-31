@@ -28,7 +28,7 @@ Create a new workflow/command that updates the main architecture documentation a
 - [x] Wire up handler to workflow
 
 ## Files to Create/Modify
-1. `plans/context.yaml` — add new fields
+1. `~/.slopdog/plans/context.yaml` — add new fields
 2. `plans/templates/changelog.md` — new template
 3. `rules/broz/workflows/docs/update_architecture.mdc` — new workflow
 4. `rules/broz/mode.docs.mdc` — add menu item + handler (if docs mode)
@@ -37,7 +37,7 @@ Create a new workflow/command that updates the main architecture documentation a
 ## Log
 - **2026-01-29 [init]**: Task created. Medium complexity, Direct approach.
 - **2026-01-29 [impl]**: Created all files:
-  - Updated `plans/context.yaml` with `architecture_doc` and `changelog` paths
+  - Updated `~/.slopdog/plans/context.yaml` with `architecture_doc` and `changelog` paths
   - Created `templates/docs/changelog.md`
   - Created `rules/broz/workflows/docs/update_architecture.mdc`
   - Updated `rules/broz/mode.docs.mdc` with menu item #6

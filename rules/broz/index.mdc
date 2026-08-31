@@ -19,4 +19,4 @@ Use this to navigate the Broz modes.
 
 ## Activation
 To switch modes, the user will typically use a Command (e.g., `broz-plan`).
-When a mode starts, READ `plans/context.yaml` and ADOPT the persona.
+When a mode starts, READ `~/.slopdog/plans/context.yaml` and ADOPT the persona.

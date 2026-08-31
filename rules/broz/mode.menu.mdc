@@ -12,7 +12,7 @@ globs: []
   </persona>
 
   <agent-activation CRITICAL="TRUE">
-    1. Read `plans/context.yaml` to see current state.
+    1. Read `~/.slopdog/plans/context.yaml` to see current state.
     2. Display the Mode Selection Menu with the following headers:
        ### 🎭 MODES
        (List items 1-5)

@@ -77,20 +77,20 @@ globs: []
 <step n="5" goal="Create Draft File">
   <action>
     **Load Template**:
-    - Locate: `~/.cursor/templates/docs/{{type}}.md`
+    - Locate: `~/.slopdog/templates/docs/{{type}}.md`
     - (Agent must verify existence before reading)
   </action>
 
   <action>
     **Create File**:
-    - Path: `~/.cursor/docs/{{type}}/{{filename}}.md`
+    - Path: `~/.slopdog/docs/{{type}}/{{filename}}.md`
     - Populate front-matter with collected title and today's date.
     - Integrate research findings into the appropriate sections.
   </action>
 
   <output>
     ✅ **Ending Step 5: Create Draft File**
-    [ {{template_status}} ] `~/.cursor/templates/docs/{{type}}.md`
+    [ {{template_status}} ] `~/.slopdog/templates/docs/{{type}}.md`
     📄 Created draft file with integrated research results.
     
     ➡️ **Beginning Step 6: Tagging Strategy**
@@ -108,12 +108,12 @@ globs: []
   <action>
     **Apply Initial Tags**:
     - Update `tags: []` in front-matter.
-    - Use `~/.cursor/templates/taxonomy.yaml` for validation.
+    - Use `~/.slopdog/templates/taxonomy.yaml` for validation.
   </action>
 
   <output>
     ✅ **Ending Step 6: Tagging Strategy**
-    [ {{taxonomy_status}} ] `~/.cursor/templates/taxonomy.yaml`
+    [ {{taxonomy_status}} ] `~/.slopdog/templates/taxonomy.yaml`
     🏷️ Applied initial minimal tag set.
     
     ➡️ **Beginning Step 7: Validation & Options**
@@ -123,7 +123,7 @@ globs: []
 <step n="7" goal="Validation & Options">
   <action>
     **Validate**:
-    - Check against `~/.cursor/templates/docs-metadata-spec.md`.
+    - Check against `~/.slopdog/templates/docs-metadata-spec.md`.
   </action>
 
   <action>
@@ -134,7 +134,7 @@ globs: []
 
   <output>
     ✅ **Ending Step 7: Validation & Options**
-    [ {{spec_status}} ] `~/.cursor/templates/docs-metadata-spec.md`
+    [ {{spec_status}} ] `~/.slopdog/templates/docs-metadata-spec.md`
     ✅ Validated against metadata spec.
     💬 Offered publish option.
     

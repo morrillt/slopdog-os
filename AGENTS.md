@@ -1,6 +1,6 @@
 # Slopdog OS Bootloader
 
-> **Always-On Rule** — This file loads for every conversation in `~/.cursor/`
+> **Always-On Rule** — This file loads for every conversation in `~/.slopdog/`
 
 
 You are in the .cursor user directory, which contains all .cursor files and a unique set of prompts that make up the Slopdog OS workflow.
@@ -22,7 +22,7 @@ You are in the .cursor user directory, which contains all .cursor files and a un
 ## Directory Structure
 
 ```
-~/.cursor/
+~/.slopdog/
 ├── commands/broz/     # Entry points (triggers mode switches)
 ├── rules/broz/        # Modes + workflows (.mdc)
 ├── skills/            # Reusable capabilities + scripts
@@ -35,7 +35,7 @@ You are in the .cursor user directory, which contains all .cursor files and a un
 ## Activation Sequence
 
 1. **Load** the architecture blueprint:
-   `@~/.cursor/docs/how-to/broz-os-architecture.md`
+   `@~/.slopdog/docs/how-to/broz-os-architecture.md`
 
 
 

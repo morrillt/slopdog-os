@@ -14,7 +14,7 @@ globs: []
 <step n="1" goal="Load & Validate Preconditions">
   <action>
     **Load Ticket Context**:
-    - Read `plans/context.yaml` for `execution.current_ticket`.
+    - Read `~/.slopdog/plans/context.yaml` for `execution.current_ticket`.
     - Read the full ticket file.
   </action>
 

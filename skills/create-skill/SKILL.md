@@ -11,7 +11,7 @@ This skill guides you through creating effective Agent Skills for Cursor. Skills
 Before creating a skill, gather essential information from the user about:
 
 1. **Purpose and scope**: What specific task or workflow should this skill help with?
-2. **Target location**: Should this be a personal skill (~/.cursor/skills/) or project skill (.cursor/skills/)?
+2. **Target location**: Should this be a personal skill (~/.slopdog/skills/) or project skill (~/.slopdog/skills/)?
 3. **Trigger scenarios**: When should the agent automatically apply this skill?
 4. **Key domain knowledge**: What specialized information does the agent need that it wouldn't already know?
 5. **Output format preferences**: Are there specific templates, formats, or styles required?
@@ -27,7 +27,7 @@ If you need clarification, use the AskQuestion tool when available:
 
 ```
 Example AskQuestion usage:
-- "Where should this skill be stored?" with options like ["Personal (~/.cursor/skills/)", "Project (.cursor/skills/)"]
+- "Where should this skill be stored?" with options like ["Personal (~/.slopdog/skills/)", "Project (~/.slopdog/skills/)"]
 - "Should this skill include executable scripts?" with options like ["Yes", "No"]
 ```
 
@@ -55,10 +55,10 @@ skill-name/
 
 | Type | Path | Scope |
 |------|------|-------|
-| Personal | ~/.cursor/skills/skill-name/ | Available across all your projects |
-| Project | .cursor/skills/skill-name/ | Shared with anyone using the repository |
+| Personal | ~/.slopdog/skills/skill-name/ | Available across all your projects |
+| Project | ~/.slopdog/skills/skill-name/ | Shared with anyone using the repository |
 
-**IMPORTANT**: Never create skills in `~/.cursor/skills-cursor/`. That directory name is deprecated. Use `~/.cursor/skills/` for personal skills and `.cursor/skills/` for project skills.
+**IMPORTANT**: Never create skills in `~/.slopdog/skills-cursor/`. That directory name is deprecated. Use `~/.slopdog/skills/` for personal skills and `~/.slopdog/skills/` for project skills.
 
 ### SKILL.md Structure
 

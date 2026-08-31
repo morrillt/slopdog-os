@@ -1,6 +1,6 @@
 ---
 name: migrate-to-skills
-description: Convert 'Applied intelligently' Cursor rules (.cursor/rules/*.mdc) and slash commands (.cursor/commands/*.md) to Agent Skills format (.cursor/skills/). Use when the user wants to migrate rules or commands to skills, convert .mdc rules to SKILL.md format, or consolidate commands into the skills directory.
+description: Convert 'Applied intelligently' Cursor rules (.cursor/rules/*.mdc) and slash commands (.cursor/commands/*.md) to Agent Skills format (~/.slopdog/skills/). Use when the user wants to migrate rules or commands to skills, convert .mdc rules to SKILL.md format, or consolidate commands into the skills directory.
 disable-model-invocation: true
 ---
 # Migrate Rules and Slash Commands to Skills
@@ -19,7 +19,7 @@ Convert Cursor rules ("Applied intelligently") and slash commands to Agent Skill
 Notes:
 - Cursor rules inside the project can live in nested directories. Be thorough in your search and use glob patterns to find them.
 - Ignore anything in ~/.cursor/worktrees
-- Ignore anything in ~/.cursor/skills-cursor (deprecated directory name). Active skills live in ~/.cursor/skills/.
+- Ignore anything in ~/.cursor/skills-cursor (deprecated directory name). Active skills live in ~/.slopdog/skills/.
 
 ## Finding Files to Migrate
 
@@ -43,7 +43,7 @@ Body content...
 ```
 
 ```markdown
-# After: .cursor/skills/my-rule/SKILL.md
+# After: ~/.slopdog/skills/my-rule/SKILL.md
 ---
 name: my-rule
 description: What this rule does
@@ -63,7 +63,7 @@ Instructions here...
 ```
 
 ```markdown
-# After: .cursor/skills/commit/SKILL.md
+# After: ~/.slopdog/skills/commit/SKILL.md
 ---
 name: commit
 description: Commit current work with standardized message format
@@ -88,7 +88,7 @@ Changes: Add frontmatter with `name` (from filename), `description` (infer from 
 1. Read the rule file
 2. Extract the `description` from the frontmatter
 3. Extract the body content (everything after the closing `---` of the frontmatter)
-4. Create the skill directory: `.cursor/skills/{skill-name}/` (skill name = filename without .mdc)
+4. Create the skill directory: `~/.slopdog/skills/{skill-name}/` (skill name = filename without .mdc)
 5. Write `SKILL.md` with new frontmatter (`name` and `description`) + the EXACT original body content (preserve all whitespace, formatting, code blocks verbatim)
 6. Delete the original rule file
 
@@ -96,7 +96,7 @@ Changes: Add frontmatter with `name` (from filename), `description` (infer from 
 
 1. Read the command file
 2. Extract description from the first heading (remove `#` prefix)
-3. Create the skill directory: `.cursor/skills/{skill-name}/` (skill name = filename without .md)
+3. Create the skill directory: `~/.slopdog/skills/{skill-name}/` (skill name = filename without .md)
 4. Write `SKILL.md` with new frontmatter (`name`, `description`, and `disable-model-invocation: true`) + blank line + the EXACT original file content (preserve all whitespace, formatting, code blocks verbatim)
 5. Delete the original command file
 
@@ -107,7 +107,7 @@ Changes: Add frontmatter with `name` (from filename), `description` (infer from 
 If you have the Task tool available:
 DO NOT start to read all of the files yourself. That function should be delegated to the subagents. Your job is to dispatch the subagents for each category of files and wait for the results.
 
-1. [ ] Create the skills directories if they don't exist (`.cursor/skills/` for project, `~/.cursor/skills/` for user)
+1. [ ] Create the skills directories if they don't exist (`~/.slopdog/skills/` for project, `~/.slopdog/skills/` for user)
 2. Dispatch three fast general purpose subagents (NOT explore) in parallel to do the following steps for project rules (pattern: `{workspaceFolder}/**/.cursor/rules/*.mdc`), user commands (pattern: `~/.cursor/commands/*.md`), and project commands (pattern: `{workspaceFolder}/**/.cursor/commands/*.md`):
   I. [ ] Find files to migrate in the given pattern
   II. [ ] For rules, check if it's an "applied intelligently" rule (has `description`, no `globs`, no `alwaysApply: true`). Commands are always migrated. DO NOT use the terminal to read files. Use the read tool.
@@ -120,7 +120,7 @@ DO NOT start to read all of the files yourself. That function should be delegate
 
 
 If you don't have the Task tool available:
-1. [ ] Create the skills directories if they don't exist (`.cursor/skills/` for project, `~/.cursor/skills/` for user)
+1. [ ] Create the skills directories if they don't exist (`~/.slopdog/skills/` for project, `~/.slopdog/skills/` for user)
 2. [ ] Find files to migrate in both project (`.cursor/`) and user (`~/.cursor/`) directories
 3. [ ] For rules, check if it's an "applied intelligently" rule (has `description`, no `globs`, no `alwaysApply: true`). Commands are always migrated. DO NOT use the terminal to read files. Use the read tool.
 4. [ ] Make a list of files to migrate. If empty, done.

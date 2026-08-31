@@ -128,14 +128,44 @@ Example: When you ask "find me a YouTube tutorial on RAG", the `youtube-search` 
 ## Directory Structure
 
 ```
-~/.cursor/
-├── commands/broz/     # Entry points (triggers mode switches)
-├── rules/broz/        # Modes + workflows (.mdc)
+~/.slopdog/            # canonical home -- tool-neutral on purpose
+├── commands/broz/     # Entry points (SOURCE -- installed into each tool)
+├── rules/broz/        # Modes + workflows (.mdc), read in place
 ├── skills/            # Reusable capabilities + scripts
 ├── plans/             # State tracking (context.yaml)
 ├── docs/              # Documentation
-└── templates/         # Document templates
+├── templates/         # Document templates
+├── targets.conf       # Which tools get the command shims
+└── install.sh         # Renders commands/broz/ into those tools
 ```
+
+## Install
+
+Broz OS lives in `~/.slopdog`. Each tool then gets its own copy of the command
+shims, rendered from `commands/broz/`:
+
+```bash
+git clone git@github.com:morrillt/slopdog-os.git ~/.slopdog
+cd ~/.slopdog && ./install.sh
+```
+
+| | |
+|---|---|
+| `./install.sh` | Install/refresh shims. Hand-edited files are preserved. |
+| `./install.sh --force` | Overwrite hand-edited shims too. |
+| `./install.sh --check` | Report drift, change nothing. Exit 1 if out of sync. |
+
+Adding a tool is one line in `targets.conf` plus a re-run. Targets whose parent
+directory does not exist are skipped, so listing a tool you have not installed
+yet is harmless -- install it later and re-run.
+
+Commands are **copied** (they are per-tool rendered artifacts, each carrying a
+generated-by marker). The `rules/` tree is **symlinked** into `~/.cursor/rules/broz`,
+because it is one shared content tree read in place, not a per-tool artifact.
+
+> Why a generator at all: the shims were once hand-copied out of a clone that was
+> then deleted. Nothing noticed, because the check counted files instead of
+> resolving what they pointed at. `--check` resolves.
 
 ## How It Works
 
@@ -152,7 +182,7 @@ Command → Mode → Workflow → Skill
 2. **Modes** provide context, personas, and menus of available actions
 3. **Workflows** contain the step-by-step logic the AI executes
 4. **Skills** are reusable capabilities with optional scripts
-5. **State** is tracked in `plans/context.yaml`
+5. **State** is tracked in `~/.slopdog/plans/context.yaml`
 
 ## Key Features
 

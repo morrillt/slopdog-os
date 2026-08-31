@@ -19,8 +19,8 @@ Key rules
 5. tickets need to follow template.
 
 this should essentially extend the build ticket workflow (which super important integrated ticket template ). Read through the build ticket workflow it may be a little thing and we can add a bit more sophistication to bring it inline with current os design patterns. We want the entire set of tickets to run then we want to after get a report and asnwer questions on the set of tickets.
-Create ticket workflow: ~/.cursor/rules/broz/workflows/plan/add_ticket.mdc
-Ticket template: ~/.cursor/templates/ticket.md
+Create ticket workflow: ~/.slopdog/rules/broz/workflows/plan/add_ticket.mdc
+Ticket template: ~/.slopdog/templates/ticket.md
 
 
 If any ambiguities come up while writing the tickets, write them down for a review ambiguity etc report at end separate step. ALso VERY IMPORTANTLY this is where the tech stack is  defined, so in the final report step should be ambiguities and tech stack options  suggestions / current decision....
@@ -28,7 +28,7 @@ If any ambiguities come up while writing the tickets, write them down for a revi
 pls ask me any questions before you get started here
 
 ALso look at the create ticket / validate ticket workflows first, and THE TEMPLATES thats huge!
-@.cursor/templates/ticket.md @.cursor/rules/broz/workflows/plan/add_ticket.mdc 
+@~/.slopdog/templates/ticket.md @~/.slopdog/rules/broz/workflows/plan/add_ticket.mdc 
 
 
 

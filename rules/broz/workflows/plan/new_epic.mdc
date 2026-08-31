@@ -5,12 +5,12 @@ globs: []
 # Workflow: Plan > New Epic
 
 <critical>This workflow is for PLANNING only. Do not modify product code.</critical>
-<critical>Read `plans/context.yaml` ONCE at the start to get `project.path`.</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` ONCE at the start to get `project.path`.</critical>
 <critical>Only ONE file is created, and ONLY in the final step.</critical>
-<critical>Follow the template in `~/.cursor/templates/epic-prd-template-airbnb.md` (section-by-section).</critical>
+<critical>Follow the template in `~/.slopdog/templates/epic-prd-template-airbnb.md` (section-by-section).</critical>
 
 <variables>
-  {{project_path}} - From `plans/context.yaml` (`project.path`)
+  {{project_path}} - From `~/.slopdog/plans/context.yaml` (`project.path`)
   {{epic_title}} - User-provided epic title
   {{epic_filename}} - User-provided kebab-case filename (ex: `epic-1-search.md`)
   {{epic_target_path}} - `{{project_path}}/plans/{{epic_filename}}`
@@ -60,14 +60,14 @@ globs: []
 <step n="2" goal="Initialize + load template">
   <action>
     **Load Context**:
-    - Read `plans/context.yaml`
+    - Read `~/.slopdog/plans/context.yaml`
     - Set `{{project_path}}` = `project.path`
     - Report: `[ ✅ | ❌ ] project.path loaded`
   </action>
 
   <action>
     **Load Epic Template**:
-    - Read: `~/.cursor/templates/epic-prd-template-airbnb.md`
+    - Read: `~/.slopdog/templates/epic-prd-template-airbnb.md`
     - Report: `[ ✅ | ❌ ] Template loaded`
   </action>
 
@@ -84,8 +84,8 @@ globs: []
 
   <output>
     ✅ **Ending Step 2: Initialize + load template**
-    [ ✅ ] `plans/context.yaml` read
-    [ ✅ ] Template loaded: `~/.cursor/templates/epic-prd-template-airbnb.md`
+    [ ✅ ] `~/.slopdog/plans/context.yaml` read
+    [ ✅ ] Template loaded: `~/.slopdog/templates/epic-prd-template-airbnb.md`
     📝 **Epic Title**: {{epic_title}}
     📝 **Epic Output**: `{{epic_target_path}}`
 
@@ -379,7 +379,7 @@ globs: []
     ✅ **Ending Step 14: Finalize + Write Epic File**
 
     ### Epic Created
-    - **Template**: [ ✅ ] `~/.cursor/templates/epic-prd-template-airbnb.md`
+    - **Template**: [ ✅ ] `~/.slopdog/templates/epic-prd-template-airbnb.md`
     - **Output**: [ ✅ ] `{{epic_target_path}}`
     - **Status**: Draft
 

@@ -8,7 +8,7 @@ globs: []
 <critical>Do NOT add H1 title in body (Front-matter `title` is H1).</critical>
 <critical>Use H2 (`##`) for major sections (required for TOC).</critical>
 <critical>New docs must start as `status: draft`.</critical>
-<critical>Read `plans/context.yaml` ONCE at start to get `project.path`. Do NOT write to context.yaml.</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` ONCE at start to get `project.path`. Do NOT write to context.yaml.</critical>
 <critical>Use workflow variables ({{title}}, {{filename}}, {{target_path}}) throughout. These are held in memory.</critical>
 <critical>Only ONE file is created at the FINAL step. Do NOT create any files before the final step.</critical>
 
@@ -26,9 +26,9 @@ globs: []
 <step n="1" goal="Context Load & Raw Note Capture">
   <action>
     **Load Project Path**:
-    - Read `plans/context.yaml` to obtain `project.path`.
+    - Read `~/.slopdog/plans/context.yaml` to obtain `project.path`.
     - Store in workflow variable: `{{project_path}}`
-    - Report: `[ ✅ | ❌ ] plans/context.yaml`
+    - Report: `[ ✅ | ❌ ] ~/.slopdog/plans/context.yaml`
   </action>
 
   <action>
@@ -45,7 +45,7 @@ globs: []
 
   <output>
     ✅ **Ending Step 1: Initialize**
-    [ ✅ ] `plans/context.yaml` loaded
+    [ ✅ ] `~/.slopdog/plans/context.yaml` loaded
     📝 **Title**: {{title}}
     📝 **Filename**: {{filename}}
     📝 **Target Path**: {{target_path}}

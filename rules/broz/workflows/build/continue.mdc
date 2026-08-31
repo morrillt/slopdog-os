@@ -8,7 +8,7 @@ globs: []
 <critical>You MUST clarify ambiguous requirements BEFORE implementing.</critical>
 <critical>You MUST log all issues/decisions in `### DEV AGENT RECORD`.</critical>
 <critical>You MUST run all tests (Unit + E2E) before completing.</critical>
-<critical>Read `plans/context.yaml` ONCE at start. Do NOT write to context.yaml unless updating ticket status/progress.</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` ONCE at start. Do NOT write to context.yaml unless updating ticket status/progress.</critical>
 <critical>Detect or ask for OUTPUT MODE before Step 1. All outputs MUST conform to the detected mode format.</critical>
 
 <variables>
@@ -251,7 +251,7 @@ globs: []
   <action>
     **Load Ticket**:
     - Ask user to select ticket (if not current).
-    - Update `plans/context.yaml` (`current_ticket`, `status: In Progress`).
+    - Update `~/.slopdog/plans/context.yaml` (`current_ticket`, `status: In Progress`).
     - Report: `[ ✅ | ❌ ] Ticket Loaded: {{current_ticket}}`
   </action>
 

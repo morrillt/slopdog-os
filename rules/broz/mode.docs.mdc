@@ -19,7 +19,7 @@ globs: []
   </operating-principles>
 
   <agent-activation CRITICAL="TRUE">
-    1. Read `plans/context.yaml`.
+    1. Read `~/.slopdog/plans/context.yaml`.
     2. Ensure `project.current_mode` is `docs` (update it if needed).
     3. Present <menu> as a numbered list; if the user types `1`, run item #1, etc.
   </agent-activation>

@@ -13,7 +13,7 @@ globs: []
 
   <step n="1" goal="Environment Check">
     <action>
-      Check if `plans/context.yaml` already exists.
+      Check if `~/.slopdog/plans/context.yaml` already exists.
       If it exists, **Prompt User**: "Broz, this folder is already initialized. Do you want to re-initialize it? (y/n)".
       If 'n', abort.
     </action>
@@ -60,9 +60,9 @@ globs: []
   <step n="4" goal="Template Deployment">
     <action>
       **Deploy Templates**:
-      - Copy `~/.cursor/templates/context.yaml` to `plans/context.yaml`
-      - Copy `~/.cursor/templates/AGENTS.md` to `AGENTS.md` (project root)
-      - Copy `~/.cursor/templates/stylerules.md` to `docs/styleguide.md`
+      - Copy `~/.slopdog/templates/context.yaml` to `~/.slopdog/plans/context.yaml`
+      - Copy `~/.slopdog/templates/AGENTS.md` to `AGENTS.md` (project root)
+      - Copy `~/.slopdog/templates/stylerules.md` to `docs/styleguide.md`
     </action>
     <action>
       **Fix Next.js Turbopack Root**:
@@ -86,7 +86,7 @@ globs: []
     <action>
       **Update Context**:
       - Get absolute path of current directory.
-      - Update `plans/context.yaml`:
+      - Update `~/.slopdog/plans/context.yaml`:
         - `project.name`: User-provided name (or folder name).
         - `project.path`: Absolute path.
         - `project.current_mode`: `plan`.

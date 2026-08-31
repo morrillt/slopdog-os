@@ -8,15 +8,15 @@ globs: []
 <critical>You MUST enforce taxonomy tags from `{{project.path}}/templates/taxonomy.yaml`.</critical>
 <critical>You MUST ensure `facets.repo.path` matches file location.</critical>
 <critical>You MUST update status to `active`.</critical>
-<critical>Read `plans/context.yaml` to get `project.path` for dynamic file paths.</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` to get `project.path` for dynamic file paths.</critical>
 
 <workflow>
 
 <step n="1" goal="Context Load & Doc Selection">
   <action>
     **Load Project Context**:
-    - Read `plans/context.yaml` to obtain `project.path`.
-    - Report: `[ ✅ | ❌ ] plans/context.yaml`
+    - Read `~/.slopdog/plans/context.yaml` to obtain `project.path`.
+    - Report: `[ ✅ | ❌ ] ~/.slopdog/plans/context.yaml`
   </action>
 
   <action>
@@ -33,7 +33,7 @@ globs: []
 
   <output>
     ✅ **Ending Step 1: Select & Verify Doc**
-    [ {{context_status}} ] `plans/context.yaml`
+    [ {{context_status}} ] `~/.slopdog/plans/context.yaml`
     📄 Selected draft doc
     ✅ Verified repo path matches file location
     

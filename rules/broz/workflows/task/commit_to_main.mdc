@@ -92,7 +92,7 @@ globs: []
   <action>
     **Harvest**:
     ```
-    python3 ~/.cursor/skills/conversation-log/scripts/harvest_prompts.py
+    python3 ~/.slopdog/skills/conversation-log/scripts/harvest_prompts.py
     ```
     Run it from the tree being committed. It auto-detects repo, branch and time
     window (since this branch's newest commit, or its fork point if it has
@@ -247,7 +247,7 @@ globs: []
     **Look before you merge** — if any other branch has landed on main since
     this one forked, check for overlap FIRST:
     ```
-    python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py \
+    python3 ~/.slopdog/skills/conversation-log/scripts/merge_timeline.py \
       --repo {{repo_root}} --ours main --theirs {{branch}}
     ```
     A clean-looking merge between two sessions that edited the same feature is
@@ -277,7 +277,7 @@ globs: []
     <critical>STOP. Do not attempt to auto-resolve.</critical>
     <action>
       Hand off to the merge workflow — it exists for exactly this:
-      `~/.cursor/rules/broz/workflows/task/resolve_merge.mdc` (`broz:resolvemerge`).
+      `~/.slopdog/rules/broz/workflows/task/resolve_merge.mdc` (`broz:resolvemerge`).
       It replays both sides' conversations in wall-clock order so precedence is
       read, not guessed. Report the conflicted files and leave the merge in
       progress.

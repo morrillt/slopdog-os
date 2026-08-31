@@ -3,7 +3,7 @@ Resolve a merge conflict using the conversation recorded in the commits. (Trigge
 Also runs BEFORE a merge, to see whether two branches overlap at all.
 
 Do this EXACTLY in order:
-1) Read the workflow at `~/.cursor/rules/broz/workflows/task/resolve_merge.mdc`
+1) Read the workflow at `~/.slopdog/rules/broz/workflows/task/resolve_merge.mdc`
 2) Follow its steps — timeline FIRST, conflicted files second
 3) Report each verdict with the timestamped prompt that justifies it
 

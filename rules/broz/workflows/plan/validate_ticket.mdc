@@ -15,7 +15,7 @@ globs: []
   <action>
     **Load Ticket**:
     - Identify target ticket.
-    - Verify `plans/context.yaml`.
+    - Verify `~/.slopdog/plans/context.yaml`.
   </action>
 
   <action>
@@ -96,8 +96,8 @@ globs: []
 <step n="4" goal="Quality Validation">
   <action>
     **Taxonomy Check**:
-    - Prefer: verify `tags` against `{{project_path}}/docs/taxonomy.yaml` (where `{{project_path}}` comes from `plans/context.yaml`).
-    - If that file does not exist, fallback to: `~/.cursor/templates/taxonomy.yaml`.
+    - Prefer: verify `tags` against `{{project_path}}/docs/taxonomy.yaml` (where `{{project_path}}` comes from `~/.slopdog/plans/context.yaml`).
+    - If that file does not exist, fallback to: `~/.slopdog/templates/taxonomy.yaml`.
     - If fallback is used, add a validation issue noting: "Project missing docs/taxonomy.yaml; used template fallback".
   </action>
 

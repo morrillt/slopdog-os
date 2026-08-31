@@ -1,18 +1,18 @@
 ---
 name: Slim Cursor rules+commands
-overview: Create a lightweight, BMAD-inspired menu+handlers system under `.cursor/rules/broz/` and `.cursor/commands/broz/`, with strict BUILD gating via one `plans/context.yaml`, plus a separate repo `docs/` space (incl. `docs/research/`) for longer-lived documentation.
+overview: Create a lightweight, BMAD-inspired menu+handlers system under `~/.slopdog/rules/broz/` and `~/.slopdog/commands/broz/`, with strict BUILD gating via one `~/.slopdog/plans/context.yaml`, plus a separate repo `docs/` space (incl. `docs/research/`) for longer-lived documentation.
 todos:
   - id: define-schema
-    content: Finalize `plans/context.yaml` schema (past/current/next ticket status) + ensure all modes read it first.
+    content: Finalize `~/.slopdog/plans/context.yaml` schema (past/current/next ticket status) + ensure all modes read it first.
     status: done
   - id: create-rules
-    content: Create `.cursor/rules/broz/*.mdc` (core + index + mode rules with personas + menu + handlers referencing separate workflow rules).
+    content: Create `~/.slopdog/rules/broz/*.mdc` (core + index + mode rules with personas + menu + handlers referencing separate workflow rules).
     status: done
   - id: create-workflows
-    content: Create `.cursor/rules/broz/workflows/<mode>/*.mdc` (organized by subfolder; at least 3 per mode).
+    content: Create `~/.slopdog/rules/broz/workflows/<mode>/*.mdc` (organized by subfolder; at least 3 per mode).
     status: done
   - id: create-commands
-    content: Create `.cursor/commands/broz/*` commands so every mode invocation starts with its menu (no silent handlers).
+    content: Create `~/.slopdog/commands/broz/*` commands so every mode invocation starts with its menu (no silent handlers).
     status: done
   - id: bootstrap-artifacts
     content: Create repo scaffolding for `plans/` (plans/tickets/tasks) and `docs/` (incl. docs/research + templates).
@@ -32,7 +32,7 @@ todos:
 
 ### Editor-side behavior
 
-**`.cursor/rules/broz/`** (The "Controllers")
+**`~/.slopdog/rules/broz/`** (The "Controllers")
 
 - `index.mdc` (manual): Router index.
 - `core.mdc` (**alwaysApply: true**): Global guardrails, context.yaml reader, smart triggers.
@@ -43,7 +43,7 @@ todos:
 - `mode.research.mdc`: RESEARCH mode (**Varys** 🕷️).
 - `mode.docs.mdc`: DOCS mode (**Samwell Tarly** 📜).
 
-**`.cursor/rules/broz/workflows/`** (The "Actions" - organized by mode)
+**`~/.slopdog/rules/broz/workflows/`** (The "Actions" - organized by mode)
 
 - **`plan/`**: `new_epic.mdc`, `edit_epic.mdc`, `shard_tickets.mdc`, `add_ticket.mdc`
 - **`build/`**: `continue.mdc`, `start_next.mdc`, `update_status.mdc`
@@ -51,7 +51,7 @@ todos:
 - **`research/`**: `new.mdc`, `resume.mdc`, `promote.mdc`
 - **`docs/`**: `create.mdc`, `audit.mdc`, `extract.mdc`
 
-**`.cursor/commands/broz/`**
+**`~/.slopdog/commands/broz/`**
 
 - `menu.md`, `plan.md`, `build.md`, `task.md`, `research.md`, `docs.md` (Entrypoints that load the corresponding Mode Rule).
 
@@ -68,7 +68,7 @@ Each `mode.*.mdc` file follows this template:
   </persona>
 
   <agent-activation CRITICAL="TRUE">
-    1. Read `plans/context.yaml`
+    1. Read `~/.slopdog/plans/context.yaml`
     2. Summarize state (in character)
     3. Present <menu>
   </agent-activation>
@@ -134,6 +134,6 @@ Each `mode.*.mdc` file follows this template:
 ## Implementation Steps
 
 1. Create `plans/` and `docs/` scaffolding + `context.yaml`.
-2. Create `.cursor/rules/broz/workflows/` subfolders (`plan/`, `build/`, etc.) and populate the workflows.
-3. Create `.cursor/rules/broz/mode.*.mdc` files with the specific Personas and Menus.
-4. Create `.cursor/commands/broz/*.md`.
+2. Create `~/.slopdog/rules/broz/workflows/` subfolders (`plan/`, `build/`, etc.) and populate the workflows.
+3. Create `~/.slopdog/rules/broz/mode.*.mdc` files with the specific Personas and Menus.
+4. Create `~/.slopdog/commands/broz/*.md`.

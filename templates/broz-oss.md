@@ -21,7 +21,7 @@ Broz OSS is a lightweight “operating system” implemented inside this repo to
 It’s not a single tool—it's a set of conventions and automation rules:
 - **Modes** (Plan/Build/Task/Docs/Research/Menu)
 - **Workflows** (step-by-step recipes the agent follows)
-- **Canonical state** in `plans/context.yaml`
+- **Canonical state** in `~/.slopdog/plans/context.yaml`
 - **Standard ticket/task templates** under `plans/templates/`
 
 The goal: you can hand a ticket to an agent (or a human) and get consistent outcomes with clear evidence.
@@ -42,16 +42,16 @@ Modes are “permission + intent” switches. They tell the agent what kind of w
 
 Workflows are procedural checklists stored under:
 
-- `.cursor/rules/broz/workflows/**`
+- `~/.slopdog/rules/broz/workflows/**`
 
 Examples:
 - `plan/validate_ticket` → “is this ticket coherent and executable?”
 - `build/continue` → “implement the ticket with a logged loop”
 - `build/code_review` → “post-continue review: spec + tests + KISS”
 
-## Single source of truth: `plans/context.yaml`
+## Single source of truth: `~/.slopdog/plans/context.yaml`
 
-`plans/context.yaml` is the repo’s live “state file”:
+`~/.slopdog/plans/context.yaml` is the repo’s live “state file”:
 
 - `project.current_mode`: which mode is active
 - `execution.current_ticket`: which ticket is being worked
@@ -81,9 +81,9 @@ This enables:
 ## 1) Plan: create + validate a ticket
 
 Key workflows:
-- `Plan > Add Ticket` (`.cursor/rules/broz/workflows/plan/add_ticket.mdc`)
-- `Plan > Validate Ticket` (`.cursor/rules/broz/workflows/plan/validate_ticket.mdc`)
-- `Plan > Mark Ticket Ready` (`.cursor/rules/broz/workflows/plan/mark_ready.mdc`)
+- `Plan > Add Ticket` (`~/.slopdog/rules/broz/workflows/plan/add_ticket.mdc`)
+- `Plan > Validate Ticket` (`~/.slopdog/rules/broz/workflows/plan/validate_ticket.mdc`)
+- `Plan > Mark Ticket Ready` (`~/.slopdog/rules/broz/workflows/plan/mark_ready.mdc`)
 
 The Plan validation workflow is intentionally strict:
 - Story → ACs → Tasks → Tests must align
@@ -96,7 +96,7 @@ When validation passes, the ticket is marked **Ready** for Build.
 ## 2) Build: execute the ticket (implementation loop)
 
 Key workflow:
-- `Build > Execute Ticket (Dev Story)` (`.cursor/rules/broz/workflows/build/continue.mdc`)
+- `Build > Execute Ticket (Dev Story)` (`~/.slopdog/rules/broz/workflows/build/continue.mdc`)
 
 The Build loop:
 - Picks the next unchecked task
@@ -109,7 +109,7 @@ The Build loop:
 ## 3) Review: confirm spec + evidence + KISS
 
 Key workflow:
-- `Build > Code Review Ticket` (`.cursor/rules/broz/workflows/build/code_review.mdc`)
+- `Build > Code Review Ticket` (`~/.slopdog/rules/broz/workflows/build/code_review.mdc`)
 
 This is explicitly **post-continue**. It checks:
 - Preconditions (Status=Review, validation passed, no open questions)
@@ -128,8 +128,8 @@ This repo now also supports a simpler 2-step bug loop in **Task** mode:
 - **Task > Confirm Bug Fixed**: verify diff + tests + no overengineering → close
 
 Related files:
-- `.cursor/rules/broz/workflows/task/file_bug.mdc`
-- `.cursor/rules/broz/workflows/task/confirm_bug_fixed.mdc`
+- `~/.slopdog/rules/broz/workflows/task/file_bug.mdc`
+- `~/.slopdog/rules/broz/workflows/task/confirm_bug_fixed.mdc`
 - `plans/templates/bug.md`
 
 This is optimized for prototypes:
@@ -141,8 +141,8 @@ This is optimized for prototypes:
 
 ## Where to start
 
-- Use the Broz commands under `.cursor/commands/broz/` (menu/plan/build/task/docs/research).
-- The command sets mode in `plans/context.yaml` and loads the relevant mode rule.
+- Use the Broz commands under `~/.slopdog/commands/broz/` (menu/plan/build/task/docs/research).
+- The command sets mode in `~/.slopdog/plans/context.yaml` and loads the relevant mode rule.
 
 ## Common gotchas
 

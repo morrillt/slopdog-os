@@ -1,12 +1,12 @@
 project:
   name: "Broz OS"
-  current_mode: "plan"
-  path: "~/.cursor"
+  current_mode: "menu"
+  path: "~/.slopdog"
 execution:
-  current_epic: "EPIC-MACMOVE"
-  current_ticket: "TICKET-US-001"
-  next_ticket: "TICKET-US-011"
-  current_ticket_status: "pending"
+  current_epic: ""
+  current_ticket: ""
+  next_ticket: ""
+  current_ticket_status: ""
   current_task: ""
   current_task_status: ""
 docs:

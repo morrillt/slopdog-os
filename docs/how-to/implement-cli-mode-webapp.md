@@ -84,7 +84,7 @@ Every workflow now supports two output modes:
 
 ### Full Path
 ```
-~/.cursor/rules/broz/workflows/build/continue.mdc
+~/.slopdog/rules/broz/workflows/build/continue.mdc
 ```
 
 ### What It Does
@@ -549,6 +549,6 @@ You've successfully implemented CLI mode when:
 
 ## See Also
 
-- [Build > Execute Ticket Workflow](~/.cursor/rules/broz/workflows/build/continue.mdc) - Reference implementation with dual-mode outputs
-- [Broz OS Architecture](~/.cursor/docs/how-to/broz-os-architecture.md) - Overall system architecture
-- [Docs Metadata Spec](~/.cursor/templates/docs-metadata-spec.md) - Front-matter standards
+- [Build > Execute Ticket Workflow](~/.slopdog/rules/broz/workflows/build/continue.mdc) - Reference implementation with dual-mode outputs
+- [Broz OS Architecture](~/.slopdog/docs/how-to/broz-os-architecture.md) - Overall system architecture
+- [Docs Metadata Spec](~/.slopdog/templates/docs-metadata-spec.md) - Front-matter standards

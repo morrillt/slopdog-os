@@ -97,7 +97,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
 - **`docs/`**: documentation (markdown)
   - **`docs/research/`**: research notes
   - **`docs/howto/`**: how-to guides / runbooks
-- **`plans/`**: planning system + workflow state (`plans/context.yaml`, tickets, tasks, templates)
+- **`plans/`**: planning system + workflow state (`~/.slopdog/plans/context.yaml`, tickets, tasks, templates)
 - **`packages/`**: reusable internal packages (e.g. `packages/logger/`)
 - **Generated / local-only (don’t treat as source)**:
   - `node_modules/`, `src/node_modules/`

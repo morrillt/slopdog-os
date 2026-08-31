@@ -1,7 +1,7 @@
 Activate Task Mode. (Trigger: `broz:task`)
 
 Do this EXACTLY in order:
-1) Read `~/.cursor/rules/broz/workflows/task/file_bug.mdc`
+1) Read `~/.slopdog/rules/broz/workflows/task/file_bug.mdc`
 2) Tell user X steps loaded and ready proceeding to step X - Name
 3) Loop
     Follow the mode's steps!

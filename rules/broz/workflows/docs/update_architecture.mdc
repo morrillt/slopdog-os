@@ -6,7 +6,7 @@ globs: []
 
 Updates the main architecture document and changelog after code/workflow changes.
 
-<critical>Read `plans/context.yaml` ONCE at start to get paths.</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` ONCE at start to get paths.</critical>
 <critical>Do NOT skip the user confirmation gate before making edits.</critical>
 <critical>Edits happen in the FINAL step only.</critical>
 <critical>If changelog does not exist, create it from template in Step 5.</critical>
@@ -26,7 +26,7 @@ Updates the main architecture document and changelog after code/workflow changes
 <step n="1" goal="Load Context & Gather Change Info">
   <action>
     **Read Context**:
-    - Read `plans/context.yaml`
+    - Read `~/.slopdog/plans/context.yaml`
     - Extract: `{{project_path}}`, `{{architecture_doc}}`, `{{changelog_path}}`
     - Report: `[ ✅ | ❌ ] Context loaded`
   </action>
@@ -53,7 +53,7 @@ Updates the main architecture document and changelog after code/workflow changes
 
   <output>
     ✅ **Ending Step 1: Load Context & Gather Change Info**
-    [ ✅ ] Context loaded from `plans/context.yaml`
+    [ ✅ ] Context loaded from `~/.slopdog/plans/context.yaml`
     [ ✅ ] Architecture doc: `{{architecture_doc}}`
     [ ✅ ] Changelog: `{{changelog_path}}`
     📝 Last commit: {{last_commit}}

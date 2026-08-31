@@ -24,7 +24,7 @@ Broz OS is a **persona-driven, mode-based workflow system** for Cursor, inspired
 
 ### Migration & Environment
 
-Initially developed within individual project directories, Broz OS now lives in the **`.cursor/` user directory** (`~/.cursor/`). This centralizes the workflow logic, making it available across all projects opened in Cursor while maintaining project-specific state in the local `plans/` directory of the active workspace.
+Initially developed within individual project directories, Broz OS now lives in the **`.slopdog/` user directory** (`~/.slopdog/`). This centralizes the workflow logic, making it available across all projects opened in Cursor while maintaining project-specific state in the local `plans/` directory of the active workspace.
 
 ### What This Document Covers
 
@@ -50,7 +50,7 @@ Broz OS deliberately strips out BMAD's complexity:
 | Agents (heavy, multi-step activation) | Modes (light, focused personas) | Broz is simpler |
 | External `workflow.xml` engine | Inline workflow logic in `.mdc` | Broz is self-contained |
 | Separate step files per workflow | Single file with inline steps | Broz is more compact |
-| `config.yaml` for all settings | `plans/context.yaml` for state | Broz is project-local |
+| `config.yaml` for all settings | `~/.slopdog/plans/context.yaml` for state | Broz is project-local |
 | Scripts embedded in workflows | Skills with encapsulated scripts | Broz is modular |
 
 ---
@@ -73,7 +73,7 @@ Broz OS deliberately strips out BMAD's complexity:
 │         │                  │                  │                   │          │
 │         ▼                  ▼                  ▼                   ▼          │
 │   ┌──────────────────────────────────────────────────────────────────────┐  │
-│   │                      plans/context.yaml                               │  │
+│   │                      ~/.slopdog/plans/context.yaml                               │  │
 │   │                (State: Mode, Ticket, Task, Doc)                       │  │
 │   └──────────────────────────────────────────────────────────────────────┘  │
 │                                                                              │
@@ -98,7 +98,7 @@ Broz OS deliberately strips out BMAD's complexity:
 ### Location
 
 ```
-~/.cursor/commands/broz/
+~/.slopdog/commands/broz/
 ├── build.md
 ├── docs.md
 ├── plan.md
@@ -115,9 +115,9 @@ Broz OS deliberately strips out BMAD's complexity:
 Activate [Mode Name] Mode. (Trigger: `broz:[mode]`)
 
 Do this EXACTLY in order:
-1) Read `plans/context.yaml`
-2) Set `project.current_mode: [mode]` in `plans/context.yaml`
-3) Read `~/.cursor/rules/broz/mode.[mode].mdc`
+1) Read `~/.slopdog/plans/context.yaml`
+2) Set `project.current_mode: [mode]` in `~/.slopdog/plans/context.yaml`
+3) Read `~/.slopdog/rules/broz/mode.[mode].mdc`
 4) Follow the mode's `<agent-activation>` steps
 5) Display the numbered menu and STOP (wait for user choice)
 
@@ -140,10 +140,10 @@ Hard rule: [Any mode-specific constraint]
 Activate Build Mode. (Trigger: `broz:build`)
 
 Do this EXACTLY in order:
-1) Read `plans/context.yaml`, if it does not exist, notify user and exit.
-2) Set `project.current_mode: build` in `plans/context.yaml`
+1) Read `~/.slopdog/plans/context.yaml`, if it does not exist, notify user and exit.
+2) Set `project.current_mode: build` in `~/.slopdog/plans/context.yaml`
 3) Read the repo style guide: `docs/styleguide.md`
-4) Read `~/.cursor/rules/broz/mode.build.mdc`
+4) Read `~/.slopdog/rules/broz/mode.build.mdc`
 5) Follow the mode's `<agent-activation>` steps
 6) Display the numbered menu and STOP (wait for user choice)
 
@@ -167,7 +167,7 @@ Hard rule: code changes only allowed if `execution.current_ticket` is set.
 ### Location
 
 ```
-~/.cursor/rules/broz/
+~/.slopdog/rules/broz/
 ├── mode.build.mdc
 ├── mode.docs.mdc
 ├── mode.plan.mdc
@@ -200,7 +200,7 @@ globs: []
   </operating-principles>
 
   <agent-activation CRITICAL="TRUE">
-    1. Read `plans/context.yaml`.
+    1. Read `~/.slopdog/plans/context.yaml`.
     2. Ensure `project.current_mode` is `[mode]` (update if needed).
     3. [Mode-specific setup steps...]
     4. Present <menu> as a numbered list; if the user types `1`, run item #1, etc.
@@ -263,7 +263,7 @@ globs: []
 ### Location
 
 ```
-~/.cursor/rules/broz/workflows/
+~/.slopdog/rules/broz/workflows/
 ├── init.mdc                    # Project initialization
 ├── build/
 │   ├── code_review.mdc         # Code review for ticket
@@ -302,7 +302,7 @@ globs: []
 
 <critical>Do NOT [critical constraint 1].</critical>
 <critical>[Critical constraint 2].</critical>
-<critical>Read `plans/context.yaml` ONCE at start. Do NOT write to context.yaml [unless specified].</critical>
+<critical>Read `~/.slopdog/plans/context.yaml` ONCE at start. Do NOT write to context.yaml [unless specified].</critical>
 <critical>Only ONE file is created at the FINAL step. Do NOT create files before final step.</critical>
 
 <variables>
@@ -501,7 +501,7 @@ globs: []
 ### Location
 
 ```
-~/.cursor/skills-cursor/           # Built-in Broz OS skills (system-managed)
+~/.slopdog/skills-cursor/           # Built-in Broz OS skills (system-managed)
 ├── youtube-search/
 │   ├── SKILL.md                   # Main instructions
 │   └── scripts/
@@ -517,8 +517,8 @@ globs: []
 └── create-rule/
     └── SKILL.md
 
-~/.cursor/skills/                  # User-created personal skills
-.cursor/skills/                    # Project-specific skills
+~/.slopdog/skills/                  # User-created personal skills
+~/.slopdog/skills/                    # Project-specific skills
 ```
 
 ### Template
@@ -539,7 +539,7 @@ Detailed patterns or commands.
 
 ## Scripts (if applicable)
 \`\`\`bash
-cd ~/.cursor/skills-cursor/skill-name/scripts
+cd ~/.slopdog/skills-cursor/skill-name/scripts
 npx tsx script-name.ts "argument"
 \`\`\`
 
@@ -599,7 +599,7 @@ Workflows reference skills inline when they need specialized capabilities:
 
 ## 5. State Management: `context.yaml`
 
-All state is tracked in `plans/context.yaml` at the project root.
+All state is tracked in `~/.slopdog/plans/context.yaml` at the project root.
 
 ### Schema
 
@@ -745,7 +745,7 @@ After completing work and committing changes:
 
 ### New Command
 
-- [ ] Create `~/.cursor/commands/broz/[name].md`
+- [ ] Create `~/.slopdog/commands/broz/[name].md`
 - [ ] Follow command template
 - [ ] Include context.yaml read/write
 - [ ] Reference the mode file
@@ -753,7 +753,7 @@ After completing work and committing changes:
 
 ### New Mode
 
-- [ ] Create `~/.cursor/rules/broz/mode.[name].mdc`
+- [ ] Create `~/.slopdog/rules/broz/mode.[name].mdc`
 - [ ] Define persona (character, tone, catchphrase)
 - [ ] List operating principles (3-5, with sources)
 - [ ] Define agent-activation steps
@@ -762,7 +762,7 @@ After completing work and committing changes:
 
 ### New Workflow
 
-- [ ] Create `~/.cursor/rules/broz/workflows/[mode]/[name].mdc`
+- [ ] Create `~/.slopdog/rules/broz/workflows/[mode]/[name].mdc`
 - [ ] List `<critical>` constraints at top
 - [ ] Declare `<variables>`
 - [ ] Structure steps with `<step n="" goal="">`
@@ -774,7 +774,7 @@ After completing work and committing changes:
 
 ### New Skill
 
-- [ ] Create `~/.cursor/skills/[skill-name]/SKILL.md` (personal) or `.cursor/skills/[skill-name]/SKILL.md` (project)
+- [ ] Create `~/.slopdog/skills/[skill-name]/SKILL.md` (personal) or `~/.slopdog/skills/[skill-name]/SKILL.md` (project)
 - [ ] Add YAML frontmatter with `name` and `description`
 - [ ] Write description in third-person with trigger scenarios
 - [ ] Add Quick Start section with essential usage
@@ -825,7 +825,7 @@ After completing work and committing changes:
 ## Appendix: File Paths Reference
 
 ```
-~/.cursor/
+~/.slopdog/
 ├── commands/broz/          # Entry point commands
 │   ├── build.md
 │   ├── docs.md
@@ -855,7 +855,7 @@ After completing work and committing changes:
 └── skills/                 # User-created personal skills
 
 {project}/
-├── .cursor/skills/         # Project-specific skills
+├── ~/.slopdog/skills/         # Project-specific skills
 ├── plans/
 │   ├── context.yaml        # State tracking
 │   └── changelog.md        # Project change history

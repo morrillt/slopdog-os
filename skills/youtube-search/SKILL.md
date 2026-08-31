@@ -23,7 +23,7 @@ site:youtube.com "your topic" 2026
 Once you have a video URL, use the transcript script:
 
 ```bash
-cd ~/.cursor/skills/youtube-search/scripts
+cd ~/.slopdog/skills/youtube-search/scripts
 npx ts-node fetch-transcript.ts "https://www.youtube.com/watch?v=VIDEO_ID" output.txt
 ```
 
@@ -84,7 +84,7 @@ npx tsx fetch-transcript.ts "https://www.youtube.com/watch?v=VIDEO_ID" /tmp/tran
 When using in the research workflow, save transcripts to `/tmp/` for analysis:
 
 ```bash
-cd ~/.cursor/skills/youtube-search/scripts
+cd ~/.slopdog/skills/youtube-search/scripts
 npx tsx fetch-transcript.ts "VIDEO_URL" /tmp/transcript-VIDEO_ID.txt
 ```
 

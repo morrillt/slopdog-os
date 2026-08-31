@@ -31,14 +31,14 @@ Cursor and Claude Code use nearly identical conventions here, which is why symli
 
 - **Commands**: both read plain `.md` files and namespace by subdirectory. `~/.claude/commands/broz/build.md` becomes `/broz:build`, exactly matching the trigger already written inside each file (`Activate Build Mode. (Trigger: broz:build)`).
 - **Skills**: both use `<skill-name>/SKILL.md` with YAML frontmatter. All 10 Cursor skills already have the `name` and `description` keys Claude Code requires.
-- **Rules**: Claude Code does not auto-load `.mdc` files, but this does not matter, because every Broz command reads its rules by explicit absolute path (for example `~/.cursor/rules/broz/mode.build.mdc`). Those reads resolve fine from Claude Code.
+- **Rules**: Claude Code does not auto-load `.mdc` files, but this does not matter, because every Broz command reads its rules by explicit absolute path (for example `~/.slopdog/rules/broz/mode.build.mdc`). Those reads resolve fine from Claude Code.
 
 ```mermaid
 graph LR
   subgraph source [Source of truth]
-    CC[~/.cursor/commands/broz/]
-    CS[~/.cursor/skills/]
-    CR[~/.cursor/rules/broz/]
+    CC[~/.slopdog/commands/broz/]
+    CS[~/.slopdog/skills/]
+    CR[~/.slopdog/rules/broz/]
   end
   subgraph claude [~/.claude]
     ClC[commands -> symlink]
@@ -112,7 +112,7 @@ Two notes. `!commands` has no trailing `/**` on purpose, because after Step 1 it
 
 ## Step 1: Link the commands directory
 
-`~/.claude/commands/` does not exist yet, so the whole directory can be linked. This is future-proof: any new command added to `~/.cursor/commands/broz/` appears in Claude Code automatically.
+`~/.claude/commands/` does not exist yet, so the whole directory can be linked. This is future-proof: any new command added to `~/.slopdog/commands/broz/` appears in Claude Code automatically.
 
 ```bash
 ln -s ~/.cursor/commands ~/.claude/commands
@@ -126,7 +126,7 @@ Do NOT link the whole `skills/` directory, since `~/.claude/skills/humanizer/` i
 
 ```bash
 for s in web-search github-search reddit-search youtube-search youtube-publish; do
-  ln -s "~/.cursor/skills/$s" "~/.claude/skills/$s"
+  ln -s "~/.slopdog/skills/$s" "~/.claude/skills/$s"
 done
 ```
 
@@ -142,7 +142,7 @@ Per the opt-in choice, no `~/.claude/CLAUDE.md` is created. Broz OS activates on
 ls -l ~/.claude/commands ~/.claude/skills
 ```
 
-Then in a Claude Code session, confirm `/broz:menu` appears in the slash command list and that running it reads `plans/context.yaml` and `~/.cursor/rules/broz/mode.menu.mdc` correctly. If Claude Code turns out not to traverse the symlinked `commands` directory, the fallback is to link the inner `broz` folder instead (`mkdir ~/.claude/commands && ln -s ~/.cursor/commands/broz ~/.claude/commands/broz`), which preserves the same `/broz:` prefix.
+Then in a Claude Code session, confirm `/broz:menu` appears in the slash command list and that running it reads `~/.slopdog/plans/context.yaml` and `~/.slopdog/rules/broz/mode.menu.mdc` correctly. If Claude Code turns out not to traverse the symlinked `commands` directory, the fallback is to link the inner `broz` folder instead (`mkdir ~/.claude/commands && ln -s ~/.cursor/commands/broz ~/.claude/commands/broz`), which preserves the same `/broz:` prefix.
 
 ## Step 5: Commit the symlinks
 
@@ -158,4 +158,4 @@ Because git stores symlinks as their target path rather than following them, thi
 
 ## Known caveat
 
-`~/.cursor/rules/broz/mode.*.mdc` files may contain Cursor-specific frontmatter (`alwaysApply`, `globs`). Claude Code will read them as ordinary markdown and ignore those keys, so the prose instructions still apply, just without Cursor's automatic glob-based attachment. Since Broz commands read them explicitly, behavior should match.
+`~/.slopdog/rules/broz/mode.*.mdc` files may contain Cursor-specific frontmatter (`alwaysApply`, `globs`). Claude Code will read them as ordinary markdown and ignore those keys, so the prose instructions still apply, just without Cursor's automatic glob-based attachment. Since Broz commands read them explicitly, behavior should match.

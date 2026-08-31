@@ -20,7 +20,7 @@ Creates a standalone task file for ad-hoc work with structured TDD or non-TDD de
   - Include: title, date, status, description, approach, complexity</action>
 
   <action>**Set Context:**
-  - Update `plans/context.yaml` with `execution.current_task`
+  - Update `~/.slopdog/plans/context.yaml` with `execution.current_task`
   - Add initial log entry</action>
 
   <output>

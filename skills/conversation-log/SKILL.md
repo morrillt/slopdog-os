@@ -32,7 +32,7 @@ interleaves them by wall clock, so the resolution rule becomes readable:
 ### Harvest a session into a commit block
 
 ```bash
-python3 ~/.cursor/skills/conversation-log/scripts/harvest_prompts.py
+python3 ~/.slopdog/skills/conversation-log/scripts/harvest_prompts.py
 ```
 
 Auto-detects repo, branch and time window (since the branch's newest commit, or
@@ -68,9 +68,9 @@ pointer back to the full transcript if the truncated version is not enough.
 ### Replay a merge as a timeline
 
 ```bash
-python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py           # inside a conflicted merge
-python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py --ours main --theirs claude/some-branch
-python3 ~/.cursor/skills/conversation-log/scripts/merge_timeline.py --file model/build.py
+python3 ~/.slopdog/skills/conversation-log/scripts/merge_timeline.py           # inside a conflicted merge
+python3 ~/.slopdog/skills/conversation-log/scripts/merge_timeline.py --ours main --theirs claude/some-branch
+python3 ~/.slopdog/skills/conversation-log/scripts/merge_timeline.py --file model/build.py
 ```
 
 Reads `MERGE_HEAD` automatically when a merge is in progress. Prints every

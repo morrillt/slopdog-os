@@ -4,7 +4,7 @@ globs: []
 ---
 # Workflow: Task > Adjust Workflow
 
-<critical>Broz OS lives in `~/.cursor/`. NEVER satisfy a Broz OS request by editing project files.</critical>
+<critical>Broz OS lives in `~/.slopdog/`. NEVER satisfy a Broz OS request by editing project files.</critical>
 <critical>You MUST locate and READ the existing component before proposing a change. No blind writes.</critical>
 <critical>You MUST find every other file that references the component. A workflow is rarely edited alone.</critical>
 <critical>This workflow is exempt from the `core.mdc` mode/ticket gate — Broz OS files are not product code.</critical>
@@ -24,10 +24,10 @@ globs: []
 <step n="1" goal="Load the System Contract">
   <action>
     **Read, in this order — this is the context that makes the rest safe**:
-    - `~/.cursor/AGENTS.md` — bootloader, user context, guardrails
-    - `~/.cursor/docs/how-to/broz-os-architecture.md` — the contract: component
+    - `~/.slopdog/AGENTS.md` — bootloader, user context, guardrails
+    - `~/.slopdog/docs/how-to/broz-os-architecture.md` — the contract: component
       templates, XML tag reference, naming rules, the creation checklists
-    - `~/.cursor/rules/broz/core.mdc` — global guardrails
+    - `~/.slopdog/rules/broz/core.mdc` — global guardrails
 
     Do NOT skim these. The architecture doc defines the shape every component
     must keep; a change that ignores it produces a file that reads like Broz OS
@@ -37,9 +37,9 @@ globs: []
   <action>
     **Map the surface** (cheap, and prevents editing the wrong layer):
     ```
-    ls ~/.cursor/commands/broz/
-    ls ~/.cursor/rules/broz/ ~/.cursor/rules/broz/workflows/*/
-    ls ~/.cursor/skills/ ~/.claude/skills/
+    ls ~/.slopdog/commands/broz/
+    ls ~/.slopdog/rules/broz/ ~/.slopdog/rules/broz/workflows/*/
+    ls ~/.slopdog/skills/ ~/.claude/skills/
     ```
     Remember the layering:
     `Command (entry) → Mode (menu+persona) → Workflow (the steps) → Skill (the scripts)`
@@ -58,14 +58,14 @@ globs: []
 <step n="2" goal="Locate the Target">
   <action>
     **Find what owns the behaviour today**:
-    - `grep -rl "<keyword>" ~/.cursor/commands ~/.cursor/rules ~/.cursor/skills`
+    - `grep -rl "<keyword>" ~/.slopdog/commands ~/.slopdog/rules ~/.slopdog/skills`
     - Classify into {{kind}}, set {{targets}}.
     - READ every file in {{targets}} in full. Not a section — in full.
   </action>
 
   <action>
     **Find the blast radius** — set {{referrers}}:
-    - `grep -rn "<component-name>" ~/.cursor/ --include=*.md --include=*.mdc`
+    - `grep -rn "<component-name>" ~/.slopdog/ --include=*.md --include=*.mdc`
     - A command names its workflow. The architecture doc lists both. A mode
       routes handlers to workflows. Renaming or renumbering breaks all three.
   </action>
@@ -170,7 +170,7 @@ globs: []
   <action>
     **Keep the architecture doc true**:
     - New or renamed component → update the relevant table in
-      `~/.cursor/docs/how-to/broz-os-architecture.md` (commands table,
+      `~/.slopdog/docs/how-to/broz-os-architecture.md` (commands table,
       workflows tree, skills table) and bump its `updated:` frontmatter.
     - A behaviour change inside an existing workflow needs no doc edit unless
       the doc describes that behaviour.
