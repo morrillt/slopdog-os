@@ -135,8 +135,9 @@ Example: When you ask "find me a YouTube tutorial on RAG", the `youtube-search` 
 ├── plans/             # State tracking (context.yaml)
 ├── docs/              # Documentation
 ├── templates/         # Document templates
-├── targets.conf       # Which tools get the command shims
-└── install.sh         # Renders commands/broz/ into those tools
+├── targets.conf       # Which tools get the commands + skills
+├── skills.conf        # Which skills this repo owns
+└── install.sh         # Renders the above into those tools
 ```
 
 ## Install
@@ -159,9 +160,17 @@ Adding a tool is one line in `targets.conf` plus a re-run. Targets whose parent
 directory does not exist are skipped, so listing a tool you have not installed
 yet is harmless -- install it later and re-run.
 
-Commands are **copied** (they are per-tool rendered artifacts, each carrying a
-generated-by marker). The `rules/` tree is **symlinked** into `~/.cursor/rules/broz`,
-because it is one shared content tree read in place, not a per-tool artifact.
+Three artifact types, handled differently on purpose:
+
+| Artifact | How | Why |
+|---|---|---|
+| `commands/broz/` | copied, with a generated-by marker | per-tool rendered artifacts; hand edits are detected and preserved |
+| `skills/` (those in `skills.conf`) | copied wholesale | source of truth is this repo; a target's other skills are never touched |
+| `rules/broz/` | symlinked into `~/.cursor/rules/broz` | one shared content tree read in place, not a per-tool artifact |
+
+`skills.conf` matters: `~/.claude/skills` also holds standalone skills
+(`broz-report`, `cmux-panel`, `gdocs`, `pizza-*`, ...) that have nothing to do
+with Broz OS. Only the names listed are managed; everything else is left alone.
 
 > Why a generator at all: the shims were once hand-copied out of a clone that was
 > then deleted. Nothing noticed, because the check counted files instead of
