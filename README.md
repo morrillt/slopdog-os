@@ -137,7 +137,8 @@ Example: When you ask "find me a YouTube tutorial on RAG", the `youtube-search` 
 ├── templates/         # Document templates
 ├── targets.conf       # Which tools get the commands + skills
 ├── skills.conf        # Which skills this repo owns
-└── install.sh         # Renders the above into those tools
+├── install.sh         # Renders the above into those tools
+└── SHIMS.md           # How the shims work, + the Cursor/Claude source docs
 ```
 
 ## Install
@@ -155,6 +156,9 @@ cd ~/.slopdog && ./install.sh
 | `./install.sh` | Install/refresh shims. Hand-edited files are preserved. |
 | `./install.sh --force` | Overwrite hand-edited shims too. |
 | `./install.sh --check` | Report drift, change nothing. Exit 1 if out of sync. |
+
+**See [SHIMS.md](SHIMS.md)** for how the shims work per tool, which vendor doc
+each choice follows, and the known Cursor bug to watch for.
 
 Adding a tool is one line in `targets.conf` plus a re-run. Targets whose parent
 directory does not exist are skipped, so listing a tool you have not installed
