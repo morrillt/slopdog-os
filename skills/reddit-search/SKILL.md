@@ -1,62 +1,48 @@
 ---
-name: reddit-fetch
-description: Fetch content from Reddit using Gemini CLI. Use when accessing Reddit URLs, researching topics on Reddit, finding community opinions, or discovering subreddits.
+name: reddit-search
+description: Search Reddit for community opinions, recommendations, and complaints on any topic — without Reddit credentials — via Gemini's Google Search grounding. Use when Todd asks "what does Reddit think about X", wants user experiences with a product/tool, or gives a Reddit topic. For full comment threads with vote counts use the last30days plugin instead.
 ---
-# Reddit Fetch via Gemini CLI
+# Reddit search via Gemini grounding
 
-Reddit blocks direct access. Use Gemini CLI to fetch Reddit content.
+Reddit returns 403 to every unauthenticated request and new Reddit OAuth apps need manual
+approval. This skill sidesteps that: Google licenses Reddit content, so Google's index has
+the threads, and Gemini's `google_search` tool reads Google's copy. Nothing here touches
+reddit.com except resolving the cited URLs.
 
-## Quick Start
-
-Use Gemini CLI's non-interactive mode with the `-p` flag:
-
-```bash
-gemini -p "Your Reddit query here"
-```
-
-Response time varies (30-90 seconds typical). Set appropriate timeouts.
-
-## Query Patterns
-
-### Topic Search
+## Run
 
 ```bash
-gemini -p "Search Reddit for discussions about 'your topic' and summarize the top results"
+python3 ~/.claude/skills/reddit-search/scripts/reddit_search.py "what do people think of Claude Code skills"
 ```
 
-### Direct URL Fetch
+Options: `--model gemini-2.5-pro` (slower, deeper), `--raw` (send the prompt verbatim, no
+Reddit steering), `--json` (full API response). 15–30 s per query. Prints a synthesized
+answer with subreddit + thread titles, quoted opinions, then a `Sources:` list of resolved
+`reddit.com` URLs.
 
-```bash
-gemini -p "Fetch and summarize this Reddit thread: https://reddit.com/r/subreddit/comments/..."
-```
+Key: `GEMINI_API_KEY`, read from the environment or `~/.config/gemini/env` (free AI Studio
+tier, 250 req/day — plenty).
 
-### Subreddit Research
+## Prompting
 
-```bash
-gemini -p "Find recent posts in r/subreddit about 'topic' and summarize key insights"
-```
+- Give a topic, not a question stack: `"Ooni Koda 16 vs Gozney Arc"` beats
+  `"Compare the Ooni Koda 16 and Gozney Arc for a small restaurant, focusing on…"`. The
+  script adds the Reddit steering itself.
+- Don't put dates in the topic. Gemini turns them into exact-phrase searches that match
+  nothing. Say "recent" or leave it out.
+- If the answer says it found no reddit.com results, rephrase with plainer keywords and
+  retry once; then fall back to `last30days`.
 
-### Pros/Cons Summary
+## When to use the other tool
 
-```bash
-gemini -p "Search Reddit for discussions about 'product/tool' and summarize what users like and dislike"
-```
+| Want | Use |
+|---|---|
+| Opinions, consensus, recommendations, "what does Reddit think" | this skill |
+| Actual comment text, vote counts, last-30-days recency, HN/X/YouTube alongside | `/last30days <topic> --search reddit` |
 
-### Troubleshooting
+## Why not Gemini CLI
 
-```bash
-gemini -p "Search Reddit for solutions to 'error message or problem description'"
-```
-
-## Trigger Scenarios
-
-- User asks to research a topic on Reddit
-- User wants community opinions or experiences from Reddit
-- User needs to find relevant subreddits
-- User mentions "Reddit" or wants discussion-based research
-- User provides a Reddit URL to fetch
-
-## Limitations
-
-- Response time varies (30-90 seconds typical)
-- Requires Gemini CLI to be installed and authenticated
+The original version shelled out to `gemini -p`. Two things killed that (2026-08-31):
+the free "Login with Google" tier was retired in favor of Antigravity CLI, and with an API
+key the CLI's agent loop hung for minutes and returned nothing. A direct API call returns
+in seconds. Don't reintroduce the CLI.
