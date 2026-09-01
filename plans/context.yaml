@@ -1,6 +1,6 @@
 project:
   name: "Broz OS"
-  current_mode: "menu"
+  current_mode: "plan"
   path: "~/.slopdog"
 execution:
   current_epic: ""
