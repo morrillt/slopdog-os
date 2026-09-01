@@ -12,7 +12,7 @@ reddit.com except resolving the cited URLs.
 ## Run
 
 ```bash
-python3 ~/.claude/skills/reddit-search/scripts/reddit_search.py "what do people think of Claude Code skills"
+python3 ~/.claude/skills/slopdog/research/reddit-search/scripts/reddit_search.py "what do people think of Claude Code skills"
 ```
 
 Options: `--model gemini-2.5-pro` (slower, deeper), `--raw` (send the prompt verbatim, no
