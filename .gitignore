@@ -46,3 +46,11 @@ projects/*/*
 
 # Cursor session/chat scratch — not Broz OS content
 projects/
+
+# The installer and its config. The Cursor block above ignores everything at
+# the root, which kept these four uncommitted from 2026-08-29 to 2026-08-31 --
+# the exact "hand copy that nobody noticed" failure install.sh exists to stop.
+!install.sh
+!targets.conf
+!skills.conf
+!SHIMS.md
