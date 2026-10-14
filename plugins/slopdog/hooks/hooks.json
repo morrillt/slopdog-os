@@ -1,0 +1,215 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/resume.mjs",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs \"$HOME/slopdog/bin/sync-check.mjs\" --hook",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/mode.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/inbox-watch.mjs",
+            "asyncRewake": true,
+            "timeout": 604800
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/stale-hook-wiring.mjs record-loaded",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/desk-standing-context.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/cmux-teams-rule.mjs",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/sprint-stop.mjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/context-rot.mjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/activity-log.mjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/mode.mjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/stale-hook-wiring.mjs",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/librarian-catch.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs \"$HOME/slopdog/v2/plugins/pickup/hooks/wip-commit.mjs\"",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/turn-log.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/stop-increment-turns.mjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/activity-log.mjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/inbox-watch.mjs",
+            "asyncRewake": true,
+            "timeout": 604800
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/lane-lock.mjs --release",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/stale-hook-wiring.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs \"$HOME/slopdog/v2/plugins/pickup/hooks/turn-commit.mjs\"",
+            "async": true,
+            "timeout": 180
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/activity-log.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/activity-log.mjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/lane-lock.mjs",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/activity-log.mjs",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

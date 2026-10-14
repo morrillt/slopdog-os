@@ -1,0 +1,481 @@
+{
+  "_": "The registry of every person in the house, read through v2/scripts/lib/registry.mjs (T-641). Each lane is one record. PERSON: `id` (the permanent lane key, identical to the key), `name` (display name, unique across the file), `title` (job title), `icon` (🧠, 🔧 or 🤖). DESK: `folder` (relative to v2/, never shared with another lane: its PICKUP.md is the only one it may write, scripts/lib/pickup-owner.mjs, Herdr.md D4) and, for a sidekick lane, `owner` (the lane of the desk that dispatches to it). A sidekick lane is one whose engine is cursor, agy, grok or openrouter and whose folder sits below a desk; it lives under desks/<owner's department>/sidekicks/, so build's are desks/build/sidekicks/ although Tyrion's own folder is desks/build/tyrion, and scripts/check-sidekick-owners.mjs enforces it (T-684). CHAIR: `engine` (claude, agy, cursor, opencode, grok or openrouter), `model` (null for grok, whose TUI has no model selector, and openrouter, whose model openrouter-rotation.mjs picks per job) and an optional `host` (a lane with a host runs on that machine, T-267). No pane id is stored: herdr pane ids are positional and change on every rebuild, so registry.mjs resolves them live through findDeskPane() in scripts/lib/desk-pane.mjs. `seats.primary`/`seats.sidekick` (T-360, seats.mjs) name which lane sits in the desk window's third column and which sits in the sidekicks window; kept on one line so a swap is a one-line diff. `aliases` lists other names the desk goes by, so a note signed with one is still recognised as its own. A lane with `engine: agy` runs the Gemini CLI, not Claude, so the launcher tags its pane but starts a plain shell (T-360). PURPOSE (every lane): one plain sentence saying what the lane is for; where it runs is already in engine, model and host. TOOLBOX (every desk, not sidekicks): an array of the desk's top three skills as invocation names, `slopdog:<name>` for a plugin skill and the bare name for a tasks-tree or desk-local skill; it must name real SKILL.md files, and an empty array is allowed only for a scripted lane with no skills (scribe). The Claude Code footer drawer mod (~/.claude/mods/suppress-questions) reads this file at runtime and shows the current desk's toolbox first, so adding a tool is a one-line edit here.",
+  "seats": {
+    "primary": "gemma",
+    "sidekick": "laforge"
+  },
+  "ideas": {
+    "id": "ideas",
+    "name": "Daphne",
+    "title": "Scrum Master",
+    "icon": "🧠",
+    "folder": "desks/ideas",
+    "engine": "claude",
+    "model": "opus",
+    "purpose": "Plans the sprint with Todd, from the first rough idea through the sprint-planning hand-off, and writes every ticket.",
+    "toolbox": [
+      "slopdog:ideate",
+      "slopdog:ask-todd",
+      "slopdog:sprint-planning"
+    ]
+  },
+  "build": {
+    "id": "build",
+    "name": "Tyrion",
+    "title": "Eng Manager",
+    "icon": "🧠",
+    "folder": "desks/build/tyrion",
+    "engine": "claude",
+    "model": "sonnet",
+    "purpose": "Runs the sprint once Daphne hands it over: dispatches tickets to builders, verifies the results, tracks progress and holds a short retro every couple of hours.",
+    "toolbox": [
+      "slopdog:dispatch",
+      "task-verify",
+      "slopdog:retrospective"
+    ]
+  },
+  "laforge": {
+    "id": "laforge",
+    "name": "LaForge",
+    "title": "Engineer",
+    "icon": "🔧",
+    "folder": "desks/build/laforge",
+    "engine": "claude",
+    "model": "sonnet",
+    "purpose": "Builds the tickets Tyrion sends, step by step, on the Claude builder seat of the Build desk.",
+    "toolbox": [
+      "slopdog:build-ticket",
+      "slopdog:ask-todd",
+      "slopdog:clear-to-close"
+    ]
+  },
+  "data": {
+    "id": "data",
+    "name": "Data",
+    "title": "Senior Engineer",
+    "icon": "🔧",
+    "folder": "desks/build/data",
+    "engine": "claude",
+    "model": "opus",
+    "purpose": "Takes the hard tickets a cheaper builder could not finish and builds and verifies them itself, as the escalation builder.",
+    "toolbox": [
+      "slopdog:build-ticket",
+      "task-verify",
+      "slopdog:ask-todd"
+    ]
+  },
+  "it": {
+    "id": "it",
+    "name": "Scotty",
+    "title": "Head of IT",
+    "icon": "🔧",
+    "folder": "desks/it",
+    "engine": "claude",
+    "model": "opus",
+    "description": "The IT desk: computer-level, herdr-level and interface-level problems on either machine.",
+    "purpose": "Fixes computer-level, herdr-level and interface-level problems on either machine, shaping the work and handing the execution to Chekov.",
+    "toolbox": [
+      "it-report",
+      "ticket-add",
+      "slopdog:sidequest"
+    ]
+  },
+  "errands": {
+    "id": "errands",
+    "name": "Alfred",
+    "title": "Errands",
+    "icon": "🧠",
+    "folder": "desks/errands",
+    "engine": "claude",
+    "model": "sonnet",
+    "purpose": "Does Slack-driven chores for Todd: orders, lookups, bookings, reminders and small outside integrations.",
+    "toolbox": [
+      "slopdog:shopping-research",
+      "slopdog:browse",
+      "slopdog:slack-voice"
+    ]
+  },
+  "research": {
+    "id": "research",
+    "name": "Samwell Tarly",
+    "title": "Research",
+    "icon": "🧠",
+    "folder": "desks/research",
+    "engine": "claude",
+    "model": "opus",
+    "purpose": "Researches a question and writes it up as a report with sources; never builds anything.",
+    "toolbox": [
+      "slopdog:file-report",
+      "slopdog:receive-report",
+      "slopdog:web-search"
+    ]
+  },
+  "slack": {
+    "id": "slack",
+    "name": "Varys",
+    "title": "Slack",
+    "icon": "🧠",
+    "folder": "desks/slack",
+    "engine": "claude",
+    "model": "opus",
+    "purpose": "Answers for the Slop Dog bot in Slack and routes what people ask there to the desk that owns it.",
+    "toolbox": [
+      "slopdog:slack-triage",
+      "slopdog:slack-voice",
+      "slopdog:sync-to-notion"
+    ]
+  },
+  "slopdog": {
+    "id": "slopdog",
+    "name": "Slopdog",
+    "title": "Captain",
+    "icon": "🧠",
+    "folder": "desks/slopdog",
+    "engine": "claude",
+    "model": "sonnet",
+    "purpose": "The front door: Todd talks to Slopdog instead of jumping between desks, and Slopdog answers status from the scripts and desk notes and hands work to the desk that owns it.",
+    "toolbox": [
+      "slopdog:sprint-moving",
+      "slopdog:wtf",
+      "slopdog:broz-report"
+    ]
+  },
+  "cloud": {
+    "id": "cloud",
+    "name": "Nimbus",
+    "title": "Cloud",
+    "icon": "🧠",
+    "folder": "desks/cloud",
+    "engine": "claude",
+    "model": "sonnet",
+    "host": "cloud",
+    "machine": "cloud",
+    "sshTarget": "cloud-desk",
+    "note": "Always-on Claude desk on a rented cloud server (T-647). Real herdr machine, not an ssh mirror pane.",
+    "purpose": "Always-on Claude desk on a cloud server, so work and messages keep moving while the laptop is off.",
+    "toolbox": [
+      "slopdog:pickup",
+      "slopdog:clear-to-close",
+      "slopdog:ask-todd"
+    ]
+  },
+  "mac": {
+    "id": "mac",
+    "name": "Mac",
+    "title": "Publish (Mac)",
+    "icon": "🔧",
+    "folder": "desks/publish",
+    "engine": "claude",
+    "model": "opus",
+    "host": "mac",
+    "aka": [
+      "influencer"
+    ],
+    "note": "Runs on the Mac mini (the video apps are there). SendMessage reaches it only through Remote Control, and a bare \"build\" also resolves to the Mac. When it does not answer, use its file inbox (desks/publish/inbox/, git push, Syncthing). See ~/.claude/projects/-home-<user>-slopdog/memory/bare-build-name-is-the-mac.md and mac-ssh-no-keychain.md.",
+    "purpose": "Owns everything the house says publicly, from video ideas and cuts to thumbnails and publishing, on the Mac where the video software lives.",
+    "toolbox": [
+      "slopdog:youtube-publish",
+      "slopdog:generate-image",
+      "slopdog:youtube-comment"
+    ]
+  },
+  "writing": {
+    "id": "writing",
+    "name": "Writing",
+    "title": "Writer",
+    "icon": "🧠",
+    "folder": "desks/writing",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "note": "The writing desk (Todd, 2026-10-03): turns raw notes into versioned drafts and owns the project-shaper, email and ramble-to-text skills under .agents/skills/. Runs agy in its own herdr workspace, agent herdr-writing.",
+    "purpose": "Turns Todd's raw notes into versioned drafts, and shapes projects, batches and tickets on request.",
+    "toolbox": [
+      "slopdog:project-writer",
+      "slopdog:batch-writer",
+      "slopdog:batch-refine"
+    ]
+  },
+  "prototyper": {
+    "id": "prototyper",
+    "name": "Prototyper",
+    "title": "Prototypes",
+    "icon": "🔧",
+    "folder": "desks/prototyper",
+    "engine": "claude",
+    "model": "opus",
+    "note": "The prototyper desk (Todd, 2026-10-04): the dedicated place Todd goes to build a prototype himself, with one agent, no ticket, no batch and no verifier. Rapid iteration; code lands in dev/playground unless the prototype is about an existing project. A prototype Todd keeps graduates into a ticket at the Ideas desk; one he does not gets deleted.",
+    "purpose": "Todd's own place to build a prototype fast with one agent, no ticket, no batch and no verifier.",
+    "toolbox": [
+      "slopdog:quick-task-add",
+      "slopdog:generate-image",
+      "slopdog:visual-presentation"
+    ]
+  },
+  "gemma": {
+    "id": "gemma",
+    "name": "Gemma",
+    "title": "Engineer",
+    "icon": "🔧",
+    "folder": "desks/build/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "build",
+    "purpose": "Builds Tyrion's tickets on Gemini, the cheapest rung of the build ladder."
+  },
+  "composer": {
+    "id": "composer",
+    "name": "Composer",
+    "title": "Engineer",
+    "icon": "🔧",
+    "folder": "desks/build/sidekicks/composer",
+    "engine": "cursor",
+    "model": "claude-sonnet-5-5-medium",
+    "owner": "build",
+    "purpose": "Builds Tyrion's tickets through Cursor's Composer model."
+  },
+  "grok": {
+    "id": "grok",
+    "name": "Grok",
+    "title": "Builder",
+    "icon": "🔧",
+    "folder": "desks/build/sidekicks/grok",
+    "engine": "cursor",
+    "model": "grok-4.7-medium",
+    "owner": "build",
+    "purpose": "Builds Tyrion's tickets through Cursor's Grok model."
+  },
+  "openrouter": {
+    "id": "openrouter",
+    "name": "OpenRouter",
+    "title": "Engineer",
+    "icon": "🔧",
+    "folder": "desks/build/sidekicks/openrouter",
+    "engine": "openrouter",
+    "model": null,
+    "owner": "build",
+    "description": "The Build desk gateway to free OpenRouter models; openrouter-rotation.mjs picks the model per job.",
+    "purpose": "Builds Tyrion's tickets on whichever free OpenRouter model the rotation picks for the job."
+  },
+  "ideas-composer": {
+    "id": "ideas-composer",
+    "name": "Ideas Composer",
+    "title": "Ideas Builder",
+    "icon": "🔧",
+    "folder": "desks/ideas/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "ideas",
+    "purpose": "Daphne's Cursor builder for small jobs and the first drafts of projects, batches and tickets."
+  },
+  "ideas-grok": {
+    "id": "ideas-grok",
+    "name": "Ideas Grok",
+    "title": "Ideas Builder",
+    "icon": "🔧",
+    "folder": "desks/ideas/sidekicks/grok",
+    "engine": "cursor",
+    "model": "grok-4.7-medium",
+    "owner": "ideas",
+    "purpose": "Daphne's Grok builder for projects, batches and tickets, once its Cursor sign-in checks out."
+  },
+  "ideas-gemma": {
+    "id": "ideas-gemma",
+    "name": "Barby",
+    "title": "Assistant",
+    "icon": "🧠",
+    "folder": "desks/ideas/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "ideas",
+    "aliases": [
+      "Barby"
+    ],
+    "purpose": "Daphne's Gemini assistant: takes multi-part investigations and writes projects, batches and tickets."
+  },
+  "qa": {
+    "id": "qa",
+    "name": "QA",
+    "title": "Quality",
+    "icon": "🧠",
+    "folder": "desks/qa",
+    "engine": "claude",
+    "model": "opus",
+    "purpose": "Sits beside the Slop Dog board as Todd's companion for reviewing batches, explaining tickets and relaying feedback to Daphne.",
+    "toolbox": [
+      "slopdog:qa-respond",
+      "slopdog:wtf",
+      "slopdog:bug"
+    ]
+  },
+  "watcher": {
+    "id": "watcher",
+    "name": "Watcher",
+    "title": "Overwatch",
+    "icon": "🤖",
+    "folder": "desks/watcher",
+    "engine": "claude",
+    "model": "haiku",
+    "note": "Night watch (Todd, 2026-10-03): checks every herdr agent pane each 15 minutes, nudges a desk waiting on Todd, reports limits and idle desks to Daphne. Runs in herdr, no owner, so slopdog.mjs gives it no tmux pane.",
+    "purpose": "Keeps the other desks moving overnight: checks every agent pane on a schedule, nudges stuck ones and stops the sprint at the usage limit.",
+    "toolbox": [
+      "slopdog:watcher",
+      "slopdog:unstucker",
+      "slopdog:wtf"
+    ]
+  },
+  "scribe": {
+    "id": "scribe",
+    "name": "Luwin",
+    "title": "Scribe",
+    "icon": "🤖",
+    "folder": "desks/scribe",
+    "engine": "opencode",
+    "model": "z-ai/glm-5.2",
+    "purpose": "Writes the one-line subject for each git commit; a script, not a desk Todd talks to.",
+    "toolbox": []
+  },
+  "it-gemini": {
+    "id": "it-gemini",
+    "name": "Chekov",
+    "title": "IT Engineer",
+    "icon": "🔧",
+    "folder": "desks/it/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "it",
+    "description": "The IT desk builder: Scotty hands it IT, herdr and interface tickets.",
+    "purpose": "Scotty's Gemini engineer: carries out the IT, herdr and interface tickets he shapes."
+  },
+  "it-composer": {
+    "id": "it-composer",
+    "name": "Sulu",
+    "title": "IT Builder",
+    "icon": "🔧",
+    "folder": "desks/it/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "it",
+    "description": "The IT desk Cursor builder: Scotty dispatches small headless IT jobs to it.",
+    "purpose": "Scotty's Cursor builder for small, headless IT jobs."
+  },
+  "slack-gemini": {
+    "id": "slack-gemini",
+    "name": "Qyburn",
+    "title": "Slack Assistant",
+    "icon": "🔧",
+    "folder": "desks/slack/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "slack",
+    "description": "The Slack desk builder: Varys hands it the jobs a Slack request turns into.",
+    "purpose": "Varys's Gemini assistant for the jobs a Slack request turns into."
+  },
+  "slack-composer": {
+    "id": "slack-composer",
+    "name": "Bronn",
+    "title": "Slack Builder",
+    "icon": "🔧",
+    "folder": "desks/slack/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "slack",
+    "description": "The Slack desk Cursor builder: Varys dispatches small headless jobs to it.",
+    "purpose": "Varys's Cursor builder for small, headless jobs from Slack."
+  },
+  "research-gemini": {
+    "id": "research-gemini",
+    "name": "Gilly",
+    "title": "Research Assistant",
+    "icon": "🔧",
+    "folder": "desks/research/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "research",
+    "description": "The Research desk's Gemini sidekick: Samwell Tarly hands it small jobs through dispatch.mjs.",
+    "purpose": "Samwell Tarly's Gemini assistant for small research jobs."
+  },
+  "research-composer": {
+    "id": "research-composer",
+    "name": "Pate",
+    "title": "Research Builder",
+    "icon": "🔧",
+    "folder": "desks/research/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "research",
+    "description": "The Research desk's Cursor sidekick: Samwell Tarly dispatches small headless jobs to it.",
+    "purpose": "Samwell Tarly's Cursor assistant for small, headless research jobs."
+  },
+  "qa-gemini": {
+    "id": "qa-gemini",
+    "name": "Vera",
+    "title": "QA Assistant",
+    "icon": "🔧",
+    "folder": "desks/qa/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "qa",
+    "description": "The QA desk's Gemini sidekick: QA hands it small jobs through dispatch.mjs.",
+    "purpose": "QA's Gemini assistant for small checking jobs."
+  },
+  "qa-composer": {
+    "id": "qa-composer",
+    "name": "Pixel",
+    "title": "QA Builder",
+    "icon": "🔧",
+    "folder": "desks/qa/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "qa",
+    "description": "The QA desk's Cursor sidekick: QA dispatches small headless jobs to it.",
+    "purpose": "QA's Cursor assistant for small, headless checking jobs."
+  },
+  "errands-gemini": {
+    "id": "errands-gemini",
+    "name": "Lucius",
+    "title": "Errands Assistant",
+    "icon": "🔧",
+    "folder": "desks/errands/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "errands",
+    "description": "The Errands desk's Gemini sidekick: Alfred hands it small jobs through dispatch.mjs.",
+    "purpose": "Alfred's Gemini assistant for small errand jobs."
+  },
+  "errands-composer": {
+    "id": "errands-composer",
+    "name": "Leslie",
+    "title": "Errands Builder",
+    "icon": "🔧",
+    "folder": "desks/errands/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "errands",
+    "description": "The Errands desk's Cursor sidekick: Alfred dispatches small headless jobs to it.",
+    "purpose": "Alfred's Cursor assistant for small, headless errand jobs."
+  },
+  "writing-gemini": {
+    "id": "writing-gemini",
+    "name": "Quill",
+    "title": "Writing Assistant",
+    "icon": "🔧",
+    "folder": "desks/writing/sidekicks/gemini",
+    "engine": "agy",
+    "model": "gemini-3.8-flash-medium",
+    "owner": "writing",
+    "description": "The Writing desk's Gemini sidekick: the Writing desk hands it small jobs through dispatch.mjs.",
+    "purpose": "The Writing desk's Gemini assistant for small drafting jobs."
+  },
+  "writing-composer": {
+    "id": "writing-composer",
+    "name": "Inkwell",
+    "title": "Writing Builder",
+    "icon": "🔧",
+    "folder": "desks/writing/sidekicks/composer",
+    "engine": "cursor",
+    "model": "composer-2.5",
+    "owner": "writing",
+    "description": "The Writing desk's Cursor sidekick: the Writing desk dispatches small headless jobs to it.",
+    "purpose": "The Writing desk's Cursor assistant for small, headless drafting jobs."
+  }
+}

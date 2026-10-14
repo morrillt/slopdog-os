@@ -1,0 +1,142 @@
+<title>Gmail Pipeline State</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+:root{
+  --bg:#f6f7f9; --paper:#ffffff; --ink:#1c2230; --muted:#5a6377; --rule:#dde1e8;
+  --accent:#b8322a;
+  --ok:#2f7d4f; --ok-bg:#e3f2e8;
+  --built:#2d6db3; --built-bg:#e2edf8;
+  --wait:#b86a12; --wait-bg:#fbeedc;
+  --none:#7a8193; --none-bg:#eceef2;
+  --bad:#b8322a; --bad-bg:#f8e3e1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#141821; --paper:#1b202b; --ink:#e6e9ef; --muted:#9aa3b5; --rule:#2c3342;
+    --accent:#e36a5f;
+    --ok:#6cc690; --ok-bg:#1d3326; --built:#78aee8; --built-bg:#1b2a3d;
+    --wait:#e8a656; --wait-bg:#3a2a16; --none:#9aa3b5; --none-bg:#262c38;
+    --bad:#ef7e73; --bad-bg:#3c1f1d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#141821; --paper:#1b202b; --ink:#e6e9ef; --muted:#9aa3b5; --rule:#2c3342;
+  --accent:#e36a5f;
+  --ok:#6cc690; --ok-bg:#1d3326; --built:#78aee8; --built-bg:#1b2a3d;
+  --wait:#e8a656; --wait-bg:#3a2a16; --none:#9aa3b5; --none-bg:#262c38;
+  --bad:#ef7e73; --bad-bg:#3c1f1d;
+}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 "Public Sans",system-ui,sans-serif;padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+h1{font:600 2rem/1.15 Fraunces,Georgia,serif;margin:0;text-wrap:balance}
+h2{font:600 1.2rem/1.3 Fraunces,Georgia,serif;margin:0 0 8px;text-wrap:balance}
+p{margin:0 0 10px;max-width:68ch}
+.eyebrow{font:400 .75rem/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.86em}
+.verdict{border-left:4px solid var(--accent);background:var(--paper);padding:14px 18px;border-radius:0 6px 6px 0}
+.tip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tip div{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px}
+.tip b{display:block;font:400 .72rem/1 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.tip p{margin:0;font-size:.92rem}
+@media (max-width:640px){.tip{grid-template-columns:1fr}}
+.pipe{overflow-x:auto}
+.stages{display:flex;gap:6px;align-items:stretch;min-width:640px}
+.stage{flex:1;border-radius:6px;padding:10px 8px;font-size:.8rem;line-height:1.3;display:flex;flex-direction:column;gap:4px}
+.stage strong{font-size:.86rem}
+.stage span{font-family:"IBM Plex Mono",monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em}
+.arrow{align-self:center;color:var(--muted)}
+.s-ok{background:var(--ok-bg);color:var(--ok)} .s-bad{background:var(--bad-bg);color:var(--bad)}
+.s-built{background:var(--built-bg);color:var(--built)} .s-none{background:var(--none-bg);color:var(--none)}
+.stage strong{color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.bar{display:flex;height:14px;border-radius:4px;overflow:hidden;margin:8px 0 4px}
+.bar .g{background:var(--ok);flex:18} .bar .o{background:var(--wait);flex:2}
+.small{font-size:.82rem;color:var(--muted)}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:70ch}
+.q{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;margin-bottom:10px}
+.q .id{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--wait)}
+.q p{margin:4px 0 0}
+.tag{font:400 .68rem/1 "IBM Plex Mono",monospace;padding:2px 6px;border-radius:3px;vertical-align:1px;white-space:nowrap}
+.tv{background:var(--ok-bg);color:var(--ok)} .tr{background:var(--built-bg);color:var(--built)} .ta{background:var(--none-bg);color:var(--none)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Slopdog on Gmail · project slopdog-gmail · 27 September 2026, 09:30 EDT</div>
+  <h1>The Gmail pipeline: built, running, not yet joined up</h1>
+</header>
+
+<div class="verdict"><p style="margin:0"><strong>Verdict.</strong> Every piece of the pipeline passes its tests and the Gmail bridge runs as a service on the ThinkPad, but the pieces are not connected to each other yet: the controller shows sample threads rather than your email, Slack is simulated, and the daily digest runs and sends nothing. Separately, the bridge stopped listening at 08:04 this morning after one network error, while its service still reports that it is running.</p></div>
+
+<section class="tip">
+  <div><b>Why</b><p>You want workspace one to be Slack plus one communications dashboard instead of four apps. Gmail is the first of three feeders and builds the shared pieces the others reuse.</p></div>
+  <div><b>What</b><p>A service that hears each new email the moment it arrives, drafts one reply per thread as a real Gmail draft, shows it in a controller app, and pushes what matters to Slack, never sending without your approval.</p></div>
+  <div><b>How</b><p>Four layers in the <code>comms</code> repository (bridge, controller, brain, outputs), built behind fake Gmail and Slack stand-ins. LaForge's version won the A/B and now runs as systemd services.</p></div>
+</section>
+
+<section>
+  <h2>Which stages work today</h2>
+  <div class="pipe"><div class="stages">
+    <div class="stage s-ok"><span>live</span><strong>Mailbox to Pub/Sub</strong>Gmail watch on your inbox, renewed to 4 Oct</div><div class="arrow">→</div>
+    <div class="stage s-bad"><span>stopped 08:04</span><strong>Bridge and store</strong>Proved live overnight, deaf since a network error</div><div class="arrow">→</div>
+    <div class="stage s-none"><span>not joined</span><strong>Controller</strong>Runs on port 3010, shows sample threads</div><div class="arrow">→</div>
+    <div class="stage s-built"><span>tests only</span><strong>Brain drafts a reply</strong>Not started by any service</div><div class="arrow">→</div>
+    <div class="stage s-built"><span>tests only</span><strong>Slack push and approve</strong>No real Slack client</div><div class="arrow">→</div>
+    <div class="stage s-none"><span>placeholder</span><strong>Daily digest</strong>Timer fires at 07:00, sends nothing</div>
+  </div></div>
+  <div class="legend"><span><i style="background:var(--ok)"></i>working live</span><span><i style="background:var(--bad)"></i>built, currently failed</span><span><i style="background:var(--built)"></i>built and tested on stand-ins</span><span><i style="background:var(--none)"></i>running but not connected</span></div>
+</section>
+
+<section>
+  <h2>Tickets: 18 of 20 ready for your review, none accepted</h2>
+  <div class="bar" role="img" aria-label="18 green, 2 orange"><div class="g"></div><div class="o"></div></div>
+  <p class="small">Green: 18 tickets built and independently verified, waiting for your acceptance. Orange: 2 tickets waiting on your answers (T-350 and T-471). Accepted by you: none yet.</p>
+</section>
+
+<section>
+  <h2>What has been shown to work</h2>
+  <ul>
+    <li>All fifteen original tickets and the four hardening fixes (T-405, T-406, T-407, T-409) pass their tests, and Tyrion re-ran every automated criterion with deliberate code breakage to prove the tests can fail; the tally of 18 green is in T-498's progress notes (commit <span class="mono">c7ab938</span>). <span class="tag tr">from the record</span></li>
+    <li>On the evening of 26 September, six checks ran against your real Gmail and all passed: a real email reached the bridge in about one second, two emails sent while the bridge was down were recovered exactly once, the watch renewed, an approved draft went out as a reply in the same thread, and a real Gmail draft appeared for T-350 with nothing sent. The record is <span class="mono">ab/results/LIVE-laforge.md</span>, commit <span class="mono">68af8d9</span>. All test mail went only from you to you. <span class="tag tr">from the record</span></li>
+    <li>LaForge's version won the A/B on fewer tokens (70.75 million against 120.9 million) and was merged to <code>main</code> in <span class="mono">d83fe32</span> (T-367). <span class="tag tr">from the record</span></li>
+    <li>Right now the bridge and controller services report active, the controller page answers with status 200, the watch expiry reads 4 October, and the digest timer fired at 07:00 and logged "no-op: nothing sent". <span class="tag tv">checked by me</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Two problems I found while checking</h2>
+  <ul>
+    <li>The bridge log shows <code>pull failed, subscription stopped: TypeError: fetch failed</code> at 08:04. The code stops listening on any failed pull and leaves the process alive, so systemd sees nothing wrong and does not restart it. No new email has reached the bridge since. The store holds only three arrivals, all at 04:54. This contradicts the project's rule that every layer fails visibly and recovers by itself. <span class="tag tv">checked by me</span></li>
+    <li>The service runs from the <code>comms-ab-laforge</code> checkout on the <code>ab/laforge</code> branch; its T-471 commit <span class="mono">6926234</span> is not on <code>main</code>. <span class="tag tv">checked by me</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Waiting on your answers</h2>
+  <div class="q"><div class="id">T-350 q1 · A thread in, one draft out, nothing sent</div><p>Asks whether to keep the ticket open until the draft is checked in your real Gmail, call it done on the fake mailbox, or park it. That real-mailbox check has in fact already passed (the evening of 26 September, above), so the question is out of date and the ticket can close on that evidence.</p></div>
+  <div class="q"><div class="id">T-471 q1 · The email pipeline runs as a standing service</div><p>Asks whether you can close T-350's question now that a live Gmail call succeeded. It is the same decision as T-350 q1; answering one answers both.</p></div>
+  <div class="q"><div class="id">T-471 q2</div><p>Asks when the ThinkPad can be rebooted to prove the three services come back on their own. They are set to start at login; only the observed reboot is missing. Rebooting interrupts every desk, so the timing is yours.</p></div>
+  <div class="q"><div class="id">T-471 q3 · the one that blocks the app</div><p>Asks who builds the two missing connections, and as what: a real Slack client (which Slack app or bot sends your approvals and digests), and the code that turns the bridge's stored emails into the threads the controller shows. The recommendation is a new ticket for both, with T-471 closing on what runs now.</p></div>
+</section>
+
+<section>
+  <h2>Not built yet</h2>
+  <ul>
+    <li>The link from the bridge's stored emails to the controller, so the controller shows your mail instead of sample threads.</li>
+    <li>A real Slack client, so pushes, approvals and the digest reach you and your partner.</li>
+    <li>A service that runs the brain on each arriving thread, and a real drafter; I found no <code>claude -p</code> drafter wired in, only the test stand-in.</li>
+    <li>Recovery when the bridge's listening loop fails, which today stops silently.</li>
+    <li>A production build of the controller: it runs in development mode because <code>npm run build</code> fails on an unrelated type error.</li>
+  </ul>
+  <p class="small" style="margin-top:10px">Until those land, none of the project's three ending checks can pass: an email landing in the controller, a draft approved from Slack and sent, and a digest that runs and says so.</p>
+</section>
+
+<section>
+  <h2>What I verified and what I assumed</h2>
+  <p class="small">Checked by me this morning: the service states, the 07:00 digest log line, the 08:04 pull failure and the absence of any restart, the three rows in the arrival store, the controller's 200 response, the inbox-only watch filter, which imports the bridge service uses (no brain, no Slack), and that <span class="mono">6926234</span> is not on <code>main</code>. Taken from the record without re-running: the test counts, the mutation probes, the six live checks of 26 September and the A/B result. Assumed: that no other process drafts replies or sends Slack messages for Gmail, based on a search of this repository only.</p>
+</section>
+</div>

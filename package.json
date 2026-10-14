@@ -1,0 +1,8 @@
+{
+  "name": "slopdog-os",
+  "private": true,
+  "description": "Shared node_modules for v2 scripts (context.yaml parsing, etc.). Not a build target.",
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  }
+}

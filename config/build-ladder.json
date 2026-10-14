@@ -1,0 +1,137 @@
+{
+  "_readme": "Who builds and who verifies. Every key is explained in plain words in build-ladder.md beside this file. Scripts read it only through v2/scripts/lib/build-ladder.mjs; v2/scripts/check-build-ladder.mjs fails when a script hardcodes a value this file owns.",
+  "_tickets": "T-714 (this file and its loader), T-715 (the policy values)",
+  "builder": {
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-medium"
+  },
+  "builders_by_points": {
+    "1": {
+      "engine": "claude",
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "2": {
+      "engine": "claude",
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "3": {
+      "engine": "claude",
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "5": {
+      "engine": "claude",
+      "model": "sonnet",
+      "effort": "high"
+    }
+  },
+  "verifiers_by_points": {
+    "1": {
+      "engine": "claude",
+      "model": "opus",
+      "effort": "low"
+    },
+    "2": {
+      "engine": "claude",
+      "model": "opus",
+      "effort": "low"
+    },
+    "3": {
+      "engine": "claude",
+      "model": "opus",
+      "effort": "low"
+    },
+    "5": {
+      "engine": "claude",
+      "model": "opus",
+      "effort": "medium"
+    }
+  },
+  "subagent_tiers": {
+    "sweep": {
+      "engine": "claude",
+      "model": "haiku",
+      "effort": "high"
+    },
+    "default": {
+      "engine": "claude",
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "hard": {
+      "engine": "claude",
+      "model": "sonnet",
+      "effort": "high"
+    },
+    "ceiling": {
+      "engine": "claude",
+      "model": "opus",
+      "effort": "medium"
+    }
+  },
+  "notes": {
+    "8": {
+      "now": "Todd, 2026-10-11 (T-715 q3): \"8 point go straight to opus\". A ticket of 8 points or more starts at the escalation rung. Todd, 2026-10-12: \"for eights, if there are any, just have that go directly to Data. I mean, why not?\" So 8 has no builders_by_points or verifiers_by_points entry."
+    },
+    "subagent_tiers": {
+      "now": "Todd, 2026-10-13: four tiers replace the five points rungs, picked by kind of work from the small card v2/config/subagent-tiers.md through /slopdog:spawn-subagent. sweep is Haiku at high effort (narrowly scoped subtasks that read or index many things with one fixed question and return a list; never judgment, edits or reviews), default is Sonnet at medium effort (specified work, and where an unsure call lands; Todd's standing default since 2026-10-10, and what dispatch uses when a ticket has no builder rung), hard is Sonnet at high effort (longer or harder but specified work, including reading a body of sources and reviewing someone else's work), ceiling is Opus at medium effort (open-ended work that needs sustained judgment). Todd's words for the shape: \"sonnet medium -> sonnet high -> opus medium with some haiku (medium or high) just narrowly scoped for subtasks with like indexing big things etc, like look over 100 skills etc\". Evidence: the Research desk's report \"The Subagent Ladder\" (v2/desks/research/reports/2026-10-13-the-subagent-ladder.md, section 3.1). Per attempt on Terminal-Bench 4.0 and FrontierCode each step costs more and scores higher, and Sonnet high ties Opus medium on long-horizon knowledge work for less money.",
+      "sweep": "Haiku 5.5 passed 70 of 70 short, scoped tasks at medium effort and at low (the 182-run graded test in the report), at roughly a thirtieth of the Opus cost, so it earns a place for fixed-question sweeps only. Haiku high rather than medium is inferred from Anthropic's effort description (high is for longer agent tasks and strict instruction following; platform.claude.com/docs/en/build-with-claude/effort), not measured on the house's own work, and Haiku's known failure is silent early stopping. So the guard matters more than the effort: a sweep launch states the expected item count in its prompt (\"there are 100 skills; return one line per skill\"), and the delegating desk checks the returned list length against that count before using the result, relaunching or moving to default on a short list. The sweep tier with its count check is where to measure high against medium, and the Research desk may move it.",
+      "retired": "Opus low (the old 3-point rung) is retired, and Haiku is no longer a points rung: it survives only as the sweep tier, reached by kind of work and never by a points value. Todd, 2026-10-13: \"remove the opus low tier its too confusing\".",
+      "no_max_effort": "No tier uses max effort, and none should be added. Sonnet 5.5 scored lower at max than at xhigh on FrontierCode (46.2 percent against 52.1 percent) because extra review subagents caused timeouts, Haiku passed 7 of 8 at max against 8 of 8 below it, and Opus gains nothing from effort above medium (54.6 percent at medium, 54.0 at high). Source: the Publish desk's Sonnet 5.5 roundup, v2/desks/ideas/inbox-archive/2026-10-10-1754-from-mac-sonnet55-roundup.md, and the Research desk report above.",
+      "points": "A bare number still resolves for old callers: 1 or 2 points is default, 3 to 5 is hard, 8 or more is ceiling. Missing, zero or unreadable points are default. A points value never maps to sweep.",
+      "open_questions": "Whether sweep should run at medium or high effort (untested, inferred from Anthropic's description; measure it through the sweep tier's count check); whether Sonnet high really matches Opus medium on the house's own open-ended work. Both are unmeasured. The Research desk refreshes the card from research published in the last week."
+    },
+    "builders_by_points": {
+      "now": "Todd, 2026-10-12: builders are Claude Sonnet only for now, medium effort for 1, 2 and 3 points and high for 5. A points value not listed takes the next listed value up. This replaces the Gemini builder for every ticket dispatch builds."
+    },
+    "builder": {
+      "parked": "Parked, not deleted. Gemini (gemini-3.8-flash-medium on agy, with Grok behind it in quota_chains) built every ticket until 2026-10-12. It is now only the default engine for a dispatch that carries no ticket, and a ticket still runs on it with an explicit --engine gemini. Todd, 2026-10-12: \"I want to optimize right now for stability and this thing's working. And then we can, after we have things stable, we can think about, okay, let's see if we can pull in Gemini.\" It comes back once things are stable, not on a date."
+    }
+  },
+  "escalate_after_failures": 2,
+  "escalate_from_points": 8,
+  "strike_categories": [
+    "code-defect",
+    "no-real-run",
+    "not-built",
+    "scope-product"
+  ],
+  "escalation": {
+    "engine": "claude",
+    "model": "opus",
+    "effort": "high",
+    "mode": "solo",
+    "lane": "data",
+    "signer": "Data",
+    "steps": [
+      "confirm-against-batch-and-project",
+      "build",
+      "verify"
+    ],
+    "independent_verify": false,
+    "_independent_verify": "false is Todd's policy today: Opus solo verifies its own work. true adds a cheap separate verifier that reads only the Verify lines. Todd is deciding this on the board (T-715 q2)."
+  },
+  "disabled_engines": [
+    "composer"
+  ],
+  "engine_models": {
+    "agy": "gemini-3.8-flash-medium",
+    "cursor-gemini": "gemini-3.8-flash-high",
+    "grok": "grok-4.7-medium",
+    "sonnet-cursor": "claude-sonnet-5-thinking-high",
+    "composer": "claude-sonnet-5-5-medium"
+  },
+  "quota_chains": {
+    "build": [
+      "agy:gemini"
+    ],
+    "verify": [
+      "cursor:gemini-3.8-flash",
+      "agy:gemini"
+    ]
+  },
+  "auto_verify_lane": "qa-gemini",
+  "verify_brief_by_points": { "1": "prescriptive", "2": "prescriptive", "3": "prescriptive", "5": "trusted" }
+}

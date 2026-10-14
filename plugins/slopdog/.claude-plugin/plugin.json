@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "slopdog",
+  "description": "Slopdog: a desk-based harness for Claude Code. Every skill invokes as /slopdog:<name>.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Todd Morrill"
+  },
+  "skills": [
+    "./cmux/",
+    "./meta/",
+    "./reports/",
+    "./git/",
+    "./research/",
+    "./media/",
+    "./session/",
+    "./writing/"
+  ]
+}

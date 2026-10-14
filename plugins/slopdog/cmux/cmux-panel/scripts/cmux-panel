@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# cmux-panel — open something as a TAB in a pane Todd chose. Never splits on its own.
+#
+#   cmux-panel panes                                   list panes as L1/L2/R1… with refs and tab counts
+#   cmux-panel --pane <ref> browser <url> [title]      a web page, as a new tab at the right end of that pane
+#   cmux-panel --pane <ref> terminal [title]           an interactive shell tab
+#   cmux-panel --pane <ref> markdown <path>            a rendered, live-reloading markdown tab
+#   cmux-panel --new  browser|terminal|markdown …      a NEW pane to the right, only when Todd asked for one
+#
+# Without --pane or --new it refuses: the skill must ask Todd first (2026-09-01).
+# Prints the surface ref it created.
+set -uo pipefail
+CMUX="${CMUX_CLAUDE_TEAMS_CMUX_BIN:-/Applications/cmux.app/Contents/Resources/bin/cmux}"
+[ -x "$CMUX" ] || { echo "cmux CLI not found" >&2; exit 1; }
+ref_of() { printf '%s' "$1" | grep -o "$2:[0-9]\+" | head -1; }
+
+panes() {
+  "$CMUX" list-panes --json | python3 -c '
+import json,sys
+d=json.load(sys.stdin); ps=d["panes"]
+cols={}
+for p in ps: cols.setdefault(round(p["pixel_frame"]["x"]/50),[]).append(p)
+names=[]
+for ci,(x,col) in enumerate(sorted(cols.items())):
+    letter="L" if ci==0 else ("R" if ci==len(cols)-1 else "M")
+    for ri,p in enumerate(sorted(col,key=lambda p:p["pixel_frame"]["y"]),start=1):
+        f=p["pixel_frame"]; sel=p.get("selected_surface_ref","")
+        print(f"{letter}{ri:<3} {p['"'"'ref'"'"']:<9} {round(f['"'"'width'"'"']):>5}x{round(f['"'"'height'"'"']):<5} {p['"'"'surface_count'"'"']:>2} tabs  {'"'"'*'"'"' if p['"'"'focused'"'"'] else '"'"' '"'"'}")'
+}
+
+pane=""; new=0
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --pane) pane="$2"; shift 2 ;;
+    --new) new=1; shift ;;
+    panes) panes; exit 0 ;;
+    *) break ;;
+  esac
+done
+kind="${1:-}"; shift 2>/dev/null || true
+[ -n "$kind" ] || { sed -n '2,11p' "$0" | sed 's/^# \{0,1\}//' >&2; exit 2; }
+if [ -z "$pane" ] && [ $new -eq 0 ]; then
+  echo "cmux-panel: say where — --pane <ref> (see: cmux-panel panes) or --new. Ask Todd; don't guess." >&2; exit 2
+fi
+
+open_surface() {  # $1 type, $2 url (optional)
+  local type="$1" url="${2:-}" out
+  if [ $new -eq 1 ]; then
+    out="$("$CMUX" new-pane --type "$type" --direction right ${url:+--url "$url"} --focus false 2>&1)"
+    pane="$(ref_of "$out" pane)"
+  else
+    out="$("$CMUX" new-surface --type "$type" --pane "$pane" ${url:+--url "$url"} --focus false 2>&1)"
+  fi
+  ref_of "$out" surface
+}
+
+case "$kind" in
+  browser)
+    url="${1:-}"; [ -n "$url" ] || { echo "usage: cmux-panel --pane <ref> browser <url> [title]" >&2; exit 2; }
+    sfc="$(open_surface browser "$url")"
+    [ -n "${2:-}" ] && [ -n "$sfc" ] && "$CMUX" rename-tab --surface "$sfc" "$2" >/dev/null 2>&1
+    echo "$sfc" ;;
+  terminal)
+    sfc="$(open_surface terminal)"
+    [ -n "${1:-}" ] && [ -n "$sfc" ] && "$CMUX" rename-tab --surface "$sfc" "$1" >/dev/null 2>&1
+    echo "$sfc" ;;
+  markdown)
+    path="${1:-}"; [ -f "$path" ] || { echo "no such file: $path" >&2; exit 2; }
+    # markdown has no new-surface type; it always splits. Open it, then move the
+    # surface into the chosen pane (appends as the right-most tab) and the stray
+    # pane closes with its last surface.
+    out="$("$CMUX" markdown open "$path" --focus false 2>&1)"
+    sfc="$(ref_of "$out" surface)"; newpane="$(ref_of "$out" pane)"
+    if [ $new -eq 0 ] && [ -n "$sfc" ] && [ "$pane" != "$newpane" ]; then
+      "$CMUX" move-surface --surface "$sfc" --pane "$pane" --focus false >/dev/null 2>&1 || echo "cmux-panel: move-surface failed; tab is in $newpane" >&2
+    fi
+    echo "$sfc" ;;
+  *) echo "usage: cmux-panel [--pane <ref>|--new] <browser <url>|terminal|markdown <path>> [title]" >&2; exit 2 ;;
+esac

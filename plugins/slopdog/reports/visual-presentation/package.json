@@ -1,0 +1,7 @@
+{
+  "name": "sd-visual-presentation",
+  "private": true,
+  "type": "module",
+  "description": "Hand-drawn geometry for Slopdog's visual presentations. npm install here once; node_modules is gitignored.",
+  "dependencies": { "roughjs": "^4.6.6" }
+}
