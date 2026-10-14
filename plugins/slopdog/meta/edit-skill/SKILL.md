@@ -49,8 +49,8 @@ manifest). `~/slopdog/v1` is frozen: copy out of it, never edit it.
 plugin. Tied to one folder (a task list, a deal, one repo) →
 `<that folder>/.claude/skills/<name>/`, no prefix. Unsure → personal.
 
-**Step 2 — pick the group.** Reuse one from manifest §2 (cmux, meta, session,
-reports, git, research, media). Nothing fits → **ask Todd
+**Step 2 — pick the group.** Reuse one from manifest §2 (meta, session,
+reports, writing). Nothing fits → **ask Todd
 before creating a group**, naming the closest existing one and why it
 doesn't fit. Only after he says yes: make the folder, add `"./<group>/"` to
 `plugin.json`'s `skills` array, add the §2 row.
@@ -156,7 +156,7 @@ under "Project skills"; `check-manifest.mjs` scans those folders too.
 
 - Don't put a skill flat in the personal skills folder — that's for
   third-party plugins only.
-- Don't invent a second prefix level. `/slopdog:cmux:x` doesn't exist.
+- Don't invent a second prefix level. `/slopdog:meta:x` doesn't exist.
 - Don't edit `humanizer/` or anything in the plugin cache.
 - Don't name a group `synced`.
 - Don't edit `~/slopdog/v1`. It is frozen; copy from it.

@@ -19,7 +19,7 @@ import { execFileSync } from "node:child_process";
 import { basename, resolve } from "node:path";
 
 const HOME = process.env.HOME;
-const OUT_DIR = `${HOME}/.cache/broz-wtf/md-view`;
+const OUT_DIR = `${HOME}/.cache/slopdog-wtf/md-view`;
 const CMUX = process.env.CMUX_CLAUDE_TEAMS_CMUX_BIN
   || "/Applications/cmux.app/Contents/Resources/bin/cmux";
 

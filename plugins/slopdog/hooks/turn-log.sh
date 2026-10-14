@@ -4,18 +4,18 @@
 set -uo pipefail
 # The summariser is itself a `claude -p` run in this project, so it fires this
 # same Stop hook. Without this guard that recurses into a fork bomb.
-[ -n "${BROZ_TURNLOG:-}" ] && exit 0
+[ -n "${SLOPDOG_TURNLOG:-}" ] && exit 0
 
 # Skip under openrouter engine to conserve free-tier quota (T-546)
 if [ -n "${OPENROUTER_ENGINE:-}" ] || [ "${DISPATCH_ENGINE:-}" = "openrouter" ] || [[ "${ANTHROPIC_BASE_URL:-}" == *"openrouter"* ]]; then
-  echo "$(date -u +'%Y-%m-%d %H:%M:%S') [turn-log] skipped under openrouter engine" >> "$HOME/.cache/broz-turnlog/worker.log"
+  echo "$(date -u +'%Y-%m-%d %H:%M:%S') [turn-log] skipped under openrouter engine" >> "$HOME/.cache/slopdog-turnlog/worker.log"
   exit 0
 fi
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
-mkdir -p "$HOME/.cache/broz-turnlog"
+mkdir -p "$HOME/.cache/slopdog-turnlog"
 payload="$(cat)"
 printf '%s' "$payload" | nohup "$DIR/turn-log.py" \
-    >>"$HOME/.cache/broz-turnlog/worker.log" 2>&1 &
+    >>"$HOME/.cache/slopdog-turnlog/worker.log" 2>&1 &
 disown 2>/dev/null || true
 exit 0

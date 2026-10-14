@@ -8,11 +8,6 @@
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/resume.mjs",
             "timeout": 10
-          },
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs \"$HOME/slopdog/bin/sync-check.mjs\" --hook",
-            "timeout": 10
           }
         ]
       },
@@ -56,16 +51,6 @@
             "timeout": 5
           }
         ]
-      },
-      {
-        "matcher": "startup|resume|clear|compact",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/cmux-teams-rule.mjs",
-            "timeout": 5
-          }
-        ]
       }
     ],
     "UserPromptSubmit": [
@@ -99,28 +84,7 @@
         ]
       }
     ],
-    "PostToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/librarian-catch.mjs",
-            "timeout": 5
-          }
-        ]
-      },
-      {
-        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs \"$HOME/slopdog/v2/plugins/pickup/hooks/wip-commit.mjs\"",
-            "async": true
-          }
-        ]
-      }
-    ],
+    "PostToolUse": [],
     "Stop": [
       {
         "hooks": [
@@ -154,16 +118,6 @@
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs ${CLAUDE_PLUGIN_ROOT}/hooks/stale-hook-wiring.mjs",
             "timeout": 5
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scoped.mjs \"$HOME/slopdog/v2/plugins/pickup/hooks/turn-commit.mjs\"",
-            "async": true,
-            "timeout": 180
           }
         ]
       }

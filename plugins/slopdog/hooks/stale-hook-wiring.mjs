@@ -33,7 +33,7 @@ let payload = {}
 try { payload = JSON.parse(readFileSync(0, 'utf8') || '{}') } catch {}
 
 function interactiveDesk() {
-  if (process.env.BROZ_TURNLOG) return false
+  if (process.env.SLOPDOG_TURNLOG) return false
   if (process.env.CLAUDE_JOB_DIR) return false
   const session = claudePid()
   try {

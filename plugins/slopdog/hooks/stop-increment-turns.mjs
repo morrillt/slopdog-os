@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // stop-increment-turns — on Claude desk Stop, bump `turns:` on the 🟡 ticket this lane holds (T-480).
-// Headless runs (claude -p, BROZ_TURNLOG, background jobs) exit 0 without touching tickets.
+// Headless runs (claude -p, SLOPDOG_TURNLOG, background jobs) exit 0 without touching tickets.
 import { readLanesDocument } from '../../../scripts/lib/registry.mjs'
 import { readFileSync, writeFileSync, readdirSync, realpathSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
@@ -15,7 +15,7 @@ const FRONT = /^---\r?\n([\s\S]*?)\r?\n---/
 const STATUS_DOING = /^(T-[\w.-]+) · 🟡/m
 
 export function isHeadless(env, sessionPid) {
-  if (env.BROZ_TURNLOG) return true
+  if (env.SLOPDOG_TURNLOG) return true
   if (env.CLAUDE_JOB_DIR) return true
   if (env.SLOPDOG_HOOK_INTERACTIVE) return false
   if (!sessionPid) return false

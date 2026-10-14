@@ -48,13 +48,13 @@ directory that already has a real name is never renamed again.
 - **Files key on `session_id`; the sidebar card keys on `CMUX_WORKSPACE_ID`.** Hooks get the
   id from their stdin payload; the skill gets it as `${CLAUDE_SESSION_ID}`. A caller with no
   resolvable id gets a directory unique to its own process, never a shared bucket.
-- **The hook bails when `BROZ_TURNLOG` is set.** The turn summariser is a `claude -p` run in
+- **The hook bails when `SLOPDOG_TURNLOG` is set.** The turn summariser is a `claude -p` run in
   this project, so it fires the `Stop` hook too; without the guard it fork-bombs.
 - **Never call `cmux rename-workspace` or `cmux identify` bare** from a hook. Both fall back
   to whatever is focused, and the `Stop` worker is detached, so it would rename the
   workspace Todd happens to be looking at.
-- State lives in `~/.cache/broz-wtf/` (session pointers and the last card title) and
-  `~/.cache/broz-turnlog/` (the worker's log in `worker.log`, crashes in `worker.err`). All
+- State lives in `~/.cache/slopdog-wtf/` (session pointers and the last card title) and
+  `~/.cache/slopdog-turnlog/` (the worker's log in `worker.log`, crashes in `worker.err`). All
   of it is a cache: delete it and the next run rebuilds.
 
 ## Changing it

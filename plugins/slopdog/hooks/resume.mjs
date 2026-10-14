@@ -46,7 +46,7 @@ if (payload.source === "clear") {
   // so the launcher's next build resumes the post-clear conversation, not the one before it.
   // The lane is the registry key whose folder is exactly this cwd. v2 is three levels up
   // from this file (plugins/slopdog/hooks/), which Node resolves through the skills symlink.
-  if (sid && !process.env.BROZ_TURNLOG) {
+  if (sid && !process.env.SLOPDOG_TURNLOG) {
     try {
       const v2 = realpathSync(new URL("../../..", import.meta.url).pathname);
       const lanes = readLanesDocument({ v2: v2 });
@@ -60,7 +60,7 @@ if (payload.source === "clear") {
     } catch {}
   }
 }
-if (process.env.BROZ_TURNLOG) process.exit(0);           // the summariser's own claude -p run
+if (process.env.SLOPDOG_TURNLOG) process.exit(0);           // the summariser's own claude -p run
 // A folder that carries its own .slopdog/ is a separate Slopdog variant (e.g. ~/sd on
 // the Linux box) and runs its own board, not this one. Leave it alone.
 if (existsSync(join(cwd, ".slopdog"))) process.exit(0);

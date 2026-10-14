@@ -45,13 +45,13 @@ test('runStopIncrement increments on a doing ticket and skips headless', () => {
   writeFileSync(join(tickets, 'probe.md'), FIXTURE)
   const headless = runStopIncrement(
     { cwd: LAFORGE },
-    { ...process.env, SLOPDOG_TICKETS_DIR: tickets, BROZ_TURNLOG: '1' },
+    { ...process.env, SLOPDOG_TICKETS_DIR: tickets, SLOPDOG_TURNLOG: '1' },
   )
   assert.equal(headless.skipped, 'headless')
   assert.match(readFileSync(join(tickets, 'probe.md'), 'utf8'), /^turns: 1/m)
 })
 
-test('isHeadless respects BROZ_TURNLOG', () => {
-  assert.equal(isHeadless({ BROZ_TURNLOG: '1' }, 1), true)
+test('isHeadless respects SLOPDOG_TURNLOG', () => {
+  assert.equal(isHeadless({ SLOPDOG_TURNLOG: '1' }, 1), true)
   assert.equal(isHeadless({}, 1), false)
 })

@@ -24,7 +24,7 @@ from pathlib import Path
 
 HOME = Path.home()
 LOGS = HOME / "slopdog" / "logs" / "conversations"
-CACHE = HOME / ".cache" / "broz-turnlog"
+CACHE = HOME / ".cache" / "slopdog-turnlog"
 SKILL = HOME / ".claude" / "skills" / "slopdog" / "session" / "wtf" / "scripts"
 SESSION_DIR = SKILL / "session-dir.sh"
 CLAUDE = HOME / ".local" / "bin" / "claude"
@@ -123,7 +123,7 @@ def transcript_text(path, start_line):
 def ask(prompt, body):
     if not CLAUDE.exists():
         return ""
-    env = dict(os.environ, BROZ_TURNLOG="1")
+    env = dict(os.environ, SLOPDOG_TURNLOG="1")
     try:
         res = subprocess.run(
             [str(CLAUDE), "-p", "--model", MODEL, "--strict-mcp-config", "--tools", "", "--no-session-persistence"],

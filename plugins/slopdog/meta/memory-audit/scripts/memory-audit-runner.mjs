@@ -35,8 +35,6 @@ const REQUIRED_IMPORTS = [
   'rules/principles.md',
   'rules/output-style.md',
   'rules/before-asking-todd.md',
-  'rules/cmux-teams.md',
-  'rules/workspaces.md',
   'rules/memory.md',
   'rules/desk-clear.md',
 ]
@@ -195,11 +193,8 @@ async function main() {
     const fileReport = spawnSync('claude', ['slopdog:file-report', reportPath], { cwd: HOME, encoding: 'utf8', timeout: 60000 })
     if (fileReport.status !== 0) log(`file-report failed: ${(fileReport.stderr || fileReport.stdout || '').trim().slice(0, 300)}`)
     else log('file-report ok')
-    // DM Todd via Slack desk
     const cleanCount = results.filter(r => r.identity.pass && r.docsSanity.pass && r.memoryFolder.pass && r.imports.pass).length
-    const slack = spawnSync('claude', ['slopdog:slack', `dm`, `Memory audit ${today}: ${cleanCount} of ${results.length} desks clean — see report`], { cwd: HOME, encoding: 'utf8', timeout: 30000 })
-    if (slack.status !== 0) log(`slack dm failed: ${(slack.stderr || slack.stdout || '').trim().slice(0, 300)}`)
-    else log('slack dm sent')
+    log(`memory audit ${today}: ${cleanCount} of ${results.length} desks clean`)
     const summary = `desks=${results.length} clean=${cleanCount}`
     log(`${summary}`)
     if (!DRY) console.log(`memory-audit: ${summary}`)

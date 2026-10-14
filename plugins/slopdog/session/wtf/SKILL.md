@@ -1,6 +1,6 @@
 ---
 name: wtf
-description: Answer "what's going on" — gather the last six hours of ticket and project activity (or the hours named, "/slopdog:wtf 3h"), write a three-part answer (a tweet of what got done, how Todd can help or unblock, the notable decisions and concerns) and show it in a lightbox in front of Todd, then take up to three follow-up turns in the pane. Use whenever Todd says "wtf", "/slopdog:wtf", "/broz-wtf", "what's going on", "what are we doing", "what got done", "catch me up", "did we go off the rails", or asks for the big picture.
+description: Answer "what's going on" — gather the last six hours of ticket and project activity (or the hours named, "/slopdog:wtf 3h"), write a three-part answer (a tweet of what got done, how Todd can help or unblock, the notable decisions and concerns) and show it in a lightbox in front of Todd, then take up to three follow-up turns in the pane. Use whenever Todd says "wtf", "/slopdog:wtf", "/slopdog-wtf", "what's going on", "what are we doing", "what got done", "catch me up", "did we go off the rails", or asks for the big picture.
 allowed-tools:
   - Bash
   - Read

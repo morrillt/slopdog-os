@@ -105,17 +105,7 @@ Read, from the local mirrors in `~/slopdog/v2/rules/mission/` and **never** by a
   `it.md`.
 - `edge-plugin-strategy.md`, hard-imported where that division references it.
 
-A **missing** mirror refuses this step and names the absent document. Before reading the files, run
-the local staleness check and nothing else:
-
-```bash
-node ~/slopdog/v2/scripts/notion-listen-daemon.ts --staleness-check
-```
-
-That command reads the mirrors on disk. When any `fetched` date is older than 7 days it prints
-one warning line naming each stale mirror and its age, then exits 0. Copy that single line into
-the meeting record and proceed on the stale copy. It does not call Notion. A set inside the bound
-prints nothing. Nothing planning-related proceeds before this step. After any clear, the fresh
+A **missing** mirror refuses this step and names the absent document. Nothing planning-related proceeds before this step. After any clear, the fresh
 window reloads all of it — a clean context starts with no mission in it.
 
 **Every later step runs the live test:** *which work is more aligned with the mission and this

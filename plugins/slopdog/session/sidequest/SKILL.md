@@ -61,8 +61,8 @@ that is the signal it is a real ticket for the morning rather than a sidequest.
 ## Step 3 — spawn the agent
 
 One `Agent` call. **Never `subagent_type: "fork"`** — a fork inherits everything
-and defeats the point. Give it a name, so it earns a pane in cmux and Todd can
-watch it (`cmux-teams.md`).
+and defeats the point. Give it a name, so it earns a pane of its own and Todd can
+watch it.
 
 The prompt is the brief from step 1, plus the ticket path, plus one line telling
 it to write its result into that ticket's `## Progress notes`.

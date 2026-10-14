@@ -41,7 +41,7 @@ Question: ${question}`;
 const raw = execFileSync("claude", ["--model", "haiku", "-p", prompt], {
   encoding: "utf8",
   timeout: 30_000,
-  env: { ...process.env, BROZ_TURNLOG: "1" },
+  env: { ...process.env, SLOPDOG_TURNLOG: "1" },
 });
 
 let answer;

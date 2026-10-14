@@ -1,0 +1,12 @@
+# Runs unstucker-questions.service every 30 minutes, surviving reboots. Tracked copy;
+# installed as a symlink in ~/.config/systemd/user/.
+[Unit]
+Description=Unstucker question sweep every 30 minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=30min
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target

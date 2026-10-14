@@ -276,7 +276,7 @@ This is an execution-order fact, not a batch membership change: T-626 stays in b
 that is what it is about, and runs before batches 1 to 4 because that is when it is needed.
 
 ## Tickets
-- [ ] T-717 · /slopdog:browse checks the Chrome extension is connected before a reader is spawned
+- [ ] T-717 · The browse step checks the Chrome extension is connected before a reader is spawned
 - [ ] T-715 · The build ladder starts on Gemini, Composer is off it, and Opus works solo after two failures
 - [ ] T-712 · A dispatch through the ideas-composer lane records worker: ideas-composer, so the T-596 lane-recording check passes again
 - [ ] T-709 · Ticket-add refuses to hand off until the ticket passes every check Tyrion runs, including a red run of each check

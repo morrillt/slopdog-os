@@ -32,7 +32,7 @@ guesses, or unverified claims, that's a gap — go to step 2 either way.
 **Step 2 — bring the Concerns tab up to date.** Sweep the conversation for
 anything that could still bite: limitations you flagged in passing, things you
 couldn't verify, fragile workarounds, edits that live only on disk, rules that
-exist only in this chat. Add each as an entry in the `broz-wtf` format
+exist only in this chat. Add each as an entry in the `slopdog-wtf` format
 (`### <YYYY-MM-DD HH:MM> · turn <n> · open`), newest first. Don't pad;
 `*None open.*` is a real state.
 
@@ -101,4 +101,4 @@ scripts, not config, not logs. Absolute paths, so he can open them.
 - Don't open anything on screen. The report goes in the terminal and
   `done.md`; the panel live-reloads on its own.
 - Don't invent commits. Every hash in the report comes from `git log`.
-- Don't run this instead of `broz-wtf` mid-session. This is the last thing.
+- Don't run this instead of `slopdog-wtf` mid-session. This is the last thing.

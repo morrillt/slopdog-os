@@ -71,11 +71,8 @@ One `Agent` call, type `general-purpose`, named `qa-verify-<T-nnn>`. Give it:
      - A command-shaped Verify line (`grep`, a test runner, `tsc`, a script) runs
        directly with Bash, in the repo the ticket names.
      - A Verify line that means looking at a running page, a board, a dashboard, or
-       clicking through a flow goes through `/slopdog:browse` (`Skill` tool,
-       `skill: "slopdog:browse"`): claim the site under this desk's key (`qa`),
-       hand the check to the `browser-driver` subagent with the ticket id, release
-       the claim when done. Never open a browser directly; that skill is the only
-       path to Chrome (one-bot-per-site).
+       clicking through a flow goes to a browser subagent with the ticket id. Only one agent drives a
+       given site at a time (one-bot-per-site).
    - Every Verify line has to pass for the ticket to count as verified; note exactly
      what each one showed (a real result, like "grep -c returned 3", not "looked
      fine"). Before any pass, run the touched files' existing test suites against

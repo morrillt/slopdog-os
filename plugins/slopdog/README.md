@@ -11,8 +11,8 @@ scanned for `<name>/SKILL.md`.
 
     slopdog/
       .claude-plugin/plugin.json     lists the group folders
-      hooks/hooks.json               the status-panel hooks (SessionStart opens the tabs, Stop logs turns)
-      cmux/  meta/  session/  reports/  git/  research/  media/  writing/
+      hooks/hooks.json               the hooks (gates, the context gauge, inbox wake-up, the turn log)
+      meta/  session/  reports/  writing/
       <group>/<name>/SKILL.md        one skill; folder name = group name, always
 
 - **Add a skill to a group:** `<group>/<name>/SKILL.md`. Loads live.

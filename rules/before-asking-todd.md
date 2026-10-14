@@ -23,8 +23,8 @@ start, even though it's a two-way door and the "how" is still yours to decide.
 
 Three concrete things that annoy him and stop the moment they're noticed:
 
-- **Chrome extension setup/collaboration.** Don't ask Todd to click through, install, or configure the Claude in Chrome extension side of a task. Drive it yourself (`/slopdog:browse`, the `browser-driver` agent, workspace 6) or find the CLI/API path around it before involving him.
+- **Chrome extension setup/collaboration.** Don't ask Todd to click through, install, or configure the Claude in Chrome extension side of a task. Drive it yourself with a browser subagent or find the CLI/API path around it before involving him.
 - **Authentication.** Don't ask Todd to log in, paste a token, or run an OAuth flow that an agent can run itself (`gcloud auth`, a CLI's own login, a stored credential in `~/.config/<app>/`). Only a step that genuinely requires Todd's own identity or a device only he holds goes to him, and even then say why nothing else works first.
-- **Settings and commands.** Don't ask Todd to run a shell command, flip a setting, or edit a config file an agent can run itself. This machine gives agents a real Linux user and root on stuff that matters, so an agent can spawn its own terminals; that access exists to be used, not deferred around.
+- **Settings and commands.** Don't ask Todd to run a shell command, flip a setting, or edit a config file an agent can run itself. Agents have a real shell and can spawn their own terminals; that access exists to be used, not deferred around.
 
 The bar: before asking Todd to do anything, check whether it's actually a one-way door or a product call (above) — if it's a "how", it's yours to just do. Power through and figure it out; asking him to do something you have the access to do yourself is the failure mode, not a shortcut.

@@ -15,8 +15,7 @@ house vocabulary list (Samwell's benchmark, T-417; without the list every engine
 ## Step 0 — get the file on disk
 
 Input: a recording (a path, a Gmail message, or a Slack DM). Output: an audio path on disk.
-The Gmail connector cannot fetch attachment bytes; download through the browser
-(`/slopdog:browse`) or Gmail's "Save to Drive" plus `rclone copy`. Gmail's listed size is
+The Gmail connector cannot fetch attachment bytes; download through the browser or Gmail's "Save to Drive" plus `rclone copy`. Gmail's listed size is
 about a third bigger than the file (base64). Pick a kebab-case `<slug>` from the email
 subject or Todd's words, three or four words.
 A voice note shared to the Slop Dog Slack DM is already on disk: the listener

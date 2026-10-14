@@ -47,6 +47,5 @@ became `v2/desks/research/reports/2026-10-04-dunst-notifications.md`.
 
 - Don't start new research from a received report. If the draft leaves a real gap, say so
   in the Appendix's Implementation notes and ask the sender.
-- Don't publish an Artifact or a deck unless Todd asks; `/slopdog:file-report` and
-  `/slopdog:visual-presentation` do that.
+- Don't publish an Artifact or a deck unless Todd asks; `/slopdog:file-report` does that.
 - Don't file a received report anywhere but the research desk's `reports/`.

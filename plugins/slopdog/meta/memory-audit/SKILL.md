@@ -1,12 +1,12 @@
 ---
 name: memory-audit
-description: Check every desk against the desk standard — identity block, CLAUDE.md (via docs-sanity), memory folder, index and @-import against rules/desk-standard.md. Files a report and DMs Todd the link. Use when Todd says "memory audit", "/slopdog:memory-audit", "audit the desks' memory", or when the weekly timer runs it.
+description: Check every desk against the desk standard — identity block, CLAUDE.md, memory folder, index and @-import against rules/desk-standard.md. Files a report and DMs Todd the link. Use when Todd says "memory audit", "/slopdog:memory-audit", "audit the desks' memory", or when the weekly timer runs it.
 disable-model-invocation: true
 ---
 
 # memory-audit — check every desk's memory against the standard
 
-One subagent per desk checks the identity block, CLAUDE.md (via docs-sanity), memory folder, index and @-import against rules/desk-standard.md; files a report and DMs Todd the link.
+One subagent per desk checks the identity block, CLAUDE.md, memory folder, index and @-import against rules/desk-standard.md; files a report and DMs Todd the link.
 
 ## Step 0 — the desk standard
 
@@ -21,7 +21,7 @@ Read `~/slopdog/v2/lanes.json`. For every lane that has a `folder` (every desk, 
 Each subagent receives the desk's `folder` (e.g., `desks/ideas`) and the desk standard path. It runs:
 
 1. **Identity block** — the desk's `CLAUDE.md` has a role line and imports the shared rules. The subagent checks that the role matches the lane's `name` and `title` in lanes.json.
-2. **CLAUDE.md via docs-sanity** — run `/slopdog:docs-sanity` headless (`claude -p --model sonnet --tools '' --no-session-persistence`) over just that desk's CLAUDE.md and the shared rules it imports. Collect its findings.
+2. **CLAUDE.md read** — run a headless docs check (`claude -p --model sonnet --tools '' --no-session-persistence`) over just that desk's CLAUDE.md and the shared rules it imports. Collect its findings.
 3. **Memory folder** — the desk's `memory/` folder (e.g., `desks/ideas/memory/`) has a `MEMORY.md` index and shards. Check each shard has `name`, `description`, `metadata.type` in `user|feedback|project|reference`. Check the index has a one-line pointer for every shard.
 4. **@-import** — the desk's CLAUDE.md @-imports the shared rules correctly (no stale paths, no missing imports).
 

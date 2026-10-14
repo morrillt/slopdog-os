@@ -12,8 +12,8 @@
 // seen in a prompt of this session, sticky: a prompt naming one sets it, every later
 // line of the session carries it, read back from today's file. `text` is cut at 200
 // characters with newlines collapsed. The board tails the file (T-193, T-194).
-// Copies librarian-catch.mjs: buffer stdin, fail silent, exit 0 always. Bails when
-// BROZ_TURNLOG is set (the turn-log summariser's own claude -p runs fire every hook and
+// Buffer stdin, fail silent, exit 0 always. Bails when
+// SLOPDOG_TURNLOG is set (the turn-log summariser's own claude -p runs fire every hook and
 // are not activity) and skips a prompt that is a <task-notification> (a subagent returning,
 // already covered by agent_done).
 
@@ -75,7 +75,7 @@ function stickyTicket(file, session) {
   return null;
 }
 
-if (process.env.BROZ_TURNLOG) process.exit(0);
+if (process.env.SLOPDOG_TURNLOG) process.exit(0);
 
 try {
   let p = {};

@@ -13,7 +13,7 @@
 //   The focus block also lists context.yaml's focus_tasks rows (T-457-3).
 //   When a focus_tasks ticket has an open question, "Where you can help" gains a button that
 //   opens the board's Questions tab with the Focus filter on, in the workspace-3 board (T-464).
-//   or, for /slopdog:gist and any other plain answer (same window, same i3 rule):
+//   or, for any other plain answer (same window, same i3 rule):
 //               {"head": "Gist", "paragraphs": ["...", "...", "..."]}
 import { createServer } from "node:http";
 import { readFileSync, readdirSync } from "node:fs";
@@ -242,7 +242,7 @@ document.getElementById("fq")?.addEventListener("click", (e) => {
 // is the agents' Work-profile browser). A bare `chromium <url>` would open a new tab in whichever
 // window Chromium used last, and a new one per press, so instead: focus the board with i3, check
 // it really is the active window, then type the URL into its address bar with xdotool. No board
-// window: open one on workspace 3, as rules/workspaces.md says.
+// window: open one on workspace 3, where the board lives.
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 function findBoard() {
   const hits = [];

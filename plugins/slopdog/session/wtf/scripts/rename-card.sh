@@ -31,7 +31,7 @@ fi
 # Remembered per session, the same key session-dir.sh uses: a pane is 1:1 with a
 # session and both the skill and the hook's worker can see it.
 key="$(printf '%s' "${CMUX_PANE_ID:-$ws}" | tr -c 'A-Za-z0-9' '_')"
-stamp="$HOME/.cache/broz-wtf/$key.card"
+stamp="$HOME/.cache/slopdog-wtf/$key.card"
 mkdir -p "$(dirname "$stamp")"
 [ -f "$stamp" ] && [ "$(cat "$stamp")" = "$title" ] && exit 0
 

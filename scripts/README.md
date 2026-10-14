@@ -26,3 +26,9 @@ scripts that run the pipeline and its gates, not every utility in the house.
 | `session.mjs` | Names the terminal session the desks live in. |
 
 `notiontime/` is here only because `quick-task-new.mjs` imports its parser.
+
+Also here because the skills call them: `batch-review.mjs` (a batch's review state),
+`goal.mjs` and `goal-panes.mjs` (each desk's ticket panel), `limits-toggle.mjs`,
+`openrouter-model-check.mjs`, `quick-task-report.mjs` (writes a quick task's final report),
+`sprint-record.mjs` (a sprint planning run's record), `team-budget.mjs` (department token shares),
+and `systemd/` (the unstucker question sweep's timer).

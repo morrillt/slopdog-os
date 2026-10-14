@@ -1,0 +1,44 @@
+{
+  "$schema": "./desk-standing-context.schema.json",
+  "_comment": "Standing context for Claude desks (via desk-standing-context hook) and dispatch briefs (T-655).",
+  "build-lead": [
+    "Mission: read: v2/rules/mission/mission.md",
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)"
+  ],
+  "ideas-lead": [
+    "Mission: read: v2/rules/mission/mission.md",
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)"
+  ],
+  "cheap-builder": [
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)",
+    "Retrospective: Write every lesson and every problem into the retrospective (read: v2/plugins/slopdog/session/retrospective/SKILL.md)"
+  ],
+  "build": [
+    "Mission: read: v2/rules/mission/mission.md",
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)"
+  ],
+  "ideas": [
+    "Mission: read: v2/rules/mission/mission.md",
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)"
+  ],
+  "laforge": [
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)",
+    "Retrospective: Write every lesson and every problem into the retrospective (read: v2/plugins/slopdog/session/retrospective/SKILL.md)"
+  ],
+  "gemma": [
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)",
+    "Retrospective: Write every lesson and every problem into the retrospective (read: v2/plugins/slopdog/session/retrospective/SKILL.md)"
+  ],
+  "composer": [
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)",
+    "Retrospective: Write every lesson and every problem into the retrospective (read: v2/plugins/slopdog/session/retrospective/SKILL.md)"
+  ],
+  "grok": [
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)",
+    "Retrospective: Write every lesson and every problem into the retrospective (read: v2/plugins/slopdog/session/retrospective/SKILL.md)"
+  ],
+  "openrouter": [
+    "Build directive: Settle architecture before UI; plumbing first, borrow surfaces, paved road, custom last; ask forgiveness not permission (read: v2/rules/mission/mission.md#the-build-directive-how-we-shape-batches)",
+    "Retrospective: Write every lesson and every problem into the retrospective (read: v2/plugins/slopdog/session/retrospective/SKILL.md)"
+  ]
+}

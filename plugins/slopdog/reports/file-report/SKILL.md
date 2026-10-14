@@ -35,8 +35,7 @@ reports directory."
    `<Title>.html` file itself: a partner-repo report is already copied into
    `~/partner/shared/reports/` (below), so name that path; anything else goes
    into `~/partner/shared/` and the message names the path. Google Docs and Drive links
-   are checked mechanically instead: the Slack `reply` tool and `v2/scripts/email-reply.ts`
-   both run `v2/scripts/lib/link-open-check.mjs`, which fetches each Google link logged
+   are checked mechanically instead: the Slack `reply` tool and the email sender both run `v2/scripts/lib/link-open-check.mjs`, which fetches each Google link logged
    out and refuses to send one that asks for sign-in or access. Check a link by hand
    with `node ~/slopdog/v2/scripts/lib/link-open-check.mjs <url>`.
 4. **Save the Artifact's HTML source into `~/slopdog/v2/desks/research/reports/`**, as
@@ -107,7 +106,7 @@ designs the HTML, then hands off here to publish and index. This skill does not
 replace that writer; it files what is already written.
 
 This skill files the report and, when the report is a project's state, it also
-owns the shape below. Todd's condensed status format is still **`broz-report`**.
+owns the shape below.
 A project report — one batch, a cluster of related user stories around one
 theme — is written to the six lessons here before it is filed. The lessons are
 the procedure. They are the same rules as
@@ -306,7 +305,7 @@ node ~/.claude/skills/slopdog/reports/file-report/scripts/file-report.mjs [--kin
 - `--project <slug>` names the board project (`~/slopdog/tasks/projects/<slug>.md`)
   for the index line. Pass it whenever the report belongs to a project whose
   slug is not the basename of the repo you file from; the script cannot guess that.
-- `--slides <deck.html>` indexes a built `/slopdog:visual-presentation` deck instead
+- `--slides <deck.html>` indexes a built HTML slide deck instead
   (T-308-2): no markdown is written, and the line's `path` and `html` are both the
   deck's absolute path with `source: "slides"`; the project is inferred from the
   deck's repo. The Reports tab opens it in the same report view, framed.
@@ -334,9 +333,6 @@ node ~/.claude/skills/slopdog/reports/file-report/scripts/file-report.mjs "Downl
 
 - `~/.claude/skills/slopdog/reports/sprint-planning-report/SKILL.md` — writes a sprint
   planning meeting report from the template, then runs this skill to file it.
-- `~/.claude/skills/slopdog/reports/broz-report/SKILL.md` — formats a report's *content*.
-  Run that first if the content isn't in shape yet; this skill only files
-  what's already written.
 - `~/slopdog/notes/INDEX.md` — the routing table and the reports convention this skill obeys.
 - `plugins/slopdog/reports/file-report/examples/report-frontmatter-standard.md` —
   the front-matter contract and body heading rule; `examples/README.md` remains the

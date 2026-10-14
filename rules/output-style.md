@@ -35,13 +35,9 @@ Governs the chat reply, not the documents, reports or code. Iterated session by 
   (T-291). `/tickets-prioritize` sets it; a desk asking a new question leaves it unset.
   An item carries `live: true` when answering needs Todd to look at or click something in a
   real browser: a login, creating an API key, checking an account. The card then shows a 🌐
-  chip, the tab's Live filter lists it, and its one button, Launch, switches Todd to workspace 6
-  and types `Todd pressed Launch for qN on T-nnn: open it through the Claude in Chrome extension`
-  into the asking desk's pane (T-313, T-455). The caret beside Launch offers Plain window for
-  one press, which types `Todd pressed Launch (plain window) for qN on T-nnn: open it with
-  open-on-6.mjs, not the extension` instead, and the desk skips the extension (T-454).
-  The desk that receives that line drives workspace 6 under the one-bot-per-site rule
-  (`/slopdog:browse`, T-309). A question he can decide from the card alone is never live.
+  chip, the tab's Live filter lists it, and its one button, Launch, types a line into the asking
+  desk's pane, and that desk opens the page and talks him through it, one agent per site at a time
+  so bot detection is never tripped. A question he can decide from the card alone is never live.
   When Todd presses explain further on a card, the board writes a `kind: explain` item and
   types `Todd asked for more on qN on T-nnn` into the asking desk's pane, and that desk
   replies with `{id: eN-qN, speaker: ai, replyTo: qN, kind: explanation, text}` in the same

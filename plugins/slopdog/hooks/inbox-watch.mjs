@@ -15,7 +15,7 @@
 // video-ideas drop) is left where it is.
 //
 // Interactive sessions only: a headless `claude -p` (its argv has -p or --print, or it is
-// the turn-log summariser, BROZ_TURNLOG) exits 0 at once.
+// the turn-log summariser, SLOPDOG_TURNLOG) exits 0 at once.
 //
 // Lifetime: hooks.json gives both entries `timeout: 604800` (a week). Claude Code kills a
 // command hook at its timeout, 600 s by default, asyncRewake included, which left an idle
@@ -87,7 +87,7 @@ const alive = (pid) => { try { process.kill(pid, 0); return true } catch { retur
 // turn-log summariser, a dispatch job, a verification run) loads the same hooks; left to
 // run, it would archive the desk's messages into a session that ends without reading them.
 const session = claudePid()
-if (process.env.BROZ_TURNLOG) process.exit(0)
+if (process.env.SLOPDOG_TURNLOG) process.exit(0)
 // A background job (`claude --bg`, CLAUDE_JOB_DIR set) is not the desk either: on 2026-10-03 one
 // whose cwd drifted into desks/ideas drained four of Todd's Slack DMs meant for Daphne.
 if (process.env.CLAUDE_JOB_DIR) process.exit(0)

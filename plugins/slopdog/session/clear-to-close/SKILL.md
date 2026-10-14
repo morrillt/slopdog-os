@@ -78,7 +78,7 @@ above it (v2/rules, scripts, the repo root; never another desk's folder) by path
 the scribe desk (Luwin, GLM on OpenRouter) and `--no-ai` skips even that:
 
 ```bash
-node ~/slopdog/v2/plugins/pickup/scripts/git-tidy.mjs
+node <pickup plugin>/scripts/git-tidy.mjs   # https://github.com/morrillt/claude-pickup
 ```
 
 Exit 0 is clean. Exit 1 means it held back a file (a secret, a file over 50 MB, machine

@@ -1,0 +1,17 @@
+# Unstucker question sweep: tells a desk waiting on Todd to move its question to the board.
+# Tracked copy; installed as a symlink in ~/.config/systemd/user/, fired by
+# unstucker-questions.timer. It was a transient systemd-run unit armed by the unstucker skill's
+# arm.mjs, which died with every reboot; arm.mjs now restarts this timer instead.
+# Off: systemctl --user disable --now unstucker-questions.timer
+[Unit]
+Description=Unstucker question sweep (unstucker.mjs --mode questions)
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/slopdog
+Environment=PATH=%h/.local/bin:%h/.nvm/versions/node/v24.11.1/bin:/usr/local/bin:/usr/bin:/bin
+Environment=HERDR_SOCKET_PATH=%h/.config/herdr/herdr.sock
+ExecStart=%h/.local/bin/node %h/slopdog/v2/scripts/unstucker.mjs --mode questions
+StandardOutput=append:%h/.local/state/unstucker.log
+StandardError=append:%h/.local/state/unstucker.log
+TimeoutStartSec=5m

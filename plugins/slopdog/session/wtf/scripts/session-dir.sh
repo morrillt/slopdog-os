@@ -23,7 +23,7 @@
 # The id is resolved, in order:
 #   1. --session <id>            the hooks all get it in their stdin payload
 #   2. $CLAUDE_SESSION_ID        substituted into a skill body by Claude Code
-#   3. the SessionStart pointer  ~/.cache/broz-wtf/lookup/<workspace>_<pane>.session,
+#   3. the SessionStart pointer  ~/.cache/slopdog-wtf/lookup/<workspace>_<pane>.session,
 #      then <workspace>.session. A caller with no payload finds the
 #      breadcrumb a hooked call left. Workspace+pane is a safe lookup
 #      key: two sessions cannot share one pane. The workspace-only key is the
@@ -40,7 +40,7 @@
 # over from earlier days simply go inert; no session directory is ever deleted.
 set -uo pipefail
 
-CACHE="$HOME/.cache/broz-wtf"
+CACHE="$HOME/.cache/slopdog-wtf"
 SESSIONS="$CACHE/sessions"
 LOOKUP="$CACHE/lookup"
 mkdir -p "$SESSIONS" "$LOOKUP"

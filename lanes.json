@@ -72,27 +72,12 @@
     "folder": "desks/it",
     "engine": "claude",
     "model": "opus",
-    "description": "The IT desk: computer-level, herdr-level and interface-level problems on either machine.",
-    "purpose": "Fixes computer-level, herdr-level and interface-level problems on either machine, shaping the work and handing the execution to Chekov.",
+    "description": "The IT desk: computer-level, herdr-level and interface-level problems.",
+    "purpose": "Fixes computer-level, herdr-level and interface-level problems, shaping the work and handing the execution to Chekov.",
     "toolbox": [
       "it-report",
       "ticket-add",
       "slopdog:sidequest"
-    ]
-  },
-  "errands": {
-    "id": "errands",
-    "name": "Alfred",
-    "title": "Errands",
-    "icon": "🧠",
-    "folder": "desks/errands",
-    "engine": "claude",
-    "model": "sonnet",
-    "purpose": "Does Slack-driven chores for Todd: orders, lookups, bookings, reminders and small outside integrations.",
-    "toolbox": [
-      "slopdog:shopping-research",
-      "slopdog:browse",
-      "slopdog:slack-voice"
     ]
   },
   "research": {
@@ -106,8 +91,7 @@
     "purpose": "Researches a question and writes it up as a report with sources; never builds anything.",
     "toolbox": [
       "slopdog:file-report",
-      "slopdog:receive-report",
-      "slopdog:web-search"
+      "slopdog:receive-report"
     ]
   },
   "slack": {
@@ -119,11 +103,7 @@
     "engine": "claude",
     "model": "opus",
     "purpose": "Answers for the Slop Dog bot in Slack and routes what people ask there to the desk that owns it.",
-    "toolbox": [
-      "slopdog:slack-triage",
-      "slopdog:slack-voice",
-      "slopdog:sync-to-notion"
-    ]
+    "toolbox": []
   },
   "slopdog": {
     "id": "slopdog",
@@ -136,47 +116,7 @@
     "purpose": "The front door: Todd talks to Slopdog instead of jumping between desks, and Slopdog answers status from the scripts and desk notes and hands work to the desk that owns it.",
     "toolbox": [
       "slopdog:sprint-moving",
-      "slopdog:wtf",
-      "slopdog:broz-report"
-    ]
-  },
-  "cloud": {
-    "id": "cloud",
-    "name": "Nimbus",
-    "title": "Cloud",
-    "icon": "🧠",
-    "folder": "desks/cloud",
-    "engine": "claude",
-    "model": "sonnet",
-    "host": "cloud",
-    "machine": "cloud",
-    "sshTarget": "cloud-desk",
-    "note": "Always-on Claude desk on a rented cloud server (T-647). Real herdr machine, not an ssh mirror pane.",
-    "purpose": "Always-on Claude desk on a cloud server, so work and messages keep moving while the laptop is off.",
-    "toolbox": [
-      "slopdog:pickup",
-      "slopdog:clear-to-close",
-      "slopdog:ask-todd"
-    ]
-  },
-  "mac": {
-    "id": "mac",
-    "name": "Mac",
-    "title": "Publish (Mac)",
-    "icon": "🔧",
-    "folder": "desks/publish",
-    "engine": "claude",
-    "model": "opus",
-    "host": "mac",
-    "aka": [
-      "influencer"
-    ],
-    "note": "Runs on the Mac mini (the video apps are there). SendMessage reaches it only through Remote Control, and a bare \"build\" also resolves to the Mac. When it does not answer, use its file inbox (desks/publish/inbox/, git push, Syncthing). See ~/.claude/projects/-home-<user>-slopdog/memory/bare-build-name-is-the-mac.md and mac-ssh-no-keychain.md.",
-    "purpose": "Owns everything the house says publicly, from video ideas and cuts to thumbnails and publishing, on the Mac where the video software lives.",
-    "toolbox": [
-      "slopdog:youtube-publish",
-      "slopdog:generate-image",
-      "slopdog:youtube-comment"
+      "slopdog:wtf"
     ]
   },
   "writing": {
@@ -206,9 +146,7 @@
     "note": "The prototyper desk (Todd, 2026-10-04): the dedicated place Todd goes to build a prototype himself, with one agent, no ticket, no batch and no verifier. Rapid iteration; code lands in dev/playground unless the prototype is about an existing project. A prototype Todd keeps graduates into a ticket at the Ideas desk; one he does not gets deleted.",
     "purpose": "Todd's own place to build a prototype fast with one agent, no ticket, no batch and no verifier.",
     "toolbox": [
-      "slopdog:quick-task-add",
-      "slopdog:generate-image",
-      "slopdog:visual-presentation"
+      "slopdog:quick-task-add"
     ]
   },
   "gemma": {
@@ -429,30 +367,6 @@
     "owner": "qa",
     "description": "The QA desk's Cursor sidekick: QA dispatches small headless jobs to it.",
     "purpose": "QA's Cursor assistant for small, headless checking jobs."
-  },
-  "errands-gemini": {
-    "id": "errands-gemini",
-    "name": "Lucius",
-    "title": "Errands Assistant",
-    "icon": "🔧",
-    "folder": "desks/errands/sidekicks/gemini",
-    "engine": "agy",
-    "model": "gemini-3.8-flash-medium",
-    "owner": "errands",
-    "description": "The Errands desk's Gemini sidekick: Alfred hands it small jobs through dispatch.mjs.",
-    "purpose": "Alfred's Gemini assistant for small errand jobs."
-  },
-  "errands-composer": {
-    "id": "errands-composer",
-    "name": "Leslie",
-    "title": "Errands Builder",
-    "icon": "🔧",
-    "folder": "desks/errands/sidekicks/composer",
-    "engine": "cursor",
-    "model": "composer-2.5",
-    "owner": "errands",
-    "description": "The Errands desk's Cursor sidekick: Alfred dispatches small headless jobs to it.",
-    "purpose": "Alfred's Cursor assistant for small, headless errand jobs."
   },
   "writing-gemini": {
     "id": "writing-gemini",
