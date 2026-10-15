@@ -1,3 +1,59 @@
+<img src="docs/img/slopdog-banner-thin.jpg" alt="The Slopdog crew on the bridge" width="100%">
+
+# Slopdog Harness
+
+## [**slopdog.toddmorrill.com**](https://slopdog.toddmorrill.com)
+
+**76 skills · 69 scripts · 21 hooks · 13 rules**
+
+We build with the Slopdog Harness, organized around five organizing principles. Each principle is a promise the house keeps, and three features deliver it.
+
+## Mission
+
+**Create meaningful things, faster every day, with style.**
+
+- **Meaningful things.** Things we use every day that give us real productivity gains and generate revenue. The vision is abundance overflow: as we become economically abundant, that abundance overflows into the social-impact initiatives on our roadmap.
+- **Faster every day.** The house evolves. We measure how fast and how efficiently we build, and those numbers improve, measurably, over time.
+- **With style.** Right now: retro Scooby-Doo, Stranger Things and Stardew Valley roots.
+
+## The five organizing principles
+
+| Principle | The tension it answers | Three features |
+| --- | --- | --- |
+| **Trust** | Trusting the bots to do it right means Todd can step away from the work. | **Verification** (a fresh verifier on every build, fresh-eyes review on every shaped file, live checks against real systems); **Trust Ladder and Metrics** (the usage ledger, benchmarks and the scoreboard, plus the rungs autonomy climbs on evidence); **Guards** (the hooks and fences that stop a desk doing damage) |
+| **Digestible** | Communication that is digestible and fast means Todd decides in seconds, not minutes. | **Reporting Standards** (the rule of threes, answer first, filing and the reports index); **Messaging Standards** (the reply style, question language, the Slack voice); **Questions and Decisions** (one board for every question that waits on Todd) |
+| **Evolve** | A house that learns and reorganizes itself means the same miss never happens twice. | **Retrospective and Hardening** (every lesson logged as it happens, hardening batches, memory); **Tighten the Bolts** (the house map and a weekly audit for orphans and duplicates); **World Watch** (a bi-weekly read of watched repos and Twitter for patterns worth bringing in) |
+| **Aligned** | Building the right thing, shaped and agreed before it starts, means nothing gets built that shouldn't exist. | **Idea Shaping** (ideation and voice blooms, then the project, batch and ticket writers); **Alignment** (the eight-out-of-ten loop, grill-me, blind feedback between agents, mission checks); **Build and Dispatch** (the build ladder, dispatch and its gate, builders in worktrees, quick tasks) |
+| **Momentum** | A house that keeps moving within its budget means work flows while Todd is away. | **Keep Desks Moving** (the context gauge, clear and pickup, the watcher and the unstucker); **Budget and Context** (department budget shares, the usage stop, subagent tiers); **The Screen** (herdr, the board and BuildWatch) |
+
+## Two highways
+
+Work travels the house on highways. Two carry almost everything.
+
+### Build highway
+
+Idea → Shaping → Creation → Execution → Verification → Done
+
+<img src="docs/img/highway-build.jpg" alt="The Highways view of the Slopdog Universe: Idea, Shaping, Creation, Execution, Verification, Done" width="100%">
+
+Every ticket Todd asks for travels it from a spoken idea to an approved batch, each step checked by someone other than the builder.
+
+### Evolution highway
+
+Retrospective → Hardening → Tighten the bolts → Faster next week
+
+<img src="docs/img/highway-evolve.jpg" alt="The Retro River: retro entries over time and the fixes for each pattern" width="100%">
+
+The retrospective loop at batch review turns each lesson into a fix, so the house is faster every week.
+
+On-ramps: a new project or a new feature joins the build highway. Side highways: hotfix, bug, quick task, prototype, research report.
+
+## Find Slopdog
+
+[Website](https://slopdog.toddmorrill.com) · [YouTube @slopdogai](https://www.youtube.com/@slopdogai) · [X @slopdogai](https://x.com/slopdogai) · [GitHub](https://github.com/morrillt/slopdog-os)
+
+---
+
 # Slopdog
 
 A desk-based harness for running a small team of AI agents on Claude Code.
